@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: Fichero Fuente C:/Users/Oscar/source/repos/OSKengine/Source/Vector2.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_vector2_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Vector2.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;ApiCall.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k.html">OSK</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html">   12</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#ae14ccc094cf4e08fa1478f0258388fe3">   18</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="class_o_s_k_1_1_vector2__t.html#ae14ccc094cf4e08fa1478f0258388fe3">TNumericType</a> = T;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a3759903561dac1fc476d0cc9d051c536">   21</a></span>        <span class="keyword">static</span> OSKAPI_CALL <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a> <span class="keyword">const</span> <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3759903561dac1fc476d0cc9d051c536">Zero</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a5c9ebbf8f89f432c9843d370107617db">   24</a></span>        <span class="keyword">static</span> OSKAPI_CALL <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a> <span class="keyword">const</span> <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a5c9ebbf8f89f432c9843d370107617db">One</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a498f28581bc46484ddba04e787198dc1">   29</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a498f28581bc46484ddba04e787198dc1">Vector2_t</a>() : <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>(0), <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>(0) { }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a6579b1e1577577ee242da57aeba4f5bf">   34</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a6579b1e1577577ee242da57aeba4f5bf">Vector2_t</a>(<span class="keyword">const</span> T&amp; <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>, <span class="keyword">const</span> T&amp; <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>) : <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>(<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>), <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>(<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>)  { }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#afa93ff479376f249f88d6474b5cf7c84">   38</a></span>        <span class="keyword">explicit</span> <span class="keyword">constexpr</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#afa93ff479376f249f88d6474b5cf7c84">Vector2_t</a>(<span class="keyword">const</span> T&amp; value) : <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>(value), <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>(value) { }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a36a3da0615b4a9ac9e2fbe5e7eb4dd0e">   42</a></span>        <span class="keyword">explicit</span> <span class="keyword">constexpr</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a36a3da0615b4a9ac9e2fbe5e7eb4dd0e">Vector2_t</a>(<span class="keyword">const</span> glm::vec2&amp; vec) : <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>(vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>), <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>(vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>) { }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#aa1b3944d8182f5b3d16958bd1b60152a">   48</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#aa1b3944d8182f5b3d16958bd1b60152a">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; vec)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a498f28581bc46484ddba04e787198dc1">Vector2_t</a>(<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> + vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>, <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> + vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a38a2972db00409007af24e99a02b7972">   56</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a38a2972db00409007af24e99a02b7972">operator+=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; vec) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> += vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> += vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a4b09c6594b48592b9ba353f5df9173cf">   65</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a4b09c6594b48592b9ba353f5df9173cf">operator-</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a498f28581bc46484ddba04e787198dc1">Vector2_t</a>(-<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>, -<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a943703e7a9607644cb79517b698c292a">   72</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a943703e7a9607644cb79517b698c292a">operator-</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; vec)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a498f28581bc46484ddba04e787198dc1">Vector2_t</a>(<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> - vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>, <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> - vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#acc51e250722b53a2662e300788eb9ea3">   80</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#acc51e250722b53a2662e300788eb9ea3">operator-=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; vec) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> -= vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> -= vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a46351220987d245e36933a0a09ba2b07">   90</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a46351220987d245e36933a0a09ba2b07">operator*</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; vec)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a498f28581bc46484ddba04e787198dc1">Vector2_t</a>(<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> * vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>, <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> * vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a0a1556a2c5a6e7c0bb7b998e080ea144">   98</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a0a1556a2c5a6e7c0bb7b998e080ea144">operator*=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; vec) {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> *= vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> *= vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a88a69585b1d20bd22f2dc22b85d4d904">  108</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a88a69585b1d20bd22f2dc22b85d4d904">operator*</a>(<span class="keyword">const</span> T&amp; value)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a498f28581bc46484ddba04e787198dc1">Vector2_t</a>(<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> * value, <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> * value);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a95948b0a3c18553a83c99584458a9bbd">  116</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a95948b0a3c18553a83c99584458a9bbd">operator*=</a>(<span class="keyword">const</span> T&amp; value) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> *= value;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> *= value;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#acac39ccaf8ce3ebf00e9222592cac447">  126</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#acac39ccaf8ce3ebf00e9222592cac447">operator/</a>(<span class="keyword">const</span> T&amp; value)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a498f28581bc46484ddba04e787198dc1">Vector2_t</a>(<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> / value, <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> / value);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a13e32832248e825bc3e4f4fbbb7a45cc">  134</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a13e32832248e825bc3e4f4fbbb7a45cc">operator/=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; vec) {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> /= vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> /= vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#ab72b2050c57c51a39079e9505b8358ca">  144</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#ab72b2050c57c51a39079e9505b8358ca">operator/</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; vec)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a498f28581bc46484ddba04e787198dc1">Vector2_t</a>(<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> / vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>, <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> / vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a7ab6b7b57397392c4b5dd6eaac60f851">  152</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a7ab6b7b57397392c4b5dd6eaac60f851">operator/=</a>(<span class="keyword">const</span> T&amp; value) {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> /= value;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> /= value;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#abbd2b0ffe93ee62795ab28e4be3a67bc">  162</a></span>        <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#abbd2b0ffe93ee62795ab28e4be3a67bc">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; vec)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> == vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> &amp;&amp; <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> == vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a6535db0bf68920c605d65e993ecbd494">  168</a></span>        <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a6535db0bf68920c605d65e993ecbd494">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; vec)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keywordflow">return</span> !<a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#abbd2b0ffe93ee62795ab28e4be3a67bc">operator==</a>(vec);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a51799ef4e2674b7eb4ade6ae96f2b790">  175</a></span>        <span class="keyword">constexpr</span> T <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a51799ef4e2674b7eb4ade6ae96f2b790">GetLength</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <span class="keywordflow">return</span> glm::sqrt(<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> * <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> + <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> * <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a9d78eea838f3435671c10a201d3d8310">  181</a></span>        <span class="keyword">constexpr</span> T <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a9d78eea838f3435671c10a201d3d8310">GetDistanceTo</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; vec)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            T dx = <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> - vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            T dy = <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> - vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keywordflow">return</span> glm::sqrt(dx * dx + dy * dy);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a96fe63557e8b7c622b14991a9a61a357">  190</a></span>        <span class="keyword">constexpr</span> T <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a96fe63557e8b7c622b14991a9a61a357">Dot</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a>&amp; vec)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> * vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> + <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> * vec.<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a65c99690aec6d9684c7982c348776a06">  196</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a65c99690aec6d9684c7982c348776a06">GetNormalized</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            T length = <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a51799ef4e2674b7eb4ade6ae96f2b790">GetLength</a>();</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a498f28581bc46484ddba04e787198dc1">Vector2_t</a>(<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> / length, <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> / length);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#ad3d82466a87e3bd71cb08b2c62a20c8c">  203</a></span>        <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#ad3d82466a87e3bd71cb08b2c62a20c8c">Normalize</a>() {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            T length = <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a51799ef4e2674b7eb4ade6ae96f2b790">GetLength</a>();</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a> /= length;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a> /= length;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a007c9e3a314f959ab6affb9bd314235c">  212</a></span>        <span class="keyword">constexpr</span> glm::vec2 <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a007c9e3a314f959ab6affb9bd314235c">ToGlm</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            <span class="keywordflow">return</span> glm::vec2(<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>, <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#ac5bfb6b6a76c25156551ac29c26c7c74">  217</a></span>        <span class="keyword">constexpr</span> glm::vec&lt;2, T&gt; <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#ac5bfb6b6a76c25156551ac29c26c7c74">ToGlm_t</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            <span class="keywordflow">return</span> glm::vec&lt;2, T&gt;(<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>, <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        }</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> P&gt; </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a87916ba2973b30bf4123c6096ffc8fc9">  225</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t&lt;P&gt;</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a87916ba2973b30bf4123c6096ffc8fc9">ToVec2</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t&lt;P&gt;</a>((P)<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>, (P)<a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        }</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#ad87181c3ef04bdc4653e05a9b086894d">  230</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t&lt;float_t&gt;</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#ad87181c3ef04bdc4653e05a9b086894d">ToVector2f</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            <span class="keywordflow">return</span> ToVec2&lt;float&gt;();</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        }</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a57b4202a0dffe3458972ac5dd5b4a384">  235</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t&lt;double_t&gt;</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a57b4202a0dffe3458972ac5dd5b4a384">ToVector2d</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            <span class="keywordflow">return</span> ToVec2&lt;double_t&gt;();</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        }</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a321ac35eebeb0e760c6165073f420c72">  240</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t&lt;int32_t&gt;</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a321ac35eebeb0e760c6165073f420c72">ToVector2i</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            <span class="keywordflow">return</span> ToVec2&lt;int32_t&gt;();</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        }</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a653f825213f2d7c78ff097f5a142fe64">  245</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t&lt;uint32_t&gt;</a> <a class="code hl_function" href="class_o_s_k_1_1_vector2__t.html#a653f825213f2d7c78ff097f5a142fe64">ToVector2ui</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <span class="keywordflow">return</span> ToVec2&lt;uint32_t&gt;();</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        }</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">  251</a></span>        T <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">x</a>;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">  254</a></span>        T <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">y</a>;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    };</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="namespace_o_s_k.html#aee1b4a35619f95f3a693e032076a131e">  260</a></span>    <span class="keyword">using </span><a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2f</a> = <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t&lt;float_t&gt;</a>;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="namespace_o_s_k.html#a1715f0fc11075ab2bf09f32bc757f4b8">  263</a></span>    <span class="keyword">using </span><a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2d</a> = <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t&lt;double_t&gt;</a>;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="namespace_o_s_k.html#a14512d83cafa03798850fcf385bc70a9">  266</a></span>    <span class="keyword">using </span><a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2i</a> = <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t&lt;int32_t&gt;</a>;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="namespace_o_s_k.html#a8a2dd07f1ac751a9b0baec4c534af48a">  269</a></span>    <span class="keyword">using </span><a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2ui</a> = <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2_t&lt;uint32_t&gt;</a>;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>}</div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html">OSK::Vector2_t</a></div><div class="ttdoc">Representa un vector 2D.</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:12</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a007c9e3a314f959ab6affb9bd314235c"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a007c9e3a314f959ab6affb9bd314235c">OSK::Vector2_t::ToGlm</a></div><div class="ttdeci">constexpr glm::vec2 ToGlm() const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:212</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a0a1556a2c5a6e7c0bb7b998e080ea144"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a0a1556a2c5a6e7c0bb7b998e080ea144">OSK::Vector2_t::operator*=</a></div><div class="ttdeci">constexpr Vector2_t &amp; operator*=(const Vector2_t &amp;vec)</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:98</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a13e32832248e825bc3e4f4fbbb7a45cc"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a13e32832248e825bc3e4f4fbbb7a45cc">OSK::Vector2_t::operator/=</a></div><div class="ttdeci">constexpr Vector2_t &amp; operator/=(const Vector2_t &amp;vec)</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:134</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a3194c7e9abba1f840530e8642a01e30a"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a3194c7e9abba1f840530e8642a01e30a">OSK::Vector2_t::y</a></div><div class="ttdeci">T y</div><div class="ttdoc">Representa la segunda coordenada.</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:254</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a321ac35eebeb0e760c6165073f420c72"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a321ac35eebeb0e760c6165073f420c72">OSK::Vector2_t::ToVector2i</a></div><div class="ttdeci">constexpr Vector2_t&lt; int32_t &gt; ToVector2i() const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:240</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a36a3da0615b4a9ac9e2fbe5e7eb4dd0e"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a36a3da0615b4a9ac9e2fbe5e7eb4dd0e">OSK::Vector2_t::Vector2_t</a></div><div class="ttdeci">constexpr Vector2_t(const glm::vec2 &amp;vec)</div><div class="ttdoc">Crea un vector 2D con los parámetros de vec.</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:42</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a3759903561dac1fc476d0cc9d051c536"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a3759903561dac1fc476d0cc9d051c536">OSK::Vector2_t::Zero</a></div><div class="ttdeci">static OSKAPI_CALL Vector2_t const Zero</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:21</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a38a2972db00409007af24e99a02b7972"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a38a2972db00409007af24e99a02b7972">OSK::Vector2_t::operator+=</a></div><div class="ttdeci">constexpr Vector2_t &amp; operator+=(const Vector2_t &amp;vec)</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:56</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a46351220987d245e36933a0a09ba2b07"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a46351220987d245e36933a0a09ba2b07">OSK::Vector2_t::operator*</a></div><div class="ttdeci">constexpr Vector2_t operator*(const Vector2_t &amp;vec) const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:90</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a498f28581bc46484ddba04e787198dc1"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a498f28581bc46484ddba04e787198dc1">OSK::Vector2_t::Vector2_t</a></div><div class="ttdeci">constexpr Vector2_t()</div><div class="ttdoc">Crea un vector 2D nulo { 0, 0 }.</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:29</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a4b09c6594b48592b9ba353f5df9173cf"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a4b09c6594b48592b9ba353f5df9173cf">OSK::Vector2_t::operator-</a></div><div class="ttdeci">constexpr Vector2_t operator-() const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:65</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a51799ef4e2674b7eb4ade6ae96f2b790"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a51799ef4e2674b7eb4ade6ae96f2b790">OSK::Vector2_t::GetLength</a></div><div class="ttdeci">constexpr T GetLength() const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:175</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a57b4202a0dffe3458972ac5dd5b4a384"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a57b4202a0dffe3458972ac5dd5b4a384">OSK::Vector2_t::ToVector2d</a></div><div class="ttdeci">constexpr Vector2_t&lt; double_t &gt; ToVector2d() const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:235</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a5c9ebbf8f89f432c9843d370107617db"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a5c9ebbf8f89f432c9843d370107617db">OSK::Vector2_t::One</a></div><div class="ttdeci">static OSKAPI_CALL Vector2_t const One</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:24</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a6535db0bf68920c605d65e993ecbd494"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a6535db0bf68920c605d65e993ecbd494">OSK::Vector2_t::operator!=</a></div><div class="ttdeci">constexpr bool operator!=(const Vector2_t &amp;vec) const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:168</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a653f825213f2d7c78ff097f5a142fe64"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a653f825213f2d7c78ff097f5a142fe64">OSK::Vector2_t::ToVector2ui</a></div><div class="ttdeci">constexpr Vector2_t&lt; uint32_t &gt; ToVector2ui() const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:245</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a6579b1e1577577ee242da57aeba4f5bf"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a6579b1e1577577ee242da57aeba4f5bf">OSK::Vector2_t::Vector2_t</a></div><div class="ttdeci">constexpr Vector2_t(const T &amp;x, const T &amp;y)</div><div class="ttdoc">Crea una instancia del Vector2.</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:34</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a65c99690aec6d9684c7982c348776a06"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a65c99690aec6d9684c7982c348776a06">OSK::Vector2_t::GetNormalized</a></div><div class="ttdeci">constexpr Vector2_t GetNormalized() const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:196</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a7ab6b7b57397392c4b5dd6eaac60f851"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a7ab6b7b57397392c4b5dd6eaac60f851">OSK::Vector2_t::operator/=</a></div><div class="ttdeci">constexpr Vector2_t &amp; operator/=(const T &amp;value)</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:152</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a87916ba2973b30bf4123c6096ffc8fc9"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a87916ba2973b30bf4123c6096ffc8fc9">OSK::Vector2_t::ToVec2</a></div><div class="ttdeci">constexpr Vector2_t&lt; P &gt; ToVec2() const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:225</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a88a69585b1d20bd22f2dc22b85d4d904"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a88a69585b1d20bd22f2dc22b85d4d904">OSK::Vector2_t::operator*</a></div><div class="ttdeci">constexpr Vector2_t operator*(const T &amp;value) const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:108</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a943703e7a9607644cb79517b698c292a"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a943703e7a9607644cb79517b698c292a">OSK::Vector2_t::operator-</a></div><div class="ttdeci">constexpr Vector2_t operator-(const Vector2_t &amp;vec) const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:72</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a95948b0a3c18553a83c99584458a9bbd"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a95948b0a3c18553a83c99584458a9bbd">OSK::Vector2_t::operator*=</a></div><div class="ttdeci">constexpr Vector2_t &amp; operator*=(const T &amp;value)</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:116</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a96fe63557e8b7c622b14991a9a61a357"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a96fe63557e8b7c622b14991a9a61a357">OSK::Vector2_t::Dot</a></div><div class="ttdeci">constexpr T Dot(const Vector2_t &amp;vec) const</div><div class="ttdoc">Producto escalar de dos vectores.</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:190</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a9d78eea838f3435671c10a201d3d8310"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a9d78eea838f3435671c10a201d3d8310">OSK::Vector2_t::GetDistanceTo</a></div><div class="ttdeci">constexpr T GetDistanceTo(const Vector2_t &amp;vec) const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:181</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_aa1b3944d8182f5b3d16958bd1b60152a"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#aa1b3944d8182f5b3d16958bd1b60152a">OSK::Vector2_t::operator+</a></div><div class="ttdeci">constexpr Vector2_t operator+(const Vector2_t &amp;vec) const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:48</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_ab72b2050c57c51a39079e9505b8358ca"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#ab72b2050c57c51a39079e9505b8358ca">OSK::Vector2_t::operator/</a></div><div class="ttdeci">constexpr Vector2_t operator/(const Vector2_t &amp;vec) const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:144</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_abbd2b0ffe93ee62795ab28e4be3a67bc"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#abbd2b0ffe93ee62795ab28e4be3a67bc">OSK::Vector2_t::operator==</a></div><div class="ttdeci">constexpr bool operator==(const Vector2_t &amp;vec) const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:162</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_ac5bfb6b6a76c25156551ac29c26c7c74"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#ac5bfb6b6a76c25156551ac29c26c7c74">OSK::Vector2_t::ToGlm_t</a></div><div class="ttdeci">constexpr glm::vec&lt; 2, T &gt; ToGlm_t() const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:217</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_acac39ccaf8ce3ebf00e9222592cac447"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#acac39ccaf8ce3ebf00e9222592cac447">OSK::Vector2_t::operator/</a></div><div class="ttdeci">constexpr Vector2_t operator/(const T &amp;value) const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:126</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_acc51e250722b53a2662e300788eb9ea3"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#acc51e250722b53a2662e300788eb9ea3">OSK::Vector2_t::operator-=</a></div><div class="ttdeci">constexpr Vector2_t &amp; operator-=(const Vector2_t &amp;vec)</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:80</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_ad3d82466a87e3bd71cb08b2c62a20c8c"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#ad3d82466a87e3bd71cb08b2c62a20c8c">OSK::Vector2_t::Normalize</a></div><div class="ttdeci">constexpr void Normalize()</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:203</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_ad87181c3ef04bdc4653e05a9b086894d"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#ad87181c3ef04bdc4653e05a9b086894d">OSK::Vector2_t::ToVector2f</a></div><div class="ttdeci">constexpr Vector2_t&lt; float_t &gt; ToVector2f() const</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:230</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_ae14ccc094cf4e08fa1478f0258388fe3"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#ae14ccc094cf4e08fa1478f0258388fe3">OSK::Vector2_t::TNumericType</a></div><div class="ttdeci">T TNumericType</div><div class="ttdoc">Tipo de dato numérico usado para almacenar los números.</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:18</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_ae2f86aaf21084895a5b357318ff6ed77"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#ae2f86aaf21084895a5b357318ff6ed77">OSK::Vector2_t::x</a></div><div class="ttdeci">T x</div><div class="ttdoc">Representa la primera coordenada.</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:251</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_afa93ff479376f249f88d6474b5cf7c84"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#afa93ff479376f249f88d6474b5cf7c84">OSK::Vector2_t::Vector2_t</a></div><div class="ttdeci">constexpr Vector2_t(const T &amp;value)</div><div class="ttdoc">Crea una instancia del Vector2 en la que X e Y tienen en mismo valor.</div><div class="ttdef"><b>Definition:</b> Vector2.hpp:38</div></div>
+<div class="ttc" id="anamespace_o_s_k_html"><div class="ttname"><a href="namespace_o_s_k.html">OSK</a></div><div class="ttdef"><b>Definition:</b> AabbAabbDetector.h:5</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>Vector2.hpp</b></li>
+    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

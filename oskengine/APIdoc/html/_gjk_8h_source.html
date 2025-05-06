@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: Fichero Fuente C:/Users/Oscar/source/repos/OSKengine/Source/Gjk.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_gjk_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Gjk.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;Vector3.hpp&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;DynamicArray.hpp&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Plane.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Frustum.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n.html">OSK::COLLISION</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">class </span>Simplex;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support.html">   17</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support.html">GjkSupport</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support.html#a6e3a70a9354165abbcb0a07cfd2cbb96">   20</a></span>        <a class="code hl_class" href="class_o_s_k_1_1_vector3__t.html">Vector3f</a> <a class="code hl_variable" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support.html#a6e3a70a9354165abbcb0a07cfd2cbb96">point</a> = <a class="code hl_variable" href="class_o_s_k_1_1_vector3__t.html#ac574fd28b9114ddf48d26573d1efd570">Vector3f::Zero</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support.html#a75e964e00c2ffaf33c2efaf42a3b4f06">   24</a></span>        std::optional&lt;UIndex64&gt; <a class="code hl_variable" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support.html#a75e964e00c2ffaf33c2efaf42a3b4f06">originalVertexId</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    };</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html">   30</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html">MinkowskiSupport</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a386074041c8203f78bf168ce7dfdd98c">   34</a></span>        <a class="code hl_class" href="class_o_s_k_1_1_vector3__t.html">Vector3f</a> <a class="code hl_variable" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a386074041c8203f78bf168ce7dfdd98c">point</a> = <a class="code hl_variable" href="class_o_s_k_1_1_vector3__t.html#ac574fd28b9114ddf48d26573d1efd570">Vector3f::Zero</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a8f8353ac64f6f8b62783c9cc480819a3">   39</a></span>        std::optional&lt;UIndex64&gt; <a class="code hl_variable" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a8f8353ac64f6f8b62783c9cc480819a3">originalVertexIdA</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a94cae8e66045e7cf06cb1ade25ef1c2a">   43</a></span>        std::optional&lt;UIndex64&gt; <a class="code hl_variable" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a94cae8e66045e7cf06cb1ade25ef1c2a">originalVertexIdB</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#af046b03a7a27ac7c2aa526c8eb3fdc3a">   47</a></span>        std::optional&lt;Vector3f&gt; <a class="code hl_variable" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#af046b03a7a27ac7c2aa526c8eb3fdc3a">worldSpacePointA</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a1fb2639b4f9ff12b2ec343a4d6b767bb">   51</a></span>        std::optional&lt;Vector3f&gt; <a class="code hl_variable" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a1fb2639b4f9ff12b2ec343a4d6b767bb">worldSpacePointB</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#afd8c70373e52e8ab53fd2cc0c10f9540">   53</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#afd8c70373e52e8ab53fd2cc0c10f9540">operator==</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html">MinkowskiSupport</a>&amp; other)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a8f8353ac64f6f8b62783c9cc480819a3">originalVertexIdA</a> == other.<a class="code hl_variable" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a8f8353ac64f6f8b62783c9cc480819a3">originalVertexIdA</a> &amp;&amp; <a class="code hl_variable" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a94cae8e66045e7cf06cb1ade25ef1c2a">originalVertexIdB</a> == other.<a class="code hl_variable" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a94cae8e66045e7cf06cb1ade25ef1c2a">originalVertexIdB</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    };</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider.html">   64</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_class" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider.html">IGjkCollider</a> {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider.html#a276bd59a1ac4eeafd25688a162b68cdb">   68</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider.html#a276bd59a1ac4eeafd25688a162b68cdb">~IGjkCollider</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider.html#a0db85d332a6ecdcc58f148c7041162b2">   73</a></span>        <span class="keyword">virtual</span> <a class="code hl_struct" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support.html">GjkSupport</a> <a class="code hl_function" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider.html#a0db85d332a6ecdcc58f148c7041162b2">GetSupport</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector3__t.html">Vector3f</a>&amp; direction) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> ContainsPoint(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector3__t.html">Vector3f</a>&amp; point) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordtype">bool</span> IsBehindPlane(<a class="code hl_struct" href="struct_o_s_k_1_1_plane.html">Plane</a> plane) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordtype">bool</span> IsFullyBehindPlane(<a class="code hl_struct" href="struct_o_s_k_1_1_plane.html">Plane</a> plane) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordtype">bool</span> IsInsideFrustum(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">AnyFrustum</a>&amp; frustum) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    };</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_struct" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html">MinkowskiSupport</a> <a class="code hl_function" href="namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n.html#acedd627cbfcc7a24dbc9c150d894ad2a">GetMinkowskiSupport</a>(</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider.html">IGjkCollider</a>&amp; first,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider.html">IGjkCollider</a>&amp; second,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector3__t.html">Vector3f</a>&amp; direction);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+<div class="ttc" id="aclass_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_html"><div class="ttname"><a href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider.html">OSK::COLLISION::IGjkCollider</a></div><div class="ttdoc">Interfaz para volúmenes 3D que soporten la detección de colisiones mediante GJK.</div><div class="ttdef"><b>Definition:</b> Gjk.h:64</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_html_a0db85d332a6ecdcc58f148c7041162b2"><div class="ttname"><a href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider.html#a0db85d332a6ecdcc58f148c7041162b2">OSK::COLLISION::IGjkCollider::GetSupport</a></div><div class="ttdeci">virtual GjkSupport GetSupport(const Vector3f &amp;direction) const =0</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_html_a276bd59a1ac4eeafd25688a162b68cdb"><div class="ttname"><a href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider.html#a276bd59a1ac4eeafd25688a162b68cdb">OSK::COLLISION::IGjkCollider::~IGjkCollider</a></div><div class="ttdeci">virtual ~IGjkCollider()=default</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_dynamic_array_html"><div class="ttname"><a href="class_o_s_k_1_1_dynamic_array.html">OSK::DynamicArray</a></div><div class="ttdoc">Dynamic array: array que puede cambiar de tamaño.</div><div class="ttdef"><b>Definition:</b> DynamicArray.hpp:66</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector3__t_html"><div class="ttname"><a href="class_o_s_k_1_1_vector3__t.html">OSK::Vector3_t&lt; float_t &gt;</a></div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector3__t_html_ac574fd28b9114ddf48d26573d1efd570"><div class="ttname"><a href="class_o_s_k_1_1_vector3__t.html#ac574fd28b9114ddf48d26573d1efd570">OSK::Vector3_t&lt; float_t &gt;::Zero</a></div><div class="ttdeci">static OSKAPI_CALL Vector3_t const Zero</div><div class="ttdef"><b>Definition:</b> Vector3.hpp:21</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n_html"><div class="ttname"><a href="namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n.html">OSK::COLLISION</a></div><div class="ttdef"><b>Definition:</b> AabbAabbDetector.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n_html_acedd627cbfcc7a24dbc9c150d894ad2a"><div class="ttname"><a href="namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n.html#acedd627cbfcc7a24dbc9c150d894ad2a">OSK::COLLISION::GetMinkowskiSupport</a></div><div class="ttdeci">MinkowskiSupport GetMinkowskiSupport(const IGjkCollider &amp;first, const IGjkCollider &amp;second, const Vector3f &amp;direction)</div><div class="ttdef"><b>Definition:</b> Gjk.cpp:19</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support_html"><div class="ttname"><a href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support.html">OSK::COLLISION::GjkSupport</a></div><div class="ttdoc">Soporte de un volúmen 3D. Indica el punto más alejado en una dirección.</div><div class="ttdef"><b>Definition:</b> Gjk.h:17</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support_html_a6e3a70a9354165abbcb0a07cfd2cbb96"><div class="ttname"><a href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support.html#a6e3a70a9354165abbcb0a07cfd2cbb96">OSK::COLLISION::GjkSupport::point</a></div><div class="ttdeci">Vector3f point</div><div class="ttdoc">Soporte en espacio del mundo.</div><div class="ttdef"><b>Definition:</b> Gjk.h:20</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support_html_a75e964e00c2ffaf33c2efaf42a3b4f06"><div class="ttname"><a href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support.html#a75e964e00c2ffaf33c2efaf42a3b4f06">OSK::COLLISION::GjkSupport::originalVertexId</a></div><div class="ttdeci">std::optional&lt; UIndex64 &gt; originalVertexId</div><div class="ttdoc">Índice del vértice que produjo el soporte. Sólamente para colisionadores con vértices.</div><div class="ttdef"><b>Definition:</b> Gjk.h:24</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_html"><div class="ttname"><a href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html">OSK::COLLISION::MinkowskiSupport</a></div><div class="ttdoc">Soporte de la diferencia de Minkowski.</div><div class="ttdef"><b>Definition:</b> Gjk.h:30</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_html_a1fb2639b4f9ff12b2ec343a4d6b767bb"><div class="ttname"><a href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a1fb2639b4f9ff12b2ec343a4d6b767bb">OSK::COLLISION::MinkowskiSupport::worldSpacePointB</a></div><div class="ttdeci">std::optional&lt; Vector3f &gt; worldSpacePointB</div><div class="ttdef"><b>Definition:</b> Gjk.h:51</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_html_a386074041c8203f78bf168ce7dfdd98c"><div class="ttname"><a href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a386074041c8203f78bf168ce7dfdd98c">OSK::COLLISION::MinkowskiSupport::point</a></div><div class="ttdeci">Vector3f point</div><div class="ttdoc">Punto en el hull de la diferencia de Minkowski.</div><div class="ttdef"><b>Definition:</b> Gjk.h:34</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_html_a8f8353ac64f6f8b62783c9cc480819a3"><div class="ttname"><a href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a8f8353ac64f6f8b62783c9cc480819a3">OSK::COLLISION::MinkowskiSupport::originalVertexIdA</a></div><div class="ttdeci">std::optional&lt; UIndex64 &gt; originalVertexIdA</div><div class="ttdoc">Índice del vértice del primer volumen que produjo el soporte.</div><div class="ttdef"><b>Definition:</b> Gjk.h:39</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_html_a94cae8e66045e7cf06cb1ade25ef1c2a"><div class="ttname"><a href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#a94cae8e66045e7cf06cb1ade25ef1c2a">OSK::COLLISION::MinkowskiSupport::originalVertexIdB</a></div><div class="ttdeci">std::optional&lt; UIndex64 &gt; originalVertexIdB</div><div class="ttdoc">Índice del vértice del segundo volumen que produjo el soporte.</div><div class="ttdef"><b>Definition:</b> Gjk.h:43</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_html_af046b03a7a27ac7c2aa526c8eb3fdc3a"><div class="ttname"><a href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#af046b03a7a27ac7c2aa526c8eb3fdc3a">OSK::COLLISION::MinkowskiSupport::worldSpacePointA</a></div><div class="ttdeci">std::optional&lt; Vector3f &gt; worldSpacePointA</div><div class="ttdef"><b>Definition:</b> Gjk.h:47</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_html_afd8c70373e52e8ab53fd2cc0c10f9540"><div class="ttname"><a href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support.html#afd8c70373e52e8ab53fd2cc0c10f9540">OSK::COLLISION::MinkowskiSupport::operator==</a></div><div class="ttdeci">bool operator==(const MinkowskiSupport &amp;other) const</div><div class="ttdef"><b>Definition:</b> Gjk.h:53</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_plane_html"><div class="ttname"><a href="struct_o_s_k_1_1_plane.html">OSK::Plane</a></div><div class="ttdoc">Representa un plano en el espacio 3D.</div><div class="ttdef"><b>Definition:</b> Plane.h:8</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>Gjk.h</b></li>
+    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

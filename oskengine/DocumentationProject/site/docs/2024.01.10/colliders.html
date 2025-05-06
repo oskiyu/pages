@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Colisionadores 3D :: OSKengine additional documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">OSKengine additional documentation</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="2024.01.10">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">OSKengine Additional Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gráficos</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="pipelines.html">Materiales</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="rendertarget.html">Render targets</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recursos_gpu.html">Recursos (GPU)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="animacion_3d.html">Animación de modelos 3D</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Físicas</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="colliders.html">Colisionadores 3D</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Jugabilidad</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ecs.html">Arquitectura ECS</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="modelo_multihilo.html">Modelo multihilo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ecs_profiles.html">Perfiles de contenido</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Desarrollo interno</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="codestyle.html">Estilo de código</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OSKengine Additional Documentation</span>
+    <span class="version">2024.01.10</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="index.html">OSKengine Additional Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">2024.01.10</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OSKengine Additional Documentation</a></li>
+    <li>Físicas</li>
+    <li><a href="colliders.html">Colisionadores 3D</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///C:/Users/Oscar/Documents/Antora/Test/docs/./modules/ROOT/pages/colliders.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Colisionadores 3D</h1>
+<div class="sect1">
+<h2 id="_colisionadores"><a class="anchor" href="#_colisionadores"></a>Colisionadores</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_colisionadores_de_alto_nivel"><a class="anchor" href="#_colisionadores_de_alto_nivel"></a>Colisionadores de alto nivel</h3>
+<div class="paragraph">
+<p>Los colisionadores de alto nivel disponibles están restringidos a aquellos que sean particularmente rápidos de calcular. Son colisionadores que:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Son rápidos de comprobar: pueden comprobarse una colisión en O(1).</p>
+</li>
+<li>
+<p>Son rápidos de actualizar: no necesitan rotar, necesitando únicamente actualizar su posición.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Para un funcionamiento correcto, el colisionador de alto nivel usado debe ser lo suficientemente grande como para contener dentro todos los colisionadores de bajo nivel.
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Esfera (<code>SphereCollider</code>)</dt>
+<dd>
+<p>Es el colisionador de alto nivel más sencillo y más rápido de calcular, pero puede no ser el más ajustado dependiendo del caso.</p>
+</dd>
+<dt class="hdlist1">Caja alineada con los ejes (<code>AxisAlignedBoundingBox</code>)</dt>
+<dd>
+<p>Es una caja con 6 caras rectangulares paralelas de dos en dos, que además están alineadas hacia los 6 ejes: <code>+X</code>, <code>-X</code>, <code>+Y</code>, <code>-Y</code>, <code>+Z</code>, <code>-Z</code>.
+=== Algoritmos de detección de colisionadores detallados</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Para la detección de colisiones entre colisionadores de bajo nivel, y para obtener información adicional como MTV o puntos de contacto, se usan varios algoritmos, dependiendo de los tipos de colisionadores.</p>
+</div>
+<div class="paragraph">
+<p>Para poder elegir qué algoritmo usar, el sistema de detección de colisiones dispone de un dispatcher (<code>DetailedCollisionDetectorDispatcher</code>), que usará el algoritmo más indicado para cada pareja de tipos.</p>
+</div>
+<div class="paragraph">
+<p>Los algoritmos o detectores usados dependiendo de los tipos de colisionadores se pueden ver en la siguiente tabla:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sphere</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Axis-Aligned Bounding Box</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>(Otros)</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sphere</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SphereSphere</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SphereAabb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GJK</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Axis-Aligned Bounding Box</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AabbAabb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GJK</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>(Otros)</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GJK</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_colisionadores_de_bajo_nivel"><a class="anchor" href="#_colisionadores_de_bajo_nivel"></a>Colisionadores de bajo nivel</h3>
+<div class="paragraph">
+<p>Los colisionadores de bajo nivel son notablemente más ajustables. Hay una mayor variedad de colisionadores entre los que elegir.</p>
+</div>
+<div class="paragraph">
+<p>Son más caros de usar y de actualizar.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Trata de mantener el número de colisionadores de bajo nivel lo más bajo posible para obtener un mejor rendimiento.
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Esfera (<code>DetailedSphereCollider</code>)</dt>
+<dd>
+<p>Tal y como se vio en el apartado <a href="#_colisionadores_de_alto_nivel">Colisionadores de alto nivel</a>, es un volumen extremadamente rápido.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Al comprobarse contra colisionadores de bajo nivel, la comprobación ya no es O(1), pero sigue siendo una opción rápida.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Volumen convexo (<code>ConvexVolume</code>)</dt>
+<dd>
+<p>Es un volumen convexo con un número arbitrario de caras y de vértices. Es la opción más avanzada y más ajustable, pero también la más cara de actualizar.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+El volumen debe ser convexo. Asegúrese de esto al añadir nuevas caras y vértices, ya que no se realiza ninguna comprobación en tiempo de ejecución.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_algoritmos_de_detección_de_colisionadores_detallados"><a class="anchor" href="#_algoritmos_de_detección_de_colisionadores_detallados"></a>Algoritmos de detección de colisionadores detallados</h3>
+<div class="paragraph">
+<p>Para la detección de colisiones entre colisionadores de bajo nivel, y para obtener información adicional como MTV o puntos de contacto, se usan varios algoritmos, dependiendo de los tipos de colisionadores.</p>
+</div>
+<div class="paragraph">
+<p>Para poder elegir qué algoritmo usar, el sistema de detección de colisiones dispone de un dispatcher (<code>DetailedCollisionDetectorDispatcher</code>), que usará el algoritmo más indicado para cada pareja de tipos.</p>
+</div>
+<div class="paragraph">
+<p>Los algoritmos o detectores usados dependiendo de los tipos de colisionadores se pueden ver en la siguiente tabla:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ConvexVolume</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sphere</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Axis-Aligned Bounding Box</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>(Otros)</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ConvexVolume</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GJK-Clipping</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GJK-EPA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GJK-EPA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GJK-EPA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sphere</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SphereSphere</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GJK-EPA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GJK-EPA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Axis-Aligned Bounding Box</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GJK-EPA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GJK-EPA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>(Otros)</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GJK-EPA</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Se pueden añadir detectores, que tendrán prioridad sobre los detectores cargados por defecto.</p>
+</div>
+<div class="paragraph">
+<p>Los algoritmos disponibles son los siguientes:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">GJK-EPA (<code>GjkEpaDetector</code>)</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Detección</strong>: GJK (Gilbert-Johnson-Keerthi).</p>
+</li>
+<li>
+<p><strong>Detalles</strong>: EPA (Expanding Polytope Algorithm).</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>El algoritmo usado por defecto, cuando no hay ningún detector que lo sobreescriba. Todos los colisionadores de bajo nivel tienen la funcionalidad necesaria para usar este algoritmo (todos heredan indirectamente de <code>IGjkCollider</code>).</p>
+</div>
+<div class="paragraph">
+<p>Tiene la desventaja de generar un único punto de contacto, lo cual puede llevar a resultados no estables al usar volúmenes convexos o colisionadores con caras planas.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">GJK-Clipping (<code>GjkClippingDetector</code>)</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Detección</strong>: GJK (Gilbert-Johnson-Keerthi).</p>
+</li>
+<li>
+<p><strong>Detalles</strong>: Clipping.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Algoritmo que obtiene los detalles de la colisión al hacer clipping sobre los vértices de los colisionadores. Al necesitar estos vértices, es únicamente compatible con volúmenes <code>ConvexVolume</code>.
+Ofrece un área de contacto definido por (potencialmente) varios puntos, lo cual ofrece resultados considerablemente más estables.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Sphere2 (<code>DetailedSphereSphereDetector</code>)</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Detección</strong>: esfera vs esfera.</p>
+</li>
+<li>
+<p><strong>Detalles</strong>: esfera vs esfera.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>La detección de colisiones entre esferas (y la obtención de los detalles de colisión) es extremadamente rápida, por lo que se usa este algoritmo para así obtener un mejor rendimiento.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_referencias"><a class="anchor" href="#_referencias"></a>Referencias</h2>
+<div class="sectionbody">
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="R1"></a>[R1] Óscar Pozo de Cádiz. Desarrollo de un motor de videojuegos 3D en C++. 2024.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

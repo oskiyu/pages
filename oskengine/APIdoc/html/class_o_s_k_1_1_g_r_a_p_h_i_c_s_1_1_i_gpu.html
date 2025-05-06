@@ -1,0 +1,578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: Referencia de la Clase OSK::GRAPHICS::IGpu</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pro-methods">Métodos protegidos</a> &#124;
+<a href="#pro-attribs">Atributos protegidos</a> &#124;
+<a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la Clase OSK::GRAPHICS::IGpu<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_i_gpu_8h_source.html">IGpu.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:af7315d7e7c10327c6d06ad5b7c66e125"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#af7315d7e7c10327c6d06ad5b7c66e125">~IGpu</a> ()=default</td></tr>
+<tr class="separator:af7315d7e7c10327c6d06ad5b7c66e125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd622e137b329e0e32f549903a5741bb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; class <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool.html">ICommandPool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#afd622e137b329e0e32f549903a5741bb">CreateGraphicsCommandPool</a> ()=0</td></tr>
+<tr class="separator:afd622e137b329e0e32f549903a5741bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7533de9a69b9bdfd16c75f22f4f6a527"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool.html">ICommandPool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#a7533de9a69b9bdfd16c75f22f4f6a527">CreateComputeCommandPool</a> ()=0</td></tr>
+<tr class="separator:a7533de9a69b9bdfd16c75f22f4f6a527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23efead76bff64ca602a8d7eb063335a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_sampler.html">IGpuImageSampler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#a23efead76bff64ca602a8d7eb063335a">CreateSampler</a> (const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc.html">GpuImageSamplerDesc</a> &amp;info) const =0</td></tr>
+<tr class="separator:a23efead76bff64ca602a8d7eb063335a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9579108f9adf85e66e313ff5ceb3ccac"><td class="memItemLeft" align="right" valign="top">virtual std::optional&lt; <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool.html">ICommandPool</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#a9579108f9adf85e66e313ff5ceb3ccac">CreateTransferOnlyCommandPool</a> ()=0</td></tr>
+<tr class="separator:a9579108f9adf85e66e313ff5ceb3ccac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b780cbb64fb4ed7bc8e4a295a7e806"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_usage_info.html">GpuMemoryUsageInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#ac8b780cbb64fb4ed7bc8e4a295a7e806">GetMemoryUsageInfo</a> () const =0</td></tr>
+<tr class="separator:ac8b780cbb64fb4ed7bc8e4a295a7e806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f790efbc8fd7f0c1fae464a6fa9f9d5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_alignments.html">GpuMemoryAlignments</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#a5f790efbc8fd7f0c1fae464a6fa9f9d5">GetMemoryAlignments</a> () const</td></tr>
+<tr class="separator:a5f790efbc8fd7f0c1fae464a6fa9f9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab505de7218654c86ee2d63eed1915b71"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#ab505de7218654c86ee2d63eed1915b71">Close</a> ()=0</td></tr>
+<tr class="separator:ab505de7218654c86ee2d63eed1915b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e6eb0f055388a6446158120146a0d66"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#a8e6eb0f055388a6446158120146a0d66">GetName</a> () const</td></tr>
+<tr class="separator:a8e6eb0f055388a6446158120146a0d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8ab85cfe9393d02ece9419181e443ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#aa8ab85cfe9393d02ece9419181e443ec">SupportsRayTracing</a> () const</td></tr>
+<tr class="separator:aa8ab85cfe9393d02ece9419181e443ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc18feef42c257547c6f31dc540d8084"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#acc18feef42c257547c6f31dc540d8084">SupportsBindlessResources</a> () const</td></tr>
+<tr class="separator:acc18feef42c257547c6f31dc540d8084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a126b6cc9e7cf6178f085bbc51fe36e7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#a126b6cc9e7cf6178f085bbc51fe36e7a">SupportsMeshShaders</a> () const</td></tr>
+<tr class="separator:a126b6cc9e7cf6178f085bbc51fe36e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Métodos protegidos</h2></td></tr>
+<tr class="memitem:a3de6e3cf9fa36ae214663c3552686ac0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#a3de6e3cf9fa36ae214663c3552686ac0">_SetName</a> (const std::string &amp;name)</td></tr>
+<tr class="separator:a3de6e3cf9fa36ae214663c3552686ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af65f888f2cb4eed2cfbd6f35c727c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#a8af65f888f2cb4eed2cfbd6f35c727c5">SetMinAlignments</a> (const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_alignments.html">GpuMemoryAlignments</a> &amp;alignments)</td></tr>
+<tr class="separator:a8af65f888f2cb4eed2cfbd6f35c727c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Atributos protegidos</h2></td></tr>
+<tr class="memitem:a2f769d60db49e1ee7b27dc1476d10206"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#a2f769d60db49e1ee7b27dc1476d10206">m_supportsRayTracing</a> = false</td></tr>
+<tr class="separator:a2f769d60db49e1ee7b27dc1476d10206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d260e67d910a75e3867a748c8797eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#a39d260e67d910a75e3867a748c8797eb">m_supportsBindless</a> = false</td></tr>
+<tr class="separator:a39d260e67d910a75e3867a748c8797eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b2bc3da1dfc145676dbc18dd913a4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#a35b2bc3da1dfc145676dbc18dd913a4f">m_supportsMesh</a> = false</td></tr>
+<tr class="separator:a35b2bc3da1dfc145676dbc18dd913a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p >Representa una conexión con la GPU. </p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a id="af7315d7e7c10327c6d06ad5b7c66e125" name="af7315d7e7c10327c6d06ad5b7c66e125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7315d7e7c10327c6d06ad5b7c66e125">&#9670;&nbsp;</a></span>~IGpu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual OSK::GRAPHICS::IGpu::~IGpu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="a3de6e3cf9fa36ae214663c3552686ac0" name="a3de6e3cf9fa36ae214663c3552686ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3de6e3cf9fa36ae214663c3552686ac0">&#9670;&nbsp;</a></span>_SetName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IGpu::_SetName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab505de7218654c86ee2d63eed1915b71" name="ab505de7218654c86ee2d63eed1915b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab505de7218654c86ee2d63eed1915b71">&#9670;&nbsp;</a></span>Close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void OSK::GRAPHICS::IGpu::Close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cierra la conexión con la GPU. </p>
+
+</div>
+</div>
+<a id="a7533de9a69b9bdfd16c75f22f4f6a527" name="a7533de9a69b9bdfd16c75f22f4f6a527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7533de9a69b9bdfd16c75f22f4f6a527">&#9670;&nbsp;</a></span>CreateComputeCommandPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool.html">ICommandPool</a> &gt; OSK::GRAPHICS::IGpu::CreateComputeCommandPool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Crea una pool de comandos, para poder crear listas de comandos de computación. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Command pool para comandos de computación. </dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_pool_creation_exception.html">CommandPoolCreationException</a></td><td>Si ocurre algún error. <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afd622e137b329e0e32f549903a5741bb" name="afd622e137b329e0e32f549903a5741bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd622e137b329e0e32f549903a5741bb">&#9670;&nbsp;</a></span>CreateGraphicsCommandPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; class <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool.html">ICommandPool</a> &gt; OSK::GRAPHICS::IGpu::CreateGraphicsCommandPool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Crea una pool de comandos, para poder crear listas de comandos gráficos y de presentación. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Command pool para comandos gráficos y de presentación. </dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_pool_creation_exception.html">CommandPoolCreationException</a></td><td>Si ocurre algún error. <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a23efead76bff64ca602a8d7eb063335a" name="a23efead76bff64ca602a8d7eb063335a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23efead76bff64ca602a8d7eb063335a">&#9670;&nbsp;</a></span>CreateSampler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_sampler.html">IGpuImageSampler</a> &gt; OSK::GRAPHICS::IGpu::CreateSampler </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc.html">GpuImageSamplerDesc</a> &amp;&#160;</td>
+          <td class="paramname"><em>info</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Crea un sampler con las propiedades indicadas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Propiedades del sampler. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Sampler con las propiedades indicadas. </dd></dl>
+
+</div>
+</div>
+<a id="a9579108f9adf85e66e313ff5ceb3ccac" name="a9579108f9adf85e66e313ff5ceb3ccac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9579108f9adf85e66e313ff5ceb3ccac">&#9670;&nbsp;</a></span>CreateTransferOnlyCommandPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::optional&lt; <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool.html">ICommandPool</a> &gt; &gt; OSK::GRAPHICS::IGpu::CreateTransferOnlyCommandPool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Intenta crear un pool de comandos que soporte únicamente operaciones de transferencia. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Command pool para comandos excusivamente de transferencia. Si no hay, retorna vacío. </dd></dl>
+
+</div>
+</div>
+<a id="a5f790efbc8fd7f0c1fae464a6fa9f9d5" name="a5f790efbc8fd7f0c1fae464a6fa9f9d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f790efbc8fd7f0c1fae464a6fa9f9d5">&#9670;&nbsp;</a></span>GetMemoryAlignments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_alignments.html">GpuMemoryAlignments</a> &amp; IGpu::GetMemoryAlignments </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Devuelve</dt><dd>Información sobre el alineamiento que deben seguir los distintos tipos de recursos. </dd></dl>
+
+</div>
+</div>
+<a id="ac8b780cbb64fb4ed7bc8e4a295a7e806" name="ac8b780cbb64fb4ed7bc8e4a295a7e806"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8b780cbb64fb4ed7bc8e4a295a7e806">&#9670;&nbsp;</a></span>GetMemoryUsageInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_usage_info.html">GpuMemoryUsageInfo</a> OSK::GRAPHICS::IGpu::GetMemoryUsageInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene la información sobre el uso de memoria de esta GPU, incluyendo espacio usado y espacio disponible. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Información sobre el uso de memoria de esta GPU. </dd></dl>
+
+</div>
+</div>
+<a id="a8e6eb0f055388a6446158120146a0d66" name="a8e6eb0f055388a6446158120146a0d66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e6eb0f055388a6446158120146a0d66">&#9670;&nbsp;</a></span>GetName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string_view IGpu::GetName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Devuelve</dt><dd>Nombre de la GPU. </dd></dl>
+
+</div>
+</div>
+<a id="a8af65f888f2cb4eed2cfbd6f35c727c5" name="a8af65f888f2cb4eed2cfbd6f35c727c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8af65f888f2cb4eed2cfbd6f35c727c5">&#9670;&nbsp;</a></span>SetMinAlignments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IGpu::SetMinAlignments </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_alignments.html">GpuMemoryAlignments</a> &amp;&#160;</td>
+          <td class="paramname"><em>alignments</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc18feef42c257547c6f31dc540d8084" name="acc18feef42c257547c6f31dc540d8084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc18feef42c257547c6f31dc540d8084">&#9670;&nbsp;</a></span>SupportsBindlessResources()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool IGpu::SupportsBindlessResources </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Devuelve</dt><dd>True si soporta renderizado bind-less. </dd></dl>
+
+</div>
+</div>
+<a id="a126b6cc9e7cf6178f085bbc51fe36e7a" name="a126b6cc9e7cf6178f085bbc51fe36e7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a126b6cc9e7cf6178f085bbc51fe36e7a">&#9670;&nbsp;</a></span>SupportsMeshShaders()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool IGpu::SupportsMeshShaders </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Devuelve</dt><dd>True si soporta renderizado de meshes. </dd></dl>
+
+</div>
+</div>
+<a id="aa8ab85cfe9393d02ece9419181e443ec" name="aa8ab85cfe9393d02ece9419181e443ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8ab85cfe9393d02ece9419181e443ec">&#9670;&nbsp;</a></span>SupportsRayTracing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool IGpu::SupportsRayTracing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Devuelve</dt><dd>True si soporta ray-tracing. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a id="a39d260e67d910a75e3867a748c8797eb" name="a39d260e67d910a75e3867a748c8797eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39d260e67d910a75e3867a748c8797eb">&#9670;&nbsp;</a></span>m_supportsBindless</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OSK::GRAPHICS::IGpu::m_supportsBindless = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a35b2bc3da1dfc145676dbc18dd913a4f" name="a35b2bc3da1dfc145676dbc18dd913a4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35b2bc3da1dfc145676dbc18dd913a4f">&#9670;&nbsp;</a></span>m_supportsMesh</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OSK::GRAPHICS::IGpu::m_supportsMesh = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f769d60db49e1ee7b27dc1476d10206" name="a2f769d60db49e1ee7b27dc1476d10206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f769d60db49e1ee7b27dc1476d10206">&#9670;&nbsp;</a></span>m_supportsRayTracing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OSK::GRAPHICS::IGpu::m_supportsRayTracing = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_o_s_k.html">OSK</a></li><li class="navelem"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">GRAPHICS</a></li><li class="navelem"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a></li>
+    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+.background {
+    background-color: black;
+    color: white;
+}
+
+.central_image {
+    width: 30%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card_link {
+    width: 20%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.osk_link {
+    width: 5%;
+}
+
+.link {
+    color: aliceblue;
+    font-size: large;
+    margin: 1em;
+    text-align: center;
+}

@@ -1,0 +1,4928 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: VersionHistory</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md__version_history.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">VersionHistory </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p >﻿ </p>
+<h1><a class="anchor" id="autotoc_md30"></a>
+Historial de versiones.</h1>
+<h2><a class="anchor" id="autotoc_md31"></a>
+2022.12.21a</h2>
+<h3><a class="anchor" id="autotoc_md32"></a>
+&lt;em&gt;&lt;strong&gt;Nuevo&lt;/strong&gt;&lt;/em&gt;: Collision</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>Collider</code><ul>
+<li>Representa un volumen que puede interseccionar con otros.</li>
+<li>Compuesto en dos capas:<ul>
+<li>Capa de alto nivel representada por un volumen que cubre toda la geometría.</li>
+<li>Capa de bajo nivel representada por uno o varios volúmenes que cubren partes de la geomtería.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ITopLevelCollider</code><ul>
+<li>Representa un volumen de colisión de alto nivel.</li>
+<li>Permite saber si está colisionando con otro elemento de alto nivel.</li>
+<li>Permite saber si hay un punto dentro del colisionador.</li>
+<li>Permite lanzar un rayo y comprobar su intersección.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AxisAlignedBoundingBox</code><ul>
+<li>Volumen de colisión de nivel alto.</li>
+<li>Representa una caja alineada con los ejes (no se puede rotar).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SphereCollider</code><ul>
+<li>Volumen de colisión de nivel alto.</li>
+<li>Representa una esfera.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IBottomLevelCollider</code><ul>
+<li>Representa un volumen de colisión de bajo nivel.</li>
+<li>Permite establecer el transform del colisionador.</li>
+<li>Permite saber si está colisionando con otro elemento de bajo nivel.</li>
+<li>Permite saber si hay un punto dentro del colisionador.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>CollisionInfo</code><ul>
+<li>Incluye la información de una colisión potencial entre dos objetos:<ul>
+<li>Si hay colisión o no.</li>
+<li>Si los niveles de alto nivel están colisionando.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ConvexVolume</code><ul>
+<li>Elemento de colisión de bajo nivel que representa un volumen convexo arbitrario.</li>
+<li>Almacena una serie de vértices agrupados en caras.</li>
+<li>Comprueba la colisión usando un algoritmo SAT.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>FaceProjection</code><ul>
+<li>Proyección de una cara de un volumen convexo sobre una línea.</li>
+<li>Para detección mediante SAT.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IRayCollider</code> (<em>WIP</em>)<ul>
+<li>Representa un volumen que puede ser interseccionado por un rayo.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>Ray</code><ul>
+<li>Representa un rayo lanzado en el mundo que puede colisionar.</li>
+<li>Contiene:<ul>
+<li>Origen.</li>
+<li>Dirección.</li>
+<li>Longitud máxima.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>RayCastResult</code><ul>
+<li>Incluye la información de una intersección potencial entre un rayo y un objeto:<ul>
+<li>Si ha interseccionado.</li>
+<li>Punto de intersección.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md33"></a>
+Graphics</h3>
+<ul>
+<li><code>MaterialLayout</code><ul>
+<li>Ahora permite obtener todos los slots.</li>
+<li>Ahora permite obtener todos los push constants.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>CopyImageInfo</code><ul>
+<li>Incluye todos los parámetros para la copia de imágenes en la GPU:<ul>
+<li>Tamaño de copia.</li>
+<li>Offset de la imagen fuente.</li>
+<li>Offset de la imagen de destino.</li>
+<li>Nivel mip de la fuente.</li>
+<li>Nivel mip del destino.</li>
+<li>Capa de la imagen fuente.</li>
+<li>Capa de la imagen de destino.</li>
+<li>Número de capas a copiar.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ICommandList</code><ul>
+<li>Ahora usa <code>CopyImageInfo</code> para las operaciones de copia.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GpuImageCreateInfo</code><ul>
+<li>Incluye todos los parámetros para la creación de imágenes en la GPU:<ul>
+<li>Resolución.</li>
+<li>Formato.</li>
+<li>Uso.</li>
+<li>Dimensionalidad.</li>
+<li>Número de capas.</li>
+<li>Número de muestras MSAA.</li>
+<li>Descriptor de sampler.</li>
+<li>Tipo de memoria GPU en la que se alojará.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>IGpuMemoryAllocator</code><ul>
+<li>Ahora usa <code>GpuImageCreateInfo</code> para la creación de imágenes.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md34"></a>
+ECS</h3>
+<ul>
+<li><code>RenderSystem3D</code><ul>
+<li>Ahora usa un skybox.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IsEcsComponent</code><ul>
+<li>Permite saber si una clase cumple los requisitos para ser un componente ECS.</li>
+</ul>
+</li>
+<li><code>Transform3D</code><ul>
+<li>Ahora permite transformar un punto.</li>
+</ul>
+</li>
+</ul>
+<h6>Implementado completamente sistema de sombras suaves.</h6>
+<ul>
+<li><code>HybridRenderSystem</code><ul>
+<li>Mejorado proceso de eliminación de ruido.</li>
+<li>Añadido proceso de reproyección temporal.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md35"></a>
+Assets</h3>
+<ul>
+<li><code>StaticMeshLoader</code>, <code>AnimMeshLoader</code><ul>
+<li>Ahora carga los colores de los vértices.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SpecularMapLoader</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md36"></a>
+STD</h3>
+<ul>
+<li><code>HashMap</code><ul>
+<li>Ahora permite saber si contiene una clave en concreto.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>Span</code><ul>
+<li>Representa una región lineal de memoria manejada por otro contenedor.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md37"></a>
+Types</h3>
+<ul>
+<li><code>Color</code><ul>
+<li>Ahora se pueden sumar (se suman todos los componentes).</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md38"></a>
+Bugfix</h3>
+<ul>
+<li>Ahora <code>IGpuImageView::operator==(...)</code> es const.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md39"></a>
+2022.12.31a</h2>
+<h3><a class="anchor" id="autotoc_md40"></a>
+Assets</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>SpecularMap</code><ul>
+<li>Representa un mapa IBL especular.</li>
+<li>También incluyse su LUT.</li>
+</ul>
+</li>
+<li><code>SpecularMapLoader</code><ul>
+<li>Implementado completamente.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md41"></a>
+Graphics</h3>
+<ul>
+<li><code>Format</code><ul>
+<li><em>Renombrado</em>: <code>RG16</code> -&gt; <code>RG16_SFLOAT</code></li>
+<li><em>Renombrado</em>: <code>RG32</code> -&gt; <code>RG32_SFLOAT</code></li>
+</ul>
+</li>
+<li><code>RendererVulkan</code><ul>
+<li>Añadido soporte para el comando <code>vkCmdBeginDebugUtilsLabelEXT</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md42"></a>
+ECS</h3>
+<ul>
+<li><code>RenderSystem3D</code><ul>
+<li>Ya no usa un skybox.</li>
+<li>Ahora usa un mapa IBL especular.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md43"></a>
+2023.01.09a</h2>
+<h3><a class="anchor" id="autotoc_md44"></a>
+ECS</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>ColliderRenderSystem</code><ul>
+<li>Renderiza, en wireframe, los colisionadores de alto nivel.</li>
+</ul>
+</li>
+<li><code>RenderSystem3D</code><ul>
+<li>Ahora renderiza sobre un render target con formato <code>Format::RGBA16_SFLOAT</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md45"></a>
+Graphics</h3>
+<ul>
+<li><code>ICommandList</code><ul>
+<li>Ahora permite añadir marcas de depuración en la lista de comandos:<ul>
+<li><em><b>Nuevo</b></em>: <code>AddDebugMarker(...)</code></li>
+<li><em><b>Nuevo</b></em>: <code>StartDebugSection(...)</code></li>
+<li><em><b>Nuevo</b></em>: <code>EndDebugSection()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>VertexCollisionDebug3D</code><ul>
+<li>Contiene únicamente una posición 3D.</li>
+</ul>
+</li>
+<li><code>IPostProcessPass</code>, <code>BloomPass</code><ul>
+<li>Ahora usa imágenes con formato <code>Format::RGBA16_SFLOAT</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md46"></a>
+Collision</h3>
+<ul>
+<li><code>Collider</code><ul>
+<li>Ahora es un componente ECS.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md47"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: mejorado const-correctness de <code>AxisAlignedBoundingBox</code>.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md48"></a>
+2023.01.15a</h2>
+<h3><a class="anchor" id="autotoc_md49"></a>
+Collision</h3>
+<ul>
+<li><code>AxisAlignedBoundingBox</code>, <code>SphereCollider</code><ul>
+<li>Ahora permiten saber si un punto se encuentra dentro del collider.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md50"></a>
+Persistence</h3>
+<ul>
+<li><em><b>IFieldWrapper</b></em><ul>
+<li>Interfaz para un wrapper de un elemento.</li>
+<li>Permite obtener el tipo de elemento (<code>FieldType</code>) y el tipo de contenedor (<code>ContainerType</code>).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SingleFieldWrapper&lt;&gt;</code><ul>
+<li>Wrapper para un único elemento (<code>ContainerType::SINGLE</code>).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ListFieldWrapper&lt;&gt;</code><ul>
+<li>Wrapper para una lista de elementos (<code>ContainerType::LIST</code>).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>Data</code><ul>
+<li>Contiene <code>IFieldWrapper</code></li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>FieldType</code><ul>
+<li>Indica el tipo de dato almacenado en un nodo.</li>
+<li>Incluye:<ul>
+<li><code>STRING</code></li>
+<li><code>INT</code></li>
+<li><code>FLOAT</code></li>
+<li><code>ECS_ID</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ContainerType</code><ul>
+<li>Indica el tipo de contenedor almacenado en un nodo.</li>
+<li>Incluye:<ul>
+<li><code>SINGLE</code> (un único elemento).</li>
+<li><code>LIST</code> (cero, uno o varios elementos).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ISerializable</code><ul>
+<li>Interfaz para elementos que pueden serializarse a si mismos.</li>
+<li>Permite generar un nodo <code>Data</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ISerializer</code><ul>
+<li>Guarda un árbol de datos (almacenado en un nodo <code>Data</code>) en un archivo.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IDeserializer</code><ul>
+<li>Recrea un árbol de datos almacenado en un archivo.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md51"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>SphereCollider::SetRadius(...)</code> ahora asigna correctamente el radio (en vez de establecerlo en 1.0).</li>
+<li><b>Bugfix</b>: <code>SphereCollider::IsColliding(...)</code> ahora funciona correctamente cuando el otro colisionador es una caja (<code>AxisAlignedBoundingBox</code>).</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md52"></a>
+2023.01.25a</h2>
+<h3><a class="anchor" id="autotoc_md53"></a>
+Graphics</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>CommandQueueSupport</code><ul>
+<li>Indica los tipos de comandos que puede soportar una cola de comandos.</li>
+</ul>
+</li>
+<li><em><b>Eliminado</b></em>: <code>QueueFamilyIndices</code> (dividido en <code>QueueFamily</code> y <code>QueueFamiles</code>)</li>
+<li><em><b>Nuevo</b></em>: <code>QueueFamily</code><ul>
+<li>Representa una familia de colas.</li>
+<li>Incluye:<ul>
+<li>Comandos soportados (<code>CommandQueueSupport</code>).</li>
+<li>Índice de la familia.</li>
+<li>Número de colas.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>QueueFamiles</code><ul>
+<li>Almacena todas las familias de una GPU.</li>
+<li>Permite obtener las familias que soportan un conjunto de tipos de comandos en concreto.</li>
+</ul>
+</li>
+<li><code>CommandQueueVulkan</code><ul>
+<li>Ahora permite obtener el índice de la familia a la que pertenece.</li>
+</ul>
+</li>
+<li><code>GpuVk</code><ul>
+<li>Ahora da prioridad a colas con soporte completo, pero permite tener varias colas distintas para las tareas distintas.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md54"></a>
+Persistence</h3>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>Data</code></li>
+<li><em><b>Nuevo</b></em>: <code>DataNode</code><ul>
+<li>Hereda de <code>IDataElements</code>.</li>
+<li>Nodo de un árbol de persistencia.</li>
+<li>Permite añadir y eliminar <code>IDataElements</code>s.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IDataElement</code><ul>
+<li>Almacena un dato de cualquier tipo.</li>
+</ul>
+</li>
+<li><em><b>Eliminado</b></em>: <code>FieldType</code></li>
+<li><em><b>Eliminado</b></em>: <code>ContainerType</code></li>
+<li><em><b>Nuevo</b></em>: <code>DataType</code><ul>
+<li>Incluye:<ul>
+<li><code>UNKNOWN</code></li>
+<li><code>DATA_NODE</code></li>
+<li><code>STRING</code></li>
+<li><code>INT</code></li>
+<li><code>FLOAT</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>IFieldWrapper</code><ul>
+<li>Ahora usa <code>DataType</code> en vez de <code>FieldType</code>.</li>
+</ul>
+</li>
+<li><em><b>Eliminado</b></em>: <code>SingleFieldWrapper</code></li>
+<li><em><b>Eliminado</b></em>: <code>ListFieldWrapper</code></li>
+<li><em><b>Nuevo</b></em>: <code>FieldWrapper</code><ul>
+<li>Usado para almacenar una lista de atributos de un mismo tipo.</li>
+</ul>
+</li>
+<li><em><b>Eliminado</b></em>: <code>IDeserializer</code></li>
+<li><em><b>Nuevo</b></em>: <code>ISerializable</code><ul>
+<li>Interfaz que permite crear y procesar los datos de un árbol de persistencia.</li>
+<li>Se (de)serializa a así misma.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ISerializer</code><ul>
+<li>Interfaz que permite crear y procesar los datos de un árbol de persistencia.</li>
+<li>(De)serializa otras clases.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md55"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>Assert</code> ya no tiene undefined behaviour al mostrar un diálogog de error.</li>
+<li><b>Bugfix</b>: <code>BloomPass</code> ahora crea las imágenes con los usos correctos.</li>
+<li><b>Bugfix</b>: <code>BloomPass</code> ahora establece correctamente los GPU barriers.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md56"></a>
+2023.01.27a</h2>
+<h3><a class="anchor" id="autotoc_md57"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: ahora <code>DynamicArray</code> mueve correctamente todos los datos al eliminar un elemento que no está al final.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md58"></a>
+2023.01.28a</h2>
+<h3><a class="anchor" id="autotoc_md59"></a>
+Graphics</h3>
+<ul>
+<li><code>MaterialSlotVulkan</code><ul>
+<li>Ahora puede establecerse un nombre de debug.</li>
+</ul>
+</li>
+</ul>
+<p >Añadidos nombres de debug a las imágenes GPU de:</p><ul>
+<li><code>FontInstance</code></li>
+<li><code>Model3D</code></li>
+<li><code>IrradianceMap</code></li>
+<li>Renderpass principal.</li>
+<li><code>ShadowMap</code></li>
+<li><code>Texture</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md60"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>AssetManager</code> ahora elimina correctamente los loaders.</li>
+<li><b>Bugfix</b>: <code>HashMap</code> ahora elimina correctamente los elementos almacenados.</li>
+<li><b>Bugfix</b>: <code>IRenderer</code>, <code>RendererVulkan</code> ahora esperan correctamente a que se completen los trabajos de la GPU antes de destruirse.</li>
+<li><b>Bugfix</b>: <code>Material::GetGraphicsPipeline()</code> ahora es const-correct.</li>
+<li><b>Bugfix</b>: <code>MaterialSystem::LoadMaterialV1()</code> ahora no tiene memory leaks.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md61"></a>
+2023.02.02a</h2>
+<h3><a class="anchor" id="autotoc_md62"></a>
+ECS</h3>
+<h6>Añadido soporte para eventos.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>EventContainer&lt;&gt;</code><ul>
+<li>Contiene una lista de eventos particular.</li>
+<li>Permite:<ul>
+<li>Registrar eventos.</li>
+<li>Publicar eventos.</li>
+<li>Obtener listas de eventos.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IEventContainer</code><ul>
+<li>Interfaz para <code>EventContainer&lt;&gt;</code></li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>EventManager</code><ul>
+<li>Contiene un <code>EventContainer</code> por cada tipo de evento registrado.</li>
+<li>Permite:<ul>
+<li>Registrar eventos.</li>
+<li>Publicar eventos.</li>
+<li>Obtener listas de eventos.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>EntityComponentSystem</code><ul>
+<li>Ahora limpia las listas de eventos al final de cada frame.</li>
+<li>Ahora incluye un <code>EventManager</code>.</li>
+<li>Ahora permite:<ul>
+<li>Registrar eventos.</li>
+<li>Publicar eventos.</li>
+<li>Obtener listas de eventos.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md63"></a>
+Graphics</h3>
+<ul>
+<li><code>GpuBufferUsage</code><ul>
+<li><em><b>Nuevo</b></em>: <code>UPLOAD_ONLY</code><ul>
+<li>Representa un staging buffer.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>IGpuMemoryAllocator</code><ul>
+<li>Ahora permite liberar toda la memoria usada para staging buffers (y que ahor está en desuso).</li>
+</ul>
+</li>
+<li><code>IGpuMemoryBlock</code><ul>
+<li>Ahora permite saber si hay algún subbloque activo que referencie a su memoria.</li>
+</ul>
+</li>
+<li><code>RendererVulkan</code><ul>
+<li>Ahora libera la memoria staging en desuso al finalizar cada frame.</li>
+</ul>
+</li>
+<li><code>GpuMemoryAllocatorVulkan</code><ul>
+<li><code>CreateStagingBuffer()</code> ahora establece el uso <code>GpuBufferUsage::UPLOAD_ONLY</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md64"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: corregido un <code>GpuImageUsage</code> mal configurado en el pase <code>BloomPass</code>.</li>
+<li><b>Bugfix</b>: las clases hijas de <code>IGpuStorageBuffer</code> ahora llaman correctamente al destructor.</li>
+<li><b>Bugfix</b>: las clases hijas de <code>IGpuUniformBuffer</code> ahora llaman correctamente al destructor.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md65"></a>
+2023.02.02b</h2>
+<h3><a class="anchor" id="autotoc_md66"></a>
+ECS</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>IConsumerSystem</code><ul>
+<li>Representa un sistema cuya funcionalidad consume eventos.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IIteratorSystem</code><ul>
+<li>Representa un sistema cuya funcionalidad itera sobre entidades (comportamiento previamente por defecto).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IProducerSystem</code><ul>
+<li>Representa un sistema iterador que genera eventos.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IPureSystem</code><ul>
+<li>Representa un sistema iterador que ni genera ni consume eventos.</li>
+</ul>
+</li>
+<li><code>SystemManager</code><ul>
+<li>Almacena los sistemas en tres grupos:<ul>
+<li>Sistemas productores.</li>
+<li>Sistemas consumidores.</li>
+<li>Sistemas puros.</li>
+</ul>
+</li>
+<li>Ejecuta los sistemas en el siguiente orden:<ul>
+<li>Sistemas productores.</li>
+<li>Sistemas consumidores.</li>
+<li>Sistemas puros.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>IRenderSystem</code> ahora hereda de <code>IPureSystem</code>.</li>
+<li><code>TerrainRenderSystem</code> ahora hereda de <code>IPureSystem</code>.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md67"></a>
+2023.02.03a</h2>
+<h3><a class="anchor" id="autotoc_md68"></a>
+Collision</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>CollisionEvent</code><ul>
+<li>Representa una colisión entre dos entidades.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>CollisionSystem</code><ul>
+<li>Detecta colisiones y genera eventos.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>PhysicsResolver</code> (<em>WIP</em>)</li>
+<li><em><b>Nuevo</b></em>: <code>RayCastResult</code><ul>
+<li>Almacena un resultado de un ray-cast.</li>
+<li>Incluye el punto de contacto.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md69"></a>
+ECS</h3>
+<ul>
+<li><code>EntityComponentSystem</code><ul>
+<li>Permite vaciar las listas de eventos.</li>
+<li>Permite saber si una entidad está viva (existe).</li>
+</ul>
+</li>
+<li><code>GameObjectManager</code><ul>
+<li>Ahora permite saber si una entidad está viva (existe).</li>
+</ul>
+</li>
+<li><code>EventContainer</code><ul>
+<li>Ahora hereda de <code>IEventContainer</code>.</li>
+</ul>
+</li>
+<li><code>ColliderRenderSystem</code><ul>
+<li>Implementada funcionalidad inicial (para renderizado de volúmenes de nivel alto).</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md70"></a>
+Types</h3>
+<ul>
+<li><code>Color</code><ul>
+<li><em><b>Nuevo</b></em>: <code>GREEN()</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md71"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>AxisAlignedBoundingBox::GetMin()</code> y <code>AxisAlignedBoundingBox::GetMax()</code> ahora devuelven el valor correcto.</li>
+<li><b>Bugfix</b>: <code>ITopLevelCollider::AabbSphereCollision</code> ahora funciona correctamente.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md72"></a>
+2023.02.04a</h2>
+<h3><a class="anchor" id="autotoc_md73"></a>
+Graphics</h3>
+<h6>Añadido soporte para wideframe.</h6>
+<ul>
+<li><code>PolygonMode</code><ul>
+<li><em>Renombrado</em>: <code>FILL</code> -&gt; <code>TRIANGLE_FILL</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>TRIANGLE_WIDEFRAME</code>.</li>
+</ul>
+</li>
+<li><code>GraphicsPipelineVulkan</code>, <code>GraphicsPipelineDx12</code><ul>
+<li>Ahora soporta el modo de triángulo <code>TRIANGLE_WIDEFRAME</code>.</li>
+</ul>
+</li>
+<li><code>MaterialSystem</code><ul>
+<li>Ahora soporta el modo de triángulo <code>TRIANGLE_WIDEFRAME</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md74"></a>
+ECS</h3>
+<ul>
+<li><code>ColliderRenderSystem</code><ul>
+<li>Ahora renderiza los colliders de bajo nivel (siempre que se hayan registrado previamente).</li>
+<li>Ahora usa colores ligeramente más suaves.</li>
+</ul>
+</li>
+<li><code>IBottomLevelCollider</code><ul>
+<li>Ya no permite establecer un transform de offset.</li>
+</ul>
+</li>
+<li><code>ConvexVolume</code><ul>
+<li>Ahora permite saber si contiene un punto en concreto.</li>
+<li>Ahora permite obtener los vértices en espacio local.</li>
+<li>Ahora permite obtener los índices de las caras.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md75"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>CollisionSystem</code> ahora genera eventos sólamente si colisionan los volúmenes de nivel bajo.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md76"></a>
+2023.02.05a</h2>
+<h3><a class="anchor" id="autotoc_md77"></a>
+Collision</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>DetailedCollisionInfo</code><ul>
+<li>Incluye la información detallada de una colisión.</li>
+<li>Incluye el MTV.</li>
+</ul>
+</li>
+<li><code>IBottomLevelCollider</code>, <code>ConvexVolume</code><ul>
+<li>Ahora permiten obtener información detallada de la colisión (<code>DetailedCollisionInfo</code>).</li>
+<li>Ahora calculan el MTV.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md78"></a>
+Physics</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>PhysicsComponent</code><ul>
+<li>Permite simular las físicas de un objeto (cuerpo rígido).</li>
+<li>Incluye velocidad, aceleración y peso.</li>
+</ul>
+</li>
+<li><code>PhysicsResolver</code><ul>
+<li>Ahora se incluye por defecto en el motor.</li>
+<li>Ahora resuelve las colisiones separando las entidades (aplicando el MTV).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>PhysicsSystem</code><ul>
+<li>Simula el movimiento de un objeto de acuerdo a su velocidad y aceleración.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md79"></a>
+2023.02.05b</h2>
+<h3><a class="anchor" id="autotoc_md80"></a>
+Assets</h3>
+<ul>
+<li><code>AnimMeshLoader</code><ul>
+<li>Eliminados logs de debug.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md81"></a>
+ECS</h3>
+<ul>
+<li><code>ColliderRenderSystem</code><ul>
+<li>Ahora usa imágenes de formato <code>RGBA8_SRGB</code> en vez de <code>RGBA32_SFLOAT</code>.</li>
+<li>Ahora registra automáticamente todos los objetos compatibles.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md82"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>BloomPass</code> ahora no genera errores de validación.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md83"></a>
+2023.02.06a</h2>
+<h3><a class="anchor" id="autotoc_md84"></a>
+ECS</h3>
+<ul>
+<li><code>ISystem</code><ul>
+<li>Ahora se puede activar y/o desactivar su ejecución.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md85"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>ModelLoader3D</code> ahora respeta const-correctness del modelo cargado.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md86"></a>
+2023.02.07a</h2>
+<h3><a class="anchor" id="autotoc_md87"></a>
+Rendering</h3>
+<ul>
+<li><code>GBuffer</code><ul>
+<li>Ahora usa imágenes de 16 bits por canal, en vez de 32 bits por canal.</li>
+</ul>
+</li>
+<li><code>Material</code><ul>
+<li>Ahora permite recargar los shaders.</li>
+</ul>
+</li>
+<li><code>MaterialSystem</code><ul>
+<li>Ahora permite obtener un material previamente cargado a partir de su nombre.</li>
+<li>Ahora permite recargar los materiales.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md88"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>StaticMeshLoader</code> ahora carga correctamente los vectores normales.</li>
+<li><b>Bugfix</b>: <code>AnimMeshLoader</code> ahora carga correctamente los vectores normales.</li>
+<li><b>Bugfix</b>: <code>IMeshLoader</code> ahora no suaviza incorrectamente los vectores normales.</li>
+<li><b>Bugfix</b>: <code>PbrDeferredSystem</code> ahora acepta mapas de IBL especular.</li>
+<li><b>Bugfix</b>: <code>PbrDeferredSystem</code> ahora funciona correctamente.</li>
+<li><b>Bugfix</b>: <code>HybridRenderSystem</code> ahora funciona correctamente.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md89"></a>
+2023.02.18a</h2>
+<h3><a class="anchor" id="autotoc_md90"></a>
+Assets</h3>
+<ul>
+<li><code>IMeshLoader</code><ul>
+<li>Ahora define la lógica para cargar todos los vértices y sus atributos.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md91"></a>
+Collision</h3>
+<h6>Detección de puntos de contacto</h6>
+<ul>
+<li><code>ConvexVolume</code><ul>
+<li>Ahora detecta los puntos de contacto de una colisión.</li>
+<li>Ahora permite generar un OBB.</li>
+</ul>
+</li>
+<li><code>DetailedCollisionInfo</code><ul>
+<li>Ahor permite obtener los puntos de contacto.</li>
+<li>Ahor permite obtener un punto de contacto medio.</li>
+</ul>
+</li>
+<li><code>ColliderRenderer</code><ul>
+<li>Ahora renderiza los puntos de contacto.</li>
+<li>Ahora renderiza el punto de contacto medio.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md92"></a>
+Rendering</h3>
+<h6>Soporte para el renderizado de puntos</h6>
+<ul>
+<li><code>PolygonMode</code><ul>
+<li><em><b>Nuevo</b></em>: <code>POINT</code>.</li>
+</ul>
+</li>
+<li><code>IGraphisPipeline...</code>, <code>MaterialSystem</code><ul>
+<li>Añadido soporte para <code>PolygonMode::POINT</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md93"></a>
+Types</h3>
+<ul>
+<li><code>Vector3</code><ul>
+<li>Permite compararse con otro <code>Vector3</code>, usando un valor <em>epsilon</em>.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md94"></a>
+2023.02.24a</h2>
+<h3><a class="anchor" id="autotoc_md95"></a>
+Physics</h3>
+<ul>
+<li><code>PhysicsComponent</code><ul>
+<li><em><b>Renombrado</b></em>: <em>weight</em> -&gt; <em>mass</em>.</li>
+<li>Ahora permite aplicar fuerzas.</li>
+<li>Ahora permite aplicar impulsos.</li>
+<li>Ahora permite obtener el momento lineal.</li>
+</ul>
+</li>
+<li><code>PhysicsResolver</code><ul>
+<li>Ahora aplica impulsos a los objetos de una colisión.</li>
+</ul>
+</li>
+<li><code>PhysicsSystem</code><ul>
+<li>Ahora simula la resistencia del aire.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md96"></a>
+Bugfixes</h3>
+<ul>
+<li><code>PhysicsResolver</code> ya no afecta a objetos que no contienen un <code>PhysicsComponent</code>.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md97"></a>
+2023.02.24b</h2>
+<h3><a class="anchor" id="autotoc_md98"></a>
+Physics</h3>
+<ul>
+<li><code>PhysicsComponent</code><ul>
+<li>Ahora almacena la velocidad angular.</li>
+<li>Ahora almacena el centro de gravedad.</li>
+<li>Separada la lógica del impulso en dos:<ul>
+<li><code>ApplyLinealImpulse()</code></li>
+<li><code>ApplyAngularImpulse()</code></li>
+</ul>
+</li>
+<li>Permite obtener el torque de un punto del objeto.</li>
+</ul>
+</li>
+<li><code>PhysicsResolver</code><ul>
+<li>Ahora aplica impulsos angulares a los objetos de una colisión.</li>
+</ul>
+</li>
+<li><code>PhysicsSystem</code><ul>
+<li>Ahora tiene en cuenta la velocidad angular de los objetos.</li>
+<li>Ahora simula la resistencia del aire en la rotación.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md99"></a>
+Types</h3>
+<ul>
+<li><code>Quaternion</code><ul>
+<li>Ya no se normaliza después de aplicarse una rotación.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md100"></a>
+2023.03.14a</h2>
+<h3><a class="anchor" id="autotoc_md101"></a>
+Rendering</h3>
+<h6>Refactor de las clases de Vulkan</h6>
+<p >Se han renombrado las clases, enumeraciones y demás de renderizado del backend Vulkan: <em>[...]Vulkan</em> -&gt; <em>[...]Vk</em>.</p>
+<h6>Reorganización del asignador de memoria</h6>
+<p >Ahora la lógica de asignación de bloques de memoria está implementada en <code>IGpuMemoryAllocator</code>, en vez de en las clases hijas.</p>
+<h2><a class="anchor" id="autotoc_md102"></a>
+2023.03.16a</h2>
+<h3><a class="anchor" id="autotoc_md103"></a>
+STD</h3>
+<ul>
+<li>HashMap:<ul>
+<li>Ahora es un wrapper sobre <code>std::unordered_map</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md104"></a>
+Rendering</h3>
+<ul>
+<li>Vértices:<ul>
+<li>Los vértices <code>Vertex3D</code> y <code>VertexAnim3D</code> ahora tienen un campo <code>tangent</code>, en preparación para normal mapping.</li>
+</ul>
+</li>
+<li><code>GpuImage</code>:<ul>
+<li>Ahora permite obtener resoluciones directamente en 1D, 2D y 3D (antes sólo ofrecía tamaño 3D).</li>
+<li>Ya no permite escribir datos directamente sobre el buffer (<code>SetData()</code> eliminado).</li>
+</ul>
+</li>
+<li>Bloom Post-Processing:<ul>
+<li>Ahora usa la cadena de mip-levels de una sola imagen, en vez de dos imágenes en ping-pong.</li>
+<li>Aumentado el número máximo de pases de 4 a 8 pases.</li>
+<li>Ya no realiza una copia final.</li>
+<li>Corregidos varios bugs.</li>
+</ul>
+</li>
+</ul>
+<h6>Rework del sistema de vistas de imágenes</h6>
+<p >Ahora los procesos que cosumen una imagen lo hacen a través de un <code>IGpuImageView</code>, en vez de a partir de una imagen. Esto ofrece un mayor control sobre el acceso a la imagen, ya que antes se elegía siempre un mismo view por defecto.</p>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>GpuImageViewConfig</code>:<ul>
+<li>Estructura que almacena las características de un image view.</li>
+<li>Contiene constructores de ayuda.</li>
+</ul>
+</li>
+<li><code>IGpuImageView</code>:<ul>
+<li>Ahora se crea a partir de <code>GpuImageViewConfig</code>.</li>
+</ul>
+</li>
+<li><code>IMaterialSlot</code>:<ul>
+<li>Ahora aceptan <code>IGpuImageView</code> en vez de <code>GpuImage</code> a la hora de establecer imágenes sampled y de storage. Esto permite un mayor control sobre el acceso a la imagen.</li>
+<li>Interfaz para establecer imágenes samplde y de storage simplificada.</li>
+</ul>
+</li>
+<li><code>IPostProcessPass</code>:<ul>
+<li>Ahora permite indicar el <code>GpuImageViewConfig</code> que se usará para establecer el input a partir de un rendertarget de cualquier tipo.</li>
+<li>Ahora acepta <code>IGpuImageView</code> en vez de <code>GpuImage</code> a la hora de establecer imágenes de entrada.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md105"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <em>Bloom</em> ya no tiene leakeos de luminosidad en los bordes.</li>
+<li><b>Bugfix</b>: <em>Bloom</em> ahora adiciona correctamente todos los niveles de downscale/upscale.</li>
+<li><b>Bugfix</b>: <code>HashMap</code> ya no tiene UB.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md106"></a>
+Otros</h3>
+<ul>
+<li>Añadido el macro <code>OSK_ASSUME(X)</code></li>
+<li>Corregidos algunos errores menores (class/struct).</li>
+<li>Renombrados algunos archivos que faltaban (...Vulkan -&gt; ...Vk).</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md107"></a>
+2023.03.18a</h2>
+<h3><a class="anchor" id="autotoc_md108"></a>
+Types</h3>
+<ul>
+<li>Quaternion:<ul>
+<li>Ahora permite rotar un vector de acuerdo a la orientación del cuaternión.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md109"></a>
+Rendering</h3>
+<ul>
+<li>Bloom Post-Processing:<ul>
+<li>Ligera optimización.</li>
+<li>Ahora desescala y escala de una manera ligeramente distinta.</li>
+</ul>
+</li>
+</ul>
+<h6>Estadísticas de memoria</h6>
+<p >Ahora se puede obtener estadísticas sobre la cantidad de memoria usada y disponible en la GPU.</p>
+<ul>
+<li><em><b>Nuevo:</b></em> <code>GpuHeapMemoryUsageInfo</code>:<ul>
+<li>Muestra la capacidad máxima y el espacio usado de un memory heap.</li>
+</ul>
+</li>
+<li><em><b>Nuevo:</b></em> <code>GpuMemoryUsageInfo</code>:<ul>
+<li>Muestra la capacidad máxima y el espacio usado de toda la memoria de la GPU, dividida por tipo de memoria.</li>
+<li>Contiene una lista con un <code>GpuHeapMemoryUsageInfo</code> por cada memory heap disponible.</li>
+</ul>
+</li>
+<li><code>IGpu</code>, <code>IGpuMemoryAllocator</code>:<ul>
+<li>Ahora permite obtener estadísticas sobre la cantidad de memoria usada y disponible.</li>
+</ul>
+</li>
+</ul>
+<h6>Formatos exclusivos de precisión</h6>
+<p >Ahora se puede elegir distintos formatos de profundidad. Además, se pueden usar formatos únicamente de profundidad, sin la parte stencil.</p>
+<ul>
+<li><code>GpuImageUsage</code>:<ul>
+<li><em><b>Eliminado:</b></em> <code>GpuImageUsage::DEPTH_STENCIL</code>.</li>
+<li><em><b>Nuevo:</b></em><ul>
+<li><code>GpuImageUsage::DEPTH</code></li>
+<li><code>GpuImageUsage::STENCIL</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Material</code>:<ul>
+<li>Ya no presupone un formato de profundidad específico a la hora de generar pipelines, permitiendo elegir distintos formatos de profundidad.</li>
+</ul>
+</li>
+<li><code>RenderTarget</code>:<ul>
+<li>Ahora puede usar una imagen de profundidad con formato únicamente de profundidad, sin la parte stencil.</li>
+</ul>
+</li>
+<li><code>ViewUsage</code>:<ul>
+<li><em><b>Nuevo:</b></em> <code>ViewUsage::DEPTH_ONLY_TARGET</code>.</li>
+</ul>
+</li>
+<li><code>ICommandList</code>:<ul>
+<li>Ahora permite usar imágenes exclusivas de profundidad para renderizado 3D.</li>
+<li><code>BeginGraphicsRenderpass()</code> y <code>EndGraphicsRenderpass()</code> ahora permiten desactivar la sincronización automática de imágenes (por defecto, está activada).</li>
+</ul>
+</li>
+<li><code>GBuffer</code>:<ul>
+<li>Ahora usa una imagen de profundidad con formato únicamente de profundidad, sin la parte stencil.</li>
+</ul>
+</li>
+<li>Collider Render System:<ul>
+<li>Ahora usa un formato de profundidad exclusiva de half-precission.</li>
+</ul>
+</li>
+<li>Skybox Render System:<ul>
+<li>Ahora usa un formato de profundidad exclusiva de half-precission.</li>
+</ul>
+</li>
+<li><code>ShadowMap</code>:<ul>
+<li>Ligeramente optimizado (~17% aprox.).</li>
+<li>Reducido considerablemente su tamaño en memoria de la GPU.</li>
+<li>Ahora usa un formato de half-precission.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md110"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>GpuImage</code> ahora funciona correctamente al usar formatos exclusivos de profundidad: ya no intentará establecer flags de <em>stencil</em>.</li>
+<li><b>Bugfix</b>: <code>IBottomLevelAccelerationStructure</code> y <code>BottomLevelAccelerationStructureVk</code> ya no tienen memory leaks al eliminarse.</li>
+<li><b>Bugfix</b>: <code>ITopLevelAccelerationStructure</code> y <code>TopLevelAccelerationStructureVk</code> ya no tienen memory leaks al eliminarse.</li>
+<li><b>Bugfix</b>: La cámara 3D ahora aplica correctamente rotación cuando cambia la orientación de su transform padre.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md111"></a>
+2023.04.06a</h2>
+<h3><a class="anchor" id="autotoc_md112"></a>
+Rendering</h3>
+<p >Normal mapping y TAA.</p>
+<ul>
+<li>Model y mesh loaders:<ul>
+<li>Ahora cargan los vectores tangenciales de los vértices.</li>
+<li>Ahora cargan las texturas de vectores normales.<ul>
+<li>En caso de no tener, usarán una textura azul por defecto.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo:</b></em> Temporal Anti-Aliasing<ul>
+<li>Implementado en <code>TaaProvider</code>.</li>
+<li>Incluye dos pases:<ul>
+<li>Pase de acumulación temporal.</li>
+<li>Pase de afilado de imagen.</li>
+</ul>
+</li>
+<li>Implementa una estrategia de descartado agresiva junto a un patrón de <em>jitter</em> de convergencia rápida para evitar <em>motion blur</em>.</li>
+<li>Permite obtener un índice para modificar el <em>jitter</em> para el renderizado de la escena original.<ul>
+<li>Por defecto devuelve un índice entre 1 y 4 (ambos incluidos), ya que la implementación en <code>RenderSystem3D</code> y <code>PbrDeferredRenderSystem</code> usa un patrón de hélice para el <em>jitter</em>.</li>
+<li>Devuelve 0 si está desactivado.</li>
+</ul>
+</li>
+<li>No realiza sincornización de las imágenes de entrada y salida.</li>
+</ul>
+</li>
+<li><code>RenderSystem3D</code>:<ul>
+<li>Ahora genera una imagen con los vectores de movimiento.</li>
+<li>Ahora usa normal mapping.</li>
+<li>Ahora usa TAA.</li>
+<li>Reorganización general.</li>
+</ul>
+</li>
+<li><code>PbrDeferredRenderSystem</code>:<ul>
+<li>Ahora usa normal mapping.</li>
+<li>Ahora usa TAA.</li>
+<li>Ahora usa shaders de computación para el proceso de resolve.</li>
+</ul>
+</li>
+<li><code>Bloom</code>:<ul>
+<li>Ajustado su intensidad para obtener una imagen con colores más nítidos preservando una intensidad de bloom adecuada en las partes más brillantes:<ul>
+<li>En el úlitmo paso aumenta la intensidad de la imagen borrosa de manrea exponencial, incrementando así más intensamente las partes más brillantes.</li>
+<li>Al realizar la adición final, se usa un factor más pequeño para que las partes menos brillantes no queden con un color menos intenso.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md113"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: Los modelos 3D ya no se cargan con el doble de índices (la mitad de los cuales son 0).</li>
+<li><b>Bugfix</b>: Ahora se puede usar la imagen de profundidad de <code>GBuffer</code> como sampled.</li>
+<li><b>Bugfix</b>: Copiar de un buffer a una imagen ya no necesita que la imagen haya sido creada con <code>GpuImageUsage::TRANSFER_SOURCE</code> si no usa mip-maps.</li>
+<li><b>Bugfix</b>: <code>PbrDeferredRenderSystem</code> ahora genera correctamente las imágenes de movimiento.</li>
+<li><b>Bugfix</b>: <code>ShadowMap</code> ahora genera correctamente las sombras.</li>
+<li><b>Bugfix</b>: <code>ShadowMap</code> ahora crea los búfers de matrices con el tamaño correcto.</li>
+<li><b>Bugfix</b>: Renderizar una escena con <code>ShadowMap</code> ya no disminuye la cantidad de luz de la escena.</li>
+<li><b>Bugfix</b>: Ahora no se generan puntos excesivamente brillantes en el renderizado PBR.</li>
+</ul>
+<h6>Bugs conocidos:</h6>
+<ul>
+<li><b>Bug</b>: <code>ShadowMap</code> genera sombras incoherentes en las vallas.</li>
+<li><b>Bug</b>: <code>ShadowMap</code> genera sombras incoherentes en el renderizador deferred.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md114"></a>
+2023.05.03a</h2>
+<h3><a class="anchor" id="autotoc_md115"></a>
+UI</h3>
+<p >Recomenzado el desarrollo del sistema de interfaz de usuario.</p>
+<ul>
+<li><em><b>Nuevo</b></em> <code>UI::IElement</code><ul>
+<li>Clase abstracta, base de la jerarquía de elementos UI.</li>
+<li>Declara funcionalidad de renderizado y de actualización a la entrada del ratón.</li>
+<li>Pueden establecerse las siguientes características de cada elemento:<ul>
+<li>Posición (tanto relativa al padre como global).</li>
+<li>Tamaño.</li>
+<li>Márgenes (no entran dentro del cómputo del tamaño).</li>
+<li>Padding (márgenes internos).</li>
+<li>Tipo de anclaje (<code>UI::Anchor</code>).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6>Contenedores</h6>
+<ul>
+<li><em><b>Nuevo</b></em> <code>UI::IContainer</code><ul>
+<li>Clase abstracta, base de cualquier contenedor de elementos UI.</li>
+<li>Cada clase derivada define un layout.</li>
+<li>Renderiza y actualiza todos los hijos.<ul>
+<li>Si un hijo no debe renderizarse o actualizarse, esa comprobación se realiza en el propio hijo.</li>
+</ul>
+</li>
+<li>Puede tener una imagen de fondo.</li>
+<li>Puede asignarse una clave a cada hijo añadido, para despues obtenerlo.</li>
+<li>Puede ajustar su tamaño al tamaño de sus hijos mediante una función.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em> <code>UI::HorizontalContainer</code><ul>
+<li>Contenedor que coloca los elementos de manera horizontal, uno después del otro.</li>
+<li>De izquierda a derecha.</li>
+<li>Ignora cualquier valor del Anchor del eje horizontal.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em> <code>UI::VerticalContainer</code><ul>
+<li>Contenedor que coloca los elementos de manera vertical, uno después del otro.</li>
+<li>De arriba a abajo.</li>
+<li>Ignora cualquier valor del Anchor del eje vertical.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em> <code>UI::FreeContainer</code><ul>
+<li>Contenedor que coloca los hijos en un lado, una esquina o centro, dependiendo de su Anchor.</li>
+<li>No puede haber más de 1 elemento en cada posición, ya que se solaparán.</li>
+</ul>
+</li>
+</ul>
+<h6>Elementos</h6>
+<ul>
+<li><em><b>Nuevo</b></em> <code>UI::ImageView</code><ul>
+<li>Elemento que muestra una imagen.</li>
+<li>Contiene un <code>Sprite</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em> <code>UI::TextView</code><ul>
+<li>Elemento que muestra un texto.</li>
+<li>Puede establecerse su fuente y su tamaño de fuente.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em> <code>UI::Button</code><ul>
+<li>Implementa un botón con el que el usuario puede interaccionar.</li>
+<li>Tiene tres posibles estados, dados por <code>UI::Button::ButtonState</code>.</li>
+<li>Puede mostrar una imagen dependiendo de su estado.</li>
+<li>Puede contener un texto.<ul>
+<li>El texto estará siempre centrado.</li>
+</ul>
+</li>
+<li>Disponible en dos modos (dados por <code>UI::Button::Type</code>):<ul>
+<li>Botón normal.</li>
+<li>Botón toggle, a modo de checkbox. En este caso guarda su estado <code>UI::Button::ButtonState::PRESSED</code> después de pulsarlo, y recupera el estado <code>UI::Button::ButtonState::DEFAULT</code> al volver a pulsarlo.</li>
+</ul>
+</li>
+<li>En cualquier modo, ejecuta el callback.<ul>
+<li>En modo normal, el argumento de estado será siempre <code>true</code>.</li>
+<li>En modo toggle, el argumento de estado dependerá de si el botón pasa a estar pulsado o no.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>UI::Button::ButtonState</code> Representa el estado del botón (en el siguiente orden de prioridad):<ul>
+<li><code>SELECTED</code>: el ratón está encima del botón, o el botón está siendo seleccionado por un mando o teclado.</li>
+<li><code>PRESSED</code>: el botón está siendo pulsado.</li>
+<li><code>DEFAULT</code>: el botón no está siendo pulsado.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>UI::Button::Type</code> Representa el tipo de comportamiento del botón.<ul>
+<li><code>NORMAL</code>: funcionamiento estándar de un botón. Si se pulsa, se ejecuta el callback con argumento <code>true</code>.</li>
+<li><code>TOGGLE</code>: funcionamiento estilo checkbox. El botón recuerda su estado, que va alternando entre <code>PRESSED</code> y <code>DEFAULT</code> cada vez que se pulsa.<ul>
+<li>Cada vez que se pulsa, se ejecuta el callback con el argumento:<ul>
+<li><code>true</code> si el estado pasa a ser <code>PRESSED</code>.</li>
+<li><code>false</code> si el estado pasa a ser <code>DEFAULT</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md116"></a>
+Rendering</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>FrameCombiner</code><ul>
+<li>Permite combinar dos imágenes del mismo tamaño superponiendo una ante la otra, como si se renderizara una sobre la otra.</li>
+<li>Considerablemente más eficiente que rasterizado equivalente.</li>
+<li>Usable con imágenes de los siguientes formatos:<ul>
+<li><code>RGBA8_UNORM</code></li>
+<li><code>RGBA16_SFLOAT</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Formats:<ul>
+<li><em><b>Nuevo</b></em>: <code>RGBA8_UINT</code></li>
+<li><em><b>Nuevo</b></em>: <code>RGB10A2_UNORM</code></li>
+</ul>
+</li>
+<li><code>IGpuImageView</code>:<ul>
+<li>Ahora almacena el tamaño de la imagen original.</li>
+</ul>
+</li>
+</ul>
+<h6>Reorganización del GBuffer</h6>
+<p >Reorganización general de los render targets. Ahora la posición se reconstruye a partir de la imagen de profundidad.</p>
+<ul>
+<li><code>PbrDeferredRenderSystem3D</code>:<ul>
+<li>Ahora reconstruye la posición a partir de la imagen de profundidad.</li>
+<li>Corregidos errores varios.</li>
+</ul>
+</li>
+<li><code>GBuffer</code><ul>
+<li><em><b>Eliminado</b></em>: render target de posición.</li>
+<li>Render target de normales;<ul>
+<li>Ahora usa un formato <code>RGB10A2_UNORM</code> de mayor precisión.</li>
+<li>Ya no contiene información del material (metallic-roughness).</li>
+</ul>
+</li>
+<li>Render target de motion vectors ahora usa un formato <code>RG16_SFLOAT</code> más pequeño.</li>
+<li><em><b>Nuevo</b></em>: render target de metallic-roughness.<ul>
+<li>Usa un formato <code>RG16_SFLOAT</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6>Unificación de buffers</h6>
+<p >Ahora existe un único tipo de GPU buffer. Un GPU buffer se puede usar de cualquiera de las maneras anteriores (vertex, index, storage, uniform).</p>
+<p >Para los buffers usados como vertex buffer / index buffer, ahora existen nuevas estructuras llamadas <em>views</em>, que contienen información sobre cómo procesarlos.</p>
+<ul>
+<li><em><b>Eliminados:</b></em> <code>IGpuVertexBuffer</code>, <code>IGpuIndexBuffer</code>, <code>IGpuSotrageBuffer</code>, <code>IGpuUniformBuffer</code> y derivados.</li>
+<li><code>GpuBuffer</code> (antes <code>IGpuBuffer</code>)<ul>
+<li>Renombrado.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>VertexBufferView</code><ul>
+<li>Estructura que permite procesar los datos de un buffer de vértices.</li>
+<li>Puede usarse para procesar un subrango de un buffer.</li>
+<li>Cada buffer contiene uno, facilitando el uso de un buffer entero como vertex buffer.</li>
+<li>Contiene:<ul>
+<li>Información del vértice (<code>VertexInfo</code>).</li>
+<li>Nmero de vértices.</li>
+<li>Offset del primer vértice respecto al inicio del buffer.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IndexBufferView</code><ul>
+<li>Estructura que permite procesar los datos de un buffer de índices.</li>
+<li>Puede usarse para procesar un subrango de un buffer.</li>
+<li>Cada buffer contiene uno, facilitando el uso de un buffer entero como index buffer.</li>
+<li>Contiene:<ul>
+<li>Tipo de índice (<code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a51678af75d71bd806874506ec4f37a1f" title="Formatos de índice disponibles.">OSK::GRAPHICS::IndexType</a></code>). Puede ser:<ul>
+<li><code>U8</code> (byte).</li>
+<li><code>U16</code> (byte).</li>
+<li><code>U32</code> (byte).</li>
+</ul>
+</li>
+<li>Número de índices.</li>
+<li>Offset del primer índice respecto al inicio del buffer.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ICommandList</code><ul>
+<li>Ahora permite establecer un subrango de un buffer como buffer de vértices (mediante un <code>VertexBufferView</code>).</li>
+<li>Ahora permite establecer un subrango de un buffer como buffer de índices (mediante un <code>IndexBufferView</code>).</li>
+</ul>
+</li>
+<li><code>IBottomLevelAccelerationStructure</code><ul>
+<li>Pueden crearse a partir de un subrango de buffers mediante <code>VertexBufferView</code> e <code>IndexBufferView</code>.</li>
+</ul>
+</li>
+<li><code>IGpuMemoryAllocator</code>:<ul>
+<li>Todas las funciones de creación de buffers de un tipo específico (vertex, index, storage, uniform) siguen existiendo para simplificar su creación, pero ahora devuelven buffers genéricos que pueden usarse para otros motivos.<ul>
+<li><code>CreateVertexBuffer()</code> ahora establece su <code>VertexBufferView</code> por defecto para que apunte a todo el buffer, de acuerdo al tipo de vértice indicado.</li>
+<li><code>CreateIndexBuffer()</code> ahora establece su <code>IndexBufferView</code> por defecto para que apunte a todo el buffer, de acuerdo al tipo de índice indicado.</li>
+</ul>
+</li>
+<li>Permite crear un <code>IBottomLevelAccelerationStructure</code> a partir de subrangos de buffers de vértices e ndices.</li>
+</ul>
+</li>
+</ul>
+<h6>Sincronización</h6>
+<p >Se ha revisado el diseño de la sincronización de comandos e imágenes, renombrando las estructuras y los enums para que representen con mayor fidelidad su funcionamiento real. También se ha mejorado su documentación.</p>
+<p >También se ha mejorado la sincornización del proyecto entero, moviendo las acciones de sincronización al momento en el que son realmente necesarias.</p>
+<ul>
+<li><code>GpuCommandStage</code> (antes <code>GpuBarrierStage</code>)<ul>
+<li><em><b>Eliminado</b></em>: <code>DEFAULT</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>NONE</code>.<ul>
+<li>Indica que ningún comando será afectado.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ALL</code>.<ul>
+<li>Indica que todos los comandos serán afectados.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>GpuAccessStage</code> (antes <code>GpuBarrierAccessStage</code>)<ul>
+<li><em><b>Nuevo</b></em>: <code>SAMPLED_READ</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>UNIFORM_BUFFER_READ</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>STORAGE_BUFFER_READ</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>STORAGE_IMAGE_READ</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>NONE</code>.<ul>
+<li>No indica ningún acceso desde / hacia memoria.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>GpuImageRange</code> (antes <code>GpuImageBarrierInfo</code>).<ul>
+<li>Renombrado.</li>
+<li>Puede usarse en tareas no relacionadas con la sincronización.</li>
+</ul>
+</li>
+<li><code>GpuImage</code>:<ul>
+<li>Ahora mantiene un seguimiento de cual ha sido el úlitmo image barrier aplicado, simplificando las tareas posteriores de sincronización.<ul>
+<li>Ya no es necesario conocer de manera explícita el image barrier anterior al introducir un nuevo barrier.</li>
+</ul>
+</li>
+<li>Ahora mantiene correctamente un seguimiento del layout de cada una de las capas y mip-levels.</li>
+</ul>
+</li>
+</ul>
+<h6>Renderizado 2D</h6>
+<p >Se ha modernizado el renderizado de sprites, simplificando el material del sprite y la configuración que necesita para facilitar su uso.</p>
+<ul>
+<li><code>Sprite</code><ul>
+<li>Su material ya no tiene una referencia al buffer de la cámara 2D, por lo que se podrá renderizar usando cualquier cámara 2D.</li>
+<li>Se puede establecer específicamente el <code>IGpuImageView</code> que se renderizará.<ul>
+<li>Antes creaba el view por defecto a partir de una imagen de GPU.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>SpriteRenderer</code><ul>
+<li>Ahora permite establecer la cámara 2D que se usará en los siguientes sprites renderizados.</li>
+<li>Si se cambia el material de renderizado 2D o se enlaza un nuevo material slot, se debe hacer a través de la clase <code>SpriteRenderer</code>.<ul>
+<li>Esto permite usar estrategias de renderizado distintas en el futuro, como un renderizado con sprite bacthes.</li>
+</ul>
+</li>
+<li>La matriz de la cámara 2D ahora se aplica a la matriz modelo en la CPU, enviando a la GPU la matriz final.</li>
+<li>Ahora usa string views para el renderizado de texto.</li>
+</ul>
+</li>
+<li><code>Texture</code><ul>
+<li>Ahora permite obtener fácilmente los siguientes <code>IGpuImageView</code>:<ul>
+<li>View con un único nivel de mip-map.</li>
+<li>View con un único todos los niveles de mip-map.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md117"></a>
+Otros</h3>
+<ul>
+<li>El efecto de <em>tone-mapping</em> ahora genera una imagen ligeramente menos azul.</li>
+<li>Ajustado ligeramente el efecto de <em>bloom</em>, revirtiendo parcialmente los cambios realizados en <b>2023.04.06a</b>.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md118"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>PbrDeferredRenderSystem3D</code> ya no genera sombras incoherentes.</li>
+<li><b>Bugfix</b>: <code>PbrDeferredRenderSystem3D</code> ya no genera normales de menos precisión cuando un objeto se aleja del origen de coordenadas.</li>
+<li><b>Bugfix</b>: BeginRenderpass ahora por defecto sincroniza correctamente las imágenes de profundidad.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md119"></a>
+2023.06.17a</h2>
+<h3><a class="anchor" id="autotoc_md120"></a>
+&lt;em&gt;&lt;strong&gt;Nuevo&lt;/strong&gt;&lt;/em&gt;: Audio</h3>
+<h6>Implementación inicial</h6>
+<p >Implementación inicial de un sistema de carga y reproducción de audio usando <em>OpenAL Soft</em>. Carga de archivos <em>wav</em>.</p>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>AudioApi</code><ul>
+<li>Clase principal del sistema.</li>
+<li>Contiene las instancias de <em>AUDIO::Device</em> disponibles.</li>
+<li>Permite establecer un <em>AUDIO::Device</em> como dispositivo de salida activo.</li>
+<li>Permite establecer la posición, orientación y velocidad del escuchador.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AUDIO::Device</code><ul>
+<li>Representa un dispositivo de salida de audio.</li>
+<li>Permite establecerse como dispositivo de salida activo.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AUDIO::Buffer</code><ul>
+<li>Representa un buffer alojado en un dispositivo de salida.</li>
+<li>Contiene la información de un sonido / música.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AUDIO::Source</code><ul>
+<li>Representa un "reproductor" de audio.</li>
+<li>Reproduce un sonido / música almacenado en un <em>AUDIO::Buffer</em>.</li>
+<li>Permite establecer la posición, velocidad, tono y volumen.</li>
+<li>Permite reproducción en bucle.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AUDIO::Format</code>:<ul>
+<li>Indica un formato de audio.</li>
+<li>Disponibles.<ul>
+<li><code>MONO8</code>.</li>
+<li><code>MONO16</code>.</li>
+<li><code>STEREO8</code>.</li>
+<li><code>STEREO16</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md121"></a>
+Assets</h3>
+<h6>Assets de audio</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>AudioAsset</code><ul>
+<li>Asset que representa un sonido o música.</li>
+<li>Contiene un buffer con los datos del sonido.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AudioAssetLoader</code><ul>
+<li>Permite cargar archivos de audio en formato <em>wav</em>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md122"></a>
+Error Handling</h3>
+<p >Reformado el sistema de manejo de errores, usando excepciones específicas para cada tipo de error.</p>
+<ul>
+<li><code>EngineException</code>:<ul>
+<li>Clase base para todas las excepciones del motor y del juego.</li>
+<li>Contiene una descripción de la excepción y la localización en la que se lanzó.</li>
+</ul>
+</li>
+<li>Excepciones añadidas:<ul>
+<li><code>FontLibraryInitializationException</code></li>
+<li><code>FontLodaingException</code></li>
+<li><code>NoVertexPositionsFoundException</code></li>
+<li><code>NoVertexNormalsFoundException</code></li>
+<li><code>NoVertexTangentsFoundException</code></li>
+<li><code>NoVertexTexCoordsFoundException</code></li>
+<li><code>UnsupportedIndexTypeException</code></li>
+<li><code>UnsupportedJointTypeException</code></li>
+<li><code>UnsupportedModelImageFormatException</code></li>
+<li><code>UnsupportedPolygonModeException</code></li>
+<li><code>AssetDescriptionFileNotFoundException</code></li>
+<li><code>AssetLoaderNotFoundException</code></li>
+<li><code>InvalidDescriptionFileException</code></li>
+<li><code>RawAssetFileNotFoundException</code></li>
+<li><code>AudioDeviceCreationException</code></li>
+<li><code>EventNotRegisteredException</code></li>
+<li><code>SystemAlreadyRegisteredException</code></li>
+<li><code>InvalidObjectException</code></li>
+<li><code>ComponentNotFoundException</code></li>
+<li><code>ComponentNotRegisteredException</code></li>
+<li><code>ObjectAlreadyHasComponentException</code></li>
+<li><code>ComponentAlreadyRegisteredException</code></li>
+<li><code>SystemNotFoundException</code></li>
+<li><code>WindowNotCreatedException</code></li>
+<li><code>RenderedNotCreatedException</code></li>
+<li><code>InvalidArgumentException</code></li>
+<li><code>InvalidObjectStateException</code></li>
+<li><code>NotImplementedException</code></li>
+<li><code>FileNotFoundException</code></li>
+<li><code>InitializeWindowException</code></li>
+<li><code>LoggerNotInitializedException</code></li>
+<li><code>BadAllocException</code></li>
+<li><code>MatrixBufferNotCreatedException</code></li>
+<li><code>AccelerationStructureCreationException</code></li>
+<li><code>RtShaderBindingTableCreationException</code></li>
+<li><code>CommandListResetException</code></li>
+<li><code>CommandListStartException</code></li>
+<li><code>CommandListEndException</code></li>
+<li><code>CommandListCreationException</code></li>
+<li><code>InvalidVertexBufferException</code></li>
+<li><code>InvalidIndexBufferException</code></li>
+<li><code>GpuBufferCreationException</code></li>
+<li><code>GpuMemoryAllocException</code></li>
+<li><code>NoCompatibleGpuMemoryException</code></li>
+<li><code>GpuMemoryBlockNotEnoughSpaceException</code></li>
+<li><code>GpuMemoryNotMappedException</code></li>
+<li><code>MaterialNotFoundException</code></li>
+<li><code>DescriptorPoolCreationException</code></li>
+<li><code>DescriptorLayoutCreationException</code></li>
+<li><code>MaterialSlotCreationException</code></li>
+<li><code>InvalidMaterialException</code></li>
+<li><code>PipelineCreationException</code></li>
+<li><code>ShaderLoadingException</code></li>
+<li><code>ShaderCompilingException</code></li>
+<li><code>PipelineLayoutCreationException</code></li>
+<li><code>RayTracingNotSupportedException</code></li>
+<li><code>RendererCreationException</code></li>
+<li><code>GpuNotCompatibleException</code></li>
+<li><code>GpuNotFoundException</code></li>
+<li><code>CommandListSubmitException</code></li>
+<li><code>CommandQueueSubmitException</code></li>
+<li><code>CommandPoolCreationException</code></li>
+<li><code>LogicalDeviceCreationException</code></li>
+<li><code>ImageCreationException</code></li>
+<li><code>ImageViewCreationException</code></li>
+<li><code>SwapchainCreationException</code></li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md123"></a>
+Rendering</h3>
+<h6>Ecuación de renderizado mini rework</h6>
+<ul>
+<li>PBR Rendering<ul>
+<li>Se ha normalizado la ecuación de renderizado para que los pesos de las distintas fuentes de color (ambiente y cubemaps) sean iguales.</li>
+<li>Se ha modificado la ecuación de renderizado para ofrecer colores más intensos.</li>
+</ul>
+</li>
+</ul>
+<h6>Cleanup</h6>
+<p >Eliminadas las clases SyncDevice, ya que la sincornización se realiza en las clases principales <code>IRenderer</code>.</p>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>ISyncDevice</code>, <code>SyncDeviceDx12</code>, <code>SyncDeviceVk</code>.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md124"></a>
+Types</h3>
+<p >Se han introducido nuevos tipos de datos básicos y renombrado otros para que queden más clara su intención y su tamaño.</p>
+<ul>
+<li><code>USize32</code>: renombrado (antes <code>TSize</code>).</li>
+<li><code>UIndex32</code>: renombrado (antes <code>TIndex</code>).</li>
+<li><em><b>Nuevo</b></em>: <code>USize64</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>UIndex64</code>.</li>
+</ul>
+<h6>Memoria de 64 bits</h6>
+<p >Debido a los cambios en los tipos de datos básicos, numerosas clases y funciones (sobre todo aquellas que tienen que ver con memoria, ahora soportan tamaños y direcciones de 64 bits. Incluyendo:</p>
+<ul>
+<li><code>DynamicArray</code>.</li>
+<li><code>MemorySwap()</code>.</li>
+<li><code>GpuMemoryBlock</code> y todos los recursos derivados, como buffers o texturas.</li>
+<li>Otras.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md125"></a>
+Otros</h3>
+<ul>
+<li><code>OSK_DEFINE_AS(x)</code>: ahora genera dos funciones en vez de una:<ul>
+<li><em><b>Eliminado</b></em>: *<code>constexpr T* As() const</code>*.</li>
+<li><em><b>Nuevo</b></em>: *<code>constexpr const T* As() const</code>*.</li>
+<li><em><b>Nuevo</b></em>: *<code>constexpr T* As()</code>*.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>OSK_DEFAULT_MOVE_OPERATOR(x)</code>.<ul>
+<li>Genera el constructor y el operador de movimiento por defecto.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md126"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>OSK_DEFINE_AS</code> ahora no genera <em>undefined behaviour</em>.</li>
+<li><b>Bugfix</b>: <code>OwnedPtr</code> ahora se comporta correctamente al moverse.</li>
+<li><b>Bugfix</b>: <code>Color::Blue</code> ahora devuelve un color azul en vez de un color turquesa.</li>
+<li><b>Bugfix</b>: <code>Color::*</code> ahora multiplica correctamente el valor alpha.</li>
+<li><b>Bugfix</b>: <code>IMaterialSlot::SetTexture</code> ahora usa correctamente el canal indicado.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md127"></a>
+2023.07.15a</h2>
+<h3><a class="anchor" id="autotoc_md128"></a>
+Physics</h3>
+<h6>Rework de los sistemas de respuesta ante colisiones y de físicas.</h6>
+<ul>
+<li><code>PhysicsComponent</code><ul>
+<li>Aumentada la encapsulación para evitar la corrupción de los valores por modificaciones externas que se podrán saltar las leyes de la física.</li>
+<li>Almacena el inverso de la masa.<ul>
+<li>Se puede usar para representar masas infinitas, estableciendo el inverso de la masa a 0.</li>
+</ul>
+</li>
+<li>Añadido soporte para el <em>momento de inercia angular</em>, que regula la facilidad de un objeto para rotar.<ul>
+<li>Alacenados tanto el tensor de inercia como su inverso para una mayor eficiencia.</li>
+</ul>
+</li>
+<li>Almacena el cambio de velocidad en cada frame, para una mayor estabilidad.</li>
+<li>Añadido el coeficiente de restitución, que indica cuánto rebota el objeto tras una colisión.</li>
+<li>Permite resetear las fuerzas aplicadas en cada frame, para poder recalcular su superposición.</li>
+<li>A la hora de aplicar un impulso, no se hace distinción entre impulso lineal y angular, efectuando ambos al mismo tiempo.</li>
+</ul>
+</li>
+<li><code>PhysicsResolver</code><ul>
+<li>Ahora la aplicación del MTV se reparte entre los dos objetos dependiendo de sus masas.<ul>
+<li>Los objetos con menor masa que el otro objeto se mueven más.</li>
+<li>Los objetos con masa infinita no se mueven.</li>
+</ul>
+</li>
+<li>Ahora la aplicación de los impulsos tras una colisión sigue las leyes de la física:<ul>
+<li>Obtiene la velocidad de separación final y aplica los impulsos para conseguirla.</li>
+<li>Ambos impulsos aplicados son iguales en intensidad, pero en sentidos contrarios.</li>
+</ul>
+</li>
+<li>Ahora aplica fricción a los objetos.</li>
+</ul>
+</li>
+<li><code>PhysicsSystem</code><ul>
+<li>Ahora simula la resistencia del aire, ralentizando la velocidad angular de los objetos en el tiempo.</li>
+</ul>
+</li>
+<li><code>ConvexVolume</code><ul>
+<li>Proceso de detección de puntos de contacto optimizado.</li>
+<li>Ahora es más permisivo al incluir nuevos puntos de contacto.</li>
+</ul>
+</li>
+<li><code>DetailedCollisionInfo</code><ul>
+<li>Permite diferenciar el orden de los objetos.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md129"></a>
+IO</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>Console</code><ul>
+<li>Representa una consola de output dentro del juego.</li>
+<li>Permite añadir nuevos mensajes de texto.</li>
+<li>Almacena información sobre el momento en el que se añadió el mensaje.</li>
+<li><em>Prototipo</em>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md130"></a>
+Engine</h3>
+<ul>
+<li><em><b>Nuevo</b></em> <code>gameFrameIndex</code>.<ul>
+<li>Indica el índice del frame actual desde el inicio de la ejecución del juego.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em> <code>Update()</code><ul>
+<li>Actualiza el <code>gameFrameIndex</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md131"></a>
+Types</h3>
+<ul>
+<li><code>Vector3</code><ul>
+<li>Añadido valor estático <code>Zero</code>, que representa un vector con todos los campos a 0.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md132"></a>
+Error Handling</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>DivideByZeroException</code>.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md133"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>PhysicsSystem</code> ya no mueve y/o rota objetos inmovibles.</li>
+<li><b>Bugfix</b>: <code>COLLISION::ConvexVolume</code> ahora calcula correctamente los puntos de contacto en todos los casos.</li>
+<li><b>Bugfix</b>: Añadir un componente a un objeto no hace que se vuelva a registrar en los sistemas en los que ya estaba presente.</li>
+<li><b>Bugfix</b>: <code>ECS::AddComponent(GameObjectIndex, const TComponent&amp;)</code> ahora se puede usar.</li>
+<li><b>Bugfix</b>: <code>FaceProjection</code> ahora calcula correctamente las proyecciones de los puntos.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md134"></a>
+2023.08.13a</h2>
+<h3><a class="anchor" id="autotoc_md135"></a>
+ECS</h3>
+<h6>Orden de ejecución de los sistemas</h6>
+<ul>
+<li><code>EntityComponentSystem</code>, <code>SystemManager</code><ul>
+<li>Ahora se le puede asignar un índice de ejecución a cada sistema (por defecto: 0). Todos los sistemas con el mismo índice se agrupan en un conjunto.</li>
+<li>La ejecución de los sistemas se realiza de acuerdo a estos índices, ejecutándose primero los sistemas con un índice más bajo.</li>
+<li>Dentro de cada conjunto de sistemas, se ejecutan en el siguiente orden:<ul>
+<li>Sistemas <em>productores</em>.</li>
+<li>Sistemas <em>consumidores</em>.</li>
+<li>Sistemas <em>puros</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ISystem</code><ul>
+<li>Ahora almacena su índice de ejecución.</li>
+</ul>
+</li>
+<li>Sistemas con un índice de ejecución distinto a 0:<ul>
+<li><code>PhysicsSystem</code>: -2.</li>
+<li><code>CollisionSystem</code>: -1.</li>
+<li><code>PhysicsResolver</code>: -1.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md136"></a>
+Rendering</h3>
+<h6>Rework de los shaders PBR para obtener una imagen de mayor calidad.</h6>
+<h3><a class="anchor" id="autotoc_md137"></a>
+Memory</h3>
+<ul>
+<li><code>Buffer</code><ul>
+<li>Representa un buffer con información arbitraria en memoria RAM.</li>
+<li>Puede ser copiado.</li>
+<li>No tiene un tamaño fijo: funciona como un <em>DynamicArray</em>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md138"></a>
+Persistencia</h3>
+<h6>Inicio del rework para mejorar el rendimiento potencial y adaptarlo mejor aun futuro sistema de networking.</h6>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>Field</code></li>
+<li><em><b>Eliminado</b></em>: <code>IDataElement</code></li>
+<li><em><b>Eliminado</b></em>: <code>ISerializer</code></li>
+<li><em><b>Eliminado</b></em>: <code>ISerializable</code></li>
+<li><code>DataNode</code><ul>
+<li>Ahora funciona escribiendo la información sobre un buffer de memoria.</li>
+<li>Permite leer datos del buffer de memoria.</li>
+<li>Contiene un schema que indica cómo interpretar los datos.</li>
+<li>Tiene mapas para facilitar la interpretación de los datos.</li>
+</ul>
+</li>
+<li><code>DataType</code><ul>
+<li>Ahora se representa por un número.</li>
+<li>Los primeros 100 números están reservados para el motor.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>Serialize&lt;&gt;()</code><ul>
+<li>Define cómo serializar un elemento a un <code>DataNode</code>.</li>
+<li>Debe definirse para todos los tipos que se quieran usar.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>Deserialize&lt;&gt;()</code><ul>
+<li>Define cómo deserializar un <code>DataNode</code> a un elemento.</li>
+<li>Debe definirse para todos los tipos que se quieran usar.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SchemaId</code><ul>
+<li>Define un código único para cada esquema de <code>DataNode</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md139"></a>
+STD</h3>
+<h6>Corregidas incongruencias en las funciones de las clases, con lo que ahora siempre respetan la corrección de <em>const</em>.</h6>
+<ul>
+<li><code>UniquePtr</code><ul>
+<li>Ahora todas sus operaciones respetan la corrección de <em>const</em>.</li>
+<li>Ahora tiene una comprobación en tiempo de compilación que se asegura de que el objeto está definido.</li>
+<li><em><b>Eliminado</b></em>: <code>UniquePtr&lt;T[]&gt;</code>.</li>
+<li><em><b>Eliminado</b></em>: <code>SetValue()</code>.</li>
+<li>Añadidas todas las posibles combinaciones de <em>const</em> / <em>not const</em> para:<ul>
+<li><code>GetPointer()</code>.</li>
+<li>Operador <code>-&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>DynamicArray</code><ul>
+<li><code>DynamicArray::Iterator</code><ul>
+<li>Simplificado (ahora solo almacena un puntero).</li>
+<li>Ya no necesita que la colección que lo creó tenga estabilidad de puntero.<ul>
+<li>Siguen necesitando que no se añadan y/o eliminen elementos.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>DynamicArray::ConstIterator</code><ul>
+<li>Iterador para acceso a un elemento de una colección inmutable.</li>
+</ul>
+</li>
+<li>Ahora soporta tipos que tengan sobreescrito el operador <code>&amp;</code>.</li>
+<li>Ahora genera código distino dependiendo de si el tipo puede ser copiado y/o movido.</li>
+<li>Añadidas todas las posibles combinaciones de <em>const</em> / <em>not const</em> para:<ul>
+<li>Operador <code>[]</code>.</li>
+<li><code>At()</code>.</li>
+<li><code>Find()</code>.</li>
+<li><code>GetData()</code>.</li>
+<li><code>begin()</code>.</li>
+<li><code>end()</code>.</li>
+<li><code>GetIterator()</code> / <code>GetConstIterator()</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>SharedPtr</code><ul>
+<li>Añadidas todas las posibles combinaciones de <em>const</em> / <em>not const</em> para:<ul>
+<li>Operador <code>-&gt;</code>.</li>
+<li>Operador <code>*</code>.</li>
+<li><code>GetPointer()</code>.</li>
+<li><code>Get()</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Eliminado</b></em>: <code>HashMap</code><ul>
+<li>Reemplazado por <code>std::unordered_map</code>.</li>
+<li>Ahora se puede usar <code>std::string_view</code> para acceder a elementos de un mapa cuya clave es del tipo <code>std::string</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md140"></a>
+Otros</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>OSK_DISABLE_MOVE(x)</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>OSK_DEFAULT_COPY_OPERATOR(x)</code>.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md141"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: ahora se exportan correctamente el proyecto para poder usarse como DLL / LIB.</li>
+<li><b>Bugfix</b>: <code>UniquePtr</code> ya no genera <em>undefined behaviour</em> en los <em>getters</em>.</li>
+<li><b>Bugfix</b>: eliminar un elemento de un <code>DynamicArray</code> ahora ejecuta el operador de copia / movimiento para los elementos posteriores que se mueven a la izquierda.</li>
+<li><b>Bugfix</b>: <code>ConvexVolume::GetWorldSpaceAxis</code> ahora devuelve correctamente el eje en espacio del mundo.<ul>
+<li><b>Bugfix</b>: ya no se generan respuestas exageradas a colisiones.</li>
+<li><b>Bugfix</b>: ahora se detectan correctamente las colisiones en las coordenadas (0, 0 ,0).</li>
+</ul>
+</li>
+<li><b>Bugfix</b>: <code>StaticMeshLoader</code>, <code>AminMeshLoader</code> ahora cargan correctamente los vectores normales de los modelos 3D en todos los casos.</li>
+<li><b>Bugfix</b>: corregidos numerosos bugs en los shaders de renderizado PBR.</li>
+<li><b>Bugfix</b>: <code>TextureLoader</code> ahora carga las imágenes en el espacio de color adecuado.</li>
+<li><b>Bugfix</b>: <code>Transform3D::TransformPoint()</code> ahora devuelve el resultado correcto.</li>
+</ul>
+<p >TODO:</p>
+<p >fix ComponentManager::InsertCopy</p>
+<h2><a class="anchor" id="autotoc_md142"></a>
+2023.09.08a</h2>
+<h3><a class="anchor" id="autotoc_md143"></a>
+UI</h3>
+<ul>
+<li><code>UI::IElement</code>:<ul>
+<li>Ahora puede configurarse su visibilidad.<ul>
+<li>Los contenedores invisibles no renderizarán a sus hijos.</li>
+</ul>
+</li>
+<li>Ahora puede configurarse su capacidad para actualizar su estado.<ul>
+<li>Los contenedores desactivados no actualizarán a sus hijos.</li>
+</ul>
+</li>
+<li>Ahora puede configurarse para mantener un tamaño relativo respecto al padre, cuando el padre cambia de tamaño.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md144"></a>
+Collisions</h3>
+<ul>
+<li><code>CollisionSystem</code><ul>
+<li><em>Optimización</em>: Ahora sólamente transforma los vértices de los colliders de nivel bajo una sola vez por fotograma, en vez de una vez por posible colisión.</li>
+</ul>
+</li>
+<li><code>ConvexVolume</code><ul>
+<li>Ahora también almacena los vértices transformados (se actualiza cada fotograma).</li>
+<li><code>AddFace</code> ya no necesita que los vértices están en sentido horario.</li>
+<li><code>GetLocalSpaceAxis</code> ahora devuelve el vector correcto independientemente del orden de los vértices.</li>
+<li><code>GetWorldSpaceAxis</code> ahora devuelve el vector correcto independientemente del orden de los vértices.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md145"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>VerticalContainer::EmplaceChild()</code> ahora coloca correctamente los elementos en el eje horizontal.</li>
+<li><b>Bugfix</b>: <code>FreeContainer::EmplaceChild()</code> ahora tiene en cuenta correctamente los márgenes del elemento añadido.</li>
+<li><b>Bugfix</b>: <code>ConvexVolume::GetCollisionInfo()</code> ahora detectamente correctamente la información de las colisiones en todas las direcciones (test cases <em>T-COL-09,11,13,15</em>)</li>
+<li><b>Bugfix</b>: <code>ConvexVolume::GetWorldSpaceAxis()</code> ahora devuelve un vector correctamente normalizado en todos los casos.</li>
+<li><b>Bugfix</b>: <code>PhysicsResolver</code> ahora aplica correctamente impulsos en todos los casos.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md146"></a>
+2023.09.11a</h2>
+<h3><a class="anchor" id="autotoc_md147"></a>
+Graphics</h3>
+<h6>Introducido HBAO como técnica de oclusión ambiental.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>HbaoPass</code>:<ul>
+<li>Implementa oclusión ambiental como efetdo de post-procesado de computación.</li>
+<li>Incluye 4 pases:<ul>
+<li>Pase inicial que genera una imagen de oclusión ambiental con ruido.</li>
+<li>Pase de difuminado gaussiano vertical.</li>
+<li>Pase de difuminado gaussiano horizontal..</li>
+<li>Pase de resolución.</li>
+</ul>
+</li>
+<li>Usa como input las imágenes de profundidad y de normales.</li>
+</ul>
+</li>
+<li><code>RenderSystem3D</code>:<ul>
+<li>Ahora genera imágenes de normales.</li>
+</ul>
+</li>
+</ul>
+<h6>Invertida la coordenada Z de profundidad y uso de far-plane infinito.</h6>
+<p >Esto aumenta enormemente la precisión de objetos alejados, y permite renderizar toda la escena gracias al far-plane infinito.</p>
+<ul>
+<li><code>CameraComponent3D</code><ul>
+<li>Ahora <code>GetProjectionMatrix()</code> genera una proyección con:<ul>
+<li>Z invertida.</li>
+<li>Far-plane infinito.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GetProjectionMatrix_UnreversedZ()</code>, que implementa la funcionalidad que previamente tenía <code>GetProjectionMatrix()</code>.</li>
+</ul>
+</li>
+</ul>
+<h6>Misc.</h6>
+<ul>
+<li><code>Material</code>, <code>MaterialSystem</code>:<ul>
+<li>Los materiales gráficos ya no están obligados a tener shaders de fragmentos.</li>
+</ul>
+</li>
+<li><code>IGraphicsPipeline</code>, <code>GraphicsPipelineVk</code>:<ul>
+<li>Ahora usa un formato de profundidad con z invertida.</li>
+<li>Los fragment shaders ya no son estrictamente necesarios.</li>
+</ul>
+</li>
+<li><code>Format</code><ul>
+<li><em><b>Nuevo</b></em>: <code>R16_SFLOAT</code></li>
+</ul>
+</li>
+<li><code>CopyImageInfo</code><ul>
+<li>Ahora permite indicar los canales de origen y destino.</li>
+</ul>
+</li>
+<li><code>ICommandList</code><ul>
+<li><em><b>Nuevo</b></em> <code>CopyImageToImage()</code>.<ul>
+<li>Permite copiar una imagen a otra cuando ambas imágenes tienen distinto tamaño y/o formato.</li>
+</ul>
+</li>
+<li><code>ICommandList::RawCopyImageToImage()</code> ahora puede efectuar copias en canales distintos a <em>COLOR</em>.</li>
+</ul>
+</li>
+<li><code>GpuImageVk</code><ul>
+<li><em><b>Nuevo</b></em>: <code>GetAspectFlags()</code>.</li>
+<li><code>GetFilterTypeVulkan()</code> ahora es public.</li>
+<li><code>GetAddressModeVulkan()</code> ahora es public.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md148"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: ahora las sombras no tienen errores de z-fighting en el renderizado diferido.</li>
+<li><b>Bugfix</b>: ahora ningún renderizado 3D tienen z-fighting en zonas alejadas de la cámara.</li>
+<li><b>Bugfix</b>: <code>ICommandList::RawCopyImageToImage()</code> ahora tiene en cuenta los offsets indicados para las imágenes de origen y destino.</li>
+<li><b>Bugfix</b>: ahora los mapas de sombras no usan una proyección con un rango de profundidad incorrecto (-1, 1).</li>
+<li><b>Bugfix</b>: ahora la cámara 3D no usa una proyección con un rango de profundidad incorrecto (-1, 1).</li>
+<li><b>Bugfix</b>: ahora <code>GBuffer</code> tiene un <em>getter</em> de imágenes no-const.</li>
+<li><b>Bugfix</b>: <code>PbrDeferredRenderSystem</code> ya no reenlaza el material de GBuffer una vez por modelo 3D.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md149"></a>
+2023.09.15a</h2>
+<h3><a class="anchor" id="autotoc_md150"></a>
+UI</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>Dropdown</code><ul>
+<li>Elemento de UI que permite al usuario seleccionar una opción entre varias mediante un menú desplegable.</li>
+</ul>
+</li>
+<li><code>IElement</code><ul>
+<li><code>UpdateByCursor()</code>:<ul>
+<li>Ahora devuelve un bool indicando si el input ha sido procesado dentro del elemento.</li>
+<li>Si devuelve true, el input se ha procesado y no hay que comprobar el resto de elementos de la interfaz.</li>
+<li>Evita que al hacer click se ejecuten funciones de elementos que estén por debajo de otros.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>IContainer</code><ul>
+<li>Si <code>UpdateByCursor()</code> devuelve true para alguno de sus hijos, detiene la ejecución para el resto de hijos.</li>
+</ul>
+</li>
+<li><code>TextView</code><ul>
+<li>Ahora permite obtener la fuente usada y su tamaño.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md151"></a>
+Assets</h3>
+<ul>
+<li><code>Font</code><ul>
+<li><em><b>Nuevo</b></em>: <code>GetExistingInstance()</code> permite obtener una instancia previamente cargada.</li>
+<li><em><b>Nuevo</b></em>: <code>ContainsInstance()</code> permite comprobar si una instancia ha sido previamente cargada.</li>
+<li>Llamar a <code>LoadSizedFont()</code> con un tamaño que ya ha sido cargado no hará nada, en vez de volver a cargar la fuente.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md152"></a>
+Graphics</h3>
+<ul>
+<li><code>IRenderer</code><ul>
+<li><em><b>Nuevo</b></em>: <code>SetPresentMode()</code> permite cambiar el modo de presentación en tiempo de ejecución.</li>
+</ul>
+</li>
+<li><code>ISwapchain</code><ul>
+<li><em><b>Nuevo</b></em>: <code>SetPresentMode()</code> permite cambiar el modo de presentación en tiempo de ejecución.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md153"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>UI::ImageView</code> ya no genera una excepción cuando se intenta renderizar sin haber establecido antes la iamgen (ahora no hace nada).</li>
+<li><b>Bugfix</b>: <code>Sprite</code> ya no genera una excepción cuando se intenta establecer un image view nulo.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md154"></a>
+2023.11.08a</h2>
+<h3><a class="anchor" id="autotoc_md155"></a>
+Collisions</h3>
+<h6>Rework de la detección de colisiones (GJK-Culling).</h6>
+<ul>
+<li><code>Collider</code><ul>
+<li>Ahora permite construirse copiando otro collider.</li>
+</ul>
+</li>
+<li><code>ITopLevelCollider</code> ahora permite obtener una copia.</li>
+<li><code>IBottomLevelCollider</code>:<ul>
+<li>Ahora permite obtener una copia.</li>
+<li>Hereda <code>IGjkCollider</code>.</li>
+<li>Hereda <code>ISatCollider</code>.</li>
+</ul>
+</li>
+<li><code>ConvexVolume</code><ul>
+<li>Ahora implementa detección de colisiones mediante <em>GJK-Clipping</em>.</li>
+<li>Ahora permite mergear los vértices y las caras.</li>
+<li>Ahora permite obtener la cara que contiene una lista de vértices.</li>
+</ul>
+</li>
+<li><code>CollisionInfo</code><ul>
+<li>Ahora contiene varios <code>DetailedCollisionInfo</code> cuando dos entidades colisionan con varios colliders.</li>
+</ul>
+</li>
+<li><code>DetailedCollisionInfo</code> ahora permite saber la dirección del MTV (respecto a los objetos).</li>
+<li><em><b>Nuevo</b></em>: <code>Simplex</code><ul>
+<li>Grupo de vértices que trata de encerrar el origen de coordenadas.</li>
+<li>Se genera usando la diferencia de Minkowski de dos volúmenes.</li>
+<li>Permite saber si dos volúmenes colisionan o no.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>MinkowskiHull</code><ul>
+<li>Volumen 3D que trata de expandirse para ocupar toda la diferencia de Minkowski de dos colliders.</li>
+<li>Permite conocer el MTV y los vértices que generaron el MTV.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IGjkCollider</code><ul>
+<li>Interfaz para colliders que soportan detección de colisiones mediante GJK-EPA.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GjkSupport</code><ul>
+<li>Indica el soporte de un volumen y el vértice que lo produjo.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>MinkowskiSupport</code><ul>
+<li>Indica el soporte de la diferencia de Minkowski de dos volúmenes y los vértices que lo produjeron.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ClipFaces()</code> permite realizar un clipping de dos caras, obteniendo el parche de contacto.</li>
+</ul>
+<h6>Añadido frustum culling.</h6>
+<ul>
+<li><code>ITopLevelCollider</code>, <code>SphereCollider</code>, <code>AxisAlignedBoundingBox</code><ul>
+<li>Ahora permiten comprobar si están delante o en un plano.</li>
+<li>Ahora permiten comprobar si están dentro de un frustum.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md156"></a>
+Graphics</h3>
+<ul>
+<li><code>SkyboxRenderSystem</code><ul>
+<li>Normalizado el brillo del cubemap a 1.</li>
+</ul>
+</li>
+<li><code>IGpuMemoryAllocator</code><ul>
+<li>Ahora genera y es dueño de la textura normal por defecto.</li>
+</ul>
+</li>
+<li><em><b>Renombrado</b></em>: *<code>PbrDeferredRenderSystem</code>* -&gt; <code>DeferredRenderSystem</code>.</li>
+</ul>
+<h6>Pases de renderizado.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>IRenderPass</code><ul>
+<li>Representa un pase de renderizado de un material en una escena.</li>
+<li>Almacena las instancias de materiales de los objetos.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>StaticGBufferPass</code></li>
+<li><em><b>Nuevo</b></em>: <code>AnimatedGBufferPass</code></li>
+<li><em><b>Nuevo</b></em>: <code>BillboardGBufferPass</code></li>
+<li><em><b>Nuevo</b></em>: <code>TreeNormalsRenderPass</code></li>
+<li><em><b>Nuevo</b></em>: <code>TreeGBufferRenderPass</code></li>
+<li><em><b>Nuevo</b></em>: <code>IDeferredResolver</code><ul>
+<li>Pase de renderizado para la resolución de **g-buffer*.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>PbrResolvePass</code></li>
+<li><code>IRenderSystem</code><ul>
+<li>Ahora almacena, maneja y ejecuta una lista de <code>IRenderPass</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>MeshMapping</code><ul>
+<li>Contiene un registro de los datos de renderizado de los modelos de un pase de renderizado.</li>
+<li>Contiene una lista de <code>PerModelData</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>PerModelData</code><ul>
+<li>Contiene un registro de los datos de renderizado de un modelo en concreto.</li>
+<li>Contiene una lista de <code>PerMeshData</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>PerMeshData</code><ul>
+<li>Contiene un registro de los datos de renderizado de un mesh en concreto.</li>
+<li>Contiene las instancias de materiales.</li>
+</ul>
+</li>
+</ul>
+<h6>Mejoras y optimizaciones de efectos de post-procesado.</h6>
+<ul>
+<li><code>HbaoPass</code><ul>
+<li>Ahora permite ejecutar el pase de generación de HBAO en resoluciones distintas a la nativa.<ul>
+<li>Por defecto, se ejecuta a una resolución del 50%.</li>
+</ul>
+</li>
+<li>Reajustados parámetros de generación para un mejor resultado.</li>
+<li>Los pases de desenfoque ahora:<ul>
+<li>Son independientes de la resolución de entrada.</li>
+<li>Usan un radio del filtro gaussiano de 3.25.</li>
+<li>Usan interpolación bilineal al procesar la imagen anterior.</li>
+<li>Usan comprobaciones de resultado para intentar preservar los bordes nítidos.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>TAA</em><ul>
+<li>Ahora usa un filtro gaussiano al obtener el color de la imagen histórica, para un mejor funcionamiento en movimiento.</li>
+<li>Ahora usa momentos estadásticos (media y desviación típica) para establecer la tolerancia de color.</li>
+<li>Reducida la cantidad de ghosting en elementos que se mueven rápidamente, disminuyendo la tolerancia de color de elementos con un movimiento muy grande.</li>
+</ul>
+</li>
+</ul>
+<h6>Añadido frustum culling.</h6>
+<ul>
+<li><code>PbrDeferredRenderSystem</code><ul>
+<li>Ahora realiza frustum culling en los meshes.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>RenderBoundsRenderer</code><ul>
+<li>Renderiza los volúmenes usados para realizar el frustum culling.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md157"></a>
+Assets</h3>
+<ul>
+<li><code>ModelLoader3D</code><ul>
+<li><em><b>Eliminado</b></em>: <code>SetupPbrModel()</code>.</li>
+<li><em><b>Eliminado</b></em>: <code>SetupDefaultNormalTexture()</code>.</li>
+<li><em><b>Eliminado</b></em>: <code>defaultNormalTexture</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>UnsupportedMeshProperties</code></li>
+<li><code>Model3D</code><ul>
+<li>Ahora almacena un ID.</li>
+<li>Ahora permite saber cual es el pase de renderizado que debe renderizarlo.</li>
+<li><em>WIP</em> Introducidos primeros cambios para un sistema de <em>LOD</em>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>PreBuiltCollider</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>PreBuiltColliderLoader</code>.</li>
+</ul>
+<h6>Añadido frustum culling.</h6>
+<ul>
+<li>Model loading:<ul>
+<li>Ahora genera colliders esféricos por cada mesh.</li>
+</ul>
+</li>
+<li><code>Mesh3D</code><ul>
+<li>Ahora tiene un collider esférico.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md158"></a>
+ECS</h3>
+<ul>
+<li><code>ModelComponent3D</code><ul>
+<li>Ya no almacena instancias de material.</li>
+</ul>
+</li>
+</ul>
+<h6>Añadido frustum culling.</h6>
+<ul>
+<li><code>CameraComponent3D</code><ul>
+<li>Ahora permite obtener los planos de un frustum.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md159"></a>
+Types</h3>
+<ul>
+<li><code>Vector3</code><ul>
+<li><em><b>Renombrado</b></em>: <em>Z</em> -&gt; z.</li>
+<li>Ahora no puede construirse de manera implícita.</li>
+<li>Ahora pude comprobarse si es <em>NaN</em>.</li>
+</ul>
+</li>
+</ul>
+<h6>Añadido frustum culling.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>Plane</code><ul>
+<li>Representa un plano en el mundo 3D.</li>
+<li>Vector normal + punto del plano.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AnyFrustum</code><ul>
+<li>Representa un frustum con un número indeterminado de planos.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md160"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>DynamicArray</code> ahora ejecuta correctamente los destructores de los elementos al destruirse la lista.</li>
+<li><b>Bugfix</b>: <code>BloomPass::ExecuteSinglePass</code> ahora lanza el número correcto de hilos.</li>
+<li><b>Bugfix</b>: el shader <em>TAA</em> ahora interpola correctamente los colores histórico y nuevo (hasta ahora siempre descartaba el histórico).</li>
+<li><b>Bugfix</b>: cargar los materiales de animación del renderizador en diferido ya no genera errores en las capas de validación.</li>
+<li><b>Bugfix</b>: cargar los materiales de animación del renderizador directo ya no genera errores en las capas de validación.</li>
+<li><b>Bugfix</b>: <code>CollisionSysyem</code> ahora genera correctamente un evento por cada colisión, en vez de un evento por colisión por cada pareja de objetos.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md161"></a>
+2023.11.12a</h2>
+<h3><a class="anchor" id="autotoc_md162"></a>
+Assets</h3>
+<ul>
+<li>Ahora el caché de <em>assets</em> se almacena en cada uno de los <em>loaders</em>.</li>
+<li><em><b>Nuevo</b></em>: <code>AssetOwningRef</code><ul>
+<li>Dueño de una instancia de un <em>asset</em>.</li>
+<li>Permite crear <code>AssetRef</code>s.</li>
+<li>Tiene un sistema que cuenta el número de referencias creadas hacia el <em>asset</em>.</li>
+<li>Permite comprobar si está en uso, y eliminar el <em>asset</em> si no se está usando.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AssetRef</code><ul>
+<li>Referencia hacia un <em>asset</em></li>
+<li>Todos los <em>assets</em> deben ser referenciados a partir de un <code>AssetRef</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md163"></a>
+ECS</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>CollisionComponent</code><ul>
+<li>Separa la funcionalidad de componente de la clase <code>Collider</code>.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md164"></a>
+2023.11.15a</h2>
+<h3><a class="anchor" id="autotoc_md165"></a>
+Graphics</h3>
+<ul>
+<li><code>DeferredRenderSystem</code><ul>
+<li>Ahora permite acceder a y actualizar la luz direccional.</li>
+</ul>
+</li>
+</ul>
+<h6>Añadidos materiales emisores. Añadidos buffers para las características de los materiales.</h6>
+<ul>
+<li><code>GBuffer</code><ul>
+<li><em><b>Nuevo</b></em>: render target <code>EMISSIVE</code>.<ul>
+<li>Para los materiales emisivos.</li>
+<li>Formato: <code>RGBA8_UNORM</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>DeferredPushConstants</code><ul>
+<li>Ya no contiene:<ul>
+<li>Índice de rugosidad.</li>
+<li>Índice de metalicidad.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>PbrMaterialInfo</code><ul>
+<li>Contiene:<ul>
+<li>Índice de rugosidad.</li>
+<li>Índice de metalicidad.</li>
+<li>Color emisivo.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>MeshMetadata</code><ul>
+<li>Ya no contiene:<ul>
+<li>Índice de rugosidad.</li>
+<li>Índice de metalicidad.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ModelMetadata</code><ul>
+<li>Ahora contiene buffers con la información de <code>PbrMaterialInfo</code>.</li>
+</ul>
+</li>
+<li><code>PerMeshData</code><ul>
+<li>Su material instance ahora contiene los buffers del material.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md166"></a>
+Assets</h3>
+<h6>Añadidos materiales emisores.</h6>
+<ul>
+<li><code>IGltfLoader</code>, <code>StaticMeshLoader</code>, <code>AnimMeshLoader</code><ul>
+<li>Ahora cargan el color emisor de los materiales.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md167"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>UiContainer</code> ahora tiene getters de hijos que respetan const-correctnes (eliminando UB).</li>
+<li><b>Bugfix</b>: <code>UiVerticalContainer</code> ahora no desplaza los elementos hijos de manera horizontal.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md168"></a>
+2023.11.18a</h2>
+<h3><a class="anchor" id="autotoc_md169"></a>
+Graphics</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>PbrIblConfig</code><ul>
+<li>Configuración de las intensidades de los mapas IBL en el renderizado.</li>
+</ul>
+</li>
+<li><code>DeferredRenderSystem</code><ul>
+<li>Ahora permite actualizar los mapas especular y de irradiancia.</li>
+<li>Ahora almacena <code>PbrIblConfig</code>.</li>
+</ul>
+</li>
+<li><code>ShadowMap</code><ul>
+<li>Vuelve a usar 4 niveles.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md170"></a>
+ECS</h3>
+<ul>
+<li><code>Transform3D</code><ul>
+<li>Permite configurar si un transform hereda la posición de su padre.</li>
+<li>Permite configurar si un transform hereda la rotación de su padre.</li>
+<li>Permite configurar si un transform hereda la escala de su padre.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md171"></a>
+Types</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>Vector3f::One</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md172"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>GameObjectManager</code> ahora detecta correctamente si un objeto ha sido registrado.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md173"></a>
+2023.11.27a</h2>
+<h3><a class="anchor" id="autotoc_md174"></a>
+Graphics</h3>
+<ul>
+<li><code>ShadowMap</code><ul>
+<li>Vuelve a tener 4 niveles.</li>
+<li>Ahora permite establecer los splits.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md175"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: ahora <code>GpuImageAddressMode::BACKGROUND_WHITE</code> funciona correctamente en la implementación de Vulkan.</li>
+<li><b>Bugfix</b>: ahora <code>GpuImageAddressMode::BACKGROUND_BLACK</code> funciona correctamente en la implementación de Vulkan.</li>
+<li><b>Bugfix</b>: los shaders ahora calculan correctamente las coordenadas del mapa de sombras.</li>
+<li><b>Bugfix</b>: los shaders ahora no muestran sombars fuera de los límites del <code>ShadowMap</code>.</li>
+<li><b>Bugfix</b>: <code>PbrIblConfig</code> ahora tiene el alineamiento correcto.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md176"></a>
+2023.12.07a</h2>
+<h3><a class="anchor" id="autotoc_md177"></a>
+Types</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>Spline3D</code><ul>
+<li>Representa un segmento o conjunto de segmentos.</li>
+<li>Definido por puntos 3D.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md178"></a>
+Assets</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>PreBuiltSpline3D</code><ul>
+<li>Representa un <code>Spline3D</code> definido en un archivo externo.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>PreBuiltSplineLoader3D</code><ul>
+<li>Carga un <code>PreBuiltSpline3D</code> a partir de un archivo <code>.gltf</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md179"></a>
+ECS</h3>
+<ul>
+<li><code>PhysicsComponent</code>, <code>PhysicsResolver</code><ul>
+<li>Ahora permite establecer la cantidad de fricción.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md180"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Compile time</b>: ahora <code>IGltfLoader</code> no incluye archivos de Windows que incluyen definiciones.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md181"></a>
+2023.12.11a</h2>
+<h3><a class="anchor" id="autotoc_md182"></a>
+ECS</h3>
+<ul>
+<li><code>CollisionSystem</code><ul>
+<li>Permite lanzar un rayo a la escena, pudiendo establecer el objeto lanzador para ignorarlo.</li>
+</ul>
+</li>
+<li><code>AxisAlignedBoundingBox</code><ul>
+<li>Implementada intersección con rayos.</li>
+</ul>
+</li>
+<li><code>ConvexVolume</code><ul>
+<li>Implementada intersección con rayos.</li>
+</ul>
+</li>
+<li><code>PhysicsComponent</code><ul>
+<li>Permite establecer el tensor de inercia.</li>
+</ul>
+</li>
+</ul>
+<p >TODO:</p>
+<p >fix culling static meshes</p>
+<h2><a class="anchor" id="autotoc_md183"></a>
+2023.12.12a</h2>
+<h3><a class="anchor" id="autotoc_md184"></a>
+Graphics</h3>
+<ul>
+<li><code>RenderPassImageInfo</code>, <code>ICommandList</code><ul>
+<li>Permite comenzar un pase de renderizado sin limpiar las imágenes de color o profundidad.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md185"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>PreBuiltSplineLoader3D</code> carga correctamente los vértices del spline en el orden correcto.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md186"></a>
+2023.12.15a</h2>
+<h3><a class="anchor" id="autotoc_md187"></a>
+Graphics</h3>
+<ul>
+<li><code>RenderTargetAttachment</code>, <code>RenderTarget</code>, <code>RtRenderTarget</code><ul>
+<li>Ahora no tiene una imagen por cada fotograma en vuelo.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md188"></a>
+Collision</h3>
+<ul>
+<li><code>ConvexVolume</code><ul>
+<li>Simplificado el proceso de creación de <code>OOB</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md189"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: añadir caras a un <code>ConvexVolume</code> se refleja instantaneamente al llamar a <code>GetVertices()</code> y <code>GetAxes()</code>.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md190"></a>
+2024.01.24a</h2>
+<h3><a class="anchor" id="autotoc_md191"></a>
+Graphics</h3>
+<h6>(WIP) Renderizado bind-less.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: (<em>WIP</em>) <code>GdrDeferredRenderSystem</code><ul>
+<li>Implementará un sistema de renderizado bind-less.</li>
+</ul>
+</li>
+</ul>
+<h6>Atributos de vértices para renderizado bind-less.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>OSK_VERTEX_ATTRIB(x)</code><ul>
+<li>Debe usarse en todos los atributos.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>VertexPositionAttribute3D</code><ul>
+<li>Contiene la posición del vértice.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>VertexAttributes3D</code><ul>
+<li>Contiene los siguientes atributos:<ul>
+<li>Vector normal.</li>
+<li>Color.</li>
+<li>Coordenadas de texturas (UV).</li>
+<li>Vector tangente.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>VertexAnimationAttributes3D</code><ul>
+<li>Contiene los siguientes atributos:<ul>
+<li>Índices de los huesos.</li>
+<li>Pesos de los huesos.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>VerticesAttributesMaps</code><ul>
+<li>Contiene los atributos de todos los vértices de un modelo 3D.</li>
+<li>Soporta atributos customizados.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GdrVertex3D</code><ul>
+<li>Para renderizado bind-less.</li>
+<li>Únicamente representa el índice en el que se encuentran los atributos.</li>
+</ul>
+</li>
+<li><code>VertexInfo::Entry::Type</code><ul>
+<li><em><b>Nuevo</b></em>: <code>UNSIGNED_INT</code>.</li>
+</ul>
+</li>
+<li><code>IMaterialSlot</code><ul>
+<li>Ahora soporta arrays de recursos.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md192"></a>
+Assets</h3>
+<h6>Atributos de vértices para renderizado bind-less.</h6>
+<ul>
+<li><code>Model3D</code><ul>
+<li>Ahora contiene los atributos de los vértices en memoria RAM.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>MaterialMetadata</code><ul>
+<li>Contiene:<ul>
+<li>Factor metálico.</li>
+<li>Factor de rugosidad.</li>
+<li>Color.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>IGltfMeshLoader</code>, <code>StaticMeshLoader</code>, <code>AnimMeshLoader</code><ul>
+<li>Ahora cargan los atributos de los modelos 3D en memoria RAM.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md193"></a>
+Persistence</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>SerializeJson&lt;&gt;</code><ul>
+<li>Función sobreescribible para la serialización de datos en un archivo JSON.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>DeserializeJson&lt;&gt;</code><ul>
+<li>Función sobreescribible para deserializar datos almacenados en un archivo JSON.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: definidas funciones <code>SerializeJson&lt;&gt;</code> y <code>DeserializeJson&lt;&gt;</code> para:<ul>
+<li><code>AxisAlignedBoundingBox</code></li>
+<li><code>SphereCollider</code></li>
+<li><code>CameraComponent2D</code></li>
+<li><code>CameraComponent3D</code></li>
+<li><code>Collider</code></li>
+<li><code>CollisionComponent</code></li>
+<li><code>Transform3D</code></li>
+<li><code>ConvexVolume</code></li>
+<li><code>ModelComponent3D</code></li>
+<li><code>PhysicsComponent</code></li>
+<li><code>glm::mat3</code></li>
+<li><code>glm::mat4</code></li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md194"></a>
+2024.01.26a</h2>
+<h3><a class="anchor" id="autotoc_md195"></a>
+Graphics</h3>
+<ul>
+<li><code>Format</code><ul>
+<li><em><b>Nuevo</b></em>: <code>UNKNOWN</code></li>
+</ul>
+</li>
+<li><code>GpuImageUsage</code><ul>
+<li><em><b>Nuevo</b></em>: <code>UNKNOWN</code></li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md196"></a>
+Collision</h3>
+<ul>
+<li><code>ConvexVolume</code><ul>
+<li><em><b>Nuevo</b></em>: <code>AddOffset</code><ul>
+<li>Permite añadir un offset a todos los vértices del volumen en la fase de construcción.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md197"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>IAudioSource::SetPitch</code> ahora funciona correctamente para el backend de <code>OpenAL</code>.</li>
+<li><b>Bugfix</b>: <code>IAudioSource::SetGain</code> ahora funciona correctamente para el backend de <code>OpenAL</code>.</li>
+<li><b>Bugfix</b>: <code>IAudioSource::SetLooping</code> ahora funciona correctamente para el backend de <code>OpenAL</code>.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md198"></a>
+2024.01.29a</h2>
+<h3><a class="anchor" id="autotoc_md199"></a>
+Graphics</h3>
+<ul>
+<li><code>PipelineCreateInfo</code>, <code>MaterialSystem</code><ul>
+<li>Ahora permite definir el número máximo de elementos de un array de descriptores.</li>
+</ul>
+</li>
+<li><code>ICommandList</code><ul>
+<li><em><b>Nuevo</b></em>: <code>DrawInstances()</code><ul>
+<li>Permite renderizar varias instancias de un mismo modelo.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md200"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>MaterialSlotVk</code> ya no crea un descriptor pool 3 veces más grande de lo necesario.</li>
+<li><b>Bugfix</b>: <code>MaterialSlotVk</code> ahora es compatible con arrays de recuros.</li>
+<li><b>Bugfix</b>: <code>MaterialSlotVk</code> ahora es compatible con arrays de recursos.</li>
+<li><b>Bugfix</b>: <code>VertexInfo::Entry::Type::UNSIGNED_INT</code> ahora se puede usar para un único unsigned int.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md201"></a>
+2024.02.11a</h2>
+<h3><a class="anchor" id="autotoc_md202"></a>
+General</h3>
+<ul>
+<li>Añadida nueva dependencia: <code>stb_image_write</code>.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md203"></a>
+Graphics</h3>
+<h6>Soporte para capturas de pantalla.</h6>
+<ul>
+<li><code>ISwapchain</code><ul>
+<li>Ahora permite obtener capturas de pantalla y guardarlas en disco.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GpuImageTiling</code><ul>
+<li>Indica la manera en la que se almacenan los píxeles en memoria.</li>
+<li>Puede ser:<ul>
+<li><code>GpuImageTiling::LINEAL</code>: se almacenan de manera lineal, por filas.</li>
+<li><code>GpuImageTiling::OPTIMAL</code>: se almacenan de manera óptima para renderizado.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>IGpuMemorySubblock</code><ul>
+<li>Ahora permite obtener directamente la región de memoria mapeada.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md204"></a>
+2024.03.28a</h2>
+<p >Mejoras de arquitectura:</p><ul>
+<li>Modernización de las arquitecturas relacionadas con modelos 3D.</li>
+<li>Preparación para la implementación de un modelo de ejecución multihilo.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md205"></a>
+Graphics</h3>
+<ul>
+<li><code>Animation</code><ul>
+<li>Mejorado encapsulamiento.</li>
+</ul>
+</li>
+<li><code>Animator</code><ul>
+<li>Ahora se almacena en el componente ECS <code>ModelComponent3D</code>, permitiendo que cada entidad pueda animarse por separado.</li>
+<li>Ya no contiene las instancias de los materiales de animación.</li>
+<li>Ya no contiene los buffers con los transforms de los huesos.</li>
+<li>Ahora permite comprobar si contiene alguna animación.</li>
+</ul>
+</li>
+<li><code>AnimationBone</code> (antes <code>MeshNode</code>)<ul>
+<li>Renombrado.</li>
+</ul>
+</li>
+<li><code>PbrMaterialInfo</code><ul>
+<li>Ahora indica si el material contiene textura normal.</li>
+</ul>
+</li>
+<li><code>ShadowMap</code><ul>
+<li>Ya no contiene los materiales de generación de sombras y sus instancias.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>PositionOnlyVertex3D</code></li>
+</ul>
+<h6>Rework de modelos 3D.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>GpuModelUuid</code></li>
+<li><em><b>Nuevo</b></em>: <code>GpuMeshUuid</code></li>
+<li><code>GpuMesh3D</code> (antes <code>Mesh3D</code>)<ul>
+<li>Renombrado.</li>
+<li>Ahora usa <code>GpuMeshUuid</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GpuModel3D</code><ul>
+<li>Representa un modelo 3D almacenado en GPU.</li>
+<li>Almacena los buffers de vértices e índices.</li>
+<li>Almacena un <code>VerticesAttributesMaps</code>.</li>
+<li>Almacena una lista de <code>GpuMesh3D</code>.</li>
+<li>Puede almacenar, de manera opcional, el <code>CpuModel3D</code> a partir del que se ha creado.</li>
+<li>Almacena una lista de <code>GpuModel3D::Lod</code>.</li>
+<li>Almacena una lista de <code>GpuModel3D::Material</code>.</li>
+<li>Almacena una <code>GpuModel3D::TextureTable</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GpuModel3D::Lod</code><ul>
+<li>Indica los meshes de un modelo que conforman un Lod.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GpuModel3D::Material</code><ul>
+<li>Indica las propiedades de un material PBR.</li>
+<li>Incluye:<ul>
+<li>Color base.</li>
+<li>Color de emisión.</li>
+<li>Rugosidad.</li>
+<li>Metalicidad.</li>
+<li>Índice de textura de color (opcional).</li>
+<li>Índice de textura normal (opcional).</li>
+<li>Índice de textura de rugosidad (opcional).</li>
+<li>Índice de textura de metalicidad (opcional).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GpuModel3D::TextureTable</code><ul>
+<li>Almacena las texturas usadas por un modelo.</li>
+</ul>
+</li>
+</ul>
+<h6>Renombre de pases de renderizado, y ampliación a shadow maps.</h6>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>MeshMapping</code></li>
+<li><em><b>Eliminado</b></em>: <code>PerModelData</code></li>
+<li><em><b>Eliminado</b></em>: <code>PerMeshData</code></li>
+<li><em><b>Nuevo</b></em>: <code>GlobalMeshMapping</code><ul>
+<li>Contiene la información de un modelo 3D que se comparte con todos los pases de renderizado.</li>
+<li>Incluye:<ul>
+<li>Matrices de los objetos en el frame anterior.</li>
+<li>Mapa de <code>GlobalPerModelData</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GlobalPerModelData</code><ul>
+<li>Almacena la información global de un modelo en concreto.</li>
+<li>Incluye:<ul>
+<li>Instancia de material de animación.</li>
+<li>Buffer de GPU con los huesos de la animación.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GlobalMeshMapping</code><ul>
+<li>Contiene la información de un modelo 3D que se comparte con todos los pases de renderizado.</li>
+<li>Incluye:<ul>
+<li>Matrices de los objetos en el frame anterior.</li>
+<li>Mapa de <code>GlobalPerModelData</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>LocalMeshMapping</code><ul>
+<li>Contiene la información de los modelos 3D usada por un pase de renderizado.</li>
+<li>Contiene un mapa de <code>LocalPerModelData</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>LocalPerModelData</code><ul>
+<li>Contiene la información de un modelo 3D en concreto usada por un pase de renderizado.</li>
+<li>Contiene un mapa de <code>LocalPerMeshData</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>LocalPerMeshData</code><ul>
+<li>Contiene la información de una malla 3D en concreto usada por un pase de renderizado.</li>
+<li>Contiene:<ul>
+<li>Instancia de material de renderizado PBR.</li>
+<li>Información del material PB en un GPU buffer.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>IShaderPass</code> (antes <code>IRenderPass</code>)<ul>
+<li>Renombrado.</li>
+<li>Ahora contiene un <code>LocalMeshMapping</code>.</li>
+<li>También usa un <code>GlobalMeshMapping</code>, dado por el sistema de renderizado.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IShadowsPass</code><ul>
+<li>Pase de renderizado de sombras.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ShadowsStaticPass</code><ul>
+<li>Implementa <code>IShadowsPass</code> para mallas estáticas.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ShaderPassTable</code><ul>
+<li>Almacena los pases de renderizado de un sistema de renderizado.</li>
+<li>Alamcena los IDs de los objetos compatibles con cada pase de renderizado.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md206"></a>
+Assets</h3>
+<ul>
+<li><code>AssetManager</code><ul>
+<li>Ahora permite obtener directamente los loaders.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AssetLoaderAlreadyRegisteredException</code></li>
+<li><em><b>Eliminado</b></em>: <code>ModelMobilityType</code></li>
+<li><em><b>Eliminado</b></em>: <code>ModelType</code></li>
+<li><em><b>Eliminado</b></em>: <code>MeshMetadata</code></li>
+<li><em><b>Eliminado</b></em>: <code>MaterialMetadata</code></li>
+<li><em><b>Eliminado</b></em>: <code>ModelMetadata</code></li>
+<li><em><b>Eliminado</b></em>: <code>Model3D::Lod</code></li>
+<li><code>Model3D</code><ul>
+<li>Ya no contiene el mapa de atributos de vértices de un modelo.</li>
+<li>Ya no contiene el identificador único de un modelo.</li>
+<li>Ya no contiene los niveles Lod del modelo.</li>
+<li>Ya no contiene el nombre del pase de renderizado aplicable al modelo.</li>
+<li>Ya no contiene el animador de un modelo 3D animado.</li>
+<li>Ahora contiene una instancia de la clase <code>GpuModel3D</code>.</li>
+</ul>
+</li>
+<li><code>TextureLoader</code><ul>
+<li>Ahora permite almacenar referencias <code>AssetOwningRef&lt;Texture&gt;</code> cargadas fuera del loader.</li>
+</ul>
+</li>
+</ul>
+<h6>Rework de la carga de modelos.</h6>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>GltfMaterialInfo</code></li>
+<li><em><b>Eliminado</b></em>: <code>GltfModelInfo</code></li>
+<li><code>GltfLoader</code> (antes <code>IGltfLoader</code>)<ul>
+<li>Ahora carga un modelo almacenado en la CPU (<code>CpuModel3D</code>).</li>
+<li>Actualizado para seguir un modelo de programación funcional.</li>
+<li>Ya no almacena información intermedia en atributos de la clase.</li>
+</ul>
+</li>
+<li><code>StaticMeshLoader</code><ul>
+<li>Ahora configura un <code>GpuModel3D</code> a partir de un <code>CpuModel3D</code>.</li>
+</ul>
+</li>
+<li><code>AnimMeshLoader</code><ul>
+<li>Ahora configura un <code>GpuModel3D</code> a partir de un <code>CpuModel3D</code>.</li>
+</ul>
+</li>
+<li><code>PreBuiltSplineLoader3D</code><ul>
+<li>Ahora carga el spline a partir de un <code>CpuModel3D</code>, cargándolo mediante <code>GltfLoader</code>.</li>
+</ul>
+</li>
+<li><code>PreBuiltColliderLoader</code><ul>
+<li>Ahora carga el collider a partir de un <code>CpuModel3D</code>, cargándolo mediante <code>GltfLoader</code>.</li>
+</ul>
+</li>
+</ul>
+<h6>Nuevas excepciones para la carga de modelos 3D.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>NoVertexColorFoundException</code></li>
+<li><em><b>Nuevo</b></em>: <code>NoVertexBoneWeightsFoundException</code></li>
+<li><em><b>Nuevo</b></em>: <code>NoVertexBoneIndicesFoundException</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md207"></a>
+ECS</h3>
+<ul>
+<li><code>ModelComponent3D</code><ul>
+<li>Ahora contiene el animador del modelo, permitiendo que cada entidad se anime por separado.</li>
+<li>Ahora contiene los nombres de los pases de renderizado aplicables al modelo.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>EventAlreadyRegisteredException</code></li>
+</ul>
+<h6>Grafos de ejecución y dependencias explícitas entre sistemas.</h6>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>DEFAULT_EXECUTION_ORDER</code></li>
+<li><em><b>Nuevo</b></em>: <code>SystemDependencies</code><ul>
+<li>Permite establecer dependencias de ejecución entre sistemas.</li>
+<li><code>executeAfterThese</code>: sistemas que deben ejecutarse antes.</li>
+<li><code>executeBeforeThese</code>: sistemas que deben ejecutarse después.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SystemExecutionGraph</code><ul>
+<li>Contiene un grafo indicando el orden de ejecución de los sistemas, respetando sus dependencias de ejecución.</li>
+<li>Los sistemas se organizan en sets, de tal manera que se respeten las dependencias.</li>
+<li>Detecta dependencias cíclicas.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SystemCyclicDependencyException</code></li>
+<li><em><b>Eliminado</b></em>: <code>IPureSystem</code></li>
+<li><em><b>Eliminado</b></em>: <code>IProducerSystem</code></li>
+<li><em><b>Nuevo</b></em>: <code>EventQueueSpan</code><ul>
+<li>Representa un rango de eventos.</li>
+<li>Debe ser casteado al tipo de evento.</li>
+</ul>
+</li>
+<li><code>ISystem</code><ul>
+<li><em><b>Eliminado</b></em>: <code>OnTick()</code>.</li>
+</ul>
+</li>
+<li><code>IConsumerSystem</code><ul>
+<li>Ahora debe declara explócitamente el tipo de evento al que está enlazado mediante <code>GetEventName()</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>OnExecutionStart()</code>: función que se ejecuta antes de comenzar el procesamiento de eventos.</li>
+<li><em><b>Nuevo</b></em>: <code>OnExecutionEnd()</code>: función que se ejecuta después de finalizar el procesamiento de eventos.</li>
+<li>El procesamiento ahora se realiza en la función <code>Execute</code>.</li>
+<li>Obtiene los eventos a través de un <code>EventQueueSpan</code>.<ul>
+<li>Puede castearse a un span del tipo de evento que sea con la función <code>BuildSpan()</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ITypedConsumerSystem&lt;&gt;</code><ul>
+<li>Opción más sencilla para implementar un sistema consumidor.</li>
+<li>Template class que se construye con el tipo de evento en concreto.</li>
+<li>Incluye una función <code>Execute()</code> con un span ya casteado al tipo de evento.</li>
+</ul>
+</li>
+<li><code>IIteratorSystem</code><ul>
+<li><em><b>Nuevo</b></em>: <code>OnExecutionStart()</code>: función que se ejecuta antes de comenzar el procesamiento de objetos.</li>
+<li><em><b>Nuevo</b></em>: <code>OnExecutionEnd()</code>: función que se ejecuta después de finalizar el procesamiento de objetos.</li>
+<li>La ejecución de la lógica ahora ocurre en <code>Execute()</code>.<ul>
+<li>Ahora obtiene directamente la lsita de objetos a procesar.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>IRenderSystem</code><ul>
+<li><em><b>Nuevo</b></em>: <code>OnRenderStart()</code>: función que se ejecuta antes de comenzar el proceso de renderizado.</li>
+<li><em><b>Nuevo</b></em>: <code>OnRenderEnd()</code>: función que se ejecuta después de finalizar el proceso de renderizado.</li>
+<li>Ahora permite añadir pases de renderizado de sombras.</li>
+</ul>
+</li>
+<li><code>SystemManager</code><ul>
+<li>Ahora usa un <code>SystemExecutionGraph</code> para conocer el orden de ejecución de los sistemas.</li>
+<li>Ahora manda explícitamente un rango de objetos o eventos a los sistemas que lo procesan.</li>
+<li>Ahora ejecuta los renderizados de los sistemas ECS.</li>
+</ul>
+</li>
+<li><code>EntityComponentSystem</code><ul>
+<li>Ahora ejecuta los renderizados de los sistemas ECS.</li>
+</ul>
+</li>
+<li><code>IGame</code><ul>
+<li>Ahora ya no ejecuta los renderizados de los sistemas ECS.</li>
+<li><em><b>Eliminado</b></em>: <code>OnTick()</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>OnTick_BeforeEcs()</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>OnTick_AfterEcs()</code>.</li>
+</ul>
+</li>
+</ul>
+<h6>Mini-rework de Transform3D para adaptarlo al futuro sistema de trabajos.</h6>
+<ul>
+<li><code>Transform3D</code><ul>
+<li>Cambiar sus valores (posición, rotación o escala) a través de la interfaz no aplica directamente los cambios, sino que almacena el delta internamente.</li>
+<li>Actualizar la matriz modelo (<code>UpdateModel()</code>) ya no llama a la función <code>UpdateModel()</code> de los elementos hijos.</li>
+<li>Ahora la jerarquía se almacena únicamente hacia abajo:<ul>
+<li><em><b>Eliminado</b></em>: ID del padre.</li>
+<li><em><b>Eliminado</b></em>: <code>AttachToObject()</code>.</li>
+<li><em><b>Eliminado</b></em>: <code>Unattach()</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>AddChild()</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>RemoveChild()</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>GetChildren()</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>_ApplyChanges()</code>: aplica los cambios almacenados durante el frame.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>TransformApplierSystem</code><ul>
+<li>Se encarga de aplicar todos los cambios de los <code>Transform3D</code>.</li>
+<li>Respeta las jerarquías.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md208"></a>
+Types</h3>
+<ul>
+<li><code>DynamicArray</code><ul>
+<li>Ahora puede construir un span con todos los elementos del array.</li>
+<li>Ahora puede construir un span con un subrango de elementos del array.</li>
+</ul>
+</li>
+<li><code>Quaternion</code><ul>
+<li><em><b>Nuevo</b></em>: <code>Empty()</code>: crea un cuaternión vacío.</li>
+<li><em><b>Nuevo</b></em>: operadores <code>+</code> y <code>+=</code>: aplican una rotación sobre el cuaternión.</li>
+<li><em><b>Nuevo</b></em>: operadores <code>-</code> y <code>-=</code>: obtienen la diferencia entre dos cuaterniones.</li>
+</ul>
+</li>
+</ul>
+<h6>Modelos 3D almacenados en memoria RAM.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>CpuVertex3D</code><ul>
+<li>Vértice con los atributos que pueden ser cargados de un archivo.</li>
+<li>Contiene (todos son opcionales):<ul>
+<li>Posición.</li>
+<li>Coordenadas de textura.</li>
+<li>Vector normal.</li>
+<li>Vector tangente.</li>
+<li>Color.</li>
+<li>IDs de huesos.</li>
+<li>Pesos de huesos.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>CpuMesh3D</code><ul>
+<li>Malla de vértices.</li>
+<li>Contiene los vértices, así como los índices.</li>
+<li>Puede diferenciar entre:<ul>
+<li>Índices de triángulos (<code>TriangleIndices</code>).</li>
+<li>Índices de líneas (<code>LineIndices</code>).</li>
+<li>Índices de puntos aislados (<code>PointIndex</code>).</li>
+</ul>
+</li>
+<li>Puede contener, de manera opcional, un índice de material.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>CpuModel3D</code><ul>
+<li>Modelo almacenado en memoria RAM.</li>
+<li>Contiene una lista de mallas.</li>
+<li>Puede contener animaciones, y sus skins.</li>
+</ul>
+</li>
+</ul>
+<h6>Añadidos UUIDs formales.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>BaseUuid</code><ul>
+<li>Clase template que representa un identificador numérico único.</li>
+<li>Pueden crearse distintos tipos.</li>
+<li>Cada tipo es incompatibe con otros tipos.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>UuidProvider</code><ul>
+<li>Genera nuevos UUIDs.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md209"></a>
+Macros</h3>
+<ul>
+<li><code>OSK_DEFINE_AS(x)</code><ul>
+<li>Ahora define una función <code>Is&lt;&gt;</code> que permite saber en tiempo de ejecución si un objeto puede convertirse en un tipo en concreto.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md210"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>GameObjectManager::IsGameObjectAlive</code>, <code>EntityComponentSystem::IsGameObjectAlive</code> ahora devuelven el valor correcto.</li>
+<li><b>Bugfix</b>: <code>AabbCollider::GetMin</code>, <code>AabbCollider::GetMax</code> ahora devuelven el valor correcto.</li>
+<li><b>Bugfix</b>: <code>SystemManager::GetSystem</code>, <code>EntityComponentSystem::GetSystem</code> ahora devuelven <em>nullptr</em> si el sistema no está registrado.</li>
+<li><b>Bugfix</b>: las funciones <em>const</em> de <code>Skeleton</code> que permiten obtener huesos ya no generan bucles infinitos.</li>
+<li><b>Bugfix</b>: <code>PreBuiltSplineLoader3D</code> ahora carga correctamente los puntos si previamente se ha cargado un spline con un transform específico.</li>
+<li><b>Bugfix</b>: <code>VerticesAttributesMap::GetVerticesAttributes</code> ahora devuelve correctamente una referencia a la lista de atributos.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md211"></a>
+2024.04.16a</h2>
+<p >Añadido soporte para ejecución multihilo.</p>
+<h3><a class="anchor" id="autotoc_md212"></a>
+Threading</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>IJob</code><ul>
+<li>Interfaz para las operaciones ejecutables de manera paralela.</li>
+<li>Puede ser lanzado mediante <code>JobSystem</code>.</li>
+<li>Puede contener <em>tags</em> (<code>std::string</code>).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>JobSystem</code><ul>
+<li>Sistema que es capaz de ejecutar trabajos (<code>IJob</code>) de manera paralela.</li>
+<li>Tiene un <em>thread-pool</em>, con un número de hilos que depende del número de núcleos de la CPU.</li>
+<li>Distribuye los trabajos asignados equitativamente entre los hilos disponibles.</li>
+<li>Permite esperar a que se completen los trabajos de un tipo dado.</li>
+<li>Permite esperar a que se completen los trabajos con un <em>tag</em> dado.</li>
+<li>Permite esperar a que se completen todos los trabajos.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>JobQueue</code><ul>
+<li>Representa una cola <em>thread-safe</em> que contiene trabajos (<code>IJob</code>).</li>
+<li>Implementada mediante un <em>ring-buffer</em> ampliable.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>JobCountMap</code><ul>
+<li>Mantiene el conteo del número de trabajos activos con un <em>tag</em> en concreto.</li>
+<li>Se usa también para los trabajos de un tipo dado, considerando el tipo como un <em>tag</em>.</li>
+</ul>
+</li>
+</ul>
+<h6>Trabajos añadidos:</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>IteratorSystemExecutionJob</code><ul>
+<li>Ejecuta la funcionalidad de un sistema iterador para un rango de objetos dado.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ConsumerSystemExecutionJob</code><ul>
+<li>Ejecuta la funcionalidad de un sistema consumidor para un rango de eventos dado.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AssetLoaderJob</code><ul>
+<li>Ejecuta el proceso de carga de un asset.</li>
+</ul>
+</li>
+</ul>
+<h6>Tipos añadidos:</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>AtomicHolder</code><ul>
+<li>Permite usar una variable atómica como miemro de una clase sin invaldar sus operaciones de copia y movimiento.</li>
+<li>La copia tendrá el mismo valor.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>MutexHolder</code><ul>
+<li>Permite usar un mutex como miemro de una clase sin invaldar sus operaciones de copia y movimiento.</li>
+<li>La copia tendrá un mutex <em>unlocked</em>.</li>
+</ul>
+</li>
+</ul>
+<h6>Clases adaptadas:</h6>
+<p >Las siguientes clases han sido modificadas para ofrecer su funcionalidad principal de manera parcial o totalmente <em>thread-safe</em> sin cambiar su interfaz:</p><ul>
+<li><code>IGpuMemoryAllocator</code>: para todas las asignaciones de memoria y creación de recursos.</li>
+<li><code>IGpuMemoryBlock</code>: toda la clase.</li>
+<li><code>ILogger</code>: para los métodos de escritura.</li>
+<li><code>PhysicsComponent</code>: toda la estructura.</li>
+<li><code>UuidProvider</code>: toda la clase.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md213"></a>
+ECS</h3>
+<ul>
+<li><code>SystemManager</code><ul>
+<li>Ahora permite la ejecución de sistemas en paralelo.</li>
+<li>Los ejecuta en grupos de 5 entidades o eventos.</li>
+<li>Puede ejecutar varios sistemas a la vez, si están en el mismo grupo de ejecución.</li>
+<li>Las funciones <code>OnExecutionStart()</code> y <code>OnExecutionEnd()</code> de los sistemas se ejecutan en un modelo <em>single-thread</em>.</li>
+</ul>
+</li>
+<li><code>EntityComponentSystem</code><ul>
+<li><code>PublishEvent()</code> ahora es <em>thread-safe</em>.</li>
+</ul>
+</li>
+<li><code>EventManager</code><ul>
+<li><code>PublishEvent()</code> ahora es <em>thread-safe</em>.</li>
+</ul>
+</li>
+<li><code>SystemDependencies</code><ul>
+<li>Ahora permite indicar si un sistema debe ejecutarse en entorno de un único hilo (por defecto lo hace en modo multi-hilo).</li>
+<li>Ahora permite indicar si un sistema debe estar en un set de ejecución exclusivo (sin que haya otros sistemas en el set).</li>
+</ul>
+</li>
+<li><code>GameObjectIndex</code><ul>
+<li>Ahora es un UUID formal (especialización de <code>BaseUuid</code>).</li>
+</ul>
+</li>
+<li><code>EventQueueSpan</code><ul>
+<li>Ahora permite obtener un subspan.</li>
+</ul>
+</li>
+<li><code>Transform3D</code><ul>
+<li>Añadidas funciones <em>thread-safe</em> para añadir posición, rotación o escala.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md214"></a>
+Assets</h3>
+<ul>
+<li><code>AssetManager</code><ul>
+<li>Ahora permite cargar assets de manera asíncrona.</li>
+</ul>
+</li>
+<li><code>AssetRef</code>, <code>AssetOwningRef</code><ul>
+<li>Ahora usan un contador atómico.</li>
+<li>Ahora permiten saber si el asset ha sido cargado o no (para carga asíncrona).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AssetsMap</code><ul>
+<li>Encapsula el caché de un loader.</li>
+<li>Almacena los assets cargados, y los enlaza con la ruta.</li>
+<li>Creado para ser <em>thread-safe</em>.</li>
+</ul>
+</li>
+<li><code>IAssetLoader</code><ul>
+<li>La función <code>Load(const std::string&amp;, void*)</code> ha sido dividida en varias, para permitir registrar un asset sin cargarlo directamente (para carga asíncrona):<ul>
+<li><em><b>Nuevo</b></em>: <code>void FullyLoad(const std::string&amp;, void*)</code><ul>
+<li>Realiza todo el proceso de carga.</li>
+<li>Equivalente a la función antigua <code>Load(const std::string&amp;, void*)</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>void RegisterWithoutLoading(...)</code><ul>
+<li>Registra un asset (introduciendo el <code>AssetOwningRef</code> al mapa) sin cargarlo.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>void Load(...)</code><ul>
+<li>Carga un archivo previamente registrado.</li>
+<li>Puede llamarse en un hilo distinto al que lo ha registrado.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>void SetAsLoaded(...)</code><ul>
+<li>Marca el asset como completamente cargado.</li>
+</ul>
+</li>
+<li>Se ha actualizado el macro <code>OSK_DEFAULT_LOADER_IMPL(x)</code> para implementar todas estas funciones.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md215"></a>
+Graphics</h3>
+<ul>
+<li><code>ISwapchain</code><ul>
+<li>Mejorado encapsulamiento.</li>
+<li>Incrementado <em>dependency injection</em>.</li>
+</ul>
+</li>
+</ul>
+<h6>Adaptado para ejecución multihilo.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>ThreadedCommandPoolMap</code><ul>
+<li>Mapa que asigna un <code>ICommandPool</code> a cada hilo.</li>
+<li>Necesario para poder grabar comandos en hilos distintos.</li>
+</ul>
+</li>
+</ul>
+<h6>Colas GPU.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>GpuQueueType</code><ul>
+<li>Indica los tipos de colas GPU usados por el motor:<ul>
+<li><code>MAIN</code><ul>
+<li>Usada para renderizado general.</li>
+</ul>
+</li>
+<li><code>PRESENTATION</code><ul>
+<li>Usada para presentación de imágenes por pantalla.</li>
+</ul>
+</li>
+<li><code>ASYNC_TRANSFER</code><ul>
+<li>Cola exclusiva de transferencia.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>CommandsSupport</code><ul>
+<li>Indica los tipos de comandos soportados por una lista de comandos, un pool de comandos o una cola de comandos.</li>
+<li>Incluye (se pueden mezclar):<ul>
+<li><code>GRAPHICS</code></li>
+<li><code>COMPUTE</code></li>
+<li><code>TRANSFER</code></li>
+<li><code>PRESENTATION</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ICommandPool</code><ul>
+<li>Ahora permite conocer los comandos que soporta (<code>CommandsSupport</code>).</li>
+<li>Ahora permite cononcer la cola sobre la que se deben insertar las listas creadas por el pool (<code>GpuQueueType</code>).</li>
+</ul>
+</li>
+<li><code>ICommandQueue</code><ul>
+<li>Ahora almacena información sobre la familia a la que pertenece.</li>
+<li>Ahora almacena el índice de la cola dentro de la familia.</li>
+<li>Ahora permite conocer los comandos que soporta (<code>CommandsSupport</code>).</li>
+</ul>
+</li>
+<li><code>IGpu</code><ul>
+<li>Ahora permite crear un command pool de transferencia.</li>
+</ul>
+</li>
+<li><code>IGpuImage</code><ul>
+<li>Ahora almacena una referencia a la cola GPU que la posee.</li>
+</ul>
+</li>
+<li><code>GpuBufferRange</code><ul>
+<li>Representa un rango de información de un buffer.</li>
+</ul>
+</li>
+<li><code>GpuBuffer</code><ul>
+<li>Ahora almacena una referencia a la cola GPU que lo posee.</li>
+<li>Ahora almacena información sobre la última barrera GPU que se le ha aplicado.</li>
+<li>Ahora permite obtener un rango del buffer.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ResourceQueueTransferInfo</code><ul>
+<li>Permite indicar una transferencia de la propiedad de un recurso de una cola a otra.</li>
+</ul>
+</li>
+<li><code>ICommandList</code><ul>
+<li><code>SetGpuImageBarrier(...)</code> ahora permite definir una transferencia del recurso a otra cola.</li>
+<li><em><b>Nuevo</b></em>: <code>SetGpuBufferBarrier(...)</code><ul>
+<li>Permite añadir una barrera de ejecución que afecta a un buffer.</li>
+<li>Permite definir una transferencia del recurso a otra cola.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>TransferToQueue(...)</code><ul>
+<li>Permite definir una transferencia de un buffer o imagen a otra cola.</li>
+</ul>
+</li>
+<li>Ahora almacena una referencia a la cola sobre la que se tiene que enviar.</li>
+</ul>
+</li>
+<li><code>GpuImageCreateInfo</code><ul>
+<li>Ahora permite establecer el tipo de cola que poseerá el recurso.</li>
+</ul>
+</li>
+<li><code>IGpuMemoryAllocator</code><ul>
+<li><code>CreateCubemapImage(...)</code>, <code>CreateVertexBuffer(...)</code>, <code>CreateIndexBuffer(...)</code>, <code>CreateUniformBuffer(...)</code>, <code>CreateStorageBuffer(...)</code>, <code>CreateStagingBuffer(...)</code>, <code>CreateBuffer(...)</code> ahora permiten establecer la cola que posee el recurso inicialmente.</li>
+<li><code>CreateVertexBuffer(...)</code> ahora tiene una versión que permite indicar una cola de transferencia y una de propiedad final.</li>
+<li><code>CreateIndexBuffer(...)</code> ahora tiene una versión que permite indicar una cola de transferencia y una de propiedad final.</li>
+</ul>
+</li>
+<li><code>IRenderer</code><ul>
+<li>Mejorado encapsulamiento.</li>
+<li><code>CreateSingleUseCommandList(...)</code> ahora permite indicar la cola sobre la que se crea.</li>
+<li><em><b>Nuevo</b></em>: <code>CreateCommandPool(...)</code></li>
+<li>Ahora usa varias colas:<ul>
+<li>Cola unificada: cola que incluye renderizado principal y presentación.</li>
+<li>Cola principal de renderizado (para cuando no existe cola unificada).</li>
+<li>Cola de presentación (para cuando no existe cola unificada).</li>
+<li><em><b>Nueva</b></em>: cola de transferencia exclusiva.</li>
+</ul>
+</li>
+<li>Permite obtener la cola óptima para una operación en concreto.</li>
+<li>Almacena varios mapas de command pools (<code>ThreadedCommandPoolMap</code>), uno por cada tipo de cola soportado.</li>
+</ul>
+</li>
+<li><code>RendererVk</code><ul>
+<li>Eliminados semáforos innecesarios.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md216"></a>
+Types</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>StopWatch</code><ul>
+<li>Permite medir un intervalo de tiempo.</li>
+</ul>
+</li>
+<li><code>Uuid</code><ul>
+<li><em><b>Nuevo</b></em>: <code>OSK_DEFINE_UUID_FORMATTER(x)</code><ul>
+<li>Permite usar un <code>Uuid</code> de un tipo específico dentro de <code>std::format(x)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md217"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>OwnedPtr&lt;GpuBuffer&gt; CreateVertexBuffer()</code> (sobrecarga con lista de vértices) ahora usa correctamente el valor del parámetro <code>usage</code>.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md218"></a>
+2024.04.29a</h2>
+<h3><a class="anchor" id="autotoc_md219"></a>
+Persistence</h3>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>DataNode</code></li>
+<li><em><b>Eliminado</b></em>: <code>TDataType</code><ul>
+<li><em><b>Eliminado</b></em>: <code>DATA_TYPE_UNKNOWN</code></li>
+<li><em><b>Eliminado</b></em>: <code>DATA_TYPE_STRING</code></li>
+<li><em><b>Eliminado</b></em>: <code>DATA_TYPE_INT</code></li>
+<li><em><b>Eliminado</b></em>: <code>DATA_TYPE_FLOAT</code></li>
+<li><em><b>Eliminado</b></em>: <code>DATA_TYPE_RESERVED_MAX</code></li>
+</ul>
+</li>
+<li>Implementada serialización y deserialización para:<ul>
+<li><code>Color</code></li>
+<li><code>PbrIblConfig</code></li>
+<li><code>DirectionalLight</code></li>
+<li><code>ShadowMap</code></li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md220"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>SerializeJson&lt;ModelComponent3D&gt;(...)</code> y <code>DeserializeJson&lt;ModelComponent3D&gt;(...)</code> ahora funcionan correctamente.</li>
+<li><b>Bugfix</b>: <code>SerializeJson&lt;Transform3D&gt;(...)</code> y <code>DeserializeJson&lt;Transform3D&gt;(...)</code> ahora procesan correctamente la jerarquía de objetos.</li>
+<li><b>Bugfix</b>: <code>GameObjectManager::CreateGameObject()</code> ahora no asigna de manera incorrecta identificadores inválidos.</li>
+<li><b>Bugfix</b>: <code>Transform3D</code> ahora aplica correctamente las rotaciones.</li>
+<li><b>Bugfix</b>: <code>EntityComponentSystem::DestroyObject(...)</code> ahora llama correctamente a <code>SystemManager::GameObjectDestroyed(...)</code>.</li>
+<li><b>Bugfix</b>: <code>RendererVk</code> ahora da prioridad a las GPUs dedicadas.</li>
+<li><b>Bugfix</b>: <code>SystemManager::OnTick(...)</code> ahora ignora correctamente los sistemas desactivados.</li>
+<li><b>Bugfix</b>: <code>SystemManager::OnRenderer(...)</code> ahora ignora correctamente los sistemas desactivados.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md221"></a>
+2024.05.18a</h2>
+<h3><a class="anchor" id="autotoc_md222"></a>
+Persistence</h3>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>SerializeJson</code>, <code>DeserializeJson</code></li>
+<li><em><b>Nuevo</b></em>: <code>SerializeComponent</code>, <code>DeserializeComponent</code><ul>
+<li>Operaciones de serialización y deserialización en formato JSON.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SerializeData</code>, <code>DeserializeData</code><ul>
+<li>Operaciones de serialización y deserialización en formato JSON.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>BinarySerializeComponent</code>, <code>BinaryDeserializeComponent</code><ul>
+<li>Operaciones de serialización y deserialización en formato binario.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>BinarySerializeData</code>, <code>BinaryDeserializeData</code><ul>
+<li>Operaciones de serialización y deserialización en formato binario.</li>
+</ul>
+</li>
+<li>Implementadas operaciones de serialización y deserialización (formatos JSON y binario) para:<ul>
+<li><code>AxisAlignedBoundingBox</code></li>
+<li><code>SphereCollider</code></li>
+<li><code>Collider</code></li>
+<li><code>Color</code></li>
+<li><code>ConvexVolume</code></li>
+<li><code>IblConfig</code></li>
+<li><code>DirectionalLight</code></li>
+<li><code>ShadowMap</code></li>
+<li><code>Vector2</code> (todos los tipos)</li>
+<li><code>Vector3</code> (todos los tipos)</li>
+<li><code>Vector4</code> (todos los tipos)</li>
+<li><code>Quaternion</code></li>
+<li><code>glm::mat3</code>, <code>glm::mat4</code></li>
+<li>Todos los componentes ECS.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>BinaryBlock</code><ul>
+<li>Permite escribir datos, que se almacenan en un formato binario.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>BinaryBlockReader</code><ul>
+<li>Permite leer datos de un bloque binario.</li>
+<li>Contiene un cursor interno.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md223"></a>
+ECS</h3>
+<ul>
+<li><code>SavedGameObjectTranslator</code><ul>
+<li>Permite obtener el nuevo índice de una entidad que ha sido guardada en disco.</li>
+</ul>
+</li>
+<li><code>EntityComponentSystem</code><ul>
+<li>Ahora permite guardar el estado del juego (formatos JSON y binario).</li>
+<li>Ahora permite cargar el estado del juego (formatos JSON y binario).</li>
+</ul>
+</li>
+<li><code>SystemManager</code><ul>
+<li>Ahora permite desactivar todos los sistemas.</li>
+<li>Ahora permite obtener un sistema por su nombre.</li>
+<li>Ahora permite obtener el grafo de ejecución.</li>
+</ul>
+</li>
+<li><code>ComponentManager</code><ul>
+<li>Ahora permite obtener todos los contenedores.</li>
+<li>Ahora permite obtener un contenedor por el nombre del tipo de componente.</li>
+</ul>
+</li>
+<li><code>IComponentContainer</code>, <code>ComponentContainer&lt;T&gt;</code><ul>
+<li>Ahora permite obtener el nombre del tipo de componente que almacena.</li>
+<li>Ahora permite serializar todos los componentes (formatos JSON y binario).</li>
+<li>Ahora permite deserializar y añadir componentes individuales (formatos JSON y binario).</li>
+</ul>
+</li>
+<li><em><b>Eliminado</b></em>: <code>Scene</code> (no se usaba)</li>
+<li><em><b>Eliminado</b></em>: <code>SystemPriorityQueue</code> (no se usaba)</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md224"></a>
+Graphics</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>ShaderPassFactory</code><ul>
+<li>Permite crear un pase de shader a partir de su nombre</li>
+<li>El tipo de shader debe ser registrado previamente.</li>
+</ul>
+</li>
+<li><code>IRenderer</code><ul>
+<li>Ahora contiene un <code>ShaderPassFactory</code>.</li>
+</ul>
+</li>
+<li><code>ShaderPassTable</code><ul>
+<li><em><b>Nuevo</b></em>: <code>RemoveAllPasses()</code></li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md225"></a>
+IO</h3>
+<ul>
+<li><code>FileIO</code><ul>
+<li><em><b>Nuevo</b></em>: <code>WriteBinaryFile(...)</code><ul>
+<li>Permite escribir archivos binarios.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md226"></a>
+Error Handling</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>FinishedBlockReaderException</code></li>
+<li><em><b>Nuevo</b></em>: <code>InvalidBinaryDeserializationException</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md227"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>EntityComponentSystem::DestroyObject(...)</code> ahora elimina correctamente los componentes asociados al objeto eliminado.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md228"></a>
+2024.05.29a</h2>
+<h6>Añadido editor 3D.</h6>
+<h3><a class="anchor" id="autotoc_md229"></a>
+General</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>IDebugGame</code><ul>
+<li>Hereda de <code>IGame</code>.</li>
+<li>Para ayudar con tareas de debug/desarrollo.</li>
+<li>Incluye la funcionalidad de:<ul>
+<li>Editor 3D.</li>
+<li>Consola de comandos.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Dividido el archivo <code>OSKmacros.h</code> en:<ul>
+<li><code><a class="el" href="_api_call_8h_source.html">ApiCall.h</a></code>: para <code>OSKAPI_CALL</code>.:</li>
+<li><code><a class="el" href="_numeric_types_8h_source.html">NumericTypes.h</a></code>: para tipos numéricos.</li>
+<li><code><a class="el" href="_define_as_8h_source.html">DefineAs.h</a></code>: para <code>OSK_DEFINE_AS(...)</code>.</li>
+<li><code><a class="el" href="_define_constructors_8h_source.html">DefineConstructors.h</a></code>: para <code>OSK_DISABLE_COPY(...)</code>, <code>OSK_DISABLE_MOVE(...)</code>, <code>OSK_DEFAULT_COPY_OPERATOR(...)</code>, <code>OSK_DEFAULT_MOVE_OPERATOR(...)</code>.</li>
+<li><code><a class="el" href="_define_iuuid_8h_source.html">DefineIuuid.h</a></code>: para <code>OSK_DEFINE_IUUID(...)</code>, <code>OSK_IUUID(...)</code>.</li>
+<li><code><a class="el" href="_vulkan_typedefs_8h_source.html">VulkanTypedefs.h</a></code>: para <code>OSK_VULKAN_TYPEDEF(...)</code>, <code>OSK_VULKAN_FLAGS_TYPEDEF(...)</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md230"></a>
+UI</h3>
+<ul>
+<li><code>UI::IElement</code><ul>
+<li>Ahora permite actualizarse por teclado.</li>
+</ul>
+</li>
+<li><code>UI::TextView</code><ul>
+<li>Ahora hereda de <code>UI::ImageView</code>, por lo que se puede configurar una imagen de fondo.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>UI::TextInput</code><ul>
+<li>Permite introducir texto mediante teclado.</li>
+<li>Permite establecer un texto por defecto (placeholder).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>UI::BorderLayout</code><ul>
+<li>Divide el espacio en 5 áreas (norte, sur, este, oeste, centro).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>UI::Console</code><ul>
+<li>Consola debug del motor.</li>
+<li>Permite añadir mensajes.</li>
+<li>Permite ejecutar comandos.</li>
+<li>Permite ver los últimos mensajes añadidos.</li>
+<li>Disponible por defecto si se hereda la clase <code>IDebugGame</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md231"></a>
+&lt;em&gt;&lt;strong&gt;Nuevo&lt;/strong&gt;&lt;/em&gt;: Console commands</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>ConsoleCommand</code><ul>
+<li>Representa un comando ejecutable por consola.</li>
+<li>Permite definir el texto del comando.</li>
+<li>Permite definir un callback que se ejecutará, con unos parámetros (pasados por consola).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ConsoleCommandExecutor</code><ul>
+<li>Permite ejecutar comandos a partir de un mensaje de consola.</li>
+<li>Se deben registrar los tipos de comandos.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>:<ul>
+<li><code>GpuStatsCommand</code><ul>
+<li>Muestra por consola la información del consumo de memoria VRAM.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>:<ul>
+<li><code>EditorShowCommand</code>, <code>EditorHideCommand</code><ul>
+<li>Permite mostrar o quitar el editor.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>:<ul>
+<li><code>ExitCommand</code><ul>
+<li>Sale del juego.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md232"></a>
+&lt;em&gt;&lt;strong&gt;Nuevo&lt;/strong&gt;&lt;/em&gt;: Editor</h3>
+<h6>Editor 3D que muestra información de la escena.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>EditorUi</code><ul>
+<li>Clase principal de la interfaz del editor.</li>
+<li>Contiene dentro los elementos de interfaz.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>EditorHeader</code><ul>
+<li>Barra superior de la interfaz del editor.</li>
+<li>Contiene un logo.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>EditorBottomBar</code><ul>
+<li>Barra inferior de la interfaz del editor.</li>
+<li>Contiene:<ul>
+<li>Icono.</li>
+<li>Versión del motor.</li>
+<li>Número de hilos.</li>
+<li>Nombre de la GPU.</li>
+<li>FPS.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>Editor::ObjectList</code><ul>
+<li>Barra derecha del editor.</li>
+<li>Contiene una lista con los objetos de la escena.</li>
+<li>Contiene un panel de propiedades (<code>Editor::PropertiesPanel</code>) que se actualiza para mostrar los componentes del objeto seleccionado.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>Editor::SystemList</code><ul>
+<li>Barra izquierda del editor.</li>
+<li>Contiene una lista con los sistemas de la escena.</li>
+<li>Contiene un panel de propiedades (<code>Editor::PropertiesPanel</code>) que se actualiza para mostrar las propiedades del sistema seleccionado.<ul>
+<li>Los datos son los obtenidos al serializar el sistema en formato JSON.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>Editor::PropertiesPanel</code><ul>
+<li>Muestra las propiedades de un sistema o los componentes de un objeto.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>EditorPanelTitle</code><ul>
+<li>Título de un panel del editor.</li>
+<li>Tiene un subrayado azul.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md233"></a>
+ECS</h3>
+<ul>
+<li><code>ComponentContainer</code><ul>
+<li>Ahora almacena el nombre de cada tipo de componente registrado.</li>
+</ul>
+</li>
+<li><code>EntityComponentSystem</code><ul>
+<li>Ahora permite obtener todos los objetos vivos.</li>
+<li>Ahora permite obtener todos los tipos de componentes que posee un objeto.</li>
+<li>Ahora permite obtener el nombre de cada tipo de componente registrado.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md234"></a>
+IO</h3>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>Console</code></li>
+<li><em><b>Nuevo</b></em>: <code>PrintableKeys</code><ul>
+<li>Array que contiene todas las teclas (<code>IO::Key</code>) que se corresponden con caracteres que se pueden imprimir.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GetPrintableKeyText</code><ul>
+<li>Devuelve el carácter que se corresponde con una tecla (<code>IO::Key</code>).</li>
+<li>Puede ser mayúscula.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md235"></a>
+Graphics</h3>
+<ul>
+<li><code>IGpu</code><ul>
+<li>Ahora almacena su nombre.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md236"></a>
+Threading</h3>
+<ul>
+<li><code>JobSystem</code><ul>
+<li>Ahora permite obtener el número de hilos usados.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md237"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>Font::LoadSizedFont(...)</code> ahora carga de manera correcta todos los caracteres.</li>
+<li><b>Bugfix</b>: <code>ImageView::Render(...)</code> ahora renderiza correctamente usando su tamaño (ignorando padding).</li>
+<li><b>Bugfix</b>: mejorado <em>const-correctnes</em> de:<ul>
+<li><code>UniquePtr</code></li>
+<li><code>ShaderPtr</code></li>
+<li><code>CameraComponent2D</code></li>
+<li><code>CubemapTexture</code></li>
+<li><code>EntityComponentSystem</code></li>
+<li><code>IGpuMemoryAllocator</code></li>
+<li><code>TerrainComponent</code></li>
+<li><code>Texture</code></li>
+<li><code>RtRenderTarget</code></li>
+<li><code>SystemManager</code></li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md238"></a>
+2024.06.18a</h2>
+<h3><a class="anchor" id="autotoc_md239"></a>
+Graphics</h3>
+<ul>
+<li><code>IMaterialSlot</code><ul>
+<li>Ahora almacena los descriptores de un único recurso (en vez de los tres recursos en vuelo).<ul>
+<li>De esta manera se normaliza con los demás elementos de renderizado, que se deben desarrollar especificando explícitamente los recursos en vuelo a usar.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>GpuBuffer</code>, <code>IGpuMemorySubblock</code><ul>
+<li>Ahora permite obtener el cursor usado al escribir.</li>
+</ul>
+</li>
+<li><code>GpuBufferRange</code><ul>
+<li>Ahora permite indicar si representa todo el buffer.</li>
+</ul>
+</li>
+<li><em><b>Eliminado</b></em>: <code>TreeGBufferPass</code></li>
+<li><em><b>Eliminado</b></em>: <code>TreeNormalsPass</code></li>
+<li><code>IPostProcessPass</code><ul>
+<li>Ya no almacena el material principal del pase.</li>
+<li>Ya no almacena la instancia de material principal del pase.</li>
+<li>Ya no almacena la imagen de entrada, ni su view.</li>
+<li><em><b>Eliminado</b></em>: <code>SetInput(...)</code>, <code>SetInputTarget(...)</code> (se deberán crear las funciones para establecer las imágenes de entrada en las clases implementadoras).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>PostProcessInputNotSetException</code></li>
+<li><code>ICommandList</code><ul>
+<li>Ahora permite obtener el <code>Viewport</code> establecido en un momento dado.</li>
+</ul>
+</li>
+<li><code>RendererVk</code><ul>
+<li>Ya no ignora ciertos mensajes de validation layers en modo debug.</li>
+</ul>
+</li>
+<li><code>MaterialSlotVk</code><ul>
+<li>Optimizado: ahora <code>FlushUpdate()</code> sólamente actualiza los recursos que hayan cambiado.</li>
+</ul>
+</li>
+<li><code>IPipelineVk</code><ul>
+<li><em><b>Nuevo</b></em>: <code>CreateShaderModule(...)</code><ul>
+<li>Centraliza la creación de un shader module en una función, para ser usada por todos los tipos de pipeline de Vulkan.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6>Mejoras en el manejo de alineamientos de memoria VRAM.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>GpuMemoryAlignments</code><ul>
+<li>Indica las necesidades de alineamiento de memoria VRAM de una GPU para los siguientes recursos:<ul>
+<li>Buffer de vértices.</li>
+<li>Buffer de índices.</li>
+<li>Uniform buffer.</li>
+<li>Storage buffer.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>IGpu</code><ul>
+<li>Ahora permite obtener las necesidades de alineamiento de memoria VRAM (<code>GpuMemoryAlignments</code>).</li>
+<li>Ahora permite comprobar si es compatible con ray-tracing.</li>
+<li>Ahora permite comprobar si es compatible con renderizado bind-less.</li>
+</ul>
+</li>
+<li><code>IGpuMemoryAllocator</code><ul>
+<li>Ahora permite obtener (públicamente) las necesidades de alineamiento de un buffer GPU.</li>
+<li>Ya no almacena localmente las necesidades de alineamiento (ahora las obtiene a partir de la GPU).</li>
+<li><em><b>Nuevo</b></em>: <code>GPU_MEMORY_NO_ALIGNMENT</code><ul>
+<li>Indica que un recurso no tiene ninguna necesidad especial de alineamiento (a parte de las propias del tipo de recurso).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6>Añadido soporte para renderizado bind-less.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>MAX_BINDLESS_RESOURCES = 4096</code><ul>
+<li>Indica el tamaño máximo de un array de recursos en modo bind-less.</li>
+</ul>
+</li>
+<li><code>DescriptorPoolVk</code><ul>
+<li>Ahora soporta recursos bind-less.</li>
+<li>Ahora permite a un <code>MaterialSlotVk</code> actualizar recursos (<code>FlushUpdate()</code>) tras haberse enlazado.</li>
+</ul>
+</li>
+</ul>
+<h6>Desarrollo de un sistema de renderizado 2D que combine renderizado de imágenes con Signed-Distance Fields (SDF).</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>SdfDrawCallContentType2D</code><ul>
+<li>Indica el tipo de contenido de una llamada de renderizado 2D:<ul>
+<li>Textura.</li>
+<li>Color plano.</li>
+<li>Degradado de dos colores.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SdfShape2D</code><ul>
+<li>Indica la fomra de una llamada de renderizado 2D:<ul>
+<li>Rectángulo.</li>
+<li>Círculo.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SdfDrawCall2D</code><ul>
+<li>Contiene la información de una llamada de renderizado 2D:<ul>
+<li>Transform.</li>
+<li>Forma (<code>SdfShape2D</code>).</li>
+<li>Tipo de contenido (<code>SdfDrawCallContentType2D</code>).</li>
+<li>Si está relleno o hueco por dentro.</li>
+<li>Tamaño del borde (si está hueco).</li>
+<li>Textura y sus coordenadas (si el tipo de contenido es <code>SdfDrawCallContentType2D::TEXTURE</code>).</li>
+<li>Color principal.</li>
+<li>Color secundario (para gradientes de color).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SdfStringInfo</code><ul>
+<li>Contiene la información de una llamada de renderizado de texto:<ul>
+<li>Transform.</li>
+<li>Texto.</li>
+<li>Fuente.</li>
+<li>Color.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SdfBindlessBatch2D</code><ul>
+<li>Agrupa varias llamadas de renderizado 2D (<code>SdfDrawCall2D</code>).</li>
+<li>También indica el material a usar para su renderizado.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SdfGlobalInformationBufferContent2D</code><ul>
+<li>Contiene la información global compartida por todas las llamadas de renderizado 2D:<ul>
+<li>Matriz modelo de la cámara.</li>
+<li>Resoulción del target de renderizado.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SdfBindlessBufferContent2D</code><ul>
+<li>Contiene la información de una llamada de renderizado 2D (<code>SdfDrawCall2D</code>) formateada para su uso desde la GPU.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SdfBindlessRenderer2D</code><ul>
+<li>Implementa un renderizador de llamas SDF que usa un diseño bind-less junto a renderizado instanciado.</li>
+<li>Agrupa el renderizado en batches de 512 llamadas que se condensan en una.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md240"></a>
+UI</h3>
+<ul>
+<li><code>UI::IElement</code><ul>
+<li>Ahora contiene una lista de llamdas de renderizado SDF 2D (<code>SdfDrawCall2D</code>).</li>
+<li>Ahora almacena la posición global, en vez de la posición relativa.</li>
+<li>Permite recolocar y reescalar todas las llamadas <code>SdfDrawCall2D</code>, para que se alineen con el tamaño y posición del elemento.</li>
+<li><em><b>Nuevo</b></em>: <code>OnPositionChanged(...)</code>.<ul>
+<li>Se ejecuta cada vez que se cambia la posición del elemento.</li>
+<li>Por defecto, recoloca las llamadas de renderizado <code>SdfDrawCall2D</code> para que sigan teniendo la misma posición con respecto al elemento.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>OnSizeChanged(...)</code>.<ul>
+<li>Se ejecuta cada vez que se cambia la posición del elemento.</li>
+<li>Por defecto, y si se debe mantener la escala relativa respecto al padre, reescala las llamadas de renderizado <code>SdfDrawCall2D</code> para que sigan teniendo el mismo tamaño con respecto al elemento.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>RepositionDrawCalls(...)</code><ul>
+<li>Añade un offset a la posición de todas las llamadas <code>SdfDrawCall2D</code> del elemento.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ResizeDrawCalls(...)</code><ul>
+<li>Multiplica el tamaño de todas las llamadas <code>SdfDrawCall2D</code> del elemento.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>UI::IContainer</code><ul>
+<li>Ahora usa <code>UniquePtr&lt;&gt;</code> para almacenar los elementos hijos (en vez de <code>SharedPtr&lt;&gt;</code>).</li>
+<li>Ahora usa correctamente <code>std::string_view</code> en los getters de los elementos.</li>
+</ul>
+</li>
+<li><code>UI::TextView</code><ul>
+<li>Ahora hereda directamente de <code>UI::IElement</code>.</li>
+</ul>
+</li>
+<li><code>UI::ImageView</code><ul>
+<li>Ya no contiene un <code>Sprite</code>, la imagen se puede establecer mediante una llamada de renderizado SDF 2D.</li>
+</ul>
+</li>
+<li><code>UI::Button</code><ul>
+<li>Ya no permite obtener sprites de cada estado del botón.</li>
+<li>Ahora permite añadir llamadas de renderizado SDF 2D para cada estado del botón.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md241"></a>
+ECS</h3>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>TreeNormalsRenderSystem</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md242"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>IGpuMemoryAllocator::GetAlignment(...)</code> ahora devuelve el valor correcto.</li>
+<li><b>Bugfix</b>: <code>IGpuMemoryBlock::GetNextMemorySubblock(...)</code> ahora respeta las alineaciones de memoria correspondientes.</li>
+<li><b>Bugfix</b>: <code>IGpuMemoryAllocator::CreateBuffer(...)</code>, <code>IGpuMemoryAllocator::CreateVertexBuffer(...)</code>, <code>IGpuMemoryAllocator::CreateIndexBuffer(...)</code>, <code>IGpuMemoryAllocator::CreateUniformBuffer(...)</code>, <code>IGpuMemoryAllocator::CreateStorageBuffer(...)</code>, <code>IGpuMemoryAllocator::CreateStagingBuffer(...)</code> ahora respetan las alineaciones de memoria correspondientes.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md243"></a>
+2024.08.15a</h2>
+<h3><a class="anchor" id="autotoc_md244"></a>
+Editor</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>Editor</code><ul>
+<li>Clase principal del editor.</li>
+<li>Maneja la interfaz de usuario y su conexión con el juego.</li>
+<li>Contiene la interfaz de usuario del editor (<code>EditorUi</code>).</li>
+<li>Contiene los controladores de componentes ECS del editor (<code>IComponentController</code>) y sus métodos de factoría.</li>
+<li>Contiene los métodos de factoría de las vistas de componentes ECS.</li>
+</ul>
+</li>
+<li><code>ObjectList</code><ul>
+<li>Ahora contiene un <code>ObjectPropertiesPanel</code> en vez de un <code>PropertiesPanel</code> para mostrar los componentes de los objetos.</li>
+</ul>
+</li>
+<li><code>SystemList</code><ul>
+<li>Ahora contiene un <code>SystemPropertiesPanel</code> en vez de un <code>PropertiesPanel</code> para mostrar las propiedades de un sistema.</li>
+</ul>
+</li>
+<li><code>PropertiesPanel</code><ul>
+<li>Ya no contiene la funcionalidad para mostrar los componentes de los objetos.</li>
+<li>Ya no contiene la funcionalidad para mostrar las propiedades de un sistema.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ObjectPropertiesPanel</code><ul>
+<li>Implementa la funcionalidad para mostrar los componentes de los objetos.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SystemPropertiesPanel</code><ul>
+<li>Implementa la funcionalidad para mostrar las propiedades de un sistema.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>Constants::EditorFontPath</code></li>
+<li><em><b>Nuevo</b></em>: <code>Constants::MainFontSize</code></li>
+<li><em><b>Nuevo</b></em>: <code>Constants::SecondaryFontSize</code></li>
+</ul>
+<h6>Implementada una arquitectura component-controller-view para poder interactuar con los componentes de un objeto mediante el editor.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>IComponentController</code><ul>
+<li>Elemento que conecta un componente ECS con una vista que muestra su estado por pantalla.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>TComponentController</code><ul>
+<li>Clase template que contiene métodos auxiliares para obtener el componente en cuestión.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IComponentView</code><ul>
+<li>Elemento de interfaz de usuario del editor que muestra las propiedades de un componente.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>CameraComponentController3D</code></li>
+<li><em><b>Nuevo</b></em>: <code>PhysicsComponentController3D</code></li>
+<li><em><b>Nuevo</b></em>: <code>TransformComponentController3D</code></li>
+<li><em><b>Nuevo</b></em>: <code>ModelComponentController3D</code></li>
+<li><em><b>Nuevo</b></em>: <code>CameraComponentView3D</code></li>
+<li><em><b>Nuevo</b></em>: <code>PhysicsComponentView</code></li>
+<li><em><b>Nuevo</b></em>: <code>TransformComponentView3D</code></li>
+<li><em><b>Nuevo</b></em>: <code>ModelComponentView3D</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md245"></a>
+UI</h3>
+<ul>
+<li><code>UI::IContainer</code><ul>
+<li><em><b>Nuevo</b></em>: <code>DeleteChild(...)</code> ahora permite eliminar un hijo en concreto.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md246"></a>
+Types</h3>
+<ul>
+<li><code>Vector2</code><ul>
+<li><em><b>Nuevo</b></em>: <code>TNumericType</code><ul>
+<li>Representa el tipo numérico usado en el vector.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Vector3</code><ul>
+<li><em><b>Nuevo</b></em>: <code>TNumericType</code><ul>
+<li>Representa el tipo numérico usado en el vector.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Vector4</code><ul>
+<li><em><b>Nuevo</b></em>: <code>TNumericType</code><ul>
+<li>Representa el tipo numérico usado en el vector.</li>
+</ul>
+</li>
+<li><em>Renombrado</em>: <code>Z</code> -&gt; <code>z</code>.</li>
+<li><em>Renombrado</em>: <code>W</code> -&gt; <code>w</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md247"></a>
+STD</h3>
+<ul>
+<li><code>DynamicArray</code><ul>
+<li><em>Renombrado</em>: <code>CreateReservedArray(...)</code> -&gt; <code>CreateReserved(...)</code>.</li>
+<li><em>Renombrado</em>: <code>CreateResizedArray(...)</code> -&gt; <code>CreateResized(...)</code>.</li>
+<li><em>Renombrado</em>: <code>CreateResizedArrayMove(...)</code> -&gt; <code>CreateResizedMove(...)</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>CreateEmpty()</code>.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md248"></a>
+2024.08.17a</h2>
+<h3><a class="anchor" id="autotoc_md249"></a>
+UI</h3>
+<ul>
+<li><code>IElement</code><ul>
+<li>Ahora contiene un puntero (opcional) al elemento padre.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>CollapsibleWrapper</code><ul>
+<li>Contiene un único elemento que puede contraerse y expandirse pulsando un botón superior.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md250"></a>
+Editor</h3>
+<h6>Views de componentes contraíbles y botones para la creación y eliminación de componentes.</h6>
+<ul>
+<li><code>IComponentView</code><ul>
+<li>Ahora hereda de <code>CollapsibleWrapper</code>, permitiendo contraer la información mostrada de un componente.</li>
+</ul>
+</li>
+<li><code>ObjectList</code><ul>
+<li>Ahora permite crear nuevos objetos.</li>
+</ul>
+</li>
+<li><code>ObjectPropertiesPanel</code><ul>
+<li>Ahora permite eliminar el objeto seleccionado.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>Constants::DefaultGreenColor</code></li>
+<li><em><b>Nuevo</b></em>: <code>Constants::HoveredGreenColor</code></li>
+<li><em><b>Nuevo</b></em>: <code>Constants::SelectedGreenColor</code></li>
+<li><em><b>Nuevo</b></em>: <code>Constants::DefaultRedColor</code></li>
+<li><em><b>Nuevo</b></em>: <code>Constants::HoveredRedColor</code></li>
+<li><em><b>Nuevo</b></em>: <code>Constants::SelectedRedColor</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md251"></a>
+Types</h3>
+<ul>
+<li><code>Color</code><ul>
+<li><em><b>Nuevo</b></em>: <code>FromBytes(...)</code><ul>
+<li>Permite crear una instancia proporcionando los valores en rango 0-255, en vez de 0-1.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md252"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix:</b> <code>IContainer::AdjustSizeToChildren()</code> ya no tiene en cuenta los elementos invisibles.</li>
+<li><b>Bugfix:</b> <code>IContainer::Rebuild()</code> ahora también reconstruye sus hijos (si también son contenedores).</li>
+<li><b>Bugfix:</b> <code>Editor::ObjectList</code> ahora coloca correctamente sus elementos.</li>
+<li><b>Bugfix:</b> <code>Editor::SystemList</code> ahora coloca correctamente sus elementos.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md253"></a>
+2024.08.24a</h2>
+<h3><a class="anchor" id="autotoc_md254"></a>
+ECS</h3>
+<h6>Adaptados sistemas para su uso en el editor, permitiendo obtener información adicional.</h6>
+<ul>
+<li><code>IRenderSystem</code><ul>
+<li>Ahora permite obtener todos los pases de renderizado.</li>
+<li>Ahora permite obtener todos los pases de renderizado de sombras.</li>
+</ul>
+</li>
+<li><code>DeferredRenderSystem</code><ul>
+<li>Ahora permite obtener el objeto de la cámara.</li>
+<li>Ahora permite obtener el mapa de irradiancia.</li>
+<li>Ahora permite obtener el mapa especular.</li>
+<li>Ahora permite obtener el nombre del pase de resolución.</li>
+</ul>
+</li>
+<li><code>ColliderRenderer</code><ul>
+<li>Ahora permite obtener el objeto de la cámara.</li>
+<li>Ahora permite obtener los materiales de renderizado (de alto nivel, de bajo nivel y de puntos).</li>
+</ul>
+</li>
+<li><code>RenderBoundsRenderer</code><ul>
+<li>Ahora permite obtener el objeto de la cámara.</li>
+<li>Ahora permite obtener el materiale de renderizado.</li>
+</ul>
+</li>
+<li><code>PhysicsSystem</code><ul>
+<li>Ahora permite obtener la gravedad.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md255"></a>
+UI</h3>
+<ul>
+<li><code>IContainer</code><ul>
+<li><em><b>Nuevo</b></em>: <code>HasChild(...)</code></li>
+</ul>
+</li>
+<li><code>Button</code><ul>
+<li>Ahora permite establecer el anclaje del texto.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md256"></a>
+Editor</h3>
+<ul>
+<li>Mejorada encapsulación de algunos elementos:<ul>
+<li><code>PropertiesPanel</code></li>
+<li><code>PanelTitle</code></li>
+<li><code>ObjectList</code></li>
+<li><code>SystemList</code></li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>Constants::TitleFontSize</code></li>
+<li><em><b>Nuevo</b></em>: <code>Constants::SubtitleFontSize</code></li>
+<li><code>TransformComponentView3D</code>, <code>PhysicsComponentView</code>:<ul>
+<li>Ahora las coordenadas muestran 'X', 'Y' y 'Z'.</li>
+</ul>
+</li>
+</ul>
+<h6>Añadidos vistas y controladores para sistemas.</h6>
+<ul>
+<li><em>Renombrado</em>: <code>ControllerFactoryMethod</code> -&gt; <code>ComponentControllerFactoryMethod</code></li>
+<li><em>Renombrado</em>: <code>ViewFactoryMethod</code> -&gt; <code>ComponentViewFactoryMethod</code></li>
+<li><em><b>Nuevo</b></em>: <code>SystemControllerFactoryMethod</code>;</li>
+<li><em><b>Nuevo</b></em>: <code>SystemViewFactoryMethod</code>;</li>
+<li><code>Editor</code><ul>
+<li>Ahora contiene los métodos de factoría (y permite registrarlos) de:<ul>
+<li>Controladores de sistemas (<code>SystemControllerFactoryMethod</code>).</li>
+<li>Vistas de sistemas (<code>SystemViewFactoryMethod</code>).</li>
+</ul>
+</li>
+<li>Ahora permite deseleccionar el objeto seleccionado.</li>
+<li>Ahora permite deseleccionar el sistema seleccionado.</li>
+</ul>
+</li>
+<li><code>EditorUi</code><ul>
+<li>Ahora permite establecer el sistema seleccionado.</li>
+</ul>
+</li>
+<li><code>SystemList</code><ul>
+<li>Ahora permite establecer el nombre del sistema seleccionado.</li>
+</ul>
+</li>
+<li><code>SystemPropertiesPanel</code><ul>
+<li>Ahora no muestra automáticamente la información del sistema a partir de su método de serialización JSON.</li>
+<li>Ahora permite establecer la vista del sistema seleccionado.</li>
+<li>Ahora permite establecer el sistema seleccionado, incluso si no tiene asociado una vista.</li>
+<li>Ahora contiene un botón que permite cambiar el estado del sistema seleccionado (activo o desactivado).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ISystemController</code><ul>
+<li>Elemento que conecta un sistema ECS con una vista que muestra su estado por pantalla.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>TSystemController</code><ul>
+<li>Clase template que contiene métodos auxiliares para obtener el sistema en cuestión.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ISystemView</code><ul>
+<li>Elemento de interfaz de usuario del editor que muestra las propiedades de un sistema ECS.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ColliderRenderSystemController</code></li>
+<li><em><b>Nuevo</b></em>: <code>RenderBoundsRenderSystemController</code></li>
+<li><em><b>Nuevo</b></em>: <code>DeferredRenderSystemController</code></li>
+<li><em><b>Nuevo</b></em>: <code>SkyboxRenderSystemController</code></li>
+<li><em><b>Nuevo</b></em>: <code>PhysicsSystemController</code></li>
+<li><em><b>Nuevo</b></em>: <code>ColliderRenderSystemView</code></li>
+<li><em><b>Nuevo</b></em>: <code>RenderBoundsRenderSystemView</code></li>
+<li><em><b>Nuevo</b></em>: <code>DeferredRenderSystemView</code></li>
+<li><em><b>Nuevo</b></em>: <code>SkyboxRenderSystemView</code></li>
+<li><em><b>Nuevo</b></em>: <code>PhysicsSystemView</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md257"></a>
+Otros</h3>
+<ul>
+<li>Ahora por defecto los archivos de recursos y los archivos de descripción de recursos se almacenan en el mismo directorio.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md258"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: ahora el título de los paneles de propiedades, lista de objetos y lista de sistemas está correctamente alineado.</li>
+<li><b>Bugfix</b>: <code>ModelComponentController3D</code> ya no actualiza los valores de la vista si no han cambiado.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md259"></a>
+2024.09.12a</h2>
+<ul>
+<li>Introducidos pequeños cambios para facilitar el desarrollo multiplataforma.</li>
+<li>Añadidos errores en caso de llegar a código teóricamente inalcanzable.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md260"></a>
+2024.12.05a</h2>
+<h3><a class="anchor" id="autotoc_md261"></a>
+&lt;em&gt;&lt;strong&gt;Nuevo&lt;/strong&gt;&lt;/em&gt; Plataformas</h3>
+<ul>
+<li>Ahora se establece la plataforma de destino en tiempo de compilación. Opciones disponibles:<ul>
+<li><code>OSK_WINDOWS</code></li>
+<li><code>OSK_ANDROID</code> (no implementado).</li>
+<li><code>OSK_LINUX</code> (no implementado).</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md262"></a>
+&lt;em&gt;&lt;strong&gt;Nuevo&lt;/strong&gt;&lt;/em&gt; Perfiles de contenido</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>DefaultContentProfile</code> <br  />
+<ul>
+<li>Permiten indicar qué elementos por defecto (componentes ECS, sistemas ECS y loaders) se deben cargar al iniciar el juego.</li>
+<li>Disponibles:<ul>
+<li><code>DefaultContentProfile::ALL</code>.</li>
+<li><code>DefaultContentProfile::_3D_ONLY</code>.</li>
+<li><code>DefaultContentProfile::_2D_ONLY</code>.</li>
+<li><code>DefaultContentProfile::MINIMAL</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Game</code><ul>
+<li>Ahora se debe indicar el perfil de contenido a usar.</li>
+</ul>
+</li>
+<li><code>Engine</code><ul>
+<li>Ahora se debe indicar el perfil de contenido a usar.</li>
+<li>Ahora carga los componentes ECS, sistemas ECS y loaders indicados por el perfil de contenido.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md263"></a>
+Graphics</h3>
+<ul>
+<li><code>IGpuImageView</code><ul>
+<li><em><b>Eliminado</b></em>: <code>GetChannel()</code> (se obtiene a través de <code>GetConfig()</code>).</li>
+<li><em><b>Eliminado</b></em>: <code>GetArrayType()</code> (se obtiene a través de <code>GetConfig()</code>).</li>
+<li><em><b>Eliminado</b></em>: <code>GetBaseArrayLevel()</code> (se obtiene a través de <code>GetConfig()</code>).</li>
+<li><em><b>Eliminado</b></em>: <code>GetLayerCount()</code> (se obtiene a través de <code>GetConfig()</code>).</li>
+<li><em><b>Eliminado</b></em>: <code>GetViewUsage()</code> (se obtiene a través de <code>GetConfig()</code>).</li>
+<li><em><b>Eliminado</b></em>: <code>GetBaseMipLevel()</code> (se obtiene a través de <code>GetConfig()</code>).</li>
+<li><em><b>Eliminado</b></em>: <code>GetTopMipLevel()</code> (se obtiene a través de <code>GetConfig()</code>).</li>
+</ul>
+</li>
+<li><em>Renombrado</em>: <code>GpuImageFilteringType::LIENAR</code> -&gt; <code>GpuImageFilteringType::LINEAR</code>.</li>
+<li><code>IShaderPass</code><ul>
+<li><em><b>Nuevo</b></em>: <code>Update(delta time)</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>MaterialLayoutBuilder</code><ul>
+<li>Permite construir layouts de materiales aplicando los datos de los shaders de un material.</li>
+</ul>
+</li>
+</ul>
+<h6>Añadido soporte para mesh shaders.</h6>
+<ul>
+<li><code>ShaderStage</code><ul>
+<li><em><b>Nuevo</b></em>: <code>ShaderStage::MESH</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>ShaderStage::MESH_AMPLIFICATION</code>.</li>
+</ul>
+</li>
+<li><code>PipelineCreateInfo</code><ul>
+<li><em><b>Nuevo</b></em>: <code>meshAmplificationShaderPath</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>meshShaderPath</code>.</li>
+</ul>
+</li>
+<li><code>Material</code><ul>
+<li>Ahora mantiene un caché con los pipelines de meshes.</li>
+<li>Permite obtener pipelines de meshes.</li>
+</ul>
+</li>
+<li><code>MaterialType</code><ul>
+<li><em><b>Nuevo</b></em>: <code>MaterialType::MESH</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IMeshPipeline</code>, <code>MeshPipelineVk</code><ul>
+<li>Pipeline para materiales de meshes.</li>
+</ul>
+</li>
+<li><code>ICommandList</code><ul>
+<li><em><b>Nuevo</b></em>: <code>DrawMeshShader(...)</code>.<ul>
+<li>Ejecuta shaders de meshes (o de amplificación, si el material enlazado los tiene).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>GraphicsPipelineVk</code><ul>
+<li><em><b>Eliminado</b></em>: <code>GetResterizerInfo(...)</code>.</li>
+<li><em><b>Eliminado</b></em>: <code>GetDepthInfo(...)</code>.</li>
+<li><em><b>Eliminado</b></em>: <code>GetMsaaInfo(...)</code>.</li>
+<li><em><b>Eliminado</b></em>: <code>GetTesselationInfo(...)</code>.</li>
+</ul>
+</li>
+<li><code>IGraphicsPipeline</code><ul>
+<li><em><b>Nuevo</b></em>: <code>GetResterizerInfo(...)</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>GetDepthInfo(...)</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>GetMsaaInfo(...)</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>GetTesselationInfo(...)</code>.</li>
+</ul>
+</li>
+<li><code>IGpu</code><ul>
+<li>Permite saber si soporta shaders de meshes.</li>
+</ul>
+</li>
+<li><code>MaterialSystem</code><ul>
+<li>Añadido soporte para materiales de meshes.</li>
+<li><em><b>Eliminado</b></em>: <code>LoadMaterialV1(...)</code>.<ul>
+<li>Ahora es una función libre.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>OSK::GRAPHICS::LoadMaterialV1(...)</code>.<ul>
+<li>Ahora soporta la carga de materiales de meshes.</li>
+</ul>
+</li>
+</ul>
+<h6>Renderizado de hierba mediante mesh shaders (experimental).</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>GrassRenderPass</code> (<em>WIP</em>)<ul>
+<li>Efectúa renderizado de hierba procedural mediante mesh shaders.</li>
+<li>Renderiza pequeños grupos de hojas de 64 triángulos.</li>
+<li>Tiene tres LODs.</li>
+<li>Simulación de viento.</li>
+<li>Coloca los grupos de hojas dentro del área visible usando coordenadas polares.</li>
+</ul>
+</li>
+<li><code>DeferredRenderSystem</code><ul>
+<li>Ahora incluye por defecto el pase <code>GrassRenderPass</code>.</li>
+</ul>
+</li>
+</ul>
+<h6>Añadidos samplers como objetos, de manera similar a las vistas de imagen. Ofrece un mayor control sobre el sampler usado.</h6>
+<ul>
+<li><code>IMaterialSlot</code><ul>
+<li><code>SetGpuImage(...)</code> ahora permite establecer el sampler de la imagen.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IGpuImageSampler</code><ul>
+<li>Representa un sampler para una imagen de GPU.</li>
+<li>Puede ser compartido por varias imágenes.</li>
+</ul>
+</li>
+<li><code>GpuImageSamplerDesc</code><ul>
+<li>Ahora tiene un hash.</li>
+<li><em>Reemplazado</em>: <code>CreateDefault()</code> -&gt; <code>CreateDefault_NoMipMap()</code>.</li>
+<li><em>Reemplazado</em>: <code>CreateTextureDefault()</code> -&gt; <code>CreateDefault_WithMipMap(...)</code>.<ul>
+<li>Ahora también establece el número máximo de mips dependiendo del tamaño de la imagen.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>IRenderer</code><ul>
+<li>Contiene una caché con las instancias de <code>IGpuImageSampler</code>.</li>
+</ul>
+</li>
+<li><code>IGpu</code><ul>
+<li>Permite crear instancias de <code>IGpuImageSampler</code>.</li>
+</ul>
+</li>
+</ul>
+<h6>Generalización del renderizado signed distance field 2D.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>ISdfRenderer2D</code></li>
+<li><code>SdfBindlessRenderer2D</code><ul>
+<li>Ahora hereda de <code>ISdfRenderer2D</code>.</li>
+</ul>
+</li>
+<li><code>SdfDrawCall2D</code><ul>
+<li>Ahora contiene el sampler a usar (o su descripción).</li>
+</ul>
+</li>
+</ul>
+<h6>Utilidades para depuración.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>SpirvReflectionData</code><ul>
+<li>Contiene información sobre un shader SPIR-V.</li>
+</ul>
+</li>
+<li><code>MaterialLayout</code><ul>
+<li>Ahora permite obtener el nombre del material al que pertenece.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code><a class="el" href="namespace_o_s_k.html#a0e02ca313c1894ead83ab76001063684">OSK::ToString</a>&lt;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout.html" title="El layout de un material determina qué slots pertenecen a ese material.">OSK::GRAPHICS::MaterialLayout</a>&gt;(...)</code>.</li>
+<li><em><b>Nuevo</b></em>: <code><a class="el" href="namespace_o_s_k.html#a0e02ca313c1894ead83ab76001063684">OSK::ToString</a>&lt;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_binding.html" title="Un binding de un layout.">OSK::GRAPHICS::MaterialLayoutBinding</a>&gt;(...)</code>.</li>
+<li><em><b>Nuevo</b></em>: <code><a class="el" href="namespace_o_s_k.html#a0e02ca313c1894ead83ab76001063684">OSK::ToString</a>&lt;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_slot.html" title="Un MaterialLayoutSlot agrupa varios MaterialLayoutBindings: son una manera de unir bindings que se us...">OSK::GRAPHICS::MaterialLayoutSlot</a>&gt;(...)</code>.</li>
+<li><em><b>Nuevo</b></em>: <code><a class="el" href="namespace_o_s_k.html#a0e02ca313c1894ead83ab76001063684">OSK::ToString</a>&lt;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_push_constant.html" title="Un push constant permite enviar datos a la GPU directamente en la lista de comandos.">OSK::GRAPHICS::MaterialLayoutPushConstant</a>&gt;(...)</code>.</li>
+</ul>
+<h6>Cambios para permitir la compilación multiplataforma.</h6>
+<ul>
+<li>Ahora el backend de Vulkan sólamente se compilará en las plataformas <code>OSK_WINDOWS</code>, <code>OSK_LINUX</code> y <code>OSK_ANDROID</code>.</li>
+<li>Ahora el backend de DirectX 12 sólamente se compilará en la plataforma <code>OSK_WINDOWS</code>.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md264"></a>
+ECS</h3>
+<ul>
+<li><code>IRenderSystem</code><ul>
+<li>Ahora actualiza los pases de shaders al ejecutarse.</li>
+</ul>
+</li>
+<li><code>SystemManager</code><ul>
+<li>Número máximo de entidades ejecutadas por cada hilo: 4294967295 -&gt; 18446744073709551615.</li>
+</ul>
+</li>
+</ul>
+<h6>Ahora la serialización de sistemas y componentes es opcional.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>IsSerializableComponent&lt;&gt;</code><ul>
+<li>Permite saber si un componente tiene los métodos necesarios para serialización y deserialización.</li>
+</ul>
+</li>
+<li><code>EntityComponentSystem</code><ul>
+<li><code>Save()</code>, <code>SaveBinary()</code> ahora solo guardan componentes y sistemas serializables.</li>
+</ul>
+</li>
+<li><code>ComponentContainer</code><ul>
+<li><code>SerializeAll()</code>, <code>BinarySerializeAll()</code>, <code>DeserializeComponent()</code>, <code>BinaryDeserializeComponent()</code> ahora solo se aplican para componentes serializables.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ISerializableSystem</code><ul>
+<li>Interfaz para sistemas serializables.</li>
+<li>Incluye:<ul>
+<li><code>SaveConfiguration()</code></li>
+<li><code>SaveBinaryConfiguration()</code></li>
+<li><code>ApplyConfiguration(...)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>IsSerializableSystem&lt;&gt;</code><ul>
+<li>Concepto para saber si un sistema es serializable.</li>
+</ul>
+</li>
+<li><code>ISystem</code><ul>
+<li><em><b>Eliminado</b></em>: <code>SaveConfiguration()</code> (transpasado a <code>ISerializableSystem</code>).</li>
+<li><em><b>Eliminado</b></em>: <code>SaveBinaryConfiguration()</code> (transpasado a <code>ISerializableSystem</code>).</li>
+<li><em><b>Eliminado</b></em>: <code>ApplyConfiguration(...)</code> (transpasado a <code>ISerializableSystem</code>).</li>
+</ul>
+</li>
+<li><code>IsEcsEvent&lt;&gt;</code><ul>
+<li>Ahora está en el namespace <code><a class="el" href="namespace_o_s_k_1_1_e_c_s.html">OSK::ECS</a></code>.</li>
+</ul>
+</li>
+</ul>
+<h6>Eliminados sistemas obsoletos.</h6>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>RenderSystem3D</code></li>
+<li><em><b>Eliminado</b></em>: <code>TerrainRenderSystem</code></li>
+<li><em><b>Eliminado</b></em>: <code>TerrainComponent</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md265"></a>
+UI</h3>
+<ul>
+<li><code>IElement</code><ul>
+<li>Ahora usa <code>ISdfRenderer2D</code> para el renderizado.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md266"></a>
+STD</h3>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>LinkedList</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md267"></a>
+Otros</h3>
+<ul>
+<li>Añadidos <em>includes</em> que faltaban en <code><a class="el" href="_event_8h_source.html">Event.h</a></code> y <code>AssetRef.hpp</code>.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md268"></a>
+Error handling</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>UnreachableException</code><ul>
+<li>Excepción que se lanza al alcanzar código teóricamente inaccesible.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>ShaderReflectionException</code><ul>
+<li>Excepción que se lanza al ocurrir un error al intentar obtener información sobre un shader.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md269"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>ComponentContainer</code> ahora usa correctamente los operadores de copia y/o movimiento al mover de posición componentes.</li>
+<li><b>Bugfix</b>: <code><a class="el" href="namespace_o_s_k.html#a0e02ca313c1894ead83ab76001063684">OSK::ToString</a>&lt;<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aa7e7dcffcab27051f141128e66a50fcb" title="Shaders en los que se puede acceder a un elemento.">OSK::GRAPHICS::ShaderStage</a>&gt;(...)</code> ahora funciona correctamente.</li>
+<li><b>Bugfix</b>: <code>SystemExecutionGraph::Validate()</code> ahora funciona correctamente.</li>
+<li><b>Bugfix</b>: los macros <code>OSK_SERIALIZATION(...)</code> y <code>OSK_COMPONENT_SERIALIZATION(...)</code> ahora exportan correctamente el código para uso en dll.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md270"></a>
+2024.12.23a</h2>
+<h3><a class="anchor" id="autotoc_md271"></a>
+Types</h3>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>Transform3D</code><ul>
+<li>Ahora es un tipo de dato independiente a la estructura ECS.</li>
+<li>Ya no contiene una jerarquía de hijos.</li>
+<li>Reemplaza a <code>TransformComponent3D</code> en todos los casos en los que no interviene directamente la arquitectura ECS.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md272"></a>
+ECS</h3>
+<ul>
+<li><em><b>Renombrado</b></em>: <code>Transform3D</code> -&gt; <code>TransformComponent3D</code><ul>
+<li>Ahora es un wrapper sobre el tipo <code>Transform3D</code>.</li>
+<li>Contiene la jerarquía de hijos.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md273"></a>
+GRAPHICS</h3>
+<h6>Algunos avances en el backend de DirectX 12.</h6>
+<ul>
+<li><code>ICommandQueue</code><ul>
+<li>Ya no contiene la familia de colas a la que pertenece (disponible en <code>CommandQueueVk</code>).</li>
+<li>Ya no contiene el índice de la cola que referencia (disponible en <code>CommandQueueVk</code>).</li>
+</ul>
+</li>
+<li><code>CommandQueueDx12</code><ul>
+<li>Ya no se debe indicar una familia de colas y un índice para su creación.</li>
+<li>Ahora contiene la lógica de creación.</li>
+</ul>
+</li>
+<li><code>ResourceQueueTransferInfo</code><ul>
+<li>Ahora contiene directamente punteros a las colas fuente y destino, en vez de familias de colas.</li>
+</ul>
+</li>
+<li><code>ISwapchain</code><ul>
+<li>Ya no se deben indicar los índices de las colas usadas (sí en <code>SwapchainVk</code>).</li>
+</ul>
+</li>
+<li><code>SwapchainDx12</code><ul>
+<li>Ya no se debe indicar los índices de las colas a usar.</li>
+<li>Ahora se debe indicar la cola que usará.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>DescriptorHeapDx12</code><ul>
+<li>Representa un descriptor heap de cualquier tipo.</li>
+<li>Facilita la asingación de descriptores.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GpuImageSamplerDx12</code></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md274"></a>
+2025.01.11a</h2>
+<h3><a class="anchor" id="autotoc_md275"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: ahora <code>PhysicsResolver</code> simula correctamente los rebotes (ya no resuleve un rebote si los objetos ya se están separando).</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md276"></a>
+2025.04.16a</h2>
+<h3><a class="anchor" id="autotoc_md277"></a>
+Memory</h3>
+<h6>Eliminado OwnedPtr para usar UniquePtr en su lugar, evitando memory leaks.</h6>
+<ul>
+<li><em><b>Eliminado</b></em>: <code>OSK::MEMORY::SwapMemory(...)</code></li>
+<li><em><b>Nuevo</b></em>: <code>MakeUnique&lt;&gt;(...)</code><ul>
+<li>Crea un <code>UniquePtr</code>.</li>
+</ul>
+</li>
+<li><em><b>Eliminado</b></em>: <code>OwnedPtr</code></li>
+<li><code>UniquePtr</code><ul>
+<li>Ahora puede tener deleters customizados.</li>
+<li>El constructor a partir de un puntero ahora es explícito.<ul>
+<li>Preferir usar <code>MakeUnique&lt;&gt;(...)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AreSameTemplate&lt;..., ...&gt;</code>.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md278"></a>
+Collision</h3>
+<ul>
+<li><code>ConvexVolume::GetFaceIndices()</code> ahora no realiza una copia innecesaria (mejora de rendimiento).</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md279"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: <code>GpuMemoryBlock</code> y <code>GpuMemorySubblock</code> ya no tienen memory leaks.</li>
+<li><b>Bugfix</b>: <code>Sprite::globalVertexBuffer</code> y <code>Sprite::globalIndexBuffer</code> ya no tiene memory leaks.</li>
+<li><b>Bugfix</b>: <code>Animator::Update(...)</code> ahora comprueba que haya una skin enlazada.</li>
+<li><b>Bugfix</b>: <code>GltfLoader</code> ahora carga correctamente la jerarquía de huesos.</li>
+<li><b>Bugfix</b>: <code>Animation::Update(...)</code> ahora interpola correctamente entre los timestamps correctos para los samplers de animación.</li>
+<li><b>Bugfix</b>: las animaciones 3D ya no se deforman cuando el modelo ha sido cargado con un transform distinto a la matriz identidad.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md280"></a>
+2025.05.06a</h2>
+<h3><a class="anchor" id="autotoc_md281"></a>
+Collision</h3>
+<ul>
+<li><em><b>Renombrado</b></em>: <code>ITopLevelCollider</code> -&gt; <code>IBroadCollider</code>.</li>
+<li><em><b>Renombrado</b></em>: <code>IBottomLevelCollider</code> -&gt; <code>INarrowCollider</code>.<ul>
+<li>Ya no hereda de <code>ISatCollider</code>.</li>
+<li><em><b>Eliminado</b></em>: <code>GetCollisionInfo(...)</code>.</li>
+<li><em><b>Eliminado</b></em>: <code>ContainsPoint(...)</code>.<ul>
+<li>Se hereda de <code>IGjkCollider</code>.</li>
+</ul>
+</li>
+<li><em><b>Eliminado</b></em>: <code>Transform(...)</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>OnTransform()</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>GetNarrowOwner()</code>.</li>
+<li>Ahora contiene un puntero opcional a su <code>NarrowColliderHolder</code>.</li>
+</ul>
+</li>
+<li><code>ConvexVolume</code><ul>
+<li>Ahora hereda directamente de <code>ISatCollider</code> (antes lo hacía de manera indirecta).</li>
+</ul>
+</li>
+<li><code>IGjkCollider</code><ul>
+<li><em><b>Eliminado</b></em>: <code>GetAllSupports(...)</code>.</li>
+<li>Nuevo: <code>ContainsPoint(...)</code>.</li>
+<li>Nuevo: <code>IsBehindPlane(...)</code>.</li>
+<li>Nuevo: <code>IsFullyBehindPlane(...)</code>.</li>
+<li>Nuevo: <code>IsInsideFrustum(...)</code>.</li>
+</ul>
+</li>
+<li><code>Collider</code><ul>
+<li>Ahora contiene <code>BroadColliderHolder</code> y <code>NarrowColliderHolder</code>s en vez de <code>ITopLevelCollider</code> e <code>IBottomLevelCollider</code>s.</li>
+</ul>
+</li>
+</ul>
+<h6>Uso de colisionadores de alto nivel como de bajo nivel.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>BroadColliderHolder</code><ul>
+<li>Contiene un colisionador de alto nivel.</li>
+<li>Al asignarle un collider, se establece una relación padre-hijo.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AsBroad&lt;...&gt;(...)</code><ul>
+<li>Crea un <code>BroadColliderHolder</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>NarrowColliderHolder</code><ul>
+<li>Contiene un colisionador de bajo nivel.</li>
+<li>Al asignarle un collider, se establece una relación padre-hijo.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AsNarrow&lt;...&gt;(...)</code><ul>
+<li>Crea un <code>NarrowColliderHolder</code>.</li>
+</ul>
+</li>
+<li><code>SphereCollider</code><ul>
+<li>Ahora también hereda de <code>INarrowCollider</code>.</li>
+</ul>
+</li>
+<li><code>AxisAlignedBoundingBox</code><ul>
+<li>Ahora también hereda de <code>INarrowCollider</code>.</li>
+</ul>
+</li>
+</ul>
+<h6>Algoritmos de detección de colisiones de alto nivel.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>IBroadCollisionDetector</code><ul>
+<li>Representa un algoritmo de detección de colisiones entre colisionadores de alto nivel.</li>
+<li>Compatible con tipos de colisionadores determinados.</li>
+<li>Devuelve el resultado de la detección en caso de ser colisionadores compatibles.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>AabbAabbCollisionDetector</code><ul>
+<li>Detector de colisiones entre <code>AxisAlignedBoundingBox</code> (alto nivel).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SphereAabbCollisionDetector</code><ul>
+<li>Detector de colisiones entre <code>AxisAlignedBoundingBox</code> y <code>SphereCollider</code> (alto nivel).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>SphereSphereBroadCollisionDetector</code><ul>
+<li>Detector de colisiones entre <code>SphereCollider</code> (alto nivel).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>BroadGjkCollisionDetector</code><ul>
+<li>Detector de colisiones genérico para colisionadores de alto nivel.</li>
+<li>Usa GJK, por lo que es compatible con cualquier pareja de colisionadores.</li>
+<li>Usado por defecto (si no hay otro detector compatible).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>BroadCollisionDetectorDispatcher</code><ul>
+<li>Elige qué algoritmo de detección de colisiones usar para una pareja de colisionadores.</li>
+<li>Pueden añadirse nuevos detectores.</li>
+</ul>
+</li>
+</ul>
+<h6>Algoritmos de detección de colisiones detalladas.</h6>
+<ul>
+<li><em><b>Nuevo</b></em>: <code>IDetailedCollisionDetector</code><ul>
+<li>Representa un algoritmo de detección de colisiones entre colisionadores de bajo nivel.</li>
+<li>Compatible con tipos de colisionadores determinados.</li>
+<li>Devuelve el resultado de la detección en caso de ser colisionadores compatibles.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>DetailedSphereSphereDetector</code><ul>
+<li>Detector de colisiones entre <code>SphereCollider</code> (bajo nivel).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GjkClippingDetector</code><ul>
+<li>Detector de colisiones entre colisionadores con vértices (bajo nivel).</li>
+<li>Usa GJK para detección, y clipping para obtención de puntos de contacto y MTV.</li>
+<li>Sólamente usado para parejas <code>ConvexVolume</code>-<code>ConvexVolume</code>.</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>GjkEpaDetector</code><ul>
+<li>Detector de colisiones genérico para colisionadores de bajo nivel.</li>
+<li>Usa GJK para detección y EPA para obtención de puntos de contacto y MTV, por lo que es compatible con cualquier pareja de colisionadores.</li>
+<li>Usado por defecto (si no hay otro detector compatible).</li>
+</ul>
+</li>
+<li><em><b>Nuevo</b></em>: <code>DetailedCollisionDetectorDispatcher</code><ul>
+<li>Elige qué algoritmo de detección de colisiones usar para una pareja de colisionadores.</li>
+<li>Pueden añadirse nuevos detectores.</li>
+</ul>
+</li>
+</ul>
+<h6>Establecido GJK-EPA como el estándar a usar para colisiones de bajo nivel.</h6>
+<ul>
+<li><em><b>Renombrado</b></em>: <code>MinkowskiHull</code> -&gt; <code>FullMinkowskiHull</code>.</li>
+<li><em><b>Nuevo</b></em>: <code>EpaMinkowskiHull</code>.<ul>
+<li>Representa un hull que se construye iterativamente hasta encontrar el MTV, sin llegar a construirlo del todo.</li>
+<li>Para el algoritmo <em>Expanding Polytope Algorithm</em>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md282"></a>
+ECS</h3>
+<ul>
+<li><code>CollisionSystem</code><ul>
+<li>Ahora contiene un <code>IBroadCollisionDetector</code>.<ul>
+<li>Tambien permite añadir nuevos detectores.</li>
+</ul>
+</li>
+<li>Ahora contiene un <code>IDetailedCollisionDetector</code>.<ul>
+<li>Tambien permite añadir nuevos detectores.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ColliderRenderer</code><ul>
+<li>Los colisionadores de alto nivel ahora son menos intensos.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md283"></a>
+Bugfixes</h3>
+<ul>
+<li><b>Bugfix</b>: ahora <code>ColliderRenderer</code> renderiza los colliders con el transform correcto.</li>
+<li><b>Bugfix</b>: <code>IsInsideFrustum(...)</code> ahora funciona correctamente. </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

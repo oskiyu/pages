@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: style</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md_style.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">style </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p >﻿ </p>
+<h1><a class="anchor" id="autotoc_md17"></a>
+Estilo de código C++.</h1>
+<h2><a class="anchor" id="autotoc_md18"></a>
+General</h2>
+<ul>
+<li>Usar tabulaciones en vez de espacios.<ul>
+<li>Tamaño de tabulación equivalente a 4 espacios.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md19"></a>
+Archivos de encabezado</h2>
+<ul>
+<li>Todos los archivos de encabezado deben tener <em>header guard</em> <code>#pragma once</code>.</li>
+<li>Los archivos de encabezado que necesiten proporcionar el cuerpo de funciones deben tener extensión <code>.hpp</code>.</li>
+<li>El resto de archivos debe tener extensión <code>.h</code>.</li>
+<li>Cada archivo de código C++ (<code>.cpp</code>) debe tener asociado un archivo de encabezado.</li>
+<li>Si en el archivo de encabezado se hace referencia a algún tipo de dato no básico, debe contener una declaración o definición de dicho tipo de dato (<em>include what you use</em>):<ul>
+<li>Si el tipo de dato no necesita estar definido (como con punteros o referencias), se debe incluir una declaración (<em>forward declaration</em>).</li>
+<li>Si esto no es posible, se debe incluir explícitamente el archivo de inclusión donde se define el tipo de dato.</li>
+</ul>
+</li>
+<li>Los archivos de encabezado que se incluyan en cualquier archivo deben seguir el siguiente orden:<ol type="1">
+<li>Archivo de encabezado enlazado (para archivos de código C++ (<code>.cpp</code>)).</li>
+<li>Archivos de librería del motor (<code><a class="el" href="_numeric_types_8h_source.html">NumericTypes.h</a></code>, <code><a class="el" href="_assert_8h_source.html">Assert.h</a></code>, <code><a class="el" href="_define_as_8h_source.html">DefineAs.h</a></code>, etc.).</li>
+<li>Archivos de memoria del motor (<code><a class="el" href="_unique_ptr_8hpp_source.html">UniquePtr.hpp</a></code>, etc.).</li>
+<li>Archivos generales del motor (<code><a class="el" href="_numeric_types_8h_source.html">NumericTypes.h</a></code>, <code><a class="el" href="_assert_8h_source.html">Assert.h</a></code>, <code>Engine.h</code>, <code><a class="el" href="_logger_8h_source.html">Logger.h</a></code>, etc.).</li>
+<li>Otros archivos del motor.</li>
+<li>Archivos de la librería estándar (<code>std</code>).</li>
+</ol>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md20"></a>
+Namespaces</h2>
+<ul>
+<li>Todo el código debe estar introducido dentro de un namespace.</li>
+<li>Los namespaces deben tener su nombre en mayúsculas, usando snake-case si fuese necesario.</li>
+<li>El namespace elegido debe ser:<ul>
+<li><code><a class="el" href="namespace_o_s_k.html">OSK</a></code>: espacio de nombres por defecto para:<ul>
+<li>Tipos de datos numéricos y vectoriales.</li>
+<li>Excepciones generales.</li>
+<li>Cualquier código relacionado con la ejecución multihilo.</li>
+<li>Cualquier código relacionado con el manejo de UUIDs.</li>
+<li>Clases de punteros.</li>
+<li>Clases generales del motor (<code>Engine</code>, <code>IGame</code>).</li>
+<li>Utilidades generales (menos enum flags).</li>
+</ul>
+</li>
+<li><code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></code>: cualquier código relacionado con el manejo de las APIs de bajo nivel, así como la capa de abstracción. No incluye componentes o sistemas ECS.</li>
+<li><code><a class="el" href="namespace_o_s_k_1_1_e_c_s.html">OSK::ECS</a></code>: cualquier código relacionado con la arquitectura ECS, así como todos los componentes, sistemas y eventos por defecto.</li>
+<li><code><a class="el" href="namespace_o_s_k_1_1_a_s_s_e_t_s.html">OSK::ASSETS</a></code>: cualquier código relacionado con la arquitectura de manejo de assets, así como todos los assets y loaders por defecto.</li>
+<li><code><a class="el" href="namespace_o_s_k_1_1_a_u_d_i_o.html">OSK::AUDIO</a></code>: cualquier código relacionado con el manejo de las APIs de bajo nivel, así como la capa de abstracción. No incluye componentes o sistemas ECS.</li>
+<li><code><a class="el" href="namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n.html">OSK::COLLISION</a></code>: cualquier código relacionado con la detección de colisiones, representación de volúmenes y ray-casting. No incluye componentes o sistemas ECS.</li>
+<li><code><a class="el" href="namespace_o_s_k_1_1_i_o.html">OSK::IO</a></code>: cualquier código relacionado con el manejo de entrada y salida mediante monitor, mando, teclado, ratón, logs y archivos.</li>
+<li><code><a class="el" href="namespace_o_s_k_1_1_m_e_m_o_r_y.html">OSK::MEMORY</a></code>: cualquier código relacionado con el manejo de memoria, excepto por clases de punteros.</li>
+<li><code><a class="el" href="namespace_o_s_k_1_1_n_e_t.html">OSK::NET</a></code>: cualquier código relacionado con el manejo de redes y la transmisión de datos mediante éstas.</li>
+<li><code><a class="el" href="namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e.html">OSK::PERSISTENCE</a></code>: cualquier código relacionado con la serialización y desserialización de datos, independientemente de su formato.</li>
+<li><code><a class="el" href="namespace_o_s_k_1_1_u_i.html">OSK::UI</a></code>: cualquier código relacionado con la interfaz de usuario, incluyendo los elementos por defecto.</li>
+<li><code><a class="el" href="namespace_o_s_k_1_1_m_a_t_h.html">OSK::MATH</a></code>: cualquier código relacionado con operaciones matemáticas. No incluye tipos de datos numéricos o vectoriales.</li>
+<li><code><a class="el" href="namespace_o_s_k_1_1_e_f_traits.html" title="Permite la manipulación de enum class como flags de un enum.">OSK::EFTraits</a></code>: cualquier código relacionado con el manejo de enumeraciones como enum flags.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md21"></a>
+Variables</h2>
+<ul>
+<li>Tanto las variables como los atributos deben tener estilo <em>lowerCamelCase</em>.</li>
+<li>Los atributos de una clase deben tener el prefijo <code>m_</code>, independientemente de su tipo o propiedades.</li>
+<li>Las variables:<ul>
+<li>Deben ser declaradas lo más cerca posible de su primer uso.</li>
+<li>Deben ser declaradas en el scope más restrictivo posible.</li>
+<li>Deben ser inmutables (<code>const</code>) siempre que sea posible.</li>
+<li>Deben tener un valor inicial siempre que sea posible.</li>
+<li>Deben ser declaradas fuera de los paréntesis de los bucles y sentencias if.</li>
+<li>No se deben declarar varias variables en una misma línea.</li>
+<li>Se debe crear un scope para aquellas variables cuyo ciclo de vida no coincida al 100% con el scope en el que se usan.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md22"></a>
+Clases y estructuras</h2>
+<ul>
+<li>Los nombres de las clases y estructuras deben tener estilo <em>UpperCamelCase</em>.</li>
+<li>Los constructores vacíos deben ser implícitos.</li>
+<li>Los constructores con un único parámetro deben ser explícitos.</li>
+<li>Los atributos deben ser privados siempre que sea posible.<ul>
+<li>Es posible tener atributos protegidos si es necesario.</li>
+</ul>
+</li>
+<li>En el espacio público de la clase únicamente deben haber funciones.</li>
+<li>Todos los elementos públicos deben estar juntos, en el siguiente orden:<ul>
+<li>Constructores.</li>
+<li>Destructor.</li>
+<li>Operadores de copia y movimiento.</li>
+<li>Resto de funciones.</li>
+</ul>
+</li>
+<li>Todos los elementos protegidos deben estar juntos, en el siguiente orden:<ul>
+<li>Constructores.</li>
+<li>Resto de funciones.</li>
+<li>Atributos protegidos.</li>
+</ul>
+</li>
+<li>Todos los elementos privados deben estar juntos, en el siguiente orden:<ul>
+<li>Funciones.</li>
+<li>Atributos privados.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md23"></a>
+Struct vs class</h3>
+<ul>
+<li>Los objetos que únicamente almacenan información deben ser <code>struct</code>.</li>
+<li>Los objetos que almacenan tanto información como funciones deben ser <code>class</code>.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md24"></a>
+Structs</h3>
+<ul>
+<li>Preferir el uso de estructuras en vez de parejas o tuplas.</li>
+<li>Los atributos de una estructura no deben usar el prefijo <code>m_</code>.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md25"></a>
+Herencia</h3>
+<ul>
+<li>Se permite la herencia múltiple.</li>
+<li>Si una clase está diseñada como interfaz o como clase abstracta (clase que no está completa, y que tiene funciones virtuales que deben ser desarrolladas en clases hijas) deben tener el prefijo <code>I</code>.</li>
+<li>Si una clase está diseñada para no ser heredada, marcar como <code>final</code>.</li>
+<li>Toda herencia debe ser pública.</li>
+<li>Toda función que pueda ser sobreescrita debe ser marcada como <code>virtual</code>.</li>
+<li>Toda función sobreescrita debe ser marcada como <code>override</code>.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md26"></a>
+Punteros</h2>
+<h2><a class="anchor" id="autotoc_md27"></a>
+Funciones</h2>
+<ul>
+<li>Preferir funciones no mutables (<code>const</code>) siempre que sea posible.</li>
+<li>Preferir funciones pequeñas.</li>
+<li>Preferir argumentos por defecto a overloading.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md28"></a>
+Parámetros</h3>
+<ul>
+<li>No usar parámetros de salida: en caso de devolver varios elementos, usar un <code>struct</code>.</li>
+<li>Los parámetros de entrada de tipos numéricos y booleanos deben ser pasados por valor.<ul>
+<li>En caso de ser opcionales: usar <code>std::optional</code>.</li>
+</ul>
+</li>
+<li>Los parámetros de entrada de tipos complejos, clases y estructuras deben ser pasados por referencia constante.</li>
+<li>Los parámetros de entrada que puedan ser modificados deben ser pasados como puntero.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md29"></a>
+Casting</h2>
+<ul>
+<li>No usar casting tipo C, preferir métodos de casting tipo C++ (<code>static_cast</code>, <code>const_cast</code>, <code>reinterpret_cast</code>, <code>std::bit_cast</code>). </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

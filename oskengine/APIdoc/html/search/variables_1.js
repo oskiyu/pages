@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['basearraylevel_0',['baseArrayLevel',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config.html#a10f0649310fcec90686eb46d8f76117b',1,'OSK::GRAPHICS::GpuImageViewConfig']]],
+  ['basecolor_1',['baseColor',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_material.html#ac8cd52a4e638b384e410aa3491dc9701',1,'OSK::GRAPHICS::GpuModel3D::Material']]],
+  ['baselayer_2',['baseLayer',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_range.html#a44c19bed81a923bf1dc5a1f2851ef06b',1,'OSK::GRAPHICS::GpuImageRange']]],
+  ['basemiplevel_3',['baseMipLevel',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_range.html#a436c76e7a9d847ccdcb0855c34158299',1,'OSK::GRAPHICS::GpuImageRange::baseMipLevel()'],['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config.html#a695b6625e33642f1b88046ab17062192',1,'OSK::GRAPHICS::GpuImageViewConfig::baseMipLevel()']]],
+  ['basetexcoords_4',['baseTexCoords',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex2_d.html#ad0210491e6d477f2925f593d1d3968ae',1,'OSK::GRAPHICS::Vertex2D']]],
+  ['bearing_5',['bearing',['../struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_character.html#ada0b3fcf610421d9ce5691d9a6ec70d9',1,'OSK::ASSETS::FontCharacter']]],
+  ['bindings_6',['bindings',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_slot.html#a6c634d4e5b1cf8a52683e26a917d0a3e',1,'OSK::GRAPHICS::MaterialLayoutSlot']]],
+  ['black_7',['Black',['../class_o_s_k_1_1_color.html#a5e672a6e5e09a84121a1bbf54f511412',1,'OSK::Color']]],
+  ['blass_8',['blass',['../class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_top_level_acceleration_structure.html#a78734acdf7ee644938266f2f5909bfec',1,'OSK::GRAPHICS::ITopLevelAccelerationStructure']]],
+  ['blue_9',['Blue',['../class_o_s_k_1_1_color.html#ace3faf2dffa24249c04701310085670f',1,'OSK::Color']]],
+  ['blue_10',['blue',['../class_o_s_k_1_1_color.html#a0cdfcd637d22304e889b6add7def8107',1,'OSK::Color']]],
+  ['blurmaterial_11',['BlurMaterial',['../class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass.html#aa8a7b724b5d431be4dba73bd1aa7ef0c',1,'OSK::GRAPHICS::HbaoPass']]],
+  ['boneids_12',['boneIds',['../struct_o_s_k_1_1_cpu_vertex3_d.html#ad62e15953910b7f62ff314a6f9ab5512',1,'OSK::CpuVertex3D']]],
+  ['boneindices_13',['boneIndices',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_anim3_d.html#a3d6e01f3c68242e9dfa8db6698d4a57b',1,'OSK::GRAPHICS::VertexAnim3D::boneIndices()'],['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_animation_attributes3_d.html#a26459675bd5bb0a55c6df65832202e0a',1,'OSK::GRAPHICS::VertexAnimationAttributes3D::boneIndices()']]],
+  ['bonesids_14',['bonesIds',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_skin.html#a58055174c7f93a2707a286da67a27a9a',1,'OSK::GRAPHICS::AnimationSkin']]],
+  ['boneweights_15',['boneWeights',['../struct_o_s_k_1_1_cpu_vertex3_d.html#ab664edacfd973fde18e9548b68bbdf39',1,'OSK::CpuVertex3D::boneWeights()'],['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_anim3_d.html#a18dcb8301cfac29965206b88745d867d',1,'OSK::GRAPHICS::VertexAnim3D::boneWeights()'],['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_animation_attributes3_d.html#ad80a61b968035a0869e4a35772112850',1,'OSK::GRAPHICS::VertexAnimationAttributes3D::boneWeights()']]],
+  ['bordersize_16',['borderSize',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d.html#aed4728b1ce5f998382e53f535c86ff5e',1,'OSK::GRAPHICS::SdfDrawCall2D']]],
+  ['buffermemoryblocks_17',['bufferMemoryBlocks',['../class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a8c63090eab5d64c093fe10e09b07d303',1,'OSK::GRAPHICS::IGpuMemoryAllocator']]],
+  ['buffermemoryblocksinfo_18',['bufferMemoryBlocksInfo',['../class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a0937f3dc39365976fe1cec02aec91b02',1,'OSK::GRAPHICS::IGpuMemoryAllocator']]]
+];

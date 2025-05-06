@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Perfiles de contenido :: OSKengine additional documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">OSKengine additional documentation</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">OSKengine Additional Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gráficos</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="pipelines.html">Materiales</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="rendertarget.html">Render targets</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recursos_gpu.html">Recursos (GPU)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Jugabilidad</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="ecs_profiles.html">Perfiles de contenido</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Desarrollo interno</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="codestyle.html">Estilo de código</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OSKengine Additional Documentation</span>
+    <span class="version">0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="index.html">OSKengine Additional Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OSKengine Additional Documentation</a></li>
+    <li>Jugabilidad</li>
+    <li><a href="ecs_profiles.html">Perfiles de contenido</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///C:/Users/Oscar/Documents/Antora/Test/docs/./modules/ROOT/pages/ecs_profiles.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Perfiles de contenido</h1>
+<div class="paragraph">
+<p>Los perflies de contenido indican al motor qué elementos (componentes y sistemas ECS y loaders de assets) por defecto debe registrar al iniciarse juego.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Sistemas ECS</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><code>ALL</code></th>
+<th class="tableblock halign-left valign-top"><code>_3D_ONLY</code></th>
+<th class="tableblock halign-left valign-top"><code>_2D_ONLY</code></th>
+<th class="tableblock halign-left valign-top"><code>MINIMAL</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DeferredRenderSystem</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PhysicsSystem</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CollisionSystem</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PhysicsResolver</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TransformApplierSystem</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SkyboxRenderSystem</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>RenderSystem2D</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Componentes ECS</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><code>ALL</code></th>
+<th class="tableblock halign-left valign-top"><code>_3D_ONLY</code></th>
+<th class="tableblock halign-left valign-top"><code>_2D_ONLY</code></th>
+<th class="tableblock halign-left valign-top"><code>MINIMAL</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Transform3D</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ModelComponent3D</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CameraComponent3D</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CollisionComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PhysicsComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Transform2D</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CameraComponent2D</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Sprite</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Assets</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><code>ALL</code></th>
+<th class="tableblock halign-left valign-top"><code>_3D_ONLY</code></th>
+<th class="tableblock halign-left valign-top"><code>_2D_ONLY</code></th>
+<th class="tableblock halign-left valign-top"><code>MINIMAL</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AudioLoader</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TextureLoader</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FontLoader</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ModelLoader3D</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CubemapTextureLoader</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>IrradianceMapLoader</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SpecularMapLoader</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PreBuiltColliderLoader</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PreBuiltSplineLoader3D</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

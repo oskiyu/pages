@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Animación de modelos 3D :: OSKengine additional documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">OSKengine additional documentation</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="2024.01.10">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">OSKengine Additional Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gráficos</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="pipelines.html">Materiales</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="rendertarget.html">Render targets</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recursos_gpu.html">Recursos (GPU)</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="animacion_3d.html">Animación de modelos 3D</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Físicas</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="colliders.html">Colisionadores 3D</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Jugabilidad</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ecs.html">Arquitectura ECS</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="modelo_multihilo.html">Modelo multihilo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ecs_profiles.html">Perfiles de contenido</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Desarrollo interno</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="codestyle.html">Estilo de código</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OSKengine Additional Documentation</span>
+    <span class="version">2024.01.10</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="index.html">OSKengine Additional Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">2024.01.10</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OSKengine Additional Documentation</a></li>
+    <li>Gráficos</li>
+    <li><a href="animacion_3d.html">Animación de modelos 3D</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///C:/Users/Oscar/Documents/Antora/Test/docs/./modules/ROOT/pages/animacion_3d.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Animación de modelos 3D</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>OSKengine</strong> soporta el renderizado de modelos 3D animados mediante la técnica de animación esqueletal.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Para que una animación pueda reproducirse, deben establecerse una <strong>skin</strong> activa y añadir, al menos, una animación activa.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conceptos"><a class="anchor" href="#_conceptos"></a>Conceptos</h2>
+<div class="sectionbody">
+<div class="sect3">
+<h4 id="_esqueleto"><a class="anchor" href="#_esqueleto"></a>Esqueleto</h4>
+<div class="paragraph">
+<p>Un <strong>esqueleto</strong> es una jerarquía de <strong>huesos</strong>. Cada hueso puede moverse y rotar, afectando así a sus huesos hijos. Representa la base sobre la que se apoyan los vértices.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_skin"><a class="anchor" href="#_skin"></a>Skin</h4>
+<div class="paragraph">
+<p>Una <em><strong>skin</strong></em> o <strong>piel</strong> indica cómo debe deformarse un modelo de acuerdo a su esqueleto. Enlaza los huesos con los nodos de la animación.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_animación"><a class="anchor" href="#_animación"></a>Animación</h4>
+<div class="paragraph">
+<p>Una animación indica cómo deben moverse y rotar los huesos a lo largo del tiempo.</p>
+</div>
+<div class="paragraph">
+<p>Cada animación tiene su propio esqueleto, que va modificando a medida que se reproduce la animación. En caso de que un modelo tenga varias animaciones, se interpolan los valores de los huesos de los esqueletos de las animaciones activas.</p>
+</div>
+<div class="paragraph">
+<p>Las animaciones se componen de:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Samplers</strong>, que indican los valores de los <em>keyframes</em> en determinados instantes. Dichos <em>keyframes</em> pueden indicar una posición, una escala o una orientación.</p>
+</li>
+<li>
+<p><strong>Canales</strong>, que indican sobre qué hueso se aplica cada sampler.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_manejo_en_tiempo_de_ejecución"><a class="anchor" href="#_manejo_en_tiempo_de_ejecución"></a>Manejo en tiempo de ejecución</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La animación esqueletal en modelos GPU 3D se gestiona mediante la clase <code>Animator</code>. Cada modelo GPU 3D puede tener opcionalmente una instancia de esta clase. Es opcional ya que los modelos estáticos no tienen. Puede comprobarse si un modelo tiene un <code>Animator</code> mediante el método <code>HasAnimator()</code>.</p>
+</div>
+<div class="paragraph">
+<p>La clase <code>Animator</code> contiene:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Valores finales de los huesos (matrices 4x4).</p>
+</li>
+<li>
+<p>Animaciones cargadas.</p>
+</li>
+<li>
+<p>Animaciones activas (pudiendo haber 0, 1 o varias).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Las animaciones activas son aquellas que se están reproduciendo en un momento dado.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Skin activa.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Para poder reproducir animaciones, debe estar activa una skin de manera obligatoria.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Todo el manejo de las animaciones debe hacerse a través de esta clase. Se pueden reproducir animaciones mediante el método <code>Animator::AddActiveAnimation(&#8230;&#8203;)</code>, y se pueden detener animaciones mediante el método <code>Animator::RemoveActiveAnimation(&#8230;&#8203;)</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Puede haber varias animaciones reproduciéndose al mismo tiempo. El resultado final será una interpolación entre todas las animaciones.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pases_de_renderizado"><a class="anchor" href="#_pases_de_renderizado"></a>Pases de renderizado</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Al usar un layout de vértice distinto a los modelos estáticos, los modelos animados no pueden renderizarse mediante los mismos pases de renderizado. Deben usarse:
+- <code>AnimatedGBufferPass</code></p>
+</div>
+<div class="paragraph">
+<p><mark>TODO: Añadir <code>ShadowsAnimatedPass</code>.</mark></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Compatibilidad"><a class="anchor" href="#Compatibilidad"></a>Compatibilidad</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La implementación por defecto de la animación 3D se realiza bajo las siguientes precondiciones:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cada hueso está representado por una matriz <code>float 4x4</code>.</p>
+</li>
+<li>
+<p>En los shaders, se accede a estas matrices mediante un <code>buffer</code> llamado <code>animation</code>.</p>
+</li>
+<li>
+<p>Dicho <code>buffer</code> se contiene en un slot llamado <code>animation</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_personalización_en_sistemas_de_renderizado"><a class="anchor" href="#_personalización_en_sistemas_de_renderizado"></a>Personalización en sistemas de renderizado</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dado que la información sobre las animaciones se almacena en <code>GlobalMeshMapping</code> (compartido entre todos los pases de renderizado), no es posible diferenciar distintos modelos de animación para distintos pases de renderizado.</p>
+</div>
+<div class="paragraph">
+<p>Además, la información sobre las animaciones deben ser un slot de materiales y un buffer de huesos. Esto se puede sobreescribir en las clases de renderizadores, por lo que no necesita seguir el mismo formato indicado en el apartado <a href="#Compatibilidad">Compatibilidad</a>.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: Fichero Fuente C:/Users/Oscar/source/repos/OSKengine/Source/VertexInfo.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_vertex_info_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">VertexInfo.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;DynamicArray.hpp&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">   14</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html#ae660f3dbf6b0cfe28fecc23db7dcae22">   18</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html#ae660f3dbf6b0cfe28fecc23db7dcae22">VertexInfo</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html#a92314ac0bb2cb55ae18f4c67b944e566">   19</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html#a92314ac0bb2cb55ae18f4c67b944e566">OSK_DEFAULT_COPY_OPERATOR</a>(<a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html">   24</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html">Entry</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a5cc8fb7514b81d21a1cdf194cbcedbee">   26</a></span>            <a class="code hl_function" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a5cc8fb7514b81d21a1cdf194cbcedbee">Entry</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#ad0539f6b8d14c0b55186817aee1279af">   27</a></span>            <a class="code hl_function" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#ad0539f6b8d14c0b55186817aee1279af">OSK_DEFAULT_COPY_OPERATOR</a>(<a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html">Entry</a>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a0062a8ce8808345b70e06db4d4b6d3a8">   32</a></span>            <span class="keyword">enum class</span> <a class="code hl_enumeration" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a0062a8ce8808345b70e06db4d4b6d3a8">Type</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                INT,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                FLOAT,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                UNSIGNED_INT</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            };</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#aa29551af7ef16015a2e5aed353d5497e">   38</a></span>            <a class="code hl_function" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#aa29551af7ef16015a2e5aed353d5497e">Entry</a>(<a class="code hl_typedef" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#aecf2c74b1729abd1249b4bf49ba17eaa">size</a>, <a class="code hl_enumeration" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a0062a8ce8808345b70e06db4d4b6d3a8">Type</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a5cf4e4e7fb1c7adf1a4ecd521d6936e8">type</a>, <span class="keyword">const</span> std::string&amp; name) </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                : <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#aecf2c74b1729abd1249b4bf49ba17eaa">size</a>(<a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#aecf2c74b1729abd1249b4bf49ba17eaa">size</a>), <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a5cf4e4e7fb1c7adf1a4ecd521d6936e8">type</a>(<a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a5cf4e4e7fb1c7adf1a4ecd521d6936e8">type</a>), name(name) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#aecf2c74b1729abd1249b4bf49ba17eaa">   46</a></span>            <a class="code hl_typedef" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#aecf2c74b1729abd1249b4bf49ba17eaa">size</a> = 0;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a5cf4e4e7fb1c7adf1a4ecd521d6936e8">   47</a></span>            <a class="code hl_enumeration" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a0062a8ce8808345b70e06db4d4b6d3a8">Type</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a5cf4e4e7fb1c7adf1a4ecd521d6936e8">type</a> = <a class="code hl_enumvalue" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a0062a8ce8808345b70e06db4d4b6d3a8ae738c26bf4ce1037fa81b039a915cbf6">Type::FLOAT</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a75907c74453b4d294c64ec93359d5b45">   49</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a75907c74453b4d294c64ec93359d5b45">SetName</a>(<span class="keyword">const</span> std::string&amp; nname) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                this-&gt;name = nname;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a98d0d8fdad6762ef74f51a5752ddbbaf">   53</a></span>            <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a98d0d8fdad6762ef74f51a5752ddbbaf">GetName</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="keywordflow">return</span> name;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            std::string name;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        };</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html#a15eaeeac531672e355aa72bf8bf74ba4">   64</a></span>        <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray&lt;Entry&gt;</a> <a class="code hl_variable" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html#a15eaeeac531672e355aa72bf8bf74ba4">entries</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html#a4be06995fbeabe48009567bb72a47bee">GetSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    };</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="ttc" id="aclass_o_s_k_1_1_dynamic_array_html"><div class="ttname"><a href="class_o_s_k_1_1_dynamic_array.html">OSK::DynamicArray</a></div><div class="ttdoc">Dynamic array: array que puede cambiar de tamaño.</div><div class="ttdef"><b>Definition:</b> DynamicArray.hpp:66</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">OSK::GRAPHICS::VertexInfo</a></div><div class="ttdoc">Información de los atributos de un vértice. El graphics pipeline lo usará para configurar el tipo de ...</div><div class="ttdef"><b>Definition:</b> VertexInfo.h:14</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_html_a15eaeeac531672e355aa72bf8bf74ba4"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html#a15eaeeac531672e355aa72bf8bf74ba4">OSK::GRAPHICS::VertexInfo::entries</a></div><div class="ttdeci">DynamicArray&lt; Entry &gt; entries</div><div class="ttdoc">Una entrada por atributo.</div><div class="ttdef"><b>Definition:</b> VertexInfo.h:64</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_html_a4be06995fbeabe48009567bb72a47bee"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html#a4be06995fbeabe48009567bb72a47bee">OSK::GRAPHICS::VertexInfo::GetSize</a></div><div class="ttdeci">USize32 GetSize() const</div><div class="ttdef"><b>Definition:</b> VertexInfo.cpp:6</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_html_a92314ac0bb2cb55ae18f4c67b944e566"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html#a92314ac0bb2cb55ae18f4c67b944e566">OSK::GRAPHICS::VertexInfo::OSK_DEFAULT_COPY_OPERATOR</a></div><div class="ttdeci">OSK_DEFAULT_COPY_OPERATOR(VertexInfo)</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_html_ae660f3dbf6b0cfe28fecc23db7dcae22"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html#ae660f3dbf6b0cfe28fecc23db7dcae22">OSK::GRAPHICS::VertexInfo::VertexInfo</a></div><div class="ttdeci">VertexInfo()=default</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></div><div class="ttdef"><b>Definition:</b> AccelerationStructuresExceptions.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a12b6cb7a6544b56835883aa592d5c532"><div class="ttname"><a href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">OSK::USize32</a></div><div class="ttdeci">uint32_t USize32</div><div class="ttdoc">Tamaño, almacenado en un unsigned int de 32 bits.</div><div class="ttdef"><b>Definition:</b> NumericTypes.h:15</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html">OSK::GRAPHICS::VertexInfo::Entry</a></div><div class="ttdoc">Información de un atributo.</div><div class="ttdef"><b>Definition:</b> VertexInfo.h:24</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry_html_a0062a8ce8808345b70e06db4d4b6d3a8"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a0062a8ce8808345b70e06db4d4b6d3a8">OSK::GRAPHICS::VertexInfo::Entry::Type</a></div><div class="ttdeci">Type</div><div class="ttdoc">Tipo de dato base del atributo.</div><div class="ttdef"><b>Definition:</b> VertexInfo.h:32</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry_html_a0062a8ce8808345b70e06db4d4b6d3a8ae738c26bf4ce1037fa81b039a915cbf6"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a0062a8ce8808345b70e06db4d4b6d3a8ae738c26bf4ce1037fa81b039a915cbf6">OSK::GRAPHICS::VertexInfo::Entry::Type::FLOAT</a></div><div class="ttdeci">@ FLOAT</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry_html_a5cc8fb7514b81d21a1cdf194cbcedbee"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a5cc8fb7514b81d21a1cdf194cbcedbee">OSK::GRAPHICS::VertexInfo::Entry::Entry</a></div><div class="ttdeci">Entry()=default</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry_html_a5cf4e4e7fb1c7adf1a4ecd521d6936e8"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a5cf4e4e7fb1c7adf1a4ecd521d6936e8">OSK::GRAPHICS::VertexInfo::Entry::type</a></div><div class="ttdeci">Type type</div><div class="ttdef"><b>Definition:</b> VertexInfo.h:47</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry_html_a75907c74453b4d294c64ec93359d5b45"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a75907c74453b4d294c64ec93359d5b45">OSK::GRAPHICS::VertexInfo::Entry::SetName</a></div><div class="ttdeci">void SetName(const std::string &amp;nname)</div><div class="ttdef"><b>Definition:</b> VertexInfo.h:49</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry_html_a98d0d8fdad6762ef74f51a5752ddbbaf"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#a98d0d8fdad6762ef74f51a5752ddbbaf">OSK::GRAPHICS::VertexInfo::Entry::GetName</a></div><div class="ttdeci">const std::string &amp; GetName() const</div><div class="ttdef"><b>Definition:</b> VertexInfo.h:53</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry_html_aa29551af7ef16015a2e5aed353d5497e"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#aa29551af7ef16015a2e5aed353d5497e">OSK::GRAPHICS::VertexInfo::Entry::Entry</a></div><div class="ttdeci">Entry(USize32 size, Type type, const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> VertexInfo.h:38</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry_html_ad0539f6b8d14c0b55186817aee1279af"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#ad0539f6b8d14c0b55186817aee1279af">OSK::GRAPHICS::VertexInfo::Entry::OSK_DEFAULT_COPY_OPERATOR</a></div><div class="ttdeci">OSK_DEFAULT_COPY_OPERATOR(Entry)</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry_html_aecf2c74b1729abd1249b4bf49ba17eaa"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry.html#aecf2c74b1729abd1249b4bf49ba17eaa">OSK::GRAPHICS::VertexInfo::Entry::size</a></div><div class="ttdeci">USize32 size</div><div class="ttdoc">Tamaño (en número de bytes).</div><div class="ttdef"><b>Definition:</b> VertexInfo.h:46</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>VertexInfo.h</b></li>
+    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Recursos (GPU) :: OSKengine additional documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">OSKengine additional documentation</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">OSKengine Additional Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gráficos</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="pipelines.html">Materiales</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="rendertarget.html">Render targets</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="recursos_gpu.html">Recursos (GPU)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Jugabilidad</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ecs_profiles.html">Perfiles de contenido</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Desarrollo interno</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="codestyle.html">Estilo de código</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OSKengine Additional Documentation</span>
+    <span class="version">0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="index.html">OSKengine Additional Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OSKengine Additional Documentation</a></li>
+    <li>Gráficos</li>
+    <li><a href="recursos_gpu.html">Recursos (GPU)</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///C:/Users/Oscar/Documents/Antora/Test/docs/./modules/ROOT/pages/recursos_gpu.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Recursos (GPU)</h1>
+<div class="sect1">
+<h2 id="_buffers"><a class="anchor" href="#_buffers"></a>Buffers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Los <strong>buffers</strong> son regiones de memoria que almacenan información arbitraria en la GPU.</p>
+</div>
+<div class="paragraph">
+<p>Los buffers pueden tener distintos usos, que se pueden activar mediante los siguientes flags:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 1. Usos de buffer</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Uso</th>
+<th class="tableblock halign-left valign-top">Flag (<code>GpuBufferUsage</code>)</th>
+<th class="tableblock halign-left valign-top">Read <sup class="footnote" id="_footnote_shaders">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></th>
+<th class="tableblock halign-left valign-top">Write <sup class="footnoteref">[<a class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></th>
+<th class="tableblock halign-left valign-top">Observaciones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uniform buffer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>UNIFORM_BUFFER</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage buffer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STORAGE_BUFFER</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vertex buffer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>VERTEX_BUFFER</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Index buffer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INDEX_BUFFER</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fuente de copia</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TRANSFER_SOURCE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indica que se copiarán datos este buffer a otro mediante un comando.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Destino de copia</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TRANSFER_DESTINATION</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indica que se copiarán datos de un buffer a este mediante un comando.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contenido de estructura de aceleración</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>RT_ACCELERATION_STRUCTURE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Necesita una GPU compatible con trazado de rayos.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Construcción de estructura de aceleración</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>RT_ACCELERATION_STRUCTURE_BUILDING</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Necesita una GPU compatible con trazado de rayos.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tabla de shaders de rayos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>RT_SHADER_BINDING_TABLE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Necesita una GPU compatible con trazado de rayos.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Para un mejor rendimiento, preferir usar <strong>uniform buffer</strong> si sólamente se van a leer datos desde los shaders.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Activa únicamente los usos que realmente se vayan a usar.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_imágenes"><a class="anchor" href="#_imágenes"></a>Imágenes</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Desde shaders.
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

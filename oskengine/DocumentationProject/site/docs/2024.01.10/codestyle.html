@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Estilo de código :: OSKengine additional documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">OSKengine additional documentation</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="2024.01.10">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">OSKengine Additional Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gráficos</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="pipelines.html">Materiales</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="rendertarget.html">Render targets</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recursos_gpu.html">Recursos (GPU)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="animacion_3d.html">Animación de modelos 3D</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Físicas</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="colliders.html">Colisionadores 3D</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Jugabilidad</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ecs.html">Arquitectura ECS</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="modelo_multihilo.html">Modelo multihilo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ecs_profiles.html">Perfiles de contenido</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Desarrollo interno</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="codestyle.html">Estilo de código</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OSKengine Additional Documentation</span>
+    <span class="version">2024.01.10</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="index.html">OSKengine Additional Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">2024.01.10</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OSKengine Additional Documentation</a></li>
+    <li>Desarrollo interno</li>
+    <li><a href="codestyle.html">Estilo de código</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///C:/Users/Oscar/Documents/Antora/Test/docs/./modules/ROOT/pages/codestyle.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Estilo de código</h1>
+<div class="sect1">
+<h2 id="_general"><a class="anchor" href="#_general"></a>General</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Usar tabulaciones en vez de espacios.</p>
+</li>
+<li>
+<p>Tamaño de tabulación equivalente a 4 espacios.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_archivos_de_encabezado"><a class="anchor" href="#_archivos_de_encabezado"></a>Archivos de encabezado</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Todos los archivos de encabezado deben tener <strong>header guard</strong> <code>#pragma once</code>.</p>
+</li>
+<li>
+<p>Los archivos de encabezado que necesiten proporcionar el cuerpo de funciones deben tener extensión <code>.hpp</code>.</p>
+</li>
+<li>
+<p>El resto de archivos debe tener extensión <code>.h</code>.</p>
+</li>
+<li>
+<p>Cada archivo de código C++ (<code>.cpp</code>) debe tener asociado un archivo de encabezado.</p>
+</li>
+<li>
+<p>Si en el archivo de encabezado se hace referencia a algún tipo de dato no básico, debe contener una declaración o definición de dicho tipo de dato (<strong>include what you use</strong>):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si el tipo de dato no necesita estar definido (como con punteros o referencias), se debe incluir una declaración (<strong>forward declaration</strong>).</p>
+</li>
+<li>
+<p>Si esto no es posible, se debe incluir explícitamente el archivo de inclusión donde se define el tipo de dato.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Los archivos de encabezado que se incluyan en cualquier archivo deben seguir el siguiente orden:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Archivo de encabezado enlazado (para archivos de código C++ (<code>.cpp</code>)).</p>
+</li>
+<li>
+<p>Archivos de librería del motor (<code>NumericTypes.h</code>, <code>Assert.h</code>, <code>DefineAs.h</code>, etc.).</p>
+</li>
+<li>
+<p>Archivos de memoria del motor (<code>UniquePtr.hpp</code>, etc.).</p>
+</li>
+<li>
+<p>Archivos generales del motor (<code>NumericTypes.h</code>, <code>Assert.h</code>, <code>Engine.h</code>, <code>Logger.h</code>, etc.).</p>
+</li>
+<li>
+<p>Otros archivos del motor.</p>
+</li>
+<li>
+<p>Archivos de la librería estándar (<code>std</code>).</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_namespaces"><a class="anchor" href="#_namespaces"></a>Namespaces</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Todo el código debe estar introducido dentro de un namespace.</p>
+</li>
+<li>
+<p>Los namespaces deben tener su nombre en mayúsculas, usando snake-case si fuese necesario.</p>
+</li>
+<li>
+<p>El namespace elegido debe ser:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>OSK</code>: espacio de nombres por defecto para:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Tipos de datos numéricos y vectoriales.</p>
+</li>
+<li>
+<p>Excepciones generales.</p>
+</li>
+<li>
+<p>Cualquier código relacionado con la ejecución multihilo.</p>
+</li>
+<li>
+<p>Cualquier código relacionado con el manejo de UUIDs.</p>
+</li>
+<li>
+<p>Clases de punteros.</p>
+</li>
+<li>
+<p>Clases generales del motor (<code>Engine</code>, <code>IGame</code>).</p>
+</li>
+<li>
+<p>Utilidades generales (menos enum flags).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>OSK::GRAPHICS</code>: cualquier código relacionado con el manejo de las APIs de bajo nivel, así como la capa de abstracción. No incluye componentes o sistemas ECS.</p>
+</li>
+<li>
+<p><code>OSK::ECS</code>: cualquier código relacionado con la arquitectura ECS, así como todos los componentes, sistemas y eventos por defecto.</p>
+</li>
+<li>
+<p><code>OSK::ASSETS</code>: cualquier código relacionado con la arquitectura de manejo de assets, así como todos los assets y loaders por defecto.</p>
+</li>
+<li>
+<p><code>OSK::AUDIO</code>: cualquier código relacionado con el manejo de las APIs de bajo nivel, así como la capa de abstracción. No incluye componentes o sistemas ECS.</p>
+</li>
+<li>
+<p><code>OSK::COLLISION</code>: cualquier código relacionado con la detección de colisiones, representación de volúmenes y ray-casting. No incluye componentes o sistemas ECS.</p>
+</li>
+<li>
+<p><code>OSK::IO</code>: cualquier código relacionado con el manejo de entrada y salida mediante monitor, mando, teclado, ratón, logs y archivos.</p>
+</li>
+<li>
+<p><code>OSK::MEMORY</code>: cualquier código relacionado con el manejo de memoria, excepto por clases de punteros.</p>
+</li>
+<li>
+<p><code>OSK::NET</code>: cualquier código relacionado con el manejo de redes y la transmisión de datos mediante éstas.</p>
+</li>
+<li>
+<p><code>OSK::PERSISTENCE</code>: cualquier código relacionado con la serialización y desserialización de datos, independientemente de su formato.</p>
+</li>
+<li>
+<p><code>OSK::UI</code>: cualquier código relacionado con la interfaz de usuario, incluyendo los elementos por defecto.</p>
+</li>
+<li>
+<p><code>OSK::MATH</code>: cualquier código relacionado con operaciones matemáticas. No incluye tipos de datos numéricos o vectoriales.</p>
+</li>
+<li>
+<p><code>OSK::EFTraits</code>: cualquier código relacionado con el manejo de enumeraciones como enum flags.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_variables"><a class="anchor" href="#_variables"></a>Variables</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Tanto las variables como los atributos deben tener estilo <strong>lowerCamelCase</strong>.</p>
+</li>
+<li>
+<p>Los atributos de una clase deben tener el prefijo <code>m_</code>, independientemente de su tipo o propiedades.</p>
+</li>
+<li>
+<p>Las variables:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Deben ser declaradas lo más cerca posible de su primer uso.</p>
+</li>
+<li>
+<p>Deben ser declaradas en el scope más restrictivo posible.</p>
+</li>
+<li>
+<p>Deben ser inmutables (<code>const</code>) siempre que sea posible.</p>
+</li>
+<li>
+<p>Deben tener un valor inicial siempre que sea posible.</p>
+</li>
+<li>
+<p>Deben ser declaradas fuera de los paréntesis de los bucles y sentencias if.</p>
+</li>
+<li>
+<p>No se deben declarar varias variables en una misma línea.</p>
+</li>
+<li>
+<p>Se debe crear un scope para aquellas variables cuyo ciclo de vida no coincida al 100% con el scope en el que se usan.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clases_y_estructuras"><a class="anchor" href="#_clases_y_estructuras"></a>Clases y estructuras</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Los nombres de las clases y estructuras deben tener estilo <strong>UpperCamelCase</strong>.</p>
+</li>
+<li>
+<p>Los constructores vacíos deben ser implícitos.</p>
+</li>
+<li>
+<p>Los constructores con un único parámetro deben ser explícitos.</p>
+</li>
+<li>
+<p>Los atributos deben ser privados siempre que sea posible.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Es posible tener atributos protegidos si es necesario.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>En el espacio público de la clase únicamente deben haber funciones.</p>
+</li>
+<li>
+<p>Todos los elementos públicos deben estar juntos, en el siguiente orden:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Constructores.</p>
+</li>
+<li>
+<p>Destructor.</p>
+</li>
+<li>
+<p>Operadores de copia y movimiento.</p>
+</li>
+<li>
+<p>Resto de funciones.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Todos los elementos protegidos deben estar juntos, en el siguiente orden:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Constructores.</p>
+</li>
+<li>
+<p>Resto de funciones.</p>
+</li>
+<li>
+<p>Atributos protegidos.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Todos los elementos privados deben estar juntos, en el siguiente orden:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Funciones.</p>
+</li>
+<li>
+<p>Atributos privados.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_struct_vs_class"><a class="anchor" href="#_struct_vs_class"></a>Struct vs class</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Los objetos que únicamente almacenan información deben ser <code>struct</code>.</p>
+</li>
+<li>
+<p>Los objetos que almacenan tanto información como funciones deben ser <code>class</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_structs"><a class="anchor" href="#_structs"></a>Structs</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Preferir el uso de estructuras en vez de parejas o tuplas.</p>
+</li>
+<li>
+<p>Los atributos de una estructura no deben usar el prefijo <code>m_</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_herencia"><a class="anchor" href="#_herencia"></a>Herencia</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Se permite la herencia múltiple.</p>
+</li>
+<li>
+<p>Si una clase está diseñada como interfaz o como clase abstracta (clase que no está completa, y que tiene funciones virtuales que deben ser desarrolladas en clases hijas) deben tener el prefijo <code>I</code>.</p>
+</li>
+<li>
+<p>Si una clase está diseñada para no ser heredada, marcar como <code>final</code>.</p>
+</li>
+<li>
+<p>Toda herencia debe ser pública.</p>
+</li>
+<li>
+<p>Toda función que pueda ser sobreescrita debe ser marcada como <code>virtual</code>.</p>
+</li>
+<li>
+<p>Toda función sobreescrita debe ser marcada como <code>override</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_punteros"><a class="anchor" href="#_punteros"></a>Punteros</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_funciones"><a class="anchor" href="#_funciones"></a>Funciones</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Preferir funciones no mutables (<code>const</code>) siempre que sea posible.</p>
+</li>
+<li>
+<p>Preferir funciones pequeñas.</p>
+</li>
+<li>
+<p>Preferir argumentos por defecto a overloading.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_parámetros"><a class="anchor" href="#_parámetros"></a>Parámetros</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>No usar parámetros de salida: en caso de devolver varios elementos, usar un <code>struct</code>.</p>
+</li>
+<li>
+<p>Los parámetros de entrada de tipos numéricos y booleanos deben ser pasados por valor.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En caso de ser opcionales: usar <code>std::optional</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Los parámetros de entrada de tipos complejos, clases y estructuras deben ser pasados por referencia constante.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En caso de ser opcionales: usar <code>OptionalRef</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Los parámetros de entrada que puedan ser modificados deben ser pasados como:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En caso de no ser opcionales: mediante puntero no nulo (<code>NotNullPtr</code>).</p>
+</li>
+<li>
+<p>En caso de ser opcionales: mediante puntero.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Si el parámetro de entrada es un putero que será almacenado en la clase como referencia a otra, usar <code>StableRef</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_casting"><a class="anchor" href="#_casting"></a>Casting</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>No usar casting tipo C, preferir métodos de casting tipo C++ (<code>static_cast</code>, <code>const_cast</code>, <code>reinterpret_cast</code>, <code>std::bit_cast</code>).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

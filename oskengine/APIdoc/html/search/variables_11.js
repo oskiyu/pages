@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['radiancestrength_0',['radianceStrength',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pbr_ibl_config.html#a9daffe80f237dfc706fb46d7291bd7bc',1,'OSK::GRAPHICS::PbrIblConfig']]],
+  ['raytracing_1',['raytracing',['../class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#ad0c6fb52ec460cf8a90c91c661378712',1,'OSK::GRAPHICS::ICommandList']]],
+  ['rectangle_2',['rectangle',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_viewport.html#a3a44365634cd80baebfa85c16d3339d9',1,'OSK::GRAPHICS::Viewport']]],
+  ['red_3',['Red',['../class_o_s_k_1_1_color.html#a55e1c6edf02b9e4525415e45a7c854eb',1,'OSK::Color']]],
+  ['red_4',['red',['../class_o_s_k_1_1_color.html#a44b6fb9124b1968d9506bc7122adb810',1,'OSK::Color']]],
+  ['refreshrate_5',['refreshRate',['../class_o_s_k_1_1_i_o_1_1_i_display.html#a2c5c73709c23d7536821b2f68c324c86',1,'OSK::IO::IDisplay']]],
+  ['reservedsize_6',['reservedSize',['../class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html#a2bd0d864e0d5ced266f8860aab614b66',1,'OSK::GRAPHICS::IGpuMemorySubblock']]],
+  ['resolution_7',['resolution',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_deferred_push_constants.html#a445bb77264cbccb7fe1afbe68f7efb03',1,'OSK::GRAPHICS::DeferredPushConstants::resolution()'],['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info.html#a8092753c9ee6afb0d2d436bd67022090',1,'OSK::GRAPHICS::GpuImageCreateInfo::resolution()'],['../class_o_s_k_1_1_i_o_1_1_i_display.html#a0087d89a72a5d4faa930924ac33d68f7',1,'OSK::IO::IDisplay::resolution()'],['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_global_information_buffer_content2_d.html#a2ca81e8728a6a2b0d5e461353499d757',1,'OSK::GRAPHICS::SdfGlobalInformationBufferContent2D::resolution()'],['../struct_sprite_renderer_global_information.html#aaf1cef9f368990304e2a3c8f3a96c170',1,'SpriteRendererGlobalInformation::resolution()']]],
+  ['resolvematerial_8',['ResolveMaterial',['../class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass.html#ace898758abf719368639db45cb679715',1,'OSK::GRAPHICS::BloomPass::ResolveMaterial()'],['../class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass.html#a78dd3d8d2584e6c897563fc6928e7266',1,'OSK::GRAPHICS::HbaoPass::ResolveMaterial()']]],
+  ['reusablesubblocks_9',['reusableSubblocks',['../class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#afb0a469af9d65724ffe513423dd32482',1,'OSK::GRAPHICS::IGpuMemoryBlock']]],
+  ['rootindex_10',['rootIndex',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_skin.html#a8682c1373a8f8a4ba1e9d634c8fd28c9',1,'OSK::GRAPHICS::AnimationSkin']]],
+  ['rotation_11',['rotation',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone.html#a1f1517de376bf04f49903e17920d7c71',1,'OSK::GRAPHICS::AnimationBone']]],
+  ['roughnessfactor_12',['roughnessFactor',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_material.html#af96dd222589e96f96d9b51dd15c6bf07',1,'OSK::GRAPHICS::GpuModel3D::Material']]],
+  ['roughnessmetallic_13',['roughnessMetallic',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pbr_material_info.html#a396e8ced57803250fb0309b916a1970e',1,'OSK::GRAPHICS::PbrMaterialInfo']]],
+  ['roughnesstextureindex_14',['roughnessTextureIndex',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_material.html#a9393be683091de695e8f1ac1a52fc1af',1,'OSK::GRAPHICS::GpuModel3D::Material']]],
+  ['rtclosesthitshaderpath_15',['rtClosestHitShaderPath',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info.html#a09c9b9c025bb3dbc32b69dff04ff980d',1,'OSK::GRAPHICS::PipelineCreateInfo']]],
+  ['rtmissshaderpath_16',['rtMissShaderPath',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info.html#a757c6a25f8fa8ec656d053decf470524',1,'OSK::GRAPHICS::PipelineCreateInfo']]],
+  ['rtraygenshaderpath_17',['rtRaygenShaderPath',['../struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info.html#a0bfe9ca2ed2bf52a85df106765ed64e9',1,'OSK::GRAPHICS::PipelineCreateInfo']]]
+];

@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: ECS &amp; Event handling</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md_ecs_messaging.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">ECS &amp; Event handling </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
+Introduction</h1>
+<p >ECS has proven to be an elegant way of decoupling data and functionality in an extensible way. In our current ECS implementation, system are entirely independent from each other. However, there will be occassions in which a channel of communication between systems needs to exist (for example, a physics systems will need to react to collisions previously detected by the collision system).</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Previous concepts</h1>
+<ul>
+<li><b>Component(s) dependency</b>: the minimum set of components an entity must possess in order for it to be compatible with a given system. May represent an empty set.</li>
+<li><b>Explicit component(s) dependency</b>: a component(s) dependency expressed as a component signature, wich contains the components identifiers of all neceessary components.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Design</h1>
+<p >To implement such functionality when needed, an event handling system must be implemented. This introduces the folllowing concepts:</p>
+<ul>
+<li><b>Event</b>: something that happens that is relevant to one or many systems.</li>
+<li><b>Message</b>: data structure that represents an event. Includes:<ul>
+<li>Entity ID.</li>
+<li>Event data.</li>
+</ul>
+</li>
+</ul>
+<p >Under these concepts, we need to allow systems to send messages to other systems. To implement this functionality, ECS systems get divided into three categories:</p>
+<ul>
+<li><b>Pure system</b>: an independent system, with no input nor output messaging channels. Equivalent to currently implemented systems.</li>
+<li><b>Producer system</b>: a system with one or more open output messaging channels.</li>
+<li><b>Consumer system</b>: a system with one single open input messaging channels.</li>
+</ul>
+<p >These system can also be divided into two different categories, depending on how they select the entities to aplly functionality:</p>
+<ul>
+<li><b>Iterator systems</b>: systems that implement functionality by iterating one or more times through all compatible entities. This includes both <em>pure</em> and <em>producer</em> systems.</li>
+<li><b>Picky systems</b>: system that implementing functionality by picking certain entities from all compatible ones. Basically, <em>consumer</em> systems.</li>
+</ul>
+<p >This second division is the most important one, as it heavily affects system implementation.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Implementation details</h1>
+<p >In order to implement this messaging system we will follow an architecture that resembles the current ECS architecture. To do so, an <b>MessageContainer</b> templated class is instantiated for each event type. Each of these containers will contain a queue of messages.</p>
+<p >Each <em>consumer</em> system will "subscribe" to one of these containers (though a container may be subscribed by many different consumers). Each frame, the consumer will iterate through the message queue, grab the corresponding entitites, and act accordingly.</p>
+<p >Each event type will have an explicit components dependency. Every message of that type generated must refer to an entity that is compatible with the event dependency.</p>
+<p >Consumer systems have an implicit component dependency, that is inherited from its subscribed event type. Therefore, all entities picked from the message queue are compatible with the consumer system.</p>
+<p >In order for this new architecture to work properly, a time dependency is added between producer and consumer systems: producer systems will all execute first, and consumer systems will only start execution after the last producer system has finished execution. This way, all consumer systems will have access to all relevant messages produced during the current frame. </p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Summary</h1>
+<h2><a class="anchor" id="autotoc_md6"></a>
+New &amp; revised concepts</h2>
+<ul>
+<li><b>Event</b>: something that happens that is relevant to one or more systems. May be generated outside of the ECS framework. Each event has an explicit components dependency.</li>
+<li><b>Event type</b>: represents an archtype of an event.</li>
+<li><b>Message</b>: data structure that represents an instance of an event. Contains:<ul>
+<li><b>Entity list</b>: list of entities affected by the event. All affected entities must be compatible with the event's components dependency.</li>
+<li><b>Event data</b>: data structure with relevant data that may be needed by the consumer systems.</li>
+</ul>
+</li>
+<li><b>Components dependency</b>: the minimum set of components an entity must possess in order for it to be compatible with a given system <em><b>or event type</b></em>.</li>
+<li><b>Implicit components dependency</b>: a <em>components dependency</em> not explicitly expressed, but instead inherited in some way.</li>
+<li><b>Pure system</b>: an independent system, with no input nor output messaging channels.</li>
+<li><b>Producer system</b>: a system with one or more output messaging channels.</li>
+<li><b>Consumer system</b>: a system with one single input messaging channel.</li>
+<li><b>Iterator systems</b>: systems that implement functionality by iterating one or more times through all compatible entities. This includes both <em>pure</em> and <em>producer</em> systems.</li>
+<li><b>Picky systems</b>: system that implementing functionality by picking certain entities from all compatible ones. Basically, <em>consumer</em> systems.</li>
+<li><b>Subscription</b>: relationship <code>(1 to 0:n)</code> between an event type and a consumer system, in which the consumer has access to all messages of the subscribed event type. Indirectly creates a <code>(0:n to 0:n)</code> relationship between producer an consumer systems.</li>
+<li><b>Message queue</b>: data structure with a set of messages corresponding to a given event type. FIFO.</li>
+<li><b>Messaging channel</b>: unidirectional channel of communication that sends messages of a given type, going from producer systems to consumer systems.<ul>
+<li><b>Input messaging channel</b>: for a given consumer system, its linked messaging channel.</li>
+<li><b>Output messaging channel</b>: for a given producer system, one of its linked messaging channels.</li>
+</ul>
+</li>
+<li><b>Message publishing</b>: action of creating a new instance of a message (for a given event type) and sending it through all compatible messaging channels. Must only be used by <em>producer systems</em>.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md8"></a>
+New classes</h2>
+<ul>
+<li><b>IMessageContainer</b>: common interface for all message containers.</li>
+<li><b>MessageContainer</b>: templated class that contains the message queue for a given event type. </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>
