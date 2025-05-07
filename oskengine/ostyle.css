@@ -13,7 +13,8 @@
 .bluebar__top {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2.5rem;
+    margin-top: 4.5rem;
+    margin-bottom: 0;
     background-image: linear-gradient(45deg, var(--osk-games-color-1), var(--osk-games-color-2));
     height: 1.5rem;
     width: 100em;
@@ -44,4 +45,26 @@
 
 .background {
     background-color: rgb(1, 1, 37);
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 4em;
+    color: aliceblue;
+    margin-left: 1em;
+    margin-top: 0.5em;
+}
+
+.subbold {
+    font-size: 1.5em;
+    color: rgb(187, 187, 187);
+    margin-left: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
+.content {
+    margin-left: 8em;
+    margin-right: 8em;
+    margin-bottom: 15em;
 }
