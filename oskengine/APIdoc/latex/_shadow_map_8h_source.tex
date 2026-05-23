@@ -1,0 +1,105 @@
+\doxysection{Shadow\+Map.\+h}
+\label{_shadow_map_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/ShadowMap.h@{C:/Users/Oscar/source/repos/OSKengine/Source/ShadowMap.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}RenderTarget.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}MaterialInstance.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Vector4.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Serializer.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ResourcesInFlight.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{enum\ class}\ ModelType;}
+\DoxyCodeLine{00017\ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{struct\ }DirectionalLight;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ ShadowMap\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ OSK\_SERIALIZABLE();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(\textcolor{keyword}{const}\ Vector2ui\&\ imageSize);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetDirectionalLight(\textcolor{keyword}{const}\ DirectionalLight\&\ dirLight);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetNearPlane(\textcolor{keywordtype}{float}\ nearPlane);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetFarPlane(\textcolor{keywordtype}{float}\ farPlane);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ GpuImage*\ GetShadowImage();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ GpuImage*\ GetColorImage();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ DynamicArray<GRAPHICS::GpuBuffer*>\ GetDirLightMatrixUniformBuffers();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetSceneCamera(ECS::GameObjectIndex\ cameraObject);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ USize32\ GetNumCascades()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetSplits(\textcolor{keyword}{const}\ std::array<float,\ 4>\&\ splits);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ std::array<const\ GpuBuffer*,\ MAX\_RESOURCES\_IN\_FLIGHT>\ GetGpuBuffers()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ DynamicArray<Vector3f>\ GetFrustumCorners(\textcolor{keyword}{const}\ glm::mat4\&\ cameraMatrix);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateLightMatrixBuffer();}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ USize32\ numMaps\ =\ 4;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Attachmens\ \&\ buffers\ -\/-\/-\/\ //}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ UniquePtr<GpuImage>\ m\_unusedColorArrayAttachment\{\};}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ UniquePtr<GpuImage>\ m\_depthArrayAttachment\{\};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GpuBuffer>,\ MAX\_RESOURCES\_IN\_FLIGHT>\ lightUniformBuffer\{\};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }ShadowsBufferContent\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ matrices[4];}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ Vector4f\ cascadeSplits;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Light\ \&\ camera\ info\ -\/-\/-\/\ //}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ m\_cameraObject\ =\ ECS::EMPTY\_GAME\_OBJECT;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ Vector4f\ m\_splitsVec\ =\ Vector4f(5.0f,\ 20.0f,\ 100.0f,\ 500.0f);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ std::array<float,\ 4>\ m\_splits\ =\ \{\ 5.0f,\ 20.0f,\ 100.0f,\ 500.0f\ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ m\_nearPlane\ =\ -\/5.0f;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ m\_farPlane\ =\ 5.0f;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ Vector3f\ m\_lightDirection\ =\ Vector3f(0.0f,\ 1.0f,\ 0.0f);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ Vector3f\ m\_lightOrigin\ =\ Vector3f::Zero;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ OSK\_SERIALIZATION(OSK::GRAPHICS::ShadowMap);}
+
+\end{DoxyCode}

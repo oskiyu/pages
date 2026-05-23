@@ -1,0 +1,142 @@
+\doxysection{Renderer\+Vk.\+h}
+\label{_renderer_vk_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/RendererVk.h@{C:/Users/Oscar/source/repos/OSKengine/Source/RendererVk.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_VULKAN\_BACKEND}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}IRenderer.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vulkan/vulkan.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ResourcesInFlight.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }IRenderpass;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ RendererVk\ final\ :\ \textcolor{keyword}{public}\ IRenderer\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ RendererVk(\textcolor{keywordtype}{bool}\ requestRayTracing);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize(}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ appName,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Version\&\ version,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ IO::IDisplay\&\ display,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ PresentMode\ mode)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ResetDisplay(IO::IDisplay\&\ display)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Close()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ PresentFrame()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SubmitSingleUseCommandList(UniquePtr<ICommandList>\&\&\ commandList)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ WaitForCompletion()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ UniquePtr<IGraphicsPipeline>\ \_CreateGraphicsPipeline(}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ PipelineCreateInfo\&\ pipelineInfo,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ MaterialLayout\&\ layout,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VertexInfo\&\ vertexInfo)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ UniquePtr<IMeshPipeline>\ \_CreateMeshPipeline(}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ PipelineCreateInfo\&\ pipelineInfo,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ MaterialLayout\&\ layout)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ UniquePtr<IRaytracingPipeline>\ \_CreateRaytracingPipeline(}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ PipelineCreateInfo\&\ pipelineInfo,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ MaterialLayout\&\ layout,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VertexInfo\&\ vertexInfo)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ UniquePtr<IComputePipeline>\ \_CreateComputePipeline(}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ PipelineCreateInfo\&\ pipelineInfo,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ MaterialLayout\&\ layout)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ UniquePtr<IMaterialSlot>\ \_CreateMaterialSlot(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ name,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ MaterialLayout\&\ layout)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ UniquePtr<ICommandPool>\ CreateCommandPool(\textcolor{keyword}{const}\ ICommandQueue*\ targetQueueType)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ UIndex32\ GetCurrentFrameIndex()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ UIndex32\ GetCurrentCommandListIndex()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ SupportsRaytracing()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Funciones\ que\ deben\ ser\ cargadas\ por\ ser\ de\ extensiones.}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkGetBufferDeviceAddressKHR\ pvkGetBufferDeviceAddressKHR;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkCmdBuildAccelerationStructuresKHR\ pvkCmdBuildAccelerationStructuresKHR;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkBuildAccelerationStructuresKHR\ pvkBuildAccelerationStructuresKHR;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkCreateAccelerationStructureKHR\ pvkCreateAccelerationStructureKHR;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkDestroyAccelerationStructureKHR\ pvkDestroyAccelerationStructureKHR;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkGetAccelerationStructureBuildSizesKHR\ pvkGetAccelerationStructureBuildSizesKHR;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkGetAccelerationStructureDeviceAddressKHR\ pvkGetAccelerationStructureDeviceAddressKHR;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkCmdTraceRaysKHR\ pvkCmdTraceRaysKHR;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkGetRayTracingShaderGroupHandlesKHR\ pvkGetRayTracingShaderGroupHandlesKHR;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkCreateRayTracingPipelinesKHR\ pvkCreateRayTracingPipelinesKHR;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Debug\ markers}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkSetDebugUtilsObjectNameEXT\ pvkSetDebugUtilsObjectNameEXT;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkSetDebugUtilsObjectTagEXT\ pvkSetDebugUtilsObjectTagEXT;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkCmdDebugMarkerBeginEXT\ pvkCmdDebugMarkerBeginEXT;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkCmdInsertDebugUtilsLabelEXT\ pvkCmdInsertDebugUtilsLabelEXT;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkCmdBeginDebugUtilsLabelEXT\ pvkCmdBeginDebugUtilsLabelEXT;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkCmdEndDebugUtilsLabelEXT\ pvkCmdEndDebugUtilsLabelEXT;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sin\ renderpasses}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkCmdBeginRendering\ pvkCmdBeginRendering;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkCmdEndRendering\ pvkCmdEndRendering;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mesh\ shaders}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PFN\_vkCmdDrawMeshTasksEXT\ pvkCmdDrawMeshTasksEXT;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateCommandQueues()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateSwapchain(PresentMode\ mode,\ \textcolor{keyword}{const}\ Vector2ui\&\ resolution)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateGpuMemoryAllocator()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateInstance(\textcolor{keyword}{const}\ std::string\&\ appName,\ \textcolor{keyword}{const}\ Version\&\ version);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupDebugLogging();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateSurface(IO::IDisplay\&\ display);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ChooseGpu();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sync}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateSyncPrimitives();}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SubmitMainCommandList();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SubmitFrame();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AcquireNextFrame();}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupRtFunctions(VkDevice\ logicalDevice);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupDebugFunctions(VkDevice\ instance);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupRenderingFunctions(VkDevice\ logicalDevice);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupMeshFunctions(VkDevice\ logicalDevice);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ AreValidationLayersAvailable()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ VkInstance\ m\_instance\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ VkSurfaceKHR\ m\_surface\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ VkDebugUtilsMessengerEXT\ m\_debugConsole\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sync}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ std::array<VkSemaphore,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_imageAvailableSemaphores\{\};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ std::array<VkSemaphore,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_imageFinishedSemaphores\{\};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ DynamicArray<VkFence>\ m\_fullyRenderedFences;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ USize32\ currentCommandBufferIndex\ =\ 0;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ USize32\ currentFrameIndex\ =\ 0;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ USize32\ vulkanVersion\ =\ VK\_API\_VERSION\_1\_3;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ PresentMode\ m\_presentMode;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

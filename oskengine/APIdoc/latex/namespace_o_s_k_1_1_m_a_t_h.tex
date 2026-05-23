@@ -1,0 +1,181 @@
+\doxysection{Referencia del espacio de nombres OSK\+::MATH}
+\label{namespace_o_s_k_1_1_m_a_t_h}\index{OSK::MATH@{OSK::MATH}}
+\doxysubsubsection*{Conceptos}
+\begin{DoxyCompactItemize}
+\item 
+concept \textbf{ Is\+Numeric}
+\item 
+concept \textbf{ Is\+Integer}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\T \textbf{ Primer\+Multiplo\+Superior} (T numero, T multiplo)
+\item 
+{\footnotesize template$<$typename T$>$ }\\T \textbf{ Primer\+Multiplo\+Inferior} (T numero, T multiplo)
+\item 
+{\footnotesize template$<$typename T$>$ }\\T \textbf{ Linear\+Interpolation\+\_\+\+Fast} (const T \&a, const T \&b, float factor)
+\item 
+{\footnotesize template$<$typename T$>$ }\\T \textbf{ Linear\+Interpolation} (const T \&a, const T \&b, float factor)
+\item 
+{\footnotesize template$<$typename T$>$ }\\T \textbf{ Clamp} (const T \&value, const T \&min, const T \&max)
+\item 
+{\footnotesize template$<$typename T$>$ }\\T \textbf{ Sign} (T value)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones}
+\index{OSK::MATH@{OSK::MATH}!Clamp@{Clamp}}
+\index{Clamp@{Clamp}!OSK::MATH@{OSK::MATH}}
+\doxysubsubsection{Clamp()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_m_a_t_h_aeb9e6dd7675ac3048479b9a7b1525b4c} 
+template$<$typename T$>$ \\
+T OSK\+::\+MATH\+::\+Clamp (\begin{DoxyParamCaption}\item[{const T \&}]{value}{, }\item[{const T \&}]{min}{, }\item[{const T \&}]{max}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el valor, ajustándolo de manera que nunca sea mayor que el máximo ni menor que el mínimo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Valor al que se le aplicará los límites.\\
+\hline
+{\em min} & Límite inferior.\\
+\hline
+{\em max} & Límite superior.\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyPrecond}{Precondición}
+El tipo T debe tener definidos los operadores $>$ y $<$. 
+\end{DoxyPrecond}
+\index{OSK::MATH@{OSK::MATH}!LinearInterpolation@{LinearInterpolation}}
+\index{LinearInterpolation@{LinearInterpolation}!OSK::MATH@{OSK::MATH}}
+\doxysubsubsection{LinearInterpolation()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_m_a_t_h_a300206fba642c521bb413e8d129821ee} 
+template$<$typename T$>$ \\
+T OSK\+::\+MATH\+::\+Linear\+Interpolation (\begin{DoxyParamCaption}\item[{const T \&}]{a}{, }\item[{const T \&}]{b}{, }\item[{float}]{factor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Interpolación lineal rápida. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em a} & Valor devuelto cuando factor sea $<$= 0.\+0\\
+\hline
+{\em b} & Valor devuelto cuando factor sea $>$= 1.\+0\\
+\hline
+{\em factor} & Factor que permite elegir la interpolación entre a y b\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor linealmente interpolado.
+\end{DoxyReturn}
+
+
+\begin{DoxyPrecond}{Precondición}
+El tipo T debe tener definidos los operadores $>$=, $<$=, -\/, + y $\ast$. 
+\end{DoxyPrecond}
+\index{OSK::MATH@{OSK::MATH}!LinearInterpolation\_Fast@{LinearInterpolation\_Fast}}
+\index{LinearInterpolation\_Fast@{LinearInterpolation\_Fast}!OSK::MATH@{OSK::MATH}}
+\doxysubsubsection{LinearInterpolation\_Fast()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_m_a_t_h_a59ecac3bc9181efeef2f758f583bdb65} 
+template$<$typename T$>$ \\
+T OSK\+::\+MATH\+::\+Linear\+Interpolation\+\_\+\+Fast (\begin{DoxyParamCaption}\item[{const T \&}]{a}{, }\item[{const T \&}]{b}{, }\item[{float}]{factor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Interpolación lineal rápida. Para cuando factor está entre 0.\+0 y 1.\+0. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em a} & Valor devuelto cuando factor sea 0.\+0\\
+\hline
+{\em b} & Valor devuelto cuando factor sea 1.\+0\\
+\hline
+{\em factor} & Factor que permite elegir la interpolación entre a y b\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor linealmente interpolado.
+\end{DoxyReturn}
+
+
+\begin{DoxyWarning}{Atención}
+Si factor está fuera del rango 0-\/1, el valor devuelto no estará entre a y b.
+\end{DoxyWarning}
+\begin{DoxyPrecond}{Precondición}
+El tipo T debe tener definidos los operadores -\/, + y $\ast$. 
+\end{DoxyPrecond}
+\index{OSK::MATH@{OSK::MATH}!PrimerMultiploInferior@{PrimerMultiploInferior}}
+\index{PrimerMultiploInferior@{PrimerMultiploInferior}!OSK::MATH@{OSK::MATH}}
+\doxysubsubsection{PrimerMultiploInferior()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_m_a_t_h_a1325a63ec8bc49a286c72870cd6b9294} 
+template$<$typename T$>$ \\
+T OSK\+::\+MATH\+::\+Primer\+Multiplo\+Inferior (\begin{DoxyParamCaption}\item[{T}]{numero}{, }\item[{T}]{multiplo}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve el primer múltiplo de {\ttfamily multiplo} que sea igual o menor que ´número´. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em numero} & Número por el que se empieza la búsqueda.\\
+\hline
+{\em multiplo} & Múltiplo buscado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Múltiplo menor o igual que el número.
+\end{DoxyReturn}
+
+
+\begin{DoxyPrecond}{Precondición}
+El tipo de dato debe cumplir \doxyref{Is\+Integer}{pág.}{concept_o_s_k_1_1_m_a_t_h_1_1_is_integer}. 
+\end{DoxyPrecond}
+\index{OSK::MATH@{OSK::MATH}!PrimerMultiploSuperior@{PrimerMultiploSuperior}}
+\index{PrimerMultiploSuperior@{PrimerMultiploSuperior}!OSK::MATH@{OSK::MATH}}
+\doxysubsubsection{PrimerMultiploSuperior()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_m_a_t_h_ac61609678bfab779b61fcdc1344be507} 
+template$<$typename T$>$ \\
+T OSK\+::\+MATH\+::\+Primer\+Multiplo\+Superior (\begin{DoxyParamCaption}\item[{T}]{numero}{, }\item[{T}]{multiplo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el primer múltiplo de {\ttfamily multiplo} que sea igual o mayor que ´número´. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em numero} & Número por el que se empieza la búsqueda.\\
+\hline
+{\em multiplo} & Múltiplo buscado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Múltiplo mayor o igual que el número.
+\end{DoxyReturn}
+
+
+\begin{DoxyPrecond}{Precondición}
+El tipo de dato debe cumplir \doxyref{Is\+Integer}{pág.}{concept_o_s_k_1_1_m_a_t_h_1_1_is_integer}. 
+\end{DoxyPrecond}
+\index{OSK::MATH@{OSK::MATH}!Sign@{Sign}}
+\index{Sign@{Sign}!OSK::MATH@{OSK::MATH}}
+\doxysubsubsection{Sign()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_m_a_t_h_a4af50c1fd6bb014a3fd75456ae16e322} 
+template$<$typename T$>$ \\
+T OSK\+::\+MATH\+::\+Sign (\begin{DoxyParamCaption}\item[{T}]{value}{}\end{DoxyParamCaption})}
+

@@ -1,0 +1,88 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Face\+Projection}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_face_projection}\index{OSK::COLLISION::FaceProjection@{OSK::COLLISION::FaceProjection}}
+
+
+{\ttfamily \#include $<$Face\+Projection.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Face\+Projection} (const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \&vertices, \textbf{ Vector3f} axis)
+\item 
+bool \textbf{ Overlaps} (\textbf{ Face\+Projection} other) const
+\item 
+float \textbf{ Get\+Overlap} (\textbf{ Face\+Projection} other) const
+\item 
+float \textbf{ Get\+Min} () const
+\item 
+float \textbf{ Get\+Max} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Proyección de una cara de un poliedro sobre un eje. 
+
+El segmento de recta de un eje sobre el que se encuentra la cara. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::COLLISION::FaceProjection@{OSK::COLLISION::FaceProjection}!FaceProjection@{FaceProjection}}
+\index{FaceProjection@{FaceProjection}!OSK::COLLISION::FaceProjection@{OSK::COLLISION::FaceProjection}}
+\doxysubsubsection{FaceProjection()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_face_projection_ad0ea04b34b24bb05aa0332567d7e76f8} 
+Face\+Projection\+::\+Face\+Projection (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \&}]{vertices}{, }\item[{\textbf{ Vector3f}}]{axis}{}\end{DoxyParamCaption})}
+
+
+
+Calcula la proyección. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vertices} & Vértices de la cara. \\
+\hline
+{\em axis} & Eje sobre el que se proyecta. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::FaceProjection@{OSK::COLLISION::FaceProjection}!GetMax@{GetMax}}
+\index{GetMax@{GetMax}!OSK::COLLISION::FaceProjection@{OSK::COLLISION::FaceProjection}}
+\doxysubsubsection{GetMax()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_face_projection_aaa2a6498f8d492315edf78002ee2790f} 
+float Face\+Projection\+::\+Get\+Max (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::COLLISION::FaceProjection@{OSK::COLLISION::FaceProjection}!GetMin@{GetMin}}
+\index{GetMin@{GetMin}!OSK::COLLISION::FaceProjection@{OSK::COLLISION::FaceProjection}}
+\doxysubsubsection{GetMin()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_face_projection_a00e768a02cdb8e05770eb843b020b935} 
+float Face\+Projection\+::\+Get\+Min (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::COLLISION::FaceProjection@{OSK::COLLISION::FaceProjection}!GetOverlap@{GetOverlap}}
+\index{GetOverlap@{GetOverlap}!OSK::COLLISION::FaceProjection@{OSK::COLLISION::FaceProjection}}
+\doxysubsubsection{GetOverlap()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_face_projection_aa5bafd76d3131cfe61ceb7842bf77c3d} 
+float Face\+Projection\+::\+Get\+Overlap (\begin{DoxyParamCaption}\item[{\textbf{ Face\+Projection}}]{other}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Distancia solapada entre ambas proyecciones. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Si no se solapan, devuelve 0. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+Las proyecciones deben haberse proyectado sobre el mismo eje. 
+\end{DoxyPrecond}
+\index{OSK::COLLISION::FaceProjection@{OSK::COLLISION::FaceProjection}!Overlaps@{Overlaps}}
+\index{Overlaps@{Overlaps}!OSK::COLLISION::FaceProjection@{OSK::COLLISION::FaceProjection}}
+\doxysubsubsection{Overlaps()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_face_projection_a743bdab979c9ce34375f1761b3907ee0} 
+bool Face\+Projection\+::\+Overlaps (\begin{DoxyParamCaption}\item[{\textbf{ Face\+Projection}}]{other}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si ambas proyecciones se solapan. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Las proyecciones deben haberse proyectado sobre el mismo eje. 
+\end{DoxyPrecond}

@@ -1,0 +1,195 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Sprite}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite}\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+
+
+{\ttfamily \#include $<$Sprite.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT} ()
+\item 
+\textbf{ Sprite} ()
+\item 
+\textbf{ OSK\+\_\+\+COMPONENT} ("{}OSK\+::\+Sprite"{})
+\item 
+void \textbf{ Setup\+Material} (\textbf{ Material} $\ast$material)
+\item 
+void \textbf{ Set\+Tex\+Coords} (const \textbf{ Texture\+Coordinates2D} \&tex\+Coords)
+\item 
+\textbf{ Texture\+Coordinates2D} \textbf{ Get\+Tex\+Coords} () const
+\item 
+void \textbf{ Link\+Asset} (\textbf{ ASSETS\+::\+Asset\+Ref}$<$ \textbf{ ASSETS\+::\+Texture} $>$ texture)
+\item 
+void \textbf{ Set\+Image\+View} (const \textbf{ IGpu\+Image\+View} $\ast$view)
+\item 
+const \textbf{ IMaterial\+Slot} $\ast$ \textbf{ Get\+Texture\+Slot} () const
+\item 
+const \textbf{ IGpu\+Image\+View} $\ast$ \textbf{ Get\+View} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Color} \textbf{ color} = \textbf{ Color\+::\+White}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ global\+Vertex\+Buffer}
+\item 
+static \textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ global\+Index\+Buffer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Un sprite representa una imagen que puede ser renderizada en 2D. 
+
+También es un componente para objetos 2D.
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{Sprite()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_a12cba3ac1868418add3c4d95ce87e615} 
+Sprite\+::\+Sprite (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!GetTexCoords@{GetTexCoords}}
+\index{GetTexCoords@{GetTexCoords}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{GetTexCoords()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_a73e11c31d9a6a64a3ee36b8981d12e72} 
+\textbf{ Texture\+Coordinates2D} Sprite\+::\+Get\+Tex\+Coords (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve las coordenadas de la imagen del sprite. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!GetTextureSlot@{GetTextureSlot}}
+\index{GetTextureSlot@{GetTextureSlot}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{GetTextureSlot()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_af6ceea4249851dd7ded2472cf8d72048} 
+const \textbf{ IMaterial\+Slot} $\ast$ Sprite\+::\+Get\+Texture\+Slot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Slot "{}texture"{}, que contiene un sampler con la imagen del sprite. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!GetView@{GetView}}
+\index{GetView@{GetView}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{GetView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_af2b3f421510454cd1b0f1aaa6fd8cf0b} 
+const \textbf{ IGpu\+Image\+View} $\ast$ Sprite\+::\+Get\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+View de la imagen del sprite. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!LinkAsset@{LinkAsset}}
+\index{LinkAsset@{LinkAsset}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{LinkAsset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_ad087bcb736161d4899a49549d06d783c} 
+void Sprite\+::\+Link\+Asset (\begin{DoxyParamCaption}\item[{\textbf{ ASSETS\+::\+Asset\+Ref}$<$ \textbf{ ASSETS\+::\+Texture} $>$}]{texture}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!OSK\_COMPONENT@{OSK\_COMPONENT}}
+\index{OSK\_COMPONENT@{OSK\_COMPONENT}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{OSK\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_a0854b7ac08b7b3f102c7897c63bed4d6} 
+OSK\+::\+GRAPHICS\+::\+Sprite\+::\+OSK\+\_\+\+COMPONENT (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Sprite"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}}
+\index{OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{OSK\_SERIALIZABLE\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_a8e21d08240195df571163aa9f5052ce4} 
+OSK\+::\+GRAPHICS\+::\+Sprite\+::\+OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!SetImageView@{SetImageView}}
+\index{SetImageView@{SetImageView}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{SetImageView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_a995e20db385e869fc9c04f5c56077829} 
+void Sprite\+::\+Set\+Image\+View (\begin{DoxyParamCaption}\item[{const \textbf{ IGpu\+Image\+View} $\ast$}]{view}{}\end{DoxyParamCaption})}
+
+
+
+Establece la imagen del sprite. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em view} & View de la imagen que se renderizará. Si es null, no renderizará nada.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily view} debe tener estabilidad de puntero. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!SetTexCoords@{SetTexCoords}}
+\index{SetTexCoords@{SetTexCoords}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{SetTexCoords()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_a91112ec134b0c78e5d35cadf7bc58566} 
+void Sprite\+::\+Set\+Tex\+Coords (\begin{DoxyParamCaption}\item[{const \textbf{ Texture\+Coordinates2D} \&}]{tex\+Coords}{}\end{DoxyParamCaption})}
+
+
+
+Establece la región de la imagen que se renderizará en este sprite. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tex\+Coords} & Región de la imagen. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!SetupMaterial@{SetupMaterial}}
+\index{SetupMaterial@{SetupMaterial}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{SetupMaterial()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_a0dae07d4738aac81f5f839906c428dc8} 
+void Sprite\+::\+Setup\+Material (\begin{DoxyParamCaption}\item[{\textbf{ Material} $\ast$}]{material}{}\end{DoxyParamCaption})}
+
+
+
+Establece el material sobre el que se inicializará el slot de la imagen del sprite. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em material} & \doxyref{Material}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material} 2D.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El layout de {\ttfamily material} debe tener registrado un slot llamado "{}textura"{}. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Material\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_invalid_material_exception}} & Si no se cumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!color@{color}}
+\index{color@{color}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{color}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_a11c7a9da5dbf7fc9881ab094ce0140ee} 
+\textbf{ Color} OSK\+::\+GRAPHICS\+::\+Sprite\+::color = \textbf{ Color\+::\+White}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} de la imagen (incluyendo transparencia). Por defecto, blanco. 
+
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!globalIndexBuffer@{globalIndexBuffer}}
+\index{globalIndexBuffer@{globalIndexBuffer}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{globalIndexBuffer}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_a2fe17cdfc4ffaefa5d2919e8a8a5c4b0} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ Sprite\+::global\+Index\+Buffer\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Buffer de índices global para el renderizado en modo inmediato. 
+
+\index{OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}!globalVertexBuffer@{globalVertexBuffer}}
+\index{globalVertexBuffer@{globalVertexBuffer}!OSK::GRAPHICS::Sprite@{OSK::GRAPHICS::Sprite}}
+\doxysubsubsection{globalVertexBuffer}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_ab40e8c0e5ae2256a8627159e851cb410} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ Sprite\+::global\+Vertex\+Buffer\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Buffer de vértices global para el renderizado en modo inmediato. 
+

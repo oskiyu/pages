@@ -1,0 +1,41 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Global\+Vertex\+Buffer\+Manager}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_vertex_buffer_manager}\index{OSK::GRAPHICS::GlobalVertexBufferManager@{OSK::GRAPHICS::GlobalVertexBufferManager}}
+
+
+{\ttfamily \#include $<$Global\+Vertex\+Buffer.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Global\+Vertex\+Buffer\+Range} \textbf{ Register\+Geometry} (\textbf{ USize32} vertex\+Count)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Maneja los rangos del buffer global de vértices. 
+
+\begin{DoxyNote}{Nota}
+No contiene el propio buffer de GPU. 
+\end{DoxyNote}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::GlobalVertexBufferManager@{OSK::GRAPHICS::GlobalVertexBufferManager}!RegisterGeometry@{RegisterGeometry}}
+\index{RegisterGeometry@{RegisterGeometry}!OSK::GRAPHICS::GlobalVertexBufferManager@{OSK::GRAPHICS::GlobalVertexBufferManager}}
+\doxysubsubsection{RegisterGeometry()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_vertex_buffer_manager_ac58032377222940a124a010fe6b67c2a} 
+\textbf{ Global\+Vertex\+Buffer\+Range} Global\+Vertex\+Buffer\+Manager\+::\+Register\+Geometry (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{vertex\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Reserva un rango del buffer para almacenar el número de vértices indicado, y devuelve la información del rango. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vertex\+Count} & Número de vértices a almacenar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Información sobre la posición y tamaño del rango reservado. 
+\end{DoxyReturn}

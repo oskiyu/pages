@@ -1,0 +1,66 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::ITouch\+Input}
+\label{class_o_s_k_1_1_i_o_1_1_i_touch_input}\index{OSK::IO::ITouchInput@{OSK::IO::ITouchInput}}
+
+
+{\ttfamily \#include $<$ITouch\+Input.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+ITouch\+Input} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+IUUID} ((\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+ITouch\+Input})
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Touch\+Input} $>$ \& \textbf{ Get\+Current\+Frame\+Inputs} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Touch\+Input} $>$ \textbf{ m\+\_\+current\+Frame\+Inputs} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz paraa obtener toques en una pantalla tÃ¡ctil. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IO::ITouchInput@{OSK::IO::ITouchInput}!````~ITouchInput@{$\sim$ITouchInput}}
+\index{````~ITouchInput@{$\sim$ITouchInput}!OSK::IO::ITouchInput@{OSK::IO::ITouchInput}}
+\doxysubsubsection{$\sim$ITouchInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_touch_input_a071214db8e4ae75c8d4b9887c1526f4d} 
+virtual OSK\+::\+IO\+::\+ITouch\+Input\+::$\sim$\+ITouch\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::ITouchInput@{OSK::IO::ITouchInput}!GetCurrentFrameInputs@{GetCurrentFrameInputs}}
+\index{GetCurrentFrameInputs@{GetCurrentFrameInputs}!OSK::IO::ITouchInput@{OSK::IO::ITouchInput}}
+\doxysubsubsection{GetCurrentFrameInputs()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_touch_input_a4654f19c7a61281cd2c3d6add7a03988} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Touch\+Input} $>$ \& ITouch\+Input\+::\+Get\+Current\+Frame\+Inputs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Todos los toques en pantalla tÃ¡ctil que han ocurrido en este frame. 
+\end{DoxyReturn}
+\index{OSK::IO::ITouchInput@{OSK::IO::ITouchInput}!OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}}
+\index{OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}!OSK::IO::ITouchInput@{OSK::IO::ITouchInput}}
+\doxysubsubsection{OSK\_DEFINE\_IUUID()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_touch_input_aa5cfb6bdc075eae947e09e0a2d757517} 
+OSK\+::\+IO\+::\+ITouch\+Input\+::\+OSK\+\_\+\+DEFINE\+\_\+\+IUUID (\begin{DoxyParamCaption}\item[{(\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+ITouch\+Input}}]{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::IO::ITouchInput@{OSK::IO::ITouchInput}!m\_currentFrameInputs@{m\_currentFrameInputs}}
+\index{m\_currentFrameInputs@{m\_currentFrameInputs}!OSK::IO::ITouchInput@{OSK::IO::ITouchInput}}
+\doxysubsubsection{m\_currentFrameInputs}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_touch_input_acdab31860493674fa596e3b662d48cb1} 
+\textbf{ Dynamic\+Array}$<$\textbf{ Touch\+Input}$>$ OSK\+::\+IO\+::\+ITouch\+Input\+::m\+\_\+current\+Frame\+Inputs \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Almacena las entradas en un frame. Se debe limpiar cada frame. 
+

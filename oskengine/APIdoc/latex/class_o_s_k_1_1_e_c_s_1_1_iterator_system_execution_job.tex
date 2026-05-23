@@ -1,0 +1,88 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Iterator\+System\+Execution\+Job}
+\label{class_o_s_k_1_1_e_c_s_1_1_iterator_system_execution_job}\index{OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}}
+
+
+{\ttfamily \#include $<$Iterator\+System\+Execution\+Job.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+JOB} ("{}OSK\+::\+Iterator\+System\+Execution\+Job"{})
+\item 
+\textbf{ Iterator\+System\+Execution\+Job} (\textbf{ IIterator\+System} $\ast$system, std\+::span$<$ \textbf{ Game\+Object\+Index} $>$ objects, \textbf{ TDelta\+Time} delta\+Time)
+\item 
+void \textbf{ Execute} () override
+\item 
+virtual std\+::string\+\_\+view \textbf{ Get\+Name} () const =0
+\item 
+void \textbf{ Add\+Tag} (const std\+::string \&tag)
+\item 
+const std\+::set$<$ std\+::string, std\+::less$<$$>$ $>$ \& \textbf{ Get\+Tags} () const
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}!IteratorSystemExecutionJob@{IteratorSystemExecutionJob}}
+\index{IteratorSystemExecutionJob@{IteratorSystemExecutionJob}!OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}}
+\doxysubsubsection{IteratorSystemExecutionJob()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_iterator_system_execution_job_afbee526085e79ab82556061784061f82} 
+Iterator\+System\+Execution\+Job\+::\+Iterator\+System\+Execution\+Job (\begin{DoxyParamCaption}\item[{\textbf{ IIterator\+System} $\ast$}]{system}{, }\item[{std\+::span$<$ \textbf{ Game\+Object\+Index} $>$}]{objects}{, }\item[{\textbf{ TDelta\+Time}}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}!AddTag@{AddTag}}
+\index{AddTag@{AddTag}!OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}}
+\doxysubsubsection{AddTag()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_job_af308d2cae1aa5d8e989108dc1d90c397} 
+void IJob\+::\+Add\+Tag (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Añade un tag al trabajo, para poder identificarlo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tag} & Tag. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_iterator_system_execution_job_a5c795ab86bd25a669765c8c23c3516f1} 
+void Iterator\+System\+Execution\+Job\+::\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ejecuta la función del trabajo. 
+
+
+
+Implementa \textbf{ OSK\+::\+IJob} \doxyref{}{pág.}{class_o_s_k_1_1_i_job_ab85f5a37fd68f649a8e03ace299edff0}.
+
+\index{OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_job_a5753b049ae5efe00bb929e675aadcc03} 
+virtual std\+::string\+\_\+view OSK\+::\+IJob\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Nombre del trabajo. 
+\end{DoxyReturn}
+\index{OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}!GetTags@{GetTags}}
+\index{GetTags@{GetTags}!OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}}
+\doxysubsubsection{GetTags()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_job_ac96971e8dee85c75fd3913aafac31e36} 
+const std\+::set$<$ std\+::string, std\+::less$<$$>$ $>$ \& IJob\+::\+Get\+Tags (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Lista con todos los tags. Puede estar vacía. 
+\end{DoxyReturn}
+\index{OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}!OSK\_JOB@{OSK\_JOB}}
+\index{OSK\_JOB@{OSK\_JOB}!OSK::ECS::IteratorSystemExecutionJob@{OSK::ECS::IteratorSystemExecutionJob}}
+\doxysubsubsection{OSK\_JOB()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_iterator_system_execution_job_a34a33637a2b27bb2e36968e58ae6eead} 
+OSK\+::\+ECS\+::\+Iterator\+System\+Execution\+Job\+::\+OSK\+\_\+\+JOB (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Iterator\+System\+Execution\+Job"{}}]{}{}\end{DoxyParamCaption})}
+

@@ -1,0 +1,111 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IGraphics\+Pipeline}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_graphics_pipeline}\index{OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}}
+
+
+{\ttfamily \#include $<$IGraphics\+Pipeline.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IGraphics\+Pipeline} ()=default
+\item 
+virtual void \textbf{ Create} (const \textbf{ Material\+Layout} $\ast$\textbf{ layout}, \textbf{ IGpu} $\ast$device, const \textbf{ Pipeline\+Create\+Info} \&info, const \textbf{ Vertex\+Info} \&vertex\+Info)=0
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IGraphics\+Pipeline})
+\item 
+const \textbf{ IPipeline\+Layout} $\ast$ \textbf{ Get\+Layout} () const
+\item 
+virtual void \textbf{ Set\+Debug\+Name} (const std\+::string \&name)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IPipeline\+Layout} $>$ \textbf{ layout}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+El graphics pipeline es el encargado de transformar los modelos 3D en una imagen final. Contiene información y ajustes que cambian este proceso de renerizado. Debe usarse con shaders para que funcione. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}!````~IGraphicsPipeline@{$\sim$IGraphicsPipeline}}
+\index{````~IGraphicsPipeline@{$\sim$IGraphicsPipeline}!OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}}
+\doxysubsubsection{$\sim$IGraphicsPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_graphics_pipeline_a60cdf6f49d2e725bb9fd47057c0e3ecc} 
+virtual OSK\+::\+GRAPHICS\+::\+IGraphics\+Pipeline\+::$\sim$\+IGraphics\+Pipeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}!Create@{Create}}
+\index{Create@{Create}!OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_graphics_pipeline_a43ee1272c3b640192395ed9d02d0ea29} 
+virtual void OSK\+::\+GRAPHICS\+::\+IGraphics\+Pipeline\+::\+Create (\begin{DoxyParamCaption}\item[{const \textbf{ Material\+Layout} $\ast$}]{layout}{, }\item[{\textbf{ IGpu} $\ast$}]{device}{, }\item[{const \textbf{ Pipeline\+Create\+Info} \&}]{info}{, }\item[{const \textbf{ Vertex\+Info} \&}]{vertex\+Info}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Crea el pipeline con la configuración dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em info} & Configuración del pipeline.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em File\+Not\+Found\+Exception} & si no se encuentra los archivo de shader necesarios. \\
+\hline
+{\em \doxyref{Shader\+Loading\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_loading_exception}} & si no se consigue cargar / compilar los shaders. \\
+\hline
+{\em \doxyref{Pipeline\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_creation_exception}} & si no se consigue crear el pipeline. \\
+\hline
+{\em \doxyref{Shader\+Compiling\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_compiling_exception}} & Si ocurre algún error durante la compilación de los shaders. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}!GetLayout@{GetLayout}}
+\index{GetLayout@{GetLayout}!OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}}
+\doxysubsubsection{GetLayout()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_graphics_pipeline_a906544168207149cfee6119b3f9da5b6} 
+const \textbf{ IPipeline\+Layout} $\ast$ IGraphics\+Pipeline\+::\+Get\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el layout usado por este pipeline. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber creado correctamente el pipeline. 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si no se ha creado correctamente el pipeline, devolverá null. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_graphics_pipeline_a547e7d3956ed0b3e5e0b6d9a576edcc2} 
+OSK\+::\+GRAPHICS\+::\+IGraphics\+Pipeline\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IGraphics\+Pipeline}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}!SetDebugName@{SetDebugName}}
+\index{SetDebugName@{SetDebugName}!OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}}
+\doxysubsubsection{SetDebugName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_object_a4ced0b9bf575c7801e54f046604eee10} 
+virtual void OSK\+::\+GRAPHICS\+::\+IGpu\+Object\+::\+Set\+Debug\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Establece un nombre que lo identifique. Para debug. 
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}!layout@{layout}}
+\index{layout@{layout}!OSK::GRAPHICS::IGraphicsPipeline@{OSK::GRAPHICS::IGraphicsPipeline}}
+\doxysubsubsection{layout}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_graphics_pipeline_afeebc6144c3cf7852837a5f08b3a6444} 
+\textbf{ Unique\+Ptr}$<$\textbf{ IPipeline\+Layout}$>$ OSK\+::\+GRAPHICS\+::\+IGraphics\+Pipeline\+::layout\hspace{0.3cm}{\ttfamily [protected]}}
+

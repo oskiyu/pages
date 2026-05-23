@@ -1,0 +1,55 @@
+\doxysection{IComponent\+View.\+h}
+\label{_i_component_view_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IComponentView.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IComponentView.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}UiVerticalContainer.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}UiCollapsibleWrapper.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::UI\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }TextView;}
+\DoxyCodeLine{00011\ \}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }OSK::Editor::Views\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IComponentView\ :\ \textcolor{keyword}{public}\ OSK::UI::CollapsibleWrapper\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ IComponentView(}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2f\&\ size,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ title);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnSizeChanged(\textcolor{keyword}{const}\ Vector2f\&\ previousSize)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ VerticalContainer*\ GetUnderlyingContainer();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ UIndex32\ m\_backgroundDrawCallIndex\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ OSK::UI::TextView*\ m\_titleView\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ \_TComponentController>}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{concept\ }IsComponentView\ =}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ std::is\_base\_of\_v<IComponentView,\ \_TComponentController>\ \&\&}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (\_TComponentController)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \_TComponentController::GetComponentTypeName()\ \};}
+\DoxyCodeLine{00045\ \ \ \ \ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ OSK\_COMPONENT\_EDITOR\_VIEW(componentName)\ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{constexpr\ static\ std::string\_view\ GetComponentTypeName()\ \{\ return\ componentName;\ \}}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ OSK\_LINK\_COMPONENT\_EDITOR\_VIEW(componentType)\ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{constexpr\ static\ std::string\_view\ GetComponentTypeName()\ \{\ return\ componentType::GetComponentTypeName();\ \}}}
+
+\end{DoxyCode}

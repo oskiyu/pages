@@ -1,0 +1,264 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Billboard\+GBuffer\+Pass}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_billboard_g_buffer_pass}\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+
+
+{\ttfamily \#include $<$Billboard\+GBuffer\+Pass.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+RENDERPASS} (\textbf{ Billboard\+GBuffer\+Pass}, "{}billboard\+\_\+pass"{})
+\item 
+\textbf{ Billboard\+GBuffer\+Pass} ()
+\item 
+void \textbf{ Load} () override
+\item 
+void \textbf{ Render\+Loop} (\textbf{ ICommand\+List} $\ast$command\+List, const \textbf{ Dynamic\+Array}$<$ \textbf{ ECS\+::\+Game\+Object\+Index} $>$ \&objects\+To\+Render, \textbf{ Global\+Mesh\+Mapping} $\ast$mesh\+Mapping, \textbf{ UIndex32} jitter\+Index, \textbf{ Vector2ui} resolution) override
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IShader\+Pass})
+\item 
+void \textbf{ Update\+Local\+Mesh\+Mapping} (const \textbf{ Dynamic\+Array}$<$ \textbf{ ECS\+::\+Game\+Object\+Index} $>$ \&objects\+To\+Render)
+\item 
+virtual void \textbf{ Update} (\textbf{ TDelta\+Time} delta\+Time)
+\item 
+void \textbf{ Set\+Camera} (\textbf{ ECS\+::\+Game\+Object\+Index} camera\+Object)
+\item 
+std\+::string\+\_\+view \textbf{ Get\+Type\+Name} () const
+\item 
+\textbf{ Material\+Instance} $\ast$ \textbf{ Get\+Material\+Instance} (\textbf{ UIndex32} resource\+Index)
+\item 
+const \textbf{ Material\+Instance} $\ast$ \textbf{ Get\+Material\+Instance} (\textbf{ UIndex32} resource\+Index) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Setup\+Material\+Instance} (const \textbf{ Gpu\+Model3D} \&model, const \textbf{ Gpu\+Mesh3D} \&mesh)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Local\+Mesh\+Mapping} \textbf{ m\+\_\+local\+Mesh\+Mapping} \{\}
+\item 
+\textbf{ Vector2ui} \textbf{ m\+\_\+current\+Resolution} = \textbf{ Vector2ui\+::\+Zero}
+\item 
+\textbf{ Material} $\ast$ \textbf{ m\+\_\+pass\+Material} = nullptr
+\item 
+std\+::array$<$ \textbf{ Unique\+Ptr}$<$ \textbf{ Material\+Instance} $>$, MAX\+\_\+\+RESOURCES\+\_\+\+IN\+\_\+\+FLIGHT $>$ \textbf{ m\+\_\+material\+Instances} \{\}
+\item 
+\textbf{ ECS\+::\+Game\+Object\+Index} \textbf{ m\+\_\+camera\+Object} = \textbf{ ECS\+::\+EMPTY\+\_\+\+GAME\+\_\+\+OBJECT}
+\item 
+std\+::string \textbf{ m\+\_\+pass\+Type\+Name} = "{}"{}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!BillboardGBufferPass@{BillboardGBufferPass}}
+\index{BillboardGBufferPass@{BillboardGBufferPass}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{BillboardGBufferPass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_billboard_g_buffer_pass_a187bc4a2948baa1649f4936680674cfd} 
+OSK\+::\+GRAPHICS\+::\+Billboard\+GBuffer\+Pass\+::\+Billboard\+GBuffer\+Pass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!GetMaterialInstance@{GetMaterialInstance}}
+\index{GetMaterialInstance@{GetMaterialInstance}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{GetMaterialInstance()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_aa7c15d67b3331b9d6b82500632004e5a} 
+\textbf{ Material\+Instance} $\ast$ OSK\+::\+GRAPHICS\+::\+IShader\+Pass\+::\+Get\+Material\+Instance (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{resource\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Instancia del resolver. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!GetMaterialInstance@{GetMaterialInstance}}
+\index{GetMaterialInstance@{GetMaterialInstance}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{GetMaterialInstance()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_ae853c914c3496c1ca618a1afbdb23d85} 
+const \textbf{ Material\+Instance} $\ast$ OSK\+::\+GRAPHICS\+::\+IShader\+Pass\+::\+Get\+Material\+Instance (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{resource\+Index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Instancia del resolver. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!GetTypeName@{GetTypeName}}
+\index{GetTypeName@{GetTypeName}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{GetTypeName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_a7895cfd14f55daf9c1b2f8e0e67e9020} 
+std\+::string\+\_\+view IShader\+Pass\+::\+Get\+Type\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Nombre del pase. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!Load@{Load}}
+\index{Load@{Load}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{Load()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_billboard_g_buffer_pass_a9d04211cc089853adc1fc0c121cd9faf} 
+void Billboard\+GBuffer\+Pass\+::\+Load (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Carga los shaders del pase. 
+
+
+
+Implementa \textbf{ OSK\+::\+GRAPHICS\+::\+IShader\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_a10ceb922591baa3b92da82966bcf8a87}.
+
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_aae7d4a35c005905b86cec1d1f6b0b71f} 
+OSK\+::\+GRAPHICS\+::\+IShader\+Pass\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IShader\+Pass}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!OSK\_RENDERPASS@{OSK\_RENDERPASS}}
+\index{OSK\_RENDERPASS@{OSK\_RENDERPASS}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{OSK\_RENDERPASS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_billboard_g_buffer_pass_a08b1da72a754593f96b48d5dcdbff1fc} 
+OSK\+::\+GRAPHICS\+::\+Billboard\+GBuffer\+Pass\+::\+OSK\+\_\+\+RENDERPASS (\begin{DoxyParamCaption}\item[{\textbf{ Billboard\+GBuffer\+Pass}}]{}{, }\item[{"{}billboard\+\_\+pass"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!RenderLoop@{RenderLoop}}
+\index{RenderLoop@{RenderLoop}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{RenderLoop()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_billboard_g_buffer_pass_a4a315fc005f5efc5d2bbebba9268528f} 
+void Billboard\+GBuffer\+Pass\+::\+Render\+Loop (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{command\+List}{, }\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ ECS\+::\+Game\+Object\+Index} $>$ \&}]{objects\+To\+Render}{, }\item[{\textbf{ Global\+Mesh\+Mapping} $\ast$}]{global\+Mesh\+Mapping}{, }\item[{\textbf{ UIndex32}}]{jitter\+Index}{, }\item[{\textbf{ Vector2ui}}]{resolution}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Realiza el bucle de renderizado del pase. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command\+List} & Lista de comandos gráficos. \\
+\hline
+{\em objects\+To\+Render} & Objetos a renderizar. \\
+\hline
+{\em jitter\+Index} & Índice del jitter de TAA de este frame. \\
+\hline
+{\em resolution} & Resolución del \doxyref{GBuffer}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_g_buffer} en este frame. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ OSK\+::\+GRAPHICS\+::\+IShader\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_a164d584c6a0c3455dacc882504628ffa}.
+
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!SetCamera@{SetCamera}}
+\index{SetCamera@{SetCamera}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{SetCamera()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_a8f6d85b84886a9dabde560fc3921c689} 
+void IShader\+Pass\+::\+Set\+Camera (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{camera\+Object}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Establece la cámara de la escena 3D. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em camera\+Object} & Objeto de la cámara. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!SetupMaterialInstance@{SetupMaterialInstance}}
+\index{SetupMaterialInstance@{SetupMaterialInstance}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{SetupMaterialInstance()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_aefdfbd7828be9044cbff5f89ebd14f19} 
+void IShader\+Pass\+::\+Setup\+Material\+Instance (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Model3D} \&}]{model}{, }\item[{const \textbf{ Gpu\+Mesh3D} \&}]{mesh}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Establece la instancia del material para un mesh dado. Por defecto, usa el modelo PBR. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em model} & Modelo que posee el mesh. \\
+\hline
+{\em mesh} & Mesh a establecer. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \textbf{ OSK\+::\+GRAPHICS\+::\+Shadows\+Static\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadows_static_pass_a475b1d2b52d06b5d74e7094753f66466}.
+
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!Update@{Update}}
+\index{Update@{Update}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_a68ff9189ec330d8a7da4f85935248906} 
+virtual void OSK\+::\+GRAPHICS\+::\+IShader\+Pass\+::\+Update (\begin{DoxyParamCaption}\item[{\textbf{ TDelta\+Time}}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Reimplementado en \textbf{ OSK\+::\+GRAPHICS\+::\+Grass\+Render\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_grass_render_pass_ac0355ad89d637a87af6db72088a767ab}.
+
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!UpdateLocalMeshMapping@{UpdateLocalMeshMapping}}
+\index{UpdateLocalMeshMapping@{UpdateLocalMeshMapping}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{UpdateLocalMeshMapping()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_a33423437d12681591b8f8c00da1bdaa0} 
+void IShader\+Pass\+::\+Update\+Local\+Mesh\+Mapping (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ ECS\+::\+Game\+Object\+Index} $>$ \&}]{objects\+To\+Render}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Actualiza el Mesh\+Mapping local. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em objects\+To\+Render} & Objetos a renderizar. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!m\_cameraObject@{m\_cameraObject}}
+\index{m\_cameraObject@{m\_cameraObject}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{m\_cameraObject}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_a5b6bae2d0bf919d36a9dc7791fd3d589} 
+\textbf{ ECS\+::\+Game\+Object\+Index} OSK\+::\+GRAPHICS\+::\+IShader\+Pass\+::m\+\_\+camera\+Object = \textbf{ ECS\+::\+EMPTY\+\_\+\+GAME\+\_\+\+OBJECT}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Camara de la escena. 
+
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!m\_currentResolution@{m\_currentResolution}}
+\index{m\_currentResolution@{m\_currentResolution}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{m\_currentResolution}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_a019a1231c78e5305a51a17044cb4f7d1} 
+\textbf{ Vector2ui} OSK\+::\+GRAPHICS\+::\+IShader\+Pass\+::m\+\_\+current\+Resolution = \textbf{ Vector2ui\+::\+Zero}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Resolución actual del \doxyref{GBuffer}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_g_buffer}. 
+
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!m\_localMeshMapping@{m\_localMeshMapping}}
+\index{m\_localMeshMapping@{m\_localMeshMapping}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{m\_localMeshMapping}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_a7286295c11cee453ba0c44a8c7debbdf} 
+\textbf{ Local\+Mesh\+Mapping} OSK\+::\+GRAPHICS\+::\+IShader\+Pass\+::m\+\_\+local\+Mesh\+Mapping \{\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!m\_materialInstances@{m\_materialInstances}}
+\index{m\_materialInstances@{m\_materialInstances}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{m\_materialInstances}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_ad1cc1a97c5c0afc05c5e47fd6a23e1c7} 
+std\+::array$<$\textbf{ Unique\+Ptr}$<$\textbf{ Material\+Instance}$>$, MAX\+\_\+\+RESOURCES\+\_\+\+IN\+\_\+\+FLIGHT$>$ OSK\+::\+GRAPHICS\+::\+IShader\+Pass\+::m\+\_\+material\+Instances \{\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Instancias del pase. 
+
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!m\_passMaterial@{m\_passMaterial}}
+\index{m\_passMaterial@{m\_passMaterial}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{m\_passMaterial}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_ac260238caa4992b8f63f73c208029a8f} 
+\textbf{ Material}$\ast$ OSK\+::\+GRAPHICS\+::\+IShader\+Pass\+::m\+\_\+pass\+Material = nullptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+\doxyref{Material}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material} del pase. 
+
+\index{OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}!m\_passTypeName@{m\_passTypeName}}
+\index{m\_passTypeName@{m\_passTypeName}!OSK::GRAPHICS::BillboardGBufferPass@{OSK::GRAPHICS::BillboardGBufferPass}}
+\doxysubsubsection{m\_passTypeName}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass_a770e8786244ce14a92ae68b0b1e21efd} 
+std\+::string OSK\+::\+GRAPHICS\+::\+IShader\+Pass\+::m\+\_\+pass\+Type\+Name = "{}"{}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Nombre del pase. 
+

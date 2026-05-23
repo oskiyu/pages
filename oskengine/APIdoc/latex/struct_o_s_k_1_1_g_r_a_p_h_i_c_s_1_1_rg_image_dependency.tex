@@ -1,0 +1,188 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Rg\+Image\+Dependency}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency}\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+
+
+{\ttfamily \#include $<$Rg\+Image\+Dependency.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Rg\+Image\+Dependency} \textbf{ Color\+Target} (\textbf{ Gdr\+Image\+Uuid} \textbf{ image\+Ref\+Id})
+\item 
+static \textbf{ Rg\+Image\+Dependency} \textbf{ Compute\+Target} (\textbf{ Gdr\+Image\+Uuid} \textbf{ image\+Ref\+Id}, const std\+::string \&slot, const std\+::string \&binding)
+\item 
+static \textbf{ Rg\+Image\+Dependency} \textbf{ Sampled\+\_\+\+Fragment\+\_\+\+Single\+Mip\+Level} (\textbf{ Gdr\+Image\+Uuid} \textbf{ image\+Ref\+Id}, const std\+::string \&slot, const std\+::string \&binding)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Gdr\+Image\+Uuid} \textbf{ image\+Ref\+Id}
+\item 
+\textbf{ Rg\+Dependency\+Type} \textbf{ type} = \textbf{ Rg\+Dependency\+Type\+::\+READ\+\_\+\+WRITE}
+\item 
+\textbf{ Gpu\+Exclusive\+Image\+Usage} \textbf{ usage} = \textbf{ Gpu\+Exclusive\+Image\+Usage\+::\+UNKNOWN}
+\item 
+\textbf{ Gpu\+Command\+Stage} \textbf{ stage} = \textbf{ Gpu\+Command\+Stage\+::\+NONE}
+\item 
+\textbf{ Gpu\+Image\+Range} \textbf{ range} \{\}
+\item 
+\textbf{ Gpu\+Image\+View\+Config} \textbf{ view\+Config} \{\}
+\item 
+\textbf{ Gpu\+Image\+Sampler\+Desc} \textbf{ sampler\+Desc} \{\}
+\item 
+\textbf{ Rg\+Dependency\+Shader\+Binding} \textbf{ shader\+Binding} \{\}
+\item 
+\textbf{ UIndex32} \textbf{ array\+Index} = 0
+\item 
+bool \textbf{ clear\+If\+Target\+Image} = false
+\item 
+std\+::optional$<$ \textbf{ UIndex16} $>$ \textbf{ frame\+In\+Flight}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Dependencia de una imagen dentro de un render-\/pass\+: Indica una imagen que se va a usar dentro de un render-\/pass (y cómo se va a usar). 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!ColorTarget@{ColorTarget}}
+\index{ColorTarget@{ColorTarget}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{ColorTarget()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_aa211269983f8e5a53e1a3403527534dc} 
+\textbf{ Rg\+Image\+Dependency} Rg\+Image\+Dependency\+::\+Color\+Target (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Image\+Uuid}}]{image\+Ref\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Devuelve}
+Dependencia en la que se escribe sobre el target {\ttfamily image\+Ref\+Id}. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!ComputeTarget@{ComputeTarget}}
+\index{ComputeTarget@{ComputeTarget}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{ComputeTarget()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_a513e9a2d674882b319ea0437cbf90a13} 
+\textbf{ Rg\+Image\+Dependency} Rg\+Image\+Dependency\+::\+Compute\+Target (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Image\+Uuid}}]{image\+Ref\+Id}{, }\item[{const std\+::string \&}]{slot}{, }\item[{const std\+::string \&}]{binding}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Devuelve}
+Dependencia en la que se escribe sobre el target {\ttfamily image\+Ref\+Id}, que estará enlazada en slot {\ttfamily slot} binding {\ttfamily binding}. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!Sampled\_Fragment\_SingleMipLevel@{Sampled\_Fragment\_SingleMipLevel}}
+\index{Sampled\_Fragment\_SingleMipLevel@{Sampled\_Fragment\_SingleMipLevel}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{Sampled\_Fragment\_SingleMipLevel()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_a2bbc90021c0487c47a06929d1eddd2d2} 
+\textbf{ Rg\+Image\+Dependency} Rg\+Image\+Dependency\+::\+Sampled\+\_\+\+Fragment\+\_\+\+Single\+Mip\+Level (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Image\+Uuid}}]{image\+Ref\+Id}{, }\item[{const std\+::string \&}]{slot}{, }\item[{const std\+::string \&}]{binding}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Devuelve}
+Dependencia en la que se lee (SAMPLED) la imagen {\ttfamily image\+Ref\+Id}, que estará enlazada en slot {\ttfamily slot} binding {\ttfamily binding}. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!arrayIndex@{arrayIndex}}
+\index{arrayIndex@{arrayIndex}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{arrayIndex}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_ae2867cafcc876814870b822a13d54681} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Dependency\+::array\+Index = 0}
+
+
+
+Índice dentro del array. 
+
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!clearIfTargetImage@{clearIfTargetImage}}
+\index{clearIfTargetImage@{clearIfTargetImage}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{clearIfTargetImage}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_a0190ec24651bd859d74c9ffac29bdd75} 
+bool OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Dependency\+::clear\+If\+Target\+Image = false}
+
+
+
+En caso de que sea una imagen de renderizado (de color o de profundidad), si se debe limpiar o no. 
+
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!frameInFlight@{frameInFlight}}
+\index{frameInFlight@{frameInFlight}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{frameInFlight}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_a73da83674cea07ce4a971704535160a7} 
+std\+::optional$<$\textbf{ UIndex16}$>$ OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Dependency\+::frame\+In\+Flight}
+
+
+
+Si está presente, indica en qué frame in flight se usará. 
+
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!imageRefId@{imageRefId}}
+\index{imageRefId@{imageRefId}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{imageRefId}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_adad35139e7ac4b264ba873dfda2dd873} 
+\textbf{ Gdr\+Image\+Uuid} OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Dependency\+::image\+Ref\+Id}
+
+
+
+ID único de la imagen. 
+
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!range@{range}}
+\index{range@{range}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{range}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_a53bf4c709a2e05b6ec91c394bdc7f1e8} 
+\textbf{ Gpu\+Image\+Range} OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Dependency\+::range \{\}}
+
+
+
+Rango de la imagen usada. 
+
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!samplerDesc@{samplerDesc}}
+\index{samplerDesc@{samplerDesc}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{samplerDesc}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_aa052704a56c067fe7f24c91f20105549} 
+\textbf{ Gpu\+Image\+Sampler\+Desc} OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Dependency\+::sampler\+Desc \{\}}
+
+
+
+Sampler de la imagen. 
+
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!shaderBinding@{shaderBinding}}
+\index{shaderBinding@{shaderBinding}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{shaderBinding}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_a56e8d92520e56ea3214d9a9d8b22f3c6} 
+\textbf{ Rg\+Dependency\+Shader\+Binding} OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Dependency\+::shader\+Binding \{\}}
+
+
+
+Slot y binding en el que se usará. 
+
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!stage@{stage}}
+\index{stage@{stage}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{stage}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_af1c9fe53039fe2390ce0c012db028bc8} 
+\textbf{ Gpu\+Command\+Stage} OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Dependency\+::stage = \textbf{ Gpu\+Command\+Stage\+::\+NONE}}
+
+
+
+Stage en el que se usará. 
+
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!type@{type}}
+\index{type@{type}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{type}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_a2d949a8357fdf3567b8d139ac5a1797c} 
+\textbf{ Rg\+Dependency\+Type} OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Dependency\+::type = \textbf{ Rg\+Dependency\+Type\+::\+READ\+\_\+\+WRITE}}
+
+
+
+Tipo de dependencia. 
+
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!usage@{usage}}
+\index{usage@{usage}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{usage}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_a96c849761574804f433569eea0338ff9} 
+\textbf{ Gpu\+Exclusive\+Image\+Usage} OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Dependency\+::usage = \textbf{ Gpu\+Exclusive\+Image\+Usage\+::\+UNKNOWN}}
+
+
+
+Uso que se le va a dar en el render-\/pass. 
+
+\index{OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}!viewConfig@{viewConfig}}
+\index{viewConfig@{viewConfig}!OSK::GRAPHICS::RgImageDependency@{OSK::GRAPHICS::RgImageDependency}}
+\doxysubsubsection{viewConfig}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_a5b10576851442e5f95fd3b30e9d11767} 
+\textbf{ Gpu\+Image\+View\+Config} OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Dependency\+::view\+Config \{\}}
+
+
+
+Vista de la imagen. 
+

@@ -1,0 +1,104 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::ISerializable\+System}
+\label{class_o_s_k_1_1_e_c_s_1_1_i_serializable_system}\index{OSK::ECS::ISerializableSystem@{OSK::ECS::ISerializableSystem}}
+
+
+{\ttfamily \#include $<$ISystem.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+ISerializable\+System} ()=default
+\item 
+virtual nlohmann\+::json \textbf{ Save\+Configuration} () const =0
+\item 
+virtual \textbf{ PERSISTENCE\+::\+Binary\+Block} \textbf{ Save\+Binary\+Configuration} () const =0
+\item 
+virtual void \textbf{ Apply\+Configuration} (const nlohmann\+::json \&config, const \textbf{ Saved\+Game\+Object\+Translator} \&translator)=0
+\item 
+virtual void \textbf{ Apply\+Configuration} (\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$reader, const \textbf{ Saved\+Game\+Object\+Translator} \&translator)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para los sistemas serializables. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::ISerializableSystem@{OSK::ECS::ISerializableSystem}!````~ISerializableSystem@{$\sim$ISerializableSystem}}
+\index{````~ISerializableSystem@{$\sim$ISerializableSystem}!OSK::ECS::ISerializableSystem@{OSK::ECS::ISerializableSystem}}
+\doxysubsubsection{$\sim$ISerializableSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_serializable_system_a5935f508d62fc05c8ebc6887606f90ee} 
+virtual OSK\+::\+ECS\+::\+ISerializable\+System\+::$\sim$\+ISerializable\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::ISerializableSystem@{OSK::ECS::ISerializableSystem}!ApplyConfiguration@{ApplyConfiguration}}
+\index{ApplyConfiguration@{ApplyConfiguration}!OSK::ECS::ISerializableSystem@{OSK::ECS::ISerializableSystem}}
+\doxysubsubsection{ApplyConfiguration()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_serializable_system_a8742003ea75a69c42ae89959c64bc333} 
+virtual void OSK\+::\+ECS\+::\+ISerializable\+System\+::\+Apply\+Configuration (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{config}{, }\item[{const \textbf{ Saved\+Game\+Object\+Translator} \&}]{translator}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Aplica la configuración al sistema. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em config} & Configuración del sistema. \\
+\hline
+{\em translator} & Tabla que permite obtener los IDs generados. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Collider\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_collider_render_system_a4022c9b5347b42d5108d6d439cf426df}, \textbf{ OSK\+::\+ECS\+::\+Deferred\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_deferred_render_system_ae42568df0b302d34cdab82f5b29f8e05}, \textbf{ OSK\+::\+ECS\+::\+Hybrid\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_ac645ee3eefd1588d32a8fb97450a2445}, \textbf{ OSK\+::\+ECS\+::\+Physics\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_physics_system_ab0d174e98b49c92f42214736f7a86743}, \textbf{ OSK\+::\+ECS\+::\+Render\+Bounds\+Renderer} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_render_bounds_renderer_a16f8e8095b4c6480f78102b7ded631a9}, \textbf{ OSK\+::\+ECS\+::\+Render\+System2D} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_render_system2_d_ac1bd96bd356ce5669ae4210764201c5d} y \textbf{ OSK\+::\+ECS\+::\+Skybox\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_skybox_render_system_a670c4379ec24801530d7c0cf56449c65}.
+
+\index{OSK::ECS::ISerializableSystem@{OSK::ECS::ISerializableSystem}!ApplyConfiguration@{ApplyConfiguration}}
+\index{ApplyConfiguration@{ApplyConfiguration}!OSK::ECS::ISerializableSystem@{OSK::ECS::ISerializableSystem}}
+\doxysubsubsection{ApplyConfiguration()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_serializable_system_aad2c52e61393492a0d1af2eaa6804c03} 
+virtual void OSK\+::\+ECS\+::\+ISerializable\+System\+::\+Apply\+Configuration (\begin{DoxyParamCaption}\item[{\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$}]{reader}{, }\item[{const \textbf{ Saved\+Game\+Object\+Translator} \&}]{translator}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Aplica la configuración al sistema. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em reader} & Lector del bloque binario que contiene los datos del sistema. \\
+\hline
+{\em translator} & Tabla que permite obtener los IDs generados. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Collider\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_collider_render_system_ad9f98e4e805ebc547f4bae27c4c50c8f}, \textbf{ OSK\+::\+ECS\+::\+Deferred\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_deferred_render_system_a77f8eb46d06f1eb09e51090fc78f7838}, \textbf{ OSK\+::\+ECS\+::\+Hybrid\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_a4f35b1e7bd35f1bb043c886297a2e7c1}, \textbf{ OSK\+::\+ECS\+::\+Physics\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_physics_system_a8121965c8f9b044af25be216cb065dce}, \textbf{ OSK\+::\+ECS\+::\+Render\+Bounds\+Renderer} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_render_bounds_renderer_a07cc3a31eb8fcfcdb7133303a813f35f}, \textbf{ OSK\+::\+ECS\+::\+Render\+System2D} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_render_system2_d_a9cfc7b52e6389c6f4960ba4c19941fea} y \textbf{ OSK\+::\+ECS\+::\+Skybox\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_skybox_render_system_a76c0e115312c351e03072ae7b1f05670}.
+
+\index{OSK::ECS::ISerializableSystem@{OSK::ECS::ISerializableSystem}!SaveBinaryConfiguration@{SaveBinaryConfiguration}}
+\index{SaveBinaryConfiguration@{SaveBinaryConfiguration}!OSK::ECS::ISerializableSystem@{OSK::ECS::ISerializableSystem}}
+\doxysubsubsection{SaveBinaryConfiguration()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_serializable_system_a21cee6a91c122bb7ffe15185a161a26f} 
+virtual \textbf{ PERSISTENCE\+::\+Binary\+Block} OSK\+::\+ECS\+::\+ISerializable\+System\+::\+Save\+Binary\+Configuration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estructura binaria con la información relevante de la configuración del sistema en un momento dado. 
+\end{DoxyReturn}
+
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Collider\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_collider_render_system_a4fd3113d5911616333d5f24bc12aed3d}, \textbf{ OSK\+::\+ECS\+::\+Deferred\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_deferred_render_system_a69f02ab71df1c5833b936c2c4a1e1206}, \textbf{ OSK\+::\+ECS\+::\+Hybrid\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_ad7fdd3a3d50ef050a59f2d9b2256654f}, \textbf{ OSK\+::\+ECS\+::\+Physics\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_physics_system_a98270cfc6e880ba56ba9d1e24f24dbba}, \textbf{ OSK\+::\+ECS\+::\+Render\+Bounds\+Renderer} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_render_bounds_renderer_a7b1d5d55e52e231a2c4574b885bdc8c0}, \textbf{ OSK\+::\+ECS\+::\+Render\+System2D} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_render_system2_d_a5577372ee68c92ca2b78326ec82c51e2} y \textbf{ OSK\+::\+ECS\+::\+Skybox\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_skybox_render_system_a2d008b07edbae8ea21325eeffbe22601}.
+
+\index{OSK::ECS::ISerializableSystem@{OSK::ECS::ISerializableSystem}!SaveConfiguration@{SaveConfiguration}}
+\index{SaveConfiguration@{SaveConfiguration}!OSK::ECS::ISerializableSystem@{OSK::ECS::ISerializableSystem}}
+\doxysubsubsection{SaveConfiguration()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_serializable_system_a727dd1c18ab112a3ef1e07e6b3402428} 
+virtual nlohmann\+::json OSK\+::\+ECS\+::\+ISerializable\+System\+::\+Save\+Configuration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estructura JSON con la información relevante de la configuración del sistema en un momento dado. 
+\end{DoxyReturn}
+
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Collider\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_collider_render_system_afede14e28036fbaa90fad77d50c64b8d}, \textbf{ OSK\+::\+ECS\+::\+Deferred\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_deferred_render_system_a9649a8514b433ec7b156d41f9f3c4ed1}, \textbf{ OSK\+::\+ECS\+::\+Hybrid\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_a5537a64cc76f767d0d1c0da582d4e2ed}, \textbf{ OSK\+::\+ECS\+::\+Physics\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_physics_system_af944f51b806014e01368df98d60be26c}, \textbf{ OSK\+::\+ECS\+::\+Render\+Bounds\+Renderer} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_render_bounds_renderer_a06e260ae3b014fc6e40913b5f4de2b8d}, \textbf{ OSK\+::\+ECS\+::\+Render\+System2D} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_render_system2_d_a1100f733bf7e077e3384ae33ab4d9f31} y \textbf{ OSK\+::\+ECS\+::\+Skybox\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_skybox_render_system_a54696c424e6b94b96c8607925cb9b350}.
+

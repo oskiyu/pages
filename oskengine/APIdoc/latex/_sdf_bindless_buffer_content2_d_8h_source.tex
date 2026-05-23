@@ -1,0 +1,43 @@
+\doxysection{Sdf\+Bindless\+Buffer\+Content2\+D.\+h}
+\label{_sdf_bindless_buffer_content2_d_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/SdfBindlessBufferContent2D.h@{C:/Users/Oscar/source/repos/OSKengine/Source/SdfBindlessBufferContent2D.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Vector4.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Color.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}glm/fwd.hpp"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{struct\ }SdfDrawCall2D;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{struct\ }OSKAPI\_CALL\ SdfBindlessBufferContent2D\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ SdfBindlessBufferContent2D\ From(\textcolor{keyword}{const}\ SdfDrawCall2D\&\ drawCall);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Fill(\textcolor{keyword}{const}\ SdfDrawCall2D\&\ drawCall);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ Vector3i\ typeInfo\ \{\};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ Vector4f\ textureCoords\ \{\};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ Color\ mainColor\ \{\};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ Color\ secondaryColor\ \{\};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ Vector4f\ floatInfo\ \{\};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ matrix\ =\ glm::mat4(1.0f);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \}}
+
+\end{DoxyCode}

@@ -4,7 +4,6 @@ var class_o_s_k_1_1_vector2__t =
     [ "Vector2_t", "class_o_s_k_1_1_vector2__t.html#a498f28581bc46484ddba04e787198dc1", null ],
     [ "Vector2_t", "class_o_s_k_1_1_vector2__t.html#a6579b1e1577577ee242da57aeba4f5bf", null ],
     [ "Vector2_t", "class_o_s_k_1_1_vector2__t.html#afa93ff479376f249f88d6474b5cf7c84", null ],
-    [ "Vector2_t", "class_o_s_k_1_1_vector2__t.html#a36a3da0615b4a9ac9e2fbe5e7eb4dd0e", null ],
     [ "Dot", "class_o_s_k_1_1_vector2__t.html#a96fe63557e8b7c622b14991a9a61a357", null ],
     [ "GetDistanceTo", "class_o_s_k_1_1_vector2__t.html#a9d78eea838f3435671c10a201d3d8310", null ],
     [ "GetLength", "class_o_s_k_1_1_vector2__t.html#a51799ef4e2674b7eb4ade6ae96f2b790", null ],

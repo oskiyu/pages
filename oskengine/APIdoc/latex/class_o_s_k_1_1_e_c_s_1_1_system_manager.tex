@@ -1,0 +1,281 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::System\+Manager}
+\label{class_o_s_k_1_1_e_c_s_1_1_system_manager}\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+
+
+{\ttfamily \#include $<$System\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ System\+Manager} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ System\+Manager})
+\item 
+\textbf{ OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR} (\textbf{ System\+Manager})
+\item 
+void \textbf{ On\+Tick} (\textbf{ TDelta\+Time} delta\+Time, const \textbf{ Event\+Manager} \&event\+Manager)
+\item 
+void \textbf{ On\+Render} (\textbf{ GRAPHICS\+::\+ICommand\+List} $\ast$command\+List)
+\item 
+void \textbf{ Game\+Object\+Destroyed} (\textbf{ Game\+Object\+Index} obj)
+\item 
+void \textbf{ Game\+Object\+Signature\+Changed} (\textbf{ Game\+Object\+Index} obj, const \textbf{ Signature} \&signature)
+\item 
+{\footnotesize template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$}\\TSystem $\ast$ \textbf{ Register\+System} (const \textbf{ System\+Dependencies} \&dependencies)
+\item 
+{\footnotesize template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$}\\void \textbf{ Remove\+System} ()
+\item 
+{\footnotesize template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$}\\TSystem $\ast$ \textbf{ Get\+System} ()
+\item 
+\textbf{ ISystem} $\ast$ \textbf{ Get\+System} (std\+::string\+\_\+view system\+Name)
+\item 
+const \textbf{ ISystem} $\ast$ \textbf{ Get\+System} (std\+::string\+\_\+view system\+Name) const
+\item 
+void \textbf{ Deactivate\+All\+Systems} ()
+\item 
+{\footnotesize template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$}\\const TSystem $\ast$ \textbf{ Get\+System} () const
+\item 
+{\footnotesize template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$}\\bool \textbf{ Contains\+System} () const
+\item 
+const \textbf{ System\+Execution\+Graph} \& \textbf{ Get\+Execution\+Graph} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+El \doxyref{System\+Manager}{pág.}{class_o_s_k_1_1_e_c_s_1_1_system_manager} se encarga de almacenar y manejar los sistemas del juego. Es el encargado de llamar a las funciones On\+Tick de los sistemas, además de introducir y eliminar de los sistemas a los Game\+Objects que cada sistema vaya a procesar. 
+
+\begin{DoxyNote}{Nota}
+Dueño de los sistemas. 
+\end{DoxyNote}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!SystemManager@{SystemManager}}
+\index{SystemManager@{SystemManager}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{SystemManager()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_a7f08d18419d8782f296027a7ca1c1790} 
+OSK\+::\+ECS\+::\+System\+Manager\+::\+System\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!ContainsSystem@{ContainsSystem}}
+\index{ContainsSystem@{ContainsSystem}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{ContainsSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_a5d4abd7705ce033e126e3c6772a5725b} 
+template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$\\
+bool OSK\+::\+ECS\+::\+System\+Manager\+::\+Contains\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprueba si un sistema dado está registrado, y por lo tanto, ejecutándose. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TSystem} & Sistema. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+True si está registrado, false en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!DeactivateAllSystems@{DeactivateAllSystems}}
+\index{DeactivateAllSystems@{DeactivateAllSystems}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{DeactivateAllSystems()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_a51d756a4fd9c4520d5c7ffc1d0b821f4} 
+void System\+Manager\+::\+Deactivate\+All\+Systems (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Desactiva todos los sistemas. 
+
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!GameObjectDestroyed@{GameObjectDestroyed}}
+\index{GameObjectDestroyed@{GameObjectDestroyed}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{GameObjectDestroyed()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_adeba4513a1ca0154da78f72d2bb3c408} 
+void System\+Manager\+::\+Game\+Object\+Destroyed (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Elimina el Game\+Object de todos los sistemas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto eliminado. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!GameObjectSignatureChanged@{GameObjectSignatureChanged}}
+\index{GameObjectSignatureChanged@{GameObjectSignatureChanged}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{GameObjectSignatureChanged()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_a74ebffeb57090187fe5add293d79ca67} 
+void System\+Manager\+::\+Game\+Object\+Signature\+Changed (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{const \textbf{ Signature} \&}]{signature}{}\end{DoxyParamCaption})}
+
+
+
+Añade o elimina el objeto de los sistemas, según sea conveniente dependiendo del nuevo signature. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto cuyo signature ha cambiado. \\
+\hline
+{\em signature} & Nuevo signature del objeto. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!GetExecutionGraph@{GetExecutionGraph}}
+\index{GetExecutionGraph@{GetExecutionGraph}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{GetExecutionGraph()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_a90e757c3eba63777d736209dc6e8e8a3} 
+const \textbf{ System\+Execution\+Graph} \& System\+Manager\+::\+Get\+Execution\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Grafo de ejecución con todos los sistemas. 
+\end{DoxyReturn}
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!GetSystem@{GetSystem}}
+\index{GetSystem@{GetSystem}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{GetSystem()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_a5331150695972d9d251fb760e8f6ee9e} 
+template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$\\
+TSystem $\ast$ OSK\+::\+ECS\+::\+System\+Manager\+::\+Get\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TSystem} & Tipo del sistema. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+La instancia del sistema dado. Null si no está registrado. 
+\end{DoxyReturn}
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!GetSystem@{GetSystem}}
+\index{GetSystem@{GetSystem}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{GetSystem()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_ad64dc9529ce5a15a0d2269ce099f1bc6} 
+template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$\\
+const TSystem $\ast$ OSK\+::\+ECS\+::\+System\+Manager\+::\+Get\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TSystem} & Tipo del sistema. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+La instancia del sistema dado. Null si no está registrado. 
+\end{DoxyReturn}
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!GetSystem@{GetSystem}}
+\index{GetSystem@{GetSystem}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{GetSystem()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_ad16592d5fa4dcebfaa92507f066fe755} 
+\textbf{ ISystem} $\ast$ System\+Manager\+::\+Get\+System (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{system\+Name}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em system\+Name} & Nombre del sistema. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Sistema con el nombre dado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El sistema {\ttfamily system\+Name} debe haber sido previamente registrado. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si el sistema no ha sido previamente registrado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!GetSystem@{GetSystem}}
+\index{GetSystem@{GetSystem}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{GetSystem()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_a9f9c0ba1bafb52eb27548ebab8a95ad4} 
+const \textbf{ ISystem} $\ast$ System\+Manager\+::\+Get\+System (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{system\+Name}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!OnRender@{OnRender}}
+\index{OnRender@{OnRender}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{OnRender()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_a5aeb33cf0b11ad975659c232a3a22b72} 
+void System\+Manager\+::\+On\+Render (\begin{DoxyParamCaption}\item[{\textbf{ GRAPHICS\+::\+ICommand\+List} $\ast$}]{command\+List}{}\end{DoxyParamCaption})}
+
+
+
+Ejecuta el renderizado de los sistemas de renderizado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command\+List} & Lista de comandos. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{OnTick()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_a5ea92a92d97f6a286c9c0c652c45bb9e} 
+void System\+Manager\+::\+On\+Tick (\begin{DoxyParamCaption}\item[{\textbf{ TDelta\+Time}}]{delta\+Time}{, }\item[{const \textbf{ Event\+Manager} \&}]{event\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Ejecuta la lógica On\+Tick de todos los sistemas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo, en segundos, que ha pasado desde el último frame. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}}
+\index{OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{OSK\_DEFAULT\_MOVE\_OPERATOR()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_a66a0c00487f4f014f2d6efaf9f1bd0a6} 
+OSK\+::\+ECS\+::\+System\+Manager\+::\+OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR (\begin{DoxyParamCaption}\item[{\textbf{ System\+Manager}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_a5e503e38a6f749c36c77c14ce48846de} 
+OSK\+::\+ECS\+::\+System\+Manager\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ System\+Manager}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!RegisterSystem@{RegisterSystem}}
+\index{RegisterSystem@{RegisterSystem}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{RegisterSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_aecab7fe0aeea50f027db32e42c79790e} 
+template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$\\
+TSystem $\ast$ OSK\+::\+ECS\+::\+System\+Manager\+::\+Register\+System (\begin{DoxyParamCaption}\item[{const \textbf{ System\+Dependencies} \&}]{dependencies}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un sistema, con lo que se ejecutará a partir de ahora. Si ya estaba registrado, no ocurre nada. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TSystem} & Tipo del sistema. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+Instancia del sistema. 
+\end{DoxyReturn}
+\index{OSK::ECS::SystemManager@{OSK::ECS::SystemManager}!RemoveSystem@{RemoveSystem}}
+\index{RemoveSystem@{RemoveSystem}!OSK::ECS::SystemManager@{OSK::ECS::SystemManager}}
+\doxysubsubsection{RemoveSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_manager_a3fb325594bcd65b490abec1254d2d3c9} 
+template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$\\
+void OSK\+::\+ECS\+::\+System\+Manager\+::\+Remove\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina el sistema dado, para que no sea procesado a partir de ahora. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TSystem} & Tipo del sistema. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyNote}{Nota}
+Si el sistema no está registrado, no ocurre nada. 
+\end{DoxyNote}

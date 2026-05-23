@@ -1,0 +1,39 @@
+\doxysection{Descriptor\+Pool\+Vk.\+h}
+\label{_descriptor_pool_vk_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/DescriptorPoolVk.h@{C:/Users/Oscar/source/repos/OSKengine/Source/DescriptorPoolVk.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_VULKAN\_BACKEND}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }VkDescriptorPool\_T;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{using\ }VkDescriptorPool\ =\ VkDescriptorPool\_T*;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }DescriptorLayoutVk;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ DescriptorPoolVk\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ DescriptorPoolVk(\textcolor{keyword}{const}\ DescriptorLayoutVk\&\ layout,\ USize32\ maxSets);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \string~DescriptorPoolVk();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ VkDescriptorPool\ GetPool()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ VkDescriptorPool\ pool\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

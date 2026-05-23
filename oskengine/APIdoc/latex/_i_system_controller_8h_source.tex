@@ -1,0 +1,89 @@
+\doxysection{ISystem\+Controller.\+h}
+\label{_i_system_controller_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/ISystemController.h@{C:/Users/Oscar/source/repos/OSKengine/Source/ISystemController.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ISystem.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}InvalidArgumentException.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::Editor::Views\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }ISystemView;}
+\DoxyCodeLine{00011\ \}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }OSK::Editor::Controllers\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ ISystemController\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~ISystemController()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Poll()\ =\ 0;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\_view\ \_GetSystemName()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ ISystemController(}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::ISystem*\ systemData,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ Views::ISystemView*\ view);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ Views::ISystemView*\ GetView();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Views::ISystemView*\ GetView()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ ECS::ISystem*\ GetSystemData();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ECS::ISystem*\ GetSystemData()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ ECS::ISystem*\ m\_system\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Views::ISystemView*\ m\_view\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TSystem>}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ ECS::IsEcsSystem<TSystem>}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{class\ }TSystemController\ :\ \textcolor{keyword}{public}\ ISystemController\ \{}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ TSystemController(}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::ISystem*\ ecsSystem,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ Views::ISystemView*\ view)\ :\ ISystemController(ecsSystem,\ view)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ecsSystem-\/>Is<TSystem>(),}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InvalidArgumentException(\textcolor{stringliteral}{"{}El\ sistema\ proporcionado\ no\ es\ del\ tipo\ correcto."{}}));}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ TSystem*\ GetSystem()\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}TSystem*\textcolor{keyword}{>}(GetSystemData());}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TSystem*\ GetComponent()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }TSystem*\textcolor{keyword}{>}(GetSystemData());}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ \_TSystemController>}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{concept\ }IsSystemController\ =}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ std::is\_base\_of\_v<ISystemController,\ \_TSystemController>\&\&}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (\_TSystemController)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \_TSystemController::GetSystemName()\ \};}
+\DoxyCodeLine{00083\ \ \ \ \ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ OSK\_SYSTEM\_EDITOR\_CONTROLLER(systemName)\ \(\backslash\)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{constexpr\ static\ std::string\_view\ GetSystemName()\ \{\ return\ systemName;\ \}\ \(\backslash\)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{std::string\_view\ \_GetSystemName()\ const\ override\ \{\ return\ systemName;\ \}}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ OSK\_LINK\_SYSTEM\_EDITOR\_CONTROLLER(systemType)\ \(\backslash\)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{constexpr\ static\ std::string\_view\ GetSystemName()\ \{\ return\ systemType::GetSystemName();\ \}\ \(\backslash\)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{std::string\_view\ \_GetSystemName()\ const\ override\ \{\ return\ systemType::GetSystemName();\ \}}}
+
+\end{DoxyCode}

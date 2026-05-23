@@ -1,0 +1,50 @@
+\doxysection{Top\+Level\+Acceleration\+Structure\+Vk.\+h}
+\label{_top_level_acceleration_structure_vk_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/TopLevelAccelerationStructureVk.h@{C:/Users/Oscar/source/repos/OSKengine/Source/TopLevelAccelerationStructureVk.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_VULKAN\_BACKEND}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ITopLevelAccelerationStructure.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vulkan/vulkan.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ TopLevelAccelerationStructureVk\ :\ \textcolor{keyword}{public}\ ITopLevelAccelerationStructure\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \string~TopLevelAccelerationStructureVk();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Setup()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(ICommandList*\ cmdList)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ VkAccelerationStructureKHR\ GetAccelerationStructure()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ VkDeviceAddress\ GetBufferDeviceAddress(\textcolor{keyword}{const}\ VkBuffer\ buffer,\ \textcolor{keyword}{const}\ VkDevice\ logicalDevice);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ VkDeviceAddress\ GetTlasDeviceAddress(\textcolor{keyword}{const}\ VkAccelerationStructureKHR\ tlas,\ \textcolor{keyword}{const}\ VkDevice\ logicalDevice);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ accelerationStructureBuffer;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ buildBuffer;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ instanceBuffer;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ VkAccelerationStructureKHR\ blasHandle\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ VkAccelerationStructureKHR\ tlasHandle\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ VkDeviceOrHostAddressConstKHR\ tlasAddress\{\};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ VkAccelerationStructureGeometryKHR\ geometryInfo\{\};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

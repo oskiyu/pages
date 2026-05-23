@@ -1,0 +1,182 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::Editor\+::Controllers\+::TComponent\+Controller$<$ TComponent $>$}
+\label{class_o_s_k_1_1_editor_1_1_controllers_1_1_t_component_controller}\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+
+
+{\ttfamily \#include $<$IComponent\+Controller.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Update\+Component} (TComponent $\ast$component)
+\item 
+virtual void \textbf{ Poll} ()=0
+\item 
+void \textbf{ Update} (void $\ast$component)
+\item 
+\textbf{ ECS\+::\+Game\+Object\+Index} \textbf{ Get\+Linked\+Object} () const
+\item 
+\textbf{ ECS\+::\+Component\+Type} \textbf{ Get\+Linked\+Component\+Type} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ TComponent\+Controller} (\textbf{ ECS\+::\+Game\+Object\+Index} object, void $\ast$component\+Data, \textbf{ Views\+::\+IComponent\+View} $\ast$view)
+\item 
+TComponent $\ast$ \textbf{ Get\+Component} ()
+\item 
+const TComponent $\ast$ \textbf{ Get\+Component} () const
+\item 
+\textbf{ Views\+::\+IComponent\+View} $\ast$ \textbf{ Get\+View} ()
+\item 
+const \textbf{ Views\+::\+IComponent\+View} $\ast$ \textbf{ Get\+View} () const
+\item 
+void $\ast$ \textbf{ Get\+Component\+Data} ()
+\item 
+const void $\ast$ \textbf{ Get\+Component\+Data} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename TComponent$>$\newline
+class OSK\+::\+Editor\+::\+Controllers\+::\+TComponent\+Controller$<$ TComponent $>$}
+Elemento que conecta los datos de un componente con un elemento de interfaz de usuario del editor correspondiente a ese componente. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo de componente. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}!TComponentController@{TComponentController}}
+\index{TComponentController@{TComponentController}!OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+\doxysubsubsection{TComponentController()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_t_component_controller_a99374e0bf95b0faca79fb86ab7e62802} 
+template$<$typename TComponent$>$ \\
+\textbf{ OSK\+::\+Editor\+::\+Controllers\+::\+TComponent\+Controller}$<$ TComponent $>$\+::\+TComponent\+Controller (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{object}{, }\item[{void $\ast$}]{component\+Data}{, }\item[{\textbf{ Views\+::\+IComponent\+View} $\ast$}]{view}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Inicializa la clase. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em object} & Objeto enlazado. \\
+\hline
+{\em component\+Data} & Dirección inicial del componente. \\
+\hline
+{\em view} & Vista enlazada. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+\doxysubsubsection{GetComponent()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_t_component_controller_a9324987a6dab7eabb08d56bf3e730797} 
+template$<$typename TComponent$>$ \\
+TComponent $\ast$ \textbf{ OSK\+::\+Editor\+::\+Controllers\+::\+TComponent\+Controller}$<$ TComponent $>$\+::\+Get\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\begin{DoxyReturn}{Devuelve}
+Componente enlazado. 
+\end{DoxyReturn}
+\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+\doxysubsubsection{GetComponent()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_t_component_controller_a6c54f0f3d8a1f2e590bc5087c41ab5cc} 
+template$<$typename TComponent$>$ \\
+const TComponent $\ast$ \textbf{ OSK\+::\+Editor\+::\+Controllers\+::\+TComponent\+Controller}$<$ TComponent $>$\+::\+Get\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}!GetComponentData@{GetComponentData}}
+\index{GetComponentData@{GetComponentData}!OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+\doxysubsubsection{GetComponentData()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_component_controller_a8512a1ebb58021ad771de7056603c9ba} 
+void $\ast$ IComponent\+Controller\+::\+Get\+Component\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Dirección en la que se almacena el componente. 
+\end{DoxyReturn}
+\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}!GetComponentData@{GetComponentData}}
+\index{GetComponentData@{GetComponentData}!OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+\doxysubsubsection{GetComponentData()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_component_controller_a905c4f6f72a1a1dbcfc852b1cac9e5e9} 
+const void $\ast$ IComponent\+Controller\+::\+Get\+Component\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}!GetLinkedComponentType@{GetLinkedComponentType}}
+\index{GetLinkedComponentType@{GetLinkedComponentType}!OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+\doxysubsubsection{GetLinkedComponentType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_component_controller_a39bf2bb19b9f6627b98831256f46d36a} 
+\textbf{ OSK\+::\+ECS\+::\+Component\+Type} IComponent\+Controller\+::\+Get\+Linked\+Component\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Tipo de componente observado. 
+\end{DoxyReturn}
+\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}!GetLinkedObject@{GetLinkedObject}}
+\index{GetLinkedObject@{GetLinkedObject}!OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+\doxysubsubsection{GetLinkedObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_component_controller_a86da1d5db3a3600243cec6e50ad3f685} 
+\textbf{ OSK\+::\+ECS\+::\+Game\+Object\+Index} IComponent\+Controller\+::\+Get\+Linked\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Objeto que posee el componente observado. 
+\end{DoxyReturn}
+\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}!GetView@{GetView}}
+\index{GetView@{GetView}!OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+\doxysubsubsection{GetView()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_component_controller_aee494d0e5d99aa584a0e911459d473b6} 
+\textbf{ IComponent\+View} $\ast$ IComponent\+Controller\+::\+Get\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Vista enlazada con el controlador. 
+\end{DoxyReturn}
+\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}!GetView@{GetView}}
+\index{GetView@{GetView}!OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+\doxysubsubsection{GetView()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_component_controller_a76f2c02b4c2f1de34dddc555fdf6c9a0} 
+const \textbf{ IComponent\+View} $\ast$ IComponent\+Controller\+::\+Get\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}!Poll@{Poll}}
+\index{Poll@{Poll}!OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+\doxysubsubsection{Poll()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_component_controller_a8d5b58380f17872a7bdbbf6db784d227} 
+virtual void OSK\+::\+Editor\+::\+Controllers\+::\+IComponent\+Controller\+::\+Poll (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Actualiza la interfaz de usuario a partir de los datos del componente. 
+
+\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}!Update@{Update}}
+\index{Update@{Update}!OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_component_controller_af56c9ea3b39f25e84b0f5ddf27d80534} 
+void IComponent\+Controller\+::\+Update (\begin{DoxyParamCaption}\item[{void $\ast$}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Actualiza la dirección de los datos del componente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em component} & Dirección del componente. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}!UpdateComponent@{UpdateComponent}}
+\index{UpdateComponent@{UpdateComponent}!OSK::Editor::Controllers::TComponentController$<$ TComponent $>$@{OSK::Editor::Controllers::TComponentController$<$ TComponent $>$}}
+\doxysubsubsection{UpdateComponent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_t_component_controller_a0214bbd479fca202d9c9da5fd391c795} 
+template$<$typename TComponent$>$ \\
+void \textbf{ OSK\+::\+Editor\+::\+Controllers\+::\+TComponent\+Controller}$<$ TComponent $>$\+::\+Update\+Component (\begin{DoxyParamCaption}\item[{TComponent $\ast$}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Actualiza la dirección de memoria en la que se encuentra el componente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em component} & Dirección del componente. \\
+\hline
+\end{DoxyParams}

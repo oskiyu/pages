@@ -1,0 +1,168 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Rt\+Render\+Target}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target}\index{OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}}
+
+
+{\ttfamily \#include $<$Rt\+Render\+Target.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Create} (const \textbf{ Vector2ui} \&target\+Size, \textbf{ Render\+Target\+Attachment\+Info} attachment\+Info)
+\item 
+void \textbf{ Resize} (const \textbf{ Vector2ui} \&target\+Size)
+\item 
+\textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Target\+Image} ()
+\item 
+const \textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Target\+Image} () const
+\item 
+\textbf{ Material\+Instance} $\ast$ \textbf{ Get\+Fullscreen\+Sprite\+Material\+Instance} ()
+\item 
+const \textbf{ Material\+Instance} $\ast$ \textbf{ Get\+Fullscreen\+Sprite\+Material\+Instance} () const
+\item 
+\textbf{ IMaterial\+Slot} $\ast$ \textbf{ Get\+Fullscreen\+Sprite\+Material\+Slot} ()
+\item 
+const \textbf{ IMaterial\+Slot} $\ast$ \textbf{ Get\+Fullscreen\+Sprite\+Material\+Slot} () const
+\item 
+\textbf{ Vector2ui} \textbf{ Get\+Size} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Render target para el renderizado de imágenes desde shaders de trazado de rayos / computación. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}!Create@{Create}}
+\index{Create@{Create}!OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target_a8d063702a876073400d65376ad29757b} 
+void Rt\+Render\+Target\+::\+Create (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{target\+Size}{, }\item[{\textbf{ Render\+Target\+Attachment\+Info}}]{attachment\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Crea el render target con la información dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em target\+Size} & Resolución, en píxeles. \\
+\hline
+{\em attachment\+Info} & Información de la imagen que se va a generar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+El render target podrá usarse como storage image.
+\end{DoxyPostcond}
+\begin{DoxyNote}{Nota}
+La imagen tendrá al menos \doxyref{Gpu\+Image\+Usage\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaaac404d7ce6ca5862e9b8a2641fbafd90} $\vert$ \doxyref{Gpu\+Image\+Usage\+::\+SAMPLED}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaa5d0791856a3081df75c6093017a61a36}. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}!GetFullscreenSpriteMaterialInstance@{GetFullscreenSpriteMaterialInstance}}
+\index{GetFullscreenSpriteMaterialInstance@{GetFullscreenSpriteMaterialInstance}!OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}}
+\doxysubsubsection{GetFullscreenSpriteMaterialInstance()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target_a24f5ee420900930727b9fc3013191537} 
+\textbf{ Material\+Instance} $\ast$ Rt\+Render\+Target\+::\+Get\+Fullscreen\+Sprite\+Material\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve el material instance para el renderizado a pantalla completa usando el material \doxyref{IRenderer\+::\+Get\+Fullscreen\+Rendering\+Material()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_afae33f04095cf6d7d888845d4037c442}. 
+
+\begin{DoxyReturn}{Devuelve}
+Nullptr si no ha sido inicializado, no nulo en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}!GetFullscreenSpriteMaterialInstance@{GetFullscreenSpriteMaterialInstance}}
+\index{GetFullscreenSpriteMaterialInstance@{GetFullscreenSpriteMaterialInstance}!OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}}
+\doxysubsubsection{GetFullscreenSpriteMaterialInstance()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target_a85a2a9b0f158fdcb0f87c68f97cc35aa} 
+const \textbf{ Material\+Instance} $\ast$ Rt\+Render\+Target\+::\+Get\+Fullscreen\+Sprite\+Material\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}!GetFullscreenSpriteMaterialSlot@{GetFullscreenSpriteMaterialSlot}}
+\index{GetFullscreenSpriteMaterialSlot@{GetFullscreenSpriteMaterialSlot}!OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}}
+\doxysubsubsection{GetFullscreenSpriteMaterialSlot()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target_af174464729aeae7f0d63b3cd004d191d} 
+\textbf{ IMaterial\+Slot} $\ast$ Rt\+Render\+Target\+::\+Get\+Fullscreen\+Sprite\+Material\+Slot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve el material slot requerido para el renderizado a pantalla completa usando el material \doxyref{IRenderer\+::\+Get\+Fullscreen\+Rendering\+Material()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_afae33f04095cf6d7d888845d4037c442}. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero no nulo.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haberse inicializado correctamente. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}!GetFullscreenSpriteMaterialSlot@{GetFullscreenSpriteMaterialSlot}}
+\index{GetFullscreenSpriteMaterialSlot@{GetFullscreenSpriteMaterialSlot}!OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}}
+\doxysubsubsection{GetFullscreenSpriteMaterialSlot()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target_a9cd51d5eb064949be0ecc8f41e17fb31} 
+const \textbf{ IMaterial\+Slot} $\ast$ Rt\+Render\+Target\+::\+Get\+Fullscreen\+Sprite\+Material\+Slot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}}
+\doxysubsubsection{GetSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target_a558fbd35e10e1afcbac386e032b6ccaf} 
+\textbf{ Vector2ui} Rt\+Render\+Target\+::\+Get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Resolución de la imagen, en píxeles. 
+
+\begin{DoxyReturn}{Devuelve}
+Resolución de la imagen, en píxeles. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}!GetTargetImage@{GetTargetImage}}
+\index{GetTargetImage@{GetTargetImage}!OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}}
+\doxysubsubsection{GetTargetImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target_a3a115a59bae0dee215eb3c1b26054a17} 
+\textbf{ Gpu\+Image} $\ast$ Rt\+Render\+Target\+::\+Get\+Target\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve la imagen de renderizado en el índice de recursos dado. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero no nulo si fue correctamente inicializado. Nullptr si el render target no fue inicializado. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}!GetTargetImage@{GetTargetImage}}
+\index{GetTargetImage@{GetTargetImage}!OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}}
+\doxysubsubsection{GetTargetImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target_a396e8f347c1434a6dbbcc1e8210d8f94} 
+const \textbf{ Gpu\+Image} $\ast$ Rt\+Render\+Target\+::\+Get\+Target\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la imagen de renderizado en el índice de recursos dado. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero no nulo si fue correctamente inicializado. Nullptr si el render target no fue inicializado. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}!Resize@{Resize}}
+\index{Resize@{Resize}!OSK::GRAPHICS::RtRenderTarget@{OSK::GRAPHICS::RtRenderTarget}}
+\doxysubsubsection{Resize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target_a69fc50a8eac1d53a1b3640b2a93597d0} 
+void Rt\+Render\+Target\+::\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{target\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Cambia de resolución la imagen del render target. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em target\+Size} & Nueva resolución, en píxeles.\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyWarning}{Atención}
+Dejará en un estado inválido cualquier material slot en el que se use esta imagen.
+\end{DoxyWarning}
+Cambia de tamaño la imagen de renderizado. 
+\begin{DoxyParams}{Parámetros}
+{\em target\+Size} & Nueva resolución de la imagen de renderizado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El render target debe haber sido correctamente creado mediante \doxyref{Render\+Target\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a007f8e24640c79100c7df4414ba39380} o \doxyref{Render\+Target\+::\+Create\+As\+Final}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a5035d069a723b632b751f07dbe0a5d64}.
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Atención}
+Esta función destruye las imágenes anteriores, por lo que si una instancia de material referenciaba estas imágenes, se deberá actualizar con las nuevas imágenes. 
+\end{DoxyWarning}

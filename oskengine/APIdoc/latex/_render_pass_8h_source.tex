@@ -1,0 +1,133 @@
+\doxysection{Render\+Pass.\+h}
+\label{_render_pass_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/RenderPass.h@{C:/Users/Oscar/source/repos/OSKengine/Source/RenderPass.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Material.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}IMaterialSlot.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}MaterialInstance.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}RgBufferDependency.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}RgImageDependency.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}ICommandList.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}Uuid.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}ResourcesInFlight.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }RenderGraph;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{enum\ class}\ RenderPassType\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ GRAPHICS,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ COMPUTE,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ RAY\_TRACING}
+\DoxyCodeLine{00030\ \ \ \ \ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IRenderPass\ \{}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ IRenderPass(}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ std::optional<std::string\_view>\ materialName,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ RenderPassType\ type);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IRenderPass()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ OSK\_DEFINE\_AS(IRenderPass);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_Execute(}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ ICommandList*\ cmdList,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ RenderGraph\&\ renderGraph);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Execute(ICommandList*\ cmdList)\ =\ 0;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ std::span<const\ RgBufferDependency>\ GetBufferDependencies()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::span<const\ RgImageDependency>\ \ GetImageDependencies()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ std::span<const\ PartialRgBufferDependency>\ GetPartialBufferDependencies()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::span<const\ PartialRgImageDependency>\ \ GetPartialImageDependencies()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddBufferDependency(\textcolor{keyword}{const}\ RgBufferDependency\&\ dependency);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddImageDependency(\textcolor{keyword}{const}\ RgImageDependency\&\ dependency);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddPartialBufferDependency(\textcolor{keyword}{const}\ PartialRgBufferDependency\&\ dependency);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddPartialImageDependency\ (\textcolor{keyword}{const}\ PartialRgImageDependency\&\ dependency);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ RenderPassType\ GetType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\_view\ GetName()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RebindDependencies();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ RenderGraph*\ GetRenderGraph();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindResources(}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ ICommandList*\ cmdList,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ RenderGraph\&\ renderGraph);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RebindGraphicsBuffers(}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ ICommandList*\ cmdList,}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ RenderGraph\&\ renderGraph);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindTargetImages(RenderGraph\&\ renderGraph);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_needsResourceBinding\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Los\ rangos\ de\ las\ dependencias\ establecidas}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ en\ el\ constructor\ no\ tienen\ establecidos\ los}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ rangos.\ Este\ flag\ indica\ si\ se\ han\ establecido}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ dichos\ rangos.}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_hasFullyRegisteredDependencies\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ Material*\ m\_material\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ std::array<UniquePtr<MaterialInstance>,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_materialInstance;}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ DynamicArray<PartialRgBufferDependency>\ m\_partialBufferDependencies;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ DynamicArray<PartialRgImageDependency>\ \ m\_partialImageDependencies;}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ DynamicArray<RgBufferDependency>\ m\_bufferDependencies;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ DynamicArray<RgImageDependency>\ \ m\_imageDependencies;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ RenderPassType\ m\_type;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ std::optional<std::array<DynamicArray<RenderPassImageInfo>,\ MAX\_RESOURCES\_IN\_FLIGHT>>\ m\_colorTargets;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ std::optional<RenderPassImageInfo>\ m\_depthTarget;}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ RenderGraph*\ m\_rg\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{using\ }RenderPassUuid\ =\ BaseUuid<class\ RgRenderPass>;}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ OSK\_DEFINE\_UUID\_HASH(OSK::GRAPHICS::RenderPassUuid);}
+\DoxyCodeLine{00185\ OSK\_DEFINE\_UUID\_FORMATTER(OSK::GRAPHICS::RenderPassUuid,\ \textcolor{stringliteral}{"{}RenderPass\ ID:\ "{}});}
+
+\end{DoxyCode}

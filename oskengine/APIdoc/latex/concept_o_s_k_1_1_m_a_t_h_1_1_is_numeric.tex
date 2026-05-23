@@ -1,0 +1,23 @@
+\doxysection{Referencia del concepto OSK\+::MATH\+::Is\+Numeric}
+\label{concept_o_s_k_1_1_m_a_t_h_1_1_is_numeric}\index{OSK::MATH::IsNumeric@{OSK::MATH::IsNumeric}}
+
+
+{\ttfamily \#include $<$Math.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::MATH::IsNumeric\ =\ \ std::is\_floating\_point\_v<T>\ \&\&\ std::is\_integral\_v<T>}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}
+Concepto que permite distinguir cualquier tipo numérico. 
+
+\begin{DoxyNote}{Nota}
+Tipos de coma flotante\+: {\ttfamily float}, {\ttfamily double}, {\ttfamily long double}. 
+
+Tipos enteros\+: {\ttfamily bool}, {\ttfamily char}, {\ttfamily unsigned char}, {\ttfamily float}, {\ttfamily short}, {\ttfamily unsigned short}, {\ttfamily int}, {\ttfamily unsigned int}, {\ttfamily long}, {\ttfamily unsigned long}, {\ttfamily long long}, {\ttfamily unsigned long long}. 
+\end{DoxyNote}

@@ -1,0 +1,179 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Transform\+Component3D}
+\label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d}\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+
+
+{\ttfamily \#include $<$Transform\+Component3\+D.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT} ()
+\item 
+\textbf{ OSK\+\_\+\+COMPONENT} ("{}OSK\+::\+Transform\+Component3\+D"{})
+\item 
+\textbf{ Transform\+Component3D} (\textbf{ ECS\+::\+Game\+Object\+Index} owner)
+\item 
+void \textbf{ Add\+Child} (\textbf{ ECS\+::\+Game\+Object\+Index} child\+Id)
+\item 
+void \textbf{ Remove\+Child} (\textbf{ ECS\+::\+Game\+Object\+Index} child\+Id)
+\item 
+std\+::span$<$ const \textbf{ Game\+Object\+Index} $>$ \textbf{ Get\+Children} () const
+\item 
+\textbf{ Transform3D} \& \textbf{ Get\+Transform} ()
+\item 
+const \textbf{ Transform3D} \& \textbf{ Get\+Transform} () const
+\item 
+void \textbf{ Set\+Should\+Inherit\+Position} (bool value)
+\item 
+void \textbf{ Set\+Should\+Inherit\+Rotation} (bool value)
+\item 
+void \textbf{ Set\+Should\+Inherit\+Scale} (bool value)
+\item 
+void \textbf{ \+\_\+\+Apply\+Changes} (std\+::optional$<$ const \textbf{ Transform\+Component3D} $\ast$ $>$ parent)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Transform\+Component3D} \textbf{ From\+Matrix} (\textbf{ ECS\+::\+Game\+Object\+Index} owner, const glm\+::mat4 \&matrix)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Componente que contiene un transform 3D. Permite construir una jerarquía de transforms. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!TransformComponent3D@{TransformComponent3D}}
+\index{TransformComponent3D@{TransformComponent3D}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{TransformComponent3D()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_a77ac40ef770e2e42ad88ae89a2cb617f} 
+Transform\+Component3\+D\+::\+Transform\+Component3D (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em owner} & Objeto del transform. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!\_ApplyChanges@{\_ApplyChanges}}
+\index{\_ApplyChanges@{\_ApplyChanges}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{\_ApplyChanges()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_aa172263bc1539e0329bfe8186ae4f699} 
+void Transform\+Component3\+D\+::\+\_\+\+Apply\+Changes (\begin{DoxyParamCaption}\item[{std\+::optional$<$ const \textbf{ Transform\+Component3D} $\ast$ $>$}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Aplica los cambios realizados sobre el transform. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em parent} & Transform padre (opcional). \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{AddChild()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_a95b2f930547eaff3408b5813337b5f64} 
+void Transform\+Component3\+D\+::\+Add\+Child (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{child\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Añade un hijo al transform. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em child\+Id} & ID del hijo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily child\+Id} debe poseer un \doxyref{Transform\+Component3D}{pág.}{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d}. 
+
+{\ttfamily child\+Id} no debe haber sido previamente añadido. 
+\end{DoxyPrecond}
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!FromMatrix@{FromMatrix}}
+\index{FromMatrix@{FromMatrix}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{FromMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_a15d2f5de9cdff01ae156fe55f130b512} 
+\textbf{ Transform\+Component3D} Transform\+Component3\+D\+::\+From\+Matrix (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{owner}{, }\item[{const glm\+::mat4 \&}]{matrix}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!GetChildren@{GetChildren}}
+\index{GetChildren@{GetChildren}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{GetChildren()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_a37658a7110301b9de3cc1af7a1946586} 
+std\+::span$<$ const \textbf{ Game\+Object\+Index} $>$ Transform\+Component3\+D\+::\+Get\+Children (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Lista con los ID de los elementos hijos. 
+\end{DoxyReturn}
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!GetTransform@{GetTransform}}
+\index{GetTransform@{GetTransform}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{GetTransform()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_a04cf18d49b50caef650726659b475aec} 
+\textbf{ Transform3D} \& Transform\+Component3\+D\+::\+Get\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!GetTransform@{GetTransform}}
+\index{GetTransform@{GetTransform}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{GetTransform()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_a2943133bf422a7aa3efe410701f622d0} 
+const \textbf{ Transform3D} \& Transform\+Component3\+D\+::\+Get\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!OSK\_COMPONENT@{OSK\_COMPONENT}}
+\index{OSK\_COMPONENT@{OSK\_COMPONENT}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{OSK\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_a2ca05cfdae2b4cc7e10e27b6722b7162} 
+OSK\+::\+ECS\+::\+Transform\+Component3\+D\+::\+OSK\+\_\+\+COMPONENT (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Transform\+Component3\+D"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}}
+\index{OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{OSK\_SERIALIZABLE\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_ab147ff30c13b5a9213b79382a5a97650} 
+OSK\+::\+ECS\+::\+Transform\+Component3\+D\+::\+OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!RemoveChild@{RemoveChild}}
+\index{RemoveChild@{RemoveChild}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{RemoveChild()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_a0d086c665f699c059a7897afd27c27e4} 
+void Transform\+Component3\+D\+::\+Remove\+Child (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{child\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Elimina un hijo de la lista de hijos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em child\+Id} & ID del hijo. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!SetShouldInheritPosition@{SetShouldInheritPosition}}
+\index{SetShouldInheritPosition@{SetShouldInheritPosition}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{SetShouldInheritPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_afd93b6e51e1cc9f8b6a3e2c5bdf595fd} 
+void Transform\+Component3\+D\+::\+Set\+Should\+Inherit\+Position (\begin{DoxyParamCaption}\item[{bool}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Permite establecer si el transform hereda la posición del padre. 
+
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!SetShouldInheritRotation@{SetShouldInheritRotation}}
+\index{SetShouldInheritRotation@{SetShouldInheritRotation}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{SetShouldInheritRotation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_a184db6644c38eaa0ccba6a5a79958460} 
+void Transform\+Component3\+D\+::\+Set\+Should\+Inherit\+Rotation (\begin{DoxyParamCaption}\item[{bool}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Permite establecer si el transform hereda la orientación del padre. 
+
+\index{OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}!SetShouldInheritScale@{SetShouldInheritScale}}
+\index{SetShouldInheritScale@{SetShouldInheritScale}!OSK::ECS::TransformComponent3D@{OSK::ECS::TransformComponent3D}}
+\doxysubsubsection{SetShouldInheritScale()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d_a7c750d11283bb42e930358861ed38709} 
+void Transform\+Component3\+D\+::\+Set\+Should\+Inherit\+Scale (\begin{DoxyParamCaption}\item[{bool}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Permite establecer si el transform hereda la escala del padre. 
+

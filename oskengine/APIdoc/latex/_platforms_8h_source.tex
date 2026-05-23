@@ -1,0 +1,61 @@
+\doxysection{Platforms.\+h}
+\label{_platforms_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Platforms.h@{C:/Users/Oscar/source/repos/OSKengine/Source/Platforms.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ OSK\_PLATFORM\_CHECK\_A\ 0}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ OSK\_PLATFORM\_CHECK\_B\ 0}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ OSK\_PLATFORM\_CHECK\_C\ 0}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifdef\ OSK\_ANDROID}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#undef\ OSK\_PLATFORM\_CHECK\_A}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ OSK\_PLATFORM\_CHECK\_A\ 1}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ OSK\_WINDOWS}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#undef\ OSK\_PLATFORM\_CHECK\_B}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ OSK\_PLATFORM\_CHECK\_B\ 1}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifdef\ OSK\_LINUX}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#undef\ OSK\_PLATFORM\_CHECK\_C}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ OSK\_PLATFORM\_CHECK\_C\ 1}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifdef\ OSK\_ANDROID}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ OSK\_USE\_VULKAN\_BACKEND}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ OSK\_USE\_VULKAN\_1\_0}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#ifdef\ OSK\_WINDOWS}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ OSK\_USE\_VULKAN\_BACKEND}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ OSK\_USE\_VULKAN\_1\_3}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ OSK\_USE\_PC\_WINDOW}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifdef\ OSK\_LINUX}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ OSK\_USE\_VULKAN\_BACKEND}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ OSK\_USE\_VULKAN\_1\_3}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ OSK\_USE\_PC\_WINDOW}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#if\ OSK\_PLATFORM\_CHECK\_A\ +\ OSK\_PLATFORM\_CHECK\_B\ +\ OSK\_PLATFORM\_CHECK\_C\ ==\ 0}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#error\ No\ se\ ha\ establecido\ la\ plataforma\ de\ destino.}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#if\ OSK\_PLATFORM\_CHECK\_A\ +\ OSK\_PLATFORM\_CHECK\_B\ +\ OSK\_PLATFORM\_CHECK\_C\ >\ 1}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#error\ Sólamente\ se\ puede\ definir\ una\ única\ plataforma\ de\ destino.}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#undef\ OSK\_PLATFORM\_CHECK\_A}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#undef\ OSK\_PLATFORM\_CHECK\_B}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#undef\ OSK\_PLATFORM\_CHECK\_C}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#ifdef\ OSK\_WINDOWS}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ OSK\_PC\_ANY}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifdef\ OSK\_LINUX}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ OSK\_PC\_ANY}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

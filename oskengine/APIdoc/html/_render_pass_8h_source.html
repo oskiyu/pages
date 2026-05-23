@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/RenderPass.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_render_pass_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">RenderPass.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;span&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;ApiCall.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;DynamicArray.hpp&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;Material.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;IMaterialSlot.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;MaterialInstance.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;RgBufferDependency.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;RgImageDependency.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;ICommandList.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;Uuid.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;ResourcesInFlight.h&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">class </span><a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a53556e79857d194cfdedf7e39ea40734">   26</a></span>    <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a53556e79857d194cfdedf7e39ea40734">RenderPassType</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a53556e79857d194cfdedf7e39ea40734a6f49448c79d7d58c6e60cf7129b84d1c">   27</a></span>        <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5f64f8e9fdfc352ed3026326a325b62a6f49448c79d7d58c6e60cf7129b84d1c">GRAPHICS</a>,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a53556e79857d194cfdedf7e39ea40734aac404d7ce6ca5862e9b8a2641fbafd90">   28</a></span>        <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5f64f8e9fdfc352ed3026326a325b62aac404d7ce6ca5862e9b8a2641fbafd90">COMPUTE</a>,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a53556e79857d194cfdedf7e39ea40734a1d9471d41aa3191e5b1bc6a9dfdaebb9">   29</a></span>        <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a53556e79857d194cfdedf7e39ea40734a1d9471d41aa3191e5b1bc6a9dfdaebb9">RAY_TRACING</a></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    };</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html">   33</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ae6ce5294d1ec51e718c47cd90abcd8f9">IRenderPass</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ae6ce5294d1ec51e718c47cd90abcd8f9">IRenderPass</a>(</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            std::optional&lt;std::string_view&gt; materialName,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a53556e79857d194cfdedf7e39ea40734">RenderPassType</a> type);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ac65ddb1a2839ed1577771162c491df2f">   48</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ac65ddb1a2839ed1577771162c491df2f">~IRenderPass</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a9b1b1d7cfff05e6b36ddf114c5a2dfbf">   50</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a9b1b1d7cfff05e6b36ddf114c5a2dfbf">OSK_DEFINE_AS</a>(<a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ae6ce5294d1ec51e718c47cd90abcd8f9">IRenderPass</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a6a11b4829e79e6cf9caf66fc91458e78">_Execute</a>(</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html">ICommandList</a>* cmdList,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>&amp; renderGraph);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ac0d83a0bd2a4b2263ce1edbefea7ecc8">   67</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ac0d83a0bd2a4b2263ce1edbefea7ecc8">Execute</a>(<a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html">ICommandList</a>* cmdList) = 0;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        std::span&lt;const RgBufferDependency&gt; <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a4265cc5766a43467e352dc252bdcd6e0">GetBufferDependencies</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        std::span&lt;const RgImageDependency&gt;  <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a45c3ce53ceb4dac061946b07a154e9c0">GetImageDependencies</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        std::span&lt;const PartialRgBufferDependency&gt; <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#abb13047425d57a8849e28f3f7ec8cf70">GetPartialBufferDependencies</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        std::span&lt;const PartialRgImageDependency&gt;  <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a1b0fca14c6590b11588e58cac16262a9">GetPartialImageDependencies</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a9ecf2c494ada0b354266521f9e6a8f35">AddBufferDependency</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html">RgBufferDependency</a>&amp; dependency);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a483b20dbf0720c834f89b26f8717107f">AddImageDependency</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html">RgImageDependency</a>&amp; dependency);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ac2002f9146527b4a74a9ec7ea48eeb09">AddPartialBufferDependency</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency.html">PartialRgBufferDependency</a>&amp; dependency);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ab2262a3ddd25285880e45c90aed79a25">AddPartialImageDependency</a> (<span class="keyword">const</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency.html">PartialRgImageDependency</a>&amp; dependency);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a53556e79857d194cfdedf7e39ea40734">RenderPassType</a> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ad6962cfef5d87fa426c79855b8b700c6">GetType</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a08ae96062283aecc49d9fc53c8d1c8d0">  106</a></span>        <span class="keyword">virtual</span> std::string_view <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a08ae96062283aecc49d9fc53c8d1c8d0">GetName</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a9842cfd8cef05362fab158fd6964c02e">RebindDependencies</a>();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>* <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a639cf5e7e56dab5a84cdab6745c7fd75">GetRenderGraph</a>();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordtype">void</span> BindResources(</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html">ICommandList</a>* cmdList,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>&amp; renderGraph);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordtype">void</span> RebindGraphicsBuffers(</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html">ICommandList</a>* cmdList,</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>&amp; renderGraph);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordtype">void</span> BindTargetImages(<a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>&amp; renderGraph);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordtype">bool</span> m_needsResourceBinding = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="comment">// Los rangos de las dependencias establecidas</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="comment">// en el constructor no tienen establecidos los</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="comment">// rangos. Este flag indica si se han establecido</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="comment">// dichos rangos.</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordtype">bool</span> m_hasFullyRegisteredDependencies = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material.html">Material</a>* m_material = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        std::array&lt;UniquePtr&lt;MaterialInstance&gt;, MAX_RESOURCES_IN_FLIGHT&gt; m_materialInstance;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray&lt;PartialRgBufferDependency&gt;</a> m_partialBufferDependencies;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray&lt;PartialRgImageDependency&gt;</a>  m_partialImageDependencies;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray&lt;RgBufferDependency&gt;</a> m_bufferDependencies;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray&lt;RgImageDependency&gt;</a>  m_imageDependencies;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a53556e79857d194cfdedf7e39ea40734">RenderPassType</a> m_type;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        std::optional&lt;std::array&lt;DynamicArray&lt;RenderPassImageInfo&gt;, MAX_RESOURCES_IN_FLIGHT&gt;&gt; m_colorTargets;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        std::optional&lt;RenderPassImageInfo&gt; m_depthTarget;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>* m_rg = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    };</div>
+</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a91f1ed9546c0f1fdd1b88fb1c7de0a29">  180</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a91f1ed9546c0f1fdd1b88fb1c7de0a29">RenderPassUuid</a> = <a class="code hl_class" href="class_o_s_k_1_1_base_uuid.html">BaseUuid&lt;class RgRenderPass&gt;</a>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>}</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>OSK_DEFINE_UUID_HASH(<a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a91f1ed9546c0f1fdd1b88fb1c7de0a29">OSK::GRAPHICS::RenderPassUuid</a>);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>OSK_DEFINE_UUID_FORMATTER(<a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a91f1ed9546c0f1fdd1b88fb1c7de0a29">OSK::GRAPHICS::RenderPassUuid</a>, <span class="stringliteral">&quot;RenderPass ID: &quot;</span>);</div>
+<div class="ttc" id="aclass_o_s_k_1_1_base_uuid_html"><div class="ttname"><a href="class_o_s_k_1_1_base_uuid.html">OSK::BaseUuid</a></div><div class="ttdoc">Clase que representa un identificador único global.</div><div class="ttdef"><b>Definition</b> Uuid.h:14</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_dynamic_array_html"><div class="ttname"><a href="class_o_s_k_1_1_dynamic_array.html">OSK::DynamicArray</a></div><div class="ttdoc">Dynamic array: array que puede cambiar de tamaño.</div><div class="ttdef"><b>Definition</b> DynamicArray.hpp:66</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html">OSK::GRAPHICS::ICommandList</a></div><div class="ttdoc">Una lista de comandos contiene una serie de comandos que serán enviados a la GPU para su ejecución....</div><div class="ttdef"><b>Definition</b> ICommandList.h:78</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_a08ae96062283aecc49d9fc53c8d1c8d0"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a08ae96062283aecc49d9fc53c8d1c8d0">OSK::GRAPHICS::IRenderPass::GetName</a></div><div class="ttdeci">virtual std::string_view GetName() const =0</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_a1b0fca14c6590b11588e58cac16262a9"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a1b0fca14c6590b11588e58cac16262a9">OSK::GRAPHICS::IRenderPass::GetPartialImageDependencies</a></div><div class="ttdeci">std::span&lt; const PartialRgImageDependency &gt; GetPartialImageDependencies() const</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:253</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_a4265cc5766a43467e352dc252bdcd6e0"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a4265cc5766a43467e352dc252bdcd6e0">OSK::GRAPHICS::IRenderPass::GetBufferDependencies</a></div><div class="ttdeci">std::span&lt; const RgBufferDependency &gt; GetBufferDependencies() const</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:243</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_a45c3ce53ceb4dac061946b07a154e9c0"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a45c3ce53ceb4dac061946b07a154e9c0">OSK::GRAPHICS::IRenderPass::GetImageDependencies</a></div><div class="ttdeci">std::span&lt; const RgImageDependency &gt; GetImageDependencies() const</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:246</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_a483b20dbf0720c834f89b26f8717107f"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a483b20dbf0720c834f89b26f8717107f">OSK::GRAPHICS::IRenderPass::AddImageDependency</a></div><div class="ttdeci">void AddImageDependency(const RgImageDependency &amp;dependency)</div><div class="ttdoc">Añade una nueva dependencia completa de imagen.</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:270</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_a639cf5e7e56dab5a84cdab6745c7fd75"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a639cf5e7e56dab5a84cdab6745c7fd75">OSK::GRAPHICS::IRenderPass::GetRenderGraph</a></div><div class="ttdeci">RenderGraph * GetRenderGraph()</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:301</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_a6a11b4829e79e6cf9caf66fc91458e78"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a6a11b4829e79e6cf9caf66fc91458e78">OSK::GRAPHICS::IRenderPass::_Execute</a></div><div class="ttdeci">void _Execute(ICommandList *cmdList, RenderGraph &amp;renderGraph)</div><div class="ttdoc">Ejecuta el renderpass.</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:31</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_a9842cfd8cef05362fab158fd6964c02e"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a9842cfd8cef05362fab158fd6964c02e">OSK::GRAPHICS::IRenderPass::RebindDependencies</a></div><div class="ttdeci">void RebindDependencies()</div><div class="ttdoc">Reenlaza todas las dependencias.</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:297</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_a9b1b1d7cfff05e6b36ddf114c5a2dfbf"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a9b1b1d7cfff05e6b36ddf114c5a2dfbf">OSK::GRAPHICS::IRenderPass::OSK_DEFINE_AS</a></div><div class="ttdeci">OSK_DEFINE_AS(IRenderPass)</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_a9ecf2c494ada0b354266521f9e6a8f35"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a9ecf2c494ada0b354266521f9e6a8f35">OSK::GRAPHICS::IRenderPass::AddBufferDependency</a></div><div class="ttdeci">void AddBufferDependency(const RgBufferDependency &amp;dependency)</div><div class="ttdoc">Añade una nueva dependencia completa de buffer.</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:257</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_ab2262a3ddd25285880e45c90aed79a25"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ab2262a3ddd25285880e45c90aed79a25">OSK::GRAPHICS::IRenderPass::AddPartialImageDependency</a></div><div class="ttdeci">void AddPartialImageDependency(const PartialRgImageDependency &amp;dependency)</div><div class="ttdoc">Añade una dependencia parcial de imagen.</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:288</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_abb13047425d57a8849e28f3f7ec8cf70"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#abb13047425d57a8849e28f3f7ec8cf70">OSK::GRAPHICS::IRenderPass::GetPartialBufferDependencies</a></div><div class="ttdeci">std::span&lt; const PartialRgBufferDependency &gt; GetPartialBufferDependencies() const</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:250</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_ac0d83a0bd2a4b2263ce1edbefea7ecc8"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ac0d83a0bd2a4b2263ce1edbefea7ecc8">OSK::GRAPHICS::IRenderPass::Execute</a></div><div class="ttdeci">virtual void Execute(ICommandList *cmdList)=0</div><div class="ttdoc">Lógica de renderizado del renderpass.</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_ac2002f9146527b4a74a9ec7ea48eeb09"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ac2002f9146527b4a74a9ec7ea48eeb09">OSK::GRAPHICS::IRenderPass::AddPartialBufferDependency</a></div><div class="ttdeci">void AddPartialBufferDependency(const PartialRgBufferDependency &amp;dependency)</div><div class="ttdoc">Añade una dependencia parcial de buffer.</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:283</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_ac65ddb1a2839ed1577771162c491df2f"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ac65ddb1a2839ed1577771162c491df2f">OSK::GRAPHICS::IRenderPass::~IRenderPass</a></div><div class="ttdeci">virtual ~IRenderPass()=default</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_ad6962cfef5d87fa426c79855b8b700c6"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ad6962cfef5d87fa426c79855b8b700c6">OSK::GRAPHICS::IRenderPass::GetType</a></div><div class="ttdeci">RenderPassType GetType() const</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:293</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_ae6ce5294d1ec51e718c47cd90abcd8f9"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ae6ce5294d1ec51e718c47cd90abcd8f9">OSK::GRAPHICS::IRenderPass::IRenderPass</a></div><div class="ttdeci">IRenderPass(std::optional&lt; std::string_view &gt; materialName, RenderPassType type)</div><div class="ttdoc">Inicializa el render-pass.</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:17</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material.html">OSK::GRAPHICS::Material</a></div><div class="ttdoc">Un material define el comportamiento del renderizador con un objeto en concreto. Debe definirse el la...</div><div class="ttdef"><b>Definition</b> Material.h:50</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">OSK::GRAPHICS::RenderGraph</a></div><div class="ttdoc">Grafo de renderizado, que contiene tanto los pases de renderizado como los recursos que estos necesit...</div><div class="ttdef"><b>Definition</b> RenderGraph.h:52</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></div><div class="ttdef"><b>Definition</b> AccelerationStructuresExceptions.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a53556e79857d194cfdedf7e39ea40734"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a53556e79857d194cfdedf7e39ea40734">OSK::GRAPHICS::RenderPassType</a></div><div class="ttdeci">RenderPassType</div><div class="ttdef"><b>Definition</b> RenderPass.h:26</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a53556e79857d194cfdedf7e39ea40734a1d9471d41aa3191e5b1bc6a9dfdaebb9"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a53556e79857d194cfdedf7e39ea40734a1d9471d41aa3191e5b1bc6a9dfdaebb9">OSK::GRAPHICS::RenderPassType::RAY_TRACING</a></div><div class="ttdeci">@ RAY_TRACING</div><div class="ttdef"><b>Definition</b> RenderPass.h:29</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a91f1ed9546c0f1fdd1b88fb1c7de0a29"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a91f1ed9546c0f1fdd1b88fb1c7de0a29">OSK::GRAPHICS::RenderPassUuid</a></div><div class="ttdeci">BaseUuid&lt; class RgRenderPass &gt; RenderPassUuid</div><div class="ttdoc">Identificador único para un renderpass dentro de un rendergraph.</div><div class="ttdef"><b>Definition</b> RenderPass.h:180</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_ae5f64f8e9fdfc352ed3026326a325b62a6f49448c79d7d58c6e60cf7129b84d1c"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5f64f8e9fdfc352ed3026326a325b62a6f49448c79d7d58c6e60cf7129b84d1c">OSK::GRAPHICS::CommandQueueSupport::GRAPHICS</a></div><div class="ttdeci">@ GRAPHICS</div><div class="ttdoc">Comandos gráficos.</div><div class="ttdef"><b>Definition</b> CommandQueueSupport.h:12</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_ae5f64f8e9fdfc352ed3026326a325b62aac404d7ce6ca5862e9b8a2641fbafd90"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5f64f8e9fdfc352ed3026326a325b62aac404d7ce6ca5862e9b8a2641fbafd90">OSK::GRAPHICS::CommandQueueSupport::COMPUTE</a></div><div class="ttdeci">@ COMPUTE</div><div class="ttdoc">Comandos de computación geneérica.</div><div class="ttdef"><b>Definition</b> CommandQueueSupport.h:14</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency.html">OSK::GRAPHICS::PartialRgBufferDependency</a></div><div class="ttdoc">Declaración mínima de dependencia de un buffer necesaria para poder crear dicho buffer.</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:30</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency.html">OSK::GRAPHICS::PartialRgImageDependency</a></div><div class="ttdoc">Dependencia mínima necesaria para poder crear una imagen.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:20</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html">OSK::GRAPHICS::RgBufferDependency</a></div><div class="ttdoc">Dependencia de un buffer dentro de un render-pass: Indica un buffer que se va a usar dentro de un ren...</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:44</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html">OSK::GRAPHICS::RgImageDependency</a></div><div class="ttdoc">Dependencia de una imagen dentro de un render-pass: Indica una imagen que se va a usar dentro de un r...</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:35</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>RenderPass.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

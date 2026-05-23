@@ -1,0 +1,161 @@
+\doxysection{Referencia de la clase OSK\+::PERSISTENCE\+::Binary\+Block}
+\label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block}\index{OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}}
+
+
+{\ttfamily \#include $<$Binary\+Block.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \textbf{ Write} (const T \&data)
+\item 
+void \textbf{ Write\+String} (std\+::string\+\_\+view string)
+\item 
+void \textbf{ Append\+Block} (const \textbf{ Binary\+Block} \&block)
+\item 
+\textbf{ USize64} \textbf{ Get\+Current\+Size} () const
+\item 
+std\+::span$<$ const \textbf{ TByte} $>$ \textbf{ Get\+Data} () const
+\item 
+\textbf{ Binary\+Block\+Reader} \textbf{ Get\+Reader} () const
+\item 
+\textbf{ Binary\+Block\+Reader} \textbf{ Get\+Reader\+\_\+\+With\+Offset} (\textbf{ USize64} offset) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Binary\+Block} \textbf{ Empty} ()
+\item 
+static \textbf{ Binary\+Block} \textbf{ From\+Data} (const \textbf{ Dynamic\+Array}$<$ \textbf{ TByte} $>$ \&data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Bloque con datos en formato binario. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}!AppendBlock@{AppendBlock}}
+\index{AppendBlock@{AppendBlock}!OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}}
+\doxysubsubsection{AppendBlock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_af9e61c6a409ddd571bc8cc2b03e95e67} 
+void Binary\+Block\+::\+Append\+Block (\begin{DoxyParamCaption}\item[{const \textbf{ Binary\+Block} \&}]{block}{}\end{DoxyParamCaption})}
+
+
+
+Añade los datos del bloque a este bloque. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em block} & Bloque a añadir. \\
+\hline
+\end{DoxyParams}
+\index{OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}!Empty@{Empty}}
+\index{Empty@{Empty}!OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}}
+\doxysubsubsection{Empty()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_af19a6473e035068fc4a8b64d910276c3} 
+\textbf{ Binary\+Block} Binary\+Block\+::\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Devuelve}
+Bloque vacío. 
+\end{DoxyReturn}
+\index{OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}!FromData@{FromData}}
+\index{FromData@{FromData}!OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}}
+\doxysubsubsection{FromData()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_abbaaf1d36d5e56c60e2907f4a9367b11} 
+\textbf{ Binary\+Block} Binary\+Block\+::\+From\+Data (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ TByte} $>$ \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Datos iniciales del bloque. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Bloque con los datos indicados. 
+\end{DoxyReturn}
+\index{OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}!GetCurrentSize@{GetCurrentSize}}
+\index{GetCurrentSize@{GetCurrentSize}!OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}}
+\doxysubsubsection{GetCurrentSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_abbf5553932b3e8fe0ae72b73e73091aa} 
+\textbf{ USize64} Binary\+Block\+::\+Get\+Current\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Tamaño actual del bloque, en bytes. 
+\end{DoxyReturn}
+\index{OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}!GetData@{GetData}}
+\index{GetData@{GetData}!OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}}
+\doxysubsubsection{GetData()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_a81db3e86517c6ed0527ae9ff89c82b29} 
+std\+::span$<$ const \textbf{ TByte} $>$ Binary\+Block\+::\+Get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Datos almacenados. 
+\end{DoxyReturn}
+\index{OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}!GetReader@{GetReader}}
+\index{GetReader@{GetReader}!OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}}
+\doxysubsubsection{GetReader()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_a2d667d79405aa6a699e673158b7d9bb5} 
+\textbf{ Binary\+Block\+Reader} Binary\+Block\+::\+Get\+Reader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Bloque lector, que ocupa todo el bloque. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El bloque {\ttfamily this} debe ser estable. 
+\end{DoxyPrecond}
+\index{OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}!GetReader\_WithOffset@{GetReader\_WithOffset}}
+\index{GetReader\_WithOffset@{GetReader\_WithOffset}!OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}}
+\doxysubsubsection{GetReader\_WithOffset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_ad8c6e024db6e8643eb21630cadac89ef} 
+\textbf{ Binary\+Block\+Reader} Binary\+Block\+::\+Get\+Reader\+\_\+\+With\+Offset (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{offset}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em offset} & Offset inicial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Bloque lector, que ocupa el bloque a partir de la posición {\ttfamily offset}. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El bloque {\ttfamily this} debe ser estable. 
+\end{DoxyPrecond}
+\index{OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}!Write@{Write}}
+\index{Write@{Write}!OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}}
+\doxysubsubsection{Write()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_aaa39a09f955443aaee7da7d50090c804} 
+template$<$typename T$>$ \\
+void OSK\+::\+PERSISTENCE\+::\+Binary\+Block\+::\+Write (\begin{DoxyParamCaption}\item[{const T \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Escribe información en el bloque. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Datos a almacenar. \\
+\hline
+\end{DoxyParams}
+\index{OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}!WriteString@{WriteString}}
+\index{WriteString@{WriteString}!OSK::PERSISTENCE::BinaryBlock@{OSK::PERSISTENCE::BinaryBlock}}
+\doxysubsubsection{WriteString()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_a55412904f944f6ea98ea8cb9313bcc5f} 
+void Binary\+Block\+::\+Write\+String (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{string}{}\end{DoxyParamCaption})}
+
+
+
+Escribe un string en el bloque. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em string} & String a escribir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+El string que se guarda es null-\/terminated. 
+\end{DoxyNote}

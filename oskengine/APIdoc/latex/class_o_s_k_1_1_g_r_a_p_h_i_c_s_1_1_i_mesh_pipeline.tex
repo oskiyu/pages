@@ -1,0 +1,97 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IMesh\+Pipeline}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_mesh_pipeline}\index{OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}}
+
+
+{\ttfamily \#include $<$IMesh\+Pipeline.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IMesh\+Pipeline} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IMesh\+Pipeline})
+\item 
+virtual void \textbf{ Create} (const \textbf{ Material\+Layout} $\ast$layout, \textbf{ IGpu} $\ast$device, const \textbf{ Pipeline\+Create\+Info} \&info)=0
+\item 
+const \textbf{ IPipeline\+Layout} $\ast$ \textbf{ Get\+Layout} () const
+\item 
+virtual void \textbf{ Set\+Debug\+Name} (const std\+::string \&name)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IPipeline\+Layout} $>$ \textbf{ m\+\_\+layout}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}!````~IMeshPipeline@{$\sim$IMeshPipeline}}
+\index{````~IMeshPipeline@{$\sim$IMeshPipeline}!OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}}
+\doxysubsubsection{$\sim$IMeshPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_mesh_pipeline_a1367a74dd606894c212ad2699b12bcb4} 
+virtual OSK\+::\+GRAPHICS\+::\+IMesh\+Pipeline\+::$\sim$\+IMesh\+Pipeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}!Create@{Create}}
+\index{Create@{Create}!OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_mesh_pipeline_a51243acf01ebed11bf83da149fe962df} 
+virtual void OSK\+::\+GRAPHICS\+::\+IMesh\+Pipeline\+::\+Create (\begin{DoxyParamCaption}\item[{const \textbf{ Material\+Layout} $\ast$}]{layout}{, }\item[{\textbf{ IGpu} $\ast$}]{device}{, }\item[{const \textbf{ Pipeline\+Create\+Info} \&}]{info}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em File\+Not\+Found\+Exception} & si no se encuentra los archivo de shader necesarios. \\
+\hline
+{\em \doxyref{Shader\+Loading\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_loading_exception}} & si no se consigue cargar / compilar los shaders. \\
+\hline
+{\em \doxyref{Pipeline\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_creation_exception}} & si no se consigue crear el pipeline. \\
+\hline
+{\em \doxyref{Shader\+Compiling\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_compiling_exception}} & Si ocurre algún error durante la compilación de los shaders. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}!GetLayout@{GetLayout}}
+\index{GetLayout@{GetLayout}!OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}}
+\doxysubsubsection{GetLayout()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_mesh_pipeline_ae9aafdb1eebad418e93de67995906853} 
+const \textbf{ OSK\+::\+GRAPHICS\+::\+IPipeline\+Layout} $\ast$ OSK\+::\+GRAPHICS\+::\+IMesh\+Pipeline\+::\+Get\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el layout usado por este pipeline. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber creado correctamente el pipeline. 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si no se ha creado correctamente el pipeline, devolverá null. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_mesh_pipeline_a037ae896bc2e3d5a64ac8e013478bab0} 
+OSK\+::\+GRAPHICS\+::\+IMesh\+Pipeline\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IMesh\+Pipeline}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}!SetDebugName@{SetDebugName}}
+\index{SetDebugName@{SetDebugName}!OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}}
+\doxysubsubsection{SetDebugName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_object_a4ced0b9bf575c7801e54f046604eee10} 
+virtual void OSK\+::\+GRAPHICS\+::\+IGpu\+Object\+::\+Set\+Debug\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Establece un nombre que lo identifique. Para debug. 
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}!m\_layout@{m\_layout}}
+\index{m\_layout@{m\_layout}!OSK::GRAPHICS::IMeshPipeline@{OSK::GRAPHICS::IMeshPipeline}}
+\doxysubsubsection{m\_layout}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_mesh_pipeline_aa6320e784c680e3d92b171ed19c40381} 
+\textbf{ Unique\+Ptr}$<$\textbf{ IPipeline\+Layout}$>$ OSK\+::\+GRAPHICS\+::\+IMesh\+Pipeline\+::m\+\_\+layout\hspace{0.3cm}{\ttfamily [protected]}}
+

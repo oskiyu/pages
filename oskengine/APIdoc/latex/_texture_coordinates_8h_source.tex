@@ -1,0 +1,38 @@
+\doxysection{Texture\+Coordinates.\+h}
+\label{_texture_coordinates_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/TextureCoordinates.h@{C:/Users/Oscar/source/repos/OSKengine/Source/TextureCoordinates.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Vector4.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{enum\ class}\ TextureCoordsType\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ NORMALIZED,}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ PIXELS}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{struct\ }TextureCoordinates2D\ \{}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ Vector4f\ texCoords;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ TextureCoordsType\ type;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ TextureCoordinates2D\ Normalized(\textcolor{keyword}{const}\ Vector4f\ texCoords)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ texCoords,\ TextureCoordsType::NORMALIZED\ \};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ TextureCoordinates2D\ Pixels(\textcolor{keyword}{const}\ Vector4f\ texCoords)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ texCoords,\ TextureCoordsType::PIXELS\ \};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Vector4f\ GetNormalized(\textcolor{keyword}{const}\ Vector2f\&\ imageSize)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}

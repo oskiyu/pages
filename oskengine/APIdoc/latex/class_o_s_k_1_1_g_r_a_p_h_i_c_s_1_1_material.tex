@@ -1,0 +1,262 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Material}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material}\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+
+
+{\ttfamily \#include $<$Material.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Material} (const \textbf{ GRAPHICS\+::\+Pipeline\+Create\+Info} \&pipeline\+Info, \textbf{ Unique\+Ptr}$<$ \textbf{ Material\+Layout} $>$ \&\&layout, const \textbf{ Vertex\+Info} \&vertex\+Info, \textbf{ Material\+Type} type)
+\item 
+void \textbf{ Set\+Name} (const std\+::string \&name)
+\item 
+const \textbf{ Material\+Layout} $\ast$ \textbf{ Get\+Layout} () const
+\item 
+const \textbf{ IGraphics\+Pipeline} $\ast$ \textbf{ Get\+Graphics\+Pipeline} (const \textbf{ Pipeline\+Key} \&properties) const
+\item 
+const \textbf{ IMesh\+Pipeline} $\ast$ \textbf{ Get\+Mesh\+Pipeline} (const \textbf{ Pipeline\+Key} \&properties) const
+\item 
+const \textbf{ IRaytracing\+Pipeline} $\ast$ \textbf{ Get\+Raytracing\+Pipeline} () const
+\item 
+const \textbf{ ICompute\+Pipeline} $\ast$ \textbf{ Get\+Compute\+Pipeline} () const
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Material\+Instance} $>$ \textbf{ Create\+Instance} ()
+\item 
+\textbf{ Material\+Type} \textbf{ Get\+Material\+Type} () const
+\item 
+const \textbf{ Pipeline\+Create\+Info} \& \textbf{ Get\+Info} () const
+\item 
+std\+::string\+\_\+view \textbf{ Get\+Name} () const
+\item 
+void \textbf{ \+\_\+\+Reload} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Un material define el comportamiento del renderizador con un objeto en concreto. Debe definirse el layout del material, indicando qué slots (y bindings) serán usados en los shaders, además de los propios shaders. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}!Material@{Material}}
+\index{Material@{Material}!OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+\doxysubsubsection{Material()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_ac767a7adcea67ab292b949b4757118ec} 
+Material\+::\+Material (\begin{DoxyParamCaption}\item[{const \textbf{ GRAPHICS\+::\+Pipeline\+Create\+Info} \&}]{pipeline\+Info}{, }\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ Material\+Layout} $>$ \&\&}]{layout}{, }\item[{const \textbf{ Vertex\+Info} \&}]{vertex\+Info}{, }\item[{\textbf{ Material\+Type}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Crea un nuevo material. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pipeline\+Info} & Configuración de los shaders. \\
+\hline
+{\em layout} & Layout de los slots y bindings. \\
+\hline
+{\em vertex\+Info} & Información del tipo de vértice usado, en caso de que se trate de un material gráfico. \\
+\hline
+{\em type} & Tipo de material.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em File\+Not\+Found\+Exception} & si no se encuentra los archivo de shader necesarios. \\
+\hline
+{\em \doxyref{Shader\+Loading\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_loading_exception}} & si no se consigue cargar / compilar los shaders. \\
+\hline
+{\em \doxyref{Pipeline\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_creation_exception}} & si no se consigue crear el pipeline. \\
+\hline
+{\em \doxyref{Shader\+Compiling\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_compiling_exception}} & Si ocurre algún error durante la compilación de los shaders. \\
+\hline
+\end{DoxyExceptions}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}!\_Reload@{\_Reload}}
+\index{\_Reload@{\_Reload}!OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+\doxysubsubsection{\_Reload()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_ac4210d67d6c1f61a3a8b11d56777f714} 
+void Material\+::\+\_\+\+Reload (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Recarga los shaders del material. 
+
+\begin{DoxyWarning}{Atención}
+No usar directamente, hacerlo mediante \doxyref{Material\+System}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_system}.
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em File\+Not\+Found\+Exception} & si no se encuentra los archivo de shader necesarios. \\
+\hline
+{\em \doxyref{Shader\+Loading\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_loading_exception}} & si no se consigue cargar / compilar los shaders. \\
+\hline
+{\em \doxyref{Pipeline\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_creation_exception}} & si no se consigue crear el pipeline. \\
+\hline
+{\em \doxyref{Shader\+Compiling\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_compiling_exception}} & Si ocurre algún error durante la compilación de los shaders. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}!CreateInstance@{CreateInstance}}
+\index{CreateInstance@{CreateInstance}!OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+\doxysubsubsection{CreateInstance()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_a9084b1749232aa0d05c1ca5d05635bc8} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Material\+Instance} $>$ Material\+::\+Create\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Crea y devuelve una nueva instancia de este material. 
+
+\begin{DoxyReturn}{Devuelve}
+Nueva instancia del material. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}!GetComputePipeline@{GetComputePipeline}}
+\index{GetComputePipeline@{GetComputePipeline}!OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+\doxysubsubsection{GetComputePipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_af6fed9156170cd97b18cc42c7e60c952} 
+const \textbf{ ICompute\+Pipeline} $\ast$ Material\+::\+Get\+Compute\+Pipeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el raytracing pipeline. 
+
+\begin{DoxyReturn}{Devuelve}
+Pipeline de trazado de rayos. Será null si el material no es de tipo computación.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El material debe ser un material de computación. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}!GetGraphicsPipeline@{GetGraphicsPipeline}}
+\index{GetGraphicsPipeline@{GetGraphicsPipeline}!OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+\doxysubsubsection{GetGraphicsPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_a9f8c9dd6edf0cf50e2d3a0aae665833c} 
+const \textbf{ IGraphics\+Pipeline} $\ast$ Material\+::\+Get\+Graphics\+Pipeline (\begin{DoxyParamCaption}\item[{const \textbf{ Pipeline\+Key} \&}]{properties}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el graphics pipeline para su uso de renderizado sobre imágenes con los formatos dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em properties} & Formatos de las imágenes de salida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Pipeline.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El material debe ser un material gráfico.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em File\+Not\+Found\+Exception} & si no se encuentra los archivo de shader necesarios. \\
+\hline
+{\em \doxyref{Shader\+Loading\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_loading_exception}} & si no se consigue cargar / compilar los shaders. \\
+\hline
+{\em \doxyref{Pipeline\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_creation_exception}} & si no se consigue crear el pipeline. \\
+\hline
+{\em \doxyref{Shader\+Compiling\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_compiling_exception}} & Si ocurre algún error durante la compilación de los shaders. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}!GetInfo@{GetInfo}}
+\index{GetInfo@{GetInfo}!OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+\doxysubsubsection{GetInfo()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_afccf7fb3ed5f8f7608e7f81899977814} 
+const \textbf{ Pipeline\+Create\+Info} \& Material\+::\+Get\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}!GetLayout@{GetLayout}}
+\index{GetLayout@{GetLayout}!OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+\doxysubsubsection{GetLayout()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_a29f2fe999bf8857dbbb65fb73df335ca} 
+const \textbf{ Material\+Layout} $\ast$ Material\+::\+Get\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el layout del material. 
+
+\begin{DoxyReturn}{Devuelve}
+Layout del material. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}!GetMaterialType@{GetMaterialType}}
+\index{GetMaterialType@{GetMaterialType}!OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+\doxysubsubsection{GetMaterialType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_af145277bed3af0474a0e1abbd2a12fac} 
+\textbf{ Material\+Type} Material\+::\+Get\+Material\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el tipo de material. 
+
+\begin{DoxyReturn}{Devuelve}
+Tipo de material. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}!GetMeshPipeline@{GetMeshPipeline}}
+\index{GetMeshPipeline@{GetMeshPipeline}!OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+\doxysubsubsection{GetMeshPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_af51727990fe51e59cad1087d6aebc5ea} 
+const \textbf{ IMesh\+Pipeline} $\ast$ Material\+::\+Get\+Mesh\+Pipeline (\begin{DoxyParamCaption}\item[{const \textbf{ Pipeline\+Key} \&}]{properties}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el mesh pipeline para su uso de renderizado sobre imágenes con los formatos dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em properties} & Formatos de las imágenes de salida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Pipeline.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El material debe ser un material gráfico.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em File\+Not\+Found\+Exception} & si no se encuentra los archivo de shader necesarios. \\
+\hline
+{\em \doxyref{Shader\+Loading\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_loading_exception}} & si no se consigue cargar / compilar los shaders. \\
+\hline
+{\em \doxyref{Pipeline\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_creation_exception}} & si no se consigue crear el pipeline. \\
+\hline
+{\em \doxyref{Shader\+Compiling\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_compiling_exception}} & Si ocurre algún error durante la compilación de los shaders. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_a42e9fb2d82f2bc07bfd86f184c8d218b} 
+std\+::string\+\_\+view Material\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}!GetRaytracingPipeline@{GetRaytracingPipeline}}
+\index{GetRaytracingPipeline@{GetRaytracingPipeline}!OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+\doxysubsubsection{GetRaytracingPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_ace3413ec1b0f594398434ce7013e1800} 
+const \textbf{ IRaytracing\+Pipeline} $\ast$ Material\+::\+Get\+Raytracing\+Pipeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el raytracing pipeline. 
+
+\begin{DoxyReturn}{Devuelve}
+Pipeline de trazado de rayos. Será null si el material no es de tipo trazado de rayos.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El material debe ser un material de trazado de rayos. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}!SetName@{SetName}}
+\index{SetName@{SetName}!OSK::GRAPHICS::Material@{OSK::GRAPHICS::Material}}
+\doxysubsubsection{SetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_a81bad4c57e869998238a88af6cae6109} 
+void Material\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Establece el nombre del material. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre. \\
+\hline
+\end{DoxyParams}

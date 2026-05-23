@@ -1,0 +1,1361 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IRenderer}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer}\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+
+
+{\ttfamily \#include $<$IRenderer.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IRenderer})
+\item 
+virtual \textbf{ $\sim$\+IRenderer} ()=default
+\item 
+virtual void \textbf{ Initialize} (const std\+::string \&app\+Name, const \textbf{ Version} \&version, \textbf{ IO\+::\+IDisplay} \&display, \textbf{ Present\+Mode} mode)=0
+\item 
+virtual void \textbf{ Reset\+Display} (\textbf{ IO\+::\+IDisplay} \&display)=0
+\item 
+virtual void \textbf{ Close} ()=0
+\item 
+void \textbf{ Close\+Singleton\+Instances} ()
+\item 
+void \textbf{ Close\+Gpu} ()
+\item 
+void \textbf{ Set\+Present\+Mode} (\textbf{ Present\+Mode} mode)
+\item 
+virtual void \textbf{ Handle\+Resize} (const \textbf{ Vector2ui} \&resolution)
+\item 
+virtual void \textbf{ Present\+Frame} ()=0
+\item 
+virtual void \textbf{ Wait\+For\+Completion} ()=0
+\item 
+\textbf{ Shader\+Pass\+Factory} $\ast$ \textbf{ Get\+Shader\+Pass\+Factory} ()
+\item 
+\textbf{ IGpu\+Memory\+Allocator} $\ast$ \textbf{ Get\+Allocator} ()
+\item 
+\textbf{ IGpu} $\ast$ \textbf{ Get\+Gpu} ()
+\item 
+const \textbf{ IGpu} $\ast$ \textbf{ Get\+Gpu} () const
+\item 
+\textbf{ Material\+System} $\ast$ \textbf{ Get\+Material\+System} ()
+\item 
+\textbf{ ISwapchain} $\ast$ \textbf{ \+\_\+\+Get\+Swapchain} ()
+\item 
+\textbf{ Render\+Target} $\ast$ \textbf{ Get\+Final\+Render\+Target} ()
+\item 
+virtual bool \textbf{ Supports\+Raytracing} () const =0
+\item 
+\textbf{ USize32} \textbf{ Get\+Swapchain\+Images\+Count} () const
+\item 
+virtual \textbf{ USize32} \textbf{ Get\+Current\+Frame\+Index} () const =0
+\item 
+virtual \textbf{ USize32} \textbf{ Get\+Current\+Command\+List\+Index} () const =0
+\item 
+\textbf{ USize32} \textbf{ Get\+Current\+Resource\+Index} () const
+\item 
+\textbf{ Render\+Api\+Type} \textbf{ Get\+Render\+Api} () const
+\item 
+void \textbf{ Upload\+Layered\+Image\+To\+Gpu} (\textbf{ Gpu\+Image} $\ast$destination, const \textbf{ TByte} $\ast$data, \textbf{ USize64} num\+Bytes, \textbf{ USize32} num\+Layers, \textbf{ ICommand\+List} $\ast$cmd\+List)
+\item 
+void \textbf{ Upload\+Image\+To\+Gpu} (\textbf{ Gpu\+Image} $\ast$destination, const \textbf{ TByte} $\ast$data, \textbf{ USize64} num\+Bytes, \textbf{ ICommand\+List} $\ast$cmd\+List)
+\item 
+void \textbf{ Upload\+Cubemap\+Image\+To\+Gpu} (\textbf{ Gpu\+Image} $\ast$destination, const \textbf{ TByte} $\ast$data, \textbf{ USize64} num\+Bytes, \textbf{ ICommand\+List} $\ast$cmd\+List)
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IGraphics\+Pipeline} $>$ \textbf{ \+\_\+\+Create\+Graphics\+Pipeline} (const \textbf{ Pipeline\+Create\+Info} \&pipeline\+Info, const \textbf{ Material\+Layout} \&layout, const \textbf{ Vertex\+Info} \&vertex\+Type\+Name)=0
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IMesh\+Pipeline} $>$ \textbf{ \+\_\+\+Create\+Mesh\+Pipeline} (const \textbf{ Pipeline\+Create\+Info} \&pipeline\+Info, const \textbf{ Material\+Layout} \&layout)=0
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IRaytracing\+Pipeline} $>$ \textbf{ \+\_\+\+Create\+Raytracing\+Pipeline} (const \textbf{ Pipeline\+Create\+Info} \&pipeline\+Info, const \textbf{ Material\+Layout} \&layout, const \textbf{ Vertex\+Info} \&vertex\+Type\+Name)=0
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ ICompute\+Pipeline} $>$ \textbf{ \+\_\+\+Create\+Compute\+Pipeline} (const \textbf{ Pipeline\+Create\+Info} \&pipeline\+Info, const \textbf{ Material\+Layout} \&layout)=0
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IMaterial\+Slot} $>$ \textbf{ \+\_\+\+Create\+Material\+Slot} (const std\+::string \&name, const \textbf{ Material\+Layout} \&layout) const =0
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+List} $>$ \textbf{ Create\+Single\+Use\+Command\+List} (\textbf{ Gpu\+Queue\+Type} queue\+Type, std\+::thread\+::id thread\+Id=std\+::this\+\_\+thread\+::get\+\_\+id())
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Pool} $>$ \textbf{ Create\+Command\+Pool} (const \textbf{ ICommand\+Queue} $\ast$target\+Queue\+Type)=0
+\item 
+virtual void \textbf{ Submit\+Single\+Use\+Command\+List} (\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+List} $>$ \&\&command\+List)=0
+\item 
+const \textbf{ IGpu\+Image\+Sampler} \& \textbf{ Get\+Sampler} (const \textbf{ Gpu\+Image\+Sampler\+Desc} \&desc) const
+\item 
+const \textbf{ ICommand\+Queue} $\ast$ \textbf{ Get\+Unified\+Queue} () const
+\item 
+\textbf{ ICommand\+Queue} $\ast$ \textbf{ Get\+Unified\+Queue} ()
+\item 
+const \textbf{ ICommand\+Queue} $\ast$ \textbf{ Get\+Graphics\+Compute\+Queue} () const
+\item 
+\textbf{ ICommand\+Queue} $\ast$ \textbf{ Get\+Graphics\+Compute\+Queue} ()
+\item 
+const \textbf{ ICommand\+Queue} $\ast$ \textbf{ Get\+Presentation\+Queue} () const
+\item 
+bool \textbf{ Use\+Unified\+Command\+Queue} () const
+\item 
+const \textbf{ ICommand\+Queue} $\ast$ \textbf{ Get\+Transfer\+Only\+Queue} () const
+\item 
+bool \textbf{ Has\+Transfer\+Only\+Queue} () const
+\item 
+const \textbf{ ICommand\+Queue} $\ast$ \textbf{ Get\+Main\+Rendering\+Queue} () const
+\item 
+const \textbf{ ICommand\+Queue} $\ast$ \textbf{ Get\+Optimal\+Queue} (\textbf{ Gpu\+Queue\+Type} type) const
+\item 
+bool \textbf{ Is\+Rt\+Active} () const
+\item 
+bool \textbf{ \+\_\+\+Has\+Implicit\+Resize\+Handling} () const
+\item 
+\textbf{ ICommand\+List} $\ast$ \textbf{ Get\+Main\+Command\+List} ()
+\item 
+bool \textbf{ Is\+Open} () const
+\item 
+\textbf{ Material} $\ast$ \textbf{ Get\+Fullscreen\+Rendering\+Material} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ IRenderer} (\textbf{ Render\+Api\+Type} render\+Api\+Type, bool request\+Ray\+Tracing) noexcept
+\item 
+virtual void \textbf{ Create\+Command\+Queues} ()=0
+\item 
+virtual void \textbf{ Create\+Swapchain} (\textbf{ Present\+Mode} mode, const \textbf{ Vector2ui} \&resolution)=0
+\item 
+virtual void \textbf{ Create\+Gpu\+Memory\+Allocator} ()=0
+\item 
+void \textbf{ Create\+Main\+Renderpass} ()
+\item 
+\textbf{ ICommand\+Pool} $\ast$ \textbf{ Get\+Unified\+Command\+Pool} (std\+::thread\+::id thread\+Id)
+\item 
+\textbf{ ICommand\+Pool} $\ast$ \textbf{ Get\+Graphics\+Compute\+Command\+Pool} (std\+::thread\+::id thread\+Id)
+\item 
+bool \textbf{ Use\+Unified\+Command\+Pool} () const
+\item 
+\textbf{ ICommand\+Pool} $\ast$ \textbf{ Get\+Transfer\+Only\+Command\+Pool} (std\+::thread\+::id thread\+Id)
+\item 
+bool \textbf{ Has\+Transfer\+Only\+Command\+Pool} () const
+\item 
+bool \textbf{ Is\+Rt\+Requested} () const
+\item 
+void \textbf{ Register\+Unified\+Command\+Pool} (const \textbf{ ICommand\+Queue} $\ast$unified\+Queue)
+\item 
+void \textbf{ Register\+Graphics\+Commpute\+Command\+Pool} (const \textbf{ ICommand\+Queue} $\ast$graphics\+Compute\+Queue)
+\item 
+void \textbf{ Register\+Transfer\+Only\+Command\+Pool} (const \textbf{ ICommand\+Queue} $\ast$transfer\+Queue)
+\item 
+void \textbf{ \+\_\+\+Set\+Unified\+Command\+Queue} (\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Queue} $>$ \&\&command\+Queue)
+\item 
+void \textbf{ \+\_\+\+Set\+Graphics\+Commpute\+Command\+Queue} (\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Queue} $>$ \&\&command\+Queue)
+\item 
+void \textbf{ \+\_\+\+Set\+Presentation\+Command\+Queue} (\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Queue} $>$ \&\&command\+Queue)
+\item 
+void \textbf{ \+\_\+\+Set\+Transfer\+Only\+Command\+Queue} (\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Queue} $>$ \&\&command\+Queue)
+\item 
+void \textbf{ \+\_\+\+Set\+Main\+Command\+List} (\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+List} $>$ \&\&command\+List)
+\item 
+void \textbf{ \+\_\+\+Set\+Gpu} (\textbf{ Unique\+Ptr}$<$ \textbf{ IGpu} $>$ \&\&gpu)
+\item 
+void \textbf{ \+\_\+\+Set\+Memory\+Allocator} (\textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Allocator} $>$ \&\&allocator)
+\item 
+void \textbf{ \+\_\+\+Set\+Swapchain} (\textbf{ Unique\+Ptr}$<$ \textbf{ ISwapchain} $>$ \&\&swapchain)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Render\+Target} $>$ \textbf{ m\+\_\+final\+Render\+Target}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+List} $>$ $>$ \textbf{ m\+\_\+single\+Time\+Command\+Lists}
+\item 
+bool \textbf{ m\+\_\+is\+First\+Render} = true
+\item 
+bool \textbf{ m\+\_\+implicit\+Resize\+Handling} = false
+\item 
+bool \textbf{ m\+\_\+is\+Rt\+Active} = false
+\item 
+\textbf{ Mutex\+Holder} \textbf{ m\+\_\+queue\+Submit\+Mutex}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase singleton de la arquitectura de renderizado. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!````~IRenderer@{$\sim$IRenderer}}
+\index{````~IRenderer@{$\sim$IRenderer}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{$\sim$IRenderer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_aa168ea76a7cb69e1f6483080f7bb05d3} 
+virtual OSK\+::\+GRAPHICS\+::\+IRenderer\+::$\sim$\+IRenderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!IRenderer@{IRenderer}}
+\index{IRenderer@{IRenderer}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{IRenderer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a08e436ce521a68d748f0885d586def3c} 
+IRenderer\+::\+IRenderer (\begin{DoxyParamCaption}\item[{\textbf{ Render\+Api\+Type}}]{render\+Api\+Type}{, }\item[{bool}]{request\+Ray\+Tracing}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Inicializa las variables indicadas, así como el sistema de materiales. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em render\+Api\+Type} & Tipo de API gráfica nativa. \\
+\hline
+{\em request\+Ray\+Tracing} & Si debe cargar propiedades de trazado de rayos. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_CreateComputePipeline@{\_CreateComputePipeline}}
+\index{\_CreateComputePipeline@{\_CreateComputePipeline}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_CreateComputePipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a44140f26563af8314a811ddd1291bde1} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ ICompute\+Pipeline} $>$ OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+\_\+\+Create\+Compute\+Pipeline (\begin{DoxyParamCaption}\item[{const \textbf{ Pipeline\+Create\+Info} \&}]{pipeline\+Info}{, }\item[{const \textbf{ Material\+Layout} \&}]{layout}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em File\+Not\+Found\+Exception} & si no se encuentra los archivo de shader necesarios. \\
+\hline
+{\em \doxyref{Shader\+Loading\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_loading_exception}} & si no se consigue cargar / compilar los shaders. \\
+\hline
+{\em \doxyref{Pipeline\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_creation_exception}} & si no se consigue crear el pipeline. \\
+\hline
+{\em \doxyref{Shader\+Compiling\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_compiling_exception}} & Si ocurre algún error durante la compilación de los shaders.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_CreateGraphicsPipeline@{\_CreateGraphicsPipeline}}
+\index{\_CreateGraphicsPipeline@{\_CreateGraphicsPipeline}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_CreateGraphicsPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_adf83680f89ee077bb0a96032f1ee0fa6} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IGraphics\+Pipeline} $>$ OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+\_\+\+Create\+Graphics\+Pipeline (\begin{DoxyParamCaption}\item[{const \textbf{ Pipeline\+Create\+Info} \&}]{pipeline\+Info}{, }\item[{const \textbf{ Material\+Layout} \&}]{layout}{, }\item[{const \textbf{ Vertex\+Info} \&}]{vertex\+Type\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em File\+Not\+Found\+Exception} & si no se encuentra los archivo de shader necesarios. \\
+\hline
+{\em \doxyref{Shader\+Loading\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_loading_exception}} & si no se consigue cargar / compilar los shaders. \\
+\hline
+{\em \doxyref{Pipeline\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_creation_exception}} & si no se consigue crear el pipeline. \\
+\hline
+{\em \doxyref{Shader\+Compiling\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_compiling_exception}} & Si ocurre algún error durante la compilación de los shaders.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_CreateMaterialSlot@{\_CreateMaterialSlot}}
+\index{\_CreateMaterialSlot@{\_CreateMaterialSlot}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_CreateMaterialSlot()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1730b1f01ffbf3829fb7da0104e7fd0f} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IMaterial\+Slot} $>$ OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+\_\+\+Create\+Material\+Slot (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const \textbf{ Material\+Layout} \&}]{layout}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Descriptor\+Pool\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_descriptor_pool_creation_exception}} & Si hay algún error nativo durante la creación del material slot. \\
+\hline
+{\em \doxyref{Descriptor\+Layout\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_descriptor_layout_creation_exception}} & Si hay algún error nativo durante la creación del material slot. \\
+\hline
+{\em \doxyref{Material\+Slot\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_slot_creation_exception}} & Si hay algún error durante la creación del material slot.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_CreateMeshPipeline@{\_CreateMeshPipeline}}
+\index{\_CreateMeshPipeline@{\_CreateMeshPipeline}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_CreateMeshPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_af42581d8d2fe63ab092acaad955b0220} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IMesh\+Pipeline} $>$ OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+\_\+\+Create\+Mesh\+Pipeline (\begin{DoxyParamCaption}\item[{const \textbf{ Pipeline\+Create\+Info} \&}]{pipeline\+Info}{, }\item[{const \textbf{ Material\+Layout} \&}]{layout}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em File\+Not\+Found\+Exception} & si no se encuentra los archivo de shader necesarios. \\
+\hline
+{\em \doxyref{Shader\+Loading\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_loading_exception}} & si no se consigue cargar / compilar los shaders. \\
+\hline
+{\em \doxyref{Pipeline\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_creation_exception}} & si no se consigue crear el pipeline. \\
+\hline
+{\em \doxyref{Shader\+Compiling\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_compiling_exception}} & Si ocurre algún error durante la compilación de los shaders.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_CreateRaytracingPipeline@{\_CreateRaytracingPipeline}}
+\index{\_CreateRaytracingPipeline@{\_CreateRaytracingPipeline}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_CreateRaytracingPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a6a9a7594c324815096090efe76bebc28} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IRaytracing\+Pipeline} $>$ OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+\_\+\+Create\+Raytracing\+Pipeline (\begin{DoxyParamCaption}\item[{const \textbf{ Pipeline\+Create\+Info} \&}]{pipeline\+Info}{, }\item[{const \textbf{ Material\+Layout} \&}]{layout}{, }\item[{const \textbf{ Vertex\+Info} \&}]{vertex\+Type\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em File\+Not\+Found\+Exception} & si no se encuentra los archivo de shader necesarios. \\
+\hline
+{\em \doxyref{Shader\+Loading\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_loading_exception}} & si no se consigue cargar / compilar los shaders. \\
+\hline
+{\em \doxyref{Pipeline\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_creation_exception}} & si no se consigue crear el pipeline. \\
+\hline
+{\em \doxyref{Shader\+Compiling\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_compiling_exception}} & Si ocurre algún error durante la compilación de los shaders.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_GetSwapchain@{\_GetSwapchain}}
+\index{\_GetSwapchain@{\_GetSwapchain}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_GetSwapchain()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a8b5d4b872ac4135d04471b140fffa4d6} 
+\textbf{ ISwapchain} $\ast$ IRenderer\+::\+\_\+\+Get\+Swapchain (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Swapchain de la aplicación. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se ha llamado a \doxyref{IRenderer\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1bb437bf5b603c525133e989a29b2fb3}. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyWarning}{Atención}
+Función interna, no usar. 
+\end{DoxyWarning}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_HasImplicitResizeHandling@{\_HasImplicitResizeHandling}}
+\index{\_HasImplicitResizeHandling@{\_HasImplicitResizeHandling}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_HasImplicitResizeHandling()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a307921e2de08c4749fa4d55c34a9b53f} 
+bool IRenderer\+::\+\_\+\+Has\+Implicit\+Resize\+Handling (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si el cambio de tamaño de la ventana se maneja implícitamente en el renderizador. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_SetGpu@{\_SetGpu}}
+\index{\_SetGpu@{\_SetGpu}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_SetGpu()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a7fdc7f98e1ea3a8dd35ce77cc83869e1} 
+void IRenderer\+::\+\_\+\+Set\+Gpu (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ IGpu} $>$ \&\&}]{gpu}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_SetGraphicsCommputeCommandQueue@{\_SetGraphicsCommputeCommandQueue}}
+\index{\_SetGraphicsCommputeCommandQueue@{\_SetGraphicsCommputeCommandQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_SetGraphicsCommputeCommandQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a063b31c0a1f18384e553b1d9bccbcb20} 
+void IRenderer\+::\+\_\+\+Set\+Graphics\+Commpute\+Command\+Queue (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Queue} $>$ \&\&}]{command\+Queue}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_SetMainCommandList@{\_SetMainCommandList}}
+\index{\_SetMainCommandList@{\_SetMainCommandList}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_SetMainCommandList()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_aab2d71327b63d2e62b45af8826a66daa} 
+void IRenderer\+::\+\_\+\+Set\+Main\+Command\+List (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+List} $>$ \&\&}]{command\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_SetMemoryAllocator@{\_SetMemoryAllocator}}
+\index{\_SetMemoryAllocator@{\_SetMemoryAllocator}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_SetMemoryAllocator()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a8be0f661c473d6c201272db6e3cb9ea0} 
+void IRenderer\+::\+\_\+\+Set\+Memory\+Allocator (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Allocator} $>$ \&\&}]{allocator}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_SetPresentationCommandQueue@{\_SetPresentationCommandQueue}}
+\index{\_SetPresentationCommandQueue@{\_SetPresentationCommandQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_SetPresentationCommandQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a10ffccef761f147c7b638c171bad044d} 
+void IRenderer\+::\+\_\+\+Set\+Presentation\+Command\+Queue (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Queue} $>$ \&\&}]{command\+Queue}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_SetSwapchain@{\_SetSwapchain}}
+\index{\_SetSwapchain@{\_SetSwapchain}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_SetSwapchain()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a542b0ecabed0cf209e79b9445fd7c69b} 
+void IRenderer\+::\+\_\+\+Set\+Swapchain (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ ISwapchain} $>$ \&\&}]{swapchain}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_SetTransferOnlyCommandQueue@{\_SetTransferOnlyCommandQueue}}
+\index{\_SetTransferOnlyCommandQueue@{\_SetTransferOnlyCommandQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_SetTransferOnlyCommandQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a76a63aa3075d63c4f8345a50084881fe} 
+void IRenderer\+::\+\_\+\+Set\+Transfer\+Only\+Command\+Queue (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Queue} $>$ \&\&}]{command\+Queue}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!\_SetUnifiedCommandQueue@{\_SetUnifiedCommandQueue}}
+\index{\_SetUnifiedCommandQueue@{\_SetUnifiedCommandQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{\_SetUnifiedCommandQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_abd6e8f73cf49ff7bfee46d615c79cca4} 
+void IRenderer\+::\+\_\+\+Set\+Unified\+Command\+Queue (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Queue} $>$ \&\&}]{command\+Queue}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!Close@{Close}}
+\index{Close@{Close}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{Close()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_ace147aba8abf236698e2c46238aa7561} 
+virtual void OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Cierra el renderizador. 
+
+\begin{DoxyNote}{Nota}
+También se llama en el destructor. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!CloseGpu@{CloseGpu}}
+\index{CloseGpu@{CloseGpu}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{CloseGpu()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_ab0643654da3931e0c1809ee5ddfd7be0} 
+void IRenderer\+::\+Close\+Gpu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cierra la GPU. 
+
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!CloseSingletonInstances@{CloseSingletonInstances}}
+\index{CloseSingletonInstances@{CloseSingletonInstances}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{CloseSingletonInstances()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a98e94c806d1aeb97748c9b1c33e93d4b} 
+void IRenderer\+::\+Close\+Singleton\+Instances (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cierra los siguientes elementos del renderizador\+: 
+
+
+\begin{DoxyItemize}
+\item Swapchain.
+\item Render target final.
+\item Sistema de materiales.
+\item Alojador de memoria VRAM.
+\end{DoxyItemize}
+
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!CreateCommandPool@{CreateCommandPool}}
+\index{CreateCommandPool@{CreateCommandPool}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{CreateCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a50f75ea569defbb30fbb0cfffa41cc32} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Pool} $>$ OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Create\+Command\+Pool (\begin{DoxyParamCaption}\item[{const \textbf{ ICommand\+Queue} $\ast$}]{target\+Queue\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em target\+Queue\+Type} & Cola de referencia, para la cual los comandos creados por el pool devuelto deben ser compatibles. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nueva cola de comandos.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily target\+Queue\+Type} debe ser un puntero estable.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!CreateCommandQueues@{CreateCommandQueues}}
+\index{CreateCommandQueues@{CreateCommandQueues}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{CreateCommandQueues()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a68c35e96c0520bb5121761b79bb5bf61} 
+virtual void OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Create\+Command\+Queues (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Command\+Pool\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_pool_creation_exception}} & Si ocurre algún error. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!CreateGpuMemoryAllocator@{CreateGpuMemoryAllocator}}
+\index{CreateGpuMemoryAllocator@{CreateGpuMemoryAllocator}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{CreateGpuMemoryAllocator()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_aeddc71ea58f84ac13bf7017133a8d2b0} 
+virtual void OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Create\+Gpu\+Memory\+Allocator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!CreateMainRenderpass@{CreateMainRenderpass}}
+\index{CreateMainRenderpass@{CreateMainRenderpass}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{CreateMainRenderpass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a71ad70cf2d9210887d1b6f67fc0b7a84} 
+void IRenderer\+::\+Create\+Main\+Renderpass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Crea el renderpass que permite renderizar sobre las imágenes del swapchain. 
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!CreateSingleUseCommandList@{CreateSingleUseCommandList}}
+\index{CreateSingleUseCommandList@{CreateSingleUseCommandList}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{CreateSingleUseCommandList()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_ae45f135fc80957735b5623e121e84fcf} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+List} $>$ IRenderer\+::\+Create\+Single\+Use\+Command\+List (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Queue\+Type}}]{queue\+Type}{, }\item[{std\+::thread\+::id}]{thread\+Id}{ = {\ttfamily std\+:\+:this\+\_\+thread\+:\+:get\+\_\+id()}}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Crea una lista de comandos para un único uso. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em queue\+Type} & Tipo de cola en la que se enviará. \\
+\hline
+{\em thread\+Id} & ID del hilo que llama a la función.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily queue\+Type} debe ser distinto a {\ttfamily \doxyref{Gpu\+Queue\+Type\+::\+PRESENTATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_af480a36d7bec77341500daf8dda20f1da740819a7dc6b0b1a8a7fa0c871d9b878}}. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si {\ttfamily queue\+Type} es {\ttfamily \doxyref{Gpu\+Queue\+Type\+::\+PRESENTATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_af480a36d7bec77341500daf8dda20f1da740819a7dc6b0b1a8a7fa0c871d9b878}}.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!CreateSwapchain@{CreateSwapchain}}
+\index{CreateSwapchain@{CreateSwapchain}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{CreateSwapchain()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_aac4513c1ee1b3eb3d37610ef47325c55} 
+virtual void OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Create\+Swapchain (\begin{DoxyParamCaption}\item[{\textbf{ Present\+Mode}}]{mode}{, }\item[{const \textbf{ Vector2ui} \&}]{resolution}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetAllocator@{GetAllocator}}
+\index{GetAllocator@{GetAllocator}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetAllocator()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a100a7c8d1a62814d11637de0534003b9} 
+\textbf{ IGpu\+Memory\+Allocator} $\ast$ IRenderer\+::\+Get\+Allocator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Puntero al asignador de memoria de la GPU. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se ha llamado a \doxyref{IRenderer\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1bb437bf5b603c525133e989a29b2fb3}. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria.. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetCurrentCommandListIndex@{GetCurrentCommandListIndex}}
+\index{GetCurrentCommandListIndex@{GetCurrentCommandListIndex}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetCurrentCommandListIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a59e1204fb4bf9c1cbb643cf45259680d} 
+virtual \textbf{ USize32} OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Get\+Current\+Command\+List\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+índidce de la lista de comandos que será usada en el próximo fotograma. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se ha llamado a \doxyref{IRenderer\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1bb437bf5b603c525133e989a29b2fb3}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetCurrentFrameIndex@{GetCurrentFrameIndex}}
+\index{GetCurrentFrameIndex@{GetCurrentFrameIndex}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetCurrentFrameIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_ad6ae3773acf9eb826d6009abf7a334a3} 
+virtual \textbf{ USize32} OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Get\+Current\+Frame\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Índidce del próximo fotograma que será presentado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se ha llamado a \doxyref{IRenderer\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1bb437bf5b603c525133e989a29b2fb3}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetCurrentResourceIndex@{GetCurrentResourceIndex}}
+\index{GetCurrentResourceIndex@{GetCurrentResourceIndex}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetCurrentResourceIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_ada20f4392461a0f6e1da27c46018dd0b} 
+\textbf{ UIndex32} IRenderer\+::\+Get\+Current\+Resource\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Índidce de los recursos procesados en el fotograma actual. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se ha llamado a \doxyref{IRenderer\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1bb437bf5b603c525133e989a29b2fb3}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetFinalRenderTarget@{GetFinalRenderTarget}}
+\index{GetFinalRenderTarget@{GetFinalRenderTarget}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetFinalRenderTarget()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_ab0b4b7e4c8152d189b16d45dd994997b} 
+\textbf{ Render\+Target} $\ast$ IRenderer\+::\+Get\+Final\+Render\+Target (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el render target que renderiza sobre la imagen final del swapchain. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se ha llamado a \doxyref{IRenderer\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1bb437bf5b603c525133e989a29b2fb3}. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetFullscreenRenderingMaterial@{GetFullscreenRenderingMaterial}}
+\index{GetFullscreenRenderingMaterial@{GetFullscreenRenderingMaterial}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetFullscreenRenderingMaterial()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_afae33f04095cf6d7d888845d4037c442} 
+\textbf{ Material} $\ast$ IRenderer\+::\+Get\+Fullscreen\+Rendering\+Material (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Material}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material} que se puede usar para renderizar imágenes en patnalla completa.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetGpu@{GetGpu}}
+\index{GetGpu@{GetGpu}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetGpu()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_abcf98a9f16ed31387a064e5ed3d473af} 
+\textbf{ IGpu} $\ast$ IRenderer\+::\+Get\+Gpu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Puntero al objeto Gpu. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se ha llamado a \doxyref{IRenderer\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1bb437bf5b603c525133e989a29b2fb3}. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetGpu@{GetGpu}}
+\index{GetGpu@{GetGpu}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetGpu()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a6fc738f59d583e174c32af1ad7613169} 
+const \textbf{ IGpu} $\ast$ IRenderer\+::\+Get\+Gpu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Puntero al objeto Gpu. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se ha llamado a \doxyref{IRenderer\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1bb437bf5b603c525133e989a29b2fb3}. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetGraphicsComputeCommandPool@{GetGraphicsComputeCommandPool}}
+\index{GetGraphicsComputeCommandPool@{GetGraphicsComputeCommandPool}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetGraphicsComputeCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_adfd32c939ebca116533f28b38d2ac218} 
+\textbf{ ICommand\+Pool} $\ast$ IRenderer\+::\+Get\+Graphics\+Compute\+Command\+Pool (\begin{DoxyParamCaption}\item[{std\+::thread\+::id}]{thread\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyReturn}{Devuelve}
+Pool de comandos válido para comandos gráficos, de computación y de transferencia. las listas creadas con este pool deben ser mandadas a la cola {\ttfamily \doxyref{Get\+Graphics\+Compute\+Queue()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a06cd75f9c4f81e46803134da1a6ed878}}.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em thread\+Id} & ID del hilo que llama a la función.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo.
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily \doxyref{Use\+Unified\+Command\+Pool()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a7c7a16764cf6155c6b8d2c6db4a5492b}} debe devolver {\ttfamily false}. 
+
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado.
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Atención}
+No soporta operaciones de presentación. 
+\end{DoxyWarning}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetGraphicsComputeQueue@{GetGraphicsComputeQueue}}
+\index{GetGraphicsComputeQueue@{GetGraphicsComputeQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetGraphicsComputeQueue()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a06cd75f9c4f81e46803134da1a6ed878} 
+\textbf{ ICommand\+Queue} $\ast$ IRenderer\+::\+Get\+Graphics\+Compute\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetGraphicsComputeQueue@{GetGraphicsComputeQueue}}
+\index{GetGraphicsComputeQueue@{GetGraphicsComputeQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetGraphicsComputeQueue()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a64b3384b0091399c1cc2366eefce94fd} 
+const \textbf{ ICommand\+Queue} $\ast$ IRenderer\+::\+Get\+Graphics\+Compute\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Cola de GPU para la ejecución de comandos gráficos, de computación y de transferencia.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria.
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily \doxyref{Use\+Unified\+Command\+Queue()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a11aac5b24a8f43a354e2d2ec547946e4}} debe devolver {\ttfamily false}. 
+
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado.
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Atención}
+No soporta operaciones de presentación.
+\end{DoxyWarning}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetMainCommandList@{GetMainCommandList}}
+\index{GetMainCommandList@{GetMainCommandList}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetMainCommandList()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a4aeaad107ef7bd53cba0ee3da6f563da} 
+\textbf{ ICommand\+List} $\ast$ IRenderer\+::\+Get\+Main\+Command\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Lista de comandos principal, sobre la cual grabar los comandos de renderizado.
+\end{DoxyReturn}
+Esta lista soporta comandos gráficos, de computación y de transferencia.
+
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria.
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetMainRenderingQueue@{GetMainRenderingQueue}}
+\index{GetMainRenderingQueue@{GetMainRenderingQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetMainRenderingQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a171f6ebb04a690e8953de3984a31df76} 
+const \textbf{ ICommand\+Queue} $\ast$ IRenderer\+::\+Get\+Main\+Rendering\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Cola de comandos que sirve para el renderizado general.
+\end{DoxyReturn}
+La cola soportará, al menos, comandos gráficos, de computación y de transferencia.
+
+Si {\ttfamily \`{}\+Use\+Unified\+Command\+Queue}()\`{} es {\ttfamily true}, entonces devuelve {\ttfamily \doxyref{Get\+Unified\+Queue()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a5c6157e0036b2a66f5903b8e8764f049}}.
+
+Si {\ttfamily \`{}\+Use\+Unified\+Command\+Queue}()\`{} es {\ttfamily false}, entonces devuelve {\ttfamily \doxyref{Get\+Graphics\+Compute\+Queue()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a06cd75f9c4f81e46803134da1a6ed878}}.
+
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetMaterialSystem@{GetMaterialSystem}}
+\index{GetMaterialSystem@{GetMaterialSystem}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetMaterialSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1f226beedddd4139c129891b23af529b} 
+\textbf{ Material\+System} $\ast$ IRenderer\+::\+Get\+Material\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Puntero al sistema de materiales. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se ha llamado a \doxyref{IRenderer\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1bb437bf5b603c525133e989a29b2fb3}. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetOptimalQueue@{GetOptimalQueue}}
+\index{GetOptimalQueue@{GetOptimalQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetOptimalQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a9dc8c9d5933f38ebd5098cd69ebfe9f1} 
+const \textbf{ ICommand\+Queue} $\ast$ IRenderer\+::\+Get\+Optimal\+Queue (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Queue\+Type}}]{type}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em type} & Tipo de cola de GPU. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Cola referenciada.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetPresentationQueue@{GetPresentationQueue}}
+\index{GetPresentationQueue@{GetPresentationQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetPresentationQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a8f39e08a0c315691de3bb54cf763cbd7} 
+const \textbf{ ICommand\+Queue} $\ast$ IRenderer\+::\+Get\+Presentation\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Cola de GPU para ejecución de operaciones de presentación únicamente.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria.
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily \doxyref{Use\+Unified\+Command\+Queue()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a11aac5b24a8f43a354e2d2ec547946e4}} debe devolver {\ttfamily false}. 
+
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado.
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Atención}
+No soporta operaciones de gráficos. 
+
+No soporta operaciones de computación. 
+
+No soporta operaciones de transferencia.
+\end{DoxyWarning}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetRenderApi@{GetRenderApi}}
+\index{GetRenderApi@{GetRenderApi}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetRenderApi()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a5715d7eea84cc2dae21fb5ef208e5a8e} 
+\textbf{ Render\+Api\+Type} IRenderer\+::\+Get\+Render\+Api (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+API de renderizado de bajo nivel del renderizador actual. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetSampler@{GetSampler}}
+\index{GetSampler@{GetSampler}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetSampler()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a5d77b29f363a554a46ab03c1cdf3e460} 
+const \textbf{ IGpu\+Image\+Sampler} \& IRenderer\+::\+Get\+Sampler (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Image\+Sampler\+Desc} \&}]{desc}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetShaderPassFactory@{GetShaderPassFactory}}
+\index{GetShaderPassFactory@{GetShaderPassFactory}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetShaderPassFactory()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a84c29bbaf244e830f851f0c0f7b5710f} 
+\textbf{ Shader\+Pass\+Factory} $\ast$ IRenderer\+::\+Get\+Shader\+Pass\+Factory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetSwapchainImagesCount@{GetSwapchainImagesCount}}
+\index{GetSwapchainImagesCount@{GetSwapchainImagesCount}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetSwapchainImagesCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a08babe0ff626006e6e452303430297f6} 
+\textbf{ USize32} IRenderer\+::\+Get\+Swapchain\+Images\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el número de imágenes del swapchain. Para recursos que necesiten tener una copia por imagen del swapchain. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se ha llamado a \doxyref{IRenderer\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1bb437bf5b603c525133e989a29b2fb3}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetTransferOnlyCommandPool@{GetTransferOnlyCommandPool}}
+\index{GetTransferOnlyCommandPool@{GetTransferOnlyCommandPool}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetTransferOnlyCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1d76dc5182d532b5866f4ec1f19a0b72} 
+\textbf{ ICommand\+Pool} $\ast$ IRenderer\+::\+Get\+Transfer\+Only\+Command\+Pool (\begin{DoxyParamCaption}\item[{std\+::thread\+::id}]{thread\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyReturn}{Devuelve}
+Pool de comandos exclusívamente de transferencia.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily \doxyref{Has\+Transfer\+Only\+Command\+Pool()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a3abeccf2f7fe59a1335b484f0f65b653}} debe devolver {\ttfamily true}. 
+
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parámetros}
+{\em thread\+Id} & ID del hilo que llama a la función.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo.
+\end{DoxyParagraph}
+\begin{DoxyWarning}{Atención}
+No soporta operaciones de gráficos. 
+
+No soporta operaciones de computación. 
+
+No soporta operaciones de transferencia. 
+\end{DoxyWarning}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetTransferOnlyQueue@{GetTransferOnlyQueue}}
+\index{GetTransferOnlyQueue@{GetTransferOnlyQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetTransferOnlyQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a4259fa2e298d55a14c22e20015b958de} 
+const \textbf{ ICommand\+Queue} $\ast$ IRenderer\+::\+Get\+Transfer\+Only\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Cola de GPU para ejecución de operaciones de transferencia únicamente.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria.
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily \doxyref{Has\+Transfer\+Only\+Queue()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a58e056fad2ae1eb9d13cbbb05a9c0bd9}} debe devolver {\ttfamily true}. 
+
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado.
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Atención}
+No soporta operaciones de gráficos. 
+
+No soporta operaciones de computación. 
+
+No soporta operaciones de presentación.
+\end{DoxyWarning}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetUnifiedCommandPool@{GetUnifiedCommandPool}}
+\index{GetUnifiedCommandPool@{GetUnifiedCommandPool}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetUnifiedCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a427974cc6ac12883d256af1eea7749c8} 
+\textbf{ ICommand\+Pool} $\ast$ IRenderer\+::\+Get\+Unified\+Command\+Pool (\begin{DoxyParamCaption}\item[{std\+::thread\+::id}]{thread\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyReturn}{Devuelve}
+Pool de comandos válido para todo tipo de comandos. Las listas creadas con este pool deben ser mandadas a la cola unificada.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em thread\+Id} & ID del hilo que llama a la función.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo.
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily \doxyref{Use\+Unified\+Command\+Pool()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a7c7a16764cf6155c6b8d2c6db4a5492b}} debe devolver {\ttfamily true}. 
+
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetUnifiedQueue@{GetUnifiedQueue}}
+\index{GetUnifiedQueue@{GetUnifiedQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetUnifiedQueue()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a5c6157e0036b2a66f5903b8e8764f049} 
+\textbf{ ICommand\+Queue} $\ast$ IRenderer\+::\+Get\+Unified\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!GetUnifiedQueue@{GetUnifiedQueue}}
+\index{GetUnifiedQueue@{GetUnifiedQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{GetUnifiedQueue()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_af6d804b5bb67e4c0e3daace9c5c4236b} 
+const \textbf{ ICommand\+Queue} $\ast$ IRenderer\+::\+Get\+Unified\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Cola de GPU unificada, para ejecutar todo tipo de comandos
+\begin{DoxyItemize}
+\item operaciones de presentación.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria.
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily \doxyref{Use\+Unified\+Command\+Queue()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a11aac5b24a8f43a354e2d2ec547946e4}} debe devolver {\ttfamily true}. 
+
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!HandleResize@{HandleResize}}
+\index{HandleResize@{HandleResize}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{HandleResize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1169a24a24af680f5ff7344cadecfffb} 
+void IRenderer\+::\+Handle\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{resolution}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reconfigura el swapchain al cambiar de tamaño la ventana. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Nuevo tamaño de la imagen. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!HasTransferOnlyCommandPool@{HasTransferOnlyCommandPool}}
+\index{HasTransferOnlyCommandPool@{HasTransferOnlyCommandPool}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{HasTransferOnlyCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a3abeccf2f7fe59a1335b484f0f65b653} 
+bool IRenderer\+::\+Has\+Transfer\+Only\+Command\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si se posee una cola para transferencia de recursos.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!HasTransferOnlyQueue@{HasTransferOnlyQueue}}
+\index{HasTransferOnlyQueue@{HasTransferOnlyQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{HasTransferOnlyQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a58e056fad2ae1eb9d13cbbb05a9c0bd9} 
+bool IRenderer\+::\+Has\+Transfer\+Only\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si dispone de una cola de comandos exclusiva para operaciones de transferencia.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{Initialize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1bb437bf5b603c525133e989a29b2fb3} 
+virtual void OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Initialize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{app\+Name}{, }\item[{const \textbf{ Version} \&}]{version}{, }\item[{\textbf{ IO\+::\+IDisplay} \&}]{display}{, }\item[{\textbf{ Present\+Mode}}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Inicializa todo el sistema de renderizado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em app\+Name} & Nombre de la aplicación / juego. \\
+\hline
+{\em version} & Versión de la aplicación / juego. \\
+\hline
+{\em display} & Ventana enlazada (sobre la que se renderizará el juego). \\
+\hline
+{\em mode} & Modo de sincronización vertical.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Gpu\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_not_found_exception}} & Si no se encuentra ninguna GPU compatible. \\
+\hline
+{\em \doxyref{Logical\+Device\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_logical_device_creation_exception}} & Si ocurre algún error al establecer la conexión lógica con la GPU elegida. \\
+\hline
+{\em \doxyref{Command\+Pool\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_pool_creation_exception}} & Si ocurre algún error al crear las pools de comandos. \\
+\hline
+{\em \doxyref{Renderer\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderer_creation_exception}} & Si ocurre algún otro error. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!IsOpen@{IsOpen}}
+\index{IsOpen@{IsOpen}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{IsOpen()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a6c686e7448f5b58d4a82bd65a7edd525} 
+bool IRenderer\+::\+Is\+Open (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si el renderizador ha sido inicializado, false en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!IsRtActive@{IsRtActive}}
+\index{IsRtActive@{IsRtActive}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{IsRtActive()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a39cec2c1506cbde7b9da2b75cdebddf8} 
+bool IRenderer\+::\+Is\+Rt\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si la funcionalidad de raytracing está activa. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!IsRtRequested@{IsRtRequested}}
+\index{IsRtRequested@{IsRtRequested}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{IsRtRequested()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_acf22c29d74bcd9d7e992d5f59becb681} 
+bool IRenderer\+::\+Is\+Rt\+Requested (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a93e97ba3e814f6e1a3655c162739ec1f} 
+OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IRenderer}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!PresentFrame@{PresentFrame}}
+\index{PresentFrame@{PresentFrame}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{PresentFrame()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a90aa9f12a25efdcc002be083fdc9c701} 
+virtual void OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Present\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Una vez se han grabado todos los comandos, se debe iniciar su ejecución en la GPU para ser renderizados. 
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Command\+List\+Submit\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_submit_exception}} & Si ocurre algún error al mandar las listas. \\
+\hline
+{\em \doxyref{Command\+Queue\+Submit\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_queue_submit_exception}} & Si ocurre algún error al ejecutar las colas. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!RegisterGraphicsCommputeCommandPool@{RegisterGraphicsCommputeCommandPool}}
+\index{RegisterGraphicsCommputeCommandPool@{RegisterGraphicsCommputeCommandPool}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{RegisterGraphicsCommputeCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a8173ba6c7ac761507718ad5ccdaed393} 
+void IRenderer\+::\+Register\+Graphics\+Commpute\+Command\+Pool (\begin{DoxyParamCaption}\item[{const \textbf{ ICommand\+Queue} $\ast$}]{graphics\+Compute\+Queue}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!RegisterTransferOnlyCommandPool@{RegisterTransferOnlyCommandPool}}
+\index{RegisterTransferOnlyCommandPool@{RegisterTransferOnlyCommandPool}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{RegisterTransferOnlyCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a55ba02129fe29749703ad1ae1aea0a40} 
+void IRenderer\+::\+Register\+Transfer\+Only\+Command\+Pool (\begin{DoxyParamCaption}\item[{const \textbf{ ICommand\+Queue} $\ast$}]{transfer\+Queue}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!RegisterUnifiedCommandPool@{RegisterUnifiedCommandPool}}
+\index{RegisterUnifiedCommandPool@{RegisterUnifiedCommandPool}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{RegisterUnifiedCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a892cf300bd41e1c8f454ddd8137bf198} 
+void IRenderer\+::\+Register\+Unified\+Command\+Pool (\begin{DoxyParamCaption}\item[{const \textbf{ ICommand\+Queue} $\ast$}]{unified\+Queue}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!ResetDisplay@{ResetDisplay}}
+\index{ResetDisplay@{ResetDisplay}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{ResetDisplay()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a717e564c8f7addfb48fdbc0ffa2929b8} 
+virtual void OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Reset\+Display (\begin{DoxyParamCaption}\item[{\textbf{ IO\+::\+IDisplay} \&}]{display}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reestablece el display del renderizador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em display} & Nuevo display. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!SetPresentMode@{SetPresentMode}}
+\index{SetPresentMode@{SetPresentMode}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{SetPresentMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a74a80540f1ee270f3bc0e1aae6d4b854} 
+void IRenderer\+::\+Set\+Present\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ Present\+Mode}}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+Cambia el modo de presentación del renderizador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mode} & Modo de sincronización vertical. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!SubmitSingleUseCommandList@{SubmitSingleUseCommandList}}
+\index{SubmitSingleUseCommandList@{SubmitSingleUseCommandList}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{SubmitSingleUseCommandList()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a2072fcffe154c60e680224d3e4edd35f} 
+virtual void OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Submit\+Single\+Use\+Command\+List (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+List} $>$ \&\&}]{command\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Ejecuta el contenido de la lista de comandos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command\+List} & Lista de comandos a ejecutar. Su posesoón pasa a ser del renderizador.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Command\+Queue\+Submit\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_queue_submit_exception}} & Si hay un error en la ejecución de la lista.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Nota}
+La lista de comandos será eliminada al finalizar el frame. 
+
+Bloquea el hilo hasta que se haya completado la operación.
+\end{DoxyNote}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!SupportsRaytracing@{SupportsRaytracing}}
+\index{SupportsRaytracing@{SupportsRaytracing}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{SupportsRaytracing()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_af6c2b503a6e4f7757e58062fcdf60ebc} 
+virtual bool OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Supports\+Raytracing (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si el renderizador soporta trazado de rayos. Depende de la GPU usada. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se ha llamado a \doxyref{IRenderer\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1bb437bf5b603c525133e989a29b2fb3}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!UploadCubemapImageToGpu@{UploadCubemapImageToGpu}}
+\index{UploadCubemapImageToGpu@{UploadCubemapImageToGpu}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{UploadCubemapImageToGpu()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a1cc180a7597a2ef849b3d6aa3c0625d7} 
+void IRenderer\+::\+Upload\+Cubemap\+Image\+To\+Gpu (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{destination}{, }\item[{const \textbf{ TByte} $\ast$}]{data}{, }\item[{\textbf{ USize64}}]{num\+Bytes}{, }\item[{\textbf{ ICommand\+List} $\ast$}]{cmd\+List}{}\end{DoxyParamCaption})}
+
+
+
+Rellena la imagen cubemap en la GPU con los datos dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em destination} & Imagen a escribir. \\
+\hline
+{\em data} & Datos a escribir. \\
+\hline
+{\em num\+Bytes} & Tamaño de los datos, en bytes. \\
+\hline
+{\em cmd\+List} & Lista de comandos usada para ejecutar la copia.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La imagen de destino debe haber sido creada con \doxyref{Gpu\+Image\+Usage\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaac61dfc60317a58b2843ec29f8e3c2359}. 
+
+La imagen de destino debe tener el layout \doxyref{Gpu\+Image\+Layout\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9ac61dfc60317a58b2843ec29f8e3c2359}.
+
+{\ttfamily cmd\+List} debe estar empezada.
+
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!UploadImageToGpu@{UploadImageToGpu}}
+\index{UploadImageToGpu@{UploadImageToGpu}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{UploadImageToGpu()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_acea0c9d8a19cb8e54f2ff32b8a7ea005} 
+void IRenderer\+::\+Upload\+Image\+To\+Gpu (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{destination}{, }\item[{const \textbf{ TByte} $\ast$}]{data}{, }\item[{\textbf{ USize64}}]{num\+Bytes}{, }\item[{\textbf{ ICommand\+List} $\ast$}]{cmd\+List}{}\end{DoxyParamCaption})}
+
+
+
+Rellena la imagen en la GPU con los datos dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em destination} & Imagen a escribir. \\
+\hline
+{\em data} & Datos a escribir. \\
+\hline
+{\em num\+Bytes} & Tamaño de los datos, en bytes. \\
+\hline
+{\em cmd\+List} & Lista de comandos usada para ejecutar la copia.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La imagen de destino debe haber sido creada con \doxyref{Gpu\+Image\+Usage\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaac61dfc60317a58b2843ec29f8e3c2359}. 
+
+La imagen de destino debe tener el layout \doxyref{Gpu\+Image\+Layout\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9ac61dfc60317a58b2843ec29f8e3c2359}.
+
+{\ttfamily cmd\+List} debe estar empezada.
+
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!UploadLayeredImageToGpu@{UploadLayeredImageToGpu}}
+\index{UploadLayeredImageToGpu@{UploadLayeredImageToGpu}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{UploadLayeredImageToGpu()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_aee4f5a164ea9e464634443a45a89fc53} 
+void IRenderer\+::\+Upload\+Layered\+Image\+To\+Gpu (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{destination}{, }\item[{const \textbf{ TByte} $\ast$}]{data}{, }\item[{\textbf{ USize64}}]{num\+Bytes}{, }\item[{\textbf{ USize32}}]{num\+Layers}{, }\item[{\textbf{ ICommand\+List} $\ast$}]{cmd\+List}{}\end{DoxyParamCaption})}
+
+
+
+Rellena la imagen en la GPU con los datos dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em destination} & Imagen a escribir. \\
+\hline
+{\em data} & Datos a escribir. \\
+\hline
+{\em num\+Bytes} & Tamaño de los datos, en bytes. \\
+\hline
+{\em num\+Layers} & Número de capas a escribir. \\
+\hline
+{\em cmd\+List} & Lista de comandos usada para ejecutar la copia.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La imagen de destino debe haber sido creada con \doxyref{Gpu\+Image\+Usage\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaac61dfc60317a58b2843ec29f8e3c2359}. 
+
+La imagen de destino debe tener el layout \doxyref{Gpu\+Image\+Layout\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9ac61dfc60317a58b2843ec29f8e3c2359}.
+
+{\ttfamily cmd\+List} debe estar empezada.
+
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!UseUnifiedCommandPool@{UseUnifiedCommandPool}}
+\index{UseUnifiedCommandPool@{UseUnifiedCommandPool}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{UseUnifiedCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a7c7a16764cf6155c6b8d2c6db4a5492b} 
+bool IRenderer\+::\+Use\+Unified\+Command\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si existe un command pool unificado para todo tipo de comandos.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo.
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!UseUnifiedCommandQueue@{UseUnifiedCommandQueue}}
+\index{UseUnifiedCommandQueue@{UseUnifiedCommandQueue}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{UseUnifiedCommandQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a11aac5b24a8f43a354e2d2ec547946e4} 
+bool IRenderer\+::\+Use\+Unified\+Command\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si existe una cola de GPU unificada para todo tipo de operaciones.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe haber sido previamente inicializado. 
+
+El renderizador no debe haber sido previamente cerrado.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!WaitForCompletion@{WaitForCompletion}}
+\index{WaitForCompletion@{WaitForCompletion}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{WaitForCompletion()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a4a5f5a94ea92312c37f03f9be01f0fa5} 
+virtual void OSK\+::\+GRAPHICS\+::\+IRenderer\+::\+Wait\+For\+Completion (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Hace que el hilo actual espere a que se hayan ejecutado todos los comandos en la GPU. Necesario si se van a eliminar recursos que puede que todavía estén en uso. 
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!m\_finalRenderTarget@{m\_finalRenderTarget}}
+\index{m\_finalRenderTarget@{m\_finalRenderTarget}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{m\_finalRenderTarget}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_aa4597c9ee09d71e24f3d5ecbf41a0331} 
+\textbf{ Unique\+Ptr}$<$\textbf{ Render\+Target}$>$ OSK\+::\+GRAPHICS\+::\+IRenderer\+::m\+\_\+final\+Render\+Target\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!m\_implicitResizeHandling@{m\_implicitResizeHandling}}
+\index{m\_implicitResizeHandling@{m\_implicitResizeHandling}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{m\_implicitResizeHandling}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_ac5de35eb0088bf0646d358e5af7a3ee8} 
+bool OSK\+::\+GRAPHICS\+::\+IRenderer\+::m\+\_\+implicit\+Resize\+Handling = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!m\_isFirstRender@{m\_isFirstRender}}
+\index{m\_isFirstRender@{m\_isFirstRender}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{m\_isFirstRender}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a9aeeff6fec6fff2c175231fb2cf22357} 
+bool OSK\+::\+GRAPHICS\+::\+IRenderer\+::m\+\_\+is\+First\+Render = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!m\_isRtActive@{m\_isRtActive}}
+\index{m\_isRtActive@{m\_isRtActive}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{m\_isRtActive}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a81107ec82938f3f27e5e3978dad9c057} 
+bool OSK\+::\+GRAPHICS\+::\+IRenderer\+::m\+\_\+is\+Rt\+Active = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!m\_queueSubmitMutex@{m\_queueSubmitMutex}}
+\index{m\_queueSubmitMutex@{m\_queueSubmitMutex}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{m\_queueSubmitMutex}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_ad905c4b9fc714ed46f10f48cc8070967} 
+\textbf{ Mutex\+Holder} OSK\+::\+GRAPHICS\+::\+IRenderer\+::m\+\_\+queue\+Submit\+Mutex\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}!m\_singleTimeCommandLists@{m\_singleTimeCommandLists}}
+\index{m\_singleTimeCommandLists@{m\_singleTimeCommandLists}!OSK::GRAPHICS::IRenderer@{OSK::GRAPHICS::IRenderer}}
+\doxysubsubsection{m\_singleTimeCommandLists}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_a5205cf8c5a3dca959c63f0195f6102c9} 
+\textbf{ Dynamic\+Array}$<$\textbf{ Unique\+Ptr}$<$\textbf{ ICommand\+List}$>$ $>$ OSK\+::\+GRAPHICS\+::\+IRenderer\+::m\+\_\+single\+Time\+Command\+Lists\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Listas de comandos de un solo uso. 
+

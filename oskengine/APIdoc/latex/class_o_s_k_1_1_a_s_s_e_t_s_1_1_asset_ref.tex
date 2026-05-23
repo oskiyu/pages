@@ -1,0 +1,258 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::ASSETS\+::Asset\+Ref$<$ TAsset\+Type $>$}
+\label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref}\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+
+
+{\ttfamily \#include $<$Asset\+Ref.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Asset\+Ref} () noexcept=default
+\item 
+\textbf{ Asset\+Ref} (std\+::atomic$<$ \textbf{ USize64} $>$ $\ast$count, std\+::atomic$<$ bool $>$ $\ast$is\+Loaded, TAsset\+Type $\ast$asset) noexcept
+\item 
+\textbf{ Asset\+Ref} (const \textbf{ Asset\+Ref} \&other) noexcept
+\item 
+\textbf{ Asset\+Ref} \& \textbf{ operator=} (const \textbf{ Asset\+Ref} \&other) noexcept
+\item 
+\textbf{ Asset\+Ref} (\textbf{ Asset\+Ref} \&\&other) noexcept
+\item 
+\textbf{ Asset\+Ref} \& \textbf{ operator=} (\textbf{ Asset\+Ref} \&\&other) noexcept
+\item 
+\textbf{ $\sim$\+Asset\+Ref} ()
+\item 
+bool \textbf{ Has\+Value} () const noexcept
+\item 
+TAsset\+Type $\ast$ \textbf{ operator-\/$>$} ()
+\item 
+const TAsset\+Type $\ast$ \textbf{ operator-\/$>$} () const
+\item 
+TAsset\+Type $\ast$ \textbf{ Get\+Asset} ()
+\item 
+const TAsset\+Type $\ast$ \textbf{ Get\+Asset} () const
+\item 
+bool \textbf{ Has\+Been\+Loaded} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename TAsset\+Type$>$\newline
+class OSK\+::\+ASSETS\+::\+Asset\+Ref$<$ TAsset\+Type $>$}
+Referencia a un asset. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TAsset\+Type} & Clase de asset. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!AssetRef@{AssetRef}}
+\index{AssetRef@{AssetRef}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{AssetRef()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_ab3b0b49ffba38dd0cfad78188bbcbae1} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::\+Asset\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+Referencia vacía. 
+
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!AssetRef@{AssetRef}}
+\index{AssetRef@{AssetRef}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{AssetRef()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_a4b5a577fb0719ee1a05c87089c6253a4} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::\+Asset\+Ref (\begin{DoxyParamCaption}\item[{std\+::atomic$<$ \textbf{ USize64} $>$ $\ast$}]{count}{, }\item[{std\+::atomic$<$ bool $>$ $\ast$}]{is\+Loaded}{, }\item[{TAsset\+Type $\ast$}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Referencia a un asset en concreto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em count} & Puntero al contador de instancias del asset. \\
+\hline
+{\em is\+Loaded} & Puntero al flag que indica si ha sido cargado. \\
+\hline
+{\em asset} & Puntero al propio asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily count} debe ser estable. 
+
+{\ttfamily asset} debe ser estable. 
+\end{DoxyPrecond}
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!AssetRef@{AssetRef}}
+\index{AssetRef@{AssetRef}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{AssetRef()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_a6afd8bd897ad8f8d0f80b53590da0a47} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::\+Asset\+Ref (\begin{DoxyParamCaption}\item[{const \textbf{ Asset\+Ref}$<$ TAsset\+Type $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Referencia al mismo asset indicado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Otro asset. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!AssetRef@{AssetRef}}
+\index{AssetRef@{AssetRef}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{AssetRef()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_a852ac50af2dfc0dfe49f1d1d0f6796bf} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::\+Asset\+Ref (\begin{DoxyParamCaption}\item[{\textbf{ Asset\+Ref}$<$ TAsset\+Type $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Mueve el otro asset a este. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Otro asset. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!````~AssetRef@{$\sim$AssetRef}}
+\index{````~AssetRef@{$\sim$AssetRef}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{$\sim$AssetRef()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_a80f022dd82bddb7826420fb20c7a5b4c} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::$\sim$\textbf{ Asset\+Ref} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!GetAsset@{GetAsset}}
+\index{GetAsset@{GetAsset}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{GetAsset()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_abd6770019e630e105a1991ee46837f61} 
+template$<$typename TAsset\+Type$>$ \\
+TAsset\+Type $\ast$ \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::\+Get\+Asset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Asset referenciado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe tener valor (\doxyref{Has\+Value()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_a80765d29b548f314b44cfc2439bfb1ce} == true).
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Es thread-\/safe siempre que se cumplan las precondiciones. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!GetAsset@{GetAsset}}
+\index{GetAsset@{GetAsset}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{GetAsset()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_aa2455bc7897a6e63f39b5002b95a83fd} 
+template$<$typename TAsset\+Type$>$ \\
+const TAsset\+Type $\ast$ \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::\+Get\+Asset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Asset referenciado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe tener valor (\doxyref{Has\+Value()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_a80765d29b548f314b44cfc2439bfb1ce} == true).
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Es thread-\/safe siempre que se cumplan las precondiciones. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!HasBeenLoaded@{HasBeenLoaded}}
+\index{HasBeenLoaded@{HasBeenLoaded}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{HasBeenLoaded()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_aa26a2765d6e850e263de6f09c95693c0} 
+template$<$typename TAsset\+Type$>$ \\
+bool \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::\+Has\+Been\+Loaded (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si ya ha sido cargado. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!HasValue@{HasValue}}
+\index{HasValue@{HasValue}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{HasValue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_a80765d29b548f314b44cfc2439bfb1ce} 
+template$<$typename TAsset\+Type$>$ \\
+bool \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::\+Has\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si referencia a algún asset. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{operator-\/$>$()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_adeb757040c9abb14e4db431f7db54c73} 
+template$<$typename TAsset\+Type$>$ \\
+TAsset\+Type $\ast$ \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Asset referenciado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe tener valor (\doxyref{Has\+Value()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_a80765d29b548f314b44cfc2439bfb1ce} == true).
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Es thread-\/safe siempre que se cumplan las precondiciones. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{operator-\/$>$()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_aef76ce3d06d51bcee91df264d11e87db} 
+template$<$typename TAsset\+Type$>$ \\
+const TAsset\+Type $\ast$ \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Asset referenciado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe tener valor (\doxyref{Has\+Value()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_a80765d29b548f314b44cfc2439bfb1ce} == true).
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Es thread-\/safe siempre que se cumplan las precondiciones. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_a40f6b9ee9b58f6587fc3c72087b6a03d} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ Asset\+Ref} \& \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{\textbf{ Asset\+Ref}$<$ TAsset\+Type $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Mueve el otro asset a este. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Otro asset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Self. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::ASSETS::AssetRef$<$ TAssetType $>$@{OSK::ASSETS::AssetRef$<$ TAssetType $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref_ae699b966d3fae6bb8a86c1a39858fb8a} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ Asset\+Ref} \& \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Ref}$<$ TAsset\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Asset\+Ref}$<$ TAsset\+Type $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Referencia al mismo asset indicado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Otro asset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Self. 
+\end{DoxyReturn}

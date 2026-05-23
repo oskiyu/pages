@@ -1,0 +1,18 @@
+\doxysection{Referencia del concepto OSK\+::Is\+Console\+Command}
+\label{concept_o_s_k_1_1_is_console_command}\index{OSK::IsConsoleCommand@{OSK::IsConsoleCommand}}
+
+
+{\ttfamily \#include $<$Console\+Command.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::IsConsoleCommand\ =\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::is\_base\_of\_v<IConsoleCommand,\ T>}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}
+Concepto para clases que son comandos de consola. 

@@ -1,0 +1,106 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::IGamepad\+Input}
+\label{class_o_s_k_1_1_i_o_1_1_i_gamepad_input}\index{OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}}
+
+
+{\ttfamily \#include $<$IGamepad\+Input.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ IGamepad\+Input} ()
+\item 
+virtual \textbf{ $\sim$\+IGamepad\+Input} ()=default
+\item 
+void \textbf{ Update\+Gamepad\+Input} ()
+\item 
+const \textbf{ Gamepad\+State} \& \textbf{ Get\+Gamepad\+State} (\textbf{ UIndex32} index) const
+\item 
+const \textbf{ Gamepad\+State} \& \textbf{ Get\+Previous\+Gamepad\+State} (\textbf{ UIndex32} index) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static const \textbf{ UIndex32} \textbf{ MAX\+\_\+\+GAMEPAD\+\_\+\+COUNT} = 4
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Update\+Gamepad\+State} (\textbf{ Gamepad\+State} $\ast$current\+State)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para leer la entrada del usuario a través de uno o varios mandos. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}!IGamepadInput@{IGamepadInput}}
+\index{IGamepadInput@{IGamepadInput}!OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}}
+\doxysubsubsection{IGamepadInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_a0972fc5ed9e9efcdd81932ca69264119} 
+IGamepad\+Input\+::\+IGamepad\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}!````~IGamepadInput@{$\sim$IGamepadInput}}
+\index{````~IGamepadInput@{$\sim$IGamepadInput}!OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}}
+\doxysubsubsection{$\sim$IGamepadInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_aea8e3a2653331eb71a442b190a6149cb} 
+virtual OSK\+::\+IO\+::\+IGamepad\+Input\+::$\sim$\+IGamepad\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}!GetGamepadState@{GetGamepadState}}
+\index{GetGamepadState@{GetGamepadState}!OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}}
+\doxysubsubsection{GetGamepadState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_ab9c06b0664acc36e4ec04be8b8928591} 
+const \textbf{ Gamepad\+State} \& IGamepad\+Input\+::\+Get\+Gamepad\+State (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{index}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Estado del gamepad en el frame actual. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+0 $<$= index $<$ \doxyref{IGamepad\+Input\+::\+MAX\+\_\+\+GAMEPAD\+\_\+\+COUNT}{pág.}{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_a662403b4fe53409569cbea75fb586c21}. 
+\end{DoxyPrecond}
+\index{OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}!GetPreviousGamepadState@{GetPreviousGamepadState}}
+\index{GetPreviousGamepadState@{GetPreviousGamepadState}!OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}}
+\doxysubsubsection{GetPreviousGamepadState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_a774b14dd77656ab61f6639ada8544db4} 
+const \textbf{ Gamepad\+State} \& IGamepad\+Input\+::\+Get\+Previous\+Gamepad\+State (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{index}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Estado del gamepad en el frame anterior. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+0 $<$= index $<$ \doxyref{IGamepad\+Input\+::\+MAX\+\_\+\+GAMEPAD\+\_\+\+COUNT}{pág.}{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_a662403b4fe53409569cbea75fb586c21}. 
+\end{DoxyPrecond}
+\index{OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}!UpdateGamepadInput@{UpdateGamepadInput}}
+\index{UpdateGamepadInput@{UpdateGamepadInput}!OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}}
+\doxysubsubsection{UpdateGamepadInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_a45f7ec790e1814a8e897bd67168c6113} 
+void IGamepad\+Input\+::\+Update\+Gamepad\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza los estados internos de los gamepads. 
+
+\index{OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}!UpdateGamepadState@{UpdateGamepadState}}
+\index{UpdateGamepadState@{UpdateGamepadState}!OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}}
+\doxysubsubsection{UpdateGamepadState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_a98fa312656494b9d3946916dd2208b2b} 
+virtual void OSK\+::\+IO\+::\+IGamepad\+Input\+::\+Update\+Gamepad\+State (\begin{DoxyParamCaption}\item[{\textbf{ Gamepad\+State} $\ast$}]{current\+State}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}!MAX\_GAMEPAD\_COUNT@{MAX\_GAMEPAD\_COUNT}}
+\index{MAX\_GAMEPAD\_COUNT@{MAX\_GAMEPAD\_COUNT}!OSK::IO::IGamepadInput@{OSK::IO::IGamepadInput}}
+\doxysubsubsection{MAX\_GAMEPAD\_COUNT}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_a662403b4fe53409569cbea75fb586c21} 
+const \textbf{ UIndex32} OSK\+::\+IO\+::\+IGamepad\+Input\+::\+MAX\+\_\+\+GAMEPAD\+\_\+\+COUNT = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Número máximo de gamepads que pueden estar conectados. 
+

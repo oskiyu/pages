@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Referencia de la Clase OSK::GRAPHICS::IGpuMemoryBlock</title>
+<title>OSKengine: Referencia de la clase OSK::GRAPHICS::IGpuMemoryBlock</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html','','class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,86 +78,76 @@ $(document).ready(function(){initNavTree('class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Clases</a> &#124;
-<a href="#pub-methods">Métodos públicos</a> &#124;
-<a href="#pro-methods">Métodos protegidos</a> &#124;
-<a href="#pro-attribs">Atributos protegidos</a> &#124;
-<a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block-members.html">Lista de todos los miembros</a>  </div>
-  <div class="headertitle"><div class="title">Referencia de la Clase OSK::GRAPHICS::IGpuMemoryBlock<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">Referencia de la clase OSK::GRAPHICS::IGpuMemoryBlock<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_i_gpu_memory_block_8h_source.html">IGpuMemoryBlock.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Clases</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_1_1_reusable_memory_subblock.html">ReusableMemorySubblock</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ReusableMemorySubblock" id="r_ReusableMemorySubblock"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_1_1_reusable_memory_subblock.html">ReusableMemorySubblock</a></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
-<tr class="memitem:ab7bfc7d07ee839e9660e44cf9c15f5ce"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#ab7bfc7d07ee839e9660e44cf9c15f5ce">~IGpuMemoryBlock</a> ()=default</td></tr>
-<tr class="separator:ab7bfc7d07ee839e9660e44cf9c15f5ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a458632dd6887cb1b943ef1962f407042"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a458632dd6887cb1b943ef1962f407042">OSK_DEFINE_AS</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a>)</td></tr>
-<tr class="separator:a458632dd6887cb1b943ef1962f407042"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfe42ab34135cb8dcf5adc7cffb44d96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#adfe42ab34135cb8dcf5adc7cffb44d96">RemoveSubblock</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> *subblock)</td></tr>
-<tr class="separator:adfe42ab34135cb8dcf5adc7cffb44d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2ac3979da53cb99552d01efa1fbdc86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#ab2ac3979da53cb99552d01efa1fbdc86">GetNextMemorySubblock</a> (<a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> size, <a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> alignment)</td></tr>
-<tr class="separator:ab2ac3979da53cb99552d01efa1fbdc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39b466554cd4a3163e7824133161c88c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a39b466554cd4a3163e7824133161c88c">GetAllocatedSize</a> () const</td></tr>
-<tr class="separator:a39b466554cd4a3163e7824133161c88c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc59083a812617c23f419e7f866b9f09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#abc59083a812617c23f419e7f866b9f09">GetAvailableSpace</a> () const</td></tr>
-<tr class="separator:abc59083a812617c23f419e7f866b9f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bbdd382268b0bb587b03c1180cecde8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a0bbdd382268b0bb587b03c1180cecde8">GetShareType</a> () const</td></tr>
-<tr class="separator:a0bbdd382268b0bb587b03c1180cecde8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80aec8670a12157bc819ed904d71e60e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5e58e16d9268fde60c3eae698b225ec">GpuMemoryUsage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a80aec8670a12157bc819ed904d71e60e">GetUsageType</a> () const</td></tr>
-<tr class="separator:a80aec8670a12157bc819ed904d71e60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2003b58e4ba53da3f0adf7e8d52eed97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a2003b58e4ba53da3f0adf7e8d52eed97">GetGpu</a> () const</td></tr>
-<tr class="separator:a2003b58e4ba53da3f0adf7e8d52eed97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade0f4cfb99ac4d5653f80064e83a78e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#ade0f4cfb99ac4d5653f80064e83a78e2">IsUnused</a> () const</td></tr>
-<tr class="separator:ade0f4cfb99ac4d5653f80064e83a78e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7bfc7d07ee839e9660e44cf9c15f5ce" id="r_ab7bfc7d07ee839e9660e44cf9c15f5ce"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7bfc7d07ee839e9660e44cf9c15f5ce">~IGpuMemoryBlock</a> ()=default</td></tr>
+<tr class="memitem:a458632dd6887cb1b943ef1962f407042" id="r_a458632dd6887cb1b943ef1962f407042"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a458632dd6887cb1b943ef1962f407042">OSK_DEFINE_AS</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a>)</td></tr>
+<tr class="memitem:adfe42ab34135cb8dcf5adc7cffb44d96" id="r_adfe42ab34135cb8dcf5adc7cffb44d96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfe42ab34135cb8dcf5adc7cffb44d96">RemoveSubblock</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> *subblock)</td></tr>
+<tr class="memitem:ab2ac3979da53cb99552d01efa1fbdc86" id="r_ab2ac3979da53cb99552d01efa1fbdc86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2ac3979da53cb99552d01efa1fbdc86">GetNextMemorySubblock</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> size, <a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> alignment)</td></tr>
+<tr class="memitem:a39b466554cd4a3163e7824133161c88c" id="r_a39b466554cd4a3163e7824133161c88c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39b466554cd4a3163e7824133161c88c">GetAllocatedSize</a> () const</td></tr>
+<tr class="memitem:abc59083a812617c23f419e7f866b9f09" id="r_abc59083a812617c23f419e7f866b9f09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc59083a812617c23f419e7f866b9f09">GetAvailableSpace</a> () const</td></tr>
+<tr class="memitem:a0bbdd382268b0bb587b03c1180cecde8" id="r_a0bbdd382268b0bb587b03c1180cecde8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bbdd382268b0bb587b03c1180cecde8">GetShareType</a> () const</td></tr>
+<tr class="memitem:a80aec8670a12157bc819ed904d71e60e" id="r_a80aec8670a12157bc819ed904d71e60e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5e58e16d9268fde60c3eae698b225ec">GpuMemoryUsage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80aec8670a12157bc819ed904d71e60e">GetUsageType</a> () const</td></tr>
+<tr class="memitem:a2003b58e4ba53da3f0adf7e8d52eed97" id="r_a2003b58e4ba53da3f0adf7e8d52eed97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2003b58e4ba53da3f0adf7e8d52eed97">GetGpu</a> () const</td></tr>
+<tr class="memitem:ade0f4cfb99ac4d5653f80064e83a78e2" id="r_ade0f4cfb99ac4d5653f80064e83a78e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade0f4cfb99ac4d5653f80064e83a78e2">IsUnused</a> () const</td></tr>
+<tr class="memitem:ae7eee828cbd73e8407393b9493badbbd" id="r_ae7eee828cbd73e8407393b9493badbbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7eee828cbd73e8407393b9493badbbd">MapAll</a> ()</td></tr>
+<tr class="memitem:aa164a4e7d8ac35b01d27ea5862f5243b" id="r_aa164a4e7d8ac35b01d27ea5862f5243b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa164a4e7d8ac35b01d27ea5862f5243b">UnmapAll</a> ()</td></tr>
+<tr class="memitem:aa23ce91b510678a4bed503525846a1b7" id="r_aa23ce91b510678a4bed503525846a1b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa23ce91b510678a4bed503525846a1b7">MapRange</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> offset, <a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> size)</td></tr>
+<tr class="memitem:a7911bc6cd6bb4ab4916532af49398898" id="r_a7911bc6cd6bb4ab4916532af49398898"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a79ac5831e0b2433213dacbfc636f4d8f">TByte</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7911bc6cd6bb4ab4916532af49398898">GetMappedData</a> ()</td></tr>
+<tr class="memitem:ab995c759207384b60d9e184194ca504e" id="r_ab995c759207384b60d9e184194ca504e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespace_o_s_k.html#a79ac5831e0b2433213dacbfc636f4d8f">TByte</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab995c759207384b60d9e184194ca504e">GetMappedData</a> () const</td></tr>
+<tr class="memitem:a5120641b1fd897f1ddd691d2a9155af5" id="r_a5120641b1fd897f1ddd691d2a9155af5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_mapped_range.html">GpuMemoryMappedRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5120641b1fd897f1ddd691d2a9155af5">GetMappedRange</a> () const</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Métodos protegidos</h2></td></tr>
-<tr class="memitem:ad33dd0b4c47fa61a16466dcf2ec3e20e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#ad33dd0b4c47fa61a16466dcf2ec3e20e">IGpuMemoryBlock</a> (<a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> reservedSize, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#ac75aa44cce34a964dfe1d6026d4d3c5f">device</a>, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a49883b25223e08eefef3da606eacf367">type</a>, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5e58e16d9268fde60c3eae698b225ec">GpuMemoryUsage</a> <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a2e98cccefbc350a426c8d10d66f58769">usage</a>)</td></tr>
-<tr class="separator:ad33dd0b4c47fa61a16466dcf2ec3e20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33848f9ecc557883fb5943889bc08a70"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a33848f9ecc557883fb5943889bc08a70">CreateNewMemorySubblock</a> (<a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> size, <a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> offset)=0</td></tr>
-<tr class="separator:a33848f9ecc557883fb5943889bc08a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33dd0b4c47fa61a16466dcf2ec3e20e" id="r_ad33dd0b4c47fa61a16466dcf2ec3e20e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad33dd0b4c47fa61a16466dcf2ec3e20e">IGpuMemoryBlock</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> reservedSize, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *<a class="el" href="#ac75aa44cce34a964dfe1d6026d4d3c5f">device</a>, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> <a class="el" href="#a49883b25223e08eefef3da606eacf367">type</a>, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5e58e16d9268fde60c3eae698b225ec">GpuMemoryUsage</a> <a class="el" href="#a2e98cccefbc350a426c8d10d66f58769">usage</a>)</td></tr>
+<tr class="memitem:a55d19c14fe9a62dd3c8bcea78cb226d3" id="r_a55d19c14fe9a62dd3c8bcea78cb226d3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespace_o_s_k.html#a79ac5831e0b2433213dacbfc636f4d8f">TByte</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55d19c14fe9a62dd3c8bcea78cb226d3">MapRange_Impl</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> offset, <a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> size)=0</td></tr>
+<tr class="memitem:a6ce5017e45cead0614ba454c5c9706bc" id="r_a6ce5017e45cead0614ba454c5c9706bc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ce5017e45cead0614ba454c5c9706bc">UnmapAll_Impl</a> ()=0</td></tr>
+<tr class="memitem:a33848f9ecc557883fb5943889bc08a70" id="r_a33848f9ecc557883fb5943889bc08a70"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33848f9ecc557883fb5943889bc08a70">CreateNewMemorySubblock</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> size, <a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> offset)=0</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Atributos protegidos</h2></td></tr>
-<tr class="memitem:a486fd0961d556d8e0dd64763ff843ed3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a486fd0961d556d8e0dd64763ff843ed3">subblocks</a></td></tr>
-<tr class="separator:a486fd0961d556d8e0dd64763ff843ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb0a469af9d65724ffe513423dd32482"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_1_1_reusable_memory_subblock.html">ReusableMemorySubblock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#afb0a469af9d65724ffe513423dd32482">reusableSubblocks</a></td></tr>
-<tr class="separator:afb0a469af9d65724ffe513423dd32482"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7887b4b066117738b0f64ebbdf05bf05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a7887b4b066117738b0f64ebbdf05bf05">totalSize</a> = 0</td></tr>
-<tr class="separator:a7887b4b066117738b0f64ebbdf05bf05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc1e855fd56cf8f2ba91efe5f6058385"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#abc1e855fd56cf8f2ba91efe5f6058385">availableSpace</a> = 0</td></tr>
-<tr class="separator:abc1e855fd56cf8f2ba91efe5f6058385"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a921c6aa09ba2c4ffb8a6ff8edca8dbe3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a921c6aa09ba2c4ffb8a6ff8edca8dbe3">currentOffset</a> = 0</td></tr>
-<tr class="separator:a921c6aa09ba2c4ffb8a6ff8edca8dbe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49883b25223e08eefef3da606eacf367"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a49883b25223e08eefef3da606eacf367">type</a></td></tr>
-<tr class="separator:a49883b25223e08eefef3da606eacf367"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e98cccefbc350a426c8d10d66f58769"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5e58e16d9268fde60c3eae698b225ec">GpuMemoryUsage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a2e98cccefbc350a426c8d10d66f58769">usage</a></td></tr>
-<tr class="separator:a2e98cccefbc350a426c8d10d66f58769"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac75aa44cce34a964dfe1d6026d4d3c5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#ac75aa44cce34a964dfe1d6026d4d3c5f">device</a> = nullptr</td></tr>
-<tr class="separator:ac75aa44cce34a964dfe1d6026d4d3c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35a67da8eade0a066d08de340a4900b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_k_1_1_mutex_holder.html">MutexHolder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a35a67da8eade0a066d08de340a4900b2">m_subblockSearchMutex</a></td></tr>
-<tr class="separator:a35a67da8eade0a066d08de340a4900b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a486fd0961d556d8e0dd64763ff843ed3" id="r_a486fd0961d556d8e0dd64763ff843ed3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a486fd0961d556d8e0dd64763ff843ed3">subblocks</a></td></tr>
+<tr class="memitem:afb0a469af9d65724ffe513423dd32482" id="r_afb0a469af9d65724ffe513423dd32482"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_1_1_reusable_memory_subblock.html">ReusableMemorySubblock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb0a469af9d65724ffe513423dd32482">reusableSubblocks</a></td></tr>
+<tr class="memitem:a7887b4b066117738b0f64ebbdf05bf05" id="r_a7887b4b066117738b0f64ebbdf05bf05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7887b4b066117738b0f64ebbdf05bf05">totalSize</a> = 0</td></tr>
+<tr class="memitem:abc1e855fd56cf8f2ba91efe5f6058385" id="r_abc1e855fd56cf8f2ba91efe5f6058385"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc1e855fd56cf8f2ba91efe5f6058385">availableSpace</a> = 0</td></tr>
+<tr class="memitem:a921c6aa09ba2c4ffb8a6ff8edca8dbe3" id="r_a921c6aa09ba2c4ffb8a6ff8edca8dbe3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a921c6aa09ba2c4ffb8a6ff8edca8dbe3">currentOffset</a> = 0</td></tr>
+<tr class="memitem:a49883b25223e08eefef3da606eacf367" id="r_a49883b25223e08eefef3da606eacf367"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49883b25223e08eefef3da606eacf367">type</a></td></tr>
+<tr class="memitem:a2e98cccefbc350a426c8d10d66f58769" id="r_a2e98cccefbc350a426c8d10d66f58769"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5e58e16d9268fde60c3eae698b225ec">GpuMemoryUsage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e98cccefbc350a426c8d10d66f58769">usage</a></td></tr>
+<tr class="memitem:ac75aa44cce34a964dfe1d6026d4d3c5f" id="r_ac75aa44cce34a964dfe1d6026d4d3c5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac75aa44cce34a964dfe1d6026d4d3c5f">device</a> = nullptr</td></tr>
+<tr class="memitem:a35a67da8eade0a066d08de340a4900b2" id="r_a35a67da8eade0a066d08de340a4900b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_k_1_1_mutex_holder.html">MutexHolder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35a67da8eade0a066d08de340a4900b2">m_subblockSearchMutex</a></td></tr>
+<tr class="memitem:ac62fcb89fa6eeb626587c458d238c868" id="r_ac62fcb89fa6eeb626587c458d238c868"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_k_1_1_mutex_holder.html">MutexHolder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac62fcb89fa6eeb626587c458d238c868">m_mapMutex</a></td></tr>
+<tr class="memitem:a80870ff80472b94d8a1fe17f0bfeaab4" id="r_a80870ff80472b94d8a1fe17f0bfeaab4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a79ac5831e0b2433213dacbfc636f4d8f">TByte</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80870ff80472b94d8a1fe17f0bfeaab4">m_mappedData</a> = nullptr</td></tr>
+<tr class="memitem:aa6f806641cd685b06e495c017ac90faa" id="r_aa6f806641cd685b06e495c017ac90faa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_mapped_range.html">GpuMemoryMappedRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6f806641cd685b06e495c017ac90faa">m_mappedRange</a> {}</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p >Un bloque de memoria representa una región de memoria que ha sido reservada. </p>
-<p >El bloque tiene una lista de subbloques, cada uno representando una subregión de memoria que almacena un recurso. </p>
-</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Un bloque de memoria representa una región de memoria que ha sido reservada. </p>
+<p>El bloque tiene una lista de subbloques, cada uno representando una subregión de memoria que almacena un recurso. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
 <a id="ab7bfc7d07ee839e9660e44cf9c15f5ce" name="ab7bfc7d07ee839e9660e44cf9c15f5ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7bfc7d07ee839e9660e44cf9c15f5ce">&#9670;&nbsp;</a></span>~IGpuMemoryBlock()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7bfc7d07ee839e9660e44cf9c15f5ce">&#9670;&#160;</a></span>~IGpuMemoryBlock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,13 +158,13 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">virtual OSK::GRAPHICS::IGpuMemoryBlock::~IGpuMemoryBlock </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -183,7 +172,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="ad33dd0b4c47fa61a16466dcf2ec3e20e" name="ad33dd0b4c47fa61a16466dcf2ec3e20e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad33dd0b4c47fa61a16466dcf2ec3e20e">&#9670;&nbsp;</a></span>IGpuMemoryBlock()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33dd0b4c47fa61a16466dcf2ec3e20e">&#9670;&#160;</a></span>IGpuMemoryBlock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,36 +183,27 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">IGpuMemoryBlock::IGpuMemoryBlock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>reservedSize</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>reservedSize</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *&#160;</td>
-          <td class="paramname"><em>device</em>, </td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *</td>          <td class="paramname"><span class="paramname"><em>device</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a>&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5e58e16d9268fde60c3eae698b225ec">GpuMemoryUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5e58e16d9268fde60c3eae698b225ec">GpuMemoryUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -241,9 +221,9 @@ Atributos protegidos</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
 <a id="a33848f9ecc557883fb5943889bc08a70" name="a33848f9ecc557883fb5943889bc08a70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33848f9ecc557883fb5943889bc08a70">&#9670;&nbsp;</a></span>CreateNewMemorySubblock()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a33848f9ecc557883fb5943889bc08a70">&#9670;&#160;</a></span>CreateNewMemorySubblock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,24 +234,17 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> &gt; OSK::GRAPHICS::IGpuMemoryBlock::CreateNewMemorySubblock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>offset</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -290,15 +263,15 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a39b466554cd4a3163e7824133161c88c" name="a39b466554cd4a3163e7824133161c88c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39b466554cd4a3163e7824133161c88c">&#9670;&nbsp;</a></span>GetAllocatedSize()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a39b466554cd4a3163e7824133161c88c">&#9670;&#160;</a></span>GetAllocatedSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> IGpuMemoryBlock::GetAllocatedSize </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> IGpuMemoryBlock::GetAllocatedSize </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -311,15 +284,15 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="abc59083a812617c23f419e7f866b9f09" name="abc59083a812617c23f419e7f866b9f09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc59083a812617c23f419e7f866b9f09">&#9670;&nbsp;</a></span>GetAvailableSpace()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abc59083a812617c23f419e7f866b9f09">&#9670;&#160;</a></span>GetAvailableSpace()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> IGpuMemoryBlock::GetAvailableSpace </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> IGpuMemoryBlock::GetAvailableSpace </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -332,7 +305,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a2003b58e4ba53da3f0adf7e8d52eed97" name="a2003b58e4ba53da3f0adf7e8d52eed97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2003b58e4ba53da3f0adf7e8d52eed97">&#9670;&nbsp;</a></span>GetGpu()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2003b58e4ba53da3f0adf7e8d52eed97">&#9670;&#160;</a></span>GetGpu()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -343,13 +316,13 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> * OSK::GRAPHICS::IGpuMemoryBlock::GetGpu </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -360,8 +333,63 @@ Atributos protegidos</h2></td></tr>
 
 </div>
 </div>
+<a id="a7911bc6cd6bb4ab4916532af49398898" name="a7911bc6cd6bb4ab4916532af49398898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7911bc6cd6bb4ab4916532af49398898">&#9670;&#160;</a></span>GetMappedData() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a79ac5831e0b2433213dacbfc636f4d8f">TByte</a> * IGpuMemoryBlock::GetMappedData </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Devuelve</dt><dd>Memoria mapeada. Desde el inicio del rango mapeado (no desde el inicio del bloque). </dd>
+<dd>
+Null si no hay memoria mapeada. </dd></dl>
+
+</div>
+</div>
+<a id="ab995c759207384b60d9e184194ca504e" name="ab995c759207384b60d9e184194ca504e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab995c759207384b60d9e184194ca504e">&#9670;&#160;</a></span>GetMappedData() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespace_o_s_k.html#a79ac5831e0b2433213dacbfc636f4d8f">TByte</a> * IGpuMemoryBlock::GetMappedData </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5120641b1fd897f1ddd691d2a9155af5" name="a5120641b1fd897f1ddd691d2a9155af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5120641b1fd897f1ddd691d2a9155af5">&#9670;&#160;</a></span>GetMappedRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_mapped_range.html">GpuMemoryMappedRange</a> IGpuMemoryBlock::GetMappedRange </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Devuelve</dt><dd>Rango de memoria mapeada. </dd></dl>
+
+</div>
+</div>
 <a id="ab2ac3979da53cb99552d01efa1fbdc86" name="ab2ac3979da53cb99552d01efa1fbdc86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2ac3979da53cb99552d01efa1fbdc86">&#9670;&nbsp;</a></span>GetNextMemorySubblock()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2ac3979da53cb99552d01efa1fbdc86">&#9670;&#160;</a></span>GetNextMemorySubblock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -369,19 +397,12 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> &gt; IGpuMemoryBlock::GetNextMemorySubblock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>alignment</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>alignment</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -406,7 +427,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a0bbdd382268b0bb587b03c1180cecde8" name="a0bbdd382268b0bb587b03c1180cecde8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bbdd382268b0bb587b03c1180cecde8">&#9670;&nbsp;</a></span>GetShareType()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bbdd382268b0bb587b03c1180cecde8">&#9670;&#160;</a></span>GetShareType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -414,7 +435,7 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> IGpuMemoryBlock::GetShareType </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -427,7 +448,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a80aec8670a12157bc819ed904d71e60e" name="a80aec8670a12157bc819ed904d71e60e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80aec8670a12157bc819ed904d71e60e">&#9670;&nbsp;</a></span>GetUsageType()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a80aec8670a12157bc819ed904d71e60e">&#9670;&#160;</a></span>GetUsageType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -435,7 +456,7 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5e58e16d9268fde60c3eae698b225ec">GpuMemoryUsage</a> IGpuMemoryBlock::GetUsageType </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -448,7 +469,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="ade0f4cfb99ac4d5653f80064e83a78e2" name="ade0f4cfb99ac4d5653f80064e83a78e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade0f4cfb99ac4d5653f80064e83a78e2">&#9670;&nbsp;</a></span>IsUnused()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ade0f4cfb99ac4d5653f80064e83a78e2">&#9670;&#160;</a></span>IsUnused()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -459,13 +480,13 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">bool OSK::GRAPHICS::IGpuMemoryBlock::IsUnused </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -475,8 +496,88 @@ Atributos protegidos</h2></td></tr>
 
 </div>
 </div>
+<a id="ae7eee828cbd73e8407393b9493badbbd" name="ae7eee828cbd73e8407393b9493badbbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7eee828cbd73e8407393b9493badbbd">&#9670;&#160;</a></span>MapAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IGpuMemoryBlock::MapAll </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mapea toda la memoria. </p>
+<dl class="section pre"><dt>Precondición</dt><dd>Este buffer debe haber sido creado con GpuSharedMemoryType::CPU_AND_GPU. </dd></dl>
+
+</div>
+</div>
+<a id="aa23ce91b510678a4bed503525846a1b7" name="aa23ce91b510678a4bed503525846a1b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa23ce91b510678a4bed503525846a1b7">&#9670;&#160;</a></span>MapRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IGpuMemoryBlock::MapRange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mapea un rango de la memoria. </p>
+<dl class="section pre"><dt>Precondición</dt><dd>Este buffer debe haber sido creado con GpuSharedMemoryType::CPU_AND_GPU. </dd>
+<dd>
+<code class="param">offset</code> &lt; tamaño del buffer. </dd>
+<dd>
+<code class="param">size</code> &lt; tamaño del buffer. </dd>
+<dd>
+<code class="param">offset</code> + <code class="param">size</code> &lt; tamaño del buffer. </dd></dl>
+<dl class="section user"><dt>Thread-safe</dt><dd>Compatible con ejecución multihilo. </dd></dl>
+
+</div>
+</div>
+<a id="a55d19c14fe9a62dd3c8bcea78cb226d3" name="a55d19c14fe9a62dd3c8bcea78cb226d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55d19c14fe9a62dd3c8bcea78cb226d3">&#9670;&#160;</a></span>MapRange_Impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespace_o_s_k.html#a79ac5831e0b2433213dacbfc636f4d8f">TByte</a> * OSK::GRAPHICS::IGpuMemoryBlock::MapRange_Impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a458632dd6887cb1b943ef1962f407042" name="a458632dd6887cb1b943ef1962f407042"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a458632dd6887cb1b943ef1962f407042">&#9670;&nbsp;</a></span>OSK_DEFINE_AS()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a458632dd6887cb1b943ef1962f407042">&#9670;&#160;</a></span>OSK_DEFINE_AS()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -484,8 +585,7 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">OSK::GRAPHICS::IGpuMemoryBlock::OSK_DEFINE_AS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -494,7 +594,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="adfe42ab34135cb8dcf5adc7cffb44d96" name="adfe42ab34135cb8dcf5adc7cffb44d96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfe42ab34135cb8dcf5adc7cffb44d96">&#9670;&nbsp;</a></span>RemoveSubblock()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adfe42ab34135cb8dcf5adc7cffb44d96">&#9670;&#160;</a></span>RemoveSubblock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -502,8 +602,7 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">void IGpuMemoryBlock::RemoveSubblock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> *&#160;</td>
-          <td class="paramname"><em>subblock</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> *</td>          <td class="paramname"><span class="paramname"><em>subblock</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -518,9 +617,29 @@ Atributos protegidos</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Documentación de los datos miembro</h2>
-<a id="abc1e855fd56cf8f2ba91efe5f6058385" name="abc1e855fd56cf8f2ba91efe5f6058385"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc1e855fd56cf8f2ba91efe5f6058385">&#9670;&nbsp;</a></span>availableSpace</h2>
+<a id="aa164a4e7d8ac35b01d27ea5862f5243b" name="aa164a4e7d8ac35b01d27ea5862f5243b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa164a4e7d8ac35b01d27ea5862f5243b">&#9670;&#160;</a></span>UnmapAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IGpuMemoryBlock::UnmapAll </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mapea toda la memoria. </p>
+<dl class="section pre"><dt>Precondición</dt><dd>Este buffer debe haber sido creado con GpuSharedMemoryType::CPU_AND_GPU. </dd></dl>
+<dl class="section user"><dt>Thread-safe</dt><dd>Compatible con ejecución multihilo. </dd></dl>
+
+</div>
+</div>
+<a id="a6ce5017e45cead0614ba454c5c9706bc" name="a6ce5017e45cead0614ba454c5c9706bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce5017e45cead0614ba454c5c9706bc">&#9670;&#160;</a></span>UnmapAll_Impl()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -529,12 +648,38 @@ Atributos protegidos</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> OSK::GRAPHICS::IGpuMemoryBlock::availableSpace = 0</td>
+          <td class="memname">virtual void OSK::GRAPHICS::IGpuMemoryBlock::UnmapAll_Impl </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de datos miembro</h2>
+<a id="abc1e855fd56cf8f2ba91efe5f6058385" name="abc1e855fd56cf8f2ba91efe5f6058385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc1e855fd56cf8f2ba91efe5f6058385">&#9670;&#160;</a></span>availableSpace</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> OSK::GRAPHICS::IGpuMemoryBlock::availableSpace = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -544,7 +689,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a921c6aa09ba2c4ffb8a6ff8edca8dbe3" name="a921c6aa09ba2c4ffb8a6ff8edca8dbe3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a921c6aa09ba2c4ffb8a6ff8edca8dbe3">&#9670;&nbsp;</a></span>currentOffset</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a921c6aa09ba2c4ffb8a6ff8edca8dbe3">&#9670;&#160;</a></span>currentOffset</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -553,12 +698,12 @@ Atributos protegidos</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> OSK::GRAPHICS::IGpuMemoryBlock::currentOffset = 0</td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> OSK::GRAPHICS::IGpuMemoryBlock::currentOffset = 0</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -568,7 +713,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="ac75aa44cce34a964dfe1d6026d4d3c5f" name="ac75aa44cce34a964dfe1d6026d4d3c5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac75aa44cce34a964dfe1d6026d4d3c5f">&#9670;&nbsp;</a></span>device</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac75aa44cce34a964dfe1d6026d4d3c5f">&#9670;&#160;</a></span>device</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -582,7 +727,7 @@ Atributos protegidos</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -591,8 +736,80 @@ Atributos protegidos</h2></td></tr>
 
 </div>
 </div>
+<a id="ac62fcb89fa6eeb626587c458d238c868" name="ac62fcb89fa6eeb626587c458d238c868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac62fcb89fa6eeb626587c458d238c868">&#9670;&#160;</a></span>m_mapMutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_o_s_k_1_1_mutex_holder.html">MutexHolder</a> OSK::GRAPHICS::IGpuMemoryBlock::m_mapMutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mutex para el mapeo y/o desmapeo de memoria. </p>
+
+</div>
+</div>
+<a id="a80870ff80472b94d8a1fe17f0bfeaab4" name="a80870ff80472b94d8a1fe17f0bfeaab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80870ff80472b94d8a1fe17f0bfeaab4">&#9670;&#160;</a></span>m_mappedData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a79ac5831e0b2433213dacbfc636f4d8f">TByte</a>* OSK::GRAPHICS::IGpuMemoryBlock::m_mappedData = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Memoria mapeada. Si no está mapeada, será nullptr. </p>
+
+</div>
+</div>
+<a id="aa6f806641cd685b06e495c017ac90faa" name="aa6f806641cd685b06e495c017ac90faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6f806641cd685b06e495c017ac90faa">&#9670;&#160;</a></span>m_mappedRange</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_mapped_range.html">GpuMemoryMappedRange</a> OSK::GRAPHICS::IGpuMemoryBlock::m_mappedRange {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Región de memoria mapeada. </p>
+
+</div>
+</div>
 <a id="a35a67da8eade0a066d08de340a4900b2" name="a35a67da8eade0a066d08de340a4900b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35a67da8eade0a066d08de340a4900b2">&#9670;&nbsp;</a></span>m_subblockSearchMutex</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a35a67da8eade0a066d08de340a4900b2">&#9670;&#160;</a></span>m_subblockSearchMutex</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -606,7 +823,7 @@ Atributos protegidos</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel mutable">mutable</span><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -616,7 +833,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="afb0a469af9d65724ffe513423dd32482" name="afb0a469af9d65724ffe513423dd32482"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb0a469af9d65724ffe513423dd32482">&#9670;&nbsp;</a></span>reusableSubblocks</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afb0a469af9d65724ffe513423dd32482">&#9670;&#160;</a></span>reusableSubblocks</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -630,7 +847,7 @@ Atributos protegidos</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -640,7 +857,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a486fd0961d556d8e0dd64763ff843ed3" name="a486fd0961d556d8e0dd64763ff843ed3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a486fd0961d556d8e0dd64763ff843ed3">&#9670;&nbsp;</a></span>subblocks</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a486fd0961d556d8e0dd64763ff843ed3">&#9670;&#160;</a></span>subblocks</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -654,7 +871,7 @@ Atributos protegidos</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -664,7 +881,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a7887b4b066117738b0f64ebbdf05bf05" name="a7887b4b066117738b0f64ebbdf05bf05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7887b4b066117738b0f64ebbdf05bf05">&#9670;&nbsp;</a></span>totalSize</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7887b4b066117738b0f64ebbdf05bf05">&#9670;&#160;</a></span>totalSize</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -673,12 +890,12 @@ Atributos protegidos</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> OSK::GRAPHICS::IGpuMemoryBlock::totalSize = 0</td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> OSK::GRAPHICS::IGpuMemoryBlock::totalSize = 0</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -688,7 +905,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a49883b25223e08eefef3da606eacf367" name="a49883b25223e08eefef3da606eacf367"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49883b25223e08eefef3da606eacf367">&#9670;&nbsp;</a></span>type</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a49883b25223e08eefef3da606eacf367">&#9670;&#160;</a></span>type</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -702,7 +919,7 @@ Atributos protegidos</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -710,7 +927,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a2e98cccefbc350a426c8d10d66f58769" name="a2e98cccefbc350a426c8d10d66f58769"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e98cccefbc350a426c8d10d66f58769">&#9670;&nbsp;</a></span>usage</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e98cccefbc350a426c8d10d66f58769">&#9670;&#160;</a></span>usage</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -724,7 +941,7 @@ Atributos protegidos</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -733,11 +950,19 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespace_o_s_k.html">OSK</a></li><li class="navelem"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">GRAPHICS</a></li><li class="navelem"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a></li>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="navelem"><a href="namespace_o_s_k.html">OSK</a></li><li class="navelem"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">GRAPHICS</a></li><li class="navelem"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

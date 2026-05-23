@@ -1,0 +1,103 @@
+\doxysection{Referencia del espacio de nombres OSK\+::EFTraits}
+\label{namespace_o_s_k_1_1_e_f_traits}\index{OSK::EFTraits@{OSK::EFTraits}}
+\doxysubsubsection*{Conceptos}
+\begin{DoxyCompactItemize}
+\item 
+concept \textbf{ Is\+Enum}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\constexpr bool \textbf{ Is\+Enum\+Flag} ()
+\item 
+{\footnotesize template$<$typename TEnum$>$ \newline
+requires \textbf{ OSK\+::\+EFTraits\+::\+Is\+Enum}$<$TEnum$>$}\\constexpr bool \textbf{ Has\+Flag} (TEnum value, TEnum flag)
+\item 
+{\footnotesize template$<$typename TEnum$>$ \newline
+requires \textbf{ OSK\+::\+EFTraits\+::\+Is\+Enum}$<$TEnum$>$}\\constexpr void \textbf{ Add\+Flag} (TEnum $\ast$value, TEnum flag)
+\item 
+{\footnotesize template$<$typename TEnum$>$ \newline
+requires \textbf{ OSK\+::\+EFTraits\+::\+Is\+Enum}$<$TEnum$>$}\\constexpr void \textbf{ Remove\+Flag} (TEnum $\ast$value, TEnum flag)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Permite la manipulación de enum class como flags de un enum. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones}
+\index{OSK::EFTraits@{OSK::EFTraits}!AddFlag@{AddFlag}}
+\index{AddFlag@{AddFlag}!OSK::EFTraits@{OSK::EFTraits}}
+\doxysubsubsection{AddFlag()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_e_f_traits_aaa9d8f73148fc7211f6713016bbab4aa} 
+template$<$typename TEnum$>$ \newline
+requires \textbf{ OSK\+::\+EFTraits\+::\+Is\+Enum}$<$TEnum$>$\\
+void OSK\+::\+EFTraits\+::\+Add\+Flag (\begin{DoxyParamCaption}\item[{TEnum $\ast$}]{value}{, }\item[{TEnum}]{flag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Añade un flag al enum dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Puntero al enum que se va a modificar.\\
+\hline
+{\em flag} & Flag que se va a añadir.\\
+\hline
+\end{DoxyParams}
+\index{OSK::EFTraits@{OSK::EFTraits}!HasFlag@{HasFlag}}
+\index{HasFlag@{HasFlag}!OSK::EFTraits@{OSK::EFTraits}}
+\doxysubsubsection{HasFlag()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_e_f_traits_a8b4d083d34df5ab4cc95043f91b5a24c} 
+template$<$typename TEnum$>$ \newline
+requires \textbf{ OSK\+::\+EFTraits\+::\+Is\+Enum}$<$TEnum$>$\\
+bool OSK\+::\+EFTraits\+::\+Has\+Flag (\begin{DoxyParamCaption}\item[{TEnum}]{value}{, }\item[{TEnum}]{flag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Devuelve true si el enum \textquotesingle{}value\textquotesingle{} tiene la flag \textquotesingle{}flag\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Enum a comrpobar.\\
+\hline
+{\em flag} & Flag que el enum debe tener para devolver true.\\
+\hline
+\end{DoxyParams}
+\index{OSK::EFTraits@{OSK::EFTraits}!IsEnumFlag@{IsEnumFlag}}
+\index{IsEnumFlag@{IsEnumFlag}!OSK::EFTraits@{OSK::EFTraits}}
+\doxysubsubsection{IsEnumFlag()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_e_f_traits_ac02500149cc40bbccc88295f4ab6c763} 
+template$<$typename T$>$ \\
+bool OSK\+::\+EFTraits\+::\+Is\+Enum\+Flag (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\begin{DoxyNote}{Nota}
+Por defecto, cualquier tipo NO se considera un enum flags, al no ser que se especifique lo contrario con OSK\+\_\+\+FLAGS.
+\end{DoxyNote}
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+Falso, al no ser que se sobreescriba con OSK\+\_\+\+FLAGS.
+\end{DoxyReturn}
+\index{OSK::EFTraits@{OSK::EFTraits}!RemoveFlag@{RemoveFlag}}
+\index{RemoveFlag@{RemoveFlag}!OSK::EFTraits@{OSK::EFTraits}}
+\doxysubsubsection{RemoveFlag()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_e_f_traits_a1d703d4f4c9fb9abe1ab4905b9a6c458} 
+template$<$typename TEnum$>$ \newline
+requires \textbf{ OSK\+::\+EFTraits\+::\+Is\+Enum}$<$TEnum$>$\\
+void OSK\+::\+EFTraits\+::\+Remove\+Flag (\begin{DoxyParamCaption}\item[{TEnum $\ast$}]{value}{, }\item[{TEnum}]{flag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Elimina un flag del enum dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Puntero al enum que se va a modificar.\\
+\hline
+{\em flag} & Flag que se va a eliminar.\\
+\hline
+\end{DoxyParams}

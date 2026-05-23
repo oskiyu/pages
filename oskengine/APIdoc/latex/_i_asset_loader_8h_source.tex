@@ -1,0 +1,92 @@
+\doxysection{IAsset\+Loader.\+h}
+\label{_i_asset_loader_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IAssetLoader.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IAssetLoader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}AssetRef.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}AssetOwningRef.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}AssetsMap.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <json.hpp>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ OSK\_ASSET\_TYPE\_REG}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ OSK\_ASSET\_TYPE\_REG(typeName)\ const\ static\ std::string\ GetAssetType()\ \{\ return\ typeName;\ \}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }IAsset;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IAssetLoader\ \{}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IAssetLoader()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Load(\textcolor{keyword}{const}\ std::string\&\ assetFilePath)\ =\ 0;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ FullyLoad(\textcolor{keyword}{const}\ std::string\&\ assetFilePath,\ \textcolor{keywordtype}{void}*\ assetRef)\ =\ 0;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ RegisterWithoutLoading(\textcolor{keyword}{const}\ std::string\&\ assetFilePath,\ \textcolor{keywordtype}{void}*\ assetRef)\ =\ 0;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetAsLoaded(std::string\_view\ assetFilePath)\ =\ 0;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ nlohmann::json\ ValidateDescriptionFile(std::string\_view\ filePath)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TAssetType>}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{class\ }TAssetLoader\ \{}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~TAssetLoader()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Load(\textcolor{keyword}{const}\ std::string\&\ path,\ TAssetType*\ asset)\ =\ 0;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ AssetsMap<TAssetType>\ m\_assetsTable;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ OSK\_DEFAULT\_LOADER\_IMPL(TType)\ \(\backslash\)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{void\ RegisterWithoutLoading(const\ std::string\&\ assetFilePath,\ void*\ assetRef)\ override\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \ \ OSK::ASSETS::AssetRef<TType>\&\ output\ =\ *static\_cast<OSK::ASSETS::AssetRef<TType>*>(assetRef);\ \(\backslash\)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ \ \ output\ =\ m\_assetsTable.GetReference\_OrRegister(assetFilePath);\ \(\backslash\)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\}\ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{void\ FullyLoad(const\ std::string\&\ assetFilePath,\ void*\ assetRef)\ override\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \ OSK::ASSETS::AssetRef<TType>\&\ output\ =\ *static\_cast<OSK::ASSETS::AssetRef<TType>*>(assetRef);\ \(\backslash\)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\ \ \ \ if\ (!m\_assetsTable.HasAsset(assetFilePath))\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ m\_assetsTable.Register(assetFilePath);\ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ Load(assetFilePath,\ m\_assetsTable.GetAsset(assetFilePath));\(\backslash\)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ output\ =\ m\_assetsTable.GetExistingReference(assetFilePath);\ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\}\ \(\backslash\)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{void\ SetAsLoaded(std::string\_view\ assetFilePath)\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ m\_assetsTable.SetAsLoaded(assetFilePath);\ \(\backslash\)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\}\ \(\backslash\)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{void\ Load(const\ std::string\&\ assetFilePath)\ override\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\ \ \ \ Load(assetFilePath,\ m\_assetsTable.GetAsset(assetFilePath));\ \(\backslash\)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\ \ \ \ SetAsLoaded(assetFilePath);\ \(\backslash\)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ OSK::ASSETS::AssetRef<TType>\&\ output\ =\ *static\_cast<OSK::ASSETS::AssetRef<TType>*>(assetRef);\ \(\backslash\)}}
+\DoxyCodeLine{00135\ \textcolor{comment}{}}
+
+\end{DoxyCode}

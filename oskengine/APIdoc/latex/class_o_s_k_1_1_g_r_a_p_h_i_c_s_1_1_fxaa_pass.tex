@@ -1,0 +1,138 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Fxaa\+Pass}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_fxaa_pass}\index{OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}}
+
+
+{\ttfamily \#include $<$Fxaa\+Pass.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Create} (const \textbf{ Vector2ui} \&size) override
+\item 
+void \textbf{ Execute} (\textbf{ ICommand\+List} $\ast$compute\+Cmd\+List) override
+\item 
+void \textbf{ Set\+Input} (\textbf{ Gpu\+Image} $\ast$image)
+\item 
+virtual void \textbf{ Resize} (const \textbf{ Vector2ui} \&size)
+\item 
+\textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Output} ()
+\item 
+const \textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Output} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \textbf{ Material\+Name} = "{}Resources/Materials/Post\+Process/fxaa.\+json"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Efecto de post-\/procesado que implementa Fast Approximate Anti-\/\+Aliasing. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}!Create@{Create}}
+\index{Create@{Create}!OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_fxaa_pass_a73cbe34a14cf42fdf6f4c708f8983872} 
+void Fxaa\+Pass\+::\+Create (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Crea el render target de salida. Se puede sobreescribir por efectos de post-\/procesado específicos para crear recursos intermedios. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Resolución (tanto de entrada como de salida). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a92aa17faa014d558ac7cc79eb982c03c}.
+
+\index{OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_fxaa_pass_a9599733163dc27f59768d246b5deb3ee} 
+void Fxaa\+Pass\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{compute\+Cmd\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Genera la imagen final. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em compute\+Cmd\+List} & Lista de comandos sobre la que se ejecutará.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Se deben haber establecido las imágenes de entrada con {\ttfamily IPost\+Process\+Pass\+::\+Set\+Input}. 
+
+Las imágenes de entrada establecidas con {\ttfamily IPost\+Process\+Pass\+::\+Set\+Input} deben estar en un estado válido. 
+
+{\ttfamily compute\+Cmd\+List} debe soportar, al menos .
+
+Se deben haber establecido las entradas necesarias para el pase. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Post\+Process\+Input\+Not\+Set\+Exception}{pág.}{class_o_s_k_1_1_post_process_input_not_set_exception}} & si no se han establecido las entradas necesarias. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a05388cf0f2e8bc5e1b94cdc76cd58c8e}.
+
+\index{OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}}
+\doxysubsubsection{GetOutput()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_ae65dc5bc46fb7657d6f18b148e7ea5cd} 
+\textbf{ Compute\+Render\+Target} \& IPost\+Process\+Pass\+::\+Get\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Render target con la imagen final en las imágenes de color. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}}
+\doxysubsubsection{GetOutput()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a4b49581bc321be779142519f48d7b263} 
+const \textbf{ Compute\+Render\+Target} \& IPost\+Process\+Pass\+::\+Get\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Render target con la imagen final en las imágenes de color. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}!Resize@{Resize}}
+\index{Resize@{Resize}!OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}}
+\doxysubsubsection{Resize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a5755b9283180f003c9d77fbebebfb322} 
+void IPost\+Process\+Pass\+::\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Cambia de tamaño el render target de salida. Se puede sobreescribir para crear recursos intermedios. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño de la imagen final. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \textbf{ OSK\+::\+GRAPHICS\+::\+Bloom\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass_a5545a4f6b434519d5fb2873ed72b2b25}, \textbf{ OSK\+::\+GRAPHICS\+::\+Hbao\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_a13edc6194b3b9e4d62137181893f9080}, \textbf{ OSK\+::\+GRAPHICS\+::\+Smaa\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_smaa_pass_a2a479e329ad2604b9f51f935d830d436} y \textbf{ OSK\+::\+GRAPHICS\+::\+Tone\+Mapping\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_ad3fd26d75d4546281505e00a37f6c332}.
+
+\index{OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}!SetInput@{SetInput}}
+\index{SetInput@{SetInput}!OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}}
+\doxysubsubsection{SetInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_fxaa_pass_ac93579f27c366ee7af2fa31410cd5d67} 
+void Fxaa\+Pass\+::\+Set\+Input (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}!MaterialName@{MaterialName}}
+\index{MaterialName@{MaterialName}!OSK::GRAPHICS::FxaaPass@{OSK::GRAPHICS::FxaaPass}}
+\doxysubsubsection{MaterialName}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_fxaa_pass_a094265fc4d46b5d24dffb5a8433eda2d} 
+auto OSK\+::\+GRAPHICS\+::\+Fxaa\+Pass\+::\+Material\+Name = "{}Resources/Materials/Post\+Process/fxaa.\+json"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+

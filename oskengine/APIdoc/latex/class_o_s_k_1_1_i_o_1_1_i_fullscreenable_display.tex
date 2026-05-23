@@ -1,0 +1,104 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::IFullscreenable\+Display}
+\label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display}\index{OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}}
+
+
+{\ttfamily \#include $<$IFullscreenable\+Display.\+h$>$}
+
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Previous\+Display\+State}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IFullscreenable\+Display} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+IUUID} ((\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+IFullscreenable\+Display})
+\item 
+bool \textbf{ Is\+Fullscreen} () const
+\item 
+virtual void \textbf{ Set\+Fullscreen} (bool fullscreen)=0
+\item 
+void \textbf{ Toggle\+Fullscreen} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ OSK\+::\+IO\+::\+IFullscreenable\+Display\+::\+Previous\+Display\+State} \textbf{ previous}
+\item 
+bool \textbf{ is\+Fullscreen} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz que representa un display que puede alternar entre pantalla completa y modo ventana. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}!````~IFullscreenableDisplay@{$\sim$IFullscreenableDisplay}}
+\index{````~IFullscreenableDisplay@{$\sim$IFullscreenableDisplay}!OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}}
+\doxysubsubsection{$\sim$IFullscreenableDisplay()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_a5b20f6c175795889ccb06ed87ace51da} 
+virtual OSK\+::\+IO\+::\+IFullscreenable\+Display\+::$\sim$\+IFullscreenable\+Display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}!IsFullscreen@{IsFullscreen}}
+\index{IsFullscreen@{IsFullscreen}!OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}}
+\doxysubsubsection{IsFullscreen()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_ada51621a8390a2a03f5e615c748be2ae} 
+bool IFullscreenable\+Display\+::\+Is\+Fullscreen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si el display se encuentra actualmente en pantalla completa. 
+\end{DoxyReturn}
+\index{OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}!OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}}
+\index{OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}!OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}}
+\doxysubsubsection{OSK\_DEFINE\_IUUID()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_a4ac604a2cb5bcd7910da9284d593f5a9} 
+OSK\+::\+IO\+::\+IFullscreenable\+Display\+::\+OSK\+\_\+\+DEFINE\+\_\+\+IUUID (\begin{DoxyParamCaption}\item[{(\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+IFullscreenable\+Display}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}!SetFullscreen@{SetFullscreen}}
+\index{SetFullscreen@{SetFullscreen}!OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}}
+\doxysubsubsection{SetFullscreen()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_a05051ecf6608ff89a251dee52ef96eeb} 
+virtual void OSK\+::\+IO\+::\+IFullscreenable\+Display\+::\+Set\+Fullscreen (\begin{DoxyParamCaption}\item[{bool}]{fullscreen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece modo pantalla completa o modo ventana. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fullscreen} & True\+: modo pantalla completa. False\+: modo ventana. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}!ToggleFullscreen@{ToggleFullscreen}}
+\index{ToggleFullscreen@{ToggleFullscreen}!OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}}
+\doxysubsubsection{ToggleFullscreen()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_ada2ca7e7ef05f2d60ca7b3bbf5f5ce0a} 
+void IFullscreenable\+Display\+::\+Toggle\+Fullscreen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cambia de modo pantalla completa a modo ventana o viceversa. 
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}!isFullscreen@{isFullscreen}}
+\index{isFullscreen@{isFullscreen}!OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}}
+\doxysubsubsection{isFullscreen}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_a9d29a1fe70da7747c1de3ec7d06dac21} 
+bool OSK\+::\+IO\+::\+IFullscreenable\+Display\+::is\+Fullscreen = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}!previous@{previous}}
+\index{previous@{previous}!OSK::IO::IFullscreenableDisplay@{OSK::IO::IFullscreenableDisplay}}
+\doxysubsubsection{previous}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_a8c879fdecd1468bf2e31e1ed7cbe97cd} 
+struct \textbf{ OSK\+::\+IO\+::\+IFullscreenable\+Display\+::\+Previous\+Display\+State} OSK\+::\+IO\+::\+IFullscreenable\+Display\+::previous\hspace{0.3cm}{\ttfamily [protected]}}
+

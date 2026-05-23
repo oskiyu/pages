@@ -1,0 +1,98 @@
+\doxysection{IComponent\+Controller.\+h}
+\label{_i_component_controller_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IComponentController.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IComponentController.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Component.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::Editor::Views\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }IComponentView;}
+\DoxyCodeLine{00011\ \}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }OSK::Editor::Controllers\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IComponentController\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IComponentController()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Poll()\ =\ 0;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(\textcolor{keywordtype}{void}*\ component);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ GetLinkedObject()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ ECS::ComponentType\ GetLinkedComponentType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ IComponentController(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ \textcolor{keywordtype}{object},}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ componentData,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ Views::IComponentView*\ view);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ Views::IComponentView*\ GetView();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Views::IComponentView*\ GetView()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ GetComponentData();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ GetComponentData()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ m\_linkedObject\ =\ ECS::GameObjectIndex::CreateEmpty();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ ECS::ComponentType\ m\_linkedComponent\ =\ 0;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Views::IComponentView*\ m\_view\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ m\_componentData\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponent>}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{class\ }TComponentController\ :\ \textcolor{keyword}{public}\ IComponentController\ \{}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateComponent(TComponent*\ component)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ Update(component);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ TComponentController(}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ \textcolor{keywordtype}{object},}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ componentData,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ Views::IComponentView*\ view)\ :\ IComponentController(object,\ componentData,\ view)\ \{\}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ TComponent*\ GetComponent()\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}TComponent*\textcolor{keyword}{>}(GetComponentData());}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TComponent*\ GetComponent()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }TComponent*\textcolor{keyword}{>}(GetComponentData());}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ \_TComponentController>}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{concept\ }IsComponentController\ =\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ std::is\_base\_of\_v<IComponentController,\ \_TComponentController>\ \&\&}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (\_TComponentController)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \_TComponentController::GetComponentTypeName()\ \};}
+\DoxyCodeLine{00117\ \ \ \ \ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ OSK\_COMPONENT\_EDITOR\_CONTROLLER(componentName)\ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{constexpr\ static\ std::string\_view\ GetComponentTypeName()\ \{\ return\ componentName;\ \}}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ OSK\_LINK\_COMPONENT\_EDITOR\_CONTROLLER(componentType)\ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{constexpr\ static\ std::string\_view\ GetComponentTypeName()\ \{\ return\ componentType::GetComponentTypeName();\ \}}}
+
+\end{DoxyCode}

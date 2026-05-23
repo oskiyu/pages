@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/RenderGraphArgs.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_render_graph_args_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">RenderGraphArgs.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;NumericTypes.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Vector2.hpp&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Vector3.hpp&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;Format.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;GpuImageDimensions.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;GpuMemoryTypes.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;GpuQueueTypes.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;ImageUuid.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;GpuBufferRange.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html">   36</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html">RgRelativeSizeImageRegisterArgs</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html#a1a0ca2ac9910065f4b73e6229e7451f6">   42</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a72b3268907c9cd41f0daf0a42e1c9dca">Vector3f</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html#a1a0ca2ac9910065f4b73e6229e7451f6">relativeResolution</a> = <a class="code hl_variable" href="class_o_s_k_1_1_vector3__t.html#a3475ad5192c86d61f38d881dcbc41816">Vector3f::One</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keyword">static</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html">RgRelativeSizeImageRegisterArgs</a> <a class="code hl_function" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html#a30b5bad6dd456b27dc2fc8949cece208">From1D</a>(<span class="keywordtype">float</span> resolution);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">static</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html">RgRelativeSizeImageRegisterArgs</a> <a class="code hl_function" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html#aa1108aa27a034e059de907d88aaa66b6">From2D</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespace_o_s_k.html#a31a299dbb3a3a60d90d16d1a4eca9651">Vector2f</a>&amp; resolution);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    };</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="};">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html">   72</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html">RgAbsoluteSizeImageRegisterArgs</a> {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html#a75b9da1dad381a0ceb70c7f901abe55a">   77</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a322fa8cc7a5b01f5178546195aca9f26">Vector3ui</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html#a75b9da1dad381a0ceb70c7f901abe55a">resolution</a> = { 1920, 1080, 1 };</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keyword">static</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html">RgAbsoluteSizeImageRegisterArgs</a> <a class="code hl_function" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html#a1052274a7f185c22b920351898b2f878">From1D</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespace_o_s_k.html#a6f5b4753cd85b4773d2880148fd031cf">Vector2ui</a>&amp; <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html#a75b9da1dad381a0ceb70c7f901abe55a">resolution</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keyword">static</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html">RgAbsoluteSizeImageRegisterArgs</a> <a class="code hl_function" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html#a8bb30115294e3196a2be071c6ebe2aa2">From2D</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespace_o_s_k.html#a6f5b4753cd85b4773d2880148fd031cf">Vector2ui</a>&amp; <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html#a75b9da1dad381a0ceb70c7f901abe55a">resolution</a>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    };</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="};">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a90137f0f391d37f8446fe65542256a6a">   99</a></span>    <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a90137f0f391d37f8446fe65542256a6a">RgImageSizeType</a> {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a90137f0f391d37f8446fe65542256a6aa3a0bc063b6db8cae0361657958be836f">  100</a></span>        <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a90137f0f391d37f8446fe65542256a6aa3a0bc063b6db8cae0361657958be836f">ABSOLUTE</a>,</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a90137f0f391d37f8446fe65542256a6aac3cb497d8ec3c88b9024774b775358e2">  101</a></span>        <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a90137f0f391d37f8446fe65542256a6aac3cb497d8ec3c88b9024774b775358e2">RELATIVE</a></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    };</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="};">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info.html">  107</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info.html">RgImageSizeInfo</a> {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info.html#ac5af54a2b08cc3bc45545093694a1cc9">  110</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a90137f0f391d37f8446fe65542256a6a">RgImageSizeType</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info.html#ac5af54a2b08cc3bc45545093694a1cc9">type</a> = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a90137f0f391d37f8446fe65542256a6aac3cb497d8ec3c88b9024774b775358e2">RgImageSizeType::RELATIVE</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info.html#a103837a9c8a66055d2760d4266e4b732">  111</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a322fa8cc7a5b01f5178546195aca9f26">Vector3ui</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info.html#a103837a9c8a66055d2760d4266e4b732">absoluteResolution</a>{};</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info.html#acdb0bbb01d39b13445f291d534c61666">  112</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a72b3268907c9cd41f0daf0a42e1c9dca">Vector3f</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info.html#acdb0bbb01d39b13445f291d534c61666">relativeResolution</a> = <a class="code hl_variable" href="class_o_s_k_1_1_vector3__t.html#a3475ad5192c86d61f38d881dcbc41816">Vector3f::One</a>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    };</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="};">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html">  116</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html">RgImageRegisterInfo</a> {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#aa2d2131d0396bc9217fd5bec2cef6de6">  119</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aac59f9d056e083c0b49ea768f974e3e8">Format</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#aa2d2131d0396bc9217fd5bec2cef6de6">format</a> = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aac59f9d056e083c0b49ea768f974e3e8a696b031073e74bf2cb98e5ef201d4aa3">Format::UNKNOWN</a>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#acab2c4693a2a52e2fab99e8f8b8f1be3">  122</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ab91ccc08d13454cfeb3c4f78deb72d59">GpuImageDimension</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#acab2c4693a2a52e2fab99e8f8b8f1be3">dimension</a> = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ab91ccc08d13454cfeb3c4f78deb72d59a096d0d67e4521bdc9ae95ad5ba97c596">GpuImageDimension::d2D</a>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#a91b70b5beb4722c4c06c480a2b356849">  126</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#a91b70b5beb4722c4c06c480a2b356849">numLayers</a> = 1;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#a8bb1b725d6064aab92867752cdb89bda">  129</a></span>        std::optional&lt;std::string&gt; <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#a8bb1b725d6064aab92867752cdb89bda">name</a>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    };</div>
+</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
+<div class="foldopen" id="foldopen00134" data-start="{" data-end="};">
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html">  134</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html">RgBufferRegisterInfo</a> {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#add6c33196696ae3aa9516bbcd3b9ed33">  139</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#add6c33196696ae3aa9516bbcd3b9ed33">size</a> = 0;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#a777497d471bac927741d27726150a86c">  142</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#a777497d471bac927741d27726150a86c">alignment</a> = 0;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#aa083c1f8a946d5f89dd112b901017e41">  145</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#aa083c1f8a946d5f89dd112b901017e41">sharedType</a> = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042cea95c8166e4f408834884bbe57fef928f6">GpuSharedMemoryType::GPU_ONLY</a>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#a283c79569d31ccbfb5a94eb79db67d22">  147</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#a283c79569d31ccbfb5a94eb79db67d22">queue</a> = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1da186495f7da296bf880df3a22a492b378">GpuQueueType::MAIN</a>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#abe2aae2db42fb67b3800aa6b5b50c66e">  150</a></span>        std::optional&lt;std::string&gt; <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#abe2aae2db42fb67b3800aa6b5b50c66e">name</a>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    };</div>
+</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span></div>
+<div class="foldopen" id="foldopen00157" data-start="{" data-end="};">
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html">  157</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html">RgBufferRef</a> {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html#af443829d2c1210309f4666237977a434">  158</a></span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a29fabf2ed2f1692c68cdced51f520d74">GdrBufferUuid</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html#af443829d2c1210309f4666237977a434">bufferUuid</a>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html#a5202df4880ef2b0bdde7818e180ae24e">  159</a></span>        <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_range.html">GpuBufferRange</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html#a5202df4880ef2b0bdde7818e180ae24e">range</a>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    };</div>
+</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span></div>
+<div class="foldopen" id="foldopen00164" data-start="{" data-end="};">
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref.html">  164</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref.html">VertexAttributesBufferRef</a> {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref.html#a66a8234b3237e62e74994ef82d4a466d">  165</a></span>        <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html">RgBufferRef</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref.html#a66a8234b3237e62e74994ef82d4a466d">bufferRef</a>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref.html#afca05714fcd3a966fb08eb2d92fd9904">  166</a></span>        std::string <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref.html#afca05714fcd3a966fb08eb2d92fd9904">name</a>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    };</div>
+</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>}</div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector3__t_html_a3475ad5192c86d61f38d881dcbc41816"><div class="ttname"><a href="class_o_s_k_1_1_vector3__t.html#a3475ad5192c86d61f38d881dcbc41816">OSK::Vector3_t&lt; float_t &gt;::One</a></div><div class="ttdeci">static OSKAPI_CALL Vector3_t const One</div><div class="ttdef"><b>Definition</b> Vector3.hpp:22</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></div><div class="ttdef"><b>Definition</b> AccelerationStructuresExceptions.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a29fabf2ed2f1692c68cdced51f520d74"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a29fabf2ed2f1692c68cdced51f520d74">OSK::GRAPHICS::GdrBufferUuid</a></div><div class="ttdeci">BaseUuid&lt; class GdrBuffer &gt; GdrBufferUuid</div><div class="ttdoc">Identificador de un buffer usado en un render-graph.</div><div class="ttdef"><b>Definition</b> ImageUuid.h:13</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a85a830e82585f3a565d1f097491042ce"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">OSK::GRAPHICS::GpuSharedMemoryType</a></div><div class="ttdeci">GpuSharedMemoryType</div><div class="ttdoc">Define qué dispositivo tiene acceso a la memoria.</div><div class="ttdef"><b>Definition</b> GpuMemoryTypes.h:15</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a85a830e82585f3a565d1f097491042cea95c8166e4f408834884bbe57fef928f6"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042cea95c8166e4f408834884bbe57fef928f6">OSK::GRAPHICS::GpuSharedMemoryType::GPU_ONLY</a></div><div class="ttdeci">@ GPU_ONLY</div><div class="ttdoc">Exclusivo para la GPU. Mejor rendimiento.</div><div class="ttdef"><b>Definition</b> GpuMemoryTypes.h:32</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a90137f0f391d37f8446fe65542256a6a"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a90137f0f391d37f8446fe65542256a6a">OSK::GRAPHICS::RgImageSizeType</a></div><div class="ttdeci">RgImageSizeType</div><div class="ttdoc">Tipo de resolución indicada al registrar un nuevo render-target.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:99</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a90137f0f391d37f8446fe65542256a6aa3a0bc063b6db8cae0361657958be836f"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a90137f0f391d37f8446fe65542256a6aa3a0bc063b6db8cae0361657958be836f">OSK::GRAPHICS::RgImageSizeType::ABSOLUTE</a></div><div class="ttdeci">@ ABSOLUTE</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:100</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a90137f0f391d37f8446fe65542256a6aac3cb497d8ec3c88b9024774b775358e2"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a90137f0f391d37f8446fe65542256a6aac3cb497d8ec3c88b9024774b775358e2">OSK::GRAPHICS::RgImageSizeType::RELATIVE</a></div><div class="ttdeci">@ RELATIVE</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:101</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_aac59f9d056e083c0b49ea768f974e3e8"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aac59f9d056e083c0b49ea768f974e3e8">OSK::GRAPHICS::Format</a></div><div class="ttdeci">Format</div><div class="ttdoc">Formatos que puede tener una textura / imagen.</div><div class="ttdef"><b>Definition</b> Format.h:10</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_aac59f9d056e083c0b49ea768f974e3e8a696b031073e74bf2cb98e5ef201d4aa3"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aac59f9d056e083c0b49ea768f974e3e8a696b031073e74bf2cb98e5ef201d4aa3">OSK::GRAPHICS::Format::UNKNOWN</a></div><div class="ttdeci">@ UNKNOWN</div><div class="ttdef"><b>Definition</b> Format.h:11</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_ab91ccc08d13454cfeb3c4f78deb72d59"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ab91ccc08d13454cfeb3c4f78deb72d59">OSK::GRAPHICS::GpuImageDimension</a></div><div class="ttdeci">GpuImageDimension</div><div class="ttdoc">Dimensiones posibles de una imagen.</div><div class="ttdef"><b>Definition</b> GpuImageDimensions.h:8</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_ab91ccc08d13454cfeb3c4f78deb72d59a096d0d67e4521bdc9ae95ad5ba97c596"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ab91ccc08d13454cfeb3c4f78deb72d59a096d0d67e4521bdc9ae95ad5ba97c596">OSK::GRAPHICS::GpuImageDimension::d2D</a></div><div class="ttdeci">@ d2D</div><div class="ttdoc">Imagen 2D.</div><div class="ttdef"><b>Definition</b> GpuImageDimensions.h:18</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_af480a36d7bec77341500daf8dda20f1d"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">OSK::GRAPHICS::GpuQueueType</a></div><div class="ttdeci">GpuQueueType</div><div class="ttdoc">Tipos de colas GPU ofrecidas por el motor.</div><div class="ttdef"><b>Definition</b> GpuQueueTypes.h:7</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_af480a36d7bec77341500daf8dda20f1da186495f7da296bf880df3a22a492b378"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1da186495f7da296bf880df3a22a492b378">OSK::GRAPHICS::GpuQueueType::MAIN</a></div><div class="ttdeci">@ MAIN</div><div class="ttdoc">Cola principal de renderizado. Soporta:</div><div class="ttdef"><b>Definition</b> GpuQueueTypes.h:14</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a31a299dbb3a3a60d90d16d1a4eca9651"><div class="ttname"><a href="namespace_o_s_k.html#a31a299dbb3a3a60d90d16d1a4eca9651">OSK::Vector2f</a></div><div class="ttdeci">Vector2_t&lt; float_t &gt; Vector2f</div><div class="ttdoc">Precisión = float.</div><div class="ttdef"><b>Definition</b> Vector2.hpp:261</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a322fa8cc7a5b01f5178546195aca9f26"><div class="ttname"><a href="namespace_o_s_k.html#a322fa8cc7a5b01f5178546195aca9f26">OSK::Vector3ui</a></div><div class="ttdeci">Vector3_t&lt; uint32_t &gt; Vector3ui</div><div class="ttdoc">Precisión = unsigned int.</div><div class="ttdef"><b>Definition</b> Vector3.hpp:302</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a6f5b4753cd85b4773d2880148fd031cf"><div class="ttname"><a href="namespace_o_s_k.html#a6f5b4753cd85b4773d2880148fd031cf">OSK::Vector2ui</a></div><div class="ttdeci">Vector2_t&lt; uint32_t &gt; Vector2ui</div><div class="ttdoc">Precisión = uint32.</div><div class="ttdef"><b>Definition</b> Vector2.hpp:270</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a72b3268907c9cd41f0daf0a42e1c9dca"><div class="ttname"><a href="namespace_o_s_k.html#a72b3268907c9cd41f0daf0a42e1c9dca">OSK::Vector3f</a></div><div class="ttdeci">Vector3_t&lt; float_t &gt; Vector3f</div><div class="ttdoc">Precisión = float.</div><div class="ttdef"><b>Definition</b> Vector3.hpp:293</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a83ff197aaa32126d84ad65f1d6d5a3b5"><div class="ttname"><a href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">OSK::USize64</a></div><div class="ttdeci">uint64_t USize64</div><div class="ttdoc">Tamaño, almacenado en un unsigned int de 64 bits.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:37</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_acf682b0e024acc36806435295480d2ed"><div class="ttname"><a href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">OSK::USize32</a></div><div class="ttdeci">uint32_t USize32</div><div class="ttdoc">Tamaño, almacenado en un unsigned int de 32 bits.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:26</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_range_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_range.html">OSK::GRAPHICS::GpuBufferRange</a></div><div class="ttdoc">Rango de información de un buffer.</div><div class="ttdef"><b>Definition</b> GpuBufferRange.h:9</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html">OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs</a></div><div class="ttdoc">Resolución absoluta de un render-target.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:72</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args_html_a1052274a7f185c22b920351898b2f878"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html#a1052274a7f185c22b920351898b2f878">OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs::From1D</a></div><div class="ttdeci">static RgAbsoluteSizeImageRegisterArgs From1D(const Vector2ui &amp;resolution)</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.cpp:27</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args_html_a75b9da1dad381a0ceb70c7f901abe55a"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html#a75b9da1dad381a0ceb70c7f901abe55a">OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs::resolution</a></div><div class="ttdeci">Vector3ui resolution</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:77</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args_html_a8bb30115294e3196a2be071c6ebe2aa2"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html#a8bb30115294e3196a2be071c6ebe2aa2">OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs::From2D</a></div><div class="ttdeci">static RgAbsoluteSizeImageRegisterArgs From2D(const Vector2ui &amp;resolution)</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.cpp:37</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html">OSK::GRAPHICS::RgBufferRef</a></div><div class="ttdoc">Referencia al rango de un buffer.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:157</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref_html_a5202df4880ef2b0bdde7818e180ae24e"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html#a5202df4880ef2b0bdde7818e180ae24e">OSK::GRAPHICS::RgBufferRef::range</a></div><div class="ttdeci">GpuBufferRange range</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:159</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref_html_af443829d2c1210309f4666237977a434"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html#af443829d2c1210309f4666237977a434">OSK::GRAPHICS::RgBufferRef::bufferUuid</a></div><div class="ttdeci">GdrBufferUuid bufferUuid</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:158</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html">OSK::GRAPHICS::RgBufferRegisterInfo</a></div><div class="ttdoc">Información sobre un buffer.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:134</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info_html_a283c79569d31ccbfb5a94eb79db67d22"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#a283c79569d31ccbfb5a94eb79db67d22">OSK::GRAPHICS::RgBufferRegisterInfo::queue</a></div><div class="ttdeci">GpuQueueType queue</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:147</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info_html_a777497d471bac927741d27726150a86c"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#a777497d471bac927741d27726150a86c">OSK::GRAPHICS::RgBufferRegisterInfo::alignment</a></div><div class="ttdeci">USize64 alignment</div><div class="ttdoc">Alineación de memoria.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:142</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info_html_aa083c1f8a946d5f89dd112b901017e41"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#aa083c1f8a946d5f89dd112b901017e41">OSK::GRAPHICS::RgBufferRegisterInfo::sharedType</a></div><div class="ttdeci">GpuSharedMemoryType sharedType</div><div class="ttdoc">Tipo de memoria.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:145</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info_html_abe2aae2db42fb67b3800aa6b5b50c66e"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#abe2aae2db42fb67b3800aa6b5b50c66e">OSK::GRAPHICS::RgBufferRegisterInfo::name</a></div><div class="ttdeci">std::optional&lt; std::string &gt; name</div><div class="ttdoc">Nombre debug.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:150</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info_html_add6c33196696ae3aa9516bbcd3b9ed33"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info.html#add6c33196696ae3aa9516bbcd3b9ed33">OSK::GRAPHICS::RgBufferRegisterInfo::size</a></div><div class="ttdeci">USize64 size</div><div class="ttdoc">Tamaño del buffer, en bytes.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:139</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html">OSK::GRAPHICS::RgImageRegisterInfo</a></div><div class="ttdoc">Información sobre una imagen.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:116</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info_html_a8bb1b725d6064aab92867752cdb89bda"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#a8bb1b725d6064aab92867752cdb89bda">OSK::GRAPHICS::RgImageRegisterInfo::name</a></div><div class="ttdeci">std::optional&lt; std::string &gt; name</div><div class="ttdoc">Nombre debug.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:129</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info_html_a91b70b5beb4722c4c06c480a2b356849"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#a91b70b5beb4722c4c06c480a2b356849">OSK::GRAPHICS::RgImageRegisterInfo::numLayers</a></div><div class="ttdeci">USize32 numLayers</div><div class="ttdoc">Número de capas de la imagen.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:126</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info_html_aa2d2131d0396bc9217fd5bec2cef6de6"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#aa2d2131d0396bc9217fd5bec2cef6de6">OSK::GRAPHICS::RgImageRegisterInfo::format</a></div><div class="ttdeci">Format format</div><div class="ttdoc">Formato de la imagen.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:119</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info_html_acab2c4693a2a52e2fab99e8f8b8f1be3"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#acab2c4693a2a52e2fab99e8f8b8f1be3">OSK::GRAPHICS::RgImageRegisterInfo::dimension</a></div><div class="ttdeci">GpuImageDimension dimension</div><div class="ttdoc">Dimensionalidad de la imagen.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:122</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info.html">OSK::GRAPHICS::RgImageSizeInfo</a></div><div class="ttdoc">Información sobre la resolución de una imagen.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:107</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info_html_a103837a9c8a66055d2760d4266e4b732"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info.html#a103837a9c8a66055d2760d4266e4b732">OSK::GRAPHICS::RgImageSizeInfo::absoluteResolution</a></div><div class="ttdeci">Vector3ui absoluteResolution</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:111</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info_html_ac5af54a2b08cc3bc45545093694a1cc9"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info.html#ac5af54a2b08cc3bc45545093694a1cc9">OSK::GRAPHICS::RgImageSizeInfo::type</a></div><div class="ttdeci">RgImageSizeType type</div><div class="ttdoc">Tipo de estructura.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:110</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info_html_acdb0bbb01d39b13445f291d534c61666"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info.html#acdb0bbb01d39b13445f291d534c61666">OSK::GRAPHICS::RgImageSizeInfo::relativeResolution</a></div><div class="ttdeci">Vector3f relativeResolution</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:112</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html">OSK::GRAPHICS::RgRelativeSizeImageRegisterArgs</a></div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:36</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args_html_a1a0ca2ac9910065f4b73e6229e7451f6"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html#a1a0ca2ac9910065f4b73e6229e7451f6">OSK::GRAPHICS::RgRelativeSizeImageRegisterArgs::relativeResolution</a></div><div class="ttdeci">Vector3f relativeResolution</div><div class="ttdoc">Resolución relativa.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:42</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args_html_a30b5bad6dd456b27dc2fc8949cece208"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html#a30b5bad6dd456b27dc2fc8949cece208">OSK::GRAPHICS::RgRelativeSizeImageRegisterArgs::From1D</a></div><div class="ttdeci">static RgRelativeSizeImageRegisterArgs From1D(float resolution)</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.cpp:6</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args_html_aa1108aa27a034e059de907d88aaa66b6"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html#aa1108aa27a034e059de907d88aaa66b6">OSK::GRAPHICS::RgRelativeSizeImageRegisterArgs::From2D</a></div><div class="ttdeci">static RgRelativeSizeImageRegisterArgs From2D(const Vector2f &amp;resolution)</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.cpp:16</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref.html">OSK::GRAPHICS::VertexAttributesBufferRef</a></div><div class="ttdoc">Referencia a un rango de atributos de vértice de un tipo en concreto.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:164</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref_html_a66a8234b3237e62e74994ef82d4a466d"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref.html#a66a8234b3237e62e74994ef82d4a466d">OSK::GRAPHICS::VertexAttributesBufferRef::bufferRef</a></div><div class="ttdeci">RgBufferRef bufferRef</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:165</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref_html_afca05714fcd3a966fb08eb2d92fd9904"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref.html#afca05714fcd3a966fb08eb2d92fd9904">OSK::GRAPHICS::VertexAttributesBufferRef::name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:166</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>RenderGraphArgs.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

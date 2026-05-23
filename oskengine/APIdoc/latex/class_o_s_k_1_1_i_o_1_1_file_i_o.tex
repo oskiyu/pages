@@ -1,0 +1,128 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::File\+IO}
+\label{class_o_s_k_1_1_i_o_1_1_file_i_o}\index{OSK::IO::FileIO@{OSK::IO::FileIO}}
+
+
+{\ttfamily \#include $<$File\+IO.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ Write\+File} (std\+::string\+\_\+view path, const std\+::string \&text)
+\item 
+static void \textbf{ Write\+Binary\+File} (std\+::string\+\_\+view path, std\+::span$<$ \textbf{ TByte} const $>$ data)
+\item 
+static std\+::string \textbf{ Read\+From\+File} (std\+::string\+\_\+view path)
+\item 
+static \textbf{ Dynamic\+Array}$<$ char $>$ \textbf{ Read\+Binary\+From\+File} (std\+::string\+\_\+view filename)
+\item 
+static bool \textbf{ File\+Exists} (std\+::string\+\_\+view path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que actúa de interfaz para la lectura y escritura de atchivos. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::FileIO@{OSK::IO::FileIO}!FileExists@{FileExists}}
+\index{FileExists@{FileExists}!OSK::IO::FileIO@{OSK::IO::FileIO}}
+\doxysubsubsection{FileExists()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_file_i_o_ac9803504bcdb2f38099ebf7152e34828} 
+bool File\+IO\+::\+File\+Exists (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Comprueba si un archivo existe. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta del archivo (con extensión).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si existe.
+\end{DoxyReturn}
+\index{OSK::IO::FileIO@{OSK::IO::FileIO}!ReadBinaryFromFile@{ReadBinaryFromFile}}
+\index{ReadBinaryFromFile@{ReadBinaryFromFile}!OSK::IO::FileIO@{OSK::IO::FileIO}}
+\doxysubsubsection{ReadBinaryFromFile()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_file_i_o_a5016ee7b64adc1e95f52ce3f847370c2} 
+\textbf{ Dynamic\+Array}$<$ char $>$ File\+IO\+::\+Read\+Binary\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lee un archivo binario. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em filename} & Ruta del archivo (con extensión).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Vector de bytes.
+\end{DoxyReturn}
+
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+error} & Si el archivo no existe. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::IO::FileIO@{OSK::IO::FileIO}!ReadFromFile@{ReadFromFile}}
+\index{ReadFromFile@{ReadFromFile}!OSK::IO::FileIO@{OSK::IO::FileIO}}
+\doxysubsubsection{ReadFromFile()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_file_i_o_a2b0cbc143a260002237995365ad87e4f} 
+std\+::string File\+IO\+::\+Read\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lee un archivo de texto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta del archivo (con extensión).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+String con el contenido del archivo.
+\end{DoxyReturn}
+
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+error} & Si el archivo no existe. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::IO::FileIO@{OSK::IO::FileIO}!WriteBinaryFile@{WriteBinaryFile}}
+\index{WriteBinaryFile@{WriteBinaryFile}!OSK::IO::FileIO@{OSK::IO::FileIO}}
+\doxysubsubsection{WriteBinaryFile()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_file_i_o_a81c6de9d04e967ed2f8a79c1b6fafd27} 
+void File\+IO\+::\+Write\+Binary\+File (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{path}{, }\item[{std\+::span$<$ \textbf{ TByte} const $>$}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Escribe un archivo binario. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta del archivo (incluyendo extensión). \\
+\hline
+{\em data} & Datos (bytes) a escribir). \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::FileIO@{OSK::IO::FileIO}!WriteFile@{WriteFile}}
+\index{WriteFile@{WriteFile}!OSK::IO::FileIO@{OSK::IO::FileIO}}
+\doxysubsubsection{WriteFile()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_file_i_o_aada122cc56077d9fa6b115d56f36ad2d} 
+void File\+IO\+::\+Write\+File (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{path}{, }\item[{const std\+::string \&}]{text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Escribe un archivo de texto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta del archivo (con extensión).\\
+\hline
+{\em text} & Texto que se va a escribir.\\
+\hline
+\end{DoxyParams}

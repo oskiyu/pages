@@ -1,0 +1,107 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Collider}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider}\index{OSK::COLLISION::Collider@{OSK::COLLISION::Collider}}
+
+
+{\ttfamily \#include $<$Collider.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SERIALIZABLE} ()
+\item 
+void \textbf{ Copy\+From} (const \textbf{ Collider} \&other)
+\item 
+void \textbf{ Set\+Top\+Level\+Collider} (\textbf{ Unique\+Ptr}$<$ \textbf{ Broad\+Collider\+Holder} $>$ \&\&collider)
+\item 
+void \textbf{ Add\+Bottom\+Level\+Collider} (\textbf{ Unique\+Ptr}$<$ \textbf{ Narrow\+Collider\+Holder} $>$ \&\&collider)
+\item 
+const \textbf{ Broad\+Collider\+Holder} $\ast$ \textbf{ Get\+Top\+Level\+Collider} () const
+\item 
+\textbf{ Broad\+Collider\+Holder} $\ast$ \textbf{ Get\+Top\+Level\+Collider} ()
+\item 
+const \textbf{ Narrow\+Collider\+Holder} $\ast$ \textbf{ Get\+Bottom\+Level\+Collider} (\textbf{ UIndex32} id) const
+\item 
+\textbf{ Narrow\+Collider\+Holder} $\ast$ \textbf{ Get\+Bottom\+Level\+Collider} (\textbf{ UIndex32} id)
+\item 
+\textbf{ USize32} \textbf{ Get\+Bottom\+Level\+Colliders\+Count} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa un volumen que puede interseccionar con otros. 
+
+El volumen está representado en dos capas\+: una capa de alto nivel representada por un volumen que cubre toda la geometría, y una capa de bajo nivel con varios volúmenes más ajustados y detallados. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::Collider@{OSK::COLLISION::Collider}!AddBottomLevelCollider@{AddBottomLevelCollider}}
+\index{AddBottomLevelCollider@{AddBottomLevelCollider}!OSK::COLLISION::Collider@{OSK::COLLISION::Collider}}
+\doxysubsubsection{AddBottomLevelCollider()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider_ae5efc8c415951b6e69b8d142bb793ee7} 
+void Collider\+::\+Add\+Bottom\+Level\+Collider (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ Narrow\+Collider\+Holder} $>$ \&\&}]{collider}{}\end{DoxyParamCaption})}
+
+
+
+Añade un volumen de nivel bajo. 
+
+\index{OSK::COLLISION::Collider@{OSK::COLLISION::Collider}!CopyFrom@{CopyFrom}}
+\index{CopyFrom@{CopyFrom}!OSK::COLLISION::Collider@{OSK::COLLISION::Collider}}
+\doxysubsubsection{CopyFrom()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider_afc5934c2a5d91206509381167da7a231} 
+void Collider\+::\+Copy\+From (\begin{DoxyParamCaption}\item[{const \textbf{ Collider} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Operador de copia. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Otro collider que será copiado. \\
+\hline
+\end{DoxyParams}
+\index{OSK::COLLISION::Collider@{OSK::COLLISION::Collider}!GetBottomLevelCollider@{GetBottomLevelCollider}}
+\index{GetBottomLevelCollider@{GetBottomLevelCollider}!OSK::COLLISION::Collider@{OSK::COLLISION::Collider}}
+\doxysubsubsection{GetBottomLevelCollider()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider_af2b6e0b578ae4a35dc6f0983dd42cad8} 
+\textbf{ Narrow\+Collider\+Holder} $\ast$ OSK\+::\+COLLISION\+::\+Collider\+::\+Get\+Bottom\+Level\+Collider (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::COLLISION::Collider@{OSK::COLLISION::Collider}!GetBottomLevelCollider@{GetBottomLevelCollider}}
+\index{GetBottomLevelCollider@{GetBottomLevelCollider}!OSK::COLLISION::Collider@{OSK::COLLISION::Collider}}
+\doxysubsubsection{GetBottomLevelCollider()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider_a72ed635d8a9b1ed313f47d18b23dda45} 
+const \textbf{ Narrow\+Collider\+Holder} $\ast$ OSK\+::\+COLLISION\+::\+Collider\+::\+Get\+Bottom\+Level\+Collider (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{id}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::COLLISION::Collider@{OSK::COLLISION::Collider}!GetBottomLevelCollidersCount@{GetBottomLevelCollidersCount}}
+\index{GetBottomLevelCollidersCount@{GetBottomLevelCollidersCount}!OSK::COLLISION::Collider@{OSK::COLLISION::Collider}}
+\doxysubsubsection{GetBottomLevelCollidersCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider_ad2a8812b48aafca6938f1f72ff29db5d} 
+\textbf{ USize32} Collider\+::\+Get\+Bottom\+Level\+Colliders\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::COLLISION::Collider@{OSK::COLLISION::Collider}!GetTopLevelCollider@{GetTopLevelCollider}}
+\index{GetTopLevelCollider@{GetTopLevelCollider}!OSK::COLLISION::Collider@{OSK::COLLISION::Collider}}
+\doxysubsubsection{GetTopLevelCollider()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider_aa336c29f6962c3ca962a577734918323} 
+\textbf{ Broad\+Collider\+Holder} $\ast$ OSK\+::\+COLLISION\+::\+Collider\+::\+Get\+Top\+Level\+Collider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::COLLISION::Collider@{OSK::COLLISION::Collider}!GetTopLevelCollider@{GetTopLevelCollider}}
+\index{GetTopLevelCollider@{GetTopLevelCollider}!OSK::COLLISION::Collider@{OSK::COLLISION::Collider}}
+\doxysubsubsection{GetTopLevelCollider()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider_a3db7220df93674f8b43e11321b56f971} 
+const \textbf{ Broad\+Collider\+Holder} $\ast$ OSK\+::\+COLLISION\+::\+Collider\+::\+Get\+Top\+Level\+Collider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::COLLISION::Collider@{OSK::COLLISION::Collider}!OSK\_SERIALIZABLE@{OSK\_SERIALIZABLE}}
+\index{OSK\_SERIALIZABLE@{OSK\_SERIALIZABLE}!OSK::COLLISION::Collider@{OSK::COLLISION::Collider}}
+\doxysubsubsection{OSK\_SERIALIZABLE()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider_a4184dba7e64064ee48bfc6bc5f6686f4} 
+OSK\+::\+COLLISION\+::\+Collider\+::\+OSK\+\_\+\+SERIALIZABLE (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::COLLISION::Collider@{OSK::COLLISION::Collider}!SetTopLevelCollider@{SetTopLevelCollider}}
+\index{SetTopLevelCollider@{SetTopLevelCollider}!OSK::COLLISION::Collider@{OSK::COLLISION::Collider}}
+\doxysubsubsection{SetTopLevelCollider()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider_a786d4d9991eaf62901485d4eb8def932} 
+void Collider\+::\+Set\+Top\+Level\+Collider (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ Broad\+Collider\+Holder} $>$ \&\&}]{collider}{}\end{DoxyParamCaption})}
+
+
+
+Establece el volumen de nivel alto. 
+

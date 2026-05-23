@@ -1,0 +1,95 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Simplex}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_simplex}\index{OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}}
+
+
+{\ttfamily \#include $<$Simplex.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Add\+And\+Update} (const \textbf{ Minkowski\+Support} \&point)
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Search\+Direction} () const
+\item 
+std\+::span$<$ const \textbf{ Minkowski\+Support} $>$ \textbf{ Get\+Vertices} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Vertices\+Count} () const
+\item 
+bool \textbf{ Contains\+Origin} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Simplex} \textbf{ Generate\+From} (const \textbf{ IGjk\+Collider} \&first, const \textbf{ IGjk\+Collider} \&second)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Grupo de vértices que trata de encerrar el origen de coordenadas (0, 0, 0). 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}!AddAndUpdate@{AddAndUpdate}}
+\index{AddAndUpdate@{AddAndUpdate}!OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}}
+\doxysubsubsection{AddAndUpdate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_simplex_ab07ef50e4032910e9a6bc78687f4d908} 
+void Simplex\+::\+Add\+And\+Update (\begin{DoxyParamCaption}\item[{const \textbf{ Minkowski\+Support} \&}]{point}{}\end{DoxyParamCaption})}
+
+
+
+Añade un nuevo vértice y actualiza el estado interno. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em point} & Nuevo vértice. \\
+\hline
+\end{DoxyParams}
+\index{OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}!ContainsOrigin@{ContainsOrigin}}
+\index{ContainsOrigin@{ContainsOrigin}!OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}}
+\doxysubsubsection{ContainsOrigin()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_simplex_a86540c720b2b474a0e689daf517aed52} 
+bool Simplex\+::\+Contains\+Origin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si el simplex contiene el origen de coordenadas (0, 0, 0). 
+\end{DoxyReturn}
+\index{OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}!GenerateFrom@{GenerateFrom}}
+\index{GenerateFrom@{GenerateFrom}!OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}}
+\doxysubsubsection{GenerateFrom()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_simplex_aff081cf06df58391facbd06ee7fa03d7} 
+\textbf{ Simplex} Simplex\+::\+Generate\+From (\begin{DoxyParamCaption}\item[{const \textbf{ IGjk\+Collider} \&}]{first}{, }\item[{const \textbf{ IGjk\+Collider} \&}]{second}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Genera el simplex final a partir de los volúmenes {\ttfamily first} y {\ttfamily second}. 
+
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Simplex}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_simplex} finalizado. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}!GetSearchDirection@{GetSearchDirection}}
+\index{GetSearchDirection@{GetSearchDirection}!OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}}
+\doxysubsubsection{GetSearchDirection()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_simplex_addae9c1c138799f00ff3ac5b77c1c324} 
+\textbf{ Vector3f} Simplex\+::\+Get\+Search\+Direction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Dirección en la que hay que buscar el siguiente vértice del hull GJK. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}!GetVertices@{GetVertices}}
+\index{GetVertices@{GetVertices}!OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}}
+\doxysubsubsection{GetVertices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_simplex_a77b6381a5b8a3d013c6c37c285b19b28} 
+std\+::span$<$ const \textbf{ Minkowski\+Support} $>$ Simplex\+::\+Get\+Vertices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Vértices del simplex. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}!GetVerticesCount@{GetVerticesCount}}
+\index{GetVerticesCount@{GetVerticesCount}!OSK::COLLISION::Simplex@{OSK::COLLISION::Simplex}}
+\doxysubsubsection{GetVerticesCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_simplex_a579f59b91a09ff1d719db7ecac5cf9aa} 
+\textbf{ USize64} Simplex\+::\+Get\+Vertices\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Número de vértices del simplex. 
+\end{DoxyReturn}

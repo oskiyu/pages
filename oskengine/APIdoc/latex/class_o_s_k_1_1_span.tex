@@ -1,0 +1,161 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::Span$<$ T $>$}
+\label{class_o_s_k_1_1_span}\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Span.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Span} (T $\ast$data, \textbf{ USize64} count)
+\item 
+\textbf{ Span} (const \textbf{ Span} \&)=default
+\item 
+\textbf{ Span} \& \textbf{ operator=} (const \textbf{ Span} \&)=default
+\item 
+\textbf{ Span} (const \textbf{ Span} \&\&other)
+\item 
+\textbf{ Span} \& \textbf{ operator=} (const \textbf{ Span} \&)=default
+\item 
+\textbf{ $\sim$\+Span} ()=default
+\item 
+const T \& \textbf{ At} (\textbf{ UIndex64} index) const
+\item 
+T \& \textbf{ At} (\textbf{ UIndex64} index)
+\item 
+const T \& \textbf{ operator[$\,$]} (\textbf{ UIndex64} index) const
+\item 
+T \& \textbf{ operator[$\,$]} (\textbf{ UIndex64} index)
+\item 
+\textbf{ USize64} \textbf{ Get\+Count} () const
+\item 
+T $\ast$ \textbf{ Get\+Data} ()
+\item 
+const T $\ast$ \textbf{ Get\+Data} () const
+\item 
+\textbf{ Span} (const T $\ast$data)
+\item 
+\textbf{ Span} (const T $\ast$data, TSize count)
+\item 
+\textbf{ Span} (const T $\ast$data, TSize start, TSize end)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!Span@{Span}}
+\index{Span@{Span}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{Span()\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_a9ce7dad85b40e51b5e0dee0e4e57f9f8} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Span}$<$ T $>$\+::\+Span (\begin{DoxyParamCaption}\item[{T $\ast$}]{data}{, }\item[{\textbf{ USize64}}]{count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!Span@{Span}}
+\index{Span@{Span}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{Span()\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_a89a1da1e533d9347b09c023cf717b358} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Span}$<$ T $>$\+::\+Span (\begin{DoxyParamCaption}\item[{const \textbf{ Span}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!Span@{Span}}
+\index{Span@{Span}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{Span()\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_a8d11792d5e69bbb907fa1840e2dd3752} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Span}$<$ T $>$\+::\+Span (\begin{DoxyParamCaption}\item[{const \textbf{ Span}$<$ T $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!````~Span@{$\sim$Span}}
+\index{````~Span@{$\sim$Span}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{$\sim$Span()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_aa3bd7f874392c99d685fe3f369ba8ee7} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Span}$<$ T $>$\+::$\sim$\textbf{ Span} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!Span@{Span}}
+\index{Span@{Span}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{Span()\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_a458a16060e5205450e93d4bfa0a12f98} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Span}$<$ T $>$\+::\+Span (\begin{DoxyParamCaption}\item[{const T $\ast$}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!Span@{Span}}
+\index{Span@{Span}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{Span()\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_ae93e09a44d13f97b6f7aa39bb20b838f} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Span}$<$ T $>$\+::\+Span (\begin{DoxyParamCaption}\item[{const T $\ast$}]{data}{, }\item[{TSize}]{count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!Span@{Span}}
+\index{Span@{Span}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{Span()\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_a84999850a3dac4a4eed8906c166c814a} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Span}$<$ T $>$\+::\+Span (\begin{DoxyParamCaption}\item[{const T $\ast$}]{data}{, }\item[{TSize}]{start}{, }\item[{TSize}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!At@{At}}
+\index{At@{At}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{At()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_ae572391950efa7e1e3269ad13c462352} 
+template$<$typename T$>$ \\
+T \& \textbf{ OSK\+::\+Span}$<$ T $>$\+::\+At (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!At@{At}}
+\index{At@{At}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{At()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_a2c3cb7644ae49973a5a4219d78850c43} 
+template$<$typename T$>$ \\
+const T \& \textbf{ OSK\+::\+Span}$<$ T $>$\+::\+At (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!GetCount@{GetCount}}
+\index{GetCount@{GetCount}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{GetCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_a139285a4821ad596176e666b1aa4f0e7} 
+template$<$typename T$>$ \\
+\textbf{ USize64} \textbf{ OSK\+::\+Span}$<$ T $>$\+::\+Get\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!GetData@{GetData}}
+\index{GetData@{GetData}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{GetData()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_a3b84391eda5b4a935edac0c37ede36b0} 
+template$<$typename T$>$ \\
+T $\ast$ \textbf{ OSK\+::\+Span}$<$ T $>$\+::\+Get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!GetData@{GetData}}
+\index{GetData@{GetData}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{GetData()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_a580abfe657953726ed563088fc0986ba} 
+template$<$typename T$>$ \\
+const T $\ast$ \textbf{ OSK\+::\+Span}$<$ T $>$\+::\+Get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_aec2b867a889244ce24f2b0cd1b28b8d2} 
+template$<$typename T$>$ \\
+\textbf{ Span} \& \textbf{ OSK\+::\+Span}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Span}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_aec2b867a889244ce24f2b0cd1b28b8d2} 
+template$<$typename T$>$ \\
+\textbf{ Span} \& \textbf{ OSK\+::\+Span}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Span}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{operator[]()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_a9ad80a41c4ae03bcf7fb35066a84a988} 
+template$<$typename T$>$ \\
+T \& \textbf{ OSK\+::\+Span}$<$ T $>$\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!OSK::Span$<$ T $>$@{OSK::Span$<$ T $>$}}
+\doxysubsubsection{operator[]()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_span_ab8616445b914d74bb606c5a95a612650} 
+template$<$typename T$>$ \\
+const T \& \textbf{ OSK\+::\+Span}$<$ T $>$\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+

@@ -1,0 +1,217 @@
+\doxysection{Referencia del espacio de nombres OSK\+::GAME}
+\label{namespace_o_s_k_1_1_g_a_m_e}\index{OSK::GAME@{OSK::GAME}}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum class \textbf{ Default\+Content\+Profile} \{ \textbf{ ALL}
+, \textbf{ \+\_\+3\+D\+\_\+\+ONLY}
+, \textbf{ \+\_\+2\+D\+\_\+\+ONLY}
+, \textbf{ MINIMAL}
+ \}
+\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\doxysubsection{Documentación de enumeraciones}
+\index{OSK::GAME@{OSK::GAME}!DefaultContentProfile@{DefaultContentProfile}}
+\index{DefaultContentProfile@{DefaultContentProfile}!OSK::GAME@{OSK::GAME}}
+\doxysubsubsection{DefaultContentProfile}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_g_a_m_e_a3a5605dbb9f51b73a09ffdecbee85d69} 
+enum class \textbf{ OSK\+::\+GAME\+::\+Default\+Content\+Profile}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Perfil que indica qué sistemas, componentes y assets por defecto se cargarán al iniciar el motor. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALL@{ALL}!OSK::GAME@{OSK::GAME}}\index{OSK::GAME@{OSK::GAME}!ALL@{ALL}}}\label{namespace_o_s_k_1_1_g_a_m_e_a3a5605dbb9f51b73a09ffdecbee85d69a5fb1f955b45e38e31789286a1790398d} 
+ALL&
+\begin{DoxyItemize}
+\item Deferred\+Render\+System ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Physics\+System ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Collision\+System ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Physics\+Resolver ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Transform\+Applier\+System ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Skybox\+Render\+System ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Render\+System2D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Transform\+Component3D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Model\+Component3D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Camera\+Component3D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Terrain\+Component ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Collision\+Component ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Physics\+Component ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Transform2D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Camera\+Component2D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Sprite ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Texture\+Loader ({\itshape Asset}).
+\item Model\+Loader3D ({\itshape Asset}).
+\item Cubemap\+Texture\+Loader ({\itshape Asset}).
+\item Font\+Loader ({\itshape Asset}).
+\item Irradiance\+Map\+Loader ({\itshape Asset}).
+\item Specular\+Map\+Loader ({\itshape Asset}).
+\item Audio\+Loader ({\itshape Asset}).
+\item Pre\+Built\+Collider\+Loader ({\itshape Asset}).
+\item Pre\+Built\+Spline\+Loader3D ({\itshape Asset}).
+\end{DoxyItemize}
+
+\begin{DoxyPrecond}{Precondición}
+Deben existir los siguientes materiales\+:
+\begin{DoxyItemize}
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Materials/\+PBR/\+Deferred/deferred\+\_\+gbuffer\+\_\+static.\+json
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Materials/\+PBR/\+Deferred/deferred\+\_\+gbuffer\+\_\+anim.\+json
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Materials/\+PBR/\+Deferred/deferred\+\_\+gbuffer\+\_\+billboard.\+json
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Materials/\+Shadow\+Mapping/material\+\_\+shadows.\+json
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Materials/\+PBR/\+Deferred/deferred\+\_\+resolve.\+json
+\item ({\itshape Para Skybox\+Render\+System}) Resources/\+Materials/\+Skybox/material.\+json
+\item ({\itshape Para Render\+System2D}) Resources/\+Materials/2\+D/material\+\_\+2d.\+json
+\item ({\itshape Para Irradiance\+Map\+Loader}) Resources/\+Materials/\+Assets\+Gen/material\+\_\+irradiance\+\_\+gen.\+json
+\item ({\itshape Para Irradiance\+Map\+Loader}) Resources/\+Materials/\+Assets\+Gen/material\+\_\+irradiance\+\_\+convolution.\+json
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Materials/\+Assets\+Gen/material\+\_\+specular\+\_\+gen.\+json
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Materials/\+Assets\+Gen/material\+\_\+specular\+\_\+prefilter.\+json
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Materials/\+Assets\+Gen/material\+\_\+specular\+\_\+lut\+\_\+gen.\+json
+\end{DoxyItemize}
+
+Deben existir los siguientes shaders\+:
+\begin{DoxyItemize}
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+PBR/\+Deferred/\+GBuffer/vert.\+spv
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+PBR/\+Deferred/\+GBuffer/frag.\+spv
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+PBR/\+Deferred/\+GBuffer/vert.\+spv
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+PBR/\+Deferred/\+GBuffer/shader\+\_\+billboard.\+spv
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+PBR/\+Deferred/\+GBuffer/anim.\+spv
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+PBR/\+Deferred/\+Comp\+Resolve/shader.\+spv
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+Shadows/vert.\+spv
+\item ({\itshape Para Skybox\+Render\+System}) Resources/\+Shaders/\+VK/\+Skybox/vert.\+spv
+\item ({\itshape Para Skybox\+Render\+System}) Resources/\+Shaders/\+VK/\+Skybox/frag.\+spv
+\item ({\itshape Para Render\+System2D}) Resources/\+Shaders/\+VK/2\+D/2\+D/vert.\+spv
+\item ({\itshape Para Render\+System2D}) Resources/\+Shaders/\+VK/2\+D/2\+D/frag.\+spv
+\item ({\itshape Para Irradiance\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Irradiance\+Gen/\+Cube\+Gen/vert.\+spv
+\item ({\itshape Para Irradiance\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Irradiance\+Gen/\+Cube\+Gen/frag.\+spv
+\item ({\itshape Para Irradiance\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Irradiance\+Gen/\+Convolution/vert.\+spv
+\item ({\itshape Para Irradiance\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Irradiance\+Gen/\+Convolution/frag.\+spv
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Specular\+Gen/\+Cube\+Gen/vert.\+spv
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Specular\+Gen/\+Cube\+Gen/frag.\+spv
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Specular\+Gen/\+Lut\+Gen/shader.\+spv
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Specular\+Gen/\+Prefilter/vert.\+spv
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Specular\+Gen/\+Prefilter/frag.\+spv
+\end{DoxyItemize}
+
+Deben existir los siguientes recursos\+:
+\begin{DoxyItemize}
+\item ({\itshape Para Skybox\+Render\+System, Irradiance\+Map\+Loader}) Resources/\+Assets/\+Models/cube.\+json 
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_3D\_ONLY@{\_3D\_ONLY}!OSK::GAME@{OSK::GAME}}\index{OSK::GAME@{OSK::GAME}!\_3D\_ONLY@{\_3D\_ONLY}}}\label{namespace_o_s_k_1_1_g_a_m_e_a3a5605dbb9f51b73a09ffdecbee85d69aaa8fca9c3194c0709a5a13e7ff29ab0b} 
+\+\_\+3\+D\+\_\+\+ONLY&
+\begin{DoxyItemize}
+\item Deferred\+Render\+System ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Physics\+System ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Collision\+System ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Physics\+Resolver ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Transform\+Applier\+System ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Skybox\+Render\+System ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Transform\+Component3D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Model\+Component3D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Camera\+Component3D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Terrain\+Component ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Collision\+Component ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Physics\+Component ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Transform2D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Camera\+Component2D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Texture\+Loader ({\itshape Asset}).
+\item Model\+Loader3D ({\itshape Asset}).
+\item Cubemap\+Texture\+Loader ({\itshape Asset}).
+\item Font\+Loader ({\itshape Asset}).
+\item Irradiance\+Map\+Loader ({\itshape Asset}).
+\item Specular\+Map\+Loader ({\itshape Asset}).
+\item Audio\+Loader ({\itshape Asset}).
+\item Pre\+Built\+Collider\+Loader ({\itshape Asset}).
+\item Pre\+Built\+Spline\+Loader3D ({\itshape Asset}).
+\end{DoxyItemize}
+
+\begin{DoxyPrecond}{Precondición}
+Deben existir los siguientes materiales\+:
+\begin{DoxyItemize}
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Materials/\+PBR/\+Deferred/deferred\+\_\+gbuffer\+\_\+static.\+json
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Materials/\+PBR/\+Deferred/deferred\+\_\+gbuffer\+\_\+anim.\+json
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Materials/\+PBR/\+Deferred/deferred\+\_\+gbuffer\+\_\+billboard.\+json
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Materials/\+Shadow\+Mapping/material\+\_\+shadows.\+json
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Materials/\+PBR/\+Deferred/deferred\+\_\+resolve.\+json
+\item ({\itshape Para Skybox\+Render\+System}) Resources/\+Materials/\+Skybox/material.\+json
+\item ({\itshape Para Irradiance\+Map\+Loader}) Resources/\+Materials/\+Assets\+Gen/material\+\_\+irradiance\+\_\+gen.\+json
+\item ({\itshape Para Irradiance\+Map\+Loader}) Resources/\+Materials/\+Assets\+Gen/material\+\_\+irradiance\+\_\+convolution.\+json
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Materials/\+Assets\+Gen/material\+\_\+specular\+\_\+gen.\+json
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Materials/\+Assets\+Gen/material\+\_\+specular\+\_\+prefilter.\+json
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Materials/\+Assets\+Gen/material\+\_\+specular\+\_\+lut\+\_\+gen.\+json
+\end{DoxyItemize}
+
+Deben existir los siguientes shaders\+:
+\begin{DoxyItemize}
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+PBR/\+Deferred/\+GBuffer/vert.\+spv
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+PBR/\+Deferred/\+GBuffer/frag.\+spv
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+PBR/\+Deferred/\+GBuffer/vert.\+spv
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+PBR/\+Deferred/\+GBuffer/shader\+\_\+billboard.\+spv
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+PBR/\+Deferred/\+GBuffer/anim.\+spv
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+PBR/\+Deferred/\+Comp\+Resolve/shader.\+spv
+\item ({\itshape Para Deferred\+Render\+System}) Resources/\+Shaders/\+VK/\+Shadows/vert.\+spv
+\item ({\itshape Para Skybox\+Render\+System}) Resources/\+Shaders/\+VK/\+Skybox/vert.\+spv
+\item ({\itshape Para Skybox\+Render\+System}) Resources/\+Shaders/\+VK/\+Skybox/frag.\+spv
+\item ({\itshape Para Irradiance\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Irradiance\+Gen/\+Cube\+Gen/vert.\+spv
+\item ({\itshape Para Irradiance\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Irradiance\+Gen/\+Cube\+Gen/frag.\+spv
+\item ({\itshape Para Irradiance\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Irradiance\+Gen/\+Convolution/vert.\+spv
+\item ({\itshape Para Irradiance\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Irradiance\+Gen/\+Convolution/frag.\+spv
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Specular\+Gen/\+Cube\+Gen/vert.\+spv
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Specular\+Gen/\+Cube\+Gen/frag.\+spv
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Specular\+Gen/\+Lut\+Gen/shader.\+spv
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Specular\+Gen/\+Prefilter/vert.\+spv
+\item ({\itshape Para Specular\+Map\+Loader}) Resources/\+Shaders/\+VK/\+Assets\+Gen/\+Specular\+Gen/\+Prefilter/frag.\+spv
+\end{DoxyItemize}
+
+Deben existir los siguientes recursos\+:
+\begin{DoxyItemize}
+\item ({\itshape Para Skybox\+Render\+System, Irradiance\+Map\+Loader}) Resources/\+Assets/\+Models/cube.\+json 
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_2D\_ONLY@{\_2D\_ONLY}!OSK::GAME@{OSK::GAME}}\index{OSK::GAME@{OSK::GAME}!\_2D\_ONLY@{\_2D\_ONLY}}}\label{namespace_o_s_k_1_1_g_a_m_e_a3a5605dbb9f51b73a09ffdecbee85d69a3158975d292b454d61722c888831bd6c} 
+\+\_\+2\+D\+\_\+\+ONLY&
+\begin{DoxyItemize}
+\item Render\+System2D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} System}).
+\item Transform2D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Camera\+Component2D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Sprite ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Texture\+Loader ({\itshape Asset}).
+\item Font\+Loader ({\itshape Asset}).
+\item Audio\+Loader ({\itshape Asset}).
+\end{DoxyItemize}
+
+\begin{DoxyPrecond}{Precondición}
+Deben existir los siguientes materiales\+:
+\begin{DoxyItemize}
+\item ({\itshape Para Render\+System2D}) Resources/\+Materials/2\+D/material\+\_\+2d.\+json
+\end{DoxyItemize}
+
+Deben existir los siguientes shaders\+:
+\begin{DoxyItemize}
+\item ({\itshape Para Render\+System2D}) Resources/\+Shaders/\+VK/2\+D/2\+D/vert.\+spv
+\item ({\itshape Para Render\+System2D}) Resources/\+Shaders/\+VK/2\+D/2\+D/frag.\+spv 
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MINIMAL@{MINIMAL}!OSK::GAME@{OSK::GAME}}\index{OSK::GAME@{OSK::GAME}!MINIMAL@{MINIMAL}}}\label{namespace_o_s_k_1_1_g_a_m_e_a3a5605dbb9f51b73a09ffdecbee85d69a02f2534ad4997e23ec250e1015eeb929} 
+MINIMAL&
+\begin{DoxyItemize}
+\item Transform2D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Camera\+Component2D ({\itshape \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} Component}).
+\item Texture\+Loader ({\itshape Asset}).
+\item Font\+Loader ({\itshape Asset}). 
+\end{DoxyItemize}\\
+\hline
+
+\end{DoxyEnumFields}

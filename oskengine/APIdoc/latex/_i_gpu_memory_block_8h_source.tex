@@ -1,0 +1,123 @@
+\doxysection{IGpu\+Memory\+Block.\+h}
+\label{_i_gpu_memory_block_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IGpuMemoryBlock.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IGpuMemoryBlock.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}DefineAs.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}MutexHolder.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }IGpuMemorySubblock;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }IGpu;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuSharedMemoryType;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuMemoryUsage;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Format;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuBufferUsage;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuImageUsage;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }GpuImage;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{struct\ }GpuMemoryMappedRange\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ USize64\ size\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ USize64\ offset\ =\ 0;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsEmpty()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ size\ ==\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IGpuMemoryBlock\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IGpuMemoryBlock()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ OSK\_DEFINE\_AS(IGpuMemoryBlock);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveSubblock(IGpuMemorySubblock*\ subblock);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ UniquePtr<IGpuMemorySubblock>\ GetNextMemorySubblock(USize64\ size,\ USize64\ alignment);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ USize64\ GetAllocatedSize()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ USize64\ GetAvailableSpace()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ GpuSharedMemoryType\ GetShareType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ GpuMemoryUsage\ GetUsageType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ IGpu*\ GetGpu()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ device;\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsUnused()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ subblocks.IsEmpty();\ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MapAll();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UnmapAll();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MapRange(USize64\ offset,\ USize64\ size);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ TByte*\ GetMappedData();}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TByte*\ GetMappedData()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ GpuMemoryMappedRange\ GetMappedRange()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ IGpuMemoryBlock(USize64\ reservedSize,\ IGpu*\ device,\ GpuSharedMemoryType\ type,\ GpuMemoryUsage\ usage);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ TByte*\ MapRange\_Impl(USize64\ offset,\ USize64\ size)\ =\ 0;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ UnmapAll\_Impl()\ =\ 0;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ UniquePtr<IGpuMemorySubblock>\ CreateNewMemorySubblock(USize64\ size,\ USize64\ offset)\ =\ 0;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }ReusableMemorySubblock\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ USize64\ size;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ USize64\ offset;}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ ReusableMemorySubblock\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ DynamicArray<IGpuMemorySubblock*>\ subblocks;}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ DynamicArray<ReusableMemorySubblock>\ reusableSubblocks;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ USize64\ totalSize\ =\ 0;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ USize64\ availableSpace\ =\ 0;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ USize64\ currentOffset\ =\ 0;}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ GpuSharedMemoryType\ type;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ GpuMemoryUsage\ usage;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ IGpu*\ device\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ MutexHolder\ m\_subblockSearchMutex;}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ MAPEO\ DE\ MEMORIA\ -\/-\/-\/\ //}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ MutexHolder\ m\_mapMutex;}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ TByte*\ m\_mappedData\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ GpuMemoryMappedRange\ m\_mappedRange\{\};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \};}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \}}
+
+\end{DoxyCode}

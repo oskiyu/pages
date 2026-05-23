@@ -1,0 +1,17 @@
+\doxysection{Referencia del concepto OSK\+::EFTraits\+::Is\+Enum}
+\label{concept_o_s_k_1_1_e_f_traits_1_1_is_enum}\index{OSK::EFTraits::IsEnum@{OSK::EFTraits::IsEnum}}
+
+
+{\ttfamily \#include $<$Enum\+Flags.\+hpp$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::EFTraits::IsEnum\ =\ \ IsEnumFlag<T>()}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}
+Concepto para que los operadores sólo funcionen con enum flags. 

@@ -1,0 +1,99 @@
+\doxysection{Render\+Graph\+Args.\+h}
+\label{_render_graph_args_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/RenderGraphArgs.h@{C:/Users/Oscar/source/repos/OSKengine/Source/RenderGraphArgs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Format.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}GpuImageDimensions.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}GpuMemoryTypes.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}GpuQueueTypes.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}ImageUuid.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}GpuBufferRange.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{struct\ }RgRelativeSizeImageRegisterArgs\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ Vector3f\ relativeResolution\ =\ Vector3f::One;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ RgRelativeSizeImageRegisterArgs\ From1D(\textcolor{keywordtype}{float}\ resolution);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ RgRelativeSizeImageRegisterArgs\ From2D(\textcolor{keyword}{const}\ Vector2f\&\ resolution);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{struct\ }RgAbsoluteSizeImageRegisterArgs\ \{}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ Vector3ui\ resolution\ =\ \{\ 1920,\ 1080,\ 1\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ RgAbsoluteSizeImageRegisterArgs\ From1D(\textcolor{keyword}{const}\ Vector2ui\&\ resolution);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ RgAbsoluteSizeImageRegisterArgs\ From2D(\textcolor{keyword}{const}\ Vector2ui\&\ resolution);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{enum\ class}\ RgImageSizeType\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ ABSOLUTE,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ RELATIVE}
+\DoxyCodeLine{00102\ \ \ \ \ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{struct\ }RgImageSizeInfo\ \{}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ RgImageSizeType\ type\ =\ RgImageSizeType::RELATIVE;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ Vector3ui\ absoluteResolution\{\};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ Vector3f\ relativeResolution\ =\ Vector3f::One;}
+\DoxyCodeLine{00113\ \ \ \ \ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{struct\ }RgImageRegisterInfo\ \{}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ Format\ format\ =\ Format::UNKNOWN;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ GpuImageDimension\ dimension\ =\ GpuImageDimension::d2D;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ USize32\ numLayers\ =\ 1;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ std::optional<std::string>\ name;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{struct\ }RgBufferRegisterInfo\ \{}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ USize64\ size\ =\ 0;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ USize64\ alignment\ =\ 0;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ GpuSharedMemoryType\ sharedType\ =\ GpuSharedMemoryType::GPU\_ONLY;}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ GpuQueueType\ queue\ =\ GpuQueueType::MAIN;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ std::optional<std::string>\ name;}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{struct\ }RgBufferRef\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ GdrBufferUuid\ bufferUuid;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ GpuBufferRange\ range;}
+\DoxyCodeLine{00160\ \ \ \ \ \};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{struct\ }VertexAttributesBufferRef\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ RgBufferRef\ bufferRef;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00167\ \ \ \ \ \};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \}}
+
+\end{DoxyCode}

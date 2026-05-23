@@ -1,0 +1,45 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Renderpass\+Vk\+Map}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map}\index{OSK::GRAPHICS::RenderpassVkMap@{OSK::GRAPHICS::RenderpassVkMap}}
+
+
+{\ttfamily \#include $<$Renderpass\+Vk\+Map.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+Renderpass\+Vk $\ast$ \textbf{ Get\+Renderpass} (const Gpu\+Vk $\ast$gpu, const \textbf{ Renderpass\+Vk\+Map\+Entry} \&entry)
+\item 
+void \textbf{ Clear} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Contiene los renderpasses a usar, dependiendo de las imÃ¡genes sobre las que se renderice. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::RenderpassVkMap@{OSK::GRAPHICS::RenderpassVkMap}!Clear@{Clear}}
+\index{Clear@{Clear}!OSK::GRAPHICS::RenderpassVkMap@{OSK::GRAPHICS::RenderpassVkMap}}
+\doxysubsubsection{Clear()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map_a48040872efcc76d99928dfb695281874} 
+void Renderpass\+Vk\+Map\+::\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Elimina los renderpasses. 
+
+\index{OSK::GRAPHICS::RenderpassVkMap@{OSK::GRAPHICS::RenderpassVkMap}!GetRenderpass@{GetRenderpass}}
+\index{GetRenderpass@{GetRenderpass}!OSK::GRAPHICS::RenderpassVkMap@{OSK::GRAPHICS::RenderpassVkMap}}
+\doxysubsubsection{GetRenderpass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map_af19f3c036db5c74fd72be2196383bd44} 
+Renderpass\+Vk $\ast$ Renderpass\+Vk\+Map\+::\+Get\+Renderpass (\begin{DoxyParamCaption}\item[{const Gpu\+Vk $\ast$}]{gpu}{, }\item[{const \textbf{ Renderpass\+Vk\+Map\+Entry} \&}]{entry}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el renderpass necesario segÃºn la informaciÃ³n dada. 
+
+En caso de que no existiera, se crea. 
+\begin{DoxyParams}{Parámetros}
+{\em entry} & InformaciÃ³n sobre el renderizado. \\
+\hline
+\end{DoxyParams}

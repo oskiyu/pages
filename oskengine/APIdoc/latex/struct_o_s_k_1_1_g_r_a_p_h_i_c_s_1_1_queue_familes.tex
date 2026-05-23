@@ -1,0 +1,70 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Queue\+Familes}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_queue_familes}\index{OSK::GRAPHICS::QueueFamiles@{OSK::GRAPHICS::QueueFamiles}}
+
+
+{\ttfamily \#include $<$Queue\+Family\+Indices.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Queue\+Family} $>$ \textbf{ Get\+Families} (\textbf{ Commands\+Support} support) const
+\item 
+bool \textbf{ Is\+Complete} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Queue\+Family} $>$ \textbf{ families}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Información sobre las colas de comandos soportadas por una GPU. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::QueueFamiles@{OSK::GRAPHICS::QueueFamiles}!GetFamilies@{GetFamilies}}
+\index{GetFamilies@{GetFamilies}!OSK::GRAPHICS::QueueFamiles@{OSK::GRAPHICS::QueueFamiles}}
+\doxysubsubsection{GetFamilies()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_queue_familes_a0cd4ece898fca1cfdd0a0e5a4b6347cb} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Queue\+Family} $>$ Queue\+Familes\+::\+Get\+Families (\begin{DoxyParamCaption}\item[{\textbf{ Commands\+Support}}]{support}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve una lista con todas las familias que tienen el soporte dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em support} & Soporte requerido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista (puede estar vacía si no hay familias que lo soporten). 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::QueueFamiles@{OSK::GRAPHICS::QueueFamiles}!IsComplete@{IsComplete}}
+\index{IsComplete@{IsComplete}!OSK::GRAPHICS::QueueFamiles@{OSK::GRAPHICS::QueueFamiles}}
+\doxysubsubsection{IsComplete()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_queue_familes_a7f5cde38f26c96de11c0c2167c90f85d} 
+bool Queue\+Familes\+::\+Is\+Complete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Comprueba si una GPU tiene soporta para todas las colas que necesitamos. 
+
+\begin{DoxyReturn}{Devuelve}
+True si es compatible. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::QueueFamiles@{OSK::GRAPHICS::QueueFamiles}!families@{families}}
+\index{families@{families}!OSK::GRAPHICS::QueueFamiles@{OSK::GRAPHICS::QueueFamiles}}
+\doxysubsubsection{families}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_queue_familes_a00bf730c0222769c834c9a76a0ecae37} 
+\textbf{ Dynamic\+Array}$<$\textbf{ Queue\+Family}$>$ OSK\+::\+GRAPHICS\+::\+Queue\+Familes\+::families}
+
+
+
+Familias soportadas. 
+

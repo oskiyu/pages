@@ -1,0 +1,279 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::ASSETS\+::Asset\+Owning\+Ref$<$ TAsset\+Type $>$}
+\label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref}\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+
+
+{\ttfamily \#include $<$Asset\+Owning\+Ref.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Asset\+Owning\+Ref} ()=default
+\item 
+\textbf{ Asset\+Owning\+Ref} (const std\+::string \&asset\+Path)
+\item 
+\textbf{ $\sim$\+Asset\+Owning\+Ref} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Asset\+Owning\+Ref})
+\item 
+\textbf{ OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR} (\textbf{ Asset\+Owning\+Ref})
+\item 
+bool \textbf{ Has\+Value} () const noexcept
+\item 
+TAsset\+Type $\ast$ \textbf{ Get\+Asset} () noexcept
+\item 
+const TAsset\+Type $\ast$ \textbf{ Get\+Asset} () const noexcept
+\item 
+TAsset\+Type $\ast$ \textbf{ operator-\/$>$} () noexcept
+\item 
+const TAsset\+Type $\ast$ \textbf{ operator-\/$>$} () const noexcept
+\item 
+\textbf{ Asset\+Ref}$<$ TAsset\+Type $>$ \textbf{ Create\+Ref} () noexcept
+\item 
+bool \textbf{ Is\+Being\+Used} () const noexcept
+\item 
+\textbf{ USize64} \textbf{ Get\+Count} () const
+\item 
+bool \textbf{ Has\+Been\+Loaded} () const
+\item 
+void \textbf{ \+\_\+\+Set\+As\+Loaded} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename TAsset\+Type$>$\newline
+class OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref$<$ TAsset\+Type $>$}
+Clase que es propietaria de una instancia de un asset. Permite crear referencias a ese asset. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TAsset\+Type} & Clase de asset. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!AssetOwningRef@{AssetOwningRef}}
+\index{AssetOwningRef@{AssetOwningRef}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{AssetOwningRef()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_abf7532643e5b5136441096c3c15f56b3} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::\+Asset\+Owning\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Asset vacío. 
+
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!AssetOwningRef@{AssetOwningRef}}
+\index{AssetOwningRef@{AssetOwningRef}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{AssetOwningRef()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a49cf1da829c3121907715671c182a200} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::\+Asset\+Owning\+Ref (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Crea la referencia que posee el asset. Crea el asset. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+Path} & Ruta del asset (archivo de descripción). \\
+\hline
+\end{DoxyParams}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!````~AssetOwningRef@{$\sim$AssetOwningRef}}
+\index{````~AssetOwningRef@{$\sim$AssetOwningRef}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{$\sim$AssetOwningRef()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_aebb3382d4689a2049a82b9e973911c69} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::$\sim$\textbf{ Asset\+Owning\+Ref} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!\_SetAsLoaded@{\_SetAsLoaded}}
+\index{\_SetAsLoaded@{\_SetAsLoaded}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{\_SetAsLoaded()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a3509894c44cdbaaa9c4ea3d73f82dc52} 
+template$<$typename TAsset\+Type$>$ \\
+void \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::\+\_\+\+Set\+As\+Loaded (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece que el asset ha sido cargado. 
+
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!CreateRef@{CreateRef}}
+\index{CreateRef@{CreateRef}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{CreateRef()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a9899d56b73f8fcd6f7ef64a7c7643d5b} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ Asset\+Ref}$<$ TAsset\+Type $>$ \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::\+Create\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Crea una referencia apuntando a este asset. 
+
+\begin{DoxyReturn}{Devuelve}
+Nueva referencia.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe tener un valor (\doxyref{Has\+Value()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a8c4129b0bbe3e8b221616064e1b7bb9b} == true). 
+
+Debe estar cargado (\doxyref{Has\+Been\+Loaded()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_ae8c9d745a649153621f443f28dffa512} == true).
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!GetAsset@{GetAsset}}
+\index{GetAsset@{GetAsset}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{GetAsset()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a723ac939f3d00aa9db05861b95025d0e} 
+template$<$typename TAsset\+Type$>$ \\
+const TAsset\+Type $\ast$ \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::\+Get\+Asset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+Asset referenciado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe tener un valor (\doxyref{Has\+Value()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a8c4129b0bbe3e8b221616064e1b7bb9b} == true). 
+
+Debe estar cargado (\doxyref{Has\+Been\+Loaded()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_ae8c9d745a649153621f443f28dffa512} == true).
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Es thread-\/safe siempre que se cumplan las precondiciones. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!GetAsset@{GetAsset}}
+\index{GetAsset@{GetAsset}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{GetAsset()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a30f8e619049fcc03748ceb49431fbe4b} 
+template$<$typename TAsset\+Type$>$ \\
+TAsset\+Type $\ast$ \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::\+Get\+Asset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+Asset referenciado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe tener un valor (\doxyref{Has\+Value()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a8c4129b0bbe3e8b221616064e1b7bb9b} == true). 
+
+Debe estar cargado (\doxyref{Has\+Been\+Loaded()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_ae8c9d745a649153621f443f28dffa512} == true).
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Es thread-\/safe siempre que se cumplan las precondiciones. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!GetCount@{GetCount}}
+\index{GetCount@{GetCount}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{GetCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_aef0b278b02f9307a07a7296b12fd42e0} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ USize64} \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::\+Get\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Número de \doxyref{Asset\+Ref}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref} referenciando este asset. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!HasBeenLoaded@{HasBeenLoaded}}
+\index{HasBeenLoaded@{HasBeenLoaded}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{HasBeenLoaded()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_ae8c9d745a649153621f443f28dffa512} 
+template$<$typename TAsset\+Type$>$ \\
+bool \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::\+Has\+Been\+Loaded (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si ya ha sido cargado. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!HasValue@{HasValue}}
+\index{HasValue@{HasValue}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{HasValue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a8c4129b0bbe3e8b221616064e1b7bb9b} 
+template$<$typename TAsset\+Type$>$ \\
+bool \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::\+Has\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si referencia a algún asset. Puede que el asset aún no haya sido cargado, ver \doxyref{Has\+Been\+Loaded()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_ae8c9d745a649153621f443f28dffa512}.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multihilo}
+Es thread-\/safe siempre que se cumplan las precondiciones. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!IsBeingUsed@{IsBeingUsed}}
+\index{IsBeingUsed@{IsBeingUsed}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{IsBeingUsed()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a72a2d5633ad39954bfe5f6db83351e94} 
+template$<$typename TAsset\+Type$>$ \\
+bool \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::\+Is\+Being\+Used (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si existe, al menos, una instancia de \doxyref{Asset\+Ref}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref} creada por esta referencia. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{operator-\/$>$()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a55722c4992d47627460e43906b9a5f6e} 
+template$<$typename TAsset\+Type$>$ \\
+const TAsset\+Type $\ast$ \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+Asset referenciado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe tener un valor (\doxyref{Has\+Value()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a8c4129b0bbe3e8b221616064e1b7bb9b} == true). 
+
+Debe estar cargado (\doxyref{Has\+Been\+Loaded()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_ae8c9d745a649153621f443f28dffa512} == true).
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Es thread-\/safe siempre que se cumplan las precondiciones. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{operator-\/$>$()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a5b6006223af03ef66fb1268ea1954df2} 
+template$<$typename TAsset\+Type$>$ \\
+TAsset\+Type $\ast$ \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+Asset referenciado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe tener un valor (\doxyref{Has\+Value()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a8c4129b0bbe3e8b221616064e1b7bb9b} == true). 
+
+Debe estar cargado (\doxyref{Has\+Been\+Loaded()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_ae8c9d745a649153621f443f28dffa512} == true).
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Es thread-\/safe siempre que se cumplan las precondiciones. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}}
+\index{OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{OSK\_DEFAULT\_MOVE\_OPERATOR()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_a9779636f214429a02423fd347174c1c4} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::\+OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR (\begin{DoxyParamCaption}\item[{\textbf{ Asset\+Owning\+Ref}$<$ TAsset\+Type $>$}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$@{OSK::ASSETS::AssetOwningRef$<$ TAssetType $>$}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref_ad18a8a70a6fde21d7a0883a2b15e0211} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ OSK\+::\+ASSETS\+::\+Asset\+Owning\+Ref}$<$ TAsset\+Type $>$\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Asset\+Owning\+Ref}$<$ TAsset\+Type $>$}]{}{}\end{DoxyParamCaption})}
+

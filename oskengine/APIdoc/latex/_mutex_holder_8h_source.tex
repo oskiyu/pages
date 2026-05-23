@@ -1,0 +1,26 @@
+\doxysection{Mutex\+Holder.\+h}
+\label{_mutex_holder_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/MutexHolder.h@{C:/Users/Oscar/source/repos/OSKengine/Source/MutexHolder.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }OSK\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{struct\ }MutexHolder\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ std::mutex\ mutex\{\};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ MutexHolder()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \string~MutexHolder()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ MutexHolder(\textcolor{keyword}{const}\ MutexHolder\&)\ \{\};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ MutexHolder\&\ operator=(\textcolor{keyword}{const}\ MutexHolder\&)\ \{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \}}
+
+\end{DoxyCode}

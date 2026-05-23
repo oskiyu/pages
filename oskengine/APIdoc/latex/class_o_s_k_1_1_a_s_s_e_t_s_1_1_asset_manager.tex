@@ -1,0 +1,156 @@
+\doxysection{Referencia de la clase OSK\+::ASSETS\+::Asset\+Manager}
+\label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager}\index{OSK::ASSETS::AssetManager@{OSK::ASSETS::AssetManager}}
+
+
+{\ttfamily \#include $<$Asset\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\\textbf{ Asset\+Ref}$<$ T $>$ \textbf{ Load} (const std\+::string \&asset\+File\+Path)
+\item 
+{\footnotesize template$<$typename T$>$ }\\\textbf{ Asset\+Ref}$<$ T $>$ \textbf{ Load\+Async} (const std\+::string \&asset\+File\+Path, std\+::span$<$ const std\+::string $>$ tags=\{\})
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \textbf{ Register\+Loader} ()
+\item 
+{\footnotesize template$<$typename TLoader$>$ }\\TLoader $\ast$ \textbf{ Get\+Loader} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+El \doxyref{Asset\+Manager}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager} se encarga de manejar los loaders de los assets y los lifetimes de los assets. 
+
+\begin{DoxyNote}{Nota}
+Se deben registrar todos los loaders mediante \doxyref{Register\+Loader()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager_a37f73c3a4d17bb495b38eb65f7073d67}.
+
+Al cargar un asset mediante \doxyref{Load()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager_aae32c0b5d0362cd837e62534f29c8701}, debemos especificar a qué lifetime corresponde. Un lifetime agrupa assets que tienen un ciclo de vida común. Al terminar el ciclo de vida, todos los assets del lifetime son eliminados.
+
+Esta clase es dueña de los assets.
+
+Usa un sistema de cacheado, por lo que los assets se cargan una única vez.
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+El nombre de los assets cargados debe ser único, independientemente del loader con el que haya sido cargado. 
+\end{DoxyWarning}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::AssetManager@{OSK::ASSETS::AssetManager}!GetLoader@{GetLoader}}
+\index{GetLoader@{GetLoader}!OSK::ASSETS::AssetManager@{OSK::ASSETS::AssetManager}}
+\doxysubsubsection{GetLoader()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager_a714b466461b9b4897f8b78c1859ce12a} 
+template$<$typename TLoader$>$ \\
+TLoader $\ast$ OSK\+::\+ASSETS\+::\+Asset\+Manager\+::\+Get\+Loader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el loader indicado. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TLoader} & Loader a obtener. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+Loader.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El loader debe haber sido previamente registrado. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Asset\+Loader\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_loader_not_found_exception}} & si el loader no ha sido previamente cargado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ASSETS::AssetManager@{OSK::ASSETS::AssetManager}!Load@{Load}}
+\index{Load@{Load}!OSK::ASSETS::AssetManager@{OSK::ASSETS::AssetManager}}
+\doxysubsubsection{Load()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager_aae32c0b5d0362cd837e62534f29c8701} 
+template$<$typename T$>$ \\
+\textbf{ Asset\+Ref}$<$ T $>$ OSK\+::\+ASSETS\+::\+Asset\+Manager\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Carga un asset. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo del asset. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción del asset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia al asset.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haberse registrado un loader para el tipo de asset.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Asset\+Loader\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_loader_not_found_exception}} & si el cargador para el tipo de asset no ha sido previamente regsitrado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ASSETS::AssetManager@{OSK::ASSETS::AssetManager}!LoadAsync@{LoadAsync}}
+\index{LoadAsync@{LoadAsync}!OSK::ASSETS::AssetManager@{OSK::ASSETS::AssetManager}}
+\doxysubsubsection{LoadAsync()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager_adba274c380f46cbcab60ad54f8d6edea} 
+template$<$typename T$>$ \\
+\textbf{ Asset\+Ref}$<$ T $>$ OSK\+::\+ASSETS\+::\+Asset\+Manager\+::\+Load\+Async (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File\+Path}{, }\item[{std\+::span$<$ const std\+::string $>$}]{tags}{ = {\ttfamily \{\}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Carga un asset de manera asíncrona. Lanza un trabajo que realizará la carga del asset. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de asset. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia al asset.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+La referencia no contendrá el asset cargado al instante debido a la ejecución asíncrona. Debe comprobarse antes de usarse.
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+Debe haberse registrado un loader para el tipo de asset.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Asset\+Loader\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_loader_not_found_exception}} & si el cargador para el tipo de asset no ha sido previamente regsitrado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ASSETS::AssetManager@{OSK::ASSETS::AssetManager}!RegisterLoader@{RegisterLoader}}
+\index{RegisterLoader@{RegisterLoader}!OSK::ASSETS::AssetManager@{OSK::ASSETS::AssetManager}}
+\doxysubsubsection{RegisterLoader()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager_a37f73c3a4d17bb495b38eb65f7073d67} 
+template$<$typename T$>$ \\
+void OSK\+::\+ASSETS\+::\+Asset\+Manager\+::\+Register\+Loader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un loader, para poder cargar assets de un tipo determinado. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo del loader.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyPrecond}{Precondición}
+No debe haberse registrado antes este loader. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Asset\+Loader\+Already\+Registered\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_loader_already_registered_exception}} & si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}

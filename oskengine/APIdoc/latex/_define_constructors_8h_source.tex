@@ -1,0 +1,23 @@
+\doxysection{Define\+Constructors.\+h}
+\label{_define_constructors_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/DefineConstructors.h@{C:/Users/Oscar/source/repos/OSKengine/Source/DefineConstructors.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ OSK\_DISABLE\_COPY(className)\ \(\backslash\)}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{className(const\ className\&)\ noexcept\ =\ delete;\ \(\backslash\)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{className\&\ operator=(const\ className\&)\ noexcept\ =\ delete;}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ OSK\_DISABLE\_MOVE(className)\ \(\backslash\)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{className(className\&\&)\ noexcept\ =\ delete;\ \(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{className\&\ operator=(className\&\&)\ noexcept\ =\ delete;}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ OSK\_DEFAULT\_COPY\_OPERATOR(className)\ \(\backslash\)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{className(const\ className\&)\ noexcept\ =\ default;\ \(\backslash\)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{className\&\ operator=(const\ className\&)\ noexcept\ =\ default;}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ OSK\_DEFAULT\_MOVE\_OPERATOR(className)\ \(\backslash\)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{className(className\&\&)\ noexcept\ =\ default;\ \(\backslash\)}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{className\&\ operator=(className\&\&)\ noexcept\ =\ default;}}
+
+\end{DoxyCode}

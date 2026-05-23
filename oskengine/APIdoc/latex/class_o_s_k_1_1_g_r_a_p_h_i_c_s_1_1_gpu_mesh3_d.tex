@@ -1,0 +1,144 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Gpu\+Mesh3D}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_mesh3_d}\index{OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}}
+
+
+{\ttfamily \#include $<$Gpu\+Mesh3\+D.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Gpu\+Mesh3D} (\textbf{ Gpu\+Mesh\+Uuid} uuid, \textbf{ UIndex32} first\+Index, \textbf{ USize32} num\+Indices, const \textbf{ Vector3f} \&sphere\+Center, \textbf{ UIndex64} material\+Index)
+\item 
+\textbf{ UIndex32} \textbf{ Get\+First\+Index\+Idx} () const
+\item 
+\textbf{ USize32} \textbf{ Get\+Num\+Indices} () const
+\item 
+const \textbf{ COLLISION\+::\+Sphere\+Collider} \& \textbf{ Get\+Bounds} () const
+\item 
+\textbf{ COLLISION\+::\+Sphere\+Collider} \& \textbf{ Get\+Bounds} ()
+\item 
+const \textbf{ Vector3f} \& \textbf{ Get\+Sphere\+Center} () const
+\item 
+void \textbf{ Set\+Bounding\+Sphere\+Radius} (float radius)
+\item 
+\textbf{ Gpu\+Mesh\+Uuid} \textbf{ Get\+Uuid} () const
+\item 
+\textbf{ UIndex64} \textbf{ Get\+Material\+Index} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Malla que engloba una serie de primitivas que comparten un mismo material. 
+
+\begin{DoxyNote}{Nota}
+Los buffers con vértices e índices son propiedad del modelo 3D.
+
+Un mesh únicamente almacena los índices que le corresponden, representados por el ID del primer índice y el número de índices. 
+\end{DoxyNote}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}!GpuMesh3D@{GpuMesh3D}}
+\index{GpuMesh3D@{GpuMesh3D}!OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}}
+\doxysubsubsection{GpuMesh3D()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_mesh3_d_ae791bbd0b67a34fe4188f79bd3fff127} 
+Gpu\+Mesh3\+D\+::\+Gpu\+Mesh3D (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Mesh\+Uuid}}]{uuid}{, }\item[{\textbf{ UIndex32}}]{first\+Index}{, }\item[{\textbf{ USize32}}]{num\+Indices}{, }\item[{const \textbf{ Vector3f} \&}]{sphere\+Center}{, }\item[{\textbf{ UIndex64}}]{material\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa la malla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first\+Index} & Índice del primer índice en el buffer de índices del modelo. \\
+\hline
+{\em num\+Indices} & Número de índices de la malla. \\
+\hline
+{\em sphere\+Center} & Centro de la esfera que contiene la malla. \\
+\hline
+{\em material\+Index} & Índice del material (con respecto a los materiales del modelo). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}!GetBounds@{GetBounds}}
+\index{GetBounds@{GetBounds}!OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}}
+\doxysubsubsection{GetBounds()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_mesh3_d_ac34cebaf75c9df10161a71e475fd4c76} 
+\textbf{ COLLISION\+::\+Sphere\+Collider} \& Gpu\+Mesh3\+D\+::\+Get\+Bounds (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Esfera que contiene todos los vértices de la malla. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}!GetBounds@{GetBounds}}
+\index{GetBounds@{GetBounds}!OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}}
+\doxysubsubsection{GetBounds()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_mesh3_d_a4004649cf878a4d459226b157a892b8b} 
+const \textbf{ COLLISION\+::\+Sphere\+Collider} \& Gpu\+Mesh3\+D\+::\+Get\+Bounds (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Esfera que contiene todos los vértices de la malla. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}!GetFirstIndexIdx@{GetFirstIndexIdx}}
+\index{GetFirstIndexIdx@{GetFirstIndexIdx}!OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}}
+\doxysubsubsection{GetFirstIndexIdx()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_mesh3_d_a566f80742c7b273c5c570443a3127932} 
+\textbf{ UIndex32} Gpu\+Mesh3\+D\+::\+Get\+First\+Index\+Idx (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Índice del primer índice en el buffer de índices del modelo. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}!GetMaterialIndex@{GetMaterialIndex}}
+\index{GetMaterialIndex@{GetMaterialIndex}!OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}}
+\doxysubsubsection{GetMaterialIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_mesh3_d_a245719ca782b5243a724e8e9ab8f2869} 
+\textbf{ UIndex64} Gpu\+Mesh3\+D\+::\+Get\+Material\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}!GetNumIndices@{GetNumIndices}}
+\index{GetNumIndices@{GetNumIndices}!OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}}
+\doxysubsubsection{GetNumIndices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_mesh3_d_a05b3e10f8fa6664037838a96d2bc38fe} 
+\textbf{ USize32} Gpu\+Mesh3\+D\+::\+Get\+Num\+Indices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Número de índices que componen la malla. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}!GetSphereCenter@{GetSphereCenter}}
+\index{GetSphereCenter@{GetSphereCenter}!OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}}
+\doxysubsubsection{GetSphereCenter()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_mesh3_d_a3a19e5e0de51993de7ea65ac24bdab9d} 
+const \textbf{ Vector3f} \& Gpu\+Mesh3\+D\+::\+Get\+Sphere\+Center (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Centro de la esfera que contiene todos los vértices de la malla. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}!GetUuid@{GetUuid}}
+\index{GetUuid@{GetUuid}!OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}}
+\doxysubsubsection{GetUuid()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_mesh3_d_ab61c2fd628f88c153c93ac6efe0c7c30} 
+\textbf{ Gpu\+Mesh\+Uuid} Gpu\+Mesh3\+D\+::\+Get\+Uuid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Identificador único de este mesh. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}!SetBoundingSphereRadius@{SetBoundingSphereRadius}}
+\index{SetBoundingSphereRadius@{SetBoundingSphereRadius}!OSK::GRAPHICS::GpuMesh3D@{OSK::GRAPHICS::GpuMesh3D}}
+\doxysubsubsection{SetBoundingSphereRadius()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_mesh3_d_af91ffa9228880fbf9a2bd0111f2595a7} 
+void Gpu\+Mesh3\+D\+::\+Set\+Bounding\+Sphere\+Radius (\begin{DoxyParamCaption}\item[{float}]{radius}{}\end{DoxyParamCaption})}
+
+
+
+Establece el radio de la esfera que debe contener todos los vértices de la malla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em radius} & Radio de la esfera. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El radio debe ser tal que la esfera contenga todos los vértices de la malla. 
+\end{DoxyPrecond}

@@ -1,0 +1,108 @@
+\doxysection{Sdf\+Bindless\+Renderer2\+D.\+h}
+\label{_sdf_bindless_renderer2_d_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/SdfBindlessRenderer2D.h@{C:/Users/Oscar/source/repos/OSKengine/Source/SdfBindlessRenderer2D.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ISdfRenderer2D.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}MaterialInstance.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}SdfBindlessBatch2D.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}ResourcesInFlight.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }EntityComponentSystem;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }CameraComponent2D;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }Transform2D;}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{class\ }IGpuMemoryAllocator;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{class\ }ICommandList;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{class\ }Material;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{class\ }IMaterialSlot;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{struct\ }SdfDrawCall2D;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{struct\ }SdfStringInfo;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ SdfBindlessRenderer2D\ final\ :\ \textcolor{keyword}{public}\ ISdfRenderer2D\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ DefaultMaterialPath\ =\ \textcolor{stringliteral}{"{}Resources/Materials/2D/sdf\_material\_2d\_bindless.json"{}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ SdfBindlessRenderer2D(}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::EntityComponentSystem*\ ecs,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ IGpuMemoryAllocator*\ allocator,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ Material*\ defaultMaterial);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetMaterial(Material*\ material)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Begin(ICommandList*\ commandList)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Draw(\textcolor{keyword}{const}\ SdfDrawCall2D\&\ drawCall)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Draw(\textcolor{keyword}{const}\ SdfStringInfo\&\ stringCall)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ End()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ USize64\ MAX\_DRAW\_CALLS\_PER\_BATCH\ =\ 512;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ GlobalMaterialSlotName\ =\ \textcolor{stringliteral}{"{}global"{}};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ GlobalMaterialBindingName\ =\ \textcolor{stringliteral}{"{}global"{}};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ DrawCallsSlotName\ =\ \textcolor{stringliteral}{"{}drawCalls"{}};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ DrawCallsBindingName\ =\ \textcolor{stringliteral}{"{}drawCalls"{}};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ DrawCallsImageBindingName\ =\ \textcolor{stringliteral}{"{}images"{}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateNewBatch(\textcolor{keyword}{const}\ Material*\ material,\ UIndex32\ resourceIndex);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddContentBuffer(UIndex32\ resourceIndex);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ EnsureMaterialSlotContent(}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ buffer,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IGpuImageView*\ imageView,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IGpuImageSampler*\ sampler,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBufferRange\&\ range,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ resourceIndex);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ IMaterialSlot*\ GetGlobalInformationSlot(UIndex32\ resourceIndex);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ USize64\ GetDrawCallBufferContentPadding()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ DynamicArray<SdfBindlessBatch2D>\ m\_batches\{\};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GpuBuffer>,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_globalInformationBuffers\{\};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ std::array<UniquePtr<MaterialInstance>,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_globalInformationInstances\{\};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ std::array<DynamicArray<UniquePtr<GpuBuffer>>,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_drawCallsBuffers;}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ std::array<DynamicArray<UniquePtr<MaterialInstance>>,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_drawCallsBuffersInstances;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ UIndex32\ m\_currentBatchIndex\ =\ 0;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ UIndex32\ m\_insideBatchIndex\ =\ 0;}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ IGpuMemoryAllocator*\ m\_memoryAllocator\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ ECS::EntityComponentSystem*\ m\_ecs\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \}}
+
+\end{DoxyCode}

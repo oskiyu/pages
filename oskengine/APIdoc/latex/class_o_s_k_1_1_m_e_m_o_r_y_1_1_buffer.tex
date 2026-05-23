@@ -1,0 +1,185 @@
+\doxysection{Referencia de la clase OSK\+::MEMORY\+::Buffer}
+\label{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer}\index{OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}}
+
+
+{\ttfamily \#include $<$Buffer.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Buffer} ()=default
+\item 
+\textbf{ Buffer} (\textbf{ USize64} initial\+Size)
+\item 
+\textbf{ USize64} \textbf{ Get\+Size} () const
+\item 
+{\footnotesize template$<$typename T$>$ \newline
+requires std\+::is\+\_\+trivially\+\_\+copyable\+\_\+v$<$T$>$}\\void \textbf{ Add\+Data} (const T \&data)
+\item 
+void \textbf{ Add\+Data} (const void $\ast$data, \textbf{ USize64} size)
+\item 
+const void $\ast$ \textbf{ Get\+Raw\+Data} () const
+\item 
+void $\ast$ \textbf{ Get\+Raw\+Data} ()
+\item 
+void $\ast$ \textbf{ Get\+Raw\+Data} (\textbf{ UIndex64} byte\+Offset)
+\item 
+const void $\ast$ \textbf{ Get\+Raw\+Data} (\textbf{ UIndex64} byte\+Offset) const
+\item 
+{\footnotesize template$<$typename T$>$ \newline
+requires std\+::is\+\_\+trivially\+\_\+copyable\+\_\+v$<$T$>$}\\T \& \textbf{ Get\+Data} (\textbf{ UIndex64} byte\+Offset) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa una región de memoria RAM que puede usarse para almacenar información arbitraria. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}}
+\doxysubsubsection{Buffer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer_a96d2585267c1ef43326c072d902c7df9} 
+OSK\+::\+MEMORY\+::\+Buffer\+::\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [default]}}
+
+
+
+Crea un buffer vacío. 
+
+\index{OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}}
+\doxysubsubsection{Buffer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer_a7fe61ae5ddee9f0de95eb9d287441758} 
+Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{initial\+Size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Crea un buffer vacío con memoria reservada para el número de bytes indicado. Después se pordrá llenar con más información si se agota el espacio inicialmente reservado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em initial\+Size} & Tamaño inicial, en bytes. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}!AddData@{AddData}}
+\index{AddData@{AddData}!OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}}
+\doxysubsubsection{AddData()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer_a5f8947bf9c8ce3a4475cb12f95ac0b31} 
+template$<$typename T$>$ \newline
+requires std\+::is\+\_\+trivially\+\_\+copyable\+\_\+v$<$T$>$\\
+void OSK\+::\+MEMORY\+::\+Buffer\+::\+Add\+Data (\begin{DoxyParamCaption}\item[{const T \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Añade datos al final del buffer. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Nuevos datos. \\
+\hline
+\end{DoxyParams}
+\index{OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}!AddData@{AddData}}
+\index{AddData@{AddData}!OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}}
+\doxysubsubsection{AddData()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer_a749736fdf09bf703ad7785930885229b} 
+void Buffer\+::\+Add\+Data (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data}{, }\item[{\textbf{ USize64}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Añade nuevos datos al final del buffer. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Nuevos datos. \\
+\hline
+{\em size} & Tamaño de los nuevos datos. \\
+\hline
+\end{DoxyParams}
+\index{OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}!GetData@{GetData}}
+\index{GetData@{GetData}!OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}}
+\doxysubsubsection{GetData()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer_a864a5ebb904417d06eeb4b962c6ec2f0} 
+template$<$typename T$>$ \newline
+requires std\+::is\+\_\+trivially\+\_\+copyable\+\_\+v$<$T$>$\\
+T \& OSK\+::\+MEMORY\+::\+Buffer\+::\+Get\+Data (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{byte\+Offset}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recupera un dato almacenado en el buffer. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo del dato. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em byte\+Offset} & Offset del dato dentro del buffer, en bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Dato almacenado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily byte\+Offset} $<$= \doxyref{Get\+Size()}{pág.}{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer_a5779004c3e18978e7cdd2d932a1cdb69} + sizeof(\+T). 
+\end{DoxyPrecond}
+\index{OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}!GetRawData@{GetRawData}}
+\index{GetRawData@{GetRawData}!OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}}
+\doxysubsubsection{GetRawData()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer_aff95704581e26e207ec822f6e37f61d1} 
+void $\ast$ Buffer\+::\+Get\+Raw\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}!GetRawData@{GetRawData}}
+\index{GetRawData@{GetRawData}!OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}}
+\doxysubsubsection{GetRawData()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer_ac7b36b807a9b551ee587bf722f000d9c} 
+const void $\ast$ Buffer\+::\+Get\+Raw\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Datos del buffer. 
+\end{DoxyReturn}
+\index{OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}!GetRawData@{GetRawData}}
+\index{GetRawData@{GetRawData}!OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}}
+\doxysubsubsection{GetRawData()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer_a892ed57c5ad609fac6e2a746c61af877} 
+void $\ast$ Buffer\+::\+Get\+Raw\+Data (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{byte\+Offset}{}\end{DoxyParamCaption})}
+
+
+
+Datos del buffer, a partir del punto indicado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em byte\+Offset} & Offset desde el principio del buffer, en bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Datos almacenados a partir del offset.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily byte\+Offset} $<$ \doxyref{Get\+Size()}{pág.}{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer_a5779004c3e18978e7cdd2d932a1cdb69}. 
+\end{DoxyPrecond}
+\index{OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}!GetRawData@{GetRawData}}
+\index{GetRawData@{GetRawData}!OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}}
+\doxysubsubsection{GetRawData()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer_a556de82a514ed29e71082457112b5043} 
+const void $\ast$ Buffer\+::\+Get\+Raw\+Data (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{byte\+Offset}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!OSK::MEMORY::Buffer@{OSK::MEMORY::Buffer}}
+\doxysubsubsection{GetSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer_a5779004c3e18978e7cdd2d932a1cdb69} 
+\textbf{ USize64} Buffer\+::\+Get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Tamaño de la información almacenada, en bytes. 
+\end{DoxyReturn}

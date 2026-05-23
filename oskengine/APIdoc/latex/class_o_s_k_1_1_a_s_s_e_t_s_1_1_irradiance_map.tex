@@ -1,0 +1,153 @@
+\doxysection{Referencia de la clase OSK\+::ASSETS\+::Irradiance\+Map}
+\label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_irradiance_map}\index{OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}}
+
+
+{\ttfamily \#include $<$Irradiance\+Map.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Irradiance\+Map} (const std\+::string \&asset\+File)
+\item 
+\textbf{ OSK\+\_\+\+ASSET\+\_\+\+TYPE\+\_\+\+REG} ("{}OSK\+::\+Irradiance\+Map"{})
+\item 
+\textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ \textbf{ Get\+Gpu\+Image} ()
+\item 
+const \textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ \textbf{ Get\+Gpu\+Image} () const
+\item 
+\textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ \textbf{ Get\+Original\+Cubemap} ()
+\item 
+const \textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ \textbf{ Get\+Original\+Cubemap} () const
+\item 
+void \textbf{ \+\_\+\+Set\+Gpu\+Image} (\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Image} $>$ \&\&image)
+\item 
+void \textbf{ \+\_\+\+Set\+Original\+Cubemap} (\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Image} $>$ \&\&image)
+\item 
+void \textbf{ Set\+Name} (const std\+::string \&name)
+\item 
+std\+::string \textbf{ Get\+Name} () const
+\item 
+std\+::string \textbf{ Get\+Asset\+Filename} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Un irradiance map es un cubemap que contiene información sobre el color de la luz procedente de la escena. 
+
+Se puede usar para darle un color más realista a los modelos 3D de una escena. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}!IrradianceMap@{IrradianceMap}}
+\index{IrradianceMap@{IrradianceMap}!OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}}
+\doxysubsubsection{IrradianceMap()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_irradiance_map_a14290f80913d2bdb907dd797dc319a48} 
+Irradiance\+Map\+::\+Irradiance\+Map (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}!\_SetGpuImage@{\_SetGpuImage}}
+\index{\_SetGpuImage@{\_SetGpuImage}!OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}}
+\doxysubsubsection{\_SetGpuImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_irradiance_map_a158ef5eddde850f854100876df6ef8c0} 
+void Irradiance\+Map\+::\+\_\+\+Set\+Gpu\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Image} $>$ \&\&}]{image}{}\end{DoxyParamCaption})}
+
+
+
+Establece la imagen que contiene el irradiance map. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image} & Irradiance map generado. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}!\_SetOriginalCubemap@{\_SetOriginalCubemap}}
+\index{\_SetOriginalCubemap@{\_SetOriginalCubemap}!OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}}
+\doxysubsubsection{\_SetOriginalCubemap()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_irradiance_map_a92a038714a598469faa718a390ee5180} 
+void Irradiance\+Map\+::\+\_\+\+Set\+Original\+Cubemap (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Image} $>$ \&\&}]{image}{}\end{DoxyParamCaption})}
+
+
+
+Establece la imagen que contiene el cubemap original sobre el que se genera el irradiance map. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image} & Cubemap original. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}!GetAssetFilename@{GetAssetFilename}}
+\index{GetAssetFilename@{GetAssetFilename}!OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}}
+\doxysubsubsection{GetAssetFilename()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_acf0bac3849facb6afb0499907186840b} 
+std\+::string IAsset\+::\+Get\+Asset\+Filename (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Obtiene la ruta del archivo JSON que describe esta instancia del asset. 
+
+\index{OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}!GetGpuImage@{GetGpuImage}}
+\index{GetGpuImage@{GetGpuImage}!OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}}
+\doxysubsubsection{GetGpuImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_irradiance_map_a6828aab37407fa19b8b812e40891e012} 
+\textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ Irradiance\+Map\+::\+Get\+Gpu\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve la imagen con el irradiance map. 
+
+\begin{DoxyReturn}{Devuelve}
+Es un cubemap. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}!GetGpuImage@{GetGpuImage}}
+\index{GetGpuImage@{GetGpuImage}!OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}}
+\doxysubsubsection{GetGpuImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_irradiance_map_ac36e72df3330b0852fd5a86cbd1cc33a} 
+const \textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ OSK\+::\+ASSETS\+::\+Irradiance\+Map\+::\+Get\+Gpu\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_aa0e593888f6bcd143de4f9eb5a912f44} 
+std\+::string IAsset\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Nombre de la instancia del asset. 
+
+\index{OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}!GetOriginalCubemap@{GetOriginalCubemap}}
+\index{GetOriginalCubemap@{GetOriginalCubemap}!OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}}
+\doxysubsubsection{GetOriginalCubemap()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_irradiance_map_af5cebdc4eb23465a52bcb365efaf79f1} 
+\textbf{ Gpu\+Image} $\ast$ Irradiance\+Map\+::\+Get\+Original\+Cubemap (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el cubemap a partir del que se creó el irradiance map. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}!GetOriginalCubemap@{GetOriginalCubemap}}
+\index{GetOriginalCubemap@{GetOriginalCubemap}!OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}}
+\doxysubsubsection{GetOriginalCubemap()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_irradiance_map_ac04bba8626d778c3fd8d4960d14a510c} 
+const \textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ OSK\+::\+ASSETS\+::\+Irradiance\+Map\+::\+Get\+Original\+Cubemap (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}!OSK\_ASSET\_TYPE\_REG@{OSK\_ASSET\_TYPE\_REG}}
+\index{OSK\_ASSET\_TYPE\_REG@{OSK\_ASSET\_TYPE\_REG}!OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}}
+\doxysubsubsection{OSK\_ASSET\_TYPE\_REG()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_irradiance_map_ad1d054be4f37e6b11973942afe93b833} 
+OSK\+::\+ASSETS\+::\+Irradiance\+Map\+::\+OSK\+\_\+\+ASSET\+\_\+\+TYPE\+\_\+\+REG (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Irradiance\+Map"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}!SetName@{SetName}}
+\index{SetName@{SetName}!OSK::ASSETS::IrradianceMap@{OSK::ASSETS::IrradianceMap}}
+\doxysubsubsection{SetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_af0bbd1c59b2cd81667b63cb6d015c11c} 
+void IAsset\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Establece el nombre de la instancia de este asset. 
+
+\begin{DoxyWarning}{Atención}
+Es un identificador único. 
+\end{DoxyWarning}

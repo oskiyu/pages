@@ -1,0 +1,13 @@
+\doxysection{Referencia del concepto OSK\+::Concepts\+::Is\+Movable}
+\label{concept_o_s_k_1_1_concepts_1_1_is_movable}\index{OSK::Concepts::IsMovable@{OSK::Concepts::IsMovable}}
+
+
+{\ttfamily \#include $<$Concepts.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::Concepts::IsMovable\ =\ \ ::std::movable<T>\ ||\ ::std::is\_move\_assignable\_v<T>}
+
+\end{DoxyCode}

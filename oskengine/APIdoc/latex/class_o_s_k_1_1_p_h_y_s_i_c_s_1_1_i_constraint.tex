@@ -1,0 +1,60 @@
+\doxysection{Referencia de la clase OSK\+::PHYSICS\+::IConstraint}
+\label{class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint}\index{OSK::PHYSICS::IConstraint@{OSK::PHYSICS::IConstraint}}
+
+
+{\ttfamily \#include $<$IConstraint.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IConstraint} ()=default
+\item 
+virtual void \textbf{ Execute} (\textbf{ ECS\+::\+Physics\+Component} $\ast$first, \textbf{ ECS\+::\+Transform\+Component3D} $\ast$first\+Transform, \textbf{ ECS\+::\+Physics\+Component} $\ast$second, \textbf{ ECS\+::\+Transform\+Component3D} $\ast$second\+Transform, \textbf{ TDelta\+Time} delta\+Time) const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ ECS\+::\+Game\+Object\+Index} \textbf{ m\+\_\+first} = \textbf{ ECS\+::\+Game\+Object\+Index\+::\+Create\+Empty}()
+\item 
+\textbf{ ECS\+::\+Game\+Object\+Index} \textbf{ m\+\_\+second} = \textbf{ ECS\+::\+Game\+Object\+Index\+::\+Create\+Empty}()
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::PHYSICS::IConstraint@{OSK::PHYSICS::IConstraint}!````~IConstraint@{$\sim$IConstraint}}
+\index{````~IConstraint@{$\sim$IConstraint}!OSK::PHYSICS::IConstraint@{OSK::PHYSICS::IConstraint}}
+\doxysubsubsection{$\sim$IConstraint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint_aedfbe7d93e90a66da33d52915575ae5e} 
+virtual OSK\+::\+PHYSICS\+::\+IConstraint\+::$\sim$\+IConstraint (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::PHYSICS::IConstraint@{OSK::PHYSICS::IConstraint}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::PHYSICS::IConstraint@{OSK::PHYSICS::IConstraint}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint_aa32e88e5286c57533d37289d59bf94ae} 
+virtual void OSK\+::\+PHYSICS\+::\+IConstraint\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Physics\+Component} $\ast$}]{first}{, }\item[{\textbf{ ECS\+::\+Transform\+Component3D} $\ast$}]{first\+Transform}{, }\item[{\textbf{ ECS\+::\+Physics\+Component} $\ast$}]{second}{, }\item[{\textbf{ ECS\+::\+Transform\+Component3D} $\ast$}]{second\+Transform}{, }\item[{\textbf{ TDelta\+Time}}]{delta\+Time}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implementado en \textbf{ OSK\+::\+PHYSICS\+::\+Distance\+Constraint} \doxyref{}{pág.}{class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_distance_constraint_ab14803ce4aa026c721b2becdb29e3f67}.
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::PHYSICS::IConstraint@{OSK::PHYSICS::IConstraint}!m\_first@{m\_first}}
+\index{m\_first@{m\_first}!OSK::PHYSICS::IConstraint@{OSK::PHYSICS::IConstraint}}
+\doxysubsubsection{m\_first}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint_ac15c1ab5913a7fa259eaf561118407c9} 
+\textbf{ ECS\+::\+Game\+Object\+Index} OSK\+::\+PHYSICS\+::\+IConstraint\+::m\+\_\+first = \textbf{ ECS\+::\+Game\+Object\+Index\+::\+Create\+Empty}()}
+
+\index{OSK::PHYSICS::IConstraint@{OSK::PHYSICS::IConstraint}!m\_second@{m\_second}}
+\index{m\_second@{m\_second}!OSK::PHYSICS::IConstraint@{OSK::PHYSICS::IConstraint}}
+\doxysubsubsection{m\_second}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint_aa8449d8268ce3f2263773fd13a086576} 
+\textbf{ ECS\+::\+Game\+Object\+Index} OSK\+::\+PHYSICS\+::\+IConstraint\+::m\+\_\+second = \textbf{ ECS\+::\+Game\+Object\+Index\+::\+Create\+Empty}()}
+

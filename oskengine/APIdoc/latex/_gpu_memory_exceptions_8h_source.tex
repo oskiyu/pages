@@ -1,0 +1,81 @@
+\doxysection{Gpu\+Memory\+Exceptions.\+h}
+\label{_gpu_memory_exceptions_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GpuMemoryExceptions.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GpuMemoryExceptions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}EngineException.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }GpuBufferCreationException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ GpuBufferCreationException(}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ code,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}GpuBufferCreationException:\ No\ se\ pudo\ crear\ el\ buffer.\ Code:\ \{\}."{}},\ code),}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }GpuMemoryAllocException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ GpuMemoryAllocException(}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ code,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}GpuMemoryAllocException:\ No\ se\ pudo\ asignar\ memoria\ en\ la\ GPU.\ Code:\ \{\}."{}},\ code),}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{class\ }NoCompatibleGpuMemoryException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ NoCompatibleGpuMemoryException(}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ code,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}NoCompatibleGpuMemoryException:\ No\ encontró\ memoria\ compatible\ en\ la\ GPU.\ Code:\ \{\}."{}},\ code),}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{class\ }GpuMemoryBlockNotEnoughSpaceException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ GpuMemoryBlockNotEnoughSpaceException(}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}GpuMemoryBlockNotEnoughSpaceException:\ Este\ bloque\ de\ memoria\ no\ tiene\ suficiente\ espacio."{}}),}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{class\ }GpuMemoryNotMappedException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ GpuMemoryNotMappedException(}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}GpuMemoryNotMappedException:\ La\ memoria\ debe\ estar\ mapeada\ antes\ de\ escribirse."{}}),}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \}}
+
+\end{DoxyCode}

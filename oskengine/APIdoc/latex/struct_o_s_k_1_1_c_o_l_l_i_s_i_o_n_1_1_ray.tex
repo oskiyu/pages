@@ -1,0 +1,67 @@
+\doxysection{Referencia de la estructura OSK\+::COLLISION\+::Ray}
+\label{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray}\index{OSK::COLLISION::Ray@{OSK::COLLISION::Ray}}
+
+
+{\ttfamily \#include $<$Ray.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Ray\+Cast\+Result} \textbf{ Intersection\+With\+Plane} (const \textbf{ Vector3f} \&plane\+Normal, const \textbf{ Vector3f} \&plane\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vector3f} \textbf{ origin}
+\item 
+\textbf{ Vector3f} \textbf{ direction}
+\item 
+float \textbf{ max\+Length} = 1000.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa un rayo lanzado en el mundo que puede colisionar con colliders. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::Ray@{OSK::COLLISION::Ray}!IntersectionWithPlane@{IntersectionWithPlane}}
+\index{IntersectionWithPlane@{IntersectionWithPlane}!OSK::COLLISION::Ray@{OSK::COLLISION::Ray}}
+\doxysubsubsection{IntersectionWithPlane()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray_a550f34a09bdacf018d8d22abbabb8c12} 
+\textbf{ Ray\+Cast\+Result} Ray\+::\+Intersection\+With\+Plane (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{plane\+Normal}{, }\item[{const \textbf{ Vector3f} \&}]{plane\+Point}{}\end{DoxyParamCaption}) const}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::COLLISION::Ray@{OSK::COLLISION::Ray}!direction@{direction}}
+\index{direction@{direction}!OSK::COLLISION::Ray@{OSK::COLLISION::Ray}}
+\doxysubsubsection{direction}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray_ae3ea42c4c8f72b88ee0b6572e245749d} 
+\textbf{ Vector3f} OSK\+::\+COLLISION\+::\+Ray\+::direction}
+
+
+
+Dirección del rayo. 
+
+\index{OSK::COLLISION::Ray@{OSK::COLLISION::Ray}!maxLength@{maxLength}}
+\index{maxLength@{maxLength}!OSK::COLLISION::Ray@{OSK::COLLISION::Ray}}
+\doxysubsubsection{maxLength}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray_a054eb4b33b3c280a937aa65fd810756d} 
+float OSK\+::\+COLLISION\+::\+Ray\+::max\+Length = 1000.\+0f}
+
+
+
+Longitud máxima que puede llegar a tener el rayo. No se tendrán en cuenta las colisiones con colliders que estén más lejos que la longitud del rayo. 
+
+\index{OSK::COLLISION::Ray@{OSK::COLLISION::Ray}!origin@{origin}}
+\index{origin@{origin}!OSK::COLLISION::Ray@{OSK::COLLISION::Ray}}
+\doxysubsubsection{origin}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray_a58f1fd48fd028230b012d6a806f5f65c} 
+\textbf{ Vector3f} OSK\+::\+COLLISION\+::\+Ray\+::origin}
+
+
+
+Posición del mundo desde el que se origina el rayo. 
+

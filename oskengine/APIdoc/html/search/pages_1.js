@@ -1,4 +1,25 @@
 var searchData=
 [
-  ['design_20philosophy_20_26_20implementation_0',['Design philosophy &amp; implementation',['../md_philosophy.html',1,'']]]
+  ['1_0',['Archivo de descripción de material (revisión 1).',['../_material_file_v1.html',1,'MaterialFile']]],
+  ['11_2008a_1',['2023.11.08a',['../md__version_history.html#autotoc_md124',1,'']]],
+  ['11_2012a_2',['2023.11.12a',['../md__version_history.html#autotoc_md131',1,'']]],
+  ['11_2015a_3',['2023.11.15a',['../md__version_history.html#autotoc_md134',1,'']]],
+  ['11_2018a_4',['2023.11.18a',['../md__version_history.html#autotoc_md138',1,'']]],
+  ['11_2027a_5',['2023.11.27a',['../md__version_history.html#autotoc_md143',1,'']]],
+  ['11a_6',['11a',['../md__version_history.html#autotoc_md116',1,'2023.09.11a'],['../md__version_history.html#autotoc_md151',1,'2023.12.11a'],['../md__version_history.html#autotoc_md171',1,'2024.02.11a'],['../md__version_history.html#autotoc_md244',1,'2025.01.11a']]],
+  ['12_2005a_7',['2024.12.05a',['../md__version_history.html#autotoc_md230',1,'']]],
+  ['12_2007a_8',['2023.12.07a',['../md__version_history.html#autotoc_md146',1,'']]],
+  ['12_2011a_9',['2023.12.11a',['../md__version_history.html#autotoc_md151',1,'']]],
+  ['12_2012a_10',['2023.12.12a',['../md__version_history.html#autotoc_md153',1,'']]],
+  ['12_2015a_11',['2023.12.15a',['../md__version_history.html#autotoc_md156',1,'']]],
+  ['12_2021a_12',['2022.12.21a',['../md__version_history.html#autotoc_md1',1,'']]],
+  ['12_2023a_13',['2024.12.23a',['../md__version_history.html#autotoc_md240',1,'']]],
+  ['12_2031a_14',['2022.12.31a',['../md__version_history.html#autotoc_md9',1,'']]],
+  ['12a_15',['12a',['../md__version_history.html#autotoc_md131',1,'2023.11.12a'],['../md__version_history.html#autotoc_md153',1,'2023.12.12a'],['../md__version_history.html#autotoc_md229',1,'2024.09.12a'],['../md__version_history.html#autotoc_md265',1,'2026.05.12a']]],
+  ['13a_16',['13a',['../md__version_history.html#autotoc_md104',1,'2023.08.13a'],['../md__version_history.html#autotoc_md269',1,'2026.05.13a']]],
+  ['14a_17',['2023.03.14a',['../md__version_history.html#autotoc_md70',1,'']]],
+  ['15a_18',['15a',['../md__version_history.html#autotoc_md18',1,'2023.01.15a'],['../md__version_history.html#autotoc_md97',1,'2023.07.15a'],['../md__version_history.html#autotoc_md119',1,'2023.09.15a'],['../md__version_history.html#autotoc_md134',1,'2023.11.15a'],['../md__version_history.html#autotoc_md156',1,'2023.12.15a'],['../md__version_history.html#autotoc_md213',1,'2024.08.15a']]],
+  ['16a_19',['16a',['../md__version_history.html#autotoc_md72',1,'2023.03.16a'],['../md__version_history.html#autotoc_md181',1,'2024.04.16a'],['../md__version_history.html#autotoc_md246',1,'2025.04.16a']]],
+  ['17a_20',['17a',['../md__version_history.html#autotoc_md89',1,'2023.06.17a'],['../md__version_history.html#autotoc_md218',1,'2024.08.17a'],['../md__version_history.html#autotoc_md261',1,'2026.04.17a']]],
+  ['18a_21',['18a',['../md__version_history.html#autotoc_md59',1,'2023.02.18a'],['../md__version_history.html#autotoc_md77',1,'2023.03.18a'],['../md__version_history.html#autotoc_md138',1,'2023.11.18a'],['../md__version_history.html#autotoc_md191',1,'2024.05.18a'],['../md__version_history.html#autotoc_md208',1,'2024.06.18a']]]
 ];

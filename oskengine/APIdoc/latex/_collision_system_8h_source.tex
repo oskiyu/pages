@@ -1,0 +1,55 @@
+\doxysection{Collision\+System.\+h}
+\label{_collision_system_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/CollisionSystem.h@{C:/Users/Oscar/source/repos/OSKengine/Source/CollisionSystem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}IIteratorSystem.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}RayCastResult.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Ray.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}BroadCollisionDetectorDispatcher.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}DetailedCollisionDetectorDispatcher.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }OSK::COLLISION\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }Collider;}
+\DoxyCodeLine{00013\ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ CollisionSystem\ final\ :\ \textcolor{keyword}{public}\ IIteratorSystem\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ OSK\_SYSTEM(\textcolor{stringliteral}{"{}OSK::CollisionSystem"{}});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnCreate()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnExecutionStart()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Execute(TDeltaTime\ deltaTime,\ std::span<const\ GameObjectIndex>\ objects)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ COLLISION::RayCastResult\ CastRay(}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ COLLISION::Ray\&\ ray,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ GameObjectIndex\ sendingObject)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddBroadCollisionDetector(UniquePtr<COLLISION::IBroadCollisionDetector>\&\&\ detector);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddDetailedCollisionDetector(UniquePtr<COLLISION::IDetailedCollisionDetector>\&\&\ detector);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ProcessColliderPair(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ GameObjectIndex\ firstObj,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ GameObjectIndex\ secondObj,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ COLLISION::Collider\&\ first,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ COLLISION::Collider\&\ second)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ COLLISION::BroadCollisionDetectorDispatcher\ \ \ \ m\_broadDispatcher;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ COLLISION::DetailedCollisionDetectorDispatcher\ m\_narrowDispatcher;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \}}
+
+\end{DoxyCode}

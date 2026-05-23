@@ -5,7 +5,7 @@ var searchData=
   ['memory_5fread_2',['MEMORY_READ',['../namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad268e74ba4a1759bcbdfadcb7ecfa259aa3e5498451254c3225b4a45a962263e7',1,'OSK::GRAPHICS']]],
   ['memory_5fwrite_3',['MEMORY_WRITE',['../namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad268e74ba4a1759bcbdfadcb7ecfa259aa34a7d2201196f8dc6b50a2a2ef25036',1,'OSK::GRAPHICS']]],
   ['menu_4',['MENU',['../namespace_o_s_k_1_1_i_o.html#a0b92714a4a778072d4824502589bd39ea3ed53fbeb1eab0443561b68ca0c0b5cf',1,'OSK::IO']]],
-  ['mesh_5',['MESH',['../namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aad769de4b6a68624571ab3ae7ec13f97a5b65fe46c5dd90ebcec69c472c3be1d9',1,'OSK::GRAPHICS::MESH()'],['../namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aa7e7dcffcab27051f141128e66a50fcba5b65fe46c5dd90ebcec69c472c3be1d9',1,'OSK::GRAPHICS::MESH()']]],
+  ['mesh_5',['MESH',['../namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aad769de4b6a68624571ab3ae7ec13f97a5b65fe46c5dd90ebcec69c472c3be1d9',1,'OSK::GRAPHICS::MESH'],['../namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aa7e7dcffcab27051f141128e66a50fcba5b65fe46c5dd90ebcec69c472c3be1d9',1,'OSK::GRAPHICS::MESH']]],
   ['mesh_5famplification_6',['MESH_AMPLIFICATION',['../namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aa7e7dcffcab27051f141128e66a50fcba5740bffa37082fcf26e76c4b18c64bc9',1,'OSK::GRAPHICS']]],
   ['metallic_5froughness_7',['METALLIC_ROUGHNESS',['../class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_g_buffer.html#a8f52ca2748885a3ab46968840107c0c1a9d3d58825f3b7225ff1fa4cf2609fea5',1,'OSK::GRAPHICS::GBuffer']]],
   ['minimal_8',['MINIMAL',['../namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69a02f2534ad4997e23ec250e1015eeb929',1,'OSK::GAME']]],

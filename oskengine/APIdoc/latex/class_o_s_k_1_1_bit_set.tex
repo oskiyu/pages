@@ -1,0 +1,258 @@
+\doxysection{Referencia de la clase OSK\+::Bit\+Set}
+\label{class_o_s_k_1_1_bit_set}\index{OSK::BitSet@{OSK::BitSet}}
+
+
+{\ttfamily \#include $<$Bit\+Set.\+hpp$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bit\+Set} ()
+\item 
+\textbf{ Bit\+Set} (TSize length)
+\item 
+\textbf{ $\sim$\+Bit\+Set} ()
+\item 
+void \textbf{ Set\+Length} (TSize length)
+\item 
+void \textbf{ Set\+True} (TSize index)
+\item 
+void \textbf{ Set\+False} (TSize index)
+\item 
+void \textbf{ Set\+Value} (TSize index, bool value)
+\item 
+void \textbf{ Flip} (TSize index)
+\item 
+bool \textbf{ Get\+Value} (TSize index)
+\item 
+void \textbf{ Empty} ()
+\item 
+void \textbf{ Free} ()
+\item 
+TSize \textbf{ Get\+Next\+True\+Index} (TSize initial\+Index=0) const
+\item 
+bool \textbf{ Is\+Full\+False} () const
+\item 
+TSize \textbf{ Get\+Lenght} () const
+\item 
+uint8\+\_\+t $\ast$ \textbf{ Get\+Data} () const
+\item 
+\textbf{ Dynamic\+Array}$<$ uint8\+\_\+t $>$ \& \textbf{ Get\+Container} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Un bitset representa un array de bits. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::BitSet@{OSK::BitSet}!BitSet@{BitSet}}
+\index{BitSet@{BitSet}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{BitSet()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_abf4a3e6426ecded2f1daa6f4ff5a803e} 
+OSK\+::\+Bit\+Set\+::\+Bit\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea un bitset vacío. 
+
+\begin{DoxyWarning}{Atención}
+Deja el bitset en un estado inválido\+: se debe establecer la longitud del bitset para poder ser usado. 
+\end{DoxyWarning}
+\index{OSK::BitSet@{OSK::BitSet}!BitSet@{BitSet}}
+\index{BitSet@{BitSet}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{BitSet()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a0128ac53cf6513d830ba99c5f93db58b} 
+OSK\+::\+Bit\+Set\+::\+Bit\+Set (\begin{DoxyParamCaption}\item[{TSize}]{length}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea un bitset con el número de bits dado. 
+
+\begin{DoxyNote}{Nota}
+El valor de los bits será 0. 
+\end{DoxyNote}
+\index{OSK::BitSet@{OSK::BitSet}!````~BitSet@{$\sim$BitSet}}
+\index{````~BitSet@{$\sim$BitSet}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{$\sim$BitSet()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a2197646f05c60844358f286122d300e2} 
+OSK\+::\+Bit\+Set\+::$\sim$\+Bit\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::BitSet@{OSK::BitSet}!Empty@{Empty}}
+\index{Empty@{Empty}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{Empty()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a9bb4f4cca8124ec90456dd3b2861498c} 
+void OSK\+::\+Bit\+Set\+::\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece el valor de todos los bits a 0. 
+
+\index{OSK::BitSet@{OSK::BitSet}!Flip@{Flip}}
+\index{Flip@{Flip}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{Flip()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a344cbfda5691aacc8468764b9f1445a1} 
+void OSK\+::\+Bit\+Set\+::\+Flip (\begin{DoxyParamCaption}\item[{TSize}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cambia el valor del bit en la posición dada. 
+
+\begin{DoxyNote}{Nota}
+0 -\/$>$ 1. 
+
+1 -\/$>$ 0.
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+Debe ser un índice válido ($<$ size). 
+\end{DoxyPrecond}
+\index{OSK::BitSet@{OSK::BitSet}!Free@{Free}}
+\index{Free@{Free}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{Free()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a3f0833e81de5d6a323a40d33c912b11b} 
+void OSK\+::\+Bit\+Set\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::BitSet@{OSK::BitSet}!GetContainer@{GetContainer}}
+\index{GetContainer@{GetContainer}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{GetContainer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a1d38603ab6938aa25e82e142d3fbf8f6} 
+\textbf{ Dynamic\+Array}$<$ uint8\+\_\+t $>$ \& OSK\+::\+Bit\+Set\+::\+Get\+Container (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxyref{Dynamic\+Array}{pág.}{class_o_s_k_1_1_dynamic_array} con los bits. 
+
+\begin{DoxyNote}{Nota}
+Los bits están almacenados dentro de los bytes. 
+\end{DoxyNote}
+\index{OSK::BitSet@{OSK::BitSet}!GetData@{GetData}}
+\index{GetData@{GetData}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{GetData()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a80d7a33e404e198ac9c60cdaa17138c7} 
+uint8\+\_\+t $\ast$ OSK\+::\+Bit\+Set\+::\+Get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Array con los bits. 
+
+\begin{DoxyNote}{Nota}
+Los bits están almacenados dentro de los bytes. 
+\end{DoxyNote}
+\index{OSK::BitSet@{OSK::BitSet}!GetLenght@{GetLenght}}
+\index{GetLenght@{GetLenght}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{GetLenght()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_ad31fd3bc4a9a38ac07cc813ef4b6a8ab} 
+TSize OSK\+::\+Bit\+Set\+::\+Get\+Lenght (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Número de bits. 
+
+\index{OSK::BitSet@{OSK::BitSet}!GetNextTrueIndex@{GetNextTrueIndex}}
+\index{GetNextTrueIndex@{GetNextTrueIndex}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{GetNextTrueIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a1495105c790974462cf07972dfa8a278} 
+TSize OSK\+::\+Bit\+Set\+::\+Get\+Next\+True\+Index (\begin{DoxyParamCaption}\item[{TSize}]{initial\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el índice del siguiente bit en la secuencia que es 1. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em initial\+Index} & Posición desde la que se comienza la búsqueda. Incluido en la búsqueda.\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyNote}{Nota}
+Si no encuentra ningún bit después del dado, devuelve 0. 
+\end{DoxyNote}
+\index{OSK::BitSet@{OSK::BitSet}!GetValue@{GetValue}}
+\index{GetValue@{GetValue}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{GetValue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a3d2ac7ec072fd2a743368c2f7b007203} 
+bool OSK\+::\+Bit\+Set\+::\+Get\+Value (\begin{DoxyParamCaption}\item[{TSize}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el valor del bit en la posición dada. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe ser un índice válido ($<$ size). 
+\end{DoxyPrecond}
+\index{OSK::BitSet@{OSK::BitSet}!IsFullFalse@{IsFullFalse}}
+\index{IsFullFalse@{IsFullFalse}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{IsFullFalse()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a59621429db3fecb6163c5b2f80ba6543} 
+bool OSK\+::\+Bit\+Set\+::\+Is\+Full\+False (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprueba si todos los bits valen 0. 
+
+\index{OSK::BitSet@{OSK::BitSet}!SetFalse@{SetFalse}}
+\index{SetFalse@{SetFalse}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{SetFalse()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a8cd199b685c32164225ec2e8d1cb0906} 
+void OSK\+::\+Bit\+Set\+::\+Set\+False (\begin{DoxyParamCaption}\item[{TSize}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece el valor del bit dado a 0. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe ser un índice válido ($<$ size). 
+\end{DoxyPrecond}
+\index{OSK::BitSet@{OSK::BitSet}!SetLength@{SetLength}}
+\index{SetLength@{SetLength}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{SetLength()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a7c2fc91899f9b63d2a05331dfec22acd} 
+void OSK\+::\+Bit\+Set\+::\+Set\+Length (\begin{DoxyParamCaption}\item[{TSize}]{length}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece el número de bist del bitset. 
+
+\begin{DoxyNote}{Nota}
+Si el número de bits es mayor al actual, los nuevos bits tendrán un valor de 0. 
+\end{DoxyNote}
+\index{OSK::BitSet@{OSK::BitSet}!SetTrue@{SetTrue}}
+\index{SetTrue@{SetTrue}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{SetTrue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a7f8cdfbe7015e24e8a2497979ecf5380} 
+void OSK\+::\+Bit\+Set\+::\+Set\+True (\begin{DoxyParamCaption}\item[{TSize}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece el valor del bit dado a 1. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe ser un índice válido ($<$ size). 
+\end{DoxyPrecond}
+\index{OSK::BitSet@{OSK::BitSet}!SetValue@{SetValue}}
+\index{SetValue@{SetValue}!OSK::BitSet@{OSK::BitSet}}
+\doxysubsubsection{SetValue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_bit_set_a6a6452952af49f3f7e15634bef33fde4} 
+void OSK\+::\+Bit\+Set\+::\+Set\+Value (\begin{DoxyParamCaption}\item[{TSize}]{index}{, }\item[{bool}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece el valor del bit en la posición dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em index} & Índice del bit.\\
+\hline
+{\em value} & Valor (1 ó 0).\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyPrecond}{Precondición}
+Debe ser un índice válido ($<$ size). 
+\end{DoxyPrecond}

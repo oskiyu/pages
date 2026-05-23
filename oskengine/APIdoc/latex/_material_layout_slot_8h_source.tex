@@ -1,0 +1,29 @@
+\doxysection{Material\+Layout\+Slot.\+h}
+\label{_material_layout_slot_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/MaterialLayoutSlot.h@{C:/Users/Oscar/source/repos/OSKengine/Source/MaterialLayoutSlot.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}MaterialLayoutBinding.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{struct\ }MaterialLayoutSlot\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ MaterialLayoutBinding,\ StringHasher,\ std::equal\_to<>>\ bindings;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ UIndex32\ glslSetIndex\ =\ 0;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ ShaderStage\ stage\{\};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{template}\ <>\ std::string\ OSK::ToString<OSK::GRAPHICS::MaterialLayoutSlot>(\textcolor{keyword}{const}\ OSK::GRAPHICS::MaterialLayoutSlot\&\ data);}
+
+\end{DoxyCode}

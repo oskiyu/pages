@@ -1,0 +1,85 @@
+\doxysection{Asset\+Manager.\+h}
+\label{_asset_manager_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/AssetManager.h@{C:/Users/Oscar/source/repos/OSKengine/Source/AssetManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}SharedPtr.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}IAssetLoader.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}IAsset.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Logger.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}AssetRef.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}AssetLoaderNotFoundException.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Assert.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{class\ }AssetManager\ \{}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ AssetRef<T>\ Load(\textcolor{keyword}{const}\ std::string\&\ assetFilePath)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(m\_loaders.contains(T::GetAssetType()),\ AssetLoaderNotFoundException(T::GetAssetType()));}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ AssetRef<T>\ output\ =\ AssetRef<T>();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ m\_loaders.at(T::GetAssetType())-\/>FullyLoad(assetFilePath,\ \&output);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ AssetRef<T>\ LoadAsync(\textcolor{keyword}{const}\ std::string\&\ assetFilePath,\ std::span<const\ std::string>\ tags\ =\ \{\})\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(m\_loaders.contains(T::GetAssetType()),\ AssetLoaderNotFoundException(T::GetAssetType()))}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ AssetRef<T>\ output\ =\ AssetRef<T>();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ auto*\ loader\ =\ m\_loaders.find(T::GetAssetType())-\/>second.GetPointer();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ loader-\/>RegisterWithoutLoading(assetFilePath,\ std::addressof(output));}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ LaunchAsyncLoad(assetFilePath,\ loader,\ tags);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ return\ output;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ template\ <typename\ T>\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterLoader()\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ key\ =\ T::GetAssetType();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(!m\_loaders.contains(key),\ AssetLoaderAlreadyRegisteredException(key))}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ m\_loaders[T::GetAssetType()]\ =\ MakeUnique<T>();}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TLoader>}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ TLoader*\ GetLoader()\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ key\ =\ TLoader::GetAssetType();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(m\_loaders.contains(TLoader::GetAssetType()),\ AssetLoaderNotFoundException(TLoader::GetAssetType()))}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}TLoader*\textcolor{keyword}{>}(m\_loaders.find(key)-\/>second.GetPointer());}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OSKAPI\_CALL\ LaunchAsyncLoad(}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ assetPath,\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ IAssetLoader*\ loader,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ std::span<const\ std::string>\ tags);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ UniquePtr<IAssetLoader>,\ StringHasher,\ std::equal\_to<>>\ m\_loaders;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \}}
+
+\end{DoxyCode}

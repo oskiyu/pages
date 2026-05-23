@@ -1,0 +1,28 @@
+\doxysection{Concepts.\+h}
+\label{_concepts_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Concepts.h@{C:/Users/Oscar/source/repos/OSKengine/Source/Concepts.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <concepts>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }OSK::Concepts\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{concept\ }IsCopyable\ =\ ::std::copyable<T>\ ||\ ::std::is\_copy\_assignable\_v<T>;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{concept\ }IsMovable\ =\ ::std::movable<T>\ ||\ ::std::is\_move\_assignable\_v<T>;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\ \textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{struct\ }AreSameTemplate\_t\ :\ ::std::is\_same<T1,\ T2>\ \{\};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...>\ \textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ T1,\ \textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }AreSameTemplate\_t<T<T1>,\ T<T2>>\ :\ ::std::true\_type\ \{\};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\ \textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{concept\ }AreSameTemplate\ =\ AreSameTemplate\_t<T1,\ T2>::value;}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,131 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IGpu\+Image\+View}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view}\index{OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}}
+
+
+{\ttfamily \#include $<$IGpu\+Image\+View.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IGpu\+Image\+View} ()=default
+\item 
+\textbf{ IGpu\+Image\+View} (const \textbf{ Gpu\+Image} \&original\+Image, const \textbf{ Gpu\+Image\+View\+Config} \&config)
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IGpu\+Image\+View})
+\item 
+const \textbf{ Gpu\+Image\+View\+Config} \& \textbf{ Get\+Config} () const
+\item 
+const \textbf{ Gpu\+Image} \& \textbf{ Get\+Image} () const
+\item 
+\textbf{ Vector3ui} \textbf{ Get\+Size3D} () const
+\item 
+\textbf{ Vector2ui} \textbf{ Get\+Size2D} () const
+\item 
+\textbf{ USize32} \textbf{ Get\+Size1D} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Un image view describe cómo y a qúe parte de una imagen se va a acceder al usarla. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}!````~IGpuImageView@{$\sim$IGpuImageView}}
+\index{````~IGpuImageView@{$\sim$IGpuImageView}!OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}}
+\doxysubsubsection{$\sim$IGpuImageView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view_adc2b45c8f5ae7a010f8640dfe86eccd9} 
+virtual OSK\+::\+GRAPHICS\+::\+IGpu\+Image\+View\+::$\sim$\+IGpu\+Image\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\index{OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}!IGpuImageView@{IGpuImageView}}
+\index{IGpuImageView@{IGpuImageView}!OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}}
+\doxysubsubsection{IGpuImageView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view_afbb5d4b054f5bf6855ebd9035edfa4f1} 
+IGpu\+Image\+View\+::\+IGpu\+Image\+View (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Image} \&}]{original\+Image}{, }\item[{const \textbf{ Gpu\+Image\+View\+Config} \&}]{config}{}\end{DoxyParamCaption})}
+
+
+
+Crea un image view. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em original\+Image} & Imagen a partir de la que se obtuvo el view. \\
+\hline
+{\em config} & Configuración del view.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Si {\ttfamily config.\+array\+Layer\+Count} $>$ 1, entonces {\ttfamily array\+Type} debe ser \doxyref{Sampled\+Array\+Type\+::\+ARRAY}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a55e114ba828198c2146f5233e462ba39acb4fb1757fb37c43cded35d3eb857c43} 
+
+{\ttfamily config.\+array\+Layer\+Count} != 0. 
+\end{DoxyPrecond}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}!GetConfig@{GetConfig}}
+\index{GetConfig@{GetConfig}!OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}}
+\doxysubsubsection{GetConfig()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view_ac45ee7e180e2f56b7b4d6c85b247995e} 
+const \textbf{ Gpu\+Image\+View\+Config} \& OSK\+::\+GRAPHICS\+::\+IGpu\+Image\+View\+::\+Get\+Config (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Configuración completa del view. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}!GetImage@{GetImage}}
+\index{GetImage@{GetImage}!OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}}
+\doxysubsubsection{GetImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view_acc87ae2699d710a4f982e9cde2d0a222} 
+const \textbf{ Gpu\+Image} \& OSK\+::\+GRAPHICS\+::\+IGpu\+Image\+View\+::\+Get\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la imagen a partir de la que se creó el view. 
+
+\begin{DoxyReturn}{Devuelve}
+Imagen accedida por el view.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+La imagen a partir de la que se creó el view debe tener estabilidad de puntero. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}!GetSize1D@{GetSize1D}}
+\index{GetSize1D@{GetSize1D}!OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}}
+\doxysubsubsection{GetSize1D()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view_a92620265b6a049265b60eb888068703f} 
+\textbf{ USize32} OSK\+::\+GRAPHICS\+::\+IGpu\+Image\+View\+::\+Get\+Size1D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Tamaño de la imagen, en 1 dimensión. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Ver también}
+\doxyref{Gpu\+Image}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image}. 
+\end{DoxySeeAlso}
+\index{OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}!GetSize2D@{GetSize2D}}
+\index{GetSize2D@{GetSize2D}!OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}}
+\doxysubsubsection{GetSize2D()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view_acec78a887a895056725a8b115389063f} 
+\textbf{ Vector2ui} OSK\+::\+GRAPHICS\+::\+IGpu\+Image\+View\+::\+Get\+Size2D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Tamaño de la imagen, en 2 dimensiones. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Ver también}
+\doxyref{Gpu\+Image}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image}. 
+\end{DoxySeeAlso}
+\index{OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}!GetSize3D@{GetSize3D}}
+\index{GetSize3D@{GetSize3D}!OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}}
+\doxysubsubsection{GetSize3D()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view_a0188eb926ec03ccf9383291440736f0e} 
+\textbf{ Vector3ui} OSK\+::\+GRAPHICS\+::\+IGpu\+Image\+View\+::\+Get\+Size3D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Tamaño de la imagen, en 3 dimensiones. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Ver también}
+\doxyref{Gpu\+Image}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image}. 
+\end{DoxySeeAlso}
+\index{OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::IGpuImageView@{OSK::GRAPHICS::IGpuImageView}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view_a8cf554bcdc9c6b8455305c847e1c7b95} 
+OSK\+::\+GRAPHICS\+::\+IGpu\+Image\+View\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IGpu\+Image\+View}}]{}{}\end{DoxyParamCaption})}
+

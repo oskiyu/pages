@@ -1,0 +1,370 @@
+\doxysection{Referencia de la clase OSK\+::Cpu\+Mesh3D}
+\label{class_o_s_k_1_1_cpu_mesh3_d}\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+
+
+{\ttfamily \#include $<$Cpu\+Model3\+D.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ Triangle\+Indices} = std\+::array$<$\textbf{ UIndex64}, 3$>$
+\item 
+using \textbf{ Line\+Indices} = std\+::array$<$\textbf{ UIndex64}, 2$>$
+\item 
+using \textbf{ Point\+Index} = \textbf{ UIndex64}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Add\+Vertex} (\textbf{ Cpu\+Vertex3D} vertex)
+\item 
+void \textbf{ Add\+Vertices} (const \textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Vertex3D} $>$ \&vertices)
+\item 
+void \textbf{ Add\+Triangle\+Indices} (const \textbf{ Dynamic\+Array}$<$ \textbf{ Triangle\+Indices} $>$ \&indices)
+\item 
+void \textbf{ Add\+Line\+Indices} (const \textbf{ Dynamic\+Array}$<$ \textbf{ Line\+Indices} $>$ \&indices)
+\item 
+void \textbf{ Add\+Point\+Indices} (const \textbf{ Dynamic\+Array}$<$ \textbf{ Point\+Index} $>$ \&indices)
+\item 
+void \textbf{ Add\+Triangle\+Index} (\textbf{ Triangle\+Indices} indices)
+\item 
+void \textbf{ Add\+Line\+Index} (\textbf{ Line\+Indices} indices)
+\item 
+void \textbf{ Add\+Point\+Index} (\textbf{ Point\+Index} indices)
+\item 
+bool \textbf{ Has\+Triangles} () const
+\item 
+bool \textbf{ Has\+Lines} () const
+\item 
+bool \textbf{ Has\+Points} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Triangle\+Count} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Line\+Count} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Point\+Count} () const
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Triangle\+Indices} $>$ \& \textbf{ Get\+Triangles} () const
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Line\+Indices} $>$ \& \textbf{ Get\+Lines} () const
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Point\+Index} $>$ \& \textbf{ Get\+Points} () const
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Vertex3D} $>$ \& \textbf{ Get\+Vertices} () const
+\item 
+void \textbf{ Set\+Material\+Index} (\textbf{ UIndex64} index)
+\item 
+bool \textbf{ Has\+Material} () const
+\item 
+\textbf{ UIndex64} \textbf{ Get\+Material\+Index} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Malla de vértices que comparten un material en común. Es posible que en realidad no tenga un material. 
+
+Puede contener una combinación de triángulos, líneas y/o puntos sueltos. 
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de los «\+Typedef» miembros de la clase}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!LineIndices@{LineIndices}}
+\index{LineIndices@{LineIndices}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{LineIndices}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_afda04096b8f1907b780b8946db2d42d4} 
+using \textbf{ OSK\+::\+Cpu\+Mesh3\+D\+::\+Line\+Indices} = std\+::array$<$\textbf{ UIndex64}, 2$>$}
+
+
+
+Índices de dos vértices que conforman una línea. 
+
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!PointIndex@{PointIndex}}
+\index{PointIndex@{PointIndex}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{PointIndex}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_aba336c6862b1d634236d0d1bfe4fcdb8} 
+using \textbf{ OSK\+::\+Cpu\+Mesh3\+D\+::\+Point\+Index} = \textbf{ UIndex64}}
+
+
+
+Índice de un punto aislado. 
+
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!TriangleIndices@{TriangleIndices}}
+\index{TriangleIndices@{TriangleIndices}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{TriangleIndices}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a9131da3cbaff5a4272ac0401268ace12} 
+using \textbf{ OSK\+::\+Cpu\+Mesh3\+D\+::\+Triangle\+Indices} = std\+::array$<$\textbf{ UIndex64}, 3$>$}
+
+
+
+Índices de tres vértices que conforman un triángulo. 
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!AddLineIndex@{AddLineIndex}}
+\index{AddLineIndex@{AddLineIndex}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{AddLineIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a1201e610d10e282d94b34ae52f955bb2} 
+void Cpu\+Mesh3\+D\+::\+Add\+Line\+Index (\begin{DoxyParamCaption}\item[{\textbf{ Line\+Indices}}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Registra una línea, representada por sus dos índices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em indices} & Índices de la línea.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Cada índice debe ser menor al número de vértices registrados. 
+\end{DoxyPrecond}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!AddLineIndices@{AddLineIndices}}
+\index{AddLineIndices@{AddLineIndices}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{AddLineIndices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_aacccc34c58b759d0a60f8c1ed0f11929} 
+void Cpu\+Mesh3\+D\+::\+Add\+Line\+Indices (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Line\+Indices} $>$ \&}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Registra una lista de líneas, cada una representada por los índices correspondientes. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em indices} & Lista con los índices de dos en dos.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Cada índice debe ser menor al número de vértices registrados. 
+\end{DoxyPrecond}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!AddPointIndex@{AddPointIndex}}
+\index{AddPointIndex@{AddPointIndex}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{AddPointIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a4ed319dac1a1c9159c0c06939fb06954} 
+void Cpu\+Mesh3\+D\+::\+Add\+Point\+Index (\begin{DoxyParamCaption}\item[{\textbf{ Point\+Index}}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Registra un punto aislado, representado por su índice. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em indices} & Índice del punto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El índice debe ser menor al número de vértices registrados. 
+\end{DoxyPrecond}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!AddPointIndices@{AddPointIndices}}
+\index{AddPointIndices@{AddPointIndices}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{AddPointIndices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a0fd07390e552762fdf9b38ae4c1bbc1a} 
+void Cpu\+Mesh3\+D\+::\+Add\+Point\+Indices (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Point\+Index} $>$ \&}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Registra una lista de puntos aislados, representado por los índices que ocupan en la lista de vértices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em indices} & Lista con los índices.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Cada índice debe ser menor al número de vértices registrados. 
+\end{DoxyPrecond}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!AddTriangleIndex@{AddTriangleIndex}}
+\index{AddTriangleIndex@{AddTriangleIndex}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{AddTriangleIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a2a61d1a1d4ea7eee9639c74ecafbdf6a} 
+void Cpu\+Mesh3\+D\+::\+Add\+Triangle\+Index (\begin{DoxyParamCaption}\item[{\textbf{ Triangle\+Indices}}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Registra un triángulo, representado por sus tres índices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em indices} & Índices del triángulo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Cada índice debe ser menor al número de vértices registrados. 
+\end{DoxyPrecond}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!AddTriangleIndices@{AddTriangleIndices}}
+\index{AddTriangleIndices@{AddTriangleIndices}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{AddTriangleIndices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a7eb5035926733f10c5da456cc8ccf459} 
+void Cpu\+Mesh3\+D\+::\+Add\+Triangle\+Indices (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Triangle\+Indices} $>$ \&}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Registra una lista de triángulos, cada uno representado por los índices correspondientes. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em indices} & Lista con los índices de tres en tres.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Cada índice debe ser menor al número de vértices registrados. 
+\end{DoxyPrecond}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!AddVertex@{AddVertex}}
+\index{AddVertex@{AddVertex}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{AddVertex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a5b9fa842d316bb047691af33d39acd48} 
+void Cpu\+Mesh3\+D\+::\+Add\+Vertex (\begin{DoxyParamCaption}\item[{\textbf{ Cpu\+Vertex3D}}]{vertex}{}\end{DoxyParamCaption})}
+
+
+
+Añade un único vértice. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vertex} & Nuevo vértice a añadir. \\
+\hline
+\end{DoxyParams}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!AddVertices@{AddVertices}}
+\index{AddVertices@{AddVertices}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{AddVertices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a067f7555c2e318ecb4e653e5ef78c9f9} 
+void Cpu\+Mesh3\+D\+::\+Add\+Vertices (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Vertex3D} $>$ \&}]{vertices}{}\end{DoxyParamCaption})}
+
+
+
+Añade una lista de vértices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vertices} & Lista de vértices. \\
+\hline
+\end{DoxyParams}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!GetLineCount@{GetLineCount}}
+\index{GetLineCount@{GetLineCount}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{GetLineCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a876b8700cdd4d40c15ecee8f160d2a2d} 
+\textbf{ USize64} Cpu\+Mesh3\+D\+::\+Get\+Line\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Número de líneas registradas. 
+\end{DoxyReturn}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!GetLines@{GetLines}}
+\index{GetLines@{GetLines}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{GetLines()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_ad050e4ada64139707e291c0eae3a5f2a} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Mesh3\+D\+::\+Line\+Indices} $>$ \& Cpu\+Mesh3\+D\+::\+Get\+Lines (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Lista con los índices de todas las líneas registrados. 
+\end{DoxyReturn}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!GetMaterialIndex@{GetMaterialIndex}}
+\index{GetMaterialIndex@{GetMaterialIndex}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{GetMaterialIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a5152809e5d7141a4496767330176f172} 
+\textbf{ UIndex64} Cpu\+Mesh3\+D\+::\+Get\+Material\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Índice del material, respecto a la lista de materiales del modelo que posee esta malla.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily \doxyref{Has\+Material()}{pág.}{class_o_s_k_1_1_cpu_mesh3_d_adc418facfedeb96f426f3a9b036bd3c3}} debe devolver true. 
+\end{DoxyPrecond}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!GetPointCount@{GetPointCount}}
+\index{GetPointCount@{GetPointCount}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{GetPointCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_add9bef440f878cc484781e562d907ad9} 
+\textbf{ USize64} Cpu\+Mesh3\+D\+::\+Get\+Point\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Número de puntos aislados registrados. 
+\end{DoxyReturn}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!GetPoints@{GetPoints}}
+\index{GetPoints@{GetPoints}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{GetPoints()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a052e14a9db82504a71d09c49f37fac35} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Mesh3\+D\+::\+Point\+Index} $>$ \& Cpu\+Mesh3\+D\+::\+Get\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Lista con los índices de todos los puntos aislados registrados. 
+\end{DoxyReturn}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!GetTriangleCount@{GetTriangleCount}}
+\index{GetTriangleCount@{GetTriangleCount}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{GetTriangleCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_ae3515e979b178f2eb3e3fbe20ab2818f} 
+\textbf{ USize64} Cpu\+Mesh3\+D\+::\+Get\+Triangle\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Número de triángulos registrados. 
+\end{DoxyReturn}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!GetTriangles@{GetTriangles}}
+\index{GetTriangles@{GetTriangles}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{GetTriangles()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a9d7aee36cd4a1d205fdfdf7ad6d97028} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Mesh3\+D\+::\+Triangle\+Indices} $>$ \& Cpu\+Mesh3\+D\+::\+Get\+Triangles (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Lista con los índices de todos los triángulos registrados. 
+\end{DoxyReturn}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!GetVertices@{GetVertices}}
+\index{GetVertices@{GetVertices}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{GetVertices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a6459b353daa5f6abc3fc429cad98992a} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Vertex3D} $>$ \& Cpu\+Mesh3\+D\+::\+Get\+Vertices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Lista con todos los vértices. 
+\end{DoxyReturn}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!HasLines@{HasLines}}
+\index{HasLines@{HasLines}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{HasLines()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a42def2b84dfb7f8375f3a62e8d39af17} 
+bool Cpu\+Mesh3\+D\+::\+Has\+Lines (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si contiene al menos una línea. 
+\end{DoxyReturn}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!HasMaterial@{HasMaterial}}
+\index{HasMaterial@{HasMaterial}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{HasMaterial()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_adc418facfedeb96f426f3a9b036bd3c3} 
+bool Cpu\+Mesh3\+D\+::\+Has\+Material (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si tiene asociado un material. 
+\end{DoxyReturn}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!HasPoints@{HasPoints}}
+\index{HasPoints@{HasPoints}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{HasPoints()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_aa63f247607d81bb72dca76d04cec82fc} 
+bool Cpu\+Mesh3\+D\+::\+Has\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si contiene al menos un punto aislado. 
+\end{DoxyReturn}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!HasTriangles@{HasTriangles}}
+\index{HasTriangles@{HasTriangles}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{HasTriangles()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a98dbdedd45c679e1d1ab298937497186} 
+bool Cpu\+Mesh3\+D\+::\+Has\+Triangles (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si contiene al menos un triángulo. 
+\end{DoxyReturn}
+\index{OSK::CpuMesh3D@{OSK::CpuMesh3D}!SetMaterialIndex@{SetMaterialIndex}}
+\index{SetMaterialIndex@{SetMaterialIndex}!OSK::CpuMesh3D@{OSK::CpuMesh3D}}
+\doxysubsubsection{SetMaterialIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_mesh3_d_a455c25d8f8a7314281a8f280f9d05128} 
+void Cpu\+Mesh3\+D\+::\+Set\+Material\+Index (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Establece el índice del material. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em index} & Índice del material, respecto a la lista de materiales del modelo que posee esta malla.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily index} Debe ser menor que el número de materiales registrados en el modelo que posee esta malla. 
+\end{DoxyPrecond}

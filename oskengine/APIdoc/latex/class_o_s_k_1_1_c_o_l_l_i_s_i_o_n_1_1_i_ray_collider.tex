@@ -1,0 +1,52 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::IRay\+Collider}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_ray_collider}\index{OSK::COLLISION::IRayCollider@{OSK::COLLISION::IRayCollider}}
+
+
+{\ttfamily \#include $<$IRay\+Collider.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IRay\+Collider} ()=default
+\item 
+virtual \textbf{ Ray\+Cast\+Result} \textbf{ Cast\+Ray} (const \textbf{ Ray} \&ray) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para colliders que pueden interseccionar con un rayo. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::COLLISION::IRayCollider@{OSK::COLLISION::IRayCollider}!````~IRayCollider@{$\sim$IRayCollider}}
+\index{````~IRayCollider@{$\sim$IRayCollider}!OSK::COLLISION::IRayCollider@{OSK::COLLISION::IRayCollider}}
+\doxysubsubsection{$\sim$IRayCollider()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_ray_collider_aa57df486ae0e69db8836a1c1ca291467} 
+virtual OSK\+::\+COLLISION\+::\+IRay\+Collider\+::$\sim$\+IRay\+Collider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::IRayCollider@{OSK::COLLISION::IRayCollider}!CastRay@{CastRay}}
+\index{CastRay@{CastRay}!OSK::COLLISION::IRayCollider@{OSK::COLLISION::IRayCollider}}
+\doxysubsubsection{CastRay()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_ray_collider_a78ad23fe3e49348e0cee661c23f9a0a4} 
+virtual \textbf{ Ray\+Cast\+Result} OSK\+::\+COLLISION\+::\+IRay\+Collider\+::\+Cast\+Ray (\begin{DoxyParamCaption}\item[{const \textbf{ Ray} \&}]{ray}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calcula la intersección entre un rayo y el collider. @paramm ray Rayo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Posición de este collider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la intersección. 
+\end{DoxyReturn}
+
+
+Implementado en \textbf{ OSK\+::\+COLLISION\+::\+Axis\+Aligned\+Bounding\+Box} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_axis_aligned_bounding_box_a22be50db7c68c84f933aadb94228d670}, \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a62900bca74bd5c2d3e3110b30e92bc64} y \textbf{ OSK\+::\+COLLISION\+::\+Sphere\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_collider_a3b846414c3ea6c7cdb38b237d70ca31c}.
+

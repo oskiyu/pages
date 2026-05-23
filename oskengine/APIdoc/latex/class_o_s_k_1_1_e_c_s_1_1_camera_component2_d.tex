@@ -1,0 +1,150 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Camera\+Component2D}
+\label{class_o_s_k_1_1_e_c_s_1_1_camera_component2_d}\index{OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}}
+
+
+{\ttfamily \#include $<$Camera\+Component2\+D.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT} ()
+\item 
+\textbf{ OSK\+\_\+\+COMPONENT} ("{}OSK\+::\+Camera\+Component2\+D"{})
+\item 
+\textbf{ Camera\+Component2D} ()
+\item 
+void \textbf{ Link\+To\+Display} (const \textbf{ IO\+::\+IDisplay} $\ast$display)
+\item 
+void \textbf{ Unlink\+Dsiplay} ()
+\item 
+void \textbf{ Set\+Target\+Size} (const \textbf{ Vector2f} \&target\+Size)
+\item 
+glm\+::mat4 \textbf{ Get\+Projection} (const \textbf{ Transform2D} \&camera\+Transform) const
+\item 
+void \textbf{ Update\+Uniform\+Buffer} (const \textbf{ Transform2D} \&camera\+Transform)
+\item 
+const \textbf{ GRAPHICS\+::\+Gpu\+Buffer} $\ast$ \textbf{ Get\+Uniform\+Buffer} () const
+\item 
+\textbf{ Vector2f} \textbf{ Point\+In\+Window\+To\+Point\+In\+World} (const \textbf{ Vector2f} \&point) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Cámara para un mundo de dos dimensiones. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}!CameraComponent2D@{CameraComponent2D}}
+\index{CameraComponent2D@{CameraComponent2D}!OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}}
+\doxysubsubsection{CameraComponent2D()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component2_d_a64066d153575cc59daa7af38447f529d} 
+Camera\+Component2\+D\+::\+Camera\+Component2D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}!GetProjection@{GetProjection}}
+\index{GetProjection@{GetProjection}!OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}}
+\doxysubsubsection{GetProjection()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component2_d_a71d1244d09ce7a404779cb5acfb2cf31} 
+glm\+::mat4 Camera\+Component2\+D\+::\+Get\+Projection (\begin{DoxyParamCaption}\item[{const \textbf{ Transform2D} \&}]{camera\+Transform}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la matriz proyección de la cámara. 
+
+\index{OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}!GetUniformBuffer@{GetUniformBuffer}}
+\index{GetUniformBuffer@{GetUniformBuffer}!OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}}
+\doxysubsubsection{GetUniformBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component2_d_af91760ae35828c772788dd1e907e7c3e} 
+const \textbf{ Gpu\+Buffer} $\ast$ Camera\+Component2\+D\+::\+Get\+Uniform\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}!LinkToDisplay@{LinkToDisplay}}
+\index{LinkToDisplay@{LinkToDisplay}!OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}}
+\doxysubsubsection{LinkToDisplay()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component2_d_afbecc6e1d8107b76924d323da82e6008} 
+void Camera\+Component2\+D\+::\+Link\+To\+Display (\begin{DoxyParamCaption}\item[{const \textbf{ IO\+::\+IDisplay} $\ast$}]{display}{}\end{DoxyParamCaption})}
+
+
+
+Enlaza la cámara a un display, para que tenga el tamaño del display. 
+
+\begin{DoxyPrecond}{Precondición}
+display no debe ser null. 
+
+El puntero al display debe ser ESTABLE. 
+\end{DoxyPrecond}
+\index{OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}!OSK\_COMPONENT@{OSK\_COMPONENT}}
+\index{OSK\_COMPONENT@{OSK\_COMPONENT}!OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}}
+\doxysubsubsection{OSK\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component2_d_aa7c89b0d072e7602f3e570b57e8511cb} 
+OSK\+::\+ECS\+::\+Camera\+Component2\+D\+::\+OSK\+\_\+\+COMPONENT (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Camera\+Component2\+D"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}!OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}}
+\index{OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}!OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}}
+\doxysubsubsection{OSK\_SERIALIZABLE\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component2_d_a6cc1ed6e27b2c937b57bcf172d8e7fbb} 
+OSK\+::\+ECS\+::\+Camera\+Component2\+D\+::\+OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}!PointInWindowToPointInWorld@{PointInWindowToPointInWorld}}
+\index{PointInWindowToPointInWorld@{PointInWindowToPointInWorld}!OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}}
+\doxysubsubsection{PointInWindowToPointInWorld()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component2_d_a1fd26669f374f167b3486eb07c2c1c5f} 
+\textbf{ Vector2f} Camera\+Component2\+D\+::\+Point\+In\+Window\+To\+Point\+In\+World (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2f} \&}]{point}{}\end{DoxyParamCaption}) const}
+
+
+
+Transforma un punto 2D en la ventana al punto 2D al que apunta la cámara en el mundo 2D. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em point} & Punto en coordenadas de la ventana.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Punto, en coordenadas del mundo 2D.
+\end{DoxyReturn}
+\index{OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}!SetTargetSize@{SetTargetSize}}
+\index{SetTargetSize@{SetTargetSize}!OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}}
+\doxysubsubsection{SetTargetSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component2_d_ae5fc342d2560e9ad4aed1fda3e028b18} 
+void Camera\+Component2\+D\+::\+Set\+Target\+Size (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2f} \&}]{target\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Establece el tamaño del área a renderizar. 
+
+\begin{DoxyWarning}{Atención}
+Se ignorará si se ha enlazado a una ventana. 
+\end{DoxyWarning}
+\index{OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}!UnlinkDsiplay@{UnlinkDsiplay}}
+\index{UnlinkDsiplay@{UnlinkDsiplay}!OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}}
+\doxysubsubsection{UnlinkDsiplay()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component2_d_ac009c018cde4e9080cd87e0176692cee} 
+void Camera\+Component2\+D\+::\+Unlink\+Dsiplay (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Quita el enlace al display. 
+
+\index{OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}!UpdateUniformBuffer@{UpdateUniformBuffer}}
+\index{UpdateUniformBuffer@{UpdateUniformBuffer}!OSK::ECS::CameraComponent2D@{OSK::ECS::CameraComponent2D}}
+\doxysubsubsection{UpdateUniformBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component2_d_a630de7348f82ab9d7b835c6c94efeca9} 
+void Camera\+Component2\+D\+::\+Update\+Uniform\+Buffer (\begin{DoxyParamCaption}\item[{const \textbf{ Transform2D} \&}]{camera\+Transform}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza el buffer en la GPU. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em camera\+Transform} & Transform de la cámara.\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyNote}{Nota}
+Debe llamarse cada frame que se haya modificado la cámara. 
+\end{DoxyNote}

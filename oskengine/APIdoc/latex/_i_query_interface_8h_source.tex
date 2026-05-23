@@ -1,0 +1,45 @@
+\doxysection{IQuery\+Interface.\+h}
+\label{_i_query_interface_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IQueryInterface.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IQueryInterface.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ OSKengine\ by\ oskiyu}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Copyright\ (c)\ 2019-\/2022\ oskiyu.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}DefineIuuid.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }OSK\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{enum\ class}\ IUUID\ :\ TInterfaceUuid\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ IGamepadInput\ =\ 1,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ IKeyboardInput,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ IMouseInput,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ IFullscreenableDisplay,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ ITouchInput}
+\DoxyCodeLine{00017\ \ \ \ \ \};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IQueryInterface\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IQueryInterface()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ QueryInterface(TInterfaceUuid\ interfaceUuid,\ \textcolor{keywordtype}{void}**\ ptr)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ QueryInterface(IUUID\ uuid,\ \textcolor{keywordtype}{void}**\ ptr)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ QueryInterface((TInterfaceUuid)uuid,\ ptr);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ QueryConstInterface(TInterfaceUuid\ uuid,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}**\ ptr)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ QueryConstInterface(IUUID\ uuid,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}**\ ptr)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ QueryConstInterface((TInterfaceUuid)uuid,\ ptr);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \}}
+
+\end{DoxyCode}

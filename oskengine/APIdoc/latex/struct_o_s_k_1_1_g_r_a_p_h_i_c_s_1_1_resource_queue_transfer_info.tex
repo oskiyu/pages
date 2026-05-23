@@ -1,0 +1,101 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Resource\+Queue\+Transfer\+Info}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_resource_queue_transfer_info}\index{OSK::GRAPHICS::ResourceQueueTransferInfo@{OSK::GRAPHICS::ResourceQueueTransferInfo}}
+
+
+{\ttfamily \#include $<$Resource\+Queue\+Transfer.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Resource\+Queue\+Transfer\+Info} \textbf{ Empty} ()
+\item 
+static \textbf{ Resource\+Queue\+Transfer\+Info} \textbf{ From\+To} (const \textbf{ ICommand\+Queue} $\ast$source, const \textbf{ ICommand\+Queue} $\ast$destination)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+const \textbf{ ICommand\+Queue} $\ast$ \textbf{ source\+Queue} = nullptr
+\item 
+const \textbf{ ICommand\+Queue} $\ast$ \textbf{ destination\+Queue} = nullptr
+\item 
+bool \textbf{ transfer} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que permite expresar una transferencia de un recurso de una cola a otra. 
+
+De esta manera, el recurso usado en una cola podrá ser usado en otra.
+
+Una vez transferido, el recurso no podrá usarse en la cola inicial al no ser que se vuelva a transferir a esta. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::ResourceQueueTransferInfo@{OSK::GRAPHICS::ResourceQueueTransferInfo}!Empty@{Empty}}
+\index{Empty@{Empty}!OSK::GRAPHICS::ResourceQueueTransferInfo@{OSK::GRAPHICS::ResourceQueueTransferInfo}}
+\doxysubsubsection{Empty()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_resource_queue_transfer_info_a214a6dd045bff0068eb366fe3f33cfd2} 
+\textbf{ Resource\+Queue\+Transfer\+Info} Resource\+Queue\+Transfer\+Info\+::\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estructura indicando que no hay ninguna transferencia. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ResourceQueueTransferInfo@{OSK::GRAPHICS::ResourceQueueTransferInfo}!FromTo@{FromTo}}
+\index{FromTo@{FromTo}!OSK::GRAPHICS::ResourceQueueTransferInfo@{OSK::GRAPHICS::ResourceQueueTransferInfo}}
+\doxysubsubsection{FromTo()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_resource_queue_transfer_info_aabd113fa88f5c71a5b440136065590ab} 
+\textbf{ Resource\+Queue\+Transfer\+Info} Resource\+Queue\+Transfer\+Info\+::\+From\+To (\begin{DoxyParamCaption}\item[{const \textbf{ ICommand\+Queue} $\ast$}]{source}{, }\item[{const \textbf{ ICommand\+Queue} $\ast$}]{destination}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em source} & Cola de origen, en la que el recurso se encuentra actualmente. \\
+\hline
+{\em destination} & Cola en la que se encontrará el recurso después de la operación. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estructura completa.
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondición}
+{\ttfamily transfer} será {\ttfamily true}. 
+\end{DoxyPostcond}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::ResourceQueueTransferInfo@{OSK::GRAPHICS::ResourceQueueTransferInfo}!destinationQueue@{destinationQueue}}
+\index{destinationQueue@{destinationQueue}!OSK::GRAPHICS::ResourceQueueTransferInfo@{OSK::GRAPHICS::ResourceQueueTransferInfo}}
+\doxysubsubsection{destinationQueue}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_resource_queue_transfer_info_a863e11d54befd3a06790dea01486db93} 
+const \textbf{ ICommand\+Queue}$\ast$ OSK\+::\+GRAPHICS\+::\+Resource\+Queue\+Transfer\+Info\+::destination\+Queue = nullptr}
+
+
+
+Fammilia de destino. 
+
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily transfer} debe ser {\ttfamily true}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ResourceQueueTransferInfo@{OSK::GRAPHICS::ResourceQueueTransferInfo}!sourceQueue@{sourceQueue}}
+\index{sourceQueue@{sourceQueue}!OSK::GRAPHICS::ResourceQueueTransferInfo@{OSK::GRAPHICS::ResourceQueueTransferInfo}}
+\doxysubsubsection{sourceQueue}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_resource_queue_transfer_info_a17367d79b58861cc0fbeb3816c072ae8} 
+const \textbf{ ICommand\+Queue}$\ast$ OSK\+::\+GRAPHICS\+::\+Resource\+Queue\+Transfer\+Info\+::source\+Queue = nullptr}
+
+
+
+Fammilia de origen. 
+
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily transfer} debe ser {\ttfamily true}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ResourceQueueTransferInfo@{OSK::GRAPHICS::ResourceQueueTransferInfo}!transfer@{transfer}}
+\index{transfer@{transfer}!OSK::GRAPHICS::ResourceQueueTransferInfo@{OSK::GRAPHICS::ResourceQueueTransferInfo}}
+\doxysubsubsection{transfer}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_resource_queue_transfer_info_a1007a00a14d609ae523f2855a11eccce} 
+bool OSK\+::\+GRAPHICS\+::\+Resource\+Queue\+Transfer\+Info\+::transfer = false}
+
+
+
+Indica si hay una transferencia o no. 
+

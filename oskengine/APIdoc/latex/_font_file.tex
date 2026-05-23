@@ -1,0 +1,28 @@
+\doxysection{Archivo de descripción de una fuente de texto. }
+\label{_font_file}\index{Archivo de descripción de una fuente de texto.@{Archivo de descripción de una fuente de texto.}}
+Indica los metadatos de una fuente de texto almacenada en un fichero externo.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+\_\+type} & ({\ttfamily string}) Tipo de archivo de descripción. \\
+\hline
+{\em spec\+\_\+ver} & ({\ttfamily string}) Versión de la especificación del archivo. \\
+\hline
+{\em asset\+\_\+type} & ({\ttfamily string}) Tipo de recurso. \\
+\hline
+{\em name} & ({\ttfamily string}) Nombre de la fuente. \\
+\hline
+{\em raw\+\_\+asset\+\_\+path} & ({\ttfamily string}) Ruta al fichero que almacena la fuente.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily file\+\_\+type} debe ser {\ttfamily ASSET}. 
+
+{\ttfamily spec\+\_\+ver} debe ser 0. 
+
+{\ttfamily asset\+\_\+type} debe ser {\ttfamily OSK\+::\+Font}. 
+
+{\ttfamily name} debe ser un identificador único para esta fuente.
+
+El archivo indicado por {\ttfamily raw\+\_\+asset\+\_\+path} debe tener extensión {\ttfamily .ttf}. 
+\end{DoxyPrecond}

@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Fichero Fuente C:/Users/Oscar/source/repos/OSKengine/Source/MutexHolder.h</title>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/MutexHolder.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_mutex_holder_8h_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('_mutex_holder_8h_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,9 +78,16 @@ $(document).ready(function(){initNavTree('_mutex_holder_8h_source.html',''); ini
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
@@ -94,34 +100,36 @@ $(document).ready(function(){initNavTree('_mutex_holder_8h_source.html',''); ini
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k.html">OSK</a> {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_mutex_holder.html">   12</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_mutex_holder.html">MutexHolder</a> {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_mutex_holder.html">   12</a></span>    <span class="keyword">struct </span><a class="code hl_function" href="struct_o_s_k_1_1_mutex_holder.html#a31f149f33f752110a3d3d46ba882d372">MutexHolder</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_mutex_holder.html#ac3e1c4f6165143242b9dd8f018bfd14b">   14</a></span>        std::mutex <a class="code hl_variable" href="struct_o_s_k_1_1_mutex_holder.html#ac3e1c4f6165143242b9dd8f018bfd14b">mutex</a>{};</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_mutex_holder.html#a31f149f33f752110a3d3d46ba882d372">   16</a></span>        <a class="code hl_function" href="struct_o_s_k_1_1_mutex_holder.html#a31f149f33f752110a3d3d46ba882d372">MutexHolder</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_mutex_holder.html#a54a8f7cd52cdf209469235d470af472e">   17</a></span>        <a class="code hl_function" href="struct_o_s_k_1_1_mutex_holder.html#a54a8f7cd52cdf209469235d470af472e">~MutexHolder</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_mutex_holder.html#af2a8c368502438006c36f2adab108fc3">   19</a></span>        <a class="code hl_function" href="struct_o_s_k_1_1_mutex_holder.html#af2a8c368502438006c36f2adab108fc3">MutexHolder</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_o_s_k_1_1_mutex_holder.html">MutexHolder</a>&amp;) {};</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_mutex_holder.html#af83282e8b358c80a4a2bbd5cfbf05018">   20</a></span>        <a class="code hl_struct" href="struct_o_s_k_1_1_mutex_holder.html">MutexHolder</a>&amp; <a class="code hl_function" href="struct_o_s_k_1_1_mutex_holder.html#af83282e8b358c80a4a2bbd5cfbf05018">operator=</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_o_s_k_1_1_mutex_holder.html">MutexHolder</a>&amp;) { <span class="keywordflow">return</span> *<span class="keyword">this</span>; };</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_mutex_holder.html#af2a8c368502438006c36f2adab108fc3">   19</a></span>        <a class="code hl_function" href="struct_o_s_k_1_1_mutex_holder.html#af2a8c368502438006c36f2adab108fc3">MutexHolder</a>(<span class="keyword">const</span> <a class="code hl_function" href="struct_o_s_k_1_1_mutex_holder.html#a31f149f33f752110a3d3d46ba882d372">MutexHolder</a>&amp;) {};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_mutex_holder.html#af83282e8b358c80a4a2bbd5cfbf05018">   20</a></span>        <a class="code hl_function" href="struct_o_s_k_1_1_mutex_holder.html#a31f149f33f752110a3d3d46ba882d372">MutexHolder</a>&amp; <a class="code hl_function" href="struct_o_s_k_1_1_mutex_holder.html#af83282e8b358c80a4a2bbd5cfbf05018">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="struct_o_s_k_1_1_mutex_holder.html#a31f149f33f752110a3d3d46ba882d372">MutexHolder</a>&amp;) { <span class="keywordflow">return</span> *<span class="keyword">this</span>; };</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    };</div>
+</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
-<div class="ttc" id="anamespace_o_s_k_html"><div class="ttname"><a href="namespace_o_s_k.html">OSK</a></div><div class="ttdef"><b>Definition:</b> AabbAabbDetector.h:5</div></div>
-<div class="ttc" id="astruct_o_s_k_1_1_mutex_holder_html"><div class="ttname"><a href="struct_o_s_k_1_1_mutex_holder.html">OSK::MutexHolder</a></div><div class="ttdoc">Estructura que contiene un mutex, de tal manera que permite usarlo como atributo de una clase sin inv...</div><div class="ttdef"><b>Definition:</b> MutexHolder.h:12</div></div>
+<div class="ttc" id="anamespace_o_s_k_html"><div class="ttname"><a href="namespace_o_s_k.html">OSK</a></div><div class="ttdef"><b>Definition</b> AabbAabbDetector.h:5</div></div>
 <div class="ttc" id="astruct_o_s_k_1_1_mutex_holder_html_a31f149f33f752110a3d3d46ba882d372"><div class="ttname"><a href="struct_o_s_k_1_1_mutex_holder.html#a31f149f33f752110a3d3d46ba882d372">OSK::MutexHolder::MutexHolder</a></div><div class="ttdeci">MutexHolder()=default</div></div>
 <div class="ttc" id="astruct_o_s_k_1_1_mutex_holder_html_a54a8f7cd52cdf209469235d470af472e"><div class="ttname"><a href="struct_o_s_k_1_1_mutex_holder.html#a54a8f7cd52cdf209469235d470af472e">OSK::MutexHolder::~MutexHolder</a></div><div class="ttdeci">~MutexHolder()=default</div></div>
-<div class="ttc" id="astruct_o_s_k_1_1_mutex_holder_html_ac3e1c4f6165143242b9dd8f018bfd14b"><div class="ttname"><a href="struct_o_s_k_1_1_mutex_holder.html#ac3e1c4f6165143242b9dd8f018bfd14b">OSK::MutexHolder::mutex</a></div><div class="ttdeci">std::mutex mutex</div><div class="ttdef"><b>Definition:</b> MutexHolder.h:14</div></div>
-<div class="ttc" id="astruct_o_s_k_1_1_mutex_holder_html_af2a8c368502438006c36f2adab108fc3"><div class="ttname"><a href="struct_o_s_k_1_1_mutex_holder.html#af2a8c368502438006c36f2adab108fc3">OSK::MutexHolder::MutexHolder</a></div><div class="ttdeci">MutexHolder(const MutexHolder &amp;)</div><div class="ttdef"><b>Definition:</b> MutexHolder.h:19</div></div>
-<div class="ttc" id="astruct_o_s_k_1_1_mutex_holder_html_af83282e8b358c80a4a2bbd5cfbf05018"><div class="ttname"><a href="struct_o_s_k_1_1_mutex_holder.html#af83282e8b358c80a4a2bbd5cfbf05018">OSK::MutexHolder::operator=</a></div><div class="ttdeci">MutexHolder &amp; operator=(const MutexHolder &amp;)</div><div class="ttdef"><b>Definition:</b> MutexHolder.h:20</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_mutex_holder_html_ac3e1c4f6165143242b9dd8f018bfd14b"><div class="ttname"><a href="struct_o_s_k_1_1_mutex_holder.html#ac3e1c4f6165143242b9dd8f018bfd14b">OSK::MutexHolder::mutex</a></div><div class="ttdeci">std::mutex mutex</div><div class="ttdef"><b>Definition</b> MutexHolder.h:14</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_mutex_holder_html_af2a8c368502438006c36f2adab108fc3"><div class="ttname"><a href="struct_o_s_k_1_1_mutex_holder.html#af2a8c368502438006c36f2adab108fc3">OSK::MutexHolder::MutexHolder</a></div><div class="ttdeci">MutexHolder(const MutexHolder &amp;)</div><div class="ttdef"><b>Definition</b> MutexHolder.h:19</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_mutex_holder_html_af83282e8b358c80a4a2bbd5cfbf05018"><div class="ttname"><a href="struct_o_s_k_1_1_mutex_holder.html#af83282e8b358c80a4a2bbd5cfbf05018">OSK::MutexHolder::operator=</a></div><div class="ttdeci">MutexHolder &amp; operator=(const MutexHolder &amp;)</div><div class="ttdef"><b>Definition</b> MutexHolder.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>MutexHolder.h</b></li>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>MutexHolder.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

@@ -1,0 +1,25 @@
+\doxysection{Referencia del concepto OSK\+::GRAPHICS\+::Is\+Vertex\+Attribute}
+\label{concept_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_is_vertex_attribute}\index{OSK::GRAPHICS::IsVertexAttribute@{OSK::GRAPHICS::IsVertexAttribute}}
+
+
+{\ttfamily \#include $<$Vertex\+Attributes.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TAttrib>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::GRAPHICS::IsVertexAttribute\ =\ \ \textcolor{keyword}{requires}\ (TAttrib)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ TAttrib::GetAttribName()\ \};}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}
+Concepto para comprobar que un tipo de atributo de vértices ha usado el macro OSK\+\_\+\+VERTEX\+\_\+\+ATTRIB. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TAttrib} & tipo de atributo. \\
+\hline
+\end{DoxyTemplParams}

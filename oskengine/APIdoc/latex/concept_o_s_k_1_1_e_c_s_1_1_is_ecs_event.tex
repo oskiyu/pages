@@ -1,0 +1,19 @@
+\doxysection{Referencia del concepto OSK\+::ECS\+::Is\+Ecs\+Event}
+\label{concept_o_s_k_1_1_e_c_s_1_1_is_ecs_event}\index{OSK::ECS::IsEcsEvent@{OSK::ECS::IsEcsEvent}}
+
+
+{\ttfamily \#include $<$Event.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TEvent>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::ECS::IsEcsEvent\ =\ \ \textcolor{keyword}{requires}\ (TEvent)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ TEvent::GetEventName()\ \};}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}
+Concepto que nos permite detectar si una clase cumple con las condiciones para ser un evento. 

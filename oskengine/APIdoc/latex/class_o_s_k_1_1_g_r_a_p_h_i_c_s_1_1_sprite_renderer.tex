@@ -1,0 +1,468 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Sprite\+Renderer}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer}\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+
+
+{\ttfamily \#include $<$Sprite\+Renderer.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Sprite\+Renderer} (\textbf{ IGpu\+Memory\+Allocator} $\ast$allocator, \textbf{ Material} $\ast$default\+Material)
+\item 
+void \textbf{ Set\+Command\+List} (\textbf{ ICommand\+List} $\ast$command\+List) noexcept
+\item 
+void \textbf{ Set\+Material} (const \textbf{ Material} \&material)
+\item 
+void \textbf{ Set\+Material\+Slot} (const \textbf{ IMaterial\+Slot} \&material\+Slot)
+\item 
+void \textbf{ Set\+Camera} (const \textbf{ ECS\+::\+Camera\+Component2D} \&camera, const \textbf{ ECS\+::\+Transform2D} \&camera\+Transform)
+\item 
+void \textbf{ Set\+Camera} (\textbf{ ECS\+::\+Game\+Object\+Index} game\+Object)
+\item 
+void \textbf{ Begin} ()
+\item 
+void \textbf{ Draw} (const \textbf{ Sprite} \&sprite, const \textbf{ ECS\+::\+Transform2D} \&transform, const \textbf{ Color} \&color)
+\item 
+void \textbf{ Draw} (const \textbf{ Sprite} \&sprite, const \textbf{ Texture\+Coordinates2D} \&tex\+Coords, const \textbf{ ECS\+::\+Transform2D} \&transform, const \textbf{ Color} \&color)
+\item 
+void \textbf{ Draw} (const \textbf{ Sprite} \&sprite, const \textbf{ Texture\+Coordinates2D} \&tex\+Coords, const \textbf{ Vector2f} position, const \textbf{ Vector2f} size, float rotation, const \textbf{ Color} \&color)
+\item 
+void \textbf{ Draw} (const \textbf{ Sprite} \&sprite, const \textbf{ ECS\+::\+Transform2D} \&transform)
+\item 
+void \textbf{ Draw} (const \textbf{ Sprite} \&sprite, const \textbf{ Texture\+Coordinates2D} \&tex\+Coords, const \textbf{ ECS\+::\+Transform2D} \&transform)
+\item 
+void \textbf{ Draw} (const \textbf{ Sprite} \&sprite, const \textbf{ Texture\+Coordinates2D} \&tex\+Coords, const \textbf{ Vector2f} position, const \textbf{ Vector2f} size, float rotation)
+\item 
+void \textbf{ Draw\+String} (\textbf{ ASSETS\+::\+Font} \&font, \textbf{ USize32} font\+Size, std\+::string\+\_\+view text, const \textbf{ ECS\+::\+Transform2D} \&transform, const \textbf{ Color} \&color)
+\item 
+void \textbf{ Draw\+String} (\textbf{ ASSETS\+::\+Font} \&font, \textbf{ USize32} font\+Size, std\+::string\+\_\+view text, const \textbf{ Vector2f} position, const \textbf{ Vector2f} size, float rotation, const \textbf{ Color} \&color)
+\item 
+void \textbf{ Draw\+String} (const \textbf{ ASSETS\+::\+Font} \&font, \textbf{ USize32} font\+Size, std\+::string\+\_\+view text, const \textbf{ ECS\+::\+Transform2D} \&transform, const \textbf{ Color} \&color)
+\item 
+void \textbf{ Draw\+String} (const \textbf{ ASSETS\+::\+Font} \&font, \textbf{ USize32} font\+Size, std\+::string\+\_\+view text, const \textbf{ Vector2f} position, const \textbf{ Vector2f} size, float rotation, const \textbf{ Color} \&color)
+\item 
+void \textbf{ End} () noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que simplifica el proceso de renderizado de imágenes 2D sin tener que usar el sistema Render\+System2D, lo cual te da un mayor control sobre el orden en el que se renderizan los sprites. 
+
+\begin{DoxyNote}{Nota}
+Antes de usar los comandos de renderizado, se debe llamar a \doxyref{Sprite\+Renderer\+::\+Set\+Command\+List}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a103d94e314984318d0d99e7d07752601} y \doxyref{Sprite\+Renderer\+::\+Begin}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a2ae2a44a9c2fb615b298afb0d8fbf603}. 
+
+Despues de finalizar el renderizado, se debe llamar a \doxyref{Sprite\+Renderer\+::\+End}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a614b8a5f4e11f2b4a32cfd0710781c9f}.
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+No se deben ejecutar otros comandos de renderizado desde que se llama a \doxyref{Sprite\+Renderer\+::\+Begin}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a2ae2a44a9c2fb615b298afb0d8fbf603} hasta que se llama a \doxyref{Sprite\+Renderer\+::\+End}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a614b8a5f4e11f2b4a32cfd0710781c9f}.
+\end{DoxyWarning}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!SpriteRenderer@{SpriteRenderer}}
+\index{SpriteRenderer@{SpriteRenderer}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{SpriteRenderer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a280f1f181eeb9c9d19fc853e7133aeaa} 
+Sprite\+Renderer\+::\+Sprite\+Renderer (\begin{DoxyParamCaption}\item[{\textbf{ IGpu\+Memory\+Allocator} $\ast$}]{allocator}{, }\item[{\textbf{ Material} $\ast$}]{default\+Material}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!Begin@{Begin}}
+\index{Begin@{Begin}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{Begin()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a2ae2a44a9c2fb615b298afb0d8fbf603} 
+void Sprite\+Renderer\+::\+Begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa el renderizado 2D, estableciendo los recursos necesarios. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber establecido correctamente la lista de comandos. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Object\+State\+Exception}{pág.}{class_o_s_k_1_1_invalid_object_state_exception}} & Si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!Draw@{Draw}}
+\index{Draw@{Draw}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{Draw()\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a889e843b206370e5eb32d3330cda306a} 
+void Sprite\+Renderer\+::\+Draw (\begin{DoxyParamCaption}\item[{const \textbf{ Sprite} \&}]{sprite}{, }\item[{const \textbf{ ECS\+::\+Transform2D} \&}]{transform}{}\end{DoxyParamCaption})}
+
+
+
+Renderiza un sprite 2D. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sprite} & \doxyref{Sprite}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite} a renderizar. \\
+\hline
+{\em transform} & Transform del sprite.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La cola de comandos debe estar iniciada. 
+
+La cola de comandos debe tener asociado un renderpass. 
+
+Se debe haber establecido un material. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!Draw@{Draw}}
+\index{Draw@{Draw}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{Draw()\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a0a92f1829e695be451b022660dbe63e1} 
+void Sprite\+Renderer\+::\+Draw (\begin{DoxyParamCaption}\item[{const \textbf{ Sprite} \&}]{sprite}{, }\item[{const \textbf{ ECS\+::\+Transform2D} \&}]{transform}{, }\item[{const \textbf{ Color} \&}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Renderiza un sprite 2D. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sprite} & \doxyref{Sprite}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite} que se va a renderizar. \\
+\hline
+{\em transform} & Transformación 2D del sprite. \\
+\hline
+{\em color} & \doxyref{Color}{pág.}{class_o_s_k_1_1_color} del sprite (se usará en vez del color de {\ttfamily sprite}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La cola de comandos debe estar iniciada. 
+
+La cola de comandos debe tener asociado un renderpass. 
+
+Se debe haber establecido un material.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Object\+State\+Exception}{pág.}{class_o_s_k_1_1_invalid_object_state_exception}} & Si se incumple alguna precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!Draw@{Draw}}
+\index{Draw@{Draw}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{Draw()\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_ae21b774bf955bd18027c47d109f35cce} 
+void Sprite\+Renderer\+::\+Draw (\begin{DoxyParamCaption}\item[{const \textbf{ Sprite} \&}]{sprite}{, }\item[{const \textbf{ Texture\+Coordinates2D} \&}]{tex\+Coords}{, }\item[{const \textbf{ ECS\+::\+Transform2D} \&}]{transform}{}\end{DoxyParamCaption})}
+
+
+
+Renderiza un sprite 2D. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sprite} & \doxyref{Sprite}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite} que se va a renderizar. \\
+\hline
+{\em tex\+Coords} & Coordenadas de texturas (se usará en vez de las coordenadas de {\ttfamily sprite}). \\
+\hline
+{\em transform} & Transform del sprite.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La cola de comandos debe estar iniciada. 
+
+La cola de comandos debe tener asociado un renderpass. 
+
+Se debe haber establecido un material. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!Draw@{Draw}}
+\index{Draw@{Draw}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{Draw()\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a20555603ab3240b14523486df86d6305} 
+void Sprite\+Renderer\+::\+Draw (\begin{DoxyParamCaption}\item[{const \textbf{ Sprite} \&}]{sprite}{, }\item[{const \textbf{ Texture\+Coordinates2D} \&}]{tex\+Coords}{, }\item[{const \textbf{ ECS\+::\+Transform2D} \&}]{transform}{, }\item[{const \textbf{ Color} \&}]{color}{}\end{DoxyParamCaption})}
+
+Renderiza un sprite 2D. 
+\begin{DoxyParams}{Parámetros}
+{\em sprite} & \doxyref{Sprite}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite} que se va a renderizar. \\
+\hline
+{\em tex\+Coords} & Coordenadas de texturas (se usará en vez de las coordenadas de {\ttfamily sprite}). \\
+\hline
+{\em transform} & Transform del sprite. \\
+\hline
+{\em color} & \doxyref{Color}{pág.}{class_o_s_k_1_1_color} del sprite (se usará en vez del color de {\ttfamily sprite}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La cola de comandos debe estar iniciada. 
+
+La cola de comandos debe tener asociado un renderpass. 
+
+Se debe haber establecido un material. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!Draw@{Draw}}
+\index{Draw@{Draw}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{Draw()\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a703b4ee5246303e30512b5f2564720e1} 
+void Sprite\+Renderer\+::\+Draw (\begin{DoxyParamCaption}\item[{const \textbf{ Sprite} \&}]{sprite}{, }\item[{const \textbf{ Texture\+Coordinates2D} \&}]{tex\+Coords}{, }\item[{const \textbf{ Vector2f}}]{position}{, }\item[{const \textbf{ Vector2f}}]{size}{, }\item[{float}]{rotation}{}\end{DoxyParamCaption})}
+
+
+
+Renderiza un sprite. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sprite} & \doxyref{Sprite}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite} que se va a renderizar. \\
+\hline
+{\em tex\+Coords} & Coordenadas de texturas (se usará en vez de las coordenadas de {\ttfamily sprite}). \\
+\hline
+{\em position} & Posición del sprite en el mundo 2D. \\
+\hline
+{\em size} & Tamaño del sprite en el mundo 2D. \\
+\hline
+{\em rotation} & Rotación del sprite en el mundo 2D.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La cola de comandos debe estar iniciada. 
+
+La cola de comandos debe tener asociado un renderpass. 
+
+Se debe haber establecido un material. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!Draw@{Draw}}
+\index{Draw@{Draw}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{Draw()\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a73dae0ea6e6426dcc05adf94404bae35} 
+void Sprite\+Renderer\+::\+Draw (\begin{DoxyParamCaption}\item[{const \textbf{ Sprite} \&}]{sprite}{, }\item[{const \textbf{ Texture\+Coordinates2D} \&}]{tex\+Coords}{, }\item[{const \textbf{ Vector2f}}]{position}{, }\item[{const \textbf{ Vector2f}}]{size}{, }\item[{float}]{rotation}{, }\item[{const \textbf{ Color} \&}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Renderiza un sprite. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sprite} & \doxyref{Sprite}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite} que se va a renderizar. \\
+\hline
+{\em tex\+Coords} & Coordenadas de texturas (se usará en vez de las coordenadas de {\ttfamily sprite}). \\
+\hline
+{\em position} & Posición del sprite en el mundo 2D. \\
+\hline
+{\em size} & Tamaño del sprite en el mundo 2D. \\
+\hline
+{\em rotation} & Rotación del sprite en el mundo 2D. \\
+\hline
+{\em color} & \doxyref{Color}{pág.}{class_o_s_k_1_1_color} del sprite (se usará en vez del color de {\ttfamily sprite}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La cola de comandos debe estar iniciada. 
+
+La cola de comandos debe tener asociado un renderpass. 
+
+Se debe haber establecido un material. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!DrawString@{DrawString}}
+\index{DrawString@{DrawString}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{DrawString()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a55900a064c47e16359d8397ec439e3e3} 
+void Sprite\+Renderer\+::\+Draw\+String (\begin{DoxyParamCaption}\item[{\textbf{ ASSETS\+::\+Font} \&}]{font}{, }\item[{\textbf{ USize32}}]{font\+Size}{, }\item[{std\+::string\+\_\+view}]{text}{, }\item[{const \textbf{ ECS\+::\+Transform2D} \&}]{transform}{, }\item[{const \textbf{ Color} \&}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Renderiza el texto con la fuente indicada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em font} & Fuente del texto. \\
+\hline
+{\em font\+Size} & Tamaño de la fuente (en píxeles). \\
+\hline
+{\em text} & Texto a renderizar. \\
+\hline
+{\em transform} & Transform del texto. \\
+\hline
+{\em color} & \doxyref{Color}{pág.}{class_o_s_k_1_1_color} del texto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La cola de comandos debe estar iniciada. 
+
+La cola de comandos debe tener asociado un renderpass. 
+
+Se debe haber establecido un material. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!DrawString@{DrawString}}
+\index{DrawString@{DrawString}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{DrawString()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_ac09c172b61fd9f48fed985b9d9878783} 
+void Sprite\+Renderer\+::\+Draw\+String (\begin{DoxyParamCaption}\item[{\textbf{ ASSETS\+::\+Font} \&}]{font}{, }\item[{\textbf{ USize32}}]{font\+Size}{, }\item[{std\+::string\+\_\+view}]{text}{, }\item[{const \textbf{ Vector2f}}]{position}{, }\item[{const \textbf{ Vector2f}}]{size}{, }\item[{float}]{rotation}{, }\item[{const \textbf{ Color} \&}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Renderiza el texto con la fuente indicada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em font} & Fuente a usar. \\
+\hline
+{\em font\+Size} & Tamaño de la fuente, en píxeles. \\
+\hline
+{\em text} & Texto a renderizar. \\
+\hline
+{\em position} & Posición del texto. \\
+\hline
+{\em size} & Tamaño de cada letra, multiplicador respecto al tamaño de fuente (1.\+0 para tamaño original). \\
+\hline
+{\em rotation} & Rotación del texto. \\
+\hline
+{\em color} & \doxyref{Color}{pág.}{class_o_s_k_1_1_color} del texto. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!DrawString@{DrawString}}
+\index{DrawString@{DrawString}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{DrawString()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a29a0da2e37bd295ba9d87df93c0817fe} 
+void Sprite\+Renderer\+::\+Draw\+String (\begin{DoxyParamCaption}\item[{const \textbf{ ASSETS\+::\+Font} \&}]{font}{, }\item[{\textbf{ USize32}}]{font\+Size}{, }\item[{std\+::string\+\_\+view}]{text}{, }\item[{const \textbf{ ECS\+::\+Transform2D} \&}]{transform}{, }\item[{const \textbf{ Color} \&}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Renderiza el texto con la fuente indicada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em font} & Fuente del texto. \\
+\hline
+{\em font\+Size} & Tamaño de la fuente (en píxeles). \\
+\hline
+{\em text} & Texto a renderizar. \\
+\hline
+{\em transform} & Transform del texto. \\
+\hline
+{\em color} & \doxyref{Color}{pág.}{class_o_s_k_1_1_color} del texto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La cola de comandos debe estar iniciada. 
+
+La cola de comandos debe tener asociado un renderpass. 
+
+Se debe haber establecido un material.
+
+{\ttfamily font} debe tener previamente cargada una instancia con tamaño {\ttfamily font\+Size}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!DrawString@{DrawString}}
+\index{DrawString@{DrawString}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{DrawString()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a40be070d0e09d0d123f85d9dce0247bc} 
+void Sprite\+Renderer\+::\+Draw\+String (\begin{DoxyParamCaption}\item[{const \textbf{ ASSETS\+::\+Font} \&}]{font}{, }\item[{\textbf{ USize32}}]{font\+Size}{, }\item[{std\+::string\+\_\+view}]{text}{, }\item[{const \textbf{ Vector2f}}]{position}{, }\item[{const \textbf{ Vector2f}}]{size}{, }\item[{float}]{rotation}{, }\item[{const \textbf{ Color} \&}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Renderiza el texto con la fuente indicada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em font} & Fuente a usar. \\
+\hline
+{\em font\+Size} & Tamaño de la fuente, en píxeles. \\
+\hline
+{\em text} & Texto a renderizar. \\
+\hline
+{\em position} & Posición del texto. \\
+\hline
+{\em size} & Tamaño de cada letra, multiplicador respecto al tamaño de fuente (1.\+0 para tamaño original). \\
+\hline
+{\em rotation} & Rotación del texto. \\
+\hline
+{\em color} & \doxyref{Color}{pág.}{class_o_s_k_1_1_color} del texto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily font} debe tener previamente cargada una instancia con tamaño {\ttfamily font\+Size}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!End@{End}}
+\index{End@{End}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{End()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a614b8a5f4e11f2b4a32cfd0710781c9f} 
+void Sprite\+Renderer\+::\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Finaliza el renderizado 2D. 
+
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!SetCamera@{SetCamera}}
+\index{SetCamera@{SetCamera}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{SetCamera()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a27115fe266243f0d95a873c4caa8c5d8} 
+void Sprite\+Renderer\+::\+Set\+Camera (\begin{DoxyParamCaption}\item[{const \textbf{ ECS\+::\+Camera\+Component2D} \&}]{camera}{, }\item[{const \textbf{ ECS\+::\+Transform2D} \&}]{camera\+Transform}{}\end{DoxyParamCaption})}
+
+
+
+Establece la cámara 2D con la que se renderizarán los próximos sprites. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em camera} & Cámara 2D. \\
+\hline
+{\em camera\+Transform} & Transform de la cámara. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!SetCamera@{SetCamera}}
+\index{SetCamera@{SetCamera}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{SetCamera()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_af2d35897a6c557d3ed5dd6078daa663b} 
+void Sprite\+Renderer\+::\+Set\+Camera (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{game\+Object}{}\end{DoxyParamCaption})}
+
+
+
+Establece la cámara 2D con la que se renderizarán los próximos sprites. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em game\+Object} & ID de un objeto con una cámara 2D. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily game\+Object} debe tener un componente del tipo Camera\+Component2D. 
+
+{\ttfamily game\+Object} debe tener un componente del tipo Transform2D. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!SetCommandList@{SetCommandList}}
+\index{SetCommandList@{SetCommandList}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{SetCommandList()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a103d94e314984318d0d99e7d07752601} 
+void Sprite\+Renderer\+::\+Set\+Command\+List (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{command\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Establece la cola de comandos sobre la que se grabarán los comandos de renderizado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command\+List} & Lista de comandos gráficos. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!SetMaterial@{SetMaterial}}
+\index{SetMaterial@{SetMaterial}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{SetMaterial()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a38fb9bde80a199e89f1299325982a206} 
+void Sprite\+Renderer\+::\+Set\+Material (\begin{DoxyParamCaption}\item[{const \textbf{ Material} \&}]{material}{}\end{DoxyParamCaption})}
+
+
+
+Establece el material que se usará sobre los siguientes sprites. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em material} & \doxyref{Material}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material} a usar. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}!SetMaterialSlot@{SetMaterialSlot}}
+\index{SetMaterialSlot@{SetMaterialSlot}!OSK::GRAPHICS::SpriteRenderer@{OSK::GRAPHICS::SpriteRenderer}}
+\doxysubsubsection{SetMaterialSlot()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer_a9a3463350a6d500f137fc15e4b4c0a55} 
+void Sprite\+Renderer\+::\+Set\+Material\+Slot (\begin{DoxyParamCaption}\item[{const \textbf{ IMaterial\+Slot} \&}]{material\+Slot}{}\end{DoxyParamCaption})}
+
+
+
+Establece un material slot que se usará sobre los siguientes sprites. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em material} & \doxyref{Material}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material} slot a usar. \\
+\hline
+\end{DoxyParams}

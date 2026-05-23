@@ -1,0 +1,95 @@
+\doxysection{Referencia de la clase OSK\+::Editor\+::Controllers\+::ISystem\+Controller}
+\label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller}\index{OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}}
+
+
+{\ttfamily \#include $<$ISystem\+Controller.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+ISystem\+Controller} ()=default
+\item 
+virtual void \textbf{ Poll} ()=0
+\item 
+virtual std\+::string\+\_\+view \textbf{ \+\_\+\+Get\+System\+Name} () const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ ISystem\+Controller} (\textbf{ ECS\+::\+ISystem} $\ast$system\+Data, \textbf{ Views\+::\+ISystem\+View} $\ast$view)
+\item 
+\textbf{ Views\+::\+ISystem\+View} $\ast$ \textbf{ Get\+View} ()
+\item 
+const \textbf{ Views\+::\+ISystem\+View} $\ast$ \textbf{ Get\+View} () const
+\item 
+\textbf{ ECS\+::\+ISystem} $\ast$ \textbf{ Get\+System\+Data} ()
+\item 
+const \textbf{ ECS\+::\+ISystem} $\ast$ \textbf{ Get\+System\+Data} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Elemento que conecta los datos de un sistema con un elemento de interfaz de usuario del editor correspondiente a ese sistema. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}!````~ISystemController@{$\sim$ISystemController}}
+\index{````~ISystemController@{$\sim$ISystemController}!OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}}
+\doxysubsubsection{$\sim$ISystemController()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_af52cc179ee28b50a6239acdfe59577dd} 
+virtual OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::$\sim$\+ISystem\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\index{OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}!ISystemController@{ISystemController}}
+\index{ISystemController@{ISystemController}!OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}}
+\doxysubsubsection{ISystemController()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_ab2ad9bbe8da39d522e3a88086ca44be5} 
+OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::\+ISystem\+Controller (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+ISystem} $\ast$}]{system\+Data}{, }\item[{\textbf{ Views\+::\+ISystem\+View} $\ast$}]{view}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}!\_GetSystemName@{\_GetSystemName}}
+\index{\_GetSystemName@{\_GetSystemName}!OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}}
+\doxysubsubsection{\_GetSystemName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_abd285aab6a699a57017f738825e00df1} 
+virtual std\+::string\+\_\+view OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::\+\_\+\+Get\+System\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\index{OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}!GetSystemData@{GetSystemData}}
+\index{GetSystemData@{GetSystemData}!OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}}
+\doxysubsubsection{GetSystemData()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_affc3bd28624b9836e11123ccfbe24774} 
+\textbf{ OSK\+::\+ECS\+::\+ISystem} $\ast$ OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::\+Get\+System\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}!GetSystemData@{GetSystemData}}
+\index{GetSystemData@{GetSystemData}!OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}}
+\doxysubsubsection{GetSystemData()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_acaac3a5bbe5e4ec2048aa1170a035150} 
+const \textbf{ OSK\+::\+ECS\+::\+ISystem} $\ast$ OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::\+Get\+System\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}!GetView@{GetView}}
+\index{GetView@{GetView}!OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}}
+\doxysubsubsection{GetView()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_a224eb9e7213dc1f06255beba10978b1c} 
+\textbf{ OSK\+::\+Editor\+::\+Views\+::\+ISystem\+View} $\ast$ OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::\+Get\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}!GetView@{GetView}}
+\index{GetView@{GetView}!OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}}
+\doxysubsubsection{GetView()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_ad4f6949c9f6f31b7601c5491de3552ed} 
+const \textbf{ OSK\+::\+Editor\+::\+Views\+::\+ISystem\+View} $\ast$ OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::\+Get\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}!Poll@{Poll}}
+\index{Poll@{Poll}!OSK::Editor::Controllers::ISystemController@{OSK::Editor::Controllers::ISystemController}}
+\doxysubsubsection{Poll()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_a022070a299d539c8d0f7a8c38f038862} 
+virtual void OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::\+Poll (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Actualiza la interfaz de usuario a partir de los datos del sistema. 
+
+
+
+Implementado en \textbf{ OSK\+::\+Editor\+::\+Controllers\+::\+Collider\+Render\+System\+Controller} \doxyref{}{pág.}{class_o_s_k_1_1_editor_1_1_controllers_1_1_collider_render_system_controller_a36227af388f045cd9ad9a7fcd3904eb7}, \textbf{ OSK\+::\+Editor\+::\+Controllers\+::\+Deferred\+Render\+System\+Controller} \doxyref{}{pág.}{class_o_s_k_1_1_editor_1_1_controllers_1_1_deferred_render_system_controller_a4f0ce461b95dd75aee808600861d376a}, \textbf{ OSK\+::\+Editor\+::\+Controllers\+::\+Physics\+System\+Controller} \doxyref{}{pág.}{class_o_s_k_1_1_editor_1_1_controllers_1_1_physics_system_controller_a452e81df7ef9aa96af4f56c326f75c07}, \textbf{ OSK\+::\+Editor\+::\+Controllers\+::\+Render\+Bounds\+Render\+System\+Controller} \doxyref{}{pág.}{class_o_s_k_1_1_editor_1_1_controllers_1_1_render_bounds_render_system_controller_a89b348c90235f1d78531bb8aed523e6d} y \textbf{ OSK\+::\+Editor\+::\+Controllers\+::\+Skybox\+Render\+System\+Controller} \doxyref{}{pág.}{class_o_s_k_1_1_editor_1_1_controllers_1_1_skybox_render_system_controller_a76bbb1d8ffe7b9e910b21a3d7c9d002d}.
+

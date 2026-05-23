@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['handle_0',['Handle',['../class_o_s_k_1_1_a_u_d_i_o_1_1_buffer.html#a241641ad285233a753b95ad7e6eb4df0',1,'OSK::AUDIO::Buffer::Handle()'],['../class_o_s_k_1_1_a_u_d_i_o_1_1_audio_source_al.html#aaa994e7be078cf145a108d21d6e3eac3',1,'OSK::AUDIO::AudioSourceAl::Handle()']]]
+  ['gameobjectindex_0',['GameObjectIndex',['../namespace_o_s_k_1_1_e_c_s.html#a5b92aeaa6be2ce0d96e7f571aa917042',1,'OSK::ECS']]],
+  ['gdrbufferuuid_1',['GdrBufferUuid',['../namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a29fabf2ed2f1692c68cdced51f520d74',1,'OSK::GRAPHICS']]],
+  ['gdrimageuuid_2',['GdrImageUuid',['../namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a48c1092c3802b0eb44159dd4dcd66c96',1,'OSK::GRAPHICS']]],
+  ['gpumeshuuid_3',['GpuMeshUuid',['../namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a9355ba522c9285e310db0e85c0c45e3e',1,'OSK::GRAPHICS']]],
+  ['gpumodeluuid_4',['GpuModelUuid',['../namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a7b290c00974af49851004e0d086d188b',1,'OSK::GRAPHICS']]]
 ];

@@ -1,0 +1,42 @@
+\doxysection{Static\+Array.\+hpp}
+\label{_static_array_8hpp_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/StaticArray.hpp@{C:/Users/Oscar/source/repos/OSKengine/Source/StaticArray.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Concepts.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }OSK\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ USize64\ MaxSize>\ \textcolor{keyword}{requires}\ Concepts::IsCopyable<T>\ ||\ Concepts::IsMovable<T>}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }StaticArray\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ StaticArray()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}(\textcolor{keyword}{false})\ StaticArray(\textcolor{keyword}{const}\ std::initializer\_list<T>\&\ list)\ \textcolor{keyword}{requires}\ Concepts::IsCopyable<T>\ :\ m\_count(list.size())\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (UIndex64\ i\ =\ 0,\ \textcolor{keyword}{auto}\ it\ =\ list.begin();\ i\ <\ list.size();\ i++,\ ++it)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_data[i]\ =\ *it;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ StaticArray(\textcolor{keyword}{const}\ StaticArray\&\ other)\ \textcolor{keyword}{requires}\ Concepts::IsCopyable<T>\ :\ m\_count(other.m\_count)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (::std::is\_trivially\_copyable\_v<T>)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ USize64\ GetCount()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_count;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::array<T,\ MaxSize>\ m\_data;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ USize64\ m\_count;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,35 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Sphere\+Sphere\+Broad\+Collision\+Detector}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_sphere_broad_collision_detector}\index{OSK::COLLISION::SphereSphereBroadCollisionDetector@{OSK::COLLISION::SphereSphereBroadCollisionDetector}}
+
+
+{\ttfamily \#include $<$Sphere\+Sphere\+Broad\+Collision\+Detector.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::optional$<$ bool $>$ \textbf{ Get\+Collision} (const \textbf{ Broad\+Collider\+Holder} \&first, const \textbf{ Broad\+Collider\+Holder} \&second) const override
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::SphereSphereBroadCollisionDetector@{OSK::COLLISION::SphereSphereBroadCollisionDetector}!GetCollision@{GetCollision}}
+\index{GetCollision@{GetCollision}!OSK::COLLISION::SphereSphereBroadCollisionDetector@{OSK::COLLISION::SphereSphereBroadCollisionDetector}}
+\doxysubsubsection{GetCollision()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_sphere_broad_collision_detector_a4278dab3df146c35bf984513bfa09a79} 
+std\+::optional$<$ bool $>$ OSK\+::\+COLLISION\+::\+Sphere\+Sphere\+Broad\+Collision\+Detector\+::\+Get\+Collision (\begin{DoxyParamCaption}\item[{const \textbf{ Broad\+Collider\+Holder} \&}]{first}{, }\item[{const \textbf{ Broad\+Collider\+Holder} \&}]{second}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first} & Primer collider. \\
+\hline
+{\em second} & Segundo collider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la detección de colisión.
+\end{DoxyReturn}
+Si este detector no puede detectar la colisión para los tipos de los colliders, devuelve vacío. 
+
+Implementa \textbf{ OSK\+::\+COLLISION\+::\+IBroad\+Collision\+Detector} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_broad_collision_detector_a887b50dcf45b4090d174a6155857662b}.
+

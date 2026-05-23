@@ -1,0 +1,493 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IGpu\+Memory\+Block}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block}\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+
+
+{\ttfamily \#include $<$IGpu\+Memory\+Block.\+h$>$}
+
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Reusable\+Memory\+Subblock}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IGpu\+Memory\+Block} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IGpu\+Memory\+Block})
+\item 
+void \textbf{ Remove\+Subblock} (\textbf{ IGpu\+Memory\+Subblock} $\ast$subblock)
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Subblock} $>$ \textbf{ Get\+Next\+Memory\+Subblock} (\textbf{ USize64} size, \textbf{ USize64} alignment)
+\item 
+\textbf{ USize64} \textbf{ Get\+Allocated\+Size} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Available\+Space} () const
+\item 
+\textbf{ Gpu\+Shared\+Memory\+Type} \textbf{ Get\+Share\+Type} () const
+\item 
+\textbf{ Gpu\+Memory\+Usage} \textbf{ Get\+Usage\+Type} () const
+\item 
+\textbf{ IGpu} $\ast$ \textbf{ Get\+Gpu} () const
+\item 
+bool \textbf{ Is\+Unused} () const
+\item 
+void \textbf{ Map\+All} ()
+\item 
+void \textbf{ Unmap\+All} ()
+\item 
+void \textbf{ Map\+Range} (\textbf{ USize64} offset, \textbf{ USize64} size)
+\item 
+\textbf{ TByte} $\ast$ \textbf{ Get\+Mapped\+Data} ()
+\item 
+const \textbf{ TByte} $\ast$ \textbf{ Get\+Mapped\+Data} () const
+\item 
+\textbf{ Gpu\+Memory\+Mapped\+Range} \textbf{ Get\+Mapped\+Range} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ IGpu\+Memory\+Block} (\textbf{ USize64} reserved\+Size, \textbf{ IGpu} $\ast$\textbf{ device}, \textbf{ Gpu\+Shared\+Memory\+Type} \textbf{ type}, \textbf{ Gpu\+Memory\+Usage} \textbf{ usage})
+\item 
+virtual \textbf{ TByte} $\ast$ \textbf{ Map\+Range\+\_\+\+Impl} (\textbf{ USize64} offset, \textbf{ USize64} size)=0
+\item 
+virtual void \textbf{ Unmap\+All\+\_\+\+Impl} ()=0
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Subblock} $>$ \textbf{ Create\+New\+Memory\+Subblock} (\textbf{ USize64} size, \textbf{ USize64} offset)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ IGpu\+Memory\+Subblock} $\ast$ $>$ \textbf{ subblocks}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Reusable\+Memory\+Subblock} $>$ \textbf{ reusable\+Subblocks}
+\item 
+\textbf{ USize64} \textbf{ total\+Size} = 0
+\item 
+\textbf{ USize64} \textbf{ available\+Space} = 0
+\item 
+\textbf{ USize64} \textbf{ current\+Offset} = 0
+\item 
+\textbf{ Gpu\+Shared\+Memory\+Type} \textbf{ type}
+\item 
+\textbf{ Gpu\+Memory\+Usage} \textbf{ usage}
+\item 
+\textbf{ IGpu} $\ast$ \textbf{ device} = nullptr
+\item 
+\textbf{ Mutex\+Holder} \textbf{ m\+\_\+subblock\+Search\+Mutex}
+\item 
+\textbf{ Mutex\+Holder} \textbf{ m\+\_\+map\+Mutex}
+\item 
+\textbf{ TByte} $\ast$ \textbf{ m\+\_\+mapped\+Data} = nullptr
+\item 
+\textbf{ Gpu\+Memory\+Mapped\+Range} \textbf{ m\+\_\+mapped\+Range} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Un bloque de memoria representa una región de memoria que ha sido reservada. 
+
+El bloque tiene una lista de subbloques, cada uno representando una subregión de memoria que almacena un recurso. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!````~IGpuMemoryBlock@{$\sim$IGpuMemoryBlock}}
+\index{````~IGpuMemoryBlock@{$\sim$IGpuMemoryBlock}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{$\sim$IGpuMemoryBlock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_ab7bfc7d07ee839e9660e44cf9c15f5ce} 
+virtual OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::$\sim$\+IGpu\+Memory\+Block (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!IGpuMemoryBlock@{IGpuMemoryBlock}}
+\index{IGpuMemoryBlock@{IGpuMemoryBlock}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{IGpuMemoryBlock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_ad33dd0b4c47fa61a16466dcf2ec3e20e} 
+IGpu\+Memory\+Block\+::\+IGpu\+Memory\+Block (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{reserved\+Size}{, }\item[{\textbf{ IGpu} $\ast$}]{device}{, }\item[{\textbf{ Gpu\+Shared\+Memory\+Type}}]{type}{, }\item[{\textbf{ Gpu\+Memory\+Usage}}]{usage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reserva un bloque de memoria con el tamaño dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em reserved\+Size} & Tamaño del bloque. \\
+\hline
+{\em device} & GPU en el que se almacena. \\
+\hline
+{\em type} & Tipo de memoria. \\
+\hline
+{\em usage} & Uso (BUFFER o IMAGEN). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!CreateNewMemorySubblock@{CreateNewMemorySubblock}}
+\index{CreateNewMemorySubblock@{CreateNewMemorySubblock}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{CreateNewMemorySubblock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a33848f9ecc557883fb5943889bc08a70} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Subblock} $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::\+Create\+New\+Memory\+Subblock (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ USize64}}]{offset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Crea un nuevo subbloque a partir de la memoria de este bloque. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño del subbloque, en bytes. \\
+\hline
+{\em offset} & Offset del subbloque, en bytes, respecto al inicio de este bloque. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nuevo subbloque.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+La región de memoria definida por offset y size no debe estar en uso. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!GetAllocatedSize@{GetAllocatedSize}}
+\index{GetAllocatedSize@{GetAllocatedSize}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{GetAllocatedSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a39b466554cd4a3163e7824133161c88c} 
+\textbf{ USize64} IGpu\+Memory\+Block\+::\+Get\+Allocated\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el tamaño total del bloque, ya esté siendo usado o no. 
+
+\begin{DoxyReturn}{Devuelve}
+Tamaño del bloque, en bytes. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!GetAvailableSpace@{GetAvailableSpace}}
+\index{GetAvailableSpace@{GetAvailableSpace}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{GetAvailableSpace()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_abc59083a812617c23f419e7f866b9f09} 
+\textbf{ USize64} IGpu\+Memory\+Block\+::\+Get\+Available\+Space (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la cantidad de memoria disponible que nunca ha sido reclamada. No tiene en cuenta los subbloques reutilizables. 
+
+\begin{DoxyReturn}{Devuelve}
+Tamaño libre no usado previamente, en bytes.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!GetGpu@{GetGpu}}
+\index{GetGpu@{GetGpu}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{GetGpu()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a2003b58e4ba53da3f0adf7e8d52eed97} 
+\textbf{ IGpu} $\ast$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::\+Get\+Gpu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la GPU en la que reside el bloque. 
+
+\begin{DoxyReturn}{Devuelve}
+Gpu en la que reside el bloque. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!GetMappedData@{GetMappedData}}
+\index{GetMappedData@{GetMappedData}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{GetMappedData()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a7911bc6cd6bb4ab4916532af49398898} 
+\textbf{ TByte} $\ast$ IGpu\+Memory\+Block\+::\+Get\+Mapped\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Memoria mapeada. Desde el inicio del rango mapeado (no desde el inicio del bloque). 
+
+Null si no hay memoria mapeada. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!GetMappedData@{GetMappedData}}
+\index{GetMappedData@{GetMappedData}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{GetMappedData()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_ab995c759207384b60d9e184194ca504e} 
+const \textbf{ TByte} $\ast$ IGpu\+Memory\+Block\+::\+Get\+Mapped\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!GetMappedRange@{GetMappedRange}}
+\index{GetMappedRange@{GetMappedRange}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{GetMappedRange()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a5120641b1fd897f1ddd691d2a9155af5} 
+\textbf{ Gpu\+Memory\+Mapped\+Range} IGpu\+Memory\+Block\+::\+Get\+Mapped\+Range (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Rango de memoria mapeada. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!GetNextMemorySubblock@{GetNextMemorySubblock}}
+\index{GetNextMemorySubblock@{GetNextMemorySubblock}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{GetNextMemorySubblock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_ab2ac3979da53cb99552d01efa1fbdc86} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Subblock} $>$ IGpu\+Memory\+Block\+::\+Get\+Next\+Memory\+Subblock (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ USize64}}]{alignment}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene un subbloque con las características dadas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño de memoria, en bytes. \\
+\hline
+{\em alignment} & Alineamiento de la memoria necesario. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Subbloque con las características dadas.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo.
+\end{DoxyParagraph}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Gpu\+Memory\+Block\+Not\+Enough\+Space\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_block_not_enough_space_exception}} & si no se logra obtener un bloque con las características dadas. Esto puede ocurrir aunque en principio el bloque tenga suficiente memoria debido a fragmentación. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!GetShareType@{GetShareType}}
+\index{GetShareType@{GetShareType}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{GetShareType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a0bbdd382268b0bb587b03c1180cecde8} 
+\textbf{ Gpu\+Shared\+Memory\+Type} IGpu\+Memory\+Block\+::\+Get\+Share\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el tipo de memoria. 
+
+\begin{DoxyReturn}{Devuelve}
+Tipo de memoria. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!GetUsageType@{GetUsageType}}
+\index{GetUsageType@{GetUsageType}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{GetUsageType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a80aec8670a12157bc819ed904d71e60e} 
+\textbf{ Gpu\+Memory\+Usage} IGpu\+Memory\+Block\+::\+Get\+Usage\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el uso que se le da a esta memoria. 
+
+\begin{DoxyReturn}{Devuelve}
+Uso de la memoria (BUFFER o IMAGEN). 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!IsUnused@{IsUnused}}
+\index{IsUnused@{IsUnused}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{IsUnused()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_ade0f4cfb99ac4d5653f80064e83a78e2} 
+bool OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::\+Is\+Unused (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comporueba si hay alguna parte del bloque en uso. 
+
+\begin{DoxyReturn}{Devuelve}
+True si no hay ningún subbloque de este bloque en uso. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!MapAll@{MapAll}}
+\index{MapAll@{MapAll}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{MapAll()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_ae7eee828cbd73e8407393b9493badbbd} 
+void IGpu\+Memory\+Block\+::\+Map\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Mapea toda la memoria. 
+
+\begin{DoxyPrecond}{Precondición}
+Este buffer debe haber sido creado con Gpu\+Shared\+Memory\+Type\+::\+CPU\+\_\+\+AND\+\_\+\+GPU. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!MapRange@{MapRange}}
+\index{MapRange@{MapRange}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{MapRange()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_aa23ce91b510678a4bed503525846a1b7} 
+void IGpu\+Memory\+Block\+::\+Map\+Range (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{offset}{, }\item[{\textbf{ USize64}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Mapea un rango de la memoria. 
+
+\begin{DoxyPrecond}{Precondición}
+Este buffer debe haber sido creado con Gpu\+Shared\+Memory\+Type\+::\+CPU\+\_\+\+AND\+\_\+\+GPU. 
+
+{\ttfamily offset} $<$ tamaño del buffer. 
+
+{\ttfamily size} $<$ tamaño del buffer. 
+
+{\ttfamily offset} + {\ttfamily size} $<$ tamaño del buffer. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!MapRange\_Impl@{MapRange\_Impl}}
+\index{MapRange\_Impl@{MapRange\_Impl}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{MapRange\_Impl()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a55d19c14fe9a62dd3c8bcea78cb226d3} 
+virtual \textbf{ TByte} $\ast$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::\+Map\+Range\+\_\+\+Impl (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{offset}{, }\item[{\textbf{ USize64}}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a458632dd6887cb1b943ef1962f407042} 
+OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IGpu\+Memory\+Block}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!RemoveSubblock@{RemoveSubblock}}
+\index{RemoveSubblock@{RemoveSubblock}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{RemoveSubblock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_adfe42ab34135cb8dcf5adc7cffb44d96} 
+void IGpu\+Memory\+Block\+::\+Remove\+Subblock (\begin{DoxyParamCaption}\item[{\textbf{ IGpu\+Memory\+Subblock} $\ast$}]{subblock}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em subblock} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!UnmapAll@{UnmapAll}}
+\index{UnmapAll@{UnmapAll}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{UnmapAll()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_aa164a4e7d8ac35b01d27ea5862f5243b} 
+void IGpu\+Memory\+Block\+::\+Unmap\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Mapea toda la memoria. 
+
+\begin{DoxyPrecond}{Precondición}
+Este buffer debe haber sido creado con Gpu\+Shared\+Memory\+Type\+::\+CPU\+\_\+\+AND\+\_\+\+GPU. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!UnmapAll\_Impl@{UnmapAll\_Impl}}
+\index{UnmapAll\_Impl@{UnmapAll\_Impl}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{UnmapAll\_Impl()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a6ce5017e45cead0614ba454c5c9706bc} 
+virtual void OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::\+Unmap\+All\+\_\+\+Impl (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!availableSpace@{availableSpace}}
+\index{availableSpace@{availableSpace}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{availableSpace}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_abc1e855fd56cf8f2ba91efe5f6058385} 
+\textbf{ USize64} OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::available\+Space = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Espacio que aún no ha sido usado. 
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!currentOffset@{currentOffset}}
+\index{currentOffset@{currentOffset}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{currentOffset}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a921c6aa09ba2c4ffb8a6ff8edca8dbe3} 
+\textbf{ USize64} OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::current\+Offset = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Offset para el próximo subbloque de la zona aún no usada. 
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!device@{device}}
+\index{device@{device}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{device}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_ac75aa44cce34a964dfe1d6026d4d3c5f} 
+\textbf{ IGpu}$\ast$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::device = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+GPU donde reside este bloque. 
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!m\_mapMutex@{m\_mapMutex}}
+\index{m\_mapMutex@{m\_mapMutex}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{m\_mapMutex}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_ac62fcb89fa6eeb626587c458d238c868} 
+\textbf{ Mutex\+Holder} OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::m\+\_\+map\+Mutex\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Mutex para el mapeo y/o desmapeo de memoria. 
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!m\_mappedData@{m\_mappedData}}
+\index{m\_mappedData@{m\_mappedData}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{m\_mappedData}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a80870ff80472b94d8a1fe17f0bfeaab4} 
+\textbf{ TByte}$\ast$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::m\+\_\+mapped\+Data = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Memoria mapeada. Si no está mapeada, será nullptr. 
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!m\_mappedRange@{m\_mappedRange}}
+\index{m\_mappedRange@{m\_mappedRange}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{m\_mappedRange}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_aa6f806641cd685b06e495c017ac90faa} 
+\textbf{ Gpu\+Memory\+Mapped\+Range} OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::m\+\_\+mapped\+Range \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Región de memoria mapeada. 
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!m\_subblockSearchMutex@{m\_subblockSearchMutex}}
+\index{m\_subblockSearchMutex@{m\_subblockSearchMutex}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{m\_subblockSearchMutex}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a35a67da8eade0a066d08de340a4900b2} 
+\textbf{ Mutex\+Holder} OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::m\+\_\+subblock\+Search\+Mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+
+
+
+Mutex para la búsqueda y alojamiento de subbloques. 
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!reusableSubblocks@{reusableSubblocks}}
+\index{reusableSubblocks@{reusableSubblocks}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{reusableSubblocks}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_afb0a469af9d65724ffe513423dd32482} 
+\textbf{ Dynamic\+Array}$<$\textbf{ Reusable\+Memory\+Subblock}$>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::reusable\+Subblocks\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Lista con los subbloques reutilizables. 
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!subblocks@{subblocks}}
+\index{subblocks@{subblocks}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{subblocks}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a486fd0961d556d8e0dd64763ff843ed3} 
+\textbf{ Dynamic\+Array}$<$\textbf{ IGpu\+Memory\+Subblock}$\ast$$>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::subblocks\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Referencia a los subbloques activos (en uso). Sirve para poder destruirlos al destruir el bloque. 
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!totalSize@{totalSize}}
+\index{totalSize@{totalSize}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{totalSize}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a7887b4b066117738b0f64ebbdf05bf05} 
+\textbf{ USize64} OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::total\+Size = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tamaño total del bloque. 
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!type@{type}}
+\index{type@{type}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{type}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a49883b25223e08eefef3da606eacf367} 
+\textbf{ Gpu\+Shared\+Memory\+Type} OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::type\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}!usage@{usage}}
+\index{usage@{usage}!OSK::GRAPHICS::IGpuMemoryBlock@{OSK::GRAPHICS::IGpuMemoryBlock}}
+\doxysubsubsection{usage}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_a2e98cccefbc350a426c8d10d66f58769} 
+\textbf{ Gpu\+Memory\+Usage} OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Block\+::usage\hspace{0.3cm}{\ttfamily [protected]}}
+

@@ -1,0 +1,130 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Vertices\+Attributes\+Maps}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps}\index{OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}}
+
+
+{\ttfamily \#include $<$Vertex\+Attributes.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ Has\+Attribute} (\textbf{ Vertex\+Attrib\+Uuid} uuid) const
+\item 
+{\footnotesize template$<$typename TAttrib$>$ \newline
+requires Is\+Vertex\+Attribute$<$TAttrib$>$}\\void \textbf{ Add\+Vertex\+Attribute} (const TAttrib \&attribute)
+\item 
+{\footnotesize template$<$typename TAttrib$>$ \newline
+requires Is\+Vertex\+Attribute$<$TAttrib$>$}\\const \textbf{ Dynamic\+Array}$<$ TAttrib $>$ \& \textbf{ Get\+Vertices\+Attributes\+List} () const
+\item 
+\textbf{ Vertices\+Attributes\+Map} \& \textbf{ Get\+Vertices\+Attributes} (\textbf{ Vertex\+Attrib\+Uuid} uuid)
+\item 
+const \textbf{ Vertices\+Attributes\+Map} \& \textbf{ Get\+Vertices\+Attributes} (\textbf{ Vertex\+Attrib\+Uuid} uuid) const
+\item 
+{\footnotesize template$<$typename TAttrib$>$ \newline
+requires Is\+Vertex\+Attribute$<$TAttrib$>$}\\const \textbf{ Dynamic\+Array}$<$ TAttrib $>$ \& \textbf{ TGet\+Vertices\+Attributes} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ \textbf{ Vertex\+Attrib\+Uuid}, \textbf{ Vertices\+Attributes\+Map} $>$ \textbf{ attributes}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Mapa con todos los atributos de todos los vértices de un modelo 3D. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}!AddVertexAttribute@{AddVertexAttribute}}
+\index{AddVertexAttribute@{AddVertexAttribute}!OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}}
+\doxysubsubsection{AddVertexAttribute()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps_a81738c838bd0abd40255c3438039803d} 
+template$<$typename TAttrib$>$ \newline
+requires Is\+Vertex\+Attribute$<$TAttrib$>$\\
+void OSK\+::\+GRAPHICS\+::\+Vertices\+Attributes\+Maps\+::\+Add\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{const TAttrib \&}]{attribute}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Añade un atributo de vértice. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TAttrib} & Tipo de atributo. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em attribute} & Atributo a añadir. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}!GetVerticesAttributes@{GetVerticesAttributes}}
+\index{GetVerticesAttributes@{GetVerticesAttributes}!OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}}
+\doxysubsubsection{GetVerticesAttributes()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps_adbfbe79c2887142ab6dbe1bacd3126fe} 
+\textbf{ Vertices\+Attributes\+Map} \& OSK\+::\+GRAPHICS\+::\+Vertices\+Attributes\+Maps\+::\+Get\+Vertices\+Attributes (\begin{DoxyParamCaption}\item[{\textbf{ Vertex\+Attrib\+Uuid}}]{uuid}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}!GetVerticesAttributes@{GetVerticesAttributes}}
+\index{GetVerticesAttributes@{GetVerticesAttributes}!OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}}
+\doxysubsubsection{GetVerticesAttributes()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps_a4d068a42ac6221a9d4d6efde4577f8f5} 
+const \textbf{ Vertices\+Attributes\+Map} \& OSK\+::\+GRAPHICS\+::\+Vertices\+Attributes\+Maps\+::\+Get\+Vertices\+Attributes (\begin{DoxyParamCaption}\item[{\textbf{ Vertex\+Attrib\+Uuid}}]{uuid}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}!GetVerticesAttributesList@{GetVerticesAttributesList}}
+\index{GetVerticesAttributesList@{GetVerticesAttributesList}!OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}}
+\doxysubsubsection{GetVerticesAttributesList()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps_a5dd4a77fbafae6a1b99c6471fa9c3328} 
+template$<$typename TAttrib$>$ \newline
+requires Is\+Vertex\+Attribute$<$TAttrib$>$\\
+const \textbf{ Dynamic\+Array}$<$ TAttrib $>$ \& OSK\+::\+GRAPHICS\+::\+Vertices\+Attributes\+Maps\+::\+Get\+Vertices\+Attributes\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene una lista de atributos en concreto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TAttrib} & Tipo de atributo. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+Lista con todos los atributos.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haberse añadido al menos un atributo del tipo dado. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si no se cumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}!HasAttribute@{HasAttribute}}
+\index{HasAttribute@{HasAttribute}!OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}}
+\doxysubsubsection{HasAttribute()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps_aaac802883258ac78507baa580cd872e4} 
+bool OSK\+::\+GRAPHICS\+::\+Vertices\+Attributes\+Maps\+::\+Has\+Attribute (\begin{DoxyParamCaption}\item[{\textbf{ Vertex\+Attrib\+Uuid}}]{uuid}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & UUID del atributo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si contiene la lista de atributos. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}!TGetVerticesAttributes@{TGetVerticesAttributes}}
+\index{TGetVerticesAttributes@{TGetVerticesAttributes}!OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}}
+\doxysubsubsection{TGetVerticesAttributes()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps_af29a607fc17c4d1ca10904ae5e2c600b} 
+template$<$typename TAttrib$>$ \newline
+requires Is\+Vertex\+Attribute$<$TAttrib$>$\\
+const \textbf{ Dynamic\+Array}$<$ TAttrib $>$ \& OSK\+::\+GRAPHICS\+::\+Vertices\+Attributes\+Maps\+::\+TGet\+Vertices\+Attributes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}!attributes@{attributes}}
+\index{attributes@{attributes}!OSK::GRAPHICS::VerticesAttributesMaps@{OSK::GRAPHICS::VerticesAttributesMaps}}
+\doxysubsubsection{attributes}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps_aa2686e02b1e6877bc0183e899a470704} 
+std\+::unordered\+\_\+map$<$\textbf{ Vertex\+Attrib\+Uuid}, \textbf{ Vertices\+Attributes\+Map}$>$ OSK\+::\+GRAPHICS\+::\+Vertices\+Attributes\+Maps\+::attributes}
+

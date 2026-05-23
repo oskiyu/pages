@@ -1,0 +1,1499 @@
+\doxysection{Game1.\+hpp}
+\label{_game1_8hpp_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Game1.hpp@{C:/Users/Oscar/source/repos/OSKengine/Source/Game1.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ import\ OSKengine.Editor.Ui;}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifdef\ OSK\_DEVELOPMENT}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}CopyImageInfo.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}GpuImageSamplerDesc.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}GpuImageViewConfig.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}IDebugGame.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Logger.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}OSKengine.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}RenderTargetAttachmentInfo.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}RtRenderTarget.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}SdfDrawCall2D.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}SdfDrawCallType2D.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Window.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}IRenderer.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}MaterialSystem.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}Material.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}MaterialInstance.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}Texture.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}AssetManager.h"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}IMaterialSlot.h"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}IGpuMemoryAllocator.h"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}EntityComponentSystem.h"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}TransformComponent3D.h"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}TransformComponent2D.h"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}Model3D.h"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}ModelComponent3D.h"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}CameraComponent3D.h"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}CameraComponent2D.h"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}KeyboardState.h"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}Sprite.h"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}MouseState.h"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}MouseModes.h"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}CubemapTexture.h"{}}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ "{}IKeyboardInput.h"{}}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ "{}ICommandList.h"{}}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}UiImageView.h"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}UiTextView.h"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}UiFreeContainer.h"{}}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ "{}UiHorizontalContainer.h"{}}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ "{}UiVerticalContainer.h"{}}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ "{}UiButton.h"{}}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ "{}UiDropdown.h"{}}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ "{}UiTextInput.h"{}}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ "{}UiCollapsibleWrapper.h"{}}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}AssetLoaderJob.h"{}}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}PcUserInput.h"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}GpuImageDimensions.h"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}GpuImageUsage.h"{}}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}Format.h"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}GpuMemoryTypes.h"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}GpuImageLayout.h"{}}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ "{}Vertex2D.h"{}}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ "{}Sprite.h"{}}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ "{}PushConst2D.h"{}}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ <glm/common.hpp>}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ <glm/ext/matrix\_clip\_space.hpp>}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ "{}Font.h"{}}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#include\ "{}FontLoader.h"{}}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#include\ "{}SpriteRenderer.h"{}}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#include\ "{}TextureCoordinates.h"{}}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#include\ "{}Vertex3D.h"{}}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#include\ "{}TopLevelAccelerationStructureVk.h"{}}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#include\ "{}IGpuMemorySubblock.h"{}}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#include\ "{}UiElement.h"{}}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#include\ "{}Viewport.h"{}}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#include\ "{}Lights.h"{}}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#include\ "{}SkyboxRenderSystem.h"{}}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#include\ "{}CollisionComponent.h"{}}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#include\ "{}AxisAlignedBoundingBox.h"{}}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#include\ "{}StaticGBufferPass.h"{}}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#include\ "{}AnimatedGBufferPass.h"{}}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#include\ "{}ShadowsStaticPass.h"{}}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#include\ "{}Math.h"{}}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#include\ "{}ConsoleCommandExecutor.h"{}}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#include\ "{}RenderSystem2D.h"{}}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#include\ "{}HybridRenderSystem.h"{}}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#include\ "{}DeferredRenderSystem.h"{}}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#include\ "{}GdrDeferredSystem.h"{}}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#include\ "{}RenderTarget.h"{}}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#include\ "{}AudioSourceAl.h"{}}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#include\ "{}ModelLoader3D.h"{}}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#include\ "{}IrradianceMap.h"{}}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#include\ "{}SpecularMap.h"{}}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#include\ "{}PreBuiltCollider.h"{}}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#include\ "{}PreBuiltColliderLoader.h"{}}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#include\ "{}FxaaPass.h"{}}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#include\ "{}ToneMapping.h"{}}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#include\ "{}BloomPass.h"{}}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#include\ "{}SmaaPass.h"{}}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#include\ "{}HbaoPass.h"{}}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#include\ "{}ColliderRenderer.h"{}}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#include\ "{}RenderBoundsRenderer.h"{}}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#include\ "{}SphereCollider.h"{}}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#include\ "{}ConvexVolume.h"{}}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#include\ "{}PhysicsComponent.h"{}}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#include\ "{}FrameCombiner.h"{}}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#include\ "{}IAudioApi.h"{}}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#include\ "{}AudioAsset.h"{}}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#include\ "{}IAudioSource.h"{}}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#include\ "{}CollisionEvent.h"{}}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#include\ "{}PreBuiltSpline3D.h"{}}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#include\ "{}UiConsole.h"{}}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#include\ "{}FileIO.h"{}}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#include\ "{}StopWatch.h"{}}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#include\ "{}EditorUi.h"{}}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#include\ "{}EditorUiConstants.h"{}}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#include\ "{}SdfBindlessRenderer2D.h"{}}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#include\ "{}SdfStringInfo.h"{}}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#include\ "{}DistanceConstraint.h"{}}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#include\ "{}PhysicsSystem.h"{}}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#include\ "{}RenderGraph.h"{}}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#include\ "{}GdrGeometryComponent.h"{}}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#include\ "{}GdrTexturedComponent.h"{}}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#include\ "{}GdrMaterialComponent.h"{}}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#include\ "{}ExampleComputePass.h"{}}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#include\ "{}GdrDeferredPass.h"{}}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#include\ "{}GdrPipeline.h"{}}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#include\ "{}IMouseInput.h"{}}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#include\ "{}ITouchInput.h"{}}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#include\ "{}IFullscreenableDisplay.h"{}}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{keyword}{using\ namespace\ }OSK;}
+\DoxyCodeLine{00157\ \textcolor{keyword}{using\ namespace\ }OSK::ECS;}
+\DoxyCodeLine{00158\ \textcolor{keyword}{using\ namespace\ }OSK::ASSETS;}
+\DoxyCodeLine{00159\ \textcolor{keyword}{using\ namespace\ }OSK::GRAPHICS;}
+\DoxyCodeLine{00160\ \textcolor{keyword}{using\ namespace\ }OSK::COLLISION;}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ OSK\_CURRENT\_RSYSTEM\ OSK::ECS::DeferredRenderSystem}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{keyword}{class\ }Game1\ :\ \textcolor{keyword}{public}\ OSK::IDebugGame\ \{}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ Game1()\ :\ OSK::IDebugGame(GAME::DefaultContentProfile::ALL)\ \{}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ CreateWindow()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ Engine::GetDisplay()-\/>Create(\{\ 1800u,\ 900u\ \},\ \textcolor{stringliteral}{"{}OSKengine"{}});}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ IO::IMouseInput*\ mouseInput\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ Engine::GetInput()-\/>QueryInterface(IUUID::IMouseInput,\ (\textcolor{keywordtype}{void}**)\&mouseInput);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mouseInput)\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ mouseInput-\/>SetReturnMode(IO::MouseReturnMode::FREE);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ mouseInput-\/>SetMotionMode(IO::MouseMotionMode::RAW);}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ SetupEngine()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ Engine::GetRenderer()-\/>Initialize(\textcolor{stringliteral}{"{}Game"{}},\ \{\},\ *Engine::GetDisplay(),\ PresentMode::VSYNC\_ON);}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{void}\ OnCreate()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ IDebugGame::OnCreate();}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ StopWatch\ stopWatch\{\};}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ stopWatch.Start();}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Material\ load}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ material\ =\ Engine::GetRenderer()-\/>GetMaterialSystem()-\/>LoadMaterial(\textcolor{stringliteral}{"{}Resources/Materials/PBR/direct\_pbr.json"{}});\ \textcolor{comment}{//Resources/PbrMaterials/deferred\_gbuffer.json}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ material2d\ =\ Engine::GetRenderer()-\/>GetMaterialSystem()-\/>LoadMaterial(\textcolor{stringliteral}{"{}Resources/Materials/2D/material\_2d.json"{}});}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ materialRenderTarget\ =\ Engine::GetRenderer()-\/>GetMaterialSystem()-\/>LoadMaterial(\textcolor{stringliteral}{"{}Resources/Materials/2D/material\_rendertarget.json"{}});}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SpawnCircuit();}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Rendergraph\ TEST}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ renderGraph\ =\ MakeUnique<RenderGraph>(Engine::GetRenderer());}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ renderGraph-\/>SetFramebufferResolution(Engine::GetDisplay()-\/>GetResolution());}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ renderGraph-\/>RegisterVertexAttribute(}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VertexPositionAttribute3D::GetUuid(),}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}positions"{}},}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{sizeof}(VertexPositionAttribute3D));}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ renderGraph-\/>RegisterVertexAttribute(}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VertexAttributes3D::GetUuid(),}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}attributes"{}},}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{sizeof}(VertexAttributes3D));}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gdrPbrPipeline\ =\ MakeUnique<GdrPipeline>(renderGraph.GetPointer());}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gdrPbrPipeline-\/>RegisterAll();\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ renderGraph-\/>Compile();}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gdrPbrPipeline-\/>FinalRegisterAll();}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ SetRenderGraph(std::move(renderGraph));}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ SpawnPista();}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ SpawnBall();}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ SpawnCamera();}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ SpawnCamera2D();}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ SetupRenderSystems();}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ SpawnSecondCollider();}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CONSTRAINTS\ TEST}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ \{}}
+\DoxyCodeLine{00238\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ auto\ constraint\ =\ MakeUnique<PHYSICS::DistanceConstraint>();}}
+\DoxyCodeLine{00239\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ constraint-\/>m\_distance\ =\ 1.0f;}}
+\DoxyCodeLine{00240\ \textcolor{comment}{}}
+\DoxyCodeLine{00241\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ constraint-\/>m\_first\ =\ m\_ballObject;}}
+\DoxyCodeLine{00242\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ constraint-\/>m\_second\ =\ m\_otherObject;}}
+\DoxyCodeLine{00243\ \textcolor{comment}{}}
+\DoxyCodeLine{00244\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>GetSystem<PhysicsSystem>()}}
+\DoxyCodeLine{00245\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/>m\_constraints.Insert(std::move(constraint));}}
+\DoxyCodeLine{00246\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}\ */}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ SetupRenderTargets();}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ SetupPostProcessingChain();}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Esperar\ a\ la\ carga\ completa.}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ Engine::GetJobSystem()-\/>WaitForJobs<AssetLoaderJob>();}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ stopWatch.Stop();}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ Engine::GetLogger()-\/>InfoLog(std::format(\textcolor{stringliteral}{"{}Tiempo\ de\ carga:\ \{\}\ segundos"{}},\ stopWatch.GetElapsedTime()));}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ m\_sdfRenderer\ =\ MakeUnique<SdfBindlessRenderer2D>(}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetEcs(),}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetRenderer()-\/>GetAllocator(),}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetRenderer()-\/>GetMaterialSystem()-\/>LoadMaterial(SdfBindlessRenderer2D::DefaultMaterialPath));}
+\DoxyCodeLine{00262\ \ \ \ \ \}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterSystems()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>RemoveSystem<ECS::RenderSystem2D>();}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ ECS::SystemDependencies\ debugRenderDependencies\{\};}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ debugRenderDependencies.executeAfterThese.insert(\textcolor{keyword}{static\_cast<}std::string\textcolor{keyword}{>}(ECS::DeferredRenderSystem::GetSystemName()));}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>RegisterSystem<ECS::ColliderRenderSystem>(debugRenderDependencies);}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>RegisterSystem<ECS::RenderBoundsRenderer>(debugRenderDependencies);}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \ \ \ \ }
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordtype}{void}\ OnTick\_BeforeEcs(TDeltaTime\ deltaTime)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ IDebugGame::OnTick\_BeforeEcs(deltaTime);}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \_\ =\ Engine::GetEcs();}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ IO::IKeyboardInput*\ keyboard\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ IO::IGamepadInput*\ gamepad\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ IO::IMouseInput*\ mouse\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Obtenemos\ las\ interfaces\ necesarias}}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ Engine::GetInput()-\/>QueryInterface(IUUID::IKeyboardInput,\ (\textcolor{keywordtype}{void}**)\&keyboard);}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ Engine::GetInput()-\/>QueryInterface(IUUID::IGamepadInput,\ (\textcolor{keywordtype}{void}**)\&gamepad);}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ Engine::GetInput()-\/>QueryInterface(IUUID::IMouseInput,\ (\textcolor{keywordtype}{void}**)\&mouse);}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ CameraComponent3D\&\ camera\ =\ Engine::GetEcs()-\/>GetComponent<ECS::CameraComponent3D>(cameraObject);}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ cameraTransform\ =\ Engine::GetEcs()-\/>GetComponent<ECS::TransformComponent3D>(cameraObject).GetTransform();}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Movimiento\ de\ la\ cámara\ en\ este\ frame}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cameraForwardMovement\ =\ 0.0f;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cameraRightMovement\ =\ 0.0f;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ Vector2f\ cameraRotation\ =\ Vector2f::Zero;}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ ecs\ =\ Engine::GetEcs();}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ editorUi\ =\ GetRootUiElement().GetChild(Editor::UI::EditorUi::Name)-\/>As<Editor::UI::EditorUi>();}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ editorUi-\/>Update(ecs,\ deltaTime);}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Console}}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsInConsole())\ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ \_cont;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ disponemos\ de\ teclado...}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard)\ \{}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Exit}}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::ESCAPE))}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>Exit();}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fullscreen}}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyStroked(IO::Key::F11))\ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IO::IFullscreenableDisplay*\ display\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetDisplay()-\/>QueryInterface(OSK\_IUUID(IO::IFullscreenableDisplay),\ (\textcolor{keywordtype}{void}**)\&display);}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (display)}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ display-\/>ToggleFullscreen();}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#ifdef\ OSK\_WINDOWS}}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#pragma\ region\ Exposición\ y\ gamma}}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Exposición\ (\string~brillo)\ de\ la\ escena}}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ increaseExposure\ =\ keyboard-\/>IsKeyDown(IO::Key::F1);}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ decreaseExposure\ =\ keyboard-\/>IsKeyDown(IO::Key::F2);}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ exposureChanged\ =\ increaseExposure\ ||\ decreaseExposure;}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (increaseExposure)}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ toneMappingPass-\/>SetExposure(toneMappingPass-\/>GetExposure()\ -\/\ deltaTime\ *\ 2);}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (decreaseExposure)}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ toneMappingPass-\/>SetExposure(toneMappingPass-\/>GetExposure()\ +\ deltaTime\ *\ 2);}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (exposureChanged)\ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ buffer\ :\ exposureBuffers)\ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer-\/>MapMemory();}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer-\/>Write(toneMappingPass-\/>GetExposure());}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer-\/>Unmap();}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Gamma\ de\ la\ escena}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::J))}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ toneMappingPass-\/>SetGamma(toneMappingPass-\/>GetGamma()\ -\/\ deltaTime\ *\ 2);}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::K))}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ toneMappingPass-\/>SetGamma(toneMappingPass-\/>GetGamma()\ +\ deltaTime\ *\ 2);}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#ifdef\ OSK\_WINDOWS}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Configuración\ gráfica}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Bloom}}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyReleased(IO::Key::B))\ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetBloomState(!config.useBloom);}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \#ifdef\ OSK\_USE\_DEFERRED\_RENDERER\ \ }}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TAA}}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyReleased(IO::Key::T))\ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>GetSystem<DeferredRenderSystem>()-\/>ToggleTaa();}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyReleased(IO::Key::H))\ \{}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetHbaoState(!config.useHbao);}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyStroked(IO::Key::R))\ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetRenderer()-\/>GetMaterialSystem()-\/>ReloadAllMaterials();}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyStroked(IO::Key::M))\ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IO::IMouseInput*\ mouseInput\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetInput()-\/>QueryInterface(IUUID::IMouseInput,\ (\textcolor{keywordtype}{void}**)\&mouseInput);}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mouseInput)\ \{}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IO::MouseReturnMode\ previousMode\ =\ mouseInput-\/>GetReturnMode();}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IO::MouseReturnMode\ nextMode\ =\ previousMode\ ==\ IO::MouseReturnMode::ALWAYS\_RETURN}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ IO::MouseReturnMode::FREE}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ IO::MouseReturnMode::ALWAYS\_RETURN;}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mouseInput-\/>SetReturnMode(nextMode);}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Activar\ /\ desactivar\ renderizado\ de\ colliders}}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyReleased(IO::Key::C))\{}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>GetSystem<ColliderRenderSystem>()-\/>ToggleActivationStatus();}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Movimiento\ de\ la\ cámara}}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::W))}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cameraForwardMovement\ +=\ 2.0f;}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::S))}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cameraForwardMovement\ -\/=\ 2.0f;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::A))}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cameraRightMovement\ -\/=\ 2.0f;}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::D))}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cameraRightMovement\ +=\ 2.0f;}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::LEFT\_SHIFT))\ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cameraForwardMovement\ *=\ 0.3f;}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cameraRightMovement\ *=\ 0.3f;}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::LEFT\_CONTROL))\ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cameraForwardMovement\ *=\ 2.3f;}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cameraRightMovement\ *=\ 2.3f;}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Player\ test}}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ playerPhysics\ =\ \&Engine::GetEcs()-\/>GetComponent<PhysicsComponent>(m\_otherObject);}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::UP))}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerPhysics-\/>ApplyForce(Vector3f(0,\ 0,\ 1)\ *\ 500.0f\ *\ deltaTime);}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::DOWN))}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerPhysics-\/>ApplyForce(Vector3f(0,\ 0,\ 1)\ *\ -\/500.0f\ *\ deltaTime);}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::LEFT))}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerPhysics-\/>ApplyForce(Vector3f(1,\ 0,\ 0)\ *\ 500.0f\ *\ deltaTime);}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::RIGHT))}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerPhysics-\/>ApplyForce(Vector3f(1,\ 0,\ 0)\ *\ -\/500.0f\ *\ deltaTime);}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyStroked(IO::Key::F2))\ \{}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetRenderer()-\/>\_GetSwapchain()-\/>TakeScreenshot(\textcolor{stringliteral}{"{}screenshot"{}});}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyStroked(IO::Key::M))\ \{}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mouse-\/>SetReturnMode(IO::MouseReturnMode::ALWAYS\_RETURN);}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyStroked(IO::Key::SPACE))\ \{}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ direccion\ =\ cameraTransform.GetForwardVector().GetNormalized();}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard-\/>IsKeyDown(IO::Key::LEFT\_SHIFT))\ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>GetComponent<PhysicsComponent>(m\_ballObject).ApplyImpulse(-\/direccion\ *\ 2.0f,\ Vector3f::Zero);}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ direccion.y\ *=\ -\/1.0f;}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>GetComponent<PhysicsComponent>(m\_ballObject).ApplyImpulse(direccion\ *\ 2.0f,\ Vector3f::Zero);}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mouse)\ \{}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ cameraRotation\ =\ \{}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (float)(mouse-\/>GetMouseState().GetPosition().x\ -\/\ mouse-\/>GetPreviousMouseState().GetPosition().x),}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (float)(mouse-\/>GetMouseState().GetPosition().y\ -\/\ mouse-\/>GetPreviousMouseState().GetPosition().y)}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ cameraTransform.AddPosition(cameraTransform.GetForwardVector()\ *\ cameraForwardMovement\ *\ deltaTime);}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ cameraTransform.AddPosition(cameraTransform.GetRightVector()\ *\ cameraRightMovement\ *\ deltaTime);}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ cameraTransform.RotateWorldSpace(glm::radians(-\/cameraRotation.x\ *\ 0.25f),\ \{\ 0,\ 1,\ 0\ \});}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ cameraTransform.RotateLocalSpace(glm::radians(-\/cameraRotation.y\ *\ 0.25f),\ \{\ 1,\ 0,\ 0\ \});}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ camera.UpdateTransform(\&cameraTransform);}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ hbaoPass-\/>UpdateCamera(}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ glm::inverse(camera.GetProjectionMatrix()),\ }
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ camera.GetViewMatrix(cameraTransform),}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ camera.GetNearPlane());}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>GetComponent<CameraComponent2D>(cameraObject2d).UpdateUniformBuffer(}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>GetComponent<Transform2D>(cameraObject2d)}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ targetFps\ =\ 30.0f;}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ targetMs\ =\ 1.0f\ /\ targetFps;}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ waitMiliseconds\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long}\textcolor{keyword}{>}((targetMs\ -\/\ deltaTime)\ *\ 1000);}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::milliseconds(glm::max(0l,\ waitMiliseconds)));}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A}}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ ballTransform\ =\ Engine::GetEcs()-\/>GetComponent<TransformComponent3D>(m\_ballObject).GetTransform();}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ballTransform.GetPosition().z\ >\ 10\ ||\ ballTransform.GetPosition().z\ <\ -\/10\ ||}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballTransform.GetPosition().x\ >\ 20\ ||\ ballTransform.GetPosition().x\ <\ -\/20)\ }
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ballTransform.SetPosition(\{\ 0.0f,\ 2.0f,\ 0.0f\ \});}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>GetComponent<PhysicsComponent>(m\_ballObject).\_SetVelocity(Vector3f::Zero);}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ \ \ \ \ \_cont:}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ UI}}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mouse)\ \{}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ isPressed\ =\ mouse-\/>GetMouseState().IsButtonDown(IO::MouseButton::BUTTON\_LEFT);}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2f\ position\ =\ mouse-\/>GetMouseState().GetPosition().ToVector2f();}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ GetRootUiElement().UpdateByCursor(position,\ isPressed);}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard)\ \{}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ GetRootUiElement().UpdateByKeyboard(keyboard-\/>GetPreviousKeyboardState(),\ keyboard-\/>GetKeyboardState());}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00501\ \ \ \ \ \}}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00503\ \ \ \ \ \textcolor{keywordtype}{void}\ BuildFrame()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ commandList\ =\ Engine::GetRenderer()-\/>GetMainCommandList();}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ renderpass\ =\ Engine::GetRenderer()-\/>GetFinalRenderTarget();}
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ camera\ =\ Engine::GetEcs()-\/>GetComponent<CameraComponent3D>(cameraObject);}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ cameraTransform\ =\ Engine::GetEcs()-\/>GetComponent<TransformComponent3D>(cameraObject);}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ GdrDeferredPass::CameraInfo\ currentCameraInfo\{\};}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ currentCameraInfo.projectionMatrix\ =\ camera.GetProjectionMatrix();}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ currentCameraInfo.viewMatrix\ =\ camera.GetViewMatrix(cameraTransform.GetTransform());}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ currentCameraInfo.projectionViewMatrix\ =\ currentCameraInfo.projectionMatrix\ *\ currentCameraInfo.viewMatrix;}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ currentCameraInfo.position\ =\ glm::vec4(cameraTransform.GetTransform().GetPosition().ToGlm(),\ 1.0f);}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ currentCameraInfo.nearFarPlanes\ =\ \{\ camera.GetNearPlane(),\ camera.GetFarPlane()\ \};}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ GdrDeferredPass::PreviousCameraInfo\ previousCameraInfo\{\};}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ previousCameraInfo.projectionMatrix\ =\ camera.GetProjectionMatrix();}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ previousCameraInfo.viewMatrix\ =\ camera.GetViewMatrix(cameraTransform.GetTransform());}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ previousCameraInfo.projectionViewMatrix\ =\ previousCameraInfo.projectionMatrix\ *\ previousCameraInfo.viewMatrix;}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ m\_gdrPbrPipeline-\/>UpdateCameraBuffers(}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetRenderer()-\/>GetCurrentResourceIndex(),}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ currentCameraInfo,}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ previousCameraInfo);}
+\DoxyCodeLine{00526\ }
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector4ui\ windowRec\ =\ \{}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetDisplay()-\/>GetResolution().x,}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetDisplay()-\/>GetResolution().y}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00533\ }
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ Viewport\ viewport\{\};}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ viewport.rectangle\ =\ windowRec;}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ commandList-\/>SetViewport(viewport);}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ commandList-\/>SetScissor(windowRec);}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Render\ text}}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ commandList-\/>StartDebugSection(\textcolor{stringliteral}{"{}Text\ Rendering"{}},\ Color::Blue);}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ commandList-\/>BeginGraphicsRenderpass(textRenderTarget.GetPointer(),\ Color::Black\ *\ 0.0f);}
+\DoxyCodeLine{00543\ }
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SdfDrawCall2D\ debug\{\};}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ debug.transform.SetPosition(Vector2f\{\ 0.0f\ \});}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ debug.transform.SetScale(Vector2f\{\ 1920.0f,\ 1080.0f\ \});}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ debug.shape\ =\ SdfShape2D::RECTANGLE;}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ debug.contentType\ =\ SdfDrawCallContentType2D::TEXTURE;}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageViewConfig\ viewConfig\ =\ GpuImageViewConfig::CreateSampled\_SingleMipLevel(0);}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ viewConfig.channel\ =\ SampledChannel::COLOR;}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ debug.texture\ =\ Engine::GetEcs()-\/>GetSystem<OSK\_CURRENT\_RSYSTEM>()-\/>GetGbuffer().GetImage(GBuffer::Target::COLOR)-\/>GetView(viewConfig);}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ debug.mainColor\ =\ Color::White;}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00557\ }
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ m\_sdfRenderer-\/>Begin(commandList);}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ m\_sdfRenderer-\/>SetCamera(cameraObject2d);}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ m\_sdfRenderer-\/>Draw(debug);}}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GetRootUiElement().Render(m\_sdfRenderer.GetPointer());}}
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \ \ \ \ SdfDrawCall2D\ debugRenderGraph\{\};}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ debugRenderGraph.transform.SetPosition(Vector2f\{\ 0.0f\ \});}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ debugRenderGraph.transform.SetScale(Vector2f\{\ 200,\ 200\ \});}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ debugRenderGraph.shape\ =\ SdfShape2D::RECTANGLE;}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ debugRenderGraph.contentType\ =\ SdfDrawCallContentType2D::TEXTURE;}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \ \ \ \ debugRenderGraph.mainColor\ =\ Color::White;}
+\DoxyCodeLine{00570\ }
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ GpuImageViewConfig\ viewConfig\ =\ GpuImageViewConfig::CreateSampled\_SingleMipLevel(0);}}
+\DoxyCodeLine{00572\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ viewConfig.channel\ =\ SampledChannel::COLOR;}}
+\DoxyCodeLine{00573\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ debugRenderGraph.texture\ =\ GetRenderGraph()-\/>GetImage(m\_renderGraphTarget).GetView(viewConfig);}}
+\DoxyCodeLine{00574\ \textcolor{comment}{}}
+\DoxyCodeLine{00575\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ m\_sdfRenderer-\/>Draw(debugRenderGraph);\ */}}
+\DoxyCodeLine{00576\ }
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \ \ \ \ m\_sdfRenderer-\/>End();}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00579\ }
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ commandList-\/>EndGraphicsRenderpass();}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ commandList-\/>EndDebugSection();}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Full-\/screen\ rendering}}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pre-\/Effects}}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ commandList-\/>StartDebugSection(\textcolor{stringliteral}{"{}Pre-\/Effects\ Frame\ build"{}},\ Color(0,\ 1,\ 0));}
+\DoxyCodeLine{00587\ }
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ skyboxRenderSystem\ =\ Engine::GetEcs()-\/>GetSystem<ECS::SkyboxRenderSystem>();}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ renderSystem\ =\ Engine::GetEcs()-\/>GetSystem<ECS::SkyboxRenderSystem>();}
+\DoxyCodeLine{00590\ }
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ skyboxRenderSystemImg\ =\ Engine::GetEcs()-\/>GetSystem<ECS::SkyboxRenderSystem>()-\/>GetRenderTarget().GetMainColorImage();}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ renderSystemImg\ =\ Engine::GetEcs()-\/>GetSystem<OSK\_CURRENT\_RSYSTEM>()-\/>GetRenderTarget().GetColorImage(0);}
+\DoxyCodeLine{00593\ }
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ commandList-\/>SetGpuImageBarrier(}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ \ \ \ skyboxRenderSystemImg,}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout::SAMPLED,}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo(GpuCommandStage::COMPUTE\_SHADER,\ GpuAccessStage::SAMPLED\_READ));}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ commandList-\/>SetGpuImageBarrier(}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ \ \ renderSystemImg,}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout::SAMPLED,}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo(GpuCommandStage::COMPUTE\_SHADER,\ GpuAccessStage::SAMPLED\_READ));}
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ GpuImageViewConfig\ viewConfig\ =\ GpuImageViewConfig::CreateSampled\_SingleMipLevel(0);}
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ preEffectsFrameCombiner-\/>Begin(commandList,\ FrameCombiner::ImageFormat::RGBA16);}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ preEffectsFrameCombiner-\/>Draw(commandList,\ *skyboxRenderSystemImg-\/>GetView(viewConfig));}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ preEffectsFrameCombiner-\/>Draw(commandList,\ *renderSystemImg-\/>GetView(viewConfig));}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ preEffectsFrameCombiner-\/>End(commandList);}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ commandList-\/>EndDebugSection();}
+\DoxyCodeLine{00611\ }
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Post-\/processing\ effects:}}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (config.useHbao)}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ hbaoPass-\/>Execute(commandList);}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (config.useBloom)}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ bloomPass-\/>Execute(commandList);}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ toneMappingPass-\/>Execute(commandList);}
+\DoxyCodeLine{00618\ }
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Frame\ build:}}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ commandList-\/>StartDebugSection(\textcolor{stringliteral}{"{}Final\ Frame\ build"{}},\ Color(0,\ 1,\ 0));}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ colliderRenderSystem\ =\ Engine::GetEcs()-\/>GetSystem<ECS::ColliderRenderSystem>();}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (colliderRenderSystem)\ \{}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \ \ \ \ commandList-\/>SetGpuImageBarrier(}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colliderRenderSystem-\/>GetRenderTarget().GetMainColorImage(),}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout::SAMPLED,}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo(GpuCommandStage::FRAGMENT\_SHADER,\ GpuAccessStage::SAMPLED\_READ));}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00628\ }
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ boundsRenderSystem\ =\ Engine::GetEcs()-\/>GetSystem<ECS::RenderBoundsRenderer>();}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boundsRenderSystem)\ \{}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \ \ \ \ commandList-\/>SetGpuImageBarrier(}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boundsRenderSystem-\/>GetRenderTarget().GetMainColorImage(),}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout::SAMPLED,}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo(GpuCommandStage::FRAGMENT\_SHADER,\ GpuAccessStage::SAMPLED\_READ));}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sync}}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ commandList-\/>SetGpuImageBarrier(}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ toneMappingPass-\/>GetOutput().GetTargetImage(),}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout::SAMPLED,}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo(GpuCommandStage::FRAGMENT\_SHADER,\ GpuAccessStage::SAMPLED\_READ));}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ commandList-\/>SetGpuImageBarrier(}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ textRenderTarget-\/>GetMainColorImage(),}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout::SAMPLED,}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo(GpuCommandStage::FRAGMENT\_SHADER,\ GpuAccessStage::SAMPLED\_READ));}
+\DoxyCodeLine{00646\ }
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ commandList-\/>BindVertexBuffer(Sprite::globalVertexBuffer.GetValue());}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ commandList-\/>BindIndexBuffer(Sprite::globalIndexBuffer.GetValue());}
+\DoxyCodeLine{00649\ }
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ commandList-\/>SetViewport(viewport);}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ commandList-\/>SetScissor(windowRec);}
+\DoxyCodeLine{00652\ }
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ commandList-\/>BeginGraphicsRenderpass(renderpass);}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ commandList-\/>BindMaterial(*Engine::GetRenderer()-\/>GetFullscreenRenderingMaterial());}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ commandList-\/>BindMaterialSlot(*toneMappingPass-\/>GetOutput().GetFullscreenSpriteMaterialSlot());}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ commandList-\/>DrawSingleInstance(6);}
+\DoxyCodeLine{00658\ }
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (colliderRenderSystem\ \&\&\ colliderRenderSystem-\/>IsActive())\ \{}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \ \ \ \ commandList-\/>BindMaterialSlot(*colliderRenderSystem-\/>GetRenderTarget().GetFullscreenSpriteMaterialSlot());}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \ \ \ \ commandList-\/>DrawSingleInstance(6);}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00663\ }
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boundsRenderSystem\ \&\&\ boundsRenderSystem-\/>IsActive())\ \{}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*frameBuildCommandList-\/>BindMaterialSlot(*boundsRenderSystem-\/>GetRenderTarget().GetFullscreenSpriteMaterialSlot());}}
+\DoxyCodeLine{00666\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ frameBuildCommandList-\/>DrawSingleInstance(6);*/}}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00668\ }
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ commandList-\/>BindMaterialSlot(*textRenderTarget-\/>GetFullscreenSpriteMaterialSlot());}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ commandList-\/>DrawSingleInstance(6);}
+\DoxyCodeLine{00671\ }
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ commandList-\/>EndGraphicsRenderpass();}
+\DoxyCodeLine{00673\ }
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ commandList-\/>EndDebugSection();}
+\DoxyCodeLine{00675\ }
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ commandList-\/>SetGpuImageBarrier(}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetRenderer()-\/>\_GetSwapchain()-\/>GetImage(Engine::GetRenderer()-\/>GetCurrentFrameIndex()),}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout::COLOR\_ATTACHMENT,}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout::PRESENT,}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo(GpuCommandStage::COLOR\_ATTACHMENT\_OUTPUT,\ GpuAccessStage::COLOR\_ATTACHMENT\_WRITE),}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo(GpuCommandStage::NONE,\ GpuAccessStage::NONE));}
+\DoxyCodeLine{00682\ \ \ \ \ \}}
+\DoxyCodeLine{00683\ }
+\DoxyCodeLine{00684\ }
+\DoxyCodeLine{00685\ \ \ \ \ \textcolor{keywordtype}{void}\ OnWindowResize(\textcolor{keyword}{const}\ Vector2ui\&\ size)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ textRenderTarget-\/>Resize(size);}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ preEffectsRenderTarget-\/>Resize(size);}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ bloomPass-\/>Resize(size);}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ hbaoPass-\/>Resize(size);}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ toneMappingPass-\/>Resize(size);}
+\DoxyCodeLine{00691\ }
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ preEffectsFrameCombiner-\/>Resize(size);}
+\DoxyCodeLine{00693\ }
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ SetupPostProcessingChain();}
+\DoxyCodeLine{00695\ \ \ \ \ \}}
+\DoxyCodeLine{00696\ }
+\DoxyCodeLine{00697\ \ \ \ \ \textcolor{keywordtype}{void}\ OnExit()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ m\_sdfRenderer.Delete();}
+\DoxyCodeLine{00699\ }
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ bloomPass.Delete();}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ hbaoPass.Delete();}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ toneMappingPass.Delete();}
+\DoxyCodeLine{00703\ }
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ buffer\ :\ exposureBuffers)}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \ \ \ \ buffer.Delete();}
+\DoxyCodeLine{00706\ }
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ preEffectsRenderTarget.Delete();}
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ textRenderTarget.Delete();}
+\DoxyCodeLine{00709\ }
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ preEffectsFrameCombiner.Delete();}
+\DoxyCodeLine{00711\ \ \ \ \ \}}
+\DoxyCodeLine{00712\ }
+\DoxyCodeLine{00713\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00714\ }
+\DoxyCodeLine{00715\ \ \ \ \ \textcolor{keywordtype}{void}\ SetTaaState(\textcolor{keywordtype}{bool})\ \{}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ renderSystem\ =\ Engine::GetEcs()-\/>GetSystem<OSK\_CURRENT\_RSYSTEM>();}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ renderSystem-\/>ToggleTaa();}
+\DoxyCodeLine{00718\ \ \ \ \ \}}
+\DoxyCodeLine{00719\ }
+\DoxyCodeLine{00720\ \ \ \ \ \textcolor{keywordtype}{void}\ SetHbaoState(\textcolor{keywordtype}{bool}\ state)\ \{}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ config.useHbao\ =\ state;}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ SetupPostProcessingChain();}
+\DoxyCodeLine{00723\ \ \ \ \ \}}
+\DoxyCodeLine{00724\ }
+\DoxyCodeLine{00725\ \ \ \ \ \textcolor{keywordtype}{void}\ SetBloomState(\textcolor{keywordtype}{bool}\ state)\ \{}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ config.useBloom\ =\ state;}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ SetupPostProcessingChain();}
+\DoxyCodeLine{00728\ \ \ \ \ \}}
+\DoxyCodeLine{00729\ }
+\DoxyCodeLine{00730\ \ \ \ \ \textcolor{keywordtype}{void}\ SetupRenderTargets()\ \{}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Text}}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ RenderTargetAttachmentInfo\ textColorInfo\{\ .format\ =\ Format::RGBA8\_SRGB,\ .usage\ =\ GpuImageUsage::SAMPLED,\ .name\ =\ \textcolor{stringliteral}{"{}Text\ Color\ Target"{}}\ \};}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ RenderTargetAttachmentInfo\ textDepthInfo\{\ .format\ =\ Format::D16\_UNORM\ ,\ .name\ =\ \textcolor{stringliteral}{"{}Text\ Depth\ Target"{}}\ \};}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ textRenderTarget\ =\ MakeUnique<RenderTarget>();}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ textRenderTarget-\/>Create(Engine::GetDisplay()-\/>GetResolution(),\ \{\ textColorInfo\ \},\ textDepthInfo);}
+\DoxyCodeLine{00736\ }
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pre\ effects\ scene}}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ RenderTargetAttachmentInfo\ preEffectsColorInfo\{\ .format\ =\ Format::RGBA16\_SFLOAT,\ .usage\ =\ GpuImageUsage::SAMPLED\ |\ GpuImageUsage::TRANSFER\_SOURCE,\ .name\ =\ \textcolor{stringliteral}{"{}Pre-\/Effects\ Color\ Target"{}}\ \};}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ RenderTargetAttachmentInfo\ preEffectsDepthInfo\{\ .format\ =\ Format::D16\_UNORM,\ .name\ =\ \textcolor{stringliteral}{"{}Pre-\/Effects\ Depth\ Target"{}}\ \};}
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ preEffectsRenderTarget\ =\ MakeUnique<RenderTarget>();}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ preEffectsRenderTarget-\/>Create(Engine::GetDisplay()-\/>GetResolution(),\ \{\ preEffectsColorInfo\ \},\ preEffectsDepthInfo);}
+\DoxyCodeLine{00742\ }
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Combiners}}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ preEffectsFrameCombiner\ =\ MakeUnique<FrameCombiner>();}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ preEffectsFrameCombiner-\/>Create(Engine::GetDisplay()-\/>GetResolution(),\ preEffectsColorInfo);}
+\DoxyCodeLine{00746\ \ \ \ \ \}}
+\DoxyCodeLine{00747\ }
+\DoxyCodeLine{00748\ \ \ \ \ \textcolor{keywordtype}{void}\ SetupPostProcessingChain()\ \{}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inicializaciones}}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!hbaoPass.HasValue())\ \{}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \ \ \ \ hbaoPass\ =\ MakeUnique<HbaoPass>();}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ \ \ \ \ hbaoPass-\/>Create(Engine::GetDisplay()-\/>GetResolution());}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00754\ }
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!bloomPass.HasValue())\ \{}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \ \ \ \ bloomPass\ =\ MakeUnique<BloomPass>();}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ \ \ \ \ bloomPass-\/>Create(Engine::GetDisplay()-\/>GetResolution());}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00759\ }
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!toneMappingPass.HasValue())\ \{}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \ \ \ \ toneMappingPass\ =\ MakeUnique<ToneMappingPass>();}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \ \ \ \ toneMappingPass-\/>Create(Engine::GetDisplay()-\/>GetResolution());}
+\DoxyCodeLine{00763\ }
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer*\ epxBuffers[MAX\_RESOURCES\_IN\_FLIGHT]\{\};}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (UIndex32\ i\ =\ 0;\ i\ <\ exposureBuffers.size();\ i++)\ \{}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exposureBuffers[i]\ =\ Engine::GetRenderer()-\/>GetAllocator()-\/>CreateStorageBuffer(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ GpuQueueType::MAIN);}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ epxBuffers[i]\ =\ exposureBuffers[i].GetPointer();}
+\DoxyCodeLine{00768\ }
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exposureBuffers[i]-\/>MapMemory();}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exposureBuffers[i]-\/>Write(toneMappingPass-\/>GetExposure());}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exposureBuffers[i]-\/>Unmap();}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00773\ }
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \ \ \ \ toneMappingPass-\/>SetExposureBuffer(*exposureBuffers[0]);}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00776\ }
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImageViewConfig\ viewConfig\ =\ GpuImageViewConfig::CreateSampled\_SingleMipLevel(0);}
+\DoxyCodeLine{00778\ }
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ preEffectsSource\ =\ preEffectsFrameCombiner-\/>GetRenderTarget();}
+\DoxyCodeLine{00780\ }
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ renderSystem\ =\ Engine::GetEcs()-\/>GetSystem<OSK\_CURRENT\_RSYSTEM>();}
+\DoxyCodeLine{00782\ }
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (config.useHbao)\ \{}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \ \ \ \ hbaoPass-\/>SetColorInput(preEffectsSource.GetTargetImage());}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ \ \ hbaoPass-\/>SetNormalsInput(renderSystem-\/>GetGbuffer().GetImage(GBuffer::Target::NORMAL));}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ \ \ \ \ hbaoPass-\/>SetDepthInput(renderSystem-\/>GetGbuffer().GetImage(GBuffer::Target::DEPTH));}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00788\ }
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (config.useBloom\ \&\&\ config.useHbao)\ \{}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \ \ \ \ bloomPass-\/>SetInput(hbaoPass-\/>GetOutput().GetTargetImage());}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \ \ \ \ toneMappingPass-\/>SetInput(bloomPass-\/>GetOutput().GetTargetImage());}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00793\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (config.useBloom)\ \{}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \ \ \ \ bloomPass-\/>SetInput(preEffectsSource.GetTargetImage());}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \ \ \ \ toneMappingPass-\/>SetInput(bloomPass-\/>GetOutput().GetTargetImage());}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (config.useHbao)\ \{}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \ \ \ \ toneMappingPass-\/>SetInput(hbaoPass-\/>GetOutput().GetTargetImage());}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \ \ \ \ \ \ toneMappingPass-\/>SetInput(preEffectsSource.GetTargetImage());}
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00804\ }
+\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ Engine::GetRenderer()-\/>WaitForCompletion();}
+\DoxyCodeLine{00806\ \ \ \ \ \}}
+\DoxyCodeLine{00807\ }
+\DoxyCodeLine{00808\ \ \ \ \ \textcolor{keywordtype}{void}\ SetupRenderSystems()\ \{}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ DynamicArray<std::string>\ tags\{\};}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ tags.Insert(\textcolor{stringliteral}{"{}RENDER\_SYSTEM\_RESOURCES"{}});}
+\DoxyCodeLine{00811\ }
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ skyboxTexture\ =\ Engine::GetAssetManager()-\/>LoadAsync<CubemapTexture>(\textcolor{stringliteral}{"{}Resources/Assets/Skyboxes/skybox0.json"{}},\ tags.GetFullSpan());}
+\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ specularMap\ =\ Engine::GetAssetManager()-\/>LoadAsync<SpecularMap>(\textcolor{stringliteral}{"{}Resources/Assets/IBL/irradiance0.json"{}},\ tags.GetFullSpan());}
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ irradianceMap\ =\ Engine::GetAssetManager()-\/>LoadAsync<IrradianceMap>(\textcolor{stringliteral}{"{}Resources/Assets/IBL/specular0.json"{}},\ tags.GetFullSpan());}
+\DoxyCodeLine{00815\ }
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ Engine::GetJobSystem()-\/>WaitForTag(tags[0]);}
+\DoxyCodeLine{00817\ }
+\DoxyCodeLine{00818\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PBR\ Render\ System}}
+\DoxyCodeLine{00819\ \ \ \ \ \ \ \ \ OSK\_CURRENT\_RSYSTEM*\ renderSystem\ =\ Engine::GetEcs()-\/>GetSystem<OSK\_CURRENT\_RSYSTEM>();}
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ renderSystem-\/>Initialize(cameraObject,\ irradianceMap,\ specularMap);}
+\DoxyCodeLine{00821\ }
+\DoxyCodeLine{00822\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_GDR\_RENDERER}}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ renderSystem-\/>SetMaxCounts(4'000'000,\ 100'000);}
+\DoxyCodeLine{00824\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OSK\_USE\_GDR\_RENDERER}}
+\DoxyCodeLine{00825\ }
+\DoxyCodeLine{00826\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skybox\ Render\ System}}
+\DoxyCodeLine{00827\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>GetSystem<SkyboxRenderSystem>()-\/>SetCamera(cameraObject);}
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>GetSystem<SkyboxRenderSystem>()-\/>SetCubemap(skyboxTexture);}
+\DoxyCodeLine{00829\ }
+\DoxyCodeLine{00830\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Debug\ Render\ Systems}}
+\DoxyCodeLine{00831\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>GetSystem<ColliderRenderSystem>()-\/>Initialize(cameraObject);}
+\DoxyCodeLine{00832\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>GetSystem<RenderBoundsRenderer>()-\/>Initialize(cameraObject);}
+\DoxyCodeLine{00833\ }
+\DoxyCodeLine{00834\ \ \ \ \ \}}
+\DoxyCodeLine{00835\ }
+\DoxyCodeLine{00836\ \ \ \ \ \textcolor{keywordtype}{void}\ SpawnCamera()\ \{}
+\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ cameraObject\ =\ Engine::GetEcs()-\/>SpawnObject();}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ cameraTransform\ =\ \&Engine::GetEcs()-\/>AddComponent<TransformComponent3D>(cameraObject,\ TransformComponent3D(cameraObject)).GetTransform();}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ cameraTransform-\/>AddPosition(\{\ 0.0f,\ 0.1f,\ -\/1.1f\ \});}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<CameraComponent3D>(cameraObject,\ \{\});}
+\DoxyCodeLine{00841\ \ \ \ \ \}}
+\DoxyCodeLine{00842\ }
+\DoxyCodeLine{00843\ \ \ \ \ \textcolor{keywordtype}{void}\ SpawnCamera2D()\ \{}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ cameraObject2d\ =\ Engine::GetEcs()-\/>SpawnObject();}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ CameraComponent2D*\ camera2D\ =\ \&Engine::GetEcs()-\/>AddComponent<CameraComponent2D>(cameraObject2d,\ \{\});}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ camera2D-\/>LinkToDisplay(Engine::GetDisplay());}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<Transform2D>(cameraObject2d,\ Transform2D(cameraObject2d));}
+\DoxyCodeLine{00848\ \ \ \ \ \}}
+\DoxyCodeLine{00849\ }
+\DoxyCodeLine{00850\ \ \ \ \ \textcolor{keywordtype}{void}\ SpawnCircuit()\ \{}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ circuitObject\ =\ Engine::GetEcs()-\/>SpawnObject();}
+\DoxyCodeLine{00853\ }
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Transform}}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<TransformComponent3D>(circuitObject,\ TransformComponent3D(circuitObject));}
+\DoxyCodeLine{00856\ }
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Modelo\ 3D}}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ circuitModel\ =\ Engine::GetAssetManager()-\/>LoadAsync<Model3D>(\textcolor{stringliteral}{"{}Resources/Assets/Models/circuit0.json"{}});}
+\DoxyCodeLine{00859\ }
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ ModelComponent3D*\ modelComponent\ =\ \&Engine::GetEcs()-\/>AddComponent<ModelComponent3D>(circuitObject,\ \{\});}
+\DoxyCodeLine{00861\ }
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ modelComponent-\/>SetModel(circuitModel);\ \textcolor{comment}{//\ animModel}}
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ modelComponent-\/>AddShaderPassName(StaticGBufferPass::Name);}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ modelComponent-\/>AddShaderPassName(ShadowsStaticPass::Name);}
+\DoxyCodeLine{00865\ }
+\DoxyCodeLine{00866\ }
+\DoxyCodeLine{00867\ \textcolor{preprocessor}{\#define\ LOADED\_COLLIDER}}
+\DoxyCodeLine{00868\ \textcolor{preprocessor}{\#ifdef\ LOADED\_COLLIDER}}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ CollisionComponent\ colliderComponent\{\};}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ colliderComponent.SetCollider(Engine::GetAssetManager()-\/>Load<PreBuiltCollider>(\textcolor{stringliteral}{"{}Resources/Assets/Collision/circuit\_colliders.json"{}}));}
+\DoxyCodeLine{00871\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00872\ \ \ \ \ \ \ \ \ Collider\ collider\ =\ \{\};}
+\DoxyCodeLine{00873\ \ \ \ \ \ \ \ \ OwnedPtr<ConvexVolume>\ convexVolume\ =\ \textcolor{keyword}{new}\ ConvexVolume(ConvexVolume::CreateObb(\{\ 100.0f,\ 100.0f,\ 100.0f\ \},\ -\/100.0f));}
+\DoxyCodeLine{00874\ }
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ collider.SetTopLevelCollider(\textcolor{keyword}{new}\ AxisAlignedBoundingBox(\{\ 100.0f,\ 5.0f,\ 100.0f\ \}));}
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \ \ collider.AddBottomLevelCollider(convexVolume.GetPointer());}
+\DoxyCodeLine{00877\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LOADED\_COLLIDER}}
+\DoxyCodeLine{00878\ }
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<CollisionComponent>(circuitObject,\ std::move(colliderComponent));}
+\DoxyCodeLine{00880\ }
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ PhysicsComponent\ physicsComponent\{\};}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ physicsComponent.SetImmovable();}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ physicsComponent.coefficientOfRestitution\ =\ 0.8f;}
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ physicsComponent.frictionCoefficient\ =\ 1.0f;}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<PhysicsComponent>(circuitObject,\ std::move(physicsComponent));}
+\DoxyCodeLine{00886\ }
+\DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Billboards}}
+\DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ billboards\ =\ Engine::GetEcs()-\/>SpawnObject();}
+\DoxyCodeLine{00889\ }
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<TransformComponent3D>(billboards,\ TransformComponent3D(billboards));}
+\DoxyCodeLine{00891\ }
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ billboardsModel\ =\ Engine::GetAssetManager()-\/>LoadAsync<Model3D>(\textcolor{stringliteral}{"{}Resources/Assets/Models/circuit0\_billboards.json"{}});}
+\DoxyCodeLine{00893\ }
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ ModelComponent3D*\ billboardsModelComponent\ =\ \&Engine::GetEcs()-\/>AddComponent<ModelComponent3D>(billboards,\ \{\});}
+\DoxyCodeLine{00895\ }
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ billboardsModelComponent-\/>SetModel(billboardsModel);\ \textcolor{comment}{//\ animModel}}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ PhysicsComponent\ billboardsPhysicsComponent\{\};}
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \ \ billboardsPhysicsComponent.SetImmovable();}
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ physicsComponent.coefficientOfRestitution\ =\ 0.8f;}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<PhysicsComponent>(billboards,\ std::move(billboardsPhysicsComponent));}
+\DoxyCodeLine{00901\ }
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tree\ normals}}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ treeNormals\ =\ Engine::GetEcs()-\/>SpawnObject();}
+\DoxyCodeLine{00904\ }
+\DoxyCodeLine{00905\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<TransformComponent3D>(treeNormals,\ TransformComponent3D(treeNormals));}
+\DoxyCodeLine{00906\ }
+\DoxyCodeLine{00907\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ treeNormalsModel\ =\ Engine::GetAssetManager()-\/>LoadAsync<Model3D>(\textcolor{stringliteral}{"{}Resources/Assets/Models/circuit0\_tree\_normals.json"{}});}
+\DoxyCodeLine{00908\ }
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ ModelComponent3D*\ treeNormalsModelComponent\ =\ \&Engine::GetEcs()-\/>AddComponent<ModelComponent3D>(treeNormals,\ \{\});}
+\DoxyCodeLine{00910\ }
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \ \ treeNormalsModelComponent-\/>SetModel(treeNormalsModel);\ \textcolor{comment}{//\ animModel}}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ treeNormalsModelComponent-\/>SetCastShadows(\textcolor{keyword}{false});}
+\DoxyCodeLine{00913\ }
+\DoxyCodeLine{00914\ \ \ \ \ \ \ \ \ PhysicsComponent\ treeNormalsPhysicsComponent\{\};}
+\DoxyCodeLine{00915\ \ \ \ \ \ \ \ \ treeNormalsPhysicsComponent.SetImmovable();}
+\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<PhysicsComponent>(treeNormals,\ std::move(treeNormalsPhysicsComponent));}
+\DoxyCodeLine{00917\ }
+\DoxyCodeLine{00918\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Trees}}
+\DoxyCodeLine{00919\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ trees\ =\ Engine::GetEcs()-\/>SpawnObject();}
+\DoxyCodeLine{00920\ }
+\DoxyCodeLine{00921\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<TransformComponent3D>(trees,\ TransformComponent3D(trees));}
+\DoxyCodeLine{00922\ }
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ treesModel\ =\ Engine::GetAssetManager()-\/>LoadAsync<Model3D>(\textcolor{stringliteral}{"{}Resources/Assets/Models/circuit0\_trees.json"{}});}
+\DoxyCodeLine{00924\ }
+\DoxyCodeLine{00925\ \ \ \ \ \ \ \ \ ModelComponent3D*\ treesModelComponent\ =\ \&Engine::GetEcs()-\/>AddComponent<ModelComponent3D>(trees,\ \{\});}
+\DoxyCodeLine{00926\ }
+\DoxyCodeLine{00927\ \ \ \ \ \ \ \ \ treesModelComponent-\/>SetModel(treesModel);\ \textcolor{comment}{//\ animModel}}
+\DoxyCodeLine{00928\ \ \ \ \ \ \ \ \ treesModelComponent-\/>SetCastShadows(\textcolor{keyword}{false});}
+\DoxyCodeLine{00929\ }
+\DoxyCodeLine{00930\ \ \ \ \ \ \ \ \ PhysicsComponent\ treesPhysicsComponent\{\};}
+\DoxyCodeLine{00931\ \ \ \ \ \ \ \ \ treesPhysicsComponent.SetImmovable();}
+\DoxyCodeLine{00932\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<PhysicsComponent>(trees,\ std::move(treesPhysicsComponent));}
+\DoxyCodeLine{00933\ }
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Spline\ test}}
+\DoxyCodeLine{00935\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ spline\ =\ Engine::GetAssetManager()-\/>LoadAsync<PreBuiltSpline3D>(\textcolor{stringliteral}{"{}Resources/Assets/Curves/circuit0.json"{}});}
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ loadedSpline\ =\ spline-\/>Get();}
+\DoxyCodeLine{00937\ \ \ \ \ \}}
+\DoxyCodeLine{00938\ }
+\DoxyCodeLine{00939\ \ \ \ \ \textcolor{keywordtype}{void}\ SpawnSecondCollider()\ \{}
+\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ m\_otherObject\ =\ Engine::GetEcs()-\/>SpawnObject();}
+\DoxyCodeLine{00941\ }
+\DoxyCodeLine{00942\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Transform}}
+\DoxyCodeLine{00943\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ transform\ =\ \&Engine::GetEcs()-\/>AddComponent<TransformComponent3D>(m\_otherObject,\ TransformComponent3D(m\_otherObject)).GetTransform();}
+\DoxyCodeLine{00944\ \ \ \ \ \ \ \ \ transform-\/>AddPosition(\{\ 0.0f,\ 0.0f,\ 0.0f\ \});}
+\DoxyCodeLine{00945\ }
+\DoxyCodeLine{00946\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Setup\ de\ físicas}}
+\DoxyCodeLine{00947\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ physicsComponent\ =\ Engine::GetEcs()-\/>AddComponent<PhysicsComponent>(m\_otherObject,\ \{\});}
+\DoxyCodeLine{00948\ \ \ \ \ \ \ \ \ physicsComponent.SetMass(2.0f);}
+\DoxyCodeLine{00949\ \ \ \ \ \ \ \ \ physicsComponent.centerOfMassOffset\ =\ Vector3f::Zero;}
+\DoxyCodeLine{00950\ }
+\DoxyCodeLine{00951\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Collider}}
+\DoxyCodeLine{00952\ \ \ \ \ \ \ \ \ CollisionComponent\ collider\{\};}
+\DoxyCodeLine{00953\ \ \ \ \ \ \ \ \ collider.SetCollider(Collider());}
+\DoxyCodeLine{00954\ }
+\DoxyCodeLine{00955\ \ \ \ \ \ \ \ \ UniquePtr<ConvexVolume>\ convexVolume\ =\ MakeUnique<ConvexVolume>(ConvexVolume::CreateObb(\{\ 0.2f\ *\ 2,\ 0.52f\ *\ 2,\ 0.2f\ *\ 2\ \}));}
+\DoxyCodeLine{00956\ }
+\DoxyCodeLine{00957\ \ \ \ \ \ \ \ \ collider.GetCollider()-\/>SetTopLevelCollider(AsBroad(MakeUnique<AxisAlignedBoundingBox>(Vector3f(20.0f))));}
+\DoxyCodeLine{00958\ \ \ \ \ \ \ \ \ collider.GetCollider()-\/>AddBottomLevelCollider(AsNarrow(std::move(convexVolume)));}
+\DoxyCodeLine{00959\ }
+\DoxyCodeLine{00960\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<CollisionComponent>(m\_otherObject,\ std::move(collider));}
+\DoxyCodeLine{00961\ }
+\DoxyCodeLine{00962\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Render}}
+\DoxyCodeLine{00963\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ model\ =\ Engine::GetAssetManager()-\/>Load<Model3D>(\textcolor{stringliteral}{"{}Resources/Assets/Models/player.json"{}});}
+\DoxyCodeLine{00964\ \ \ \ \ \ \ \ \ ModelComponent3D*\ modelComponent\ =\ \&Engine::GetEcs()-\/>AddComponent<ModelComponent3D>(m\_otherObject,\ \{\});}
+\DoxyCodeLine{00965\ \ \ \ \ \ \ \ \ modelComponent-\/>SetModel(model);}
+\DoxyCodeLine{00966\ \ \ \ \ \ \ \ \ modelComponent-\/>AddShaderPassName(AnimatedGBufferPass::Name);}
+\DoxyCodeLine{00967\ \ \ \ \ \ \ \ \ modelComponent-\/>GetModel()-\/>GetAnimator().AddActiveAnimation(\textcolor{stringliteral}{"{}ArmatureAction"{}});}
+\DoxyCodeLine{00968\ \ \ \ \ \ \ \ \ modelComponent-\/>GetModel()-\/>GetAnimator().SetActiveSkin(\textcolor{stringliteral}{"{}Armature"{}});}
+\DoxyCodeLine{00969\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ modelComponent-\/>AddShaderPassName(ShadowsStaticPass::Name);}}
+\DoxyCodeLine{00970\ \ \ \ \ \}}
+\DoxyCodeLine{00971\ }
+\DoxyCodeLine{00972\ \ \ \ \ \textcolor{keywordtype}{void}\ SpawnBall()\ \{}
+\DoxyCodeLine{00973\ \ \ \ \ \ \ \ \ m\_ballObject\ =\ Engine::GetEcs()-\/>SpawnObject();}
+\DoxyCodeLine{00974\ }
+\DoxyCodeLine{00975\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Transform}}
+\DoxyCodeLine{00976\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ transform\ =\ \&Engine::GetEcs()-\/>AddComponent<TransformComponent3D>(m\_ballObject,\ TransformComponent3D(m\_ballObject)).GetTransform();}
+\DoxyCodeLine{00977\ \ \ \ \ \ \ \ \ transform-\/>AddPosition(\{\ 2.0f,\ 3.0f,\ 0.0f\ \});}
+\DoxyCodeLine{00978\ }
+\DoxyCodeLine{00979\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Setup\ de\ físicas}}
+\DoxyCodeLine{00980\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ physicsComponent\ =\ Engine::GetEcs()-\/>AddComponent<PhysicsComponent>(m\_ballObject,\ \{\});}
+\DoxyCodeLine{00981\ \ \ \ \ \ \ \ \ physicsComponent.SetMass(0.5f);}
+\DoxyCodeLine{00982\ \ \ \ \ \ \ \ \ physicsComponent.centerOfMassOffset\ =\ Vector3f::Zero;}
+\DoxyCodeLine{00983\ \ \ \ \ \ \ \ \ physicsComponent.coefficientOfRestitution\ =\ 0.8f;}
+\DoxyCodeLine{00984\ \ \ \ \ \ \ \ \ physicsComponent.frictionCoefficient\ =\ 1.2f;}
+\DoxyCodeLine{00985\ \ \ \ \ \ \ \ \ physicsComponent.SetInverseInertiaTensor(glm::mat3(1.0f)\ *\ 200.0f);}
+\DoxyCodeLine{00986\ }
+\DoxyCodeLine{00987\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Collider}}
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ sphere\ =\ MakeUnique<SphereCollider>(0.1f);}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ CollisionComponent\ collider\{\};}
+\DoxyCodeLine{00990\ \ \ \ \ \ \ \ \ collider.SetCollider(Collider());}
+\DoxyCodeLine{00991\ \ \ \ \ \ \ \ \ collider.GetCollider()-\/>SetTopLevelCollider(AsBroad(sphere-\/>CreateBroadCopy()));}
+\DoxyCodeLine{00992\ \ \ \ \ \ \ \ \ collider.GetCollider()-\/>AddBottomLevelCollider(AsNarrow(std::move(sphere)));}
+\DoxyCodeLine{00993\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<CollisionComponent>(m\_ballObject,\ std::move(collider));}
+\DoxyCodeLine{00994\ }
+\DoxyCodeLine{00995\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Render}}
+\DoxyCodeLine{00996\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ballModel\ =\ Engine::GetAssetManager()-\/>Load<Model3D>(\textcolor{stringliteral}{"{}Resources/Assets/Models/sphere.json"{}});}
+\DoxyCodeLine{00997\ }
+\DoxyCodeLine{00998\ \ \ \ \ \ \ \ \ ModelComponent3D*\ modelComponent\ =\ \&Engine::GetEcs()-\/>AddComponent<ModelComponent3D>(m\_ballObject,\ \{\});}
+\DoxyCodeLine{00999\ }
+\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ modelComponent-\/>SetModel(ballModel);\ \textcolor{comment}{//\ animModel}}
+\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ modelComponent-\/>AddShaderPassName(StaticGBufferPass::Name);}
+\DoxyCodeLine{01002\ \ \ \ \ \ \ \ \ modelComponent-\/>AddShaderPassName(ShadowsStaticPass::Name);}
+\DoxyCodeLine{01003\ }
+\DoxyCodeLine{01004\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ textureTable\ =\ ballModel-\/>\_GetModel().GetTextureTable();}
+\DoxyCodeLine{01005\ }
+\DoxyCodeLine{01006\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<GdrGeometryComponent>(m\_ballObject,\ RegisterModel(*ballModel.GetAsset()));}
+\DoxyCodeLine{01007\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ textureComponent\ =\ Engine::GetEcs()-\/>AddComponent<GdrTexturedComponent>(m\_ballObject,\ \{\});}
+\DoxyCodeLine{01008\ }
+\DoxyCodeLine{01009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ mesh\ :\ ballModel-\/>GetModel().GetMeshes())\ \{}
+\DoxyCodeLine{01010\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ material\ =\ ballModel-\/>GetModel().GetMaterial(mesh.GetMaterialIndex());}
+\DoxyCodeLine{01011\ }
+\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (material.colorTextureIndex)\ \{}
+\DoxyCodeLine{01013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textureComponent.colorImageUuid\ =\ GetRenderGraph()-\/>RegisterExternalImage(}
+\DoxyCodeLine{01014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textureTable.GetImage(*material.colorTextureIndex));}
+\DoxyCodeLine{01015\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01016\ }
+\DoxyCodeLine{01017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (material.normalTextureIndex)\ \{}
+\DoxyCodeLine{01018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textureComponent.normalImageUuid\ =\ GetRenderGraph()-\/>RegisterExternalImage(}
+\DoxyCodeLine{01019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textureTable.GetImage(*material.normalTextureIndex));}
+\DoxyCodeLine{01020\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01022\ }
+\DoxyCodeLine{01023\ \ \ \ \ \}}
+\DoxyCodeLine{01024\ }
+\DoxyCodeLine{01025\ \ \ \ \ GpuGeometryDesc\ RegisterModel(\textcolor{keyword}{const}\ Model3D\&\ model)\ \{}
+\DoxyCodeLine{01026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ renderGraph\ =\ GetRenderGraph();}
+\DoxyCodeLine{01027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ gpuModel\ =\ model.GetModel();}
+\DoxyCodeLine{01028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ cpuModel\ =\ gpuModel.GetCpuModel();}
+\DoxyCodeLine{01029\ }
+\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ TIndexSize\ meshesOffset\ =\ 0;}
+\DoxyCodeLine{01031\ \ \ \ \ \ \ \ \ DynamicArray<UIndex32>\ indices\{\};}
+\DoxyCodeLine{01032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ mesh\ :\ gpuModel.GetCpuModel().GetMeshes())\ \{}
+\DoxyCodeLine{01033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ triangles\ :\ mesh.GetTriangles())\ \{}
+\DoxyCodeLine{01034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indices.Insert(\textcolor{keyword}{static\_cast<}TIndexSize\textcolor{keyword}{>}(triangles[0]\ +\ meshesOffset));}
+\DoxyCodeLine{01035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indices.Insert(\textcolor{keyword}{static\_cast<}TIndexSize\textcolor{keyword}{>}(triangles[1]\ +\ meshesOffset));}
+\DoxyCodeLine{01036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indices.Insert(\textcolor{keyword}{static\_cast<}TIndexSize\textcolor{keyword}{>}(triangles[2]\ +\ meshesOffset));}
+\DoxyCodeLine{01037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01038\ }
+\DoxyCodeLine{01039\ \ \ \ \ \ \ \ \ \ \ \ \ meshesOffset\ +=\ mesh.GetVertices().GetSize();}
+\DoxyCodeLine{01040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01041\ }
+\DoxyCodeLine{01042\ \ \ \ \ \ \ \ \ GpuGeometryDesc\ desc(indices);}
+\DoxyCodeLine{01043\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ mesh\ :\ gpuModel.GetCpuModel().GetMeshes())\ \{}
+\DoxyCodeLine{01045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ v\ :\ mesh.GetVertices())\ \{}
+\DoxyCodeLine{01046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.GetAttributesMap().AddVertexAttribute<VertexPositionAttribute3D>(\{\ *v.position\ \});}
+\DoxyCodeLine{01047\ }
+\DoxyCodeLine{01048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v.color\ \&\&\ v.normal\ \&\&\ v.tangent\ \&\&\ v.uv)\ \{}
+\DoxyCodeLine{01049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.GetAttributesMap().AddVertexAttribute<VertexAttributes3D>(\{}
+\DoxyCodeLine{01050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *v.normal,}
+\DoxyCodeLine{01051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *v.color,}
+\DoxyCodeLine{01052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *v.uv,}
+\DoxyCodeLine{01053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *v.tangent\ \});}
+\DoxyCodeLine{01054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01055\ }
+\DoxyCodeLine{01056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v.boneIds\ \&\&\ v.boneWeights)\ \{}
+\DoxyCodeLine{01057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.GetAttributesMap().AddVertexAttribute<VertexAnimationAttributes3D>(\{}
+\DoxyCodeLine{01058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ (*v.boneIds\ \ \ \ )[0],\ (*v.boneIds\ \ \ \ )[1],\ (*v.boneIds\ \ \ \ )[2],\ (*v.boneIds\ \ \ \ )[3]\ \},}
+\DoxyCodeLine{01059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ (*v.boneWeights)[0],\ (*v.boneWeights)[1],\ (*v.boneWeights)[2],\ (*v.boneWeights)[3]\ \}\ \});}
+\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01062\ }
+\DoxyCodeLine{01063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ triangles\ :\ mesh.GetTriangles())\ \{}
+\DoxyCodeLine{01064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indices.Insert(\textcolor{keyword}{static\_cast<}TIndexSize\textcolor{keyword}{>}(triangles[0]\ +\ meshesOffset));}
+\DoxyCodeLine{01065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indices.Insert(\textcolor{keyword}{static\_cast<}TIndexSize\textcolor{keyword}{>}(triangles[1]\ +\ meshesOffset));}
+\DoxyCodeLine{01066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indices.Insert(\textcolor{keyword}{static\_cast<}TIndexSize\textcolor{keyword}{>}(triangles[2]\ +\ meshesOffset));}
+\DoxyCodeLine{01067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01068\ }
+\DoxyCodeLine{01069\ \ \ \ \ \ \ \ \ \ \ \ \ meshesOffset\ +=\ mesh.GetVertices().GetSize();}
+\DoxyCodeLine{01070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01071\ }
+\DoxyCodeLine{01072\ \ \ \ \ \ \ \ \ desc.entry\ =\ renderGraph-\/>RegisterGeometry(desc);}
+\DoxyCodeLine{01073\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ desc;}
+\DoxyCodeLine{01075\ \ \ \ \ \}}
+\DoxyCodeLine{01076\ }
+\DoxyCodeLine{01077\ \ \ \ \ \textcolor{keywordtype}{void}\ SpawnPista()\ \{}
+\DoxyCodeLine{01078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ pista\ =\ Engine::GetEcs()-\/>SpawnObject();}
+\DoxyCodeLine{01079\ }
+\DoxyCodeLine{01080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Transform}}
+\DoxyCodeLine{01081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ transform\ =\ \&Engine::GetEcs()-\/>AddComponent<TransformComponent3D>(pista,\ TransformComponent3D(pista)).GetTransform();}
+\DoxyCodeLine{01082\ }
+\DoxyCodeLine{01083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Setup\ de\ físicas}}
+\DoxyCodeLine{01084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ physicsComponent\ =\ Engine::GetEcs()-\/>AddComponent<PhysicsComponent>(pista,\ \{\});}
+\DoxyCodeLine{01085\ \ \ \ \ \ \ \ \ physicsComponent.coefficientOfRestitution\ =\ 0.3f;}
+\DoxyCodeLine{01086\ \ \ \ \ \ \ \ \ physicsComponent.frictionCoefficient\ =\ 0.8f;}
+\DoxyCodeLine{01087\ \ \ \ \ \ \ \ \ physicsComponent.SetImmovable();}
+\DoxyCodeLine{01088\ }
+\DoxyCodeLine{01089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Collider}}
+\DoxyCodeLine{01090\ \ \ \ \ \ \ \ \ CollisionComponent\ colliderComponent\{\};}
+\DoxyCodeLine{01091\ \ \ \ \ \ \ \ \ Collider\ collider\ =\ \{\};}
+\DoxyCodeLine{01092\ \ \ \ \ \ \ \ \ UniquePtr<ConvexVolume>\ convexVolume\ =\ MakeUnique<ConvexVolume>(ConvexVolume::CreateObb(\{\ 100.0f,\ 100.0f,\ 100.0f\ \}));}
+\DoxyCodeLine{01093\ \ \ \ \ \ \ \ \ convexVolume-\/>AddOffset(\{\ 0.0f,\ -\/100.0f,\ 0.0f\ \});}
+\DoxyCodeLine{01094\ \ \ \ \ \ \ \ \ collider.SetTopLevelCollider(AsBroad(MakeUnique<AxisAlignedBoundingBox>(Vector3f\{\ 100.0f,\ 5.0f,\ 100.0f\ \})));}
+\DoxyCodeLine{01095\ \ \ \ \ \ \ \ \ collider.AddBottomLevelCollider(AsNarrow(std::move(convexVolume)));}
+\DoxyCodeLine{01096\ \ \ \ \ \ \ \ \ colliderComponent.SetCollider(collider);}
+\DoxyCodeLine{01097\ }
+\DoxyCodeLine{01098\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<CollisionComponent>(pista,\ std::move(colliderComponent));}
+\DoxyCodeLine{01099\ }
+\DoxyCodeLine{01100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Render}}
+\DoxyCodeLine{01101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ballModel\ =\ Engine::GetAssetManager()-\/>Load<Model3D>(\textcolor{stringliteral}{"{}Resources/Assets/Models/pista.json"{}});}
+\DoxyCodeLine{01102\ }
+\DoxyCodeLine{01103\ \ \ \ \ \ \ \ \ ModelComponent3D*\ modelComponent\ =\ \&Engine::GetEcs()-\/>AddComponent<ModelComponent3D>(pista,\ \{\});}
+\DoxyCodeLine{01104\ }
+\DoxyCodeLine{01105\ \ \ \ \ \ \ \ \ modelComponent-\/>SetModel(ballModel);\ \textcolor{comment}{//\ animModel}}
+\DoxyCodeLine{01106\ \ \ \ \ \ \ \ \ modelComponent-\/>AddShaderPassName(StaticGBufferPass::Name);}
+\DoxyCodeLine{01107\ \ \ \ \ \ \ \ \ modelComponent-\/>AddShaderPassName(ShadowsStaticPass::Name);}
+\DoxyCodeLine{01108\ }
+\DoxyCodeLine{01109\ \ \ \ \ \ \ \ \ GdrMaterialComponent\ material\{\};}
+\DoxyCodeLine{01110\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<GdrGeometryComponent>(pista,\ RegisterModel(*ballModel.GetAsset()));}
+\DoxyCodeLine{01111\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<GdrTexturedComponent>(pista,\ \{\});}
+\DoxyCodeLine{01112\ \ \ \ \ \ \ \ \ Engine::GetEcs()-\/>AddComponent<GdrMaterialComponent>(pista,\ \{\});}
+\DoxyCodeLine{01113\ \ \ \ \ \}}
+\DoxyCodeLine{01114\ }
+\DoxyCodeLine{01115\ \ \ \ \ \textcolor{keyword}{struct\ }CollisionTestCase\ \{}
+\DoxyCodeLine{01116\ \ \ \ \ \ \ \ \ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{01117\ \ \ \ \ \ \ \ \ Vector3f\ positionA\ =\ Vector3f::Zero;}
+\DoxyCodeLine{01118\ \ \ \ \ \ \ \ \ Vector3f\ positionB\ =\ Vector3f::Zero;}
+\DoxyCodeLine{01119\ \ \ \ \ \};}
+\DoxyCodeLine{01120\ }
+\DoxyCodeLine{01121\ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<CollisionTestCase>\ testCases\ =\ \{}
+\DoxyCodeLine{01122\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/00"{}},\ \{0.0f,\ 0.0f,\ 0.0f\},\ \{0.0f,\ 0.0f,\ -\/1.0f\}\},}
+\DoxyCodeLine{01123\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/01"{}},\ \{0.0f,\ 0.0f,\ 0.0f\},\ \{1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01124\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/02"{}},\ \{0.0f,\ 0.0f,\ 0.0f\},\ \{1.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01125\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/03"{}},\ \{0.0f,\ 0.0f,\ 0.0f\},\ \{1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01126\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/04"{}},\ \{0.0f,\ 0.0f,\ 0.0f\},\ \{0.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01127\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/05"{}},\ \{0.0f,\ 0.0f,\ 0.0f\},\ \{-\/1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01128\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/06"{}},\ \{0.0f,\ 0.0f,\ 0.0f\},\ \{-\/1.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01129\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/07"{}},\ \{0.0f,\ 0.0f,\ 0.0f\},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01130\ }
+\DoxyCodeLine{01131\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/08"{}},\ \{0.0f,\ 0.0f,\ -\/1.0f\},\{0.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01132\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/09"{}},\ \{1.0f,\ 0.0f,\ -\/1.0f\},\{0.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01133\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/10"{}},\ \{1.0f,\ 0.0f,\ 0.0f\},\{0.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01134\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/11"{}},\ \{1.0f,\ 0.0f,\ 1.0f\},\{0.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01135\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/12"{}},\ \{0.0f,\ 0.0f,\ 1.0f\},\{0.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01136\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/13"{}},\ \{-\/1.0f,\ 0.0f,\ 1.0f\},\{0.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01137\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/14"{}},\ \{-\/1.0f,\ 0.0f,\ 0.0f\},\{0.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01138\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/15"{}},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\},\{0.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01139\ }
+\DoxyCodeLine{01140\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ +/+}}
+\DoxyCodeLine{01141\ }
+\DoxyCodeLine{01142\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/16"{}},\ \{1.0f,\ 0.0f,\ 1.0f\},\ \{1.0f,\ 0.0f,\ 0.0f\}\},}
+\DoxyCodeLine{01143\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/17"{}},\ \{1.0f,\ 0.0f,\ 1.0f\},\ \{2.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01144\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/18"{}},\ \{1.0f,\ 0.0f,\ 1.0f\},\ \{2.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01145\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/19"{}},\ \{1.0f,\ 0.0f,\ 1.0f\},\ \{2.0f,\ 0.0f,\ 2.0f\}\ \},}
+\DoxyCodeLine{01146\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/20"{}},\ \{1.0f,\ 0.0f,\ 1.0f\},\ \{1.0f,\ 0.0f,\ 2.0f\}\ \},}
+\DoxyCodeLine{01147\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/21"{}},\ \{1.0f,\ 0.0f,\ 1.0f\},\ \{0.0f,\ 0.0f,\ 2.0f\}\ \},}
+\DoxyCodeLine{01148\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/22"{}},\ \{1.0f,\ 0.0f,\ 1.0f\},\ \{0.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01149\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/23"{}},\ \{1.0f,\ 0.0f,\ 1.0f\},\ \{0.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01150\ }
+\DoxyCodeLine{01151\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/24"{}},\ \{1.0f,\ 0.0f,\ 0.0f\},\ \{1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01152\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/25"{}},\ \{2.0f,\ 0.0f,\ 0.0f\},\ \{1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01153\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/26"{}},\ \{2.0f,\ 0.0f,\ 1.0f\},\ \{1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01154\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/27"{}},\ \{2.0f,\ 0.0f,\ 2.0f\},\ \{1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01155\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/28"{}},\ \{1.0f,\ 0.0f,\ 2.0f\},\ \{1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01156\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/29"{}},\ \{0.0f,\ 0.0f,\ 2.0f\},\ \{1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01157\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/30"{}},\ \{0.0f,\ 0.0f,\ 1.0f\},\ \{1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01158\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/31"{}},\ \{0.0f,\ 0.0f,\ 0.0f\},\ \{1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01159\ }
+\DoxyCodeLine{01160\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ +/-\/}}
+\DoxyCodeLine{01161\ }
+\DoxyCodeLine{01162\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/32"{}},\ \{1.0f,\ 0.0f,\ -\/1.0f\},\ \{1.0f,\ 0.0f,\ -\/2.0f\}\},}
+\DoxyCodeLine{01163\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/33"{}},\ \{1.0f,\ 0.0f,\ -\/1.0f\},\ \{2.0f,\ 0.0f,\ -\/2.0f\}\ \},}
+\DoxyCodeLine{01164\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/34"{}},\ \{1.0f,\ 0.0f,\ -\/1.0f\},\ \{2.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01165\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/35"{}},\ \{1.0f,\ 0.0f,\ -\/1.0f\},\ \{2.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01166\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/36"{}},\ \{1.0f,\ 0.0f,\ -\/1.0f\},\ \{1.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01167\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/37"{}},\ \{1.0f,\ 0.0f,\ -\/1.0f\},\ \{0.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01168\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/38"{}},\ \{1.0f,\ 0.0f,\ -\/1.0f\},\ \{0.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01169\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/39"{}},\ \{1.0f,\ 0.0f,\ -\/1.0f\},\ \{0.0f,\ 0.0f,\ -\/2.0f\}\ \},}
+\DoxyCodeLine{01170\ }
+\DoxyCodeLine{01171\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/40"{}},\ \{1.0f,\ 0.0f,\ -\/2.0f\},\ \{1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01172\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/41"{}},\ \{2.0f,\ 0.0f,\ -\/2.0f\},\ \{1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01173\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/42"{}},\ \{2.0f,\ 0.0f,\ -\/1.0f\},\ \{1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01174\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/43"{}},\ \{2.0f,\ 0.0f,\ 0.0f\}\ ,\ \{1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01175\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/44"{}},\ \{1.0f,\ 0.0f,\ 0.0f\}\ ,\ \{1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01176\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/45"{}},\ \{0.0f,\ 0.0f,\ 0.0f\}\ ,\ \{1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01177\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/46"{}},\ \{0.0f,\ 0.0f,\ -\/1.0f\},\ \{1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01178\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/47"{}},\ \{0.0f,\ 0.0f,\ -\/2.0f\},\ \{1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01179\ }
+\DoxyCodeLine{01180\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\//-\/}}
+\DoxyCodeLine{01181\ }
+\DoxyCodeLine{01182\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/48"{}},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\},\ \{-\/1.0f,\ 0.0f,\ -\/2.0f\}\},}
+\DoxyCodeLine{01183\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/49"{}},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\},\ \{0.0f,\ 0.0f,\ -\/2.0f\}\ \},}
+\DoxyCodeLine{01184\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/50"{}},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\},\ \{0.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01185\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/51"{}},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\},\ \{0.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01186\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/52"{}},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\},\ \{-\/1.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01187\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/53"{}},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\},\ \{-\/2.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01188\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/54"{}},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\},\ \{-\/2.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01189\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/55"{}},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\},\ \{-\/2.0f,\ 0.0f,\ -\/2.0f\}\ \},}
+\DoxyCodeLine{01190\ }
+\DoxyCodeLine{01191\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/56"{}},\ \{-\/1.0f,\ 0.0f,\ -\/2.0f\},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01192\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/57"{}},\ \{0.0f,\ 0.0f,\ -\/2.0f\},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01193\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/58"{}},\ \{0.0f,\ 0.0f,\ -\/1.0f\},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01194\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/59"{}},\ \{0.0f,\ 0.0f,\ 0.0f\}\ ,\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01195\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/60"{}},\ \{-\/1.0f,\ 0.0f,\ 0.0f\}\ ,\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01196\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/61"{}},\ \{-\/2.0f,\ 0.0f,\ 0.0f\}\ ,\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01197\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/62"{}},\ \{-\/2.0f,\ 0.0f,\ -\/1.0f\},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01198\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/63"{}},\ \{-\/2.0f,\ 0.0f,\ -\/2.0f\},\ \{-\/1.0f,\ 0.0f,\ -\/1.0f\}\ \},}
+\DoxyCodeLine{01199\ }
+\DoxyCodeLine{01200\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\//+}}
+\DoxyCodeLine{01201\ }
+\DoxyCodeLine{01202\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/64"{}},\ \{-\/1.0f,\ 0.0f,\ 1.0f\},\ \{-\/1.0f,\ 0.0f,\ 0.0f\}\},}
+\DoxyCodeLine{01203\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/65"{}},\ \{-\/1.0f,\ 0.0f,\ 1.0f\},\ \{\ 0.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01204\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/66"{}},\ \{-\/1.0f,\ 0.0f,\ 1.0f\},\ \{\ 0.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01205\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/67"{}},\ \{-\/1.0f,\ 0.0f,\ 1.0f\},\ \{\ 0.0f,\ 0.0f,\ 2.0f\}\ \},}
+\DoxyCodeLine{01206\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/68"{}},\ \{-\/1.0f,\ 0.0f,\ 1.0f\},\ \{-\/1.0f,\ 0.0f,\ 2.0f\}\ \},}
+\DoxyCodeLine{01207\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/69"{}},\ \{-\/1.0f,\ 0.0f,\ 1.0f\},\ \{-\/2.0f,\ 0.0f,\ 2.0f\}\ \},}
+\DoxyCodeLine{01208\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/70"{}},\ \{-\/1.0f,\ 0.0f,\ 1.0f\},\ \{-\/2.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01209\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/71"{}},\ \{-\/1.0f,\ 0.0f,\ 1.0f\},\ \{-\/2.0f,\ 0.0f,\ 0.0f\}\ \},}
+\DoxyCodeLine{01210\ }
+\DoxyCodeLine{01211\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/72"{}},\ \{-\/1.0f,\ 0.0f,\ 0.0f\},\ \{-\/1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01212\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/73"{}},\ \{\ 0.0f,\ 0.0f,\ 0.0f\},\ \{-\/1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01213\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/74"{}},\ \{\ 0.0f,\ 0.0f,\ 1.0f\},\ \{-\/1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01214\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/75"{}},\ \{\ 0.0f,\ 0.0f,\ 2.0f\}\ ,\ \{-\/1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01215\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/76"{}},\ \{-\/1.0f,\ 0.0f,\ 2.0f\}\ ,\ \{-\/1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01216\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/77"{}},\ \{-\/2.0f,\ 0.0f,\ 2.0f\}\ ,\ \{-\/1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01217\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/78"{}},\ \{-\/2.0f,\ 0.0f,\ 1.0f\},\ \{-\/1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01218\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}T-\/COL-\/79"{}},\ \{-\/2.0f,\ 0.0f,\ 0.0f\},\ \{-\/1.0f,\ 0.0f,\ 1.0f\}\ \},}
+\DoxyCodeLine{01219\ }
+\DoxyCodeLine{01220\ \ \ \ \ \};}
+\DoxyCodeLine{01221\ }
+\DoxyCodeLine{01222\ \ \ \ \ \textcolor{keyword}{struct\ }Config\ \{}
+\DoxyCodeLine{01223\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ useHbao\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01224\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ useBloom\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01225\ \ \ \ \ \}\ config;}
+\DoxyCodeLine{01226\ }
+\DoxyCodeLine{01227\ \ \ \ \ UniquePtr<FrameCombiner>\ preEffectsFrameCombiner;}
+\DoxyCodeLine{01228\ }
+\DoxyCodeLine{01229\ \ \ \ \ UniquePtr<RenderTarget>\ preEffectsRenderTarget;}
+\DoxyCodeLine{01230\ \ \ \ \ UniquePtr<RenderTarget>\ textRenderTarget;}
+\DoxyCodeLine{01231\ }
+\DoxyCodeLine{01232\ \ \ \ \ UniquePtr<BloomPass>\ bloomPass;}
+\DoxyCodeLine{01233\ \ \ \ \ UniquePtr<ToneMappingPass>\ toneMappingPass;}
+\DoxyCodeLine{01234\ \ \ \ \ UniquePtr<HbaoPass>\ hbaoPass;}
+\DoxyCodeLine{01235\ }
+\DoxyCodeLine{01236\ \ \ \ \ OSK::GRAPHICS::Material*\ material\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{01237\ \ \ \ \ OSK::GRAPHICS::Material*\ material2d\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{01238\ \ \ \ \ OSK::GRAPHICS::Material*\ materialRenderTarget\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{01239\ }
+\DoxyCodeLine{01240\ \ \ \ \ std::array<UniquePtr<GpuBuffer>,\ MAX\_RESOURCES\_IN\_FLIGHT>\ exposureBuffers\{\};}
+\DoxyCodeLine{01241\ }
+\DoxyCodeLine{01242\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_inEditor\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01243\ }
+\DoxyCodeLine{01244\ \ \ \ \ ECS::GameObjectIndex\ cameraObject\ =\ ECS::EMPTY\_GAME\_OBJECT;}
+\DoxyCodeLine{01245\ \ \ \ \ ECS::GameObjectIndex\ cameraObject2d\ =\ ECS::EMPTY\_GAME\_OBJECT;}
+\DoxyCodeLine{01246\ \ \ \ \ ECS::GameObjectIndex\ m\_ballObject\ =\ ECS::GameObjectIndex::CreateEmpty();}
+\DoxyCodeLine{01247\ \ \ \ \ ECS::GameObjectIndex\ m\_otherObject\ =\ ECS::GameObjectIndex::CreateEmpty();}
+\DoxyCodeLine{01248\ }
+\DoxyCodeLine{01249\ \ \ \ \ UniquePtr<SdfBindlessRenderer2D>\ m\_sdfRenderer;}
+\DoxyCodeLine{01250\ }
+\DoxyCodeLine{01251\ \ \ \ \ GdrBufferUuid\ cameraInfoUuid\ =\ GdrBufferUuid::CreateEmpty();}
+\DoxyCodeLine{01252\ \ \ \ \ UniquePtr<GdrPipeline>\ m\_gdrPbrPipeline;}
+\DoxyCodeLine{01253\ }
+\DoxyCodeLine{01254\ }
+\DoxyCodeLine{01255\ \};}
+\DoxyCodeLine{01256\ }
+\DoxyCodeLine{01257\ \textcolor{comment}{//\ \#endif}}
+\DoxyCodeLine{01258\ }
+\DoxyCodeLine{01259\ }
+\DoxyCodeLine{01260\ }
+\DoxyCodeLine{01261\ }
+\DoxyCodeLine{01262\ }
+\DoxyCodeLine{01263\ \textcolor{preprocessor}{\#include\ "{}ISdfRenderPass.h"{}}}
+\DoxyCodeLine{01264\ }
+\DoxyCodeLine{01265\ }
+\DoxyCodeLine{01266\ }
+\DoxyCodeLine{01267\ \textcolor{keyword}{class\ }MinComputePass\ :\ \textcolor{keyword}{public}\ IRenderPass\ \{}
+\DoxyCodeLine{01268\ }
+\DoxyCodeLine{01269\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01270\ }
+\DoxyCodeLine{01271\ \ \ \ \ \textcolor{keyword}{explicit}\ MinComputePass(GdrImageUuid\ targetImage)\ :\ IRenderPass(\textcolor{stringliteral}{"{}Resources/Materials/Testing/min\_compute.json"{}},\ RenderPassType::COMPUTE)\ \{}
+\DoxyCodeLine{01272\ \ \ \ \ \ \ \ \ AddImageDependency(RgImageDependency::ComputeTarget(targetImage,\ \textcolor{stringliteral}{"{}image"{}},\ \textcolor{stringliteral}{"{}image"{}}));}
+\DoxyCodeLine{01273\ \ \ \ \ \}}
+\DoxyCodeLine{01274\ }
+\DoxyCodeLine{01275\ \ \ \ \ \textcolor{keywordtype}{void}\ Execute(ICommandList*\ cmdList)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{01276\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ windowRec\ =\ Engine::GetDisplay()-\/>GetResolution();}
+\DoxyCodeLine{01277\ }
+\DoxyCodeLine{01278\ \ \ \ \ \ \ \ \ cmdList-\/>PushMaterialConstants(\textcolor{stringliteral}{"{}time"{}},\ Engine::GetCurrentTime());}
+\DoxyCodeLine{01279\ }
+\DoxyCodeLine{01280\ \ \ \ \ \ \ \ \ cmdList-\/>DispatchCompute(\{}
+\DoxyCodeLine{01281\ \ \ \ \ \ \ \ \ \ \ \ \ (USize32)glm::ceil(windowRec.x\ /\ 16.0f),}
+\DoxyCodeLine{01282\ \ \ \ \ \ \ \ \ \ \ \ \ (USize32)glm::ceil(windowRec.y\ /\ 16.0f),\ 1\ \});}
+\DoxyCodeLine{01283\ \ \ \ \ \}}
+\DoxyCodeLine{01284\ }
+\DoxyCodeLine{01285\ \ \ \ \ std::string\_view\ GetName()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{01286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}MinComputePass"{}};}
+\DoxyCodeLine{01287\ \ \ \ \ \}}
+\DoxyCodeLine{01288\ }
+\DoxyCodeLine{01289\ \};}
+\DoxyCodeLine{01290\ }
+\DoxyCodeLine{01291\ \textcolor{keyword}{class\ }Render2dPass\ :\ \textcolor{keyword}{public}\ ISdfRenderPass\ \{}
+\DoxyCodeLine{01292\ }
+\DoxyCodeLine{01293\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01294\ }
+\DoxyCodeLine{01295\ \ \ \ \ \textcolor{keyword}{explicit}\ Render2dPass(GdrImageUuid\ targetImage)\ :\ ISdfRenderPass()\ \{}
+\DoxyCodeLine{01296\ \ \ \ \ \ \ \ \ m\_img\ =\ Engine::GetAssetManager()-\/>Load<ASSETS::Texture>(\textcolor{stringliteral}{"{}Resources/Assets/Textures/engine\_logo.json"{}});}
+\DoxyCodeLine{01297\ }
+\DoxyCodeLine{01298\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageDependency\ =\ RgImageDependency::ColorTarget(targetImage);}
+\DoxyCodeLine{01299\ \ \ \ \ \ \ \ \ imageDependency.clearIfTargetImage\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01300\ \ \ \ \ \ \ \ \ AddImageDependency(imageDependency);}
+\DoxyCodeLine{01301\ \ \ \ \ \}}
+\DoxyCodeLine{01302\ }
+\DoxyCodeLine{01303\ \ \ \ \ \textcolor{keywordtype}{void}\ Execute(ICommandList*\ cmdList)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{01304\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ windowRec\ =\ Engine::GetDisplay()-\/>GetResolution();}
+\DoxyCodeLine{01305\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ sdfRenderer\ =\ GetSdfRenderer();}
+\DoxyCodeLine{01306\ }
+\DoxyCodeLine{01307\ \ \ \ \ \ \ \ \ sdfRenderer-\/>Begin(cmdList);}
+\DoxyCodeLine{01308\ \ \ \ \ \ \ \ \ sdfRenderer-\/>SetCamera(Vector2f::Zero,\ windowRec.ToVector2f());}
+\DoxyCodeLine{01309\ }
+\DoxyCodeLine{01310\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ drawCall\ =\ SdfDrawCall2D::Texture(m\_img-\/>GetTextureView2D());}
+\DoxyCodeLine{01311\ \ \ \ \ \ \ \ \ drawCall.transform.SetPosition(Vector2f((windowRec.x\ -\/\ m\_img-\/>GetSize().x)\ /\ 2.0f,\ (windowRec.y\ -\/\ m\_img-\/>GetSize().y)\ /\ 2.0f));}
+\DoxyCodeLine{01312\ \ \ \ \ \ \ \ \ drawCall.transform.SetScale(m\_img-\/>GetSize().ToVector2f());}
+\DoxyCodeLine{01313\ }
+\DoxyCodeLine{01314\ \ \ \ \ \ \ \ \ sdfRenderer-\/>Draw(drawCall);}
+\DoxyCodeLine{01315\ }
+\DoxyCodeLine{01316\ \ \ \ \ \ \ \ \ sdfRenderer-\/>End();}
+\DoxyCodeLine{01317\ \ \ \ \ \}}
+\DoxyCodeLine{01318\ }
+\DoxyCodeLine{01319\ \ \ \ \ std::string\_view\ GetName()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{01320\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Render2dPass"{}};}
+\DoxyCodeLine{01321\ \ \ \ \ \}}
+\DoxyCodeLine{01322\ }
+\DoxyCodeLine{01323\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{01324\ }
+\DoxyCodeLine{01325\ \ \ \ \ AssetRef<Texture>\ m\_img;}
+\DoxyCodeLine{01326\ }
+\DoxyCodeLine{01327\ \};}
+\DoxyCodeLine{01328\ }
+\DoxyCodeLine{01329\ \textcolor{keyword}{class\ }RenderToSwapchainPass\ :\ \textcolor{keyword}{public}\ ISdfRenderPass\ \{}
+\DoxyCodeLine{01330\ }
+\DoxyCodeLine{01331\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01332\ }
+\DoxyCodeLine{01333\ \ \ \ \ \textcolor{keyword}{explicit}\ RenderToSwapchainPass(GdrImageUuid\ src,\ \textcolor{keyword}{const}\ std::span<GdrImageUuid,\ 3>\ targetImages)\ :\ ISdfRenderPass(),\ m\_src(src)\ \{}
+\DoxyCodeLine{01334\ \ \ \ \ \ \ \ \ Engine::GetLogger()-\/>Log(IO::LogLevel::INFO,\ \textcolor{stringliteral}{"{}Creado\ el\ pase\ de\ renderizado\ RenderToSwapchainPass."{}});}
+\DoxyCodeLine{01335\ \ \ \ \ \ \ \ \ AddImageDependency(RgImageDependency::Sampled\_Fragment\_SingleMipLevel(src,\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}"{}}));}
+\DoxyCodeLine{01336\ }
+\DoxyCodeLine{01337\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (UIndex16\ i\ =\ 0;\ i\ <\ targetImages.size();\ i++)\ \{}
+\DoxyCodeLine{01338\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageDependency\ =\ RgImageDependency::ColorTarget(targetImages[i]);}
+\DoxyCodeLine{01339\ \ \ \ \ \ \ \ \ \ \ \ \ imageDependency.clearIfTargetImage\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01340\ \ \ \ \ \ \ \ \ \ \ \ \ imageDependency.frameInFlight\ =\ i;}
+\DoxyCodeLine{01341\ }
+\DoxyCodeLine{01342\ \ \ \ \ \ \ \ \ \ \ \ \ AddImageDependency(imageDependency);}
+\DoxyCodeLine{01343\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01344\ \ \ \ \ \}}
+\DoxyCodeLine{01345\ }
+\DoxyCodeLine{01346\ \ \ \ \ \textcolor{keywordtype}{void}\ Execute(ICommandList*\ cmdList)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{01347\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ windowRec\ =\ Engine::GetDisplay()-\/>GetResolution();}
+\DoxyCodeLine{01348\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ sdfRenderer\ =\ GetSdfRenderer();}
+\DoxyCodeLine{01349\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ img\ =\ GetRenderGraph()-\/>GetImage(m\_src);}
+\DoxyCodeLine{01350\ }
+\DoxyCodeLine{01351\ \ \ \ \ \ \ \ \ sdfRenderer-\/>Begin(cmdList);}
+\DoxyCodeLine{01352\ \ \ \ \ \ \ \ \ sdfRenderer-\/>SetCamera(Vector2f::Zero,\ Vector2f::One);}
+\DoxyCodeLine{01353\ }
+\DoxyCodeLine{01354\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ drawCall\ =\ SdfDrawCall2D::Texture(*img.GetView(GpuImageViewConfig::CreateSampled\_SingleMipLevel(0)));}
+\DoxyCodeLine{01355\ \ \ \ \ \ \ \ \ drawCall.transform.SetPosition(Vector2f::Zero);}
+\DoxyCodeLine{01356\ \ \ \ \ \ \ \ \ drawCall.transform.SetScale(Vector2f::One);}
+\DoxyCodeLine{01357\ }
+\DoxyCodeLine{01358\ \ \ \ \ \ \ \ \ drawCall.samplerDesc\ =\ GpuImageSamplerDesc::CreateDefault\_NoMipMap();}
+\DoxyCodeLine{01359\ \ \ \ \ \ \ \ \ drawCall.samplerDesc.filteringType\ =\ GpuImageFilteringType::NEAREST;}
+\DoxyCodeLine{01360\ }
+\DoxyCodeLine{01361\ \textcolor{preprocessor}{\#ifdef\ OSK\_ANDROID}}
+\DoxyCodeLine{01362\ \ \ \ \ \ \ \ \ drawCall.transform.SetRotation(90.0f);}
+\DoxyCodeLine{01363\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01364\ }
+\DoxyCodeLine{01365\ \ \ \ \ \ \ \ \ sdfRenderer-\/>Draw(drawCall);}
+\DoxyCodeLine{01366\ }
+\DoxyCodeLine{01367\ \ \ \ \ \ \ \ \ sdfRenderer-\/>End();}
+\DoxyCodeLine{01368\ \ \ \ \ \}}
+\DoxyCodeLine{01369\ }
+\DoxyCodeLine{01370\ \ \ \ \ std::string\_view\ GetName()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{01371\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}RenderToSwapchainPass"{}};}
+\DoxyCodeLine{01372\ \ \ \ \ \}}
+\DoxyCodeLine{01373\ }
+\DoxyCodeLine{01374\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{01375\ }
+\DoxyCodeLine{01376\ \ \ \ \ GdrImageUuid\ m\_src;}
+\DoxyCodeLine{01377\ }
+\DoxyCodeLine{01378\ \};}
+\DoxyCodeLine{01379\ }
+\DoxyCodeLine{01380\ }
+\DoxyCodeLine{01381\ }
+\DoxyCodeLine{01386\ \textcolor{keyword}{class\ }GameMin\ :\ \textcolor{keyword}{public}\ OSK::IGame\ \{}
+\DoxyCodeLine{01387\ }
+\DoxyCodeLine{01388\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01389\ }
+\DoxyCodeLine{01390\ \ \ \ \ GameMin()\ :\ OSK::IGame(GAME::DefaultContentProfile::MINIMAL)\ \{\}}
+\DoxyCodeLine{01391\ }
+\DoxyCodeLine{01392\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{01393\ }
+\DoxyCodeLine{01395\ \ \ \ \ \textcolor{keywordtype}{void}\ CreateWindow()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{01396\ \ \ \ \ \ \ \ \ Engine::GetDisplay()-\/>Create(\{\ 1800u,\ 900u\ \},\ \textcolor{stringliteral}{"{}OSKengine\ Min"{}});}
+\DoxyCodeLine{01397\ }
+\DoxyCodeLine{01398\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{auto}*\ mouseInput\ =\ GetMouse())\ }
+\DoxyCodeLine{01399\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01400\ \ \ \ \ \ \ \ \ \ \ \ \ mouseInput-\/>SetReturnMode(IO::MouseReturnMode::FREE);}
+\DoxyCodeLine{01401\ \ \ \ \ \ \ \ \ \ \ \ \ mouseInput-\/>SetMotionMode(IO::MouseMotionMode::RAW);}
+\DoxyCodeLine{01402\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01403\ \ \ \ \ \}}
+\DoxyCodeLine{01404\ }
+\DoxyCodeLine{01405\ \ \ \ \ \textcolor{keywordtype}{void}\ SetupEngine()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{01406\ \ \ \ \ \ \ \ \ Engine::GetRenderer()-\/>Initialize(}
+\DoxyCodeLine{01407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}OSKengine\ minimal\ demo"{}},\ }
+\DoxyCodeLine{01408\ \ \ \ \ \ \ \ \ \ \ \ \ \{\},\ }
+\DoxyCodeLine{01409\ \ \ \ \ \ \ \ \ \ \ \ \ *Engine::GetDisplay(),\ }
+\DoxyCodeLine{01410\ \ \ \ \ \ \ \ \ \ \ \ \ PresentMode::VSYNC\_ON);}
+\DoxyCodeLine{01411\ \ \ \ \ \}}
+\DoxyCodeLine{01412\ }
+\DoxyCodeLine{01413\ \ \ \ \ \textcolor{keywordtype}{void}\ OnCreate()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{01414\ \ \ \ \ \ \ \ \ IGame::OnCreate();}
+\DoxyCodeLine{01415\ \ \ \ \ \ \ \ \ Engine::GetJobSystem()-\/>WaitForJobs<AssetLoaderJob>();}
+\DoxyCodeLine{01416\ }
+\DoxyCodeLine{01417\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ renderGraph\ =\ MakeUnique<RenderGraph>(Engine::GetRenderer());}
+\DoxyCodeLine{01418\ \ \ \ \ \ \ \ \ renderGraph-\/>SetFramebufferResolution(Engine::GetDisplay()-\/>GetResolution());}
+\DoxyCodeLine{01419\ }
+\DoxyCodeLine{01420\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (UIndex16\ i\ =\ 0;\ i\ <\ m\_swapchainImages.size();\ i++)\ \{}
+\DoxyCodeLine{01421\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ img\ =\ Engine::GetRenderer()-\/>\_GetSwapchain()-\/>GetImage(i);}
+\DoxyCodeLine{01422\ \ \ \ \ \ \ \ \ \ \ \ \ m\_swapchainImages[i]\ =\ renderGraph-\/>RegisterExternalImage(img);}
+\DoxyCodeLine{01423\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01424\ }
+\DoxyCodeLine{01425\ \ \ \ \ \ \ \ \ RgImageRegisterInfo\ target\{\};}
+\DoxyCodeLine{01426\ \ \ \ \ \ \ \ \ target.numLayers\ =\ 1;}
+\DoxyCodeLine{01427\ \ \ \ \ \ \ \ \ target.dimension\ =\ GpuImageDimension::d2D;}
+\DoxyCodeLine{01428\ \ \ \ \ \ \ \ \ target.format\ =\ Format::RGBA8\_UNORM;}
+\DoxyCodeLine{01429\ \ \ \ \ \ \ \ \ target.name\ =\ \textcolor{stringliteral}{"{}Target\ Image"{}};}
+\DoxyCodeLine{01430\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ targetUuid\ =\ renderGraph-\/>RegisterImage(target,\ RgRelativeSizeImageRegisterArgs::From2D(Vector2f::One));}
+\DoxyCodeLine{01431\ }
+\DoxyCodeLine{01432\ \ \ \ \ \ \ \ \ renderGraph-\/>RegisterRenderpass(MakeUnique<MinComputePass>(targetUuid),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RenderPassDependencies::Empty());}
+\DoxyCodeLine{01433\ \ \ \ \ \ \ \ \ renderGraph-\/>RegisterRenderpass(MakeUnique<Render2dPass>(targetUuid),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RenderPassDependencies::After(\{\ \textcolor{stringliteral}{"{}MinCompute"{}}\ \}));}
+\DoxyCodeLine{01434\ \ \ \ \ \ \ \ \ renderGraph-\/>RegisterRenderpass(MakeUnique<RenderToSwapchainPass>(targetUuid,\ m\_swapchainImages),\ \ \ RenderPassDependencies::After(\{\ \textcolor{stringliteral}{"{}Render2dPass"{}}\ \}));}
+\DoxyCodeLine{01435\ }
+\DoxyCodeLine{01436\ \ \ \ \ \ \ \ \ renderGraph-\/>Compile();}
+\DoxyCodeLine{01437\ }
+\DoxyCodeLine{01438\ \ \ \ \ \ \ \ \ SetRenderGraph(std::move(renderGraph));}
+\DoxyCodeLine{01439\ \ \ \ \ \}}
+\DoxyCodeLine{01440\ }
+\DoxyCodeLine{01441\ \ \ \ \ \textcolor{keywordtype}{void}\ OnTick\_BeforeEcs(TDeltaTime\ deltaTime)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{01442\ \ \ \ \ \ \ \ \ IGame::OnTick\_BeforeEcs(deltaTime);}
+\DoxyCodeLine{01443\ }
+\DoxyCodeLine{01444\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ TDeltaTime\ totalTime\ =\ 0.0f;}
+\DoxyCodeLine{01445\ \ \ \ \ \ \ \ \ totalTime\ +=\ deltaTime;}
+\DoxyCodeLine{01446\ \ \ \ \ \ \ \ \ m\_frameCount++;}
+\DoxyCodeLine{01447\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01448\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (totalTime\ >=\ 1.0f)\ \{}
+\DoxyCodeLine{01449\ \ \ \ \ \ \ \ \ \ \ \ \ totalTime\ =\ 0.0f;}
+\DoxyCodeLine{01450\ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetLogger()-\/>Log(IO::LogLevel::L\_DEBUG,\ \textcolor{stringliteral}{"{}FPS:\ "{}},\ m\_frameCount);}
+\DoxyCodeLine{01451\ \ \ \ \ \ \ \ \ \ \ \ \ m\_frameCount\ =\ 0;}
+\DoxyCodeLine{01452\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01453\ }
+\DoxyCodeLine{01454\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{auto}*\ t\ =\ GetTouchs())\ \{}
+\DoxyCodeLine{01455\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ touchEvent\ :\ t-\/>GetCurrentFrameInputs())\ \{}
+\DoxyCodeLine{01456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Engine::GetLogger()-\/>Log(IO::LogLevel::L\_DEBUG,\ "{}TOUCH:\ "{},\ touchEvent.position.x,\ "{}x"{},\ touchEvent.position.y);}}
+\DoxyCodeLine{01457\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01458\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01459\ \ \ \ \ \}}
+\DoxyCodeLine{01460\ }
+\DoxyCodeLine{01461\ \ \ \ \ \textcolor{keywordtype}{void}\ OnTick\_Keyboard(\textcolor{keyword}{const}\ IO::IKeyboardInput\&\ keyboard)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{01462\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Exit}}
+\DoxyCodeLine{01463\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard.IsKeyDown(IO::Key::ESCAPE))\ \{}
+\DoxyCodeLine{01464\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>Exit();}
+\DoxyCodeLine{01465\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01466\ }
+\DoxyCodeLine{01467\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fullscreen}}
+\DoxyCodeLine{01468\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keyboard.IsKeyStroked(IO::Key::F11))\ \{}
+\DoxyCodeLine{01469\ \ \ \ \ \ \ \ \ \ \ \ \ IO::IFullscreenableDisplay*\ display\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{01470\ \ \ \ \ \ \ \ \ \ \ \ \ Engine::GetDisplay()-\/>QueryInterface(OSK\_IUUID(IO::IFullscreenableDisplay),\ (\textcolor{keywordtype}{void}**)\&display);}
+\DoxyCodeLine{01471\ }
+\DoxyCodeLine{01472\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (display)\ \{}
+\DoxyCodeLine{01473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ display-\/>ToggleFullscreen();}
+\DoxyCodeLine{01474\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01475\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01476\ \ \ \ \ \}}
+\DoxyCodeLine{01477\ }
+\DoxyCodeLine{01478\ \ \ \ \ \textcolor{keywordtype}{void}\ OnWindowResize(\textcolor{keyword}{const}\ Vector2ui\&\ res)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{01479\ \ \ \ \ \ \ \ \ Engine::GetLogger()-\/>Log(IO::LogLevel::INFO,\ \textcolor{stringliteral}{"{}OnWindowResize:\ "{}},\ res.x,\ \textcolor{stringliteral}{"{}x"{}},\ res.y);}
+\DoxyCodeLine{01480\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ renderGraph\ =\ GetRenderGraph();}
+\DoxyCodeLine{01481\ }
+\DoxyCodeLine{01482\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (UIndex16\ i\ =\ 0;\ i\ <\ m\_swapchainImages.size();\ i++)\ \{}
+\DoxyCodeLine{01483\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ img\ =\ Engine::GetRenderer()-\/>\_GetSwapchain()-\/>GetImage(i);}
+\DoxyCodeLine{01484\ \ \ \ \ \ \ \ \ \ \ \ \ renderGraph-\/>RebindExternalImage(m\_swapchainImages[i],\ img);}
+\DoxyCodeLine{01485\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01486\ }
+\DoxyCodeLine{01487\ \ \ \ \ \ \ \ \ renderGraph-\/>SetFramebufferResolution(res);}
+\DoxyCodeLine{01488\ \ \ \ \ \ \ \ \ renderGraph-\/>RecreateRelativeImages();}
+\DoxyCodeLine{01489\ \ \ \ \ \}}
+\DoxyCodeLine{01490\ }
+\DoxyCodeLine{01491\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{01492\ }
+\DoxyCodeLine{01493\ \ \ \ \ std::array<GdrImageUuid,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_swapchainImages;}
+\DoxyCodeLine{01494\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_frameCount\ =\ 0;}
+\DoxyCodeLine{01495\ }
+\DoxyCodeLine{01496\ \};}
+\DoxyCodeLine{01497\ }
+\DoxyCodeLine{01498\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

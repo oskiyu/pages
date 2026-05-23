@@ -2,7 +2,6 @@ var class_o_s_k_1_1_editor_1_1_controllers_1_1_physics_component_controller3_d =
 [
     [ "PhysicsComponentController3D", "class_o_s_k_1_1_editor_1_1_controllers_1_1_physics_component_controller3_d.html#a723265927de4602f5b7c427fb9291d43", null ],
     [ "GetComponent", "class_o_s_k_1_1_editor_1_1_controllers_1_1_physics_component_controller3_d.html#a9324987a6dab7eabb08d56bf3e730797", null ],
-    [ "GetComponent", "class_o_s_k_1_1_editor_1_1_controllers_1_1_physics_component_controller3_d.html#a6c54f0f3d8a1f2e590bc5087c41ab5cc", null ],
     [ "GetComponentData", "class_o_s_k_1_1_editor_1_1_controllers_1_1_physics_component_controller3_d.html#a8512a1ebb58021ad771de7056603c9ba", null ],
     [ "GetComponentData", "class_o_s_k_1_1_editor_1_1_controllers_1_1_physics_component_controller3_d.html#a905c4f6f72a1a1dbcfc852b1cac9e5e9", null ],
     [ "GetLinkedComponentType", "class_o_s_k_1_1_editor_1_1_controllers_1_1_physics_component_controller3_d.html#a39bf2bb19b9f6627b98831256f46d36a", null ],

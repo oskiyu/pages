@@ -1,0 +1,102 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::IUser\+Input}
+\label{class_o_s_k_1_1_i_o_1_1_i_user_input}\index{OSK::IO::IUserInput@{OSK::IO::IUserInput}}
+
+
+{\ttfamily \#include $<$IUser\+Input.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IUser\+Input} () override=default
+\item 
+virtual void \textbf{ Update} ()=0
+\item 
+virtual void \textbf{ Query\+Interface} (\textbf{ TInterface\+Uuid} interface\+Uuid, void $\ast$$\ast$ptr) const =0
+\item 
+void \textbf{ Query\+Interface} (\textbf{ IUUID} uuid, void $\ast$$\ast$ptr) const
+\item 
+virtual void \textbf{ Query\+Const\+Interface} (\textbf{ TInterface\+Uuid} uuid, const void $\ast$$\ast$ptr) const =0
+\item 
+void \textbf{ Query\+Const\+Interface} (\textbf{ IUUID} uuid, const void $\ast$$\ast$ptr) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para clases que permiten recoger la entrada del usuario. 
+
+Toda clase derivada puede también implementar estas otras interfaces\+:
+\begin{DoxyItemize}
+\item \doxyref{IKeyboard\+Input}{pág.}{class_o_s_k_1_1_i_o_1_1_i_keyboard_input}.
+\item \doxyref{IMouse\+Input}{pág.}{class_o_s_k_1_1_i_o_1_1_i_mouse_input}.
+\item \doxyref{IGamepad\+Input}{pág.}{class_o_s_k_1_1_i_o_1_1_i_gamepad_input}.
+\item \doxyref{ITouch\+Input}{pág.}{class_o_s_k_1_1_i_o_1_1_i_touch_input}. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IO::IUserInput@{OSK::IO::IUserInput}!````~IUserInput@{$\sim$IUserInput}}
+\index{````~IUserInput@{$\sim$IUserInput}!OSK::IO::IUserInput@{OSK::IO::IUserInput}}
+\doxysubsubsection{$\sim$IUserInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_user_input_ab09c203ae5dd73c205ba4d652d0f1a82} 
+virtual OSK\+::\+IO\+::\+IUser\+Input\+::$\sim$\+IUser\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::IUserInput@{OSK::IO::IUserInput}!QueryConstInterface@{QueryConstInterface}}
+\index{QueryConstInterface@{QueryConstInterface}!OSK::IO::IUserInput@{OSK::IO::IUserInput}}
+\doxysubsubsection{QueryConstInterface()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a04792bb58288a5a2e890c506a8ad1a8c} 
+void OSK\+::\+IQuery\+Interface\+::\+Query\+Const\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ IUUID}}]{uuid}{, }\item[{const void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\index{OSK::IO::IUserInput@{OSK::IO::IUserInput}!QueryConstInterface@{QueryConstInterface}}
+\index{QueryConstInterface@{QueryConstInterface}!OSK::IO::IUserInput@{OSK::IO::IUserInput}}
+\doxysubsubsection{QueryConstInterface()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a589dec31a1efd4e4f69b9513a7086825} 
+virtual void OSK\+::\+IQuery\+Interface\+::\+Query\+Const\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ TInterface\+Uuid}}]{uuid}{, }\item[{const void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+\index{OSK::IO::IUserInput@{OSK::IO::IUserInput}!QueryInterface@{QueryInterface}}
+\index{QueryInterface@{QueryInterface}!OSK::IO::IUserInput@{OSK::IO::IUserInput}}
+\doxysubsubsection{QueryInterface()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a96e28be0f3cec3a83c161d417162288f} 
+void OSK\+::\+IQuery\+Interface\+::\+Query\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ IUUID}}]{uuid}{, }\item[{void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Permite obtener un puntero para la interfaz dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & UUID de la interfaz. \\
+\hline
+{\em ptr} & Puntero a sobreescribir. Será nullptr si la clase no implementa la interfad indicada. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IUserInput@{OSK::IO::IUserInput}!QueryInterface@{QueryInterface}}
+\index{QueryInterface@{QueryInterface}!OSK::IO::IUserInput@{OSK::IO::IUserInput}}
+\doxysubsubsection{QueryInterface()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_abf1b865ec9b11ced8c2d35660aab9346} 
+virtual void OSK\+::\+IQuery\+Interface\+::\+Query\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ TInterface\+Uuid}}]{interface\+Uuid}{, }\item[{void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Permite obtener un puntero para la interfaz dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em interface\+Uuid} & UUID de la interfaz. \\
+\hline
+{\em ptr} & Puntero a sobreescribir. Será nullptr si la clase no implementa la interfad indicada. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IUserInput@{OSK::IO::IUserInput}!Update@{Update}}
+\index{Update@{Update}!OSK::IO::IUserInput@{OSK::IO::IUserInput}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_user_input_a1ee1f3ddbf93a862ac93eac60bf6a38f} 
+virtual void OSK\+::\+IO\+::\+IUser\+Input\+::\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Actualiza los estados internos del input. 
+

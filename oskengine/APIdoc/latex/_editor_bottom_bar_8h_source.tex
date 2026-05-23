@@ -1,0 +1,40 @@
+\doxysection{Editor\+Bottom\+Bar.\+h}
+\label{_editor_bottom_bar_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/EditorBottomBar.h@{C:/Users/Oscar/source/repos/OSKengine/Source/EditorBottomBar.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/**/}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}UiHorizontalContainer.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::UI\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{class\ }TextView;}
+\DoxyCodeLine{00007\ \}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::Editor::UI\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ EditorBottomBar\ :\ \textcolor{keyword}{public}\ OSK::UI::HorizontalContainer\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ EditorBottomBar(\textcolor{keyword}{const}\ Vector2f\&\ size);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(TDeltaTime\ deltaTime);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnSizeChanged(\textcolor{keyword}{const}\ Vector2f\&\ previousSize)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ OSK::UI::TextView*\ m\_fpsView\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ TDeltaTime\ m\_accumulatedTime\ =\ 0.0f;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ UIndex32\ m\_frameCount\ =\ 0;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ UIndex64\ m\_barDrawCallIndex\ =\ 0;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ \textcolor{comment}{/**/}}
+
+\end{DoxyCode}

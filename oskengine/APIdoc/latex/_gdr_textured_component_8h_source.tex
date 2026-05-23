@@ -1,0 +1,30 @@
+\doxysection{Gdr\+Textured\+Component.\+h}
+\label{_gdr_textured_component_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GdrTexturedComponent.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GdrTexturedComponent.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Component.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}AssetRef.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Texture.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}IGpuImageView.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}ImageUuid.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{struct\ }GdrTexturedComponent\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ OSK\_COMPONENT(\textcolor{stringliteral}{"{}OSK::GdrTexturedComponent"{}});}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ GRAPHICS::GdrImageUuid\ colorImageUuid;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ GRAPHICS::GdrImageUuid\ normalImageUuid;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ DynamicArray<ASSETS::AssetRef<ASSETS::Texture>>\ texturesRefs;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,351 @@
+\doxysection{Referencia de la clase OSK\+::IDebug\+Game}
+\label{class_o_s_k_1_1_i_debug_game}\index{OSK::IDebugGame@{OSK::IDebugGame}}
+
+
+{\ttfamily \#include $<$IDebug\+Game.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Register\+Console\+Commands} () override
+\item 
+void \textbf{ On\+Create} () override
+\item 
+void \textbf{ On\+Tick\+\_\+\+Before\+Ecs} (\textbf{ TDelta\+Time} delta\+Time) override
+\item 
+virtual void \textbf{ Register\+Assets} ()
+\item 
+virtual void \textbf{ Register\+Components} ()
+\item 
+virtual void \textbf{ Register\+Systems} ()
+\item 
+virtual void \textbf{ On\+Tick\+\_\+\+After\+Ecs} (\textbf{ TDelta\+Time} delta\+Time)
+\item 
+virtual void \textbf{ Build\+Frame} ()
+\item 
+virtual void \textbf{ On\+Exit} ()
+\item 
+virtual void \textbf{ On\+Window\+Resize} (const \textbf{ Vector2ui} \&size)
+\item 
+void \textbf{ \+\_\+\+Run} ()
+\item 
+void \textbf{ Exit} ()
+\item 
+\textbf{ USize32} \textbf{ Get\+Fps} () const
+\item 
+\textbf{ UI\+::\+IContainer} \& \textbf{ Get\+Root\+Ui\+Element} ()
+\item 
+const \textbf{ UI\+::\+IContainer} \& \textbf{ Get\+Root\+Ui\+Element} () const
+\item 
+void \textbf{ Set\+Render\+Graph} (\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+Render\+Graph} $>$ \&\&render\+Graph)
+\item 
+\textbf{ GRAPHICS\+::\+Render\+Graph} $\ast$ \textbf{ Get\+Render\+Graph} ()
+\item 
+void \textbf{ Recreate\+Window} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ IDebug\+Game} (\textbf{ GAME\+::\+Default\+Content\+Profile} default\+Content\+Profile)
+\item 
+bool \textbf{ Is\+In\+Console} () const
+\item 
+virtual void \textbf{ Create\+Window} ()=0
+\item 
+virtual void \textbf{ Setup\+Engine} ()=0
+\item 
+virtual void \textbf{ On\+Tick\+\_\+\+Keyboard} (const \textbf{ IO\+::\+IKeyboard\+Input} \&keyboard)
+\item 
+virtual void \textbf{ On\+Tick\+\_\+\+Mouse} (const \textbf{ IO\+::\+IMouse\+Input} \&mouse)
+\item 
+\textbf{ IO\+::\+IKeyboard\+Input} $\ast$ \textbf{ Get\+Keyboard} ()
+\item 
+\textbf{ IO\+::\+IMouse\+Input} $\ast$ \textbf{ Get\+Mouse} ()
+\item 
+\textbf{ IO\+::\+IGamepad\+Input} $\ast$ \textbf{ Get\+Gamepad} ()
+\item 
+\textbf{ IO\+::\+ITouch\+Input} $\ast$ \textbf{ Get\+Touchs} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase base para un juego, que incluye la funcionalidad necesaria de debug y desarrollo\+: 
+
+
+\begin{DoxyItemize}
+\item Consola (insertada en la ínterfaz raíz, pero invisible).
+\item \doxyref{Editor}{pág.}{namespace_o_s_k_1_1_editor} 3D (insertada en la ínterfaz raíz, pero invisible). 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IDebugGame@{OSK::IDebugGame}!IDebugGame@{IDebugGame}}
+\index{IDebugGame@{IDebugGame}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{IDebugGame()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_debug_game_ac0848824b96a961ef0560016d2d8f171} 
+OSK\+::\+IDebug\+Game\+::\+IDebug\+Game (\begin{DoxyParamCaption}\item[{\textbf{ GAME\+::\+Default\+Content\+Profile}}]{default\+Content\+Profile}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IDebugGame@{OSK::IDebugGame}!\_Run@{\_Run}}
+\index{\_Run@{\_Run}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{\_Run()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a89e60fc451a486d268ac823807487b37} 
+void IGame\+::\+\_\+\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Inicia la ejecución del juego. 
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!BuildFrame@{BuildFrame}}
+\index{BuildFrame@{BuildFrame}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{BuildFrame()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a4988ddabd30b3b3f442d3b9ae6763087} 
+void IGame\+::\+Build\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Esta función debe renderizar la imagen final que se representará en la ventana. 
+
+Los comandos de renderizado finales deben ejecutarse en el renderpass principal del motor (IRenderer\+::\+Get\+Main\+Renderpass). \index{OSK::IDebugGame@{OSK::IDebugGame}!CreateWindow@{CreateWindow}}
+\index{CreateWindow@{CreateWindow}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{CreateWindow()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_af033542cc50642b5e1325ee4c7c93cf7} 
+virtual void OSK\+::\+IGame\+::\+Create\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Debe crear la ventana del \doxyref{Engine}{pág.}{class_o_s_k_1_1_engine}. 
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!Exit@{Exit}}
+\index{Exit@{Exit}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{Exit()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_ae8194150599c2c8d05a49efe80fe1b47} 
+void IGame\+::\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Fuerza el shutdown del juego. 
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!GetFps@{GetFps}}
+\index{GetFps@{GetFps}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{GetFps()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a0784dba46a0bf58bff2ab1aa174ebd35} 
+\textbf{ USize32} IGame\+::\+Get\+Fps (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el número de frames en el último segundo. 
+\end{DoxyReturn}
+\index{OSK::IDebugGame@{OSK::IDebugGame}!GetGamepad@{GetGamepad}}
+\index{GetGamepad@{GetGamepad}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{GetGamepad()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a3562899f16a90c4a48a9613eb76e392e} 
+\textbf{ IO\+::\+IGamepad\+Input} $\ast$ IGame\+::\+Get\+Gamepad (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!GetKeyboard@{GetKeyboard}}
+\index{GetKeyboard@{GetKeyboard}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{GetKeyboard()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a6c1eaaa28364add7d280a4437fe541a5} 
+\textbf{ IO\+::\+IKeyboard\+Input} $\ast$ IGame\+::\+Get\+Keyboard (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!GetMouse@{GetMouse}}
+\index{GetMouse@{GetMouse}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{GetMouse()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a6ddb5c43a607fef4a0a4f25289838dce} 
+\textbf{ IO\+::\+IMouse\+Input} $\ast$ IGame\+::\+Get\+Mouse (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!GetRenderGraph@{GetRenderGraph}}
+\index{GetRenderGraph@{GetRenderGraph}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{GetRenderGraph()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_ab9acfea175e079da2c34b503873726a4} 
+\textbf{ GRAPHICS\+::\+Render\+Graph} $\ast$ IGame\+::\+Get\+Render\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!GetRootUiElement@{GetRootUiElement}}
+\index{GetRootUiElement@{GetRootUiElement}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{GetRootUiElement()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_af8e323d17f81981e648453442a11f596} 
+\textbf{ UI\+::\+IContainer} \& IGame\+::\+Get\+Root\+Ui\+Element (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Elemento raíz de la interfaz de usuario. 
+\end{DoxyReturn}
+\index{OSK::IDebugGame@{OSK::IDebugGame}!GetRootUiElement@{GetRootUiElement}}
+\index{GetRootUiElement@{GetRootUiElement}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{GetRootUiElement()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a85cc313dfa625efa8909ea719196ed33} 
+const \textbf{ UI\+::\+IContainer} \& IGame\+::\+Get\+Root\+Ui\+Element (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Elemento raíz de la interfaz de usuario. 
+\end{DoxyReturn}
+\index{OSK::IDebugGame@{OSK::IDebugGame}!GetTouchs@{GetTouchs}}
+\index{GetTouchs@{GetTouchs}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{GetTouchs()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a80ddba904923fefed3a18c1781590e4d} 
+\textbf{ IO\+::\+ITouch\+Input} $\ast$ IGame\+::\+Get\+Touchs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!IsInConsole@{IsInConsole}}
+\index{IsInConsole@{IsInConsole}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{IsInConsole()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_debug_game_a27ba6edcee9cfed91ef7127a60082631} 
+bool OSK\+::\+IDebug\+Game\+::\+Is\+In\+Console (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si la consola debug está abierta. 
+\end{DoxyReturn}
+\index{OSK::IDebugGame@{OSK::IDebugGame}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{OnCreate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_debug_game_a19618e1e05f5a3a679be2308ded8bc5f} 
+void OSK\+::\+IDebug\+Game\+::\+On\+Create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Función ejecutada al cargar el juego. 
+
+\begin{DoxyNote}{Nota}
+Se ejecuta después de haber cargado todos los sistemas del juego. 
+\end{DoxyNote}
+
+
+Reimplementado de \textbf{ OSK\+::\+IGame} \doxyref{}{pág.}{class_o_s_k_1_1_i_game_ab00e969b9d69316da10501747d0fdebe}.
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!OnExit@{OnExit}}
+\index{OnExit@{OnExit}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{OnExit()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a02044212501aee6fc59d1a75c0129892} 
+void IGame\+::\+On\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta al salir del juego. 
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!OnTick\_AfterEcs@{OnTick\_AfterEcs}}
+\index{OnTick\_AfterEcs@{OnTick\_AfterEcs}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{OnTick\_AfterEcs()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a048a3bb0ab1c54e14c42e614abacb3da} 
+void IGame\+::\+On\+Tick\+\_\+\+After\+Ecs (\begin{DoxyParamCaption}\item[{\textbf{ TDelta\+Time}}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta cada frame, después que los sistemas \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo que ha pasado desde la última ejecución, en segundos. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IDebugGame@{OSK::IDebugGame}!OnTick\_BeforeEcs@{OnTick\_BeforeEcs}}
+\index{OnTick\_BeforeEcs@{OnTick\_BeforeEcs}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{OnTick\_BeforeEcs()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_debug_game_a7a267d8358ed12f6bba9b8a1da9fee09} 
+void OSK\+::\+IDebug\+Game\+::\+On\+Tick\+\_\+\+Before\+Ecs (\begin{DoxyParamCaption}\item[{\textbf{ TDelta\+Time}}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Función que se ejecuta cada frame, antes que los sistemas \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo que ha pasado desde la última ejecución, en segundos. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ OSK\+::\+IGame} \doxyref{}{pág.}{class_o_s_k_1_1_i_game_a07bd829bc126bc2b590b24f1c27ce45d}.
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!OnTick\_Keyboard@{OnTick\_Keyboard}}
+\index{OnTick\_Keyboard@{OnTick\_Keyboard}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{OnTick\_Keyboard()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_ab57d0dcc6931b9f39bf9ed76e18560c7} 
+void IGame\+::\+On\+Tick\+\_\+\+Keyboard (\begin{DoxyParamCaption}\item[{const \textbf{ IO\+::\+IKeyboard\+Input} \&}]{keyboard}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!OnTick\_Mouse@{OnTick\_Mouse}}
+\index{OnTick\_Mouse@{OnTick\_Mouse}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{OnTick\_Mouse()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_aa7dddcf3c3a2ab0c8b581b8ec48b1f3b} 
+void IGame\+::\+On\+Tick\+\_\+\+Mouse (\begin{DoxyParamCaption}\item[{const \textbf{ IO\+::\+IMouse\+Input} \&}]{mouse}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!OnWindowResize@{OnWindowResize}}
+\index{OnWindowResize@{OnWindowResize}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{OnWindowResize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a49a11ed87fecf78d0ac7297b34382e5f} 
+void IGame\+::\+On\+Window\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta cuando la ventana cambia de tamaño. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Nueva resolución, en píxeles. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IDebugGame@{OSK::IDebugGame}!RecreateWindow@{RecreateWindow}}
+\index{RecreateWindow@{RecreateWindow}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{RecreateWindow()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a7df04d20dd1c7a2f6d36b7c18ece8788} 
+void IGame\+::\+Recreate\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!RegisterAssets@{RegisterAssets}}
+\index{RegisterAssets@{RegisterAssets}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{RegisterAssets()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a92ccf921e939bcf8409ab9326e7571b4} 
+void IGame\+::\+Register\+Assets (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Registra los assets y los loaders específicos del juego. 
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!RegisterComponents@{RegisterComponents}}
+\index{RegisterComponents@{RegisterComponents}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{RegisterComponents()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a6c43af37f9365f6490d1a0a2c9250f0e} 
+void IGame\+::\+Register\+Components (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Registra los componentes específicos del juego. 
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!RegisterConsoleCommands@{RegisterConsoleCommands}}
+\index{RegisterConsoleCommands@{RegisterConsoleCommands}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{RegisterConsoleCommands()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_debug_game_ae667cc7cc055668ffa6590c8f518e633} 
+void OSK\+::\+IDebug\+Game\+::\+Register\+Console\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Registra los comandos de consola. 
+
+
+
+Reimplementado de \textbf{ OSK\+::\+IGame} \doxyref{}{pág.}{class_o_s_k_1_1_i_game_ada3405ad0fa8ce05d683ceae975d46d8}.
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!RegisterSystems@{RegisterSystems}}
+\index{RegisterSystems@{RegisterSystems}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{RegisterSystems()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a6595c60375b1f2f14e6e96e1f8ca404e} 
+void IGame\+::\+Register\+Systems (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Registra los sistemas específicos del juego. 
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!SetRenderGraph@{SetRenderGraph}}
+\index{SetRenderGraph@{SetRenderGraph}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{SetRenderGraph()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a3287b1a8e1ce748ac134e0f75ce54b99} 
+void IGame\+::\+Set\+Render\+Graph (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+Render\+Graph} $>$ \&\&}]{render\+Graph}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::IDebugGame@{OSK::IDebugGame}!SetupEngine@{SetupEngine}}
+\index{SetupEngine@{SetupEngine}!OSK::IDebugGame@{OSK::IDebugGame}}
+\doxysubsubsection{SetupEngine()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_game_a3fff81bfbca1fc25efa8a10f2318d46b} 
+virtual void OSK\+::\+IGame\+::\+Setup\+Engine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Debe inicializar el renderizador del \doxyref{Engine}{pág.}{class_o_s_k_1_1_engine}. 
+

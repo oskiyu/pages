@@ -1,0 +1,233 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::IInput\+Listener}
+\label{class_o_s_k_1_1_i_o_1_1_i_input_listener}\index{OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+
+
+{\ttfamily \#include $<$IInput\+Listener.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ On\+Key\+Stroke} (\textbf{ Key} key)
+\item 
+virtual void \textbf{ On\+Key\+Being\+Pressed} (\textbf{ Key} key)
+\item 
+virtual void \textbf{ On\+Key\+Released} (\textbf{ Key} key)
+\item 
+virtual void \textbf{ On\+Mouse\+Button\+Stroke} (\textbf{ Mouse\+Button} button)
+\item 
+virtual void \textbf{ On\+Mouse\+Button\+Being\+Pressed} (\textbf{ Mouse\+Button} button)
+\item 
+virtual void \textbf{ On\+Mouse\+Button\+Released} (\textbf{ Mouse\+Button} button)
+\item 
+virtual void \textbf{ On\+Mouse\+Moved} (const \textbf{ Vector2i} \&diff)
+\item 
+virtual void \textbf{ On\+Mouse\+Wheel\+Moved} (const \textbf{ Vector2i} \&diff)
+\item 
+virtual void \textbf{ On\+Gamepad\+Button\+Stroke} (\textbf{ Gamepad\+Button} button, \textbf{ UIndex32} gamepad\+Id)
+\item 
+virtual void \textbf{ On\+Gamepad\+Button\+Being\+Pressed} (\textbf{ Gamepad\+Button} button, \textbf{ UIndex32} gamepad\+Id)
+\item 
+virtual void \textbf{ On\+Gamepad\+Button\+Released} (\textbf{ Gamepad\+Button} button, \textbf{ UIndex32} gamepad\+Id)
+\item 
+virtual void \textbf{ On\+Gamepad\+Axis\+Value} (\textbf{ Gamepad\+Axis} axis, float value, \textbf{ UIndex32} gamepad\+Id)
+\item 
+void \textbf{ Set\+Min\+Axis\+Value} (float value)
+\item 
+float \textbf{ Get\+Min\+Axis\+Value} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que reacciona a los eventos de entrada. 
+
+Se pueden crear clases derivadas que implementen la funcionalidad deseada para cada caso.
+
+Si las instancias de las clases derivadas se introducen en \doxyref{Engine\+::\+Get\+Input\+Manager()}{pág.}{class_o_s_k_1_1_engine_a5893cf5817c0ab30ae0c0d9761ce71f2}, se manejarán de manera automática una vez por frame. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!GetMinAxisValue@{GetMinAxisValue}}
+\index{GetMinAxisValue@{GetMinAxisValue}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{GetMinAxisValue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_af34d3fc19c3d8b6b27c3106854620948} 
+float IInput\+Listener\+::\+Get\+Min\+Axis\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!OnGamepadAxisValue@{OnGamepadAxisValue}}
+\index{OnGamepadAxisValue@{OnGamepadAxisValue}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{OnGamepadAxisValue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_a9bf704e4a60bff5f73f9bb79270aa31b} 
+virtual void OSK\+::\+IO\+::\+IInput\+Listener\+::\+On\+Gamepad\+Axis\+Value (\begin{DoxyParamCaption}\item[{\textbf{ Gamepad\+Axis}}]{axis}{, }\item[{float}]{value}{, }\item[{\textbf{ UIndex32}}]{gamepad\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Llamado cuando uno de los ejes se manteien con un valor $>$ 0 en valor absoluto. 
+
+Si pasa a ser 0, se llamará a esta función una única vez con el valor 0.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em axis} & Eje.\\
+\hline
+{\em value} & Valor actual.\\
+\hline
+{\em gamepad\+Id} & \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!OnGamepadButtonBeingPressed@{OnGamepadButtonBeingPressed}}
+\index{OnGamepadButtonBeingPressed@{OnGamepadButtonBeingPressed}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{OnGamepadButtonBeingPressed()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_ab1d869f697f20c2c84a6bcdb291664f6} 
+virtual void OSK\+::\+IO\+::\+IInput\+Listener\+::\+On\+Gamepad\+Button\+Being\+Pressed (\begin{DoxyParamCaption}\item[{\textbf{ Gamepad\+Button}}]{button}{, }\item[{\textbf{ UIndex32}}]{gamepad\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Es llamada cuando un botón del mando está siendo presionado. 
+
+Current\+State = PRESSED.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em gamepad\+Id} & Id del mando (0 -\/ 3)\\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!OnGamepadButtonReleased@{OnGamepadButtonReleased}}
+\index{OnGamepadButtonReleased@{OnGamepadButtonReleased}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{OnGamepadButtonReleased()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_af43f48551cbc53b5d1d5641f131ac913} 
+virtual void OSK\+::\+IO\+::\+IInput\+Listener\+::\+On\+Gamepad\+Button\+Released (\begin{DoxyParamCaption}\item[{\textbf{ Gamepad\+Button}}]{button}{, }\item[{\textbf{ UIndex32}}]{gamepad\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Es llamada cuando un botón del mando deja de estar presionado. 
+
+Previous\+State = PRESSED \&\& Current\+State = RELEASED.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em gamepad\+Id} & Id del mando (0 -\/ 3)\\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!OnGamepadButtonStroke@{OnGamepadButtonStroke}}
+\index{OnGamepadButtonStroke@{OnGamepadButtonStroke}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{OnGamepadButtonStroke()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_a9667599bc699ba402f561a553e215aad} 
+virtual void OSK\+::\+IO\+::\+IInput\+Listener\+::\+On\+Gamepad\+Button\+Stroke (\begin{DoxyParamCaption}\item[{\textbf{ Gamepad\+Button}}]{button}{, }\item[{\textbf{ UIndex32}}]{gamepad\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Es llamada cuando un botón del mando comienza a estar presionado. 
+
+Previous\+State = RELEASED \&\& Current\+State = PRESSED.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em gamepad\+Id} & Id del mando (0 -\/ 3)\\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!OnKeyBeingPressed@{OnKeyBeingPressed}}
+\index{OnKeyBeingPressed@{OnKeyBeingPressed}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{OnKeyBeingPressed()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_a2b174def0efb5dc27ad6d6dc4c145005} 
+virtual void OSK\+::\+IO\+::\+IInput\+Listener\+::\+On\+Key\+Being\+Pressed (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Es llamada cuando una tecla está siendo presionada. 
+
+Current\+State = PRESSED. \index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!OnKeyReleased@{OnKeyReleased}}
+\index{OnKeyReleased@{OnKeyReleased}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{OnKeyReleased()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_a130afba7f046d45a54f0c7e37ee29890} 
+virtual void OSK\+::\+IO\+::\+IInput\+Listener\+::\+On\+Key\+Released (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Es llamada cuando una tecla deja de estar presionada. 
+
+Previous\+State = PRESSED \&\& Current\+State = RELEASED. \index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!OnKeyStroke@{OnKeyStroke}}
+\index{OnKeyStroke@{OnKeyStroke}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{OnKeyStroke()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_aca9fc4b7e88bce25ba499f14ccb894fa} 
+virtual void OSK\+::\+IO\+::\+IInput\+Listener\+::\+On\+Key\+Stroke (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Es llamada cuando una tecla comienza a estar presionada. 
+
+Previous\+State = RELEASED \&\& Current\+State = PRESSED. \index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!OnMouseButtonBeingPressed@{OnMouseButtonBeingPressed}}
+\index{OnMouseButtonBeingPressed@{OnMouseButtonBeingPressed}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{OnMouseButtonBeingPressed()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_ab8e1d8da69b13bb4a5c09782e5ca799b} 
+virtual void OSK\+::\+IO\+::\+IInput\+Listener\+::\+On\+Mouse\+Button\+Being\+Pressed (\begin{DoxyParamCaption}\item[{\textbf{ Mouse\+Button}}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Es llamada cuando un botón del ratón está siendo presionado. 
+
+Current\+State = PRESSED. \index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!OnMouseButtonReleased@{OnMouseButtonReleased}}
+\index{OnMouseButtonReleased@{OnMouseButtonReleased}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{OnMouseButtonReleased()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_a9a8a941ec8cef320757eae88719aaba3} 
+virtual void OSK\+::\+IO\+::\+IInput\+Listener\+::\+On\+Mouse\+Button\+Released (\begin{DoxyParamCaption}\item[{\textbf{ Mouse\+Button}}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Es llamada cuando un botón del ratón deja de estar presionado. 
+
+Previous\+State = PRESSED \&\& Current\+State = RELEASED. \index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!OnMouseButtonStroke@{OnMouseButtonStroke}}
+\index{OnMouseButtonStroke@{OnMouseButtonStroke}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{OnMouseButtonStroke()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_ac036aa2f4909bd00ea9390ed6fbfbb02} 
+virtual void OSK\+::\+IO\+::\+IInput\+Listener\+::\+On\+Mouse\+Button\+Stroke (\begin{DoxyParamCaption}\item[{\textbf{ Mouse\+Button}}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Es llamada cuando un botón del ratón comienza a estar presionado. 
+
+Previous\+State = RELEASED \&\& Current\+State = PRESSED. \index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!OnMouseMoved@{OnMouseMoved}}
+\index{OnMouseMoved@{OnMouseMoved}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{OnMouseMoved()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_a4ecbd1d1843b698df2c2af54d963615b} 
+virtual void OSK\+::\+IO\+::\+IInput\+Listener\+::\+On\+Mouse\+Moved (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2i} \&}]{diff}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Llamado cuando el ratón se mueve. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em diff} & Cantidad de píxeles que se ha movido en la pantalla.\\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!OnMouseWheelMoved@{OnMouseWheelMoved}}
+\index{OnMouseWheelMoved@{OnMouseWheelMoved}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{OnMouseWheelMoved()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_ac0b04672a761932c7c9403f1fc809f04} 
+virtual void OSK\+::\+IO\+::\+IInput\+Listener\+::\+On\+Mouse\+Wheel\+Moved (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2i} \&}]{diff}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Llamado cuando la rueda del ratón se mueve. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em diff} & X\+: diferencia horizontal. Y\+: diferencia vertical (la rueda normal). \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IInputListener@{OSK::IO::IInputListener}!SetMinAxisValue@{SetMinAxisValue}}
+\index{SetMinAxisValue@{SetMinAxisValue}!OSK::IO::IInputListener@{OSK::IO::IInputListener}}
+\doxysubsubsection{SetMinAxisValue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_input_listener_a88e0d849060af8438242e9940fd19266} 
+void IInput\+Listener\+::\+Set\+Min\+Axis\+Value (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Establece el valor mínimo, en valor absoluto, que debe tener el eje para que se considere activo. 
+
+Se usa para evitar problemas de drifting.
+
+\begin{DoxyNote}{Nota}
+Debe estar entre 0 y 1. 
+
+Si se introduce un valor fuera del rango válido, se hará clamp a dicho valor. 
+\end{DoxyNote}

@@ -1,0 +1,69 @@
+\doxysection{Detailed\+Collision\+Info.\+h}
+\label{_detailed_collision_info_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/DetailedCollisionInfo.h@{C:/Users/Oscar/source/repos/OSKengine/Source/DetailedCollisionInfo.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }OSK::COLLISION\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ DetailedCollisionInfo\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ MtvDirection\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ A\_TO\_B,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ B\_TO\_A}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ DetailedCollisionInfo\ True(}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3f\ minimumTranslationVector,\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<Vector3f>\&\ points,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3f\ firstFaceNormal,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3f\ secondFaceNormal,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ MtvDirection\ mtvDirection);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ DetailedCollisionInfo\ False();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsColliding()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ Vector3f\ GetMinimumTranslationVector()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<Vector3f>\&\ GetContactPoints()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ Vector3f\ GetSingleContactPoint()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ Vector3f\ GetFirstFaceNormal()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ Vector3f\ GetSecondFaceNormal()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ MtvDirection\ GetMtvDirection()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ MtvDirection\ mtvDirection\ =\ MtvDirection::A\_TO\_B;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isColliding\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ Vector3f\ minimumTranslationVector\ =\ Vector3f::Zero;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ Vector3f\ firstFaceNormal\ =\ Vector3f::Zero;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ Vector3f\ secondFaceNormal\ =\ Vector3f::Zero;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ DynamicArray<Vector3f>\ contactPoints;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ Vector3f\ singleContactPoint\ =\ Vector3f::Zero;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \}}
+
+\end{DoxyCode}

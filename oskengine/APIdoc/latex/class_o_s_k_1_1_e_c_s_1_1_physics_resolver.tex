@@ -1,0 +1,240 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Physics\+Resolver}
+\label{class_o_s_k_1_1_e_c_s_1_1_physics_resolver}\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+
+
+{\ttfamily \#include $<$Physics\+Resolver.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SYSTEM} ("{}OSK\+::\+Physics\+Resolver\+System"{})
+\item 
+void \textbf{ Execute} (\textbf{ TDelta\+Time} delta\+Time, std\+::span$<$ const \textbf{ Collision\+Event} $>$ events) override
+\item 
+void \textbf{ Execute} (\textbf{ TDelta\+Time} delta\+Time, \textbf{ Event\+Queue\+Span} events) override
+\item 
+std\+::string\+\_\+view \textbf{ Get\+Event\+Name} () const override
+\item 
+virtual void \textbf{ On\+Execution\+Start} ()
+\item 
+virtual void \textbf{ On\+Execution\+End} ()
+\item 
+virtual void \textbf{ On\+Create} ()
+\item 
+virtual void \textbf{ On\+Remove} ()
+\item 
+void \textbf{ Activate} ()
+\item 
+void \textbf{ Deactivate} ()
+\item 
+void \textbf{ Set\+Activation\+Status} (bool is\+Active)
+\item 
+void \textbf{ Toggle\+Activation\+Status} ()
+\item 
+bool \textbf{ Is\+Active} () const
+\item 
+void \textbf{ \+\_\+\+Set\+Dependencies} (const \textbf{ System\+Dependencies} \&dependencies)
+\item 
+const \textbf{ System\+Dependencies} \& \textbf{ Get\+Dependencies} () const
+\item 
+virtual std\+::string\+\_\+view \textbf{ Get\+Name} () const=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::span$<$ const \textbf{ Collision\+Event} $>$ \textbf{ Build\+Span} (const void $\ast$first\+Event, \textbf{ USize64} num\+Events)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Sistema que resuelve las colisiones entre entidades. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!\_SetDependencies@{\_SetDependencies}}
+\index{\_SetDependencies@{\_SetDependencies}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{\_SetDependencies()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a2239551fafeab2592dc35cddc17305d3} 
+void ISystem\+::\+\_\+\+Set\+Dependencies (\begin{DoxyParamCaption}\item[{const \textbf{ System\+Dependencies} \&}]{dependencies}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!Activate@{Activate}}
+\index{Activate@{Activate}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{Activate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_ad45cabb31dc788fbc37feaed82fd99d8} 
+void ISystem\+::\+Activate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Activa el sistema, con lo que se ejecutará cada frame. 
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!BuildSpan@{BuildSpan}}
+\index{BuildSpan@{BuildSpan}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{BuildSpan()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_consumer_system_a2395e5a893e21a8dfb3a9a1fd33faae2} 
+std\+::span$<$ const \textbf{ Collision\+Event} $>$ OSK\+::\+ECS\+::\+IConsumer\+System\+::\+Build\+Span (\begin{DoxyParamCaption}\item[{const void $\ast$}]{first\+Event}{, }\item[{\textbf{ USize64}}]{num\+Events}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Construye un span de eventos a partir de la información dada. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TEvent} & Tipo de evento. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em first\+Event} & Dirección de memoria del primer evento. \\
+\hline
+{\em num\+Events} & Número de eventos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Span}{pág.}{class_o_s_k_1_1_span} de eventos construido. 
+\end{DoxyReturn}
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!Deactivate@{Deactivate}}
+\index{Deactivate@{Deactivate}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{Deactivate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a2d6aa3dc12aa77cc9109b920ddca4225} 
+void ISystem\+::\+Deactivate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Desactiva el sistema, con lo que dejará de ejecutarse. 
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{Execute()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_typed_consumer_system_af2e4f7e3f6afa8c619b92cf27a7091a2} 
+void \textbf{ OSK\+::\+ECS\+::\+ITyped\+Consumer\+System}$<$ \textbf{ Collision\+Event} $>$\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ TDelta\+Time}}]{delta\+Time}{, }\item[{\textbf{ Event\+Queue\+Span}}]{events}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Ejecuta la lógica del sistema para un rango de eventos. Los eventos deben ser casteados dentro de la función. Para ello, se puede usar la función \doxyref{Build\+Span()}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_consumer_system_a2395e5a893e21a8dfb3a9a1fd33faae2}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo (en segundos) transcurrido desde la ejecución anterior. \\
+\hline
+{\em events} & Lista de eventos. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ OSK\+::\+ECS\+::\+IConsumer\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_consumer_system_ae4901ae4e4bcdf8574dd14cd7f63eef4}.
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{Execute()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_resolver_ae9a80cfee42663becbdf88a052f8db44} 
+void Physics\+Resolver\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ TDelta\+Time}}]{delta\+Time}{, }\item[{std\+::span$<$ const \textbf{ Collision\+Event} $>$}]{events}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!GetDependencies@{GetDependencies}}
+\index{GetDependencies@{GetDependencies}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{GetDependencies()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a6f9009164fc90548c0979358232d2de4} 
+const \textbf{ System\+Dependencies} \& ISystem\+::\+Get\+Dependencies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!GetEventName@{GetEventName}}
+\index{GetEventName@{GetEventName}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{GetEventName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_typed_consumer_system_af6bf560785407461a86b6a464106919e} 
+std\+::string\+\_\+view \textbf{ OSK\+::\+ECS\+::\+ITyped\+Consumer\+System}$<$ \textbf{ Collision\+Event} $>$\+::\+Get\+Event\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Nombre del tipo de evento asociado al sistema. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ OSK\+::\+ECS\+::\+IConsumer\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_consumer_system_ad49aab55a9646b2082f286c43ed5ef6e}.
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a9ac4b0e11cb52d7222ef76e675cb9cc5} 
+virtual std\+::string\+\_\+view OSK\+::\+ECS\+::\+ISystem\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!IsActive@{IsActive}}
+\index{IsActive@{IsActive}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{IsActive()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_acdd2816796e17bd727d7ee4d10e11aed} 
+bool ISystem\+::\+Is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Permite saber si un sistema está activo, es decir, si un sistema se ejcutará cada frame o no. 
+
+\begin{DoxyReturn}{Devuelve}
+True si está activo, false en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{OnCreate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a78d27d6a19bd0d3c9eadc3521c350001} 
+void ISystem\+::\+On\+Create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta al crearse el sistema. 
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!OnExecutionEnd@{OnExecutionEnd}}
+\index{OnExecutionEnd@{OnExecutionEnd}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{OnExecutionEnd()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_consumer_system_abe96b51045b1c933b800aa217c99df7d} 
+void IConsumer\+System\+::\+On\+Execution\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta después de finalizar la ejecución del sistema. 
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!OnExecutionStart@{OnExecutionStart}}
+\index{OnExecutionStart@{OnExecutionStart}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{OnExecutionStart()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_consumer_system_abb1a1463af46335628d3c822ba74d5c2} 
+void IConsumer\+System\+::\+On\+Execution\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta antes de comenzar la ejecución del sistema. 
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!OnRemove@{OnRemove}}
+\index{OnRemove@{OnRemove}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{OnRemove()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a43e7608ce2a31c9c13b42cf4ce6eb0ef} 
+void ISystem\+::\+On\+Remove (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta al destruirse el sistema. 
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!OSK\_SYSTEM@{OSK\_SYSTEM}}
+\index{OSK\_SYSTEM@{OSK\_SYSTEM}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{OSK\_SYSTEM()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_resolver_a979cb2e4545bcce37ba82b6d4e931950} 
+OSK\+::\+ECS\+::\+Physics\+Resolver\+::\+OSK\+\_\+\+SYSTEM (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Physics\+Resolver\+System"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!SetActivationStatus@{SetActivationStatus}}
+\index{SetActivationStatus@{SetActivationStatus}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{SetActivationStatus()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a97458cf11d6b977bad992387a2d67297} 
+void ISystem\+::\+Set\+Activation\+Status (\begin{DoxyParamCaption}\item[{bool}]{is\+Active}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Establece si el sistema debe ejecutarse o no. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em is\+Active} & True si debe ejecutarse, false en caso contrario. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}!ToggleActivationStatus@{ToggleActivationStatus}}
+\index{ToggleActivationStatus@{ToggleActivationStatus}!OSK::ECS::PhysicsResolver@{OSK::ECS::PhysicsResolver}}
+\doxysubsubsection{ToggleActivationStatus()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a01bbb5166a33e4484f42fcc6f03494b4} 
+void ISystem\+::\+Toggle\+Activation\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Cambia entre activado/desactivado. 
+

@@ -1,0 +1,140 @@
+\doxysection{Referencia de la clase OSK\+::AUDIO\+::Audio\+Device\+Al}
+\label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_device_al}\index{OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}}
+
+
+{\ttfamily \#include $<$Audio\+Device\+Al.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ $\sim$\+Audio\+Device\+Al} () override
+\item 
+void \textbf{ Initialize\+Default} () override
+\item 
+void \textbf{ Initialize} (const std\+::string \&name) override
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IAudio\+Device})
+\item 
+std\+::string\+\_\+view \textbf{ Get\+Name} () const
+\item 
+void \textbf{ Set\+Current\+Output\+Device} ()
+\item 
+bool \textbf{ Is\+Current\+Output\+Device} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Set\+Current\+Output\+Device\+\_\+\+Implementation} () override
+\item 
+void \textbf{ Set\+Name} (const std\+::string \&name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que representa un dispositivo de salida de audio. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}!````~AudioDeviceAl@{$\sim$AudioDeviceAl}}
+\index{````~AudioDeviceAl@{$\sim$AudioDeviceAl}!OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}}
+\doxysubsubsection{$\sim$AudioDeviceAl()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_device_al_a4baffe2a597da7b53d23d71d7b7805ea} 
+Audio\+Device\+Al\+::$\sim$\+Audio\+Device\+Al (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_device_a33e7f680abb75fc666b363d44a41788d} 
+std\+::string\+\_\+view OSK\+::\+AUDIO\+::\+IAudio\+Device\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Nombre del dispositivo. 
+\end{DoxyReturn}
+\index{OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}}
+\doxysubsubsection{Initialize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_device_al_ac3ebafc3fa86480e26c176c7f1114091} 
+void Audio\+Device\+Al\+::\+Initialize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Instancia un objeto que referencia a un dispositivo en concreto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del dispositivo. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ OSK\+::\+AUDIO\+::\+IAudio\+Device} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_device_af9335b17290b5baf69a053609b155226}.
+
+\index{OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}!InitializeDefault@{InitializeDefault}}
+\index{InitializeDefault@{InitializeDefault}!OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}}
+\doxysubsubsection{InitializeDefault()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_device_al_a00f416b7bf4ca450fbc0054fe9f94f1f} 
+void Audio\+Device\+Al\+::\+Initialize\+Default (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Instancia un objeto que referencia al dispositivo de salida de audio por defdecto del sistema. 
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Audio\+Device\+Creation\+Exception}{pág.}{class_o_s_k_1_1_audio_device_creation_exception}} & Si ocurre algún error al crear el device. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ OSK\+::\+AUDIO\+::\+IAudio\+Device} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_device_a1b3c75911c7dd4658547e222838f1e46}.
+
+\index{OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}!IsCurrentOutputDevice@{IsCurrentOutputDevice}}
+\index{IsCurrentOutputDevice@{IsCurrentOutputDevice}!OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}}
+\doxysubsubsection{IsCurrentOutputDevice()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_device_ac589dd502758c94924eb8142c56ce96c} 
+bool IAudio\+Device\+::\+Is\+Current\+Output\+Device (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si este dispositivo es el que se está usando como salida de audio del juego. 
+\end{DoxyReturn}
+\index{OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_device_a7d2d75196035d924cafd384924a3c158} 
+OSK\+::\+AUDIO\+::\+IAudio\+Device\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IAudio\+Device}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}!SetCurrentOutputDevice@{SetCurrentOutputDevice}}
+\index{SetCurrentOutputDevice@{SetCurrentOutputDevice}!OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}}
+\doxysubsubsection{SetCurrentOutputDevice()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_device_a280509b7a2431d318c7fec1937ca12b2} 
+void IAudio\+Device\+::\+Set\+Current\+Output\+Device (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Establece este dispositivo como el que se va a usar para la salida de audio del juego. 
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Audio\+Device\+Creation\+Exception}{pág.}{class_o_s_k_1_1_audio_device_creation_exception}} & Si ocurre algún error al establecer el device por defecto. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}!SetCurrentOutputDevice\_Implementation@{SetCurrentOutputDevice\_Implementation}}
+\index{SetCurrentOutputDevice\_Implementation@{SetCurrentOutputDevice\_Implementation}!OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}}
+\doxysubsubsection{SetCurrentOutputDevice\_Implementation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_device_al_ad5a915e485884a6592826efec11d5798} 
+void Audio\+Device\+Al\+::\+Set\+Current\+Output\+Device\+\_\+\+Implementation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implementa \textbf{ OSK\+::\+AUDIO\+::\+IAudio\+Device} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_device_a3e8b397bd0971689dba2502eeebe6414}.
+
+\index{OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}!SetName@{SetName}}
+\index{SetName@{SetName}!OSK::AUDIO::AudioDeviceAl@{OSK::AUDIO::AudioDeviceAl}}
+\doxysubsubsection{SetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_device_af2faa3bea5eb7d2b3585c4d30b800127} 
+void IAudio\+Device\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+

@@ -1,0 +1,168 @@
+\doxysection{IShader\+Pass.\+h}
+\label{_i_shader_pass_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IShaderPass.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IShaderPass.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Material.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}MaterialInstance.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}GBuffer.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}MeshMapping.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Texture.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}AssetRef.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}DefineAs.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}ResourcesInFlight.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{class\ }ICommandList;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{class\ }GpuModel3D;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{class\ }GpuMesh3D;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }ShadowMap;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IShaderPass\ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ IShaderPass(\textcolor{keyword}{const}\ std::string\&\ passTypeName)\ :\ m\_passTypeName(passTypeName)\ \{\}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ OSK\_DEFINE\_AS(IShaderPass);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IShaderPass()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Load()\ =\ 0;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateLocalMeshMapping(\textcolor{keyword}{const}\ DynamicArray<ECS::GameObjectIndex>\&\ objectsToRender);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Update(TDeltaTime\ deltaTime)\ \{\ (void)0;\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ RenderLoop(}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ ICommandList*\ commandList,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<ECS::GameObjectIndex>\&\ objectsToRender,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ GlobalMeshMapping*\ globalMeshMapping,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ jitterIndex,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2ui\ resolution)\ \{\}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetCamera(ECS::GameObjectIndex\ cameraObject);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ std::string\_view\ GetTypeName()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ MaterialInstance*\ GetMaterialInstance(UIndex32\ resourceIndex)\ \{\ \textcolor{keywordflow}{return}\ m\_materialInstances[resourceIndex].GetPointer();\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ MaterialInstance*\ GetMaterialInstance(UIndex32\ resourceIndex)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_materialInstances[resourceIndex].GetPointer();\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetupMaterialInstance(}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuModel3D\&\ model,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuMesh3D\&\ mesh);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ LocalMeshMapping\ m\_localMeshMapping\{\};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ Vector2ui\ m\_currentResolution\ =\ Vector2ui::Zero;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ Material*\ m\_passMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ std::array<UniquePtr<MaterialInstance>,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_materialInstances\{\};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ m\_cameraObject\ =\ ECS::EMPTY\_GAME\_OBJECT;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ std::string\ m\_passTypeName\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{class\ }IShadowsPass\ :\ \textcolor{keyword}{public}\ IShaderPass\ \{}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ IShadowsPass(\textcolor{keyword}{const}\ std::string\&\ passTypeName)\ :\ IShaderPass(passTypeName)\ \{\}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ OSK\_DEFINE\_AS(IShadowsPass);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IShadowsPass()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetupShadowMap(\textcolor{keyword}{const}\ ShadowMap\&\ shadowMap)\ =\ 0;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ShadowsRenderLoop(}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ ICommandList*\ commandList,}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<ECS::GameObjectIndex>\&\ objectsToRender,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ cascadeIndex,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ShadowMap\&\ map)\ \{\}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{class\ }ShaderPassTable\ \{}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddShaderPass(UniquePtr<GRAPHICS::IShaderPass>\&\&\ pass);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveShaderPass(std::string\_view\ passName);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveAllPasses();}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ContainsShaderPass(std::string\_view\ passName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ GRAPHICS::IShaderPass*\ GetShaderPass(std::string\_view\ passName);}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::IShaderPass*\ GetShaderPass(std::string\_view\ passName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddCompatibleObject(std::string\_view\ passName,\ ECS::GameObjectIndex\ obj);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveCompatibleObject(std::string\_view\ passName,\ ECS::GameObjectIndex\ obj);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ DynamicArray<ECS::GameObjectIndex>\&\ GetCompatibleObjects(std::string\_view\ passName);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<ECS::GameObjectIndex>\&\ GetCompatibleObjects(std::string\_view\ passName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ DynamicArray<GRAPHICS::IShaderPass*>\&\ GetAllPasses();}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ std::span<GRAPHICS::IShaderPass*\ const>\ GetAllPasses()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ DynamicArray<UniquePtr<GRAPHICS::IShaderPass>>\ m\_renderPasses;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ DynamicArray<GRAPHICS::IShaderPass*>\ m\_renderPassesPtrs;}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ GRAPHICS::IShaderPass*,\ StringHasher,\ std::equal\_to<>>\ m\_renderPassesTable;}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ DynamicArray<ECS::GameObjectIndex>,\ StringHasher,\ std::equal\_to<>>\ m\_objectsPerPass;}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#ifndef\ OSK\_RENDERPASS}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ OSK\_RENDERPASS(classTypeName,\ className)\ constexpr\ static\ inline\ std::string\_view\ GetRenderPassName()\ \{\ return\ className;\ \}\ \(\backslash\)}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{static\ ::OSK::UniquePtr<::OSK::GRAPHICS::IShaderPass>\ CreateInstance()\ \{\ return\ MakeUnique<classTypeName>();\ \}}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

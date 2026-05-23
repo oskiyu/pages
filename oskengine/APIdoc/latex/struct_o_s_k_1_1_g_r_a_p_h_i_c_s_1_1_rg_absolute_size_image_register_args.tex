@@ -1,0 +1,92 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Rg\+Absolute\+Size\+Image\+Register\+Args}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args}\index{OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs@{OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs}}
+
+
+{\ttfamily \#include $<$Render\+Graph\+Args.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Rg\+Absolute\+Size\+Image\+Register\+Args} \textbf{ From1D} (const \textbf{ Vector2ui} \&\textbf{ resolution})
+\item 
+static \textbf{ Rg\+Absolute\+Size\+Image\+Register\+Args} \textbf{ From2D} (const \textbf{ Vector2ui} \&\textbf{ resolution})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vector3ui} \textbf{ resolution} = \{ 1920, 1080, 1 \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Resolución absoluta de un render-\/target. 
+
+\begin{DoxyNote}{Nota}
+Para imágenes 1D, dejar los componentes {\ttfamily Y = 1.\+0}, {\ttfamily Z = 1.\+0}. 
+
+Para imágenes 2D, dejar el componente {\ttfamily Z = 1.\+0}.
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily resolution.\+x} $>$= 0. 
+
+{\ttfamily resolution.\+y} $>$= 0. 
+
+{\ttfamily resolution.\+z} $>$= 0. 
+\end{DoxyPrecond}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs@{OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs}!From1D@{From1D}}
+\index{From1D@{From1D}!OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs@{OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs}}
+\doxysubsubsection{From1D()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args_a1052274a7f185c22b920351898b2f878} 
+\textbf{ Rg\+Absolute\+Size\+Image\+Register\+Args} Rg\+Absolute\+Size\+Image\+Register\+Args\+::\+From1D (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{resolution}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Resolución 1D. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estructura inicializada para una imagen 1D con la resolución indicada.
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondición}
+{\ttfamily resolution.\+y} = 1. 
+
+{\ttfamily resolution.\+z} = 1. 
+\end{DoxyPostcond}
+\index{OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs@{OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs}!From2D@{From2D}}
+\index{From2D@{From2D}!OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs@{OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs}}
+\doxysubsubsection{From2D()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args_a8bb30115294e3196a2be071c6ebe2aa2} 
+\textbf{ Rg\+Absolute\+Size\+Image\+Register\+Args} Rg\+Absolute\+Size\+Image\+Register\+Args\+::\+From2D (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{resolution}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Resolución 2D. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estructura inicializada para una imagen 2D con la resolución indicada.
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondición}
+{\ttfamily resolution.\+z} = 1. 
+\end{DoxyPostcond}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs@{OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs}!resolution@{resolution}}
+\index{resolution@{resolution}!OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs@{OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs}}
+\doxysubsubsection{resolution}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args_a75b9da1dad381a0ceb70c7f901abe55a} 
+\textbf{ Vector3ui} OSK\+::\+GRAPHICS\+::\+Rg\+Absolute\+Size\+Image\+Register\+Args\+::resolution = \{ 1920, 1080, 1 \}}
+
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily }.x $>$= 0. 
+
+{\ttfamily }.y $>$= 0. 
+
+{\ttfamily }.z $>$= 0. 
+\end{DoxyPrecond}

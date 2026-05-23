@@ -1,0 +1,168 @@
+\doxysection{IGpu\+Image.\+h}
+\label{_i_gpu_image_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IGpuImage.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IGpuImage.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}GpuImageCreateInfo.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}IGpuMemoryBlock.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}IGpuObject.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}IGpuImageView.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}IGpuMemorySubblock.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}GpuBarrierInfo.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Format;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{class\ }IGpuMemorySubblock;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuImageLayout;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuImageDimension;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuImageUsage;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{class\ }IGpu;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{class\ }ICommandQueue;}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ GpuImage\ :\ \textcolor{keyword}{public}\ IGpuObject\ \{}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }ArrayLevelIndex\ =\ UIndex32;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }MipLevelIndex\ =\ UIndex32;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~GpuImage()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ OSK\_DISABLE\_COPY(GpuImage);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ OSK\_DEFAULT\_MOVE\_OPERATOR(GpuImage);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ OSK\_DEFINE\_AS(GpuImage);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#pragma\ region\ Memory}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IGpuMemoryBlock*\ GetMemory()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ IGpuMemoryBlock*\ GetMemory();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IGpuMemorySubblock*\ GetBuffer()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ IGpuMemorySubblock*\ GetBuffer();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetBlock(UniquePtr<IGpuMemoryBlock>\&\&\ buffer);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#pragma\ region\ Resoluciones}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ Vector3ui\ GetSize3D()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ Vector2ui\ GetSize2D()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ USize32\ GetSize1D()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_SetPhysicalSize(\textcolor{keyword}{const}\ Vector3ui\&\ size);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ Vector3ui\ GetPhysicalSize()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ Format\ GetFormat()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ GpuImageDimension\ GetDimension()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ GpuImageUsage\ GetUsage()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ USize32\ GetNumLayers()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ Vector2ui\ GetMipLevelSize2D(UIndex32\ mipLevel)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ GpuImageSamplerDesc\ GetImageSampler()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ USize32\ GetMipLevels()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ USize32\ GetMipLevels(uint32\_t\ sizeX,\ uint32\_t\ sizeY);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ USize64\ GetNumberOfBytes()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ USize64\ GetPhysicalNumberOfBytes()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ USize32\ GetMsaaSampleCount()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ GpuImageTiling\ GetImageTiling()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IGpuImageView*\ GetView(\textcolor{keyword}{const}\ GpuImageViewConfig\&\ viewConfig)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetCurrentBarrier(\textcolor{keyword}{const}\ GpuBarrierInfo\&\ barrier);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBarrierInfo\&\ GetCurrentBarrier()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_SetLayout(}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ ArrayLevelIndex\ baseArrayLevel,}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ arrayLevelCount,}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ MipLevelIndex\ baseMipLevel,}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ mipLevelCount,}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout\ layout);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_InitDefaultLayout();}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ GpuImageLayout\ \_GetLayout(ArrayLevelIndex\ arrayLevel,\ MipLevelIndex\ mipLevel)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#pragma\ region\ Queues}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ICommandQueue*\ GetOwnerQueue()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_UpdateOwnerQueue(\textcolor{keyword}{const}\ ICommandQueue*\ ownerQueue);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ GpuImage(}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImageCreateInfo\&\ info,}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ICommandQueue*\ ownerQueue);}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ UniquePtr<IGpuImageView>\ CreateView(\textcolor{keyword}{const}\ GpuImageViewConfig\&\ viewConfig)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ GpuBarrierInfo\ m\_currentBarrier\{\};}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ std::unordered\_map<GpuImageViewConfig,\ UniquePtr<IGpuImageView>>\ m\_views;}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ std::unordered\_map<ArrayLevelIndex,\ std::unordered\_map<MipLevelIndex,\ GpuImageLayout>>\ m\_layouts;}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Caso\ especial:\ bloque\ exclusivo\ para\ la\ imagen.}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ UniquePtr<IGpuMemoryBlock>\ m\_block;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ UniquePtr<IGpuMemorySubblock>\ m\_buffer;}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ Vector3ui\ m\_physicalSize\ =\ Vector3ui::Zero;}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ GpuImageCreateInfo\ m\_imageInfo;}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ USize32\ m\_mipLevels\ =\ 0;}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ICommandQueue*\ m\_ownerQueue\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \}}
+
+\end{DoxyCode}

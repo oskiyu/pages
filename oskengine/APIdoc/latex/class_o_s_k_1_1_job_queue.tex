@@ -1,0 +1,91 @@
+\doxysection{Referencia de la clase OSK\+::Job\+Queue}
+\label{class_o_s_k_1_1_job_queue}\index{OSK::JobQueue@{OSK::JobQueue}}
+
+
+{\ttfamily \#include $<$Job\+Queue.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Job\+Queue} (\textbf{ USize32} max\+Elements)
+\item 
+void \textbf{ Enqueue} (\textbf{ Unique\+Ptr}$<$ \textbf{ IJob} $>$ job)
+\item 
+std\+::optional$<$ \textbf{ Unique\+Ptr}$<$ \textbf{ IJob} $>$ $>$ \textbf{ Try\+Dequeue} ()
+\item 
+bool \textbf{ Is\+Empty} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Cola que almacena trabajos a ser procesados por el sistema de trabajos. 
+
+Implementado mediante un ring-\/buffer que puede cambiar de tamaño en tiempo de ejecución. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::JobQueue@{OSK::JobQueue}!JobQueue@{JobQueue}}
+\index{JobQueue@{JobQueue}!OSK::JobQueue@{OSK::JobQueue}}
+\doxysubsubsection{JobQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_queue_a45577289beae83599d1f6a695d681747} 
+Job\+Queue\+::\+Job\+Queue (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{max\+Elements}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Crea la cola con el número máximo de elementos incial. EL número máximo puede ampliarse en tiempo de ejecución. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em max\+Elements} & Número máximo de elementos. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::JobQueue@{OSK::JobQueue}!Enqueue@{Enqueue}}
+\index{Enqueue@{Enqueue}!OSK::JobQueue@{OSK::JobQueue}}
+\doxysubsubsection{Enqueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_queue_a18801df980598a6b71b54b80c1e18140} 
+void Job\+Queue\+::\+Enqueue (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ IJob} $>$}]{job}{}\end{DoxyParamCaption})}
+
+
+
+Añade un trabajo a la cola. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em job} & Trabajo a procesar en el futuro. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::JobQueue@{OSK::JobQueue}!IsEmpty@{IsEmpty}}
+\index{IsEmpty@{IsEmpty}!OSK::JobQueue@{OSK::JobQueue}}
+\doxysubsubsection{IsEmpty()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_queue_a3d15f674460c6fd9730cf7fd0aa435ca} 
+bool Job\+Queue\+::\+Is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si la cola está vacía. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::JobQueue@{OSK::JobQueue}!TryDequeue@{TryDequeue}}
+\index{TryDequeue@{TryDequeue}!OSK::JobQueue@{OSK::JobQueue}}
+\doxysubsubsection{TryDequeue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_queue_a12fe106b31874c8c50350ce28890b68a} 
+std\+::optional$<$ \textbf{ Unique\+Ptr}$<$ \textbf{ IJob} $>$ $>$ Job\+Queue\+::\+Try\+Dequeue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Intenta obtener un trabajo que no haya sido obtenido antes. 
+
+\begin{DoxyReturn}{Devuelve}
+Vacío si la cola está vacía, trabajo en caso contrario. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}

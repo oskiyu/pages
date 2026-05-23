@@ -1,0 +1,40 @@
+\doxysection{Specular\+Map.\+h}
+\label{_specular_map_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/SpecularMap.h@{C:/Users/Oscar/source/repos/OSKengine/Source/SpecularMap.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ OSKengine\ by\ oskiyu}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Copyright\ (c)\ 2019-\/2022\ oskiyu.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}IAsset.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}IGpuImage.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ SpecularMap\ :\ \textcolor{keyword}{public}\ IAsset\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ SpecularMap(\textcolor{keyword}{const}\ std::string\&\ assetFile);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ OSK\_ASSET\_TYPE\_REG(\textcolor{stringliteral}{"{}OSK::SpecularMap"{}});}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ GRAPHICS::GpuImage*\ GetCubemapImage();}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::GpuImage*\ GetCubemapImage()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ iblCubemap.GetPointer();\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_SetCubemapImage(UniquePtr<GRAPHICS::GpuImage>\&\&\ image);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ GRAPHICS::GpuImage*\ GetLookUpTable();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::GpuImage*\ GetLookUpTable()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ lookUpTable.GetPointer();\ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_SetLookUpTable(UniquePtr<GRAPHICS::GpuImage>\&\&\ lut);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::GpuImage>\ iblCubemap;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::GpuImage>\ lookUpTable;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,215 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Tone\+Mapping\+Pass}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass}\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+
+
+{\ttfamily \#include $<$Tone\+Mapping.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Create} (const \textbf{ Vector2ui} \&size) override
+\item 
+void \textbf{ Resize} (const \textbf{ Vector2ui} \&size) override
+\item 
+void \textbf{ Execute} (\textbf{ ICommand\+List} $\ast$compute\+Cmd\+List) override
+\item 
+void \textbf{ Set\+Input} (\textbf{ Gpu\+Image} $\ast$input)
+\item 
+void \textbf{ Set\+Exposure\+Buffer} (const \textbf{ Gpu\+Buffer} \&buffer)
+\item 
+void \textbf{ Set\+Exposure} (float exposure)
+\item 
+float \textbf{ Get\+Exposure} () const
+\item 
+void \textbf{ Set\+Gamma} (float gamma)
+\item 
+float \textbf{ Get\+Gamma} () const
+\item 
+\textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Output} ()
+\item 
+const \textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Output} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \textbf{ Material\+Path} = "{}Resources/Materials/Post\+Process/tonemapping.\+json"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Pase de post-\/procesado que realiza un ajuste de color. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}!Create@{Create}}
+\index{Create@{Create}!OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_ae4b800abcdc909dee3da88a751498a5d} 
+void Tone\+Mapping\+Pass\+::\+Create (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Crea el render target de salida. Se puede sobreescribir por efectos de post-\/procesado específicos para crear recursos intermedios. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Resolución (tanto de entrada como de salida). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a92aa17faa014d558ac7cc79eb982c03c}.
+
+\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_a2122a40b89ffe02dd1475eb994eb6a10} 
+void Tone\+Mapping\+Pass\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{compute\+Cmd\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Genera la imagen final. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em compute\+Cmd\+List} & Lista de comandos sobre la que se ejecutará.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Se deben haber establecido las imágenes de entrada con {\ttfamily IPost\+Process\+Pass\+::\+Set\+Input}. 
+
+Las imágenes de entrada establecidas con {\ttfamily IPost\+Process\+Pass\+::\+Set\+Input} deben estar en un estado válido. 
+
+{\ttfamily compute\+Cmd\+List} debe soportar, al menos .
+
+Se deben haber establecido las entradas necesarias para el pase. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Post\+Process\+Input\+Not\+Set\+Exception}{pág.}{class_o_s_k_1_1_post_process_input_not_set_exception}} & si no se han establecido las entradas necesarias. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a05388cf0f2e8bc5e1b94cdc76cd58c8e}.
+
+\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}!GetExposure@{GetExposure}}
+\index{GetExposure@{GetExposure}!OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+\doxysubsubsection{GetExposure()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_a9058562637da7745f7cfea88813449f2} 
+float Tone\+Mapping\+Pass\+::\+Get\+Exposure (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Nivel de exposición actual. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}!GetGamma@{GetGamma}}
+\index{GetGamma@{GetGamma}!OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+\doxysubsubsection{GetGamma()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_a8ee9234e3d09329957b80896ca286710} 
+float Tone\+Mapping\+Pass\+::\+Get\+Gamma (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Nivel de gamma-\/correction actual. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+\doxysubsubsection{GetOutput()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_ae65dc5bc46fb7657d6f18b148e7ea5cd} 
+\textbf{ Compute\+Render\+Target} \& IPost\+Process\+Pass\+::\+Get\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Render target con la imagen final en las imágenes de color. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+\doxysubsubsection{GetOutput()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a4b49581bc321be779142519f48d7b263} 
+const \textbf{ Compute\+Render\+Target} \& IPost\+Process\+Pass\+::\+Get\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Render target con la imagen final en las imágenes de color. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}!Resize@{Resize}}
+\index{Resize@{Resize}!OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+\doxysubsubsection{Resize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_ad3fd26d75d4546281505e00a37f6c332} 
+void Tone\+Mapping\+Pass\+::\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Cambia de tamaño el render target de salida. Se puede sobreescribir para crear recursos intermedios. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño de la imagen final. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a5755b9283180f003c9d77fbebebfb322}.
+
+\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}!SetExposure@{SetExposure}}
+\index{SetExposure@{SetExposure}!OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+\doxysubsubsection{SetExposure()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_a81013c6301c60a6c37b1b8853f3f01b8} 
+void Tone\+Mapping\+Pass\+::\+Set\+Exposure (\begin{DoxyParamCaption}\item[{float}]{exposure}{}\end{DoxyParamCaption})}
+
+
+
+Establece el nivel de exposición a usar. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em exposure} & Nivel de exposición. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}!SetExposureBuffer@{SetExposureBuffer}}
+\index{SetExposureBuffer@{SetExposureBuffer}!OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+\doxysubsubsection{SetExposureBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_aa8efe913051d90b05901a3eddfa0e8e0} 
+void Tone\+Mapping\+Pass\+::\+Set\+Exposure\+Buffer (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Buffer} \&}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+(Opcional) establece el buffer que contendrá el nivel de exposición. Para poder ajustarlos en la GPU. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em buffers} & Buffer con los contenidos de exposición. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}!SetGamma@{SetGamma}}
+\index{SetGamma@{SetGamma}!OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+\doxysubsubsection{SetGamma()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_aefc83e498c0cb582b3653dfc8b3ea220} 
+void Tone\+Mapping\+Pass\+::\+Set\+Gamma (\begin{DoxyParamCaption}\item[{float}]{gamma}{}\end{DoxyParamCaption})}
+
+
+
+Establece el nivel de gamma-\/correction. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em gamma} & Nivel de gamma-\/correction. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}!SetInput@{SetInput}}
+\index{SetInput@{SetInput}!OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+\doxysubsubsection{SetInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_a88c73161ef0b1355dc85b23497d7fbd9} 
+void Tone\+Mapping\+Pass\+::\+Set\+Input (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{input}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}!MaterialPath@{MaterialPath}}
+\index{MaterialPath@{MaterialPath}!OSK::GRAPHICS::ToneMappingPass@{OSK::GRAPHICS::ToneMappingPass}}
+\doxysubsubsection{MaterialPath}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_ad1edb869c3688f85eeb6fe67783ff4b4} 
+auto OSK\+::\+GRAPHICS\+::\+Tone\+Mapping\+Pass\+::\+Material\+Path = "{}Resources/Materials/Post\+Process/tonemapping.\+json"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Ruta del material usado por este pase. 
+

@@ -1,0 +1,65 @@
+\doxysection{IPipeline\+Dx12.\+h}
+\label{_i_pipeline_dx12_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IPipelineDx12.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IPipelineDx12.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_DIRECTX12\_BACKEND}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}MaterialLayout.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}VertexInfo.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}PipelineCreateInfo.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}HlslRuntimeCompiler.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <d3d12.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <wrl.h>}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ }Microsoft::WRL::ComPtr;}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <dxcapi.h>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{struct\ }ShaderStageDx12\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ ComPtr<ID3DBlob>\ precompiled;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ ComPtr<IDxcBlob>\ spirvCompiled;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isBlobPrecompiled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ D3D12\_SHADER\_BYTECODE\ bytecode\{\};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IPipelineDx12\ \{}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IPipelineDx12()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ ID3D12PipelineState*\ GetPipeline()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ ComPtr<ID3DBlob>\ LoadBlob(LPCWSTR\ filename);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ ComPtr<IDxcBlob>\ CompileBlob(\textcolor{keyword}{const}\ std::string\&\ spirvPath,\ \textcolor{keyword}{const}\ VertexInfo\&\ vertexInfo,\ \textcolor{keyword}{const}\ std::string\&\ hlslProfile,\ \textcolor{keyword}{const}\ MaterialLayout\&\ layout);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ ShaderStageDx12\ LoadShader(\textcolor{keyword}{const}\ PipelineCreateInfo\&\ info,\ \textcolor{keyword}{const}\ VertexInfo\&\ vertexInfo,\ \textcolor{keyword}{const}\ std::string\&\ path,\ ShaderStage\ stage,\ \textcolor{keyword}{const}\ MaterialLayout\&\ mLayout)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ ComPtr<ID3D12PipelineState>\ dxPipeline;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ GetHlslProfile(ShaderStage\ stage);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

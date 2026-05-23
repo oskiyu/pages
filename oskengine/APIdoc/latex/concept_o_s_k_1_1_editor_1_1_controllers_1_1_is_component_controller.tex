@@ -1,0 +1,17 @@
+\doxysection{Referencia del concepto OSK\+::Editor\+::Controllers\+::Is\+Component\+Controller}
+\label{concept_o_s_k_1_1_editor_1_1_controllers_1_1_is_component_controller}\index{OSK::Editor::Controllers::IsComponentController@{OSK::Editor::Controllers::IsComponentController}}
+
+
+{\ttfamily \#include $<$IComponent\+Controller.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_TComponentController>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::Editor::Controllers::IsComponentController\ =\ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::is\_base\_of\_v<IComponentController,\ \_TComponentController>\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (\_TComponentController)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ \_TComponentController::GetComponentTypeName()\ \};}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}

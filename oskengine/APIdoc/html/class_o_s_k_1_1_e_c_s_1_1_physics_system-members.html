@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>OSKengine: Lista de los miembros</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_o_s_k_1_1_e_c_s_1_1_physics_system.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('class_o_s_k_1_1_e_c_s_1_1_physics_system.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,9 +78,16 @@ $(document).ready(function(){initNavTree('class_o_s_k_1_1_e_c_s_1_1_physics_syst
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
@@ -105,28 +111,30 @@ $(document).ready(function(){initNavTree('class_o_s_k_1_1_e_c_s_1_1_physics_syst
   <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#ae112bd30755ef771c25dc2d620fb6295">GetSignature</a>() const</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html#acdd2816796e17bd727d7ee4d10e11aed">IsActive</a>() const</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">OSK::ECS::ISystem</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html#a3d80dfebab196c8a8f334ae5b89e7f1d">ISystem</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">OSK::ECS::ISystem</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html#a06f5d16b2dc08d8278276cce6bebe177">OnCreate</a>() override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html">OSK::ECS::PhysicsSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#ae4ff2c186d3241afddbb7d81264caf9d">OnExecutionEnd</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#aff1bfd46d0ccbbf0efaee656f26a8290">OnExecutionStart</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#af380b55facabf814ca48fef44cae116b">OnObjectAdded</a>(GameObjectIndex obj)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#a95c8a52cae15f1ea27c6bed80c8708c3">OnObjectRemoved</a>(GameObjectIndex obj)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html#a43e7608ce2a31c9c13b42cf4ce6eb0ef">OnRemove</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">OSK::ECS::ISystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html#a77e2fe32716005f3dcd8163192bd6be9">OSK_SYSTEM</a>(&quot;OSK::PhysicsSystem&quot;)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html">OSK::ECS::PhysicsSystem</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html#a7e92ac67f6387b238e4e1d09fb55dc35">PhysicsSystem</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html">OSK::ECS::PhysicsSystem</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html#a98270cfc6e880ba56ba9d1e24f24dbba">SaveBinaryConfiguration</a>() const override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html">OSK::ECS::PhysicsSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html#af944f51b806014e01368df98d60be26c">SaveConfiguration</a>() const override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html">OSK::ECS::PhysicsSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html#a97458cf11d6b977bad992387a2d67297">SetActivationStatus</a>(bool isActive)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">OSK::ECS::ISystem</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#ab81242d97f6424629a9362246838e772">SetCompatibleObjects</a>(std::span&lt; const ECS::GameObjectIndex &gt; objects)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html#a01bbb5166a33e4484f42fcc6f03494b4">ToggleActivationStatus</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">OSK::ECS::ISystem</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#a2c94215513d501f278045e04ceaa5723">~IIteratorSystem</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_serializable_system.html#a5935f508d62fc05c8ebc6887606f90ee">~ISerializableSystem</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_serializable_system.html">OSK::ECS::ISerializableSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html#add6feeb7e64c9eea2563dcece799c55d">~ISystem</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">OSK::ECS::ISystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html#afed8f708310a6f3ebfee8d61a8737718">m_constraints</a></td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html">OSK::ECS::PhysicsSystem</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html#a06f5d16b2dc08d8278276cce6bebe177">OnCreate</a>() override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html">OSK::ECS::PhysicsSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#ae4ff2c186d3241afddbb7d81264caf9d">OnExecutionEnd</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#aff1bfd46d0ccbbf0efaee656f26a8290">OnExecutionStart</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#af380b55facabf814ca48fef44cae116b">OnObjectAdded</a>(GameObjectIndex obj)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#a95c8a52cae15f1ea27c6bed80c8708c3">OnObjectRemoved</a>(GameObjectIndex obj)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html#a43e7608ce2a31c9c13b42cf4ce6eb0ef">OnRemove</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">OSK::ECS::ISystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html#a77e2fe32716005f3dcd8163192bd6be9">OSK_SYSTEM</a>(&quot;OSK::PhysicsSystem&quot;)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html">OSK::ECS::PhysicsSystem</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html#a7e92ac67f6387b238e4e1d09fb55dc35">PhysicsSystem</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html">OSK::ECS::PhysicsSystem</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html#a98270cfc6e880ba56ba9d1e24f24dbba">SaveBinaryConfiguration</a>() const override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html">OSK::ECS::PhysicsSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html#af944f51b806014e01368df98d60be26c">SaveConfiguration</a>() const override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_system.html">OSK::ECS::PhysicsSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html#a97458cf11d6b977bad992387a2d67297">SetActivationStatus</a>(bool isActive)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">OSK::ECS::ISystem</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#ab81242d97f6424629a9362246838e772">SetCompatibleObjects</a>(std::span&lt; const ECS::GameObjectIndex &gt; objects)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html#a01bbb5166a33e4484f42fcc6f03494b4">ToggleActivationStatus</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">OSK::ECS::ISystem</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html#a2c94215513d501f278045e04ceaa5723">~IIteratorSystem</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_iterator_system.html">OSK::ECS::IIteratorSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_serializable_system.html#a5935f508d62fc05c8ebc6887606f90ee">~ISerializableSystem</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_serializable_system.html">OSK::ECS::ISerializableSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html#add6feeb7e64c9eea2563dcece799c55d">~ISystem</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">OSK::ECS::ISystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

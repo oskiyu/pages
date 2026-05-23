@@ -1,0 +1,240 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Example\+Compute\+Pass}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_example_compute_pass}\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+
+
+{\ttfamily \#include $<$Example\+Compute\+Pass.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Example\+Compute\+Pass} (\textbf{ Gdr\+Buffer\+Uuid} buffer\+Ref, \textbf{ Gdr\+Image\+Uuid} image\+Ref)
+\item 
+void \textbf{ Execute} (\textbf{ ICommand\+List} $\ast$cmd\+List) override
+\item 
+std\+::string\+\_\+view \textbf{ Get\+Name} () const override
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IRender\+Pass})
+\item 
+void \textbf{ \+\_\+\+Execute} (\textbf{ ICommand\+List} $\ast$cmd\+List, \textbf{ Render\+Graph} \&render\+Graph)
+\item 
+std\+::span$<$ const \textbf{ Rg\+Buffer\+Dependency} $>$ \textbf{ Get\+Buffer\+Dependencies} () const
+\item 
+std\+::span$<$ const \textbf{ Rg\+Image\+Dependency} $>$ \textbf{ Get\+Image\+Dependencies} () const
+\item 
+std\+::span$<$ const \textbf{ Partial\+Rg\+Buffer\+Dependency} $>$ \textbf{ Get\+Partial\+Buffer\+Dependencies} () const
+\item 
+std\+::span$<$ const \textbf{ Partial\+Rg\+Image\+Dependency} $>$ \textbf{ Get\+Partial\+Image\+Dependencies} () const
+\item 
+void \textbf{ Add\+Buffer\+Dependency} (const \textbf{ Rg\+Buffer\+Dependency} \&dependency)
+\item 
+void \textbf{ Add\+Image\+Dependency} (const \textbf{ Rg\+Image\+Dependency} \&dependency)
+\item 
+void \textbf{ Add\+Partial\+Buffer\+Dependency} (const \textbf{ Partial\+Rg\+Buffer\+Dependency} \&dependency)
+\item 
+void \textbf{ Add\+Partial\+Image\+Dependency} (const \textbf{ Partial\+Rg\+Image\+Dependency} \&dependency)
+\item 
+\textbf{ Render\+Pass\+Type} \textbf{ Get\+Type} () const
+\item 
+void \textbf{ Rebind\+Dependencies} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Render\+Graph} $\ast$ \textbf{ Get\+Render\+Graph} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!ExampleComputePass@{ExampleComputePass}}
+\index{ExampleComputePass@{ExampleComputePass}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{ExampleComputePass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_example_compute_pass_a2b29d9306b4234b3b60153d3afd5b931} 
+Example\+Compute\+Pass\+::\+Example\+Compute\+Pass (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Buffer\+Uuid}}]{buffer\+Ref}{, }\item[{\textbf{ Gdr\+Image\+Uuid}}]{image\+Ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!\_Execute@{\_Execute}}
+\index{\_Execute@{\_Execute}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{\_Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_a6a11b4829e79e6cf9caf66fc91458e78} 
+void IRender\+Pass\+::\+\_\+\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{cmd\+List}{, }\item[{\textbf{ Render\+Graph} \&}]{render\+Graph}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Ejecuta el renderpass. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cmd\+List} & Lista de comandos. \\
+\hline
+{\em render\+Graph} & Render-\/graph que invoca el renderpass. Para tener acceso a los recursos GPU.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Enlaza todos los recursos antes de ejecutar la lógica de renderizado. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!AddBufferDependency@{AddBufferDependency}}
+\index{AddBufferDependency@{AddBufferDependency}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{AddBufferDependency()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_a9ecf2c494ada0b354266521f9e6a8f35} 
+void IRender\+Pass\+::\+Add\+Buffer\+Dependency (\begin{DoxyParamCaption}\item[{const \textbf{ Rg\+Buffer\+Dependency} \&}]{dependency}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Añade una nueva dependencia completa de buffer. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em dependency} & Nueva dependencia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+También se añade a la lista de dependencias parciales. 
+\end{DoxyPostcond}
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!AddImageDependency@{AddImageDependency}}
+\index{AddImageDependency@{AddImageDependency}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{AddImageDependency()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_a483b20dbf0720c834f89b26f8717107f} 
+void IRender\+Pass\+::\+Add\+Image\+Dependency (\begin{DoxyParamCaption}\item[{const \textbf{ Rg\+Image\+Dependency} \&}]{dependency}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Añade una nueva dependencia completa de imagen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em dependency} & Nueva dependencia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+También se añade a la lista de dependencias parciales. 
+\end{DoxyPostcond}
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!AddPartialBufferDependency@{AddPartialBufferDependency}}
+\index{AddPartialBufferDependency@{AddPartialBufferDependency}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{AddPartialBufferDependency()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_ac2002f9146527b4a74a9ec7ea48eeb09} 
+void IRender\+Pass\+::\+Add\+Partial\+Buffer\+Dependency (\begin{DoxyParamCaption}\item[{const \textbf{ Partial\+Rg\+Buffer\+Dependency} \&}]{dependency}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Añade una dependencia parcial de buffer. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em dependency} & Dependencia parcial. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!AddPartialImageDependency@{AddPartialImageDependency}}
+\index{AddPartialImageDependency@{AddPartialImageDependency}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{AddPartialImageDependency()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_ab2262a3ddd25285880e45c90aed79a25} 
+void IRender\+Pass\+::\+Add\+Partial\+Image\+Dependency (\begin{DoxyParamCaption}\item[{const \textbf{ Partial\+Rg\+Image\+Dependency} \&}]{dependency}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Añade una dependencia parcial de imagen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em dependency} & Dependencia parcial. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_example_compute_pass_af9df474d896513429c3d066d6187d176} 
+void Example\+Compute\+Pass\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{cmd\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Lógica de renderizado del renderpass. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cmd\+List} & Lista de comandos. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ OSK\+::\+GRAPHICS\+::\+IRender\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_ac0d83a0bd2a4b2263ce1edbefea7ecc8}.
+
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!GetBufferDependencies@{GetBufferDependencies}}
+\index{GetBufferDependencies@{GetBufferDependencies}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{GetBufferDependencies()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_a4265cc5766a43467e352dc252bdcd6e0} 
+std\+::span$<$ const \textbf{ Rg\+Buffer\+Dependency} $>$ IRender\+Pass\+::\+Get\+Buffer\+Dependencies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Dependencias completas con buffers. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!GetImageDependencies@{GetImageDependencies}}
+\index{GetImageDependencies@{GetImageDependencies}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{GetImageDependencies()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_a45c3ce53ceb4dac061946b07a154e9c0} 
+std\+::span$<$ const \textbf{ Rg\+Image\+Dependency} $>$ IRender\+Pass\+::\+Get\+Image\+Dependencies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Dependencias completas con imágenes. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_example_compute_pass_a706e67afcfebb03104b15663028b565d} 
+std\+::string\+\_\+view OSK\+::\+GRAPHICS\+::\+Example\+Compute\+Pass\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Nombre Ú\+NICO del renderpass. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ OSK\+::\+GRAPHICS\+::\+IRender\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_a08ae96062283aecc49d9fc53c8d1c8d0}.
+
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!GetPartialBufferDependencies@{GetPartialBufferDependencies}}
+\index{GetPartialBufferDependencies@{GetPartialBufferDependencies}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{GetPartialBufferDependencies()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_abb13047425d57a8849e28f3f7ec8cf70} 
+std\+::span$<$ const \textbf{ Partial\+Rg\+Buffer\+Dependency} $>$ IRender\+Pass\+::\+Get\+Partial\+Buffer\+Dependencies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Dependencias parciales con buffers. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!GetPartialImageDependencies@{GetPartialImageDependencies}}
+\index{GetPartialImageDependencies@{GetPartialImageDependencies}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{GetPartialImageDependencies()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_a1b0fca14c6590b11588e58cac16262a9} 
+std\+::span$<$ const \textbf{ Partial\+Rg\+Image\+Dependency} $>$ IRender\+Pass\+::\+Get\+Partial\+Image\+Dependencies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Dependencias parciales con imágenes. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!GetRenderGraph@{GetRenderGraph}}
+\index{GetRenderGraph@{GetRenderGraph}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{GetRenderGraph()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_a639cf5e7e56dab5a84cdab6745c7fd75} 
+\textbf{ Render\+Graph} $\ast$ IRender\+Pass\+::\+Get\+Render\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!GetType@{GetType}}
+\index{GetType@{GetType}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{GetType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_ad6962cfef5d87fa426c79855b8b700c6} 
+\textbf{ Render\+Pass\+Type} IRender\+Pass\+::\+Get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_a9b1b1d7cfff05e6b36ddf114c5a2dfbf} 
+OSK\+::\+GRAPHICS\+::\+IRender\+Pass\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IRender\+Pass}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}!RebindDependencies@{RebindDependencies}}
+\index{RebindDependencies@{RebindDependencies}!OSK::GRAPHICS::ExampleComputePass@{OSK::GRAPHICS::ExampleComputePass}}
+\doxysubsubsection{RebindDependencies()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_a9842cfd8cef05362fab158fd6964c02e} 
+void IRender\+Pass\+::\+Rebind\+Dependencies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Reenlaza todas las dependencias. 
+

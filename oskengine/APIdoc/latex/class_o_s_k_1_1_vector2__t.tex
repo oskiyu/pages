@@ -1,0 +1,629 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::Vector2\+\_\+t$<$ T $>$}
+\label{class_o_s_k_1_1_vector2__t}\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Vector2.\+hpp$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ TNumeric\+Type} = T
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \textbf{ Vector2\+\_\+t} ()
+\item 
+constexpr \textbf{ Vector2\+\_\+t} (const T \&\textbf{ x}, const T \&\textbf{ y})
+\item 
+constexpr \textbf{ Vector2\+\_\+t} (const T \&value)
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \textbf{ operator+} (const \textbf{ Vector2\+\_\+t} \&vec) const
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \& \textbf{ operator+=} (const \textbf{ Vector2\+\_\+t} \&vec)
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \textbf{ operator-\/} () const
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \textbf{ operator-\/} (const \textbf{ Vector2\+\_\+t} \&vec) const
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \& \textbf{ operator-\/=} (const \textbf{ Vector2\+\_\+t} \&vec)
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \textbf{ operator$\ast$} (const \textbf{ Vector2\+\_\+t} \&vec) const
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \& \textbf{ operator$\ast$=} (const \textbf{ Vector2\+\_\+t} \&vec)
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \textbf{ operator$\ast$} (const T \&value) const
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \& \textbf{ operator$\ast$=} (const T \&value)
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \textbf{ operator/} (const T \&value) const
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \& \textbf{ operator/=} (const \textbf{ Vector2\+\_\+t} \&vec)
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \textbf{ operator/} (const \textbf{ Vector2\+\_\+t} \&vec) const
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \& \textbf{ operator/=} (const T \&value)
+\item 
+constexpr bool \textbf{ operator==} (const \textbf{ Vector2\+\_\+t} \&vec) const
+\item 
+constexpr bool \textbf{ operator!=} (const \textbf{ Vector2\+\_\+t} \&vec) const
+\item 
+constexpr T \textbf{ Get\+Length} () const
+\item 
+constexpr T \textbf{ Get\+Distance\+To} (const \textbf{ Vector2\+\_\+t} \&vec) const
+\item 
+constexpr T \textbf{ Dot} (const \textbf{ Vector2\+\_\+t} \&vec) const
+\item 
+constexpr \textbf{ Vector2\+\_\+t} \textbf{ Get\+Normalized} () const
+\item 
+constexpr void \textbf{ Normalize} ()
+\item 
+constexpr glm\+::vec2 \textbf{ To\+Glm} () const
+\item 
+constexpr glm\+::vec$<$ 2, T $>$ \textbf{ To\+Glm\+\_\+t} () const
+\item 
+{\footnotesize template$<$typename P$>$ }\\constexpr \textbf{ Vector2\+\_\+t}$<$ P $>$ \textbf{ To\+Vec2} () const
+\item 
+constexpr \textbf{ Vector2\+\_\+t}$<$ float\+\_\+t $>$ \textbf{ To\+Vector2f} () const
+\item 
+constexpr \textbf{ Vector2\+\_\+t}$<$ double\+\_\+t $>$ \textbf{ To\+Vector2d} () const
+\item 
+constexpr \textbf{ Vector2\+\_\+t}$<$ int32\+\_\+t $>$ \textbf{ To\+Vector2i} () const
+\item 
+constexpr \textbf{ Vector2\+\_\+t}$<$ uint32\+\_\+t $>$ \textbf{ To\+Vector2ui} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \textbf{ Vector2\+\_\+t} \textbf{ From\+Glm} (const glm\+::vec2 \&vec)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+T \textbf{ x}
+\item 
+T \textbf{ y}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static OSKAPI\+\_\+\+CALL \textbf{ Vector2\+\_\+t} const \textbf{ Zero}
+\item 
+static OSKAPI\+\_\+\+CALL \textbf{ Vector2\+\_\+t} const \textbf{ One}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename T$>$\newline
+class OSK\+::\+Vector2\+\_\+t$<$ T $>$}
+Representa un vector 2D. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Precisión. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de los «\+Typedef» miembros de la clase}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!TNumericType@{TNumericType}}
+\index{TNumericType@{TNumericType}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{TNumericType}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_ae14ccc094cf4e08fa1478f0258388fe3} 
+template$<$typename T$>$ \\
+using \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+TNumeric\+Type = T}
+
+
+
+Tipo de dato numérico usado para almacenar los números. 
+
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!Vector2\_t@{Vector2\_t}}
+\index{Vector2\_t@{Vector2\_t}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{Vector2\_t()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a498f28581bc46484ddba04e787198dc1} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+Vector2\+\_\+t (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Crea un vector 2D nulo \{ 0, 0 \}. 
+
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!Vector2\_t@{Vector2\_t}}
+\index{Vector2\_t@{Vector2\_t}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{Vector2\_t()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a6579b1e1577577ee242da57aeba4f5bf} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+Vector2\+\_\+t (\begin{DoxyParamCaption}\item[{const T \&}]{x}{, }\item[{const T \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Crea una instancia del Vector2. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em x} & Coordenada X. \\
+\hline
+{\em y} & Coordenada Y. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!Vector2\_t@{Vector2\_t}}
+\index{Vector2\_t@{Vector2\_t}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{Vector2\_t()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_afa93ff479376f249f88d6474b5cf7c84} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+Vector2\+\_\+t (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}}
+
+
+
+Crea una instancia del Vector2 en la que X e Y tienen en mismo valor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Coordenada X e Y. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!Dot@{Dot}}
+\index{Dot@{Dot}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{Dot()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a96fe63557e8b7c622b14991a9a61a357} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+Dot (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Producto escalar de dos vectores. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vec} & Otro vector. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!FromGlm@{FromGlm}}
+\index{FromGlm@{FromGlm}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{FromGlm()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_ab62acef16b89c7a10ad4877da5dffd27} 
+template$<$typename T$>$ \\
+constexpr \textbf{ Vector2\+\_\+t} \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+From\+Glm (\begin{DoxyParamCaption}\item[{const glm\+::vec2 \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Crea un vector 2D con los parámetros de vec. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vec} & Vector. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!GetDistanceTo@{GetDistanceTo}}
+\index{GetDistanceTo@{GetDistanceTo}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{GetDistanceTo()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a9d78eea838f3435671c10a201d3d8310} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+Get\+Distance\+To (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Obtiene la distancia entre la posición representada por este vector y por el vector \textquotesingle{}vec\textquotesingle{}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em vec} & Otro vector. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!GetLength@{GetLength}}
+\index{GetLength@{GetLength}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{GetLength()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a51799ef4e2674b7eb4ade6ae96f2b790} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+Get\+Length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Módulo del vector. Obtiene la longitud del vector. 
+\end{DoxyReturn}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!GetNormalized@{GetNormalized}}
+\index{GetNormalized@{GetNormalized}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{GetNormalized()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a65c99690aec6d9684c7982c348776a06} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+Get\+Normalized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve un vector 2D normalizado con la misma dirección que este. 
+\end{DoxyReturn}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!Normalize@{Normalize}}
+\index{Normalize@{Normalize}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{Normalize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_ad3d82466a87e3bd71cb08b2c62a20c8c} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+Normalize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Normaliza este vector 2D para que su módulo (\doxyref{Get\+Length()}{pág.}{class_o_s_k_1_1_vector2__t_a51799ef4e2674b7eb4ade6ae96f2b790}) sea 1. 
+\end{DoxyReturn}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator"!=()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a6535db0bf68920c605d65e993ecbd494} 
+template$<$typename T$>$ \\
+bool \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vec} & Otro vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si no todos los componentes son iguales. 
+\end{DoxyReturn}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator$\ast$()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a88a69585b1d20bd22f2dc22b85d4d904} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Operación Vector2 $\ast$ valor. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Valor por el que se va a multiplicar el vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+X $\ast$ value; Y $\ast$ value. 
+\end{DoxyNote}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator$\ast$()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a46351220987d245e36933a0a09ba2b07} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Operación Vector2 $\ast$ Vector2. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+X1 $\ast$ X2; Y1 $\ast$ Y2. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em vec} & Otro vector. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator$\ast$=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a95948b0a3c18553a83c99584458a9bbd} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \& \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Operación Vector2 $\ast$ valor. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Valor por el que se va a multiplicar el vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+X $\ast$ value; Y $\ast$ value. 
+
+Modifica este vector. 
+\end{DoxyNote}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator$\ast$=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a0a1556a2c5a6e7c0bb7b998e080ea144} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \& \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Operación Vector2 $\ast$= Vector2. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em vec} & Otro vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+X1 $\ast$ X2; Y1 $\ast$ Y2. 
+
+Modifica este vector. 
+\end{DoxyNote}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator+()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_aa1b3944d8182f5b3d16958bd1b60152a} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Operación Vector2 + Vector2. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em vec} & Otro vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+X1 + X2; Y1 + Y2. 
+\end{DoxyNote}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator+=()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a38a2972db00409007af24e99a02b7972} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \& \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Operación Vector2 += Vector2. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+X1 + X2; Y1 + Y2. 
+
+Modifica este vector. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em vec} & Otro vector. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator-\/()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a4b09c6594b48592b9ba353f5df9173cf} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+@retrun Negación del Vector2. \begin{DoxyNote}{Nota}
+-\/X; -\/Y. 
+\end{DoxyNote}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator-\/()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a943703e7a9607644cb79517b698c292a} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Operación Vector2 -\/ Vector2. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+X1 -\/ X2; Y1 -\/ Y2. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em vec} & Otro vector. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator-\/=()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_acc51e250722b53a2662e300788eb9ea3} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \& \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Operación Vector2 -\/= Vector2. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em vec} & Otro vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+X1 -\/ X2; Y1 -\/ Y2. 
+
+Modifica este vector. 
+\end{DoxyNote}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator/()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_acac39ccaf8ce3ebf00e9222592cac447} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Operación Vector2 / valor. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Valor por el que se va a dividir el vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+X /= value; Y /= value. 
+\end{DoxyNote}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator/()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_ab72b2050c57c51a39079e9505b8358ca} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Operación Vector2 / Vector2. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Otro vector por el que se va a dividir el vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+X = vec.\+X; Y = vec.\+Y. 
+\end{DoxyNote}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator/=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a7ab6b7b57397392c4b5dd6eaac60f851} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \& \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Operación Vector2 /= valor. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Valor por el que se va a dividir el vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+X = value; Y = value. 
+
+Modifica este vector. 
+\end{DoxyNote}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator/=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a13e32832248e825bc3e4f4fbbb7a45cc} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t} \& \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Operación Vector2 /= Vector2. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Valor por el que se va a dividir el vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+X = vec.\+X; Y = vec.\+Y. 
+
+Modifica este vector. 
+\end{DoxyNote}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{operator==()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_abbd2b0ffe93ee62795ab28e4be3a67bc} 
+template$<$typename T$>$ \\
+bool \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si todos los componentes son iguales. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parámetros}
+{\em vec} & Otro vector. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!ToGlm@{ToGlm}}
+\index{ToGlm@{ToGlm}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{ToGlm()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a007c9e3a314f959ab6affb9bd314235c} 
+template$<$typename T$>$ \\
+glm\+::vec2 \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+To\+Glm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+OSK\+::\+Vector2 a glm\+::vec2. 
+\end{DoxyReturn}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!ToGlm\_t@{ToGlm\_t}}
+\index{ToGlm\_t@{ToGlm\_t}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{ToGlm\_t()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_ac5bfb6b6a76c25156551ac29c26c7c74} 
+template$<$typename T$>$ \\
+glm\+::vec$<$ 2, T $>$ \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+To\+Glm\+\_\+t (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+OSK\+::\+Vector2 a glm\+::vec. 
+\end{DoxyReturn}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!ToVec2@{ToVec2}}
+\index{ToVec2@{ToVec2}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{ToVec2()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a87916ba2973b30bf4123c6096ffc8fc9} 
+template$<$typename T$>$ \\
+template$<$typename P$>$ \\
+\textbf{ Vector2\+\_\+t}$<$ P $>$ \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+To\+Vec2 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve un vector con variables de distinto tipo. P = nuevo tipo de las variables. 
+\end{DoxyReturn}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!ToVector2d@{ToVector2d}}
+\index{ToVector2d@{ToVector2d}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{ToVector2d()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a57b4202a0dffe3458972ac5dd5b4a384} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t}$<$ double\+\_\+t $>$ \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+To\+Vector2d (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Vector 2 con precisión double. 
+\end{DoxyReturn}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!ToVector2f@{ToVector2f}}
+\index{ToVector2f@{ToVector2f}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{ToVector2f()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_ad87181c3ef04bdc4653e05a9b086894d} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t}$<$ float\+\_\+t $>$ \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+To\+Vector2f (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Vector 2 con precisión float. 
+\end{DoxyReturn}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!ToVector2i@{ToVector2i}}
+\index{ToVector2i@{ToVector2i}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{ToVector2i()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a321ac35eebeb0e760c6165073f420c72} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t}$<$ int32\+\_\+t $>$ \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+To\+Vector2i (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Vector 2 con precisión int32. 
+\end{DoxyReturn}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!ToVector2ui@{ToVector2ui}}
+\index{ToVector2ui@{ToVector2ui}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{ToVector2ui()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a653f825213f2d7c78ff097f5a142fe64} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t}$<$ uint32\+\_\+t $>$ \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+To\+Vector2ui (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Vector 2 con precisión uint32. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!One@{One}}
+\index{One@{One}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{One}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a42fa9fd5a30fb5e61ebe67d6c21965e1} 
+template$<$typename T$>$ \\
+OSKAPI\+\_\+\+CALL \textbf{ Vector2\+\_\+t} const \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+One\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!x@{x}}
+\index{x@{x}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{x}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_ae2f86aaf21084895a5b357318ff6ed77} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::x}
+
+
+
+Representa la primera coordenada. 
+
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!y@{y}}
+\index{y@{y}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{y}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a3194c7e9abba1f840530e8642a01e30a} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::y}
+
+
+
+Representa la segunda coordenada. 
+
+\index{OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}!Zero@{Zero}}
+\index{Zero@{Zero}!OSK::Vector2\_t$<$ T $>$@{OSK::Vector2\_t$<$ T $>$}}
+\doxysubsubsection{Zero}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector2__t_a5a6119fdac1a258faeade0da8ac6108a} 
+template$<$typename T$>$ \\
+OSKAPI\+\_\+\+CALL \textbf{ Vector2\+\_\+t} const \textbf{ OSK\+::\+Vector2\+\_\+t}$<$ T $>$\+::\+Zero\hspace{0.3cm}{\ttfamily [static]}}
+

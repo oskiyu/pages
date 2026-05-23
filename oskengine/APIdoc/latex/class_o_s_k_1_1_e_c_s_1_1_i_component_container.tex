@@ -1,0 +1,241 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::IComponent\+Container}
+\label{class_o_s_k_1_1_e_c_s_1_1_i_component_container}\index{OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}}
+
+
+{\ttfamily \#include $<$IComponent\+Container.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IComponent\+Container} ()=default
+\item 
+virtual void \textbf{ Game\+Object\+Destroyerd} (\textbf{ Game\+Object\+Index} obj)=0
+\item 
+virtual nlohmann\+::json \textbf{ Serialize\+All} () const =0
+\item 
+virtual void \textbf{ Deserialize\+Component} (const nlohmann\+::json \&data, \textbf{ Game\+Object\+Index} obj, const \textbf{ Saved\+Game\+Object\+Translator} \&translator)=0
+\item 
+virtual \textbf{ PERSISTENCE\+::\+Binary\+Block} \textbf{ Binary\+Serialize\+All} () const =0
+\item 
+virtual void \textbf{ Binary\+Deserialize\+Component} (\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$reader, \textbf{ Game\+Object\+Index} obj, const \textbf{ Saved\+Game\+Object\+Translator} \&translator)=0
+\item 
+virtual void $\ast$ \textbf{ Get\+Component\+Address} (\textbf{ Game\+Object\+Index} obj)=0
+\item 
+virtual const void $\ast$ \textbf{ Get\+Component\+Address} (\textbf{ Game\+Object\+Index} obj) const =0
+\item 
+void \textbf{ Set\+Component\+Type} (\textbf{ Component\+Type} component\+Type)
+\item 
+\textbf{ Component\+Type} \textbf{ Get\+Component\+Type} () const
+\item 
+virtual std\+::string\+\_\+view \textbf{ Get\+Component\+Type\+Name} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz común para todos los contenedores de componentes. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}!````~IComponentContainer@{$\sim$IComponentContainer}}
+\index{````~IComponentContainer@{$\sim$IComponentContainer}!OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}}
+\doxysubsubsection{$\sim$IComponentContainer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_component_container_ae9731fd324c40c7cb3fd1faa9d0fe071} 
+virtual OSK\+::\+ECS\+::\+IComponent\+Container\+::$\sim$\+IComponent\+Container (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}!BinaryDeserializeComponent@{BinaryDeserializeComponent}}
+\index{BinaryDeserializeComponent@{BinaryDeserializeComponent}!OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}}
+\doxysubsubsection{BinaryDeserializeComponent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_component_container_a9e48a31f8f17ed65f0e4bbb83a7b9844} 
+virtual void OSK\+::\+ECS\+::\+IComponent\+Container\+::\+Binary\+Deserialize\+Component (\begin{DoxyParamCaption}\item[{\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$}]{reader}{, }\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{const \textbf{ Saved\+Game\+Object\+Translator} \&}]{translator}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Deserializa un componente a partir de un bloque binario. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em reader} & Lector del bloque binario. \\
+\hline
+{\em obj} & ID del objeto que va a poseer el componente. \\
+\hline
+{\em translator} & Traductor de IDs.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily data} debe haber sido creado respetando el formato del tipo de componente. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El componente se habrá añadido al contenedor. 
+
+El cursor de {\ttfamily reader} habrá avanzado, dejando atrás todos los datos leídos. 
+\end{DoxyPostcond}
+
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Component\+Container$<$ TComponent $>$} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_container_aad4672f5ecfb72c69f40594ff5885ce2}.
+
+\index{OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}!BinarySerializeAll@{BinarySerializeAll}}
+\index{BinarySerializeAll@{BinarySerializeAll}!OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}}
+\doxysubsubsection{BinarySerializeAll()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_component_container_a1fbc7f0fbca87a5c338912131d4b40b7} 
+virtual \textbf{ PERSISTENCE\+::\+Binary\+Block} OSK\+::\+ECS\+::\+IComponent\+Container\+::\+Binary\+Serialize\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Serializa todos los componentes en una estructura binaria. Contiene\+: 
+
+
+\begin{DoxyItemize}
+\item Número de componentes (\doxyref{USize64}{pág.}{namespace_o_s_k_a83ff197aaa32126d84ad65f1d6d5a3b5}).
+\item Offset al array de objetos (\doxyref{USize64}{pág.}{namespace_o_s_k_a83ff197aaa32126d84ad65f1d6d5a3b5}).
+\item Datos binarios de todos los componentes.
+\item Mapa\+: posición = ID del componente, valor = ID de objeto. \begin{DoxyReturn}{Devuelve}
+Bloque con los datos de los componentes. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Component\+Container$<$ TComponent $>$} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_container_ae69ae3470fdfeb0926d1931420e711d3}.
+
+\index{OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}!DeserializeComponent@{DeserializeComponent}}
+\index{DeserializeComponent@{DeserializeComponent}!OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}}
+\doxysubsubsection{DeserializeComponent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_component_container_a6a5041ac72ffbe9c5bb70124500625c6} 
+virtual void OSK\+::\+ECS\+::\+IComponent\+Container\+::\+Deserialize\+Component (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{data}{, }\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{const \textbf{ Saved\+Game\+Object\+Translator} \&}]{translator}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Deserializa un componente a partir de un JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & JSON con los datos del componente. \\
+\hline
+{\em obj} & ID del objeto que va a poseer el componente. \\
+\hline
+{\em translator} & Traductor de IDs.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily data} debe haber sido creado respetando el formato del tipo de componente. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El componente se habrá añadido al contenedor. 
+\end{DoxyPostcond}
+
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Component\+Container$<$ TComponent $>$} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_container_a45a25df2bc654f4be3ac4010bf6bf89f}.
+
+\index{OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}!GameObjectDestroyerd@{GameObjectDestroyerd}}
+\index{GameObjectDestroyerd@{GameObjectDestroyerd}!OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}}
+\doxysubsubsection{GameObjectDestroyerd()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_component_container_af511b10111c3e122b3e4f42930ccebe0} 
+virtual void OSK\+::\+ECS\+::\+IComponent\+Container\+::\+Game\+Object\+Destroyerd (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Se llama cuando un objeto es destruido. Se encarga de eliminar todos los componentes del objeto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & ID del objeto destruido. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Component\+Container$<$ TComponent $>$} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_container_aa2ae3332ee4b0c80860b7cc3d60d5d55}.
+
+\index{OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}!GetComponentAddress@{GetComponentAddress}}
+\index{GetComponentAddress@{GetComponentAddress}!OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}}
+\doxysubsubsection{GetComponentAddress()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_component_container_acf4c637debae9374b272b723c5411b43} 
+virtual const void $\ast$ OSK\+::\+ECS\+::\+IComponent\+Container\+::\+Get\+Component\+Address (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Component\+Container$<$ TComponent $>$} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_container_a65929a20023a4cde9fd0ee7a094c96a8}.
+
+\index{OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}!GetComponentAddress@{GetComponentAddress}}
+\index{GetComponentAddress@{GetComponentAddress}!OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}}
+\doxysubsubsection{GetComponentAddress()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_component_container_a0c83f9952276b91e9aa2c1f088a2fd87} 
+virtual void $\ast$ OSK\+::\+ECS\+::\+IComponent\+Container\+::\+Get\+Component\+Address (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto que contiene el componente buscado. Si el objeto no tiene el componente, devuelve nullptr. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero al componente. 
+\end{DoxyReturn}
+
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Component\+Container$<$ TComponent $>$} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_container_a4a9f65d33dfa0fb6cb1cb3507e141149}.
+
+\index{OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}!GetComponentType@{GetComponentType}}
+\index{GetComponentType@{GetComponentType}!OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}}
+\doxysubsubsection{GetComponentType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_component_container_a2e637e57e3e12f1787ff69b4ede64495} 
+\textbf{ Component\+Type} IComponent\+Container\+::\+Get\+Component\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+ID del tipo de componente que maneja el contenedor. 
+\end{DoxyReturn}
+\index{OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}!GetComponentTypeName@{GetComponentTypeName}}
+\index{GetComponentTypeName@{GetComponentTypeName}!OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}}
+\doxysubsubsection{GetComponentTypeName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_component_container_a1061a302b297e7e4690e4188d827d3ac} 
+virtual std\+::string\+\_\+view OSK\+::\+ECS\+::\+IComponent\+Container\+::\+Get\+Component\+Type\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Tipo de componente que almacena este contenedor. 
+\end{DoxyReturn}
+
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Component\+Container$<$ TComponent $>$} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_container_a93b6cba16076204913aeba242ce443d7}.
+
+\index{OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}!SerializeAll@{SerializeAll}}
+\index{SerializeAll@{SerializeAll}!OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}}
+\doxysubsubsection{SerializeAll()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_component_container_acbff0bb9e4309c4c0905fca3224c7a9c} 
+virtual nlohmann\+::json OSK\+::\+ECS\+::\+IComponent\+Container\+::\+Serialize\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Serializa todos los componentes en una estructura JSON. Contiene\+: 
+
+
+\begin{DoxyItemize}
+\item "{}component\+\_\+type"{}
+\item "{}components"{}\+: array de JSONs con los datos de los componentes.
+\item "{}objects\+\_\+to\+\_\+components"{}\+: enlaza un objeto con un componente.
+\item "{}components\+\_\+to\+\_\+objects"{}\+: enlaza un objeto con un componente. \begin{DoxyReturn}{Devuelve}
+JSON serializado. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Component\+Container$<$ TComponent $>$} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_container_ac2d25a31ffbef47a3b427442a2708ecb}.
+
+\index{OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}!SetComponentType@{SetComponentType}}
+\index{SetComponentType@{SetComponentType}!OSK::ECS::IComponentContainer@{OSK::ECS::IComponentContainer}}
+\doxysubsubsection{SetComponentType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_component_container_a5b4275c81aa1382f75843e2e9fbf91df} 
+void IComponent\+Container\+::\+Set\+Component\+Type (\begin{DoxyParamCaption}\item[{\textbf{ Component\+Type}}]{component\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Establece el ID del tipo de componente que maneja el contenedor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em component\+Type} & Tipo de componente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily component\+Type} Debe haber sido previamente registrado. 
+\end{DoxyPrecond}

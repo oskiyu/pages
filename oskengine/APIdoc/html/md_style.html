@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>OSKengine: style</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('md_style.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('md_style.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,19 +78,26 @@ $(document).ready(function(){initNavTree('md_style.html',''); initResizable(); }
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div><div class="header">
   <div class="headertitle"><div class="title">style </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >﻿ </p>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<div class="textblock"><p>﻿ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md288"></a>
 Estilo de código C++.</h1>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md289"></a>
 General</h2>
 <ul>
 <li>Usar tabulaciones en vez de espacios.<ul>
@@ -99,68 +105,68 @@ General</h2>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md290"></a>
 Archivos de encabezado</h2>
 <ul>
-<li>Todos los archivos de encabezado deben tener <em>header guard</em> <code>#pragma once</code>.</li>
-<li>Los archivos de encabezado que necesiten proporcionar el cuerpo de funciones deben tener extensión <code>.hpp</code>.</li>
-<li>El resto de archivos debe tener extensión <code>.h</code>.</li>
-<li>Cada archivo de código C++ (<code>.cpp</code>) debe tener asociado un archivo de encabezado.</li>
+<li>Todos los archivos de encabezado deben tener <em>header guard</em> <span class="tt">#pragma once</span>.</li>
+<li>Los archivos de encabezado que necesiten proporcionar el cuerpo de funciones deben tener extensión <span class="tt">.hpp</span>.</li>
+<li>El resto de archivos debe tener extensión <span class="tt">.h</span>.</li>
+<li>Cada archivo de código C++ (<span class="tt">.cpp</span>) debe tener asociado un archivo de encabezado.</li>
 <li>Si en el archivo de encabezado se hace referencia a algún tipo de dato no básico, debe contener una declaración o definición de dicho tipo de dato (<em>include what you use</em>):<ul>
 <li>Si el tipo de dato no necesita estar definido (como con punteros o referencias), se debe incluir una declaración (<em>forward declaration</em>).</li>
 <li>Si esto no es posible, se debe incluir explícitamente el archivo de inclusión donde se define el tipo de dato.</li>
 </ul>
 </li>
 <li>Los archivos de encabezado que se incluyan en cualquier archivo deben seguir el siguiente orden:<ol type="1">
-<li>Archivo de encabezado enlazado (para archivos de código C++ (<code>.cpp</code>)).</li>
-<li>Archivos de librería del motor (<code><a class="el" href="_numeric_types_8h_source.html">NumericTypes.h</a></code>, <code><a class="el" href="_assert_8h_source.html">Assert.h</a></code>, <code><a class="el" href="_define_as_8h_source.html">DefineAs.h</a></code>, etc.).</li>
-<li>Archivos de memoria del motor (<code><a class="el" href="_unique_ptr_8hpp_source.html">UniquePtr.hpp</a></code>, etc.).</li>
-<li>Archivos generales del motor (<code><a class="el" href="_numeric_types_8h_source.html">NumericTypes.h</a></code>, <code><a class="el" href="_assert_8h_source.html">Assert.h</a></code>, <code>Engine.h</code>, <code><a class="el" href="_logger_8h_source.html">Logger.h</a></code>, etc.).</li>
+<li>Archivo de encabezado enlazado (para archivos de código C++ (<span class="tt">.cpp</span>)).</li>
+<li>Archivos de librería del motor (<span class="tt"><a class="el" href="_numeric_types_8h_source.html">NumericTypes.h</a></span>, <span class="tt"><a class="el" href="_assert_8h_source.html">Assert.h</a></span>, <span class="tt"><a class="el" href="_define_as_8h_source.html">DefineAs.h</a></span>, etc.).</li>
+<li>Archivos de memoria del motor (<span class="tt"><a class="el" href="_unique_ptr_8hpp_source.html">UniquePtr.hpp</a></span>, etc.).</li>
+<li>Archivos generales del motor (<span class="tt"><a class="el" href="_numeric_types_8h_source.html">NumericTypes.h</a></span>, <span class="tt"><a class="el" href="_assert_8h_source.html">Assert.h</a></span>, <span class="tt">Engine.h</span>, <span class="tt"><a class="el" href="_logger_8h_source.html">Logger.h</a></span>, etc.).</li>
 <li>Otros archivos del motor.</li>
-<li>Archivos de la librería estándar (<code>std</code>).</li>
+<li>Archivos de la librería estándar (<span class="tt">std</span>).</li>
 </ol>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md291"></a>
 Namespaces</h2>
 <ul>
 <li>Todo el código debe estar introducido dentro de un namespace.</li>
 <li>Los namespaces deben tener su nombre en mayúsculas, usando snake-case si fuese necesario.</li>
 <li>El namespace elegido debe ser:<ul>
-<li><code><a class="el" href="namespace_o_s_k.html">OSK</a></code>: espacio de nombres por defecto para:<ul>
+<li><span class="tt"><a class="el" href="namespace_o_s_k.html">OSK</a></span>: espacio de nombres por defecto para:<ul>
 <li>Tipos de datos numéricos y vectoriales.</li>
 <li>Excepciones generales.</li>
 <li>Cualquier código relacionado con la ejecución multihilo.</li>
 <li>Cualquier código relacionado con el manejo de UUIDs.</li>
 <li>Clases de punteros.</li>
-<li>Clases generales del motor (<code>Engine</code>, <code>IGame</code>).</li>
+<li>Clases generales del motor (<span class="tt">Engine</span>, <span class="tt">IGame</span>).</li>
 <li>Utilidades generales (menos enum flags).</li>
 </ul>
 </li>
-<li><code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></code>: cualquier código relacionado con el manejo de las APIs de bajo nivel, así como la capa de abstracción. No incluye componentes o sistemas ECS.</li>
-<li><code><a class="el" href="namespace_o_s_k_1_1_e_c_s.html">OSK::ECS</a></code>: cualquier código relacionado con la arquitectura ECS, así como todos los componentes, sistemas y eventos por defecto.</li>
-<li><code><a class="el" href="namespace_o_s_k_1_1_a_s_s_e_t_s.html">OSK::ASSETS</a></code>: cualquier código relacionado con la arquitectura de manejo de assets, así como todos los assets y loaders por defecto.</li>
-<li><code><a class="el" href="namespace_o_s_k_1_1_a_u_d_i_o.html">OSK::AUDIO</a></code>: cualquier código relacionado con el manejo de las APIs de bajo nivel, así como la capa de abstracción. No incluye componentes o sistemas ECS.</li>
-<li><code><a class="el" href="namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n.html">OSK::COLLISION</a></code>: cualquier código relacionado con la detección de colisiones, representación de volúmenes y ray-casting. No incluye componentes o sistemas ECS.</li>
-<li><code><a class="el" href="namespace_o_s_k_1_1_i_o.html">OSK::IO</a></code>: cualquier código relacionado con el manejo de entrada y salida mediante monitor, mando, teclado, ratón, logs y archivos.</li>
-<li><code><a class="el" href="namespace_o_s_k_1_1_m_e_m_o_r_y.html">OSK::MEMORY</a></code>: cualquier código relacionado con el manejo de memoria, excepto por clases de punteros.</li>
-<li><code><a class="el" href="namespace_o_s_k_1_1_n_e_t.html">OSK::NET</a></code>: cualquier código relacionado con el manejo de redes y la transmisión de datos mediante éstas.</li>
-<li><code><a class="el" href="namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e.html">OSK::PERSISTENCE</a></code>: cualquier código relacionado con la serialización y desserialización de datos, independientemente de su formato.</li>
-<li><code><a class="el" href="namespace_o_s_k_1_1_u_i.html">OSK::UI</a></code>: cualquier código relacionado con la interfaz de usuario, incluyendo los elementos por defecto.</li>
-<li><code><a class="el" href="namespace_o_s_k_1_1_m_a_t_h.html">OSK::MATH</a></code>: cualquier código relacionado con operaciones matemáticas. No incluye tipos de datos numéricos o vectoriales.</li>
-<li><code><a class="el" href="namespace_o_s_k_1_1_e_f_traits.html" title="Permite la manipulación de enum class como flags de un enum.">OSK::EFTraits</a></code>: cualquier código relacionado con el manejo de enumeraciones como enum flags.</li>
+<li><span class="tt"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></span>: cualquier código relacionado con el manejo de las APIs de bajo nivel, así como la capa de abstracción. No incluye componentes o sistemas ECS.</li>
+<li><span class="tt"><a class="el" href="namespace_o_s_k_1_1_e_c_s.html">OSK::ECS</a></span>: cualquier código relacionado con la arquitectura ECS, así como todos los componentes, sistemas y eventos por defecto.</li>
+<li><span class="tt"><a class="el" href="namespace_o_s_k_1_1_a_s_s_e_t_s.html">OSK::ASSETS</a></span>: cualquier código relacionado con la arquitectura de manejo de assets, así como todos los assets y loaders por defecto.</li>
+<li><span class="tt"><a class="el" href="namespace_o_s_k_1_1_a_u_d_i_o.html">OSK::AUDIO</a></span>: cualquier código relacionado con el manejo de las APIs de bajo nivel, así como la capa de abstracción. No incluye componentes o sistemas ECS.</li>
+<li><span class="tt"><a class="el" href="namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n.html">OSK::COLLISION</a></span>: cualquier código relacionado con la detección de colisiones, representación de volúmenes y ray-casting. No incluye componentes o sistemas ECS.</li>
+<li><span class="tt"><a class="el" href="namespace_o_s_k_1_1_i_o.html">OSK::IO</a></span>: cualquier código relacionado con el manejo de entrada y salida mediante monitor, mando, teclado, ratón, logs y archivos.</li>
+<li><span class="tt"><a class="el" href="namespace_o_s_k_1_1_m_e_m_o_r_y.html">OSK::MEMORY</a></span>: cualquier código relacionado con el manejo de memoria, excepto por clases de punteros.</li>
+<li><span class="tt"><a class="el" href="namespace_o_s_k_1_1_n_e_t.html">OSK::NET</a></span>: cualquier código relacionado con el manejo de redes y la transmisión de datos mediante éstas.</li>
+<li><span class="tt"><a class="el" href="namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e.html">OSK::PERSISTENCE</a></span>: cualquier código relacionado con la serialización y desserialización de datos, independientemente de su formato.</li>
+<li><span class="tt"><a class="el" href="namespace_o_s_k_1_1_u_i.html">OSK::UI</a></span>: cualquier código relacionado con la interfaz de usuario, incluyendo los elementos por defecto.</li>
+<li><span class="tt"><a class="el" href="namespace_o_s_k_1_1_m_a_t_h.html">OSK::MATH</a></span>: cualquier código relacionado con operaciones matemáticas. No incluye tipos de datos numéricos o vectoriales.</li>
+<li><span class="tt"><a class="el" href="namespace_o_s_k_1_1_e_f_traits.html" title="Permite la manipulación de enum class como flags de un enum.">OSK::EFTraits</a></span>: cualquier código relacionado con el manejo de enumeraciones como enum flags.</li>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md292"></a>
 Variables</h2>
 <ul>
 <li>Tanto las variables como los atributos deben tener estilo <em>lowerCamelCase</em>.</li>
-<li>Los atributos de una clase deben tener el prefijo <code>m_</code>, independientemente de su tipo o propiedades.</li>
+<li>Los atributos de una clase deben tener el prefijo <span class="tt">m_</span>, independientemente de su tipo o propiedades.</li>
 <li>Las variables:<ul>
 <li>Deben ser declaradas lo más cerca posible de su primer uso.</li>
 <li>Deben ser declaradas en el scope más restrictivo posible.</li>
-<li>Deben ser inmutables (<code>const</code>) siempre que sea posible.</li>
+<li>Deben ser inmutables (<span class="tt">const</span>) siempre que sea posible.</li>
 <li>Deben tener un valor inicial siempre que sea posible.</li>
 <li>Deben ser declaradas fuera de los paréntesis de los bucles y sentencias if.</li>
 <li>No se deben declarar varias variables en una misma línea.</li>
@@ -168,7 +174,7 @@ Variables</h2>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md293"></a>
 Clases y estructuras</h2>
 <ul>
 <li>Los nombres de las clases y estructuras deben tener estilo <em>UpperCamelCase</em>.</li>
@@ -198,60 +204,68 @@ Clases y estructuras</h2>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md23"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md294"></a>
 Struct vs class</h3>
 <ul>
-<li>Los objetos que únicamente almacenan información deben ser <code>struct</code>.</li>
-<li>Los objetos que almacenan tanto información como funciones deben ser <code>class</code>.</li>
+<li>Los objetos que únicamente almacenan información deben ser <span class="tt">struct</span>.</li>
+<li>Los objetos que almacenan tanto información como funciones deben ser <span class="tt">class</span>.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md24"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md295"></a>
 Structs</h3>
 <ul>
 <li>Preferir el uso de estructuras en vez de parejas o tuplas.</li>
-<li>Los atributos de una estructura no deben usar el prefijo <code>m_</code>.</li>
+<li>Los atributos de una estructura no deben usar el prefijo <span class="tt">m_</span>.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md25"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md296"></a>
 Herencia</h3>
 <ul>
 <li>Se permite la herencia múltiple.</li>
-<li>Si una clase está diseñada como interfaz o como clase abstracta (clase que no está completa, y que tiene funciones virtuales que deben ser desarrolladas en clases hijas) deben tener el prefijo <code>I</code>.</li>
-<li>Si una clase está diseñada para no ser heredada, marcar como <code>final</code>.</li>
+<li>Si una clase está diseñada como interfaz o como clase abstracta (clase que no está completa, y que tiene funciones virtuales que deben ser desarrolladas en clases hijas) deben tener el prefijo <span class="tt">I</span>.</li>
+<li>Si una clase está diseñada para no ser heredada, marcar como <span class="tt">final</span>.</li>
 <li>Toda herencia debe ser pública.</li>
-<li>Toda función que pueda ser sobreescrita debe ser marcada como <code>virtual</code>.</li>
-<li>Toda función sobreescrita debe ser marcada como <code>override</code>.</li>
+<li>Toda función que pueda ser sobreescrita debe ser marcada como <span class="tt">virtual</span>.</li>
+<li>Toda función sobreescrita debe ser marcada como <span class="tt">override</span>.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md297"></a>
 Punteros</h2>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md298"></a>
 Funciones</h2>
 <ul>
-<li>Preferir funciones no mutables (<code>const</code>) siempre que sea posible.</li>
+<li>Preferir funciones no mutables (<span class="tt">const</span>) siempre que sea posible.</li>
 <li>Preferir funciones pequeñas.</li>
 <li>Preferir argumentos por defecto a overloading.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md28"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md299"></a>
 Parámetros</h3>
 <ul>
-<li>No usar parámetros de salida: en caso de devolver varios elementos, usar un <code>struct</code>.</li>
+<li>No usar parámetros de salida: en caso de devolver varios elementos, usar un <span class="tt">struct</span>.</li>
 <li>Los parámetros de entrada de tipos numéricos y booleanos deben ser pasados por valor.<ul>
-<li>En caso de ser opcionales: usar <code>std::optional</code>.</li>
+<li>En caso de ser opcionales: usar <span class="tt">std::optional</span>.</li>
 </ul>
 </li>
 <li>Los parámetros de entrada de tipos complejos, clases y estructuras deben ser pasados por referencia constante.</li>
 <li>Los parámetros de entrada que puedan ser modificados deben ser pasados como puntero.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md300"></a>
 Casting</h2>
 <ul>
-<li>No usar casting tipo C, preferir métodos de casting tipo C++ (<code>static_cast</code>, <code>const_cast</code>, <code>reinterpret_cast</code>, <code>std::bit_cast</code>). </li>
+<li>No usar casting tipo C, preferir métodos de casting tipo C++ (<span class="tt">static_cast</span>, <span class="tt">const_cast</span>, <span class="tt">reinterpret_cast</span>, <span class="tt">std::bit_cast</span>). </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

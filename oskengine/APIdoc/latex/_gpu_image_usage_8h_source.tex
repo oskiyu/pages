@@ -1,0 +1,84 @@
+\doxysection{Gpu\+Image\+Usage.\+h}
+\label{_gpu_image_usage_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GpuImageUsage.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GpuImageUsage.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}EnumFlags.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuImageUsage\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ UNKNOWN\ =\ 0,}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ COLOR\ =\ 1,}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ DEPTH\ =\ 2,}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ SAMPLED\ =\ 4,}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ TRANSFER\_SOURCE\ =\ 8,}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ TRANSFER\_DESTINATION\ =\ 16,}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ CUBEMAP\ =\ 32,}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ RT\_TARGET\_IMAGE\ =\ 64,}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ SAMPLED\_ARRAY\ =\ 128,}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ COMPUTE\ =\ 256,}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ STENCIL\ =\ 512,}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuExclusiveImageUsage\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ UNKNOWN,}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ COLOR,}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ DEPTH,}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ SAMPLED,}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ TRANSFER\_SOURCE,}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ TRANSFER\_DESTINATION,}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ COMPUTE\_OR\_RT\_TARGET,}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ STENCIL,}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{enum\ class}\ SampledChannel\ \{}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ COLOR\ =\ 1,}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ DEPTH\ =\ 2,}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ STENCIL\ =\ 4}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{enum\ class}\ SampledArrayType\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ SINGLE\_LAYER,}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ ARRAY}
+\DoxyCodeLine{00135\ \ \ \ \ \};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuImageTiling\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ OPTIMAL,}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ LINEAL}
+\DoxyCodeLine{00144\ \ \ \ \ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ OSK\_FLAGS(OSK::GRAPHICS::GpuImageUsage);}
+\DoxyCodeLine{00149\ OSK\_FLAGS(OSK::GRAPHICS::SampledChannel);}
+
+\end{DoxyCode}

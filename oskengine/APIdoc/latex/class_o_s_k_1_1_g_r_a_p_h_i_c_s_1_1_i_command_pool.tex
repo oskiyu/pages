@@ -1,0 +1,130 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::ICommand\+Pool}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool}\index{OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}}
+
+
+{\ttfamily \#include $<$ICommand\+Pool.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+ICommand\+Pool} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ ICommand\+Pool})
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+List} $>$ \textbf{ Create\+Command\+List} (const \textbf{ IGpu} \&device)=0
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+List} $>$ \textbf{ Create\+Single\+Time\+Command\+List} (const \textbf{ IGpu} \&device)=0
+\item 
+\textbf{ Commands\+Support} \textbf{ Get\+Supported\+Commands} () const
+\item 
+\textbf{ Gpu\+Queue\+Type} \textbf{ Get\+Linked\+Queue\+Type} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ ICommand\+Pool} (\textbf{ Commands\+Support} supported\+Commands, \textbf{ Gpu\+Queue\+Type} main\+Type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Una pool de comandos se encarga de crear una serie de listas de comandos. Al mismo tiempo, al destruir el pool se destruirán cada una de las listas creadas por el pool. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}!````~ICommandPool@{$\sim$ICommandPool}}
+\index{````~ICommandPool@{$\sim$ICommandPool}!OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}}
+\doxysubsubsection{$\sim$ICommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool_a19bf7e6bd1cdc186d87287880adc43d3} 
+virtual OSK\+::\+GRAPHICS\+::\+ICommand\+Pool\+::$\sim$\+ICommand\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\index{OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}!ICommandPool@{ICommandPool}}
+\index{ICommandPool@{ICommandPool}!OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}}
+\doxysubsubsection{ICommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool_acd5635debc01255d63dde76448002420} 
+ICommand\+Pool\+::\+ICommand\+Pool (\begin{DoxyParamCaption}\item[{\textbf{ Commands\+Support}}]{supported\+Commands}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{main\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Crea la lista. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em supported\+Commands} & Tipos de comandos soportados. \\
+\hline
+{\em main\+Type} & Tipo de cola en la que se puede insertar las listas creadas por este pool. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}!CreateCommandList@{CreateCommandList}}
+\index{CreateCommandList@{CreateCommandList}!OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}}
+\doxysubsubsection{CreateCommandList()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool_a60b801ba0e3e9ba392850e4ed1d749e5} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+List} $>$ OSK\+::\+GRAPHICS\+::\+ICommand\+Pool\+::\+Create\+Command\+List (\begin{DoxyParamCaption}\item[{const \textbf{ IGpu} \&}]{device}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Crea una lista de comandos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em device} & GPU donde se alamcenarán las listas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de comandos.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Command\+List\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_creation_exception}} & si no se pudo crear la lista. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}!CreateSingleTimeCommandList@{CreateSingleTimeCommandList}}
+\index{CreateSingleTimeCommandList@{CreateSingleTimeCommandList}!OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}}
+\doxysubsubsection{CreateSingleTimeCommandList()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool_ae6be1235f1eb1b2040bfe2e9f0d626a2} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+List} $>$ OSK\+::\+GRAPHICS\+::\+ICommand\+Pool\+::\+Create\+Single\+Time\+Command\+List (\begin{DoxyParamCaption}\item[{const \textbf{ IGpu} \&}]{device}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Crea una lista de comandos de un sólo uso. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em device} & GPU donde se alamcenarán las listas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de comandos de un único uso.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Command\+List\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_creation_exception}} & si no se pudo crear la lista. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}!GetLinkedQueueType@{GetLinkedQueueType}}
+\index{GetLinkedQueueType@{GetLinkedQueueType}!OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}}
+\doxysubsubsection{GetLinkedQueueType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool_af4fc3ce07257231a2c42c3aa7b4022ce} 
+\textbf{ Gpu\+Queue\+Type} ICommand\+Pool\+::\+Get\+Linked\+Queue\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Tipo de cola en la que se puede insertar las listas creadas por este pool. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}!GetSupportedCommands@{GetSupportedCommands}}
+\index{GetSupportedCommands@{GetSupportedCommands}!OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}}
+\doxysubsubsection{GetSupportedCommands()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool_a64ae6c798a47b60dfed69a056917afbc} 
+\textbf{ Commands\+Support} ICommand\+Pool\+::\+Get\+Supported\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Tipos de comandos soportados por este pool. Las listas de comandos creadas a partir de este pool sólamente soportarán los comandos del tipo indicado. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::ICommandPool@{OSK::GRAPHICS::ICommandPool}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool_ab6a99b5a7f828602bf5363e880450480} 
+OSK\+::\+GRAPHICS\+::\+ICommand\+Pool\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+Pool}}]{}{}\end{DoxyParamCaption})}
+

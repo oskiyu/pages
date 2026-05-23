@@ -1,0 +1,93 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Global\+Per\+Model\+Data}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_per_model_data}\index{OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}}
+
+
+{\ttfamily \#include $<$Mesh\+Mapping.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Global\+Per\+Model\+Data} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Global\+Per\+Model\+Data})
+\item 
+\textbf{ Material\+Instance} $\ast$ \textbf{ Get\+Animation\+Material\+Instance} ()
+\item 
+const \textbf{ Material\+Instance} $\ast$ \textbf{ Get\+Animation\+Material\+Instance} () const
+\item 
+const \textbf{ Gpu\+Buffer} $\ast$ \textbf{ Get\+Bones\+Buffer} () const
+\item 
+\textbf{ Gpu\+Buffer} $\ast$ \textbf{ Get\+Bones\+Buffer} ()
+\item 
+void \textbf{ Set\+Animation\+Material\+Instance} (\textbf{ Unique\+Ptr}$<$ \textbf{ Material\+Instance} $>$ \&\&instance)
+\item 
+void \textbf{ Set\+Bones\+Buffer} (\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \&\&buffer)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Información por cada modelo 3D. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}!GlobalPerModelData@{GlobalPerModelData}}
+\index{GlobalPerModelData@{GlobalPerModelData}!OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}}
+\doxysubsubsection{GlobalPerModelData()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_per_model_data_a4e889b8d773593a38ff5330e477faa88} 
+OSK\+::\+GRAPHICS\+::\+Global\+Per\+Model\+Data\+::\+Global\+Per\+Model\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}!GetAnimationMaterialInstance@{GetAnimationMaterialInstance}}
+\index{GetAnimationMaterialInstance@{GetAnimationMaterialInstance}!OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}}
+\doxysubsubsection{GetAnimationMaterialInstance()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_per_model_data_aa35d1f18d45050d3b7d09e61c69ce931} 
+\textbf{ Material\+Instance} $\ast$ Global\+Per\+Model\+Data\+::\+Get\+Animation\+Material\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Instancia de material con los uniform buffers de la animación. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}!GetAnimationMaterialInstance@{GetAnimationMaterialInstance}}
+\index{GetAnimationMaterialInstance@{GetAnimationMaterialInstance}!OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}}
+\doxysubsubsection{GetAnimationMaterialInstance()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_per_model_data_a74f7d3a9cc1ed3d9075544df05da5498} 
+const \textbf{ Material\+Instance} $\ast$ Global\+Per\+Model\+Data\+::\+Get\+Animation\+Material\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Instancia de material con los uniform buffers de la animación. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}!GetBonesBuffer@{GetBonesBuffer}}
+\index{GetBonesBuffer@{GetBonesBuffer}!OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}}
+\doxysubsubsection{GetBonesBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_per_model_data_acd0d41a5294f8fb082e180d3a266d128} 
+\textbf{ Gpu\+Buffer} $\ast$ Global\+Per\+Model\+Data\+::\+Get\+Bones\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}!GetBonesBuffer@{GetBonesBuffer}}
+\index{GetBonesBuffer@{GetBonesBuffer}!OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}}
+\doxysubsubsection{GetBonesBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_per_model_data_ac14c8058de5893b78fd6f37555a51747} 
+const \textbf{ Gpu\+Buffer} $\ast$ Global\+Per\+Model\+Data\+::\+Get\+Bones\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Buffer con las matrices de los huesos. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_per_model_data_ac2a6c6bb78fd337d814aad77df7bc7e4} 
+OSK\+::\+GRAPHICS\+::\+Global\+Per\+Model\+Data\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Global\+Per\+Model\+Data}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}!SetAnimationMaterialInstance@{SetAnimationMaterialInstance}}
+\index{SetAnimationMaterialInstance@{SetAnimationMaterialInstance}!OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}}
+\doxysubsubsection{SetAnimationMaterialInstance()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_per_model_data_a0b01291e560a458c0d355e89ff6dc88e} 
+void Global\+Per\+Model\+Data\+::\+Set\+Animation\+Material\+Instance (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ Material\+Instance} $>$ \&\&}]{instance}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}!SetBonesBuffer@{SetBonesBuffer}}
+\index{SetBonesBuffer@{SetBonesBuffer}!OSK::GRAPHICS::GlobalPerModelData@{OSK::GRAPHICS::GlobalPerModelData}}
+\doxysubsubsection{SetBonesBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_per_model_data_a7483dd161ded6381608a0d39eb0bc117} 
+void Global\+Per\+Model\+Data\+::\+Set\+Bones\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \&\&}]{buffer}{}\end{DoxyParamCaption})}
+

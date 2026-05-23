@@ -1,0 +1,65 @@
+\doxysection{Gpu\+Image\+Create\+Info.\+h}
+\label{_gpu_image_create_info_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GpuImageCreateInfo.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GpuImageCreateInfo.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Format.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}GpuImageUsage.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}GpuImageDimensions.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}GpuImageSamplerDesc.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}GpuMemoryTypes.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}GpuQueueTypes.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{struct\ }OSKAPI\_CALL\ GpuImageCreateInfo\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageCreateInfo\ CreateDefault1D(}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ resolution,\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ Format\ format,\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageUsage\ usage);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageCreateInfo\ CreateDefault2D(}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2ui\&\ resolution,\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ Format\ format,\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageUsage\ usage);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageCreateInfo\ CreateDefault3D(}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector3ui\&\ resolution,\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ Format\ format,\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageUsage\ usage);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ Vector3ui\ resolution;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ Format\ format;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ GpuImageUsage\ usage\ =\ GpuImageUsage::UNKNOWN;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ GpuImageDimension\ dimension;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ USize32\ numLayers\ =\ 1;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ USize32\ msaaSamples\ =\ 1;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ GpuImageSamplerDesc\ samplerDesc\ =\ \{\};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ GpuSharedMemoryType\ memoryType\ =\ GpuSharedMemoryType::GPU\_ONLY;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ GpuImageTiling\ tilingType\ =\ GpuImageTiling::OPTIMAL;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ GpuQueueType\ queueType\ =\ GpuQueueType::MAIN;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \}}
+
+\end{DoxyCode}

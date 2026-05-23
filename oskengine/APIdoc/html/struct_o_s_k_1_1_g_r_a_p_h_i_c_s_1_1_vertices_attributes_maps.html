@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Referencia de la Estructura OSK::GRAPHICS::VerticesAttributesMaps</title>
+<title>OSKengine: Referencia de la estructura OSK::GRAPHICS::VerticesAttributesMaps</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps.html','','struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,50 +78,54 @@ $(document).ready(function(){initNavTree('struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_v
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Métodos públicos</a> &#124;
-<a href="#pub-attribs">Atributos públicos</a> &#124;
-<a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps-members.html">Lista de todos los miembros</a>  </div>
-  <div class="headertitle"><div class="title">Referencia de la Estructura OSK::GRAPHICS::VerticesAttributesMaps</div></div>
+  <div class="headertitle"><div class="title">Referencia de la estructura OSK::GRAPHICS::VerticesAttributesMaps</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_vertex_attributes_8h_source.html">VertexAttributes.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
-<tr class="memitem:a4c8bdf6b6f5742d48d9e8317d0aeb832"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps.html#a4c8bdf6b6f5742d48d9e8317d0aeb832">HasAttribute</a> (std::string_view attributeName) const</td></tr>
-<tr class="separator:a4c8bdf6b6f5742d48d9e8317d0aeb832"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81738c838bd0abd40255c3438039803d"><td class="memTemplParams" colspan="2">template&lt;typename TAttrib &gt; <br />
+<tr class="memitem:aaac802883258ac78507baa580cd872e4" id="r_aaac802883258ac78507baa580cd872e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaac802883258ac78507baa580cd872e4">HasAttribute</a> (<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a016b93cde147b31cfd13601500dcdfed">VertexAttribUuid</a> uuid) const</td></tr>
+<tr class="memitem:a81738c838bd0abd40255c3438039803d" id="r_a81738c838bd0abd40255c3438039803d"><td class="memTemplParams" colspan="2">template&lt;typename TAttrib&gt; <br />
 requires IsVertexAttribute&lt;TAttrib&gt;</td></tr>
-<tr class="memitem:a81738c838bd0abd40255c3438039803d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps.html#a81738c838bd0abd40255c3438039803d">AddVertexAttribute</a> (const TAttrib &amp;attribute)</td></tr>
-<tr class="separator:a81738c838bd0abd40255c3438039803d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d68411a5ef00289656255d4b65d0503"><td class="memTemplParams" colspan="2">template&lt;typename TAttrib &gt; <br />
+<tr class="memitem:a81738c838bd0abd40255c3438039803d template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81738c838bd0abd40255c3438039803d">AddVertexAttribute</a> (const TAttrib &amp;attribute)</td></tr>
+<tr class="memitem:a5dd4a77fbafae6a1b99c6471fa9c3328" id="r_a5dd4a77fbafae6a1b99c6471fa9c3328"><td class="memTemplParams" colspan="2">template&lt;typename TAttrib&gt; <br />
 requires IsVertexAttribute&lt;TAttrib&gt;</td></tr>
-<tr class="memitem:a9d68411a5ef00289656255d4b65d0503"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; TAttrib &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps.html#a9d68411a5ef00289656255d4b65d0503">GetVerticesAttributes</a> () const</td></tr>
-<tr class="separator:a9d68411a5ef00289656255d4b65d0503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dd4a77fbafae6a1b99c6471fa9c3328 template"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; TAttrib &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5dd4a77fbafae6a1b99c6471fa9c3328">GetVerticesAttributesList</a> () const</td></tr>
+<tr class="memitem:adbfbe79c2887142ab6dbe1bacd3126fe" id="r_adbfbe79c2887142ab6dbe1bacd3126fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_map.html">VerticesAttributesMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbfbe79c2887142ab6dbe1bacd3126fe">GetVerticesAttributes</a> (<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a016b93cde147b31cfd13601500dcdfed">VertexAttribUuid</a> uuid)</td></tr>
+<tr class="memitem:a4d068a42ac6221a9d4d6efde4577f8f5" id="r_a4d068a42ac6221a9d4d6efde4577f8f5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_map.html">VerticesAttributesMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d068a42ac6221a9d4d6efde4577f8f5">GetVerticesAttributes</a> (<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a016b93cde147b31cfd13601500dcdfed">VertexAttribUuid</a> uuid) const</td></tr>
+<tr class="memitem:af29a607fc17c4d1ca10904ae5e2c600b" id="r_af29a607fc17c4d1ca10904ae5e2c600b"><td class="memTemplParams" colspan="2">template&lt;typename TAttrib&gt; <br />
+requires IsVertexAttribute&lt;TAttrib&gt;</td></tr>
+<tr class="memitem:af29a607fc17c4d1ca10904ae5e2c600b template"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; TAttrib &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af29a607fc17c4d1ca10904ae5e2c600b">TGetVerticesAttributes</a> () const</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Atributos públicos</h2></td></tr>
-<tr class="memitem:a5bb8e0193e6df3c3c1d2ff6b1555c39d"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a5be3dfd5a104304cabfceb11b95bb5db">VerticesAttributesMap</a>, <a class="el" href="struct_o_s_k_1_1_string_hasher.html">StringHasher</a>, std::equal_to&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps.html#a5bb8e0193e6df3c3c1d2ff6b1555c39d">attributes</a></td></tr>
-<tr class="separator:a5bb8e0193e6df3c3c1d2ff6b1555c39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2686e02b1e6877bc0183e899a470704" id="r_aa2686e02b1e6877bc0183e899a470704"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a016b93cde147b31cfd13601500dcdfed">VertexAttribUuid</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_map.html">VerticesAttributesMap</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2686e02b1e6877bc0183e899a470704">attributes</a></td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p >Mapa con todos los atributos de todos los vértices de un modelo 3D. </p>
-</div><h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Mapa con todos los atributos de todos los vértices de un modelo 3D. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
 <a id="a81738c838bd0abd40255c3438039803d" name="a81738c838bd0abd40255c3438039803d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81738c838bd0abd40255c3438039803d">&#9670;&nbsp;</a></span>AddVertexAttribute()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a81738c838bd0abd40255c3438039803d">&#9670;&#160;</a></span>AddVertexAttribute()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAttrib &gt; <br />
+template&lt;typename TAttrib&gt; <br />
 requires IsVertexAttribute&lt;TAttrib&gt;</div>
 <table class="mlabels">
   <tr>
@@ -131,20 +134,19 @@ requires IsVertexAttribute&lt;TAttrib&gt;</div>
         <tr>
           <td class="memname">void OSK::GRAPHICS::VerticesAttributesMaps::AddVertexAttribute </td>
           <td>(</td>
-          <td class="paramtype">const TAttrib &amp;&#160;</td>
-          <td class="paramname"><em>attribute</em></td><td>)</td>
+          <td class="paramtype">const TAttrib &amp;</td>          <td class="paramname"><span class="paramname"><em>attribute</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Añade un atributo de vértice. </p>
-<dl class="tparams"><dt>Parámetros del template</dt><dd>
+<dl class="tparams"><dt>Parámetros de plantilla</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">TAttrib</td><td>Tipo de atributo. </td></tr>
   </table>
@@ -159,34 +161,84 @@ requires IsVertexAttribute&lt;TAttrib&gt;</div>
 
 </div>
 </div>
-<a id="a9d68411a5ef00289656255d4b65d0503" name="a9d68411a5ef00289656255d4b65d0503"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d68411a5ef00289656255d4b65d0503">&#9670;&nbsp;</a></span>GetVerticesAttributes()</h2>
+<a id="adbfbe79c2887142ab6dbe1bacd3126fe" name="adbfbe79c2887142ab6dbe1bacd3126fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbfbe79c2887142ab6dbe1bacd3126fe">&#9670;&#160;</a></span>GetVerticesAttributes() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_map.html">VerticesAttributesMap</a> &amp; OSK::GRAPHICS::VerticesAttributesMaps::GetVerticesAttributes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a016b93cde147b31cfd13601500dcdfed">VertexAttribUuid</a></td>          <td class="paramname"><span class="paramname"><em>uuid</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d068a42ac6221a9d4d6efde4577f8f5" name="a4d068a42ac6221a9d4d6efde4577f8f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d068a42ac6221a9d4d6efde4577f8f5">&#9670;&#160;</a></span>GetVerticesAttributes() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_map.html">VerticesAttributesMap</a> &amp; OSK::GRAPHICS::VerticesAttributesMaps::GetVerticesAttributes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a016b93cde147b31cfd13601500dcdfed">VertexAttribUuid</a></td>          <td class="paramname"><span class="paramname"><em>uuid</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5dd4a77fbafae6a1b99c6471fa9c3328" name="a5dd4a77fbafae6a1b99c6471fa9c3328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dd4a77fbafae6a1b99c6471fa9c3328">&#9670;&#160;</a></span>GetVerticesAttributesList()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAttrib &gt; <br />
+template&lt;typename TAttrib&gt; <br />
 requires IsVertexAttribute&lt;TAttrib&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; TAttrib &gt; &amp; OSK::GRAPHICS::VerticesAttributesMaps::GetVerticesAttributes </td>
+          <td class="memname">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; TAttrib &gt; &amp; OSK::GRAPHICS::VerticesAttributesMaps::GetVerticesAttributesList </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Obtiene una lista de atributos en concreto. </p>
-<dl class="tparams"><dt>Parámetros del template</dt><dd>
+<dl class="tparams"><dt>Parámetros de plantilla</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">TAttrib</td><td>Tipo de atributo. </td></tr>
   </table>
@@ -203,8 +255,8 @@ requires IsVertexAttribute&lt;TAttrib&gt;</div>
 
 </div>
 </div>
-<a id="a4c8bdf6b6f5742d48d9e8317d0aeb832" name="a4c8bdf6b6f5742d48d9e8317d0aeb832"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c8bdf6b6f5742d48d9e8317d0aeb832">&#9670;&nbsp;</a></span>HasAttribute()</h2>
+<a id="aaac802883258ac78507baa580cd872e4" name="aaac802883258ac78507baa580cd872e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaac802883258ac78507baa580cd872e4">&#9670;&#160;</a></span>HasAttribute()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,20 +267,19 @@ requires IsVertexAttribute&lt;TAttrib&gt;</div>
         <tr>
           <td class="memname">bool OSK::GRAPHICS::VerticesAttributesMaps::HasAttribute </td>
           <td>(</td>
-          <td class="paramtype">std::string_view&#160;</td>
-          <td class="paramname"><em>attributeName</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a016b93cde147b31cfd13601500dcdfed">VertexAttribUuid</a></td>          <td class="paramname"><span class="paramname"><em>uuid</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">attributeName</td><td>Nombre único del atributo. </td></tr>
+    <tr><td class="paramname">uuid</td><td>UUID del atributo. </td></tr>
   </table>
   </dd>
 </dl>
@@ -236,15 +287,43 @@ requires IsVertexAttribute&lt;TAttrib&gt;</div>
 
 </div>
 </div>
-<h2 class="groupheader">Documentación de los datos miembro</h2>
-<a id="a5bb8e0193e6df3c3c1d2ff6b1555c39d" name="a5bb8e0193e6df3c3c1d2ff6b1555c39d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bb8e0193e6df3c3c1d2ff6b1555c39d">&#9670;&nbsp;</a></span>attributes</h2>
+<a id="af29a607fc17c4d1ca10904ae5e2c600b" name="af29a607fc17c4d1ca10904ae5e2c600b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af29a607fc17c4d1ca10904ae5e2c600b">&#9670;&#160;</a></span>TGetVerticesAttributes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TAttrib&gt; <br />
+requires IsVertexAttribute&lt;TAttrib&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; TAttrib &gt; &amp; OSK::GRAPHICS::VerticesAttributesMaps::TGetVerticesAttributes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de datos miembro</h2>
+<a id="aa2686e02b1e6877bc0183e899a470704" name="aa2686e02b1e6877bc0183e899a470704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2686e02b1e6877bc0183e899a470704">&#9670;&#160;</a></span>attributes</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;std::string, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a5be3dfd5a104304cabfceb11b95bb5db">VerticesAttributesMap</a>, <a class="el" href="struct_o_s_k_1_1_string_hasher.html">StringHasher</a>, std::equal_to&lt;&gt; &gt; OSK::GRAPHICS::VerticesAttributesMaps::attributes</td>
+          <td class="memname">std::unordered_map&lt;<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a016b93cde147b31cfd13601500dcdfed">VertexAttribUuid</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_map.html">VerticesAttributesMap</a>&gt; OSK::GRAPHICS::VerticesAttributesMaps::attributes</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -253,11 +332,19 @@ requires IsVertexAttribute&lt;TAttrib&gt;</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespace_o_s_k.html">OSK</a></li><li class="navelem"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">GRAPHICS</a></li><li class="navelem"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps.html">VerticesAttributesMaps</a></li>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="navelem"><a href="namespace_o_s_k.html">OSK</a></li><li class="navelem"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">GRAPHICS</a></li><li class="navelem"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps.html">VerticesAttributesMaps</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

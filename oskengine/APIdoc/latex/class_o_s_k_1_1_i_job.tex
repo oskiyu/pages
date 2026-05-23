@@ -1,0 +1,85 @@
+\doxysection{Referencia de la clase OSK\+::IJob}
+\label{class_o_s_k_1_1_i_job}\index{OSK::IJob@{OSK::IJob}}
+
+
+{\ttfamily \#include $<$IJob.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IJob} ()=default
+\item 
+virtual void \textbf{ Execute} ()=0
+\item 
+virtual std\+::string\+\_\+view \textbf{ Get\+Name} () const =0
+\item 
+void \textbf{ Add\+Tag} (const std\+::string \&tag)
+\item 
+const std\+::set$<$ std\+::string, std\+::less$<$$>$ $>$ \& \textbf{ Get\+Tags} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa una unidad de ejecución que puede ser ejecutada por el sistema de trabajos. 
+
+Un trabajo puede generar otros trabajos. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IJob@{OSK::IJob}!````~IJob@{$\sim$IJob}}
+\index{````~IJob@{$\sim$IJob}!OSK::IJob@{OSK::IJob}}
+\doxysubsubsection{$\sim$IJob()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_job_a466d3f6d2451e09717bb30003a5f1532} 
+virtual OSK\+::\+IJob\+::$\sim$\+IJob (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IJob@{OSK::IJob}!AddTag@{AddTag}}
+\index{AddTag@{AddTag}!OSK::IJob@{OSK::IJob}}
+\doxysubsubsection{AddTag()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_job_af308d2cae1aa5d8e989108dc1d90c397} 
+void IJob\+::\+Add\+Tag (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag}{}\end{DoxyParamCaption})}
+
+
+
+Añade un tag al trabajo, para poder identificarlo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tag} & Tag. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IJob@{OSK::IJob}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::IJob@{OSK::IJob}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_job_ab85f5a37fd68f649a8e03ace299edff0} 
+virtual void OSK\+::\+IJob\+::\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Ejecuta la función del trabajo. 
+
+
+
+Implementado en \textbf{ OSK\+::\+ASSETS\+::\+Asset\+Loader\+Job} \doxyref{}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_loader_job_a65d6e22e3a03a1eb77b47c95d8337a50}, \textbf{ OSK\+::\+ECS\+::\+Consumer\+System\+Execution\+Job} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_consumer_system_execution_job_a7a294b0afe0efca27a6bd3fb65f168c2} y \textbf{ OSK\+::\+ECS\+::\+Iterator\+System\+Execution\+Job} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_iterator_system_execution_job_a5c795ab86bd25a669765c8c23c3516f1}.
+
+\index{OSK::IJob@{OSK::IJob}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::IJob@{OSK::IJob}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_job_a5753b049ae5efe00bb929e675aadcc03} 
+virtual std\+::string\+\_\+view OSK\+::\+IJob\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Nombre del trabajo. 
+\end{DoxyReturn}
+\index{OSK::IJob@{OSK::IJob}!GetTags@{GetTags}}
+\index{GetTags@{GetTags}!OSK::IJob@{OSK::IJob}}
+\doxysubsubsection{GetTags()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_job_ac96971e8dee85c75fd3913aafac31e36} 
+const std\+::set$<$ std\+::string, std\+::less$<$$>$ $>$ \& IJob\+::\+Get\+Tags (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Lista con todos los tags. Puede estar vacía. 
+\end{DoxyReturn}

@@ -1,0 +1,114 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Local\+Per\+Mesh\+Data}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_mesh_data}\index{OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}}
+
+
+{\ttfamily \#include $<$Mesh\+Mapping.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Local\+Per\+Mesh\+Data} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Local\+Per\+Mesh\+Data})
+\item 
+void \textbf{ \+\_\+\+Set\+Material\+Instance} (\textbf{ Unique\+Ptr}$<$ \textbf{ Material\+Instance} $>$ \&\&instance)
+\item 
+void \textbf{ \+\_\+\+Set\+Material\+Buffer} (\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \&\&material\+Buffer)
+\item 
+\textbf{ Material\+Instance} $\ast$ \textbf{ Get\+Material\+Instance} ()
+\item 
+const \textbf{ Material\+Instance} $\ast$ \textbf{ Get\+Material\+Instance} () const
+\item 
+\textbf{ Gpu\+Buffer} $\ast$ \textbf{ Get\+Material\+Buffer} ()
+\item 
+const \textbf{ Gpu\+Buffer} $\ast$ \textbf{ Get\+Material\+Buffer} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Información por cada mesh 3D de un modelo 3D. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}!LocalPerMeshData@{LocalPerMeshData}}
+\index{LocalPerMeshData@{LocalPerMeshData}!OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}}
+\doxysubsubsection{LocalPerMeshData()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_mesh_data_a8a37a3b1a208d60097ed7eaa56df8186} 
+OSK\+::\+GRAPHICS\+::\+Local\+Per\+Mesh\+Data\+::\+Local\+Per\+Mesh\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}!\_SetMaterialBuffer@{\_SetMaterialBuffer}}
+\index{\_SetMaterialBuffer@{\_SetMaterialBuffer}!OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}}
+\doxysubsubsection{\_SetMaterialBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_mesh_data_a5fd317cdab5c396ef46b4e2de6cc5b76} 
+void Local\+Per\+Mesh\+Data\+::\+\_\+\+Set\+Material\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \&\&}]{material\+Buffer}{}\end{DoxyParamCaption})}
+
+
+
+Establece el buffer que contendrá la información del material PBR. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em material\+Buffer} & Buffer. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}!\_SetMaterialInstance@{\_SetMaterialInstance}}
+\index{\_SetMaterialInstance@{\_SetMaterialInstance}!OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}}
+\doxysubsubsection{\_SetMaterialInstance()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_mesh_data_a4e1bd2eaf825f7d6ebf2325f2a9708e7} 
+void Local\+Per\+Mesh\+Data\+::\+\_\+\+Set\+Material\+Instance (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ Material\+Instance} $>$ \&\&}]{instance}{}\end{DoxyParamCaption})}
+
+
+
+Establece la instancia que se usará para el renderizado del mesh. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em instance} & Instancia de renderizado. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}!GetMaterialBuffer@{GetMaterialBuffer}}
+\index{GetMaterialBuffer@{GetMaterialBuffer}!OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}}
+\doxysubsubsection{GetMaterialBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_mesh_data_a8484a72886a7eb578d13ccfb6a5855d8} 
+\textbf{ Gpu\+Buffer} $\ast$ Local\+Per\+Mesh\+Data\+::\+Get\+Material\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Buffer con la información del material PBR. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}!GetMaterialBuffer@{GetMaterialBuffer}}
+\index{GetMaterialBuffer@{GetMaterialBuffer}!OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}}
+\doxysubsubsection{GetMaterialBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_mesh_data_a850855911b75d30a2e3c3235b97fc7ac} 
+const \textbf{ Gpu\+Buffer} $\ast$ Local\+Per\+Mesh\+Data\+::\+Get\+Material\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Buffer con la información del material PBR. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}!GetMaterialInstance@{GetMaterialInstance}}
+\index{GetMaterialInstance@{GetMaterialInstance}!OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}}
+\doxysubsubsection{GetMaterialInstance()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_mesh_data_aa1055533db3a162389a0fbb310bf9ce2} 
+\textbf{ Material\+Instance} $\ast$ Local\+Per\+Mesh\+Data\+::\+Get\+Material\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Instancia de material que debe usar este mesh. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}!GetMaterialInstance@{GetMaterialInstance}}
+\index{GetMaterialInstance@{GetMaterialInstance}!OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}}
+\doxysubsubsection{GetMaterialInstance()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_mesh_data_a1c24f18a6beb0ceeb6238806816b3991} 
+const \textbf{ Material\+Instance} $\ast$ Local\+Per\+Mesh\+Data\+::\+Get\+Material\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Instancia de material que debe usar este mesh. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::GRAPHICS::LocalPerMeshData@{OSK::GRAPHICS::LocalPerMeshData}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_mesh_data_a1127489a52e35598a0aea0ee35d7ef55} 
+OSK\+::\+GRAPHICS\+::\+Local\+Per\+Mesh\+Data\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Local\+Per\+Mesh\+Data}}]{}{}\end{DoxyParamCaption})}
+

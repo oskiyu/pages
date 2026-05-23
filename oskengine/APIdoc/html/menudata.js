@@ -25,10 +25,10 @@
 var menudata={children:[
 {text:"Página principal",url:"index.html"},
 {text:"Páginas relacionadas",url:"pages.html"},
-{text:"Namespaces",url:"namespaces.html",children:[
-{text:"Lista de 'namespaces'",url:"namespaces.html"},
-{text:"Miembros del Namespace ",url:"namespacemembers.html",children:[
-{text:"Todo",url:"namespacemembers.html",children:[
+{text:"Espacios de nombres",url:"namespaces.html",children:[
+{text:"Lista de espacios de nombres",url:"namespaces.html"},
+{text:"Miembros del espacio de nombres ",url:"namespacemembers.html",children:[
+{text:"Todos",url:"namespacemembers.html",children:[
 {text:"a",url:"namespacemembers.html#index_a"},
 {text:"b",url:"namespacemembers.html#index_b"},
 {text:"c",url:"namespacemembers.html#index_c"},
@@ -61,12 +61,15 @@ var menudata={children:[
 {text:"p",url:"namespacemembers_func.html#index_p"},
 {text:"r",url:"namespacemembers_func.html#index_r"},
 {text:"s",url:"namespacemembers_func.html#index_s"},
-{text:"t",url:"namespacemembers_func.html#index_t"}]},
+{text:"t",url:"namespacemembers_func.html#index_t"},
+{text:"v",url:"namespacemembers_func.html#index_v"}]},
 {text:"Variables",url:"namespacemembers_vars.html"},
 {text:"typedefs",url:"namespacemembers_type.html",children:[
 {text:"a",url:"namespacemembers_type.html#index_a"},
 {text:"c",url:"namespacemembers_type.html#index_c"},
+{text:"e",url:"namespacemembers_type.html#index_e"},
 {text:"g",url:"namespacemembers_type.html#index_g"},
+{text:"r",url:"namespacemembers_type.html#index_r"},
 {text:"s",url:"namespacemembers_type.html#index_s"},
 {text:"t",url:"namespacemembers_type.html#index_t"},
 {text:"u",url:"namespacemembers_type.html#index_u"},
@@ -87,13 +90,13 @@ var menudata={children:[
 {text:"s",url:"namespacemembers_enum.html#index_s"},
 {text:"t",url:"namespacemembers_enum.html#index_t"},
 {text:"v",url:"namespacemembers_enum.html#index_v"}]}]}]},
-{text:"Concepts",url:"concepts.html"},
+{text:"Conceptos",url:"concepts.html"},
 {text:"Clases",url:"annotated.html",children:[
 {text:"Lista de clases",url:"annotated.html"},
 {text:"Índice de clases",url:"classes.html"},
-{text:"Jerarquía de la clase",url:"hierarchy.html"},
-{text:"Miembros de las clases",url:"functions.html",children:[
-{text:"Todo",url:"functions.html",children:[
+{text:"Jerarquía de clases",url:"hierarchy.html"},
+{text:"Miembros de clases",url:"functions.html",children:[
+{text:"Todos",url:"functions.html",children:[
 {text:"_",url:"functions.html#index__5F"},
 {text:"a",url:"functions_a.html#index_a"},
 {text:"b",url:"functions_b.html#index_b"},
@@ -176,5 +179,5 @@ var menudata={children:[
 {text:"z",url:"functions_vars_z.html#index_z"}]},
 {text:"typedefs",url:"functions_type.html"},
 {text:"Enumeraciones",url:"functions_enum.html"},
-{text:"Funciones relacionadas",url:"functions_rela.html"}]}]},
+{text:"Símbolos relacionados",url:"functions_rela.html"}]}]},
 {text:"Ejemplos",url:"examples.html"}]}

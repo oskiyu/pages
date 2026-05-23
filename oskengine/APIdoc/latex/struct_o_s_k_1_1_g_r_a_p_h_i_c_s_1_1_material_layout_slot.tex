@@ -1,0 +1,64 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Material\+Layout\+Slot}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_slot}\index{OSK::GRAPHICS::MaterialLayoutSlot@{OSK::GRAPHICS::MaterialLayoutSlot}}
+
+
+{\ttfamily \#include $<$Material\+Layout\+Slot.\+h$>$}
+
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ name}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \textbf{ Material\+Layout\+Binding}, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$ $>$ \textbf{ bindings}
+\item 
+\textbf{ UIndex32} \textbf{ glsl\+Set\+Index} = 0
+\item 
+\textbf{ Shader\+Stage} \textbf{ stage} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Un \doxyref{Material\+Layout\+Slot}{pág.}{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_slot} agrupa varios Material\+Layout\+Bindings\+: son una manera de unir bindings que se usen en una frecuencia similar. 
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::MaterialLayoutSlot@{OSK::GRAPHICS::MaterialLayoutSlot}!bindings@{bindings}}
+\index{bindings@{bindings}!OSK::GRAPHICS::MaterialLayoutSlot@{OSK::GRAPHICS::MaterialLayoutSlot}}
+\doxysubsubsection{bindings}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_slot_a6c634d4e5b1cf8a52683e26a917d0a3e} 
+std\+::unordered\+\_\+map$<$std\+::string, \textbf{ Material\+Layout\+Binding}, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$ $>$ OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Slot\+::bindings}
+
+
+
+Todos los bindings que componene este slot. 
+
+\index{OSK::GRAPHICS::MaterialLayoutSlot@{OSK::GRAPHICS::MaterialLayoutSlot}!glslSetIndex@{glslSetIndex}}
+\index{glslSetIndex@{glslSetIndex}!OSK::GRAPHICS::MaterialLayoutSlot@{OSK::GRAPHICS::MaterialLayoutSlot}}
+\doxysubsubsection{glslSetIndex}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_slot_a15778adf5aaa26da18172c4ca7e5f5cd} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Slot\+::glsl\+Set\+Index = 0}
+
+
+
+Índice del descriptor set del shader .glsl (Vulkan/\+Open\+GL) al que se asocia este slot. 
+
+\index{OSK::GRAPHICS::MaterialLayoutSlot@{OSK::GRAPHICS::MaterialLayoutSlot}!name@{name}}
+\index{name@{name}!OSK::GRAPHICS::MaterialLayoutSlot@{OSK::GRAPHICS::MaterialLayoutSlot}}
+\doxysubsubsection{name}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_slot_a5396464c0b7e928a41db5b80ff004309} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Slot\+::name}
+
+
+
+Nombre del slot. Debe ser único en el layout. 
+
+\index{OSK::GRAPHICS::MaterialLayoutSlot@{OSK::GRAPHICS::MaterialLayoutSlot}!stage@{stage}}
+\index{stage@{stage}!OSK::GRAPHICS::MaterialLayoutSlot@{OSK::GRAPHICS::MaterialLayoutSlot}}
+\doxysubsubsection{stage}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_slot_ab6b6cab3b108fa5179ff16d4c24b60d4} 
+\textbf{ Shader\+Stage} OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Slot\+::stage \{\}}
+
+
+
+Stage del shader desde el que se accede al slot (VERTEX/\+FRAGMENT). 
+

@@ -1,0 +1,189 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Game\+Object\+Manager}
+\label{class_o_s_k_1_1_e_c_s_1_1_game_object_manager}\index{OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}}
+
+
+{\ttfamily \#include $<$Game\+Object\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object\+Index} \textbf{ Create\+Game\+Object} ()
+\item 
+void \textbf{ Destroy\+Game\+Object} (\textbf{ Game\+Object\+Index} $\ast$obj)
+\item 
+void \textbf{ Set\+Signature} (\textbf{ Game\+Object\+Index} obj, const \textbf{ Signature} \&signature)
+\item 
+\textbf{ Signature} \textbf{ Get\+Signature} (\textbf{ Game\+Object\+Index} obj) const
+\item 
+void \textbf{ Update\+Signature} (\textbf{ Game\+Object\+Index} obj, \textbf{ Component\+Type} position, bool value)
+\item 
+void \textbf{ Add\+Component} (\textbf{ Game\+Object\+Index} obj, \textbf{ Component\+Type} position)
+\item 
+void \textbf{ Remove\+Component} (\textbf{ Game\+Object\+Index} obj, \textbf{ Component\+Type} position)
+\item 
+bool \textbf{ Is\+Game\+Object\+Alive} (\textbf{ Game\+Object\+Index} obj) const
+\item 
+std\+::span$<$ const \textbf{ Game\+Object\+Index} $>$ \textbf{ Get\+All\+Living\+Objects} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Se encarga de registrar y eliminar Game\+Objects. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}}
+\doxysubsubsection{AddComponent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_game_object_manager_afb0ad1ce5c5b39a35d2c4491e825d53a} 
+void Game\+Object\+Manager\+::\+Add\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{\textbf{ Component\+Type}}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza el valor de una firma de un objeto en concreto, para indicar que posee un tipo de componente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & ID del objeto. \\
+\hline
+{\em position} & Tipo de componente añadido. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}!CreateGameObject@{CreateGameObject}}
+\index{CreateGameObject@{CreateGameObject}!OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}}
+\doxysubsubsection{CreateGameObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_game_object_manager_a2548c491a8cc69f20c5bb70f123902cc} 
+\textbf{ Game\+Object\+Index} Game\+Object\+Manager\+::\+Create\+Game\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuevo objeto. 
+
+\begin{DoxyReturn}{Devuelve}
+Id del nuevo objeto. 
+\end{DoxyReturn}
+\index{OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}!DestroyGameObject@{DestroyGameObject}}
+\index{DestroyGameObject@{DestroyGameObject}!OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}}
+\doxysubsubsection{DestroyGameObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_game_object_manager_a5295ff7997d70dbb68f2311275878ae3} 
+void Game\+Object\+Manager\+::\+Destroy\+Game\+Object (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index} $\ast$}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Destruye el objeto dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto a eliminar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Atención}
+El identificador del objeto se pondrá a 0, para indicar que es un identificador inválido.
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Object\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_invalid_object_exception}} & Si el objeto indicado no existe. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}!GetAllLivingObjects@{GetAllLivingObjects}}
+\index{GetAllLivingObjects@{GetAllLivingObjects}!OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}}
+\doxysubsubsection{GetAllLivingObjects()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_game_object_manager_a86282f2d35213a991d7bced67f5ccbeb} 
+std\+::span$<$ const \textbf{ Game\+Object\+Index} $>$ Game\+Object\+Manager\+::\+Get\+All\+Living\+Objects (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Todos los objetos activos. 
+\end{DoxyReturn}
+\index{OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}!GetSignature@{GetSignature}}
+\index{GetSignature@{GetSignature}!OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}}
+\doxysubsubsection{GetSignature()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_game_object_manager_a1160fbc5f39c2f75ac28a33358e0dcef} 
+\textbf{ Signature} Game\+Object\+Manager\+::\+Get\+Signature (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Signature}{pág.}{namespace_o_s_k_1_1_e_c_s_a9c0e00962e3504ffd2435edb417d2d42} del objeto. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Object\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_invalid_object_exception}} & Si el objeto indicado no existe. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}!IsGameObjectAlive@{IsGameObjectAlive}}
+\index{IsGameObjectAlive@{IsGameObjectAlive}!OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}}
+\doxysubsubsection{IsGameObjectAlive()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_game_object_manager_a21e5449937b40602f7eb4a8927b73934} 
+bool Game\+Object\+Manager\+::\+Is\+Game\+Object\+Alive (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption}) const}
+
+
+
+Comprueba si un objeto está activo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & ID del objeto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si está activo, false si se eliminó. 
+\end{DoxyReturn}
+\index{OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}!RemoveComponent@{RemoveComponent}}
+\index{RemoveComponent@{RemoveComponent}!OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}}
+\doxysubsubsection{RemoveComponent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_game_object_manager_a1959a48b18e37e6dc1331a04954d488a} 
+void Game\+Object\+Manager\+::\+Remove\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{\textbf{ Component\+Type}}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza el valor de una firma de un objeto en concreto, para indicar que no posee un tipo de componente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & ID del objeto. \\
+\hline
+{\em position} & Tipo de componente eliminado. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}!SetSignature@{SetSignature}}
+\index{SetSignature@{SetSignature}!OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}}
+\doxysubsubsection{SetSignature()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_game_object_manager_ae80647837d7ffa1fb4550834121f231d} 
+void Game\+Object\+Manager\+::\+Set\+Signature (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{const \textbf{ Signature} \&}]{signature}{}\end{DoxyParamCaption})}
+
+
+
+Establece el signature del objeto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto a modificar. \\
+\hline
+{\em signature} & Nuevo signature.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Object\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_invalid_object_exception}} & Si el objeto indicado no existe. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}!UpdateSignature@{UpdateSignature}}
+\index{UpdateSignature@{UpdateSignature}!OSK::ECS::GameObjectManager@{OSK::ECS::GameObjectManager}}
+\doxysubsubsection{UpdateSignature()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_game_object_manager_ab6c63c4eb677ffe67ce38d8d856394ed} 
+void Game\+Object\+Manager\+::\+Update\+Signature (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{\textbf{ Component\+Type}}]{position}{, }\item[{bool}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza el valor de una firma de un objeto en concreto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & ID del objeto. \\
+\hline
+{\em position} & Tipo de componente a actualizar. \\
+\hline
+{\em value} & Nuevo valor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El objeto {\ttfamily obj} debe haber sido previamente creado. 
+\end{DoxyPrecond}

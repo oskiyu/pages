@@ -1,0 +1,450 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Convex\+Volume}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume}\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+
+
+{\ttfamily \#include $<$Convex\+Volume.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ Face\+Indices} = \textbf{ Dynamic\+Array}$<$\textbf{ UIndex32}$>$
+\item 
+using \textbf{ Axis} = \textbf{ Vector3f}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SERIALIZABLE} ()
+\item 
+\textbf{ Convex\+Volume} ()=default
+\item 
+\textbf{ $\sim$\+Convex\+Volume} () override=default
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ INarrow\+Collider} $>$ \textbf{ Create\+Narrow\+Copy} () const override
+\item 
+void \textbf{ Add\+Offset} (const \textbf{ Vector3f} \&offset)
+\item 
+void \textbf{ Add\+Face} (const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \&vertices)
+\item 
+void \textbf{ Merge\+Faces} ()
+\item 
+void \textbf{ On\+Transform} () override
+\item 
+bool \textbf{ Contains\+Point} (const \textbf{ Vector3f} \&point) const override
+\item 
+\textbf{ Gjk\+Support} \textbf{ Get\+Support} (const \textbf{ Vector3f} \&direction) const override
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \& \textbf{ Get\+Local\+Space\+Vertices} () const
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \& \textbf{ Get\+Axes} () const override
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \& \textbf{ Get\+Vertices} () const override
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Face\+Indices} $>$ \& \textbf{ Get\+Face\+Indices} () const
+\item 
+\textbf{ UIndex64} \textbf{ Get\+Face\+With\+Vertex\+Indices} (std\+::span$<$ const \textbf{ UIndex64}, 3 $>$ indices, const \textbf{ Vector3f} \&ref\+Normal) const
+\item 
+\textbf{ Axis} \textbf{ Get\+World\+Space\+Axis} (\textbf{ UIndex32} face\+Id) const
+\item 
+\textbf{ Ray\+Cast\+Result} \textbf{ Cast\+Ray} (const \textbf{ Ray} \&ray) const override
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ INarrow\+Collider})
+\item 
+void \textbf{ \+\_\+\+Set\+Narrow\+Owner} (const \textbf{ Narrow\+Collider\+Holder} $\ast$owner)
+\item 
+bool \textbf{ Is\+Behind\+Plane} (\textbf{ Plane} plane) const
+\item 
+bool \textbf{ Is\+Fully\+Behind\+Plane} (\textbf{ Plane} plane) const
+\item 
+bool \textbf{ Is\+Inside\+Frustum} (const \textbf{ Any\+Frustum} \&frustum) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Convex\+Volume} \textbf{ Create\+Obb} (const \textbf{ Vector3f} \&size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::optional$<$ const \textbf{ Narrow\+Collider\+Holder} $\ast$ $>$ \textbf{ Get\+Narrow\+Owner} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que representa un volúmen convexo para la detección de colisiones detallada. 
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de los «\+Typedef» miembros de la clase}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!Axis@{Axis}}
+\index{Axis@{Axis}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{Axis}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_af303773368792a8a22456da5f8210ebc} 
+using \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume\+::\+Axis} = \textbf{ Vector3f}}
+
+
+
+Eje. 
+
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!FaceIndices@{FaceIndices}}
+\index{FaceIndices@{FaceIndices}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{FaceIndices}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a2f99e2f9743d5185adaca37474366960} 
+using \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume\+::\+Face\+Indices} = \textbf{ Dynamic\+Array}$<$\textbf{ UIndex32}$>$}
+
+
+
+Una lista que contiene los índices de los vértices de una cara. 
+
+Cada índice representa un vértice almacenado en la lista de vértices del collider. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!ConvexVolume@{ConvexVolume}}
+\index{ConvexVolume@{ConvexVolume}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{ConvexVolume()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_aac0dca3e298bac3b002a87df5f1f0bfd} 
+OSK\+::\+COLLISION\+::\+Convex\+Volume\+::\+Convex\+Volume (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!````~ConvexVolume@{$\sim$ConvexVolume}}
+\index{````~ConvexVolume@{$\sim$ConvexVolume}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{$\sim$ConvexVolume()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_aeab648901ded3d187779717e315a3236} 
+OSK\+::\+COLLISION\+::\+Convex\+Volume\+::$\sim$\+Convex\+Volume (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!\_SetNarrowOwner@{\_SetNarrowOwner}}
+\index{\_SetNarrowOwner@{\_SetNarrowOwner}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{\_SetNarrowOwner()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider_af3029ccb30b0b24d161a94b1a623dd00} 
+void OSK\+::\+COLLISION\+::\+INarrow\+Collider\+::\+\_\+\+Set\+Narrow\+Owner (\begin{DoxyParamCaption}\item[{const \textbf{ Narrow\+Collider\+Holder} $\ast$}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Establece el holder que contiene a este collider. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em owner} & Holder.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Función interna. 
+\end{DoxyNote}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!AddFace@{AddFace}}
+\index{AddFace@{AddFace}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{AddFace()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a0404ff4c901165b73c42f5d50ac9e766} 
+void Convex\+Volume\+::\+Add\+Face (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \&}]{vertices}{}\end{DoxyParamCaption})}
+
+
+
+Añade una cara al poliedro. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vertices} & Vértices de la cara. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+vertices.\+Get\+Size() $>$= 3. 
+
+vertices.\+Get\+Size() $<$ UINT\+\_\+\+MAX. 
+
+convex\+Volume.\+vertices.\+Get\+Size() + vertices.\+Get\+Size() $<$ UINT\+\_\+\+MAX.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Los puntos añadidos no serán transformados hasta que no se vuelva a transformar el collider entero.
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si el número de vértices proporcionado es incorrecto. \\
+\hline
+{\em \doxyref{Invalid\+Object\+State\+Exception}{pág.}{class_o_s_k_1_1_invalid_object_state_exception}} & si el número de vértices final es incorrecto. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!AddOffset@{AddOffset}}
+\index{AddOffset@{AddOffset}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{AddOffset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a2436ea5164b2a5b03068386ac29468da} 
+void Convex\+Volume\+::\+Add\+Offset (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{offset}{}\end{DoxyParamCaption})}
+
+
+
+Añade un offset a todos los vértices del volumen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em offset} & Offset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+No se aplicará a los vértices añadidos después de la llamada. 
+\end{DoxyNote}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!CastRay@{CastRay}}
+\index{CastRay@{CastRay}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{CastRay()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a62900bca74bd5c2d3e3110b30e92bc64} 
+\textbf{ Ray\+Cast\+Result} Convex\+Volume\+::\+Cast\+Ray (\begin{DoxyParamCaption}\item[{const \textbf{ Ray} \&}]{ray}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calcula la intersección entre un rayo y el collider. @paramm ray Rayo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Posición de este collider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la intersección. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ OSK\+::\+COLLISION\+::\+IRay\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_ray_collider_a78ad23fe3e49348e0cee661c23f9a0a4}.
+
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!ContainsPoint@{ContainsPoint}}
+\index{ContainsPoint@{ContainsPoint}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{ContainsPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a0367c0e40c455bd81fc6fc54243f3051} 
+bool Convex\+Volume\+::\+Contains\+Point (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{point}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Comrpueba si un punto está dentro del collider. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em point} & Punto a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si el punto está dentro del collider. 
+\end{DoxyReturn}
+
+
+Reimplementado de \textbf{ OSK\+::\+COLLISION\+::\+IGjk\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a24f9964fb50bfbac36c335a096239486}.
+
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!CreateNarrowCopy@{CreateNarrowCopy}}
+\index{CreateNarrowCopy@{CreateNarrowCopy}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{CreateNarrowCopy()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a853a0eb79c7017a55aae0464180bf1a0} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ INarrow\+Collider} $>$ Convex\+Volume\+::\+Create\+Narrow\+Copy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Copia del collider. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ OSK\+::\+COLLISION\+::\+INarrow\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider_a9c6842217af011118cfd72835c183c43}.
+
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!CreateObb@{CreateObb}}
+\index{CreateObb@{CreateObb}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{CreateObb()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_aee74299801b6a91a8bd36d38fee15a86} 
+\textbf{ Convex\+Volume} Convex\+Volume\+::\+Create\+Obb (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un volumen convexo que implementa una caja delimitadora. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño de la caja, expresado como radio. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Volumen convexo en modo de caja. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!GetAxes@{GetAxes}}
+\index{GetAxes@{GetAxes}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{GetAxes()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_aead85c67542a4ff4eda67f7900455567} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \& Convex\+Volume\+::\+Get\+Axes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Ejes que se deben comprobar. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ OSK\+::\+COLLISION\+::\+ISat\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_sat_collider_a60dd6a6a2fd9dbdf198b8259ca7a2573}.
+
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!GetFaceIndices@{GetFaceIndices}}
+\index{GetFaceIndices@{GetFaceIndices}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{GetFaceIndices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_ab9128e1569ee6c285731a00a4a815f97} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Convex\+Volume\+::\+Face\+Indices} $>$ \& Convex\+Volume\+::\+Get\+Face\+Indices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve una lista que contiene una lista de índices por cada cara del collider. 
+
+\begin{DoxyReturn}{Devuelve}
+Lista con todos los índices de cada cara.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Ver también}
+\doxyref{Face\+Indices}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a2f99e2f9743d5185adaca37474366960} 
+\end{DoxySeeAlso}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!GetFaceWithVertexIndices@{GetFaceWithVertexIndices}}
+\index{GetFaceWithVertexIndices@{GetFaceWithVertexIndices}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{GetFaceWithVertexIndices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_ad760a4d471a3c17b2a55d1e51345bf01} 
+\textbf{ UIndex64} Convex\+Volume\+::\+Get\+Face\+With\+Vertex\+Indices (\begin{DoxyParamCaption}\item[{std\+::span$<$ const \textbf{ UIndex64}, 3 $>$}]{indices}{, }\item[{const \textbf{ Vector3f} \&}]{ref\+Normal}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!GetLocalSpaceVertices@{GetLocalSpaceVertices}}
+\index{GetLocalSpaceVertices@{GetLocalSpaceVertices}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{GetLocalSpaceVertices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_aa1586ce5c05049f9534a0c46275956f1} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \& Convex\+Volume\+::\+Get\+Local\+Space\+Vertices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve una lista con todos los vértices del collider. Estos vértices están en espacio local, por lo no se encuentran transformados de acuerdo a la entidad que posee el collider. 
+
+\begin{DoxyReturn}{Devuelve}
+Todos los vértices del collider, en espacio local. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!GetNarrowOwner@{GetNarrowOwner}}
+\index{GetNarrowOwner@{GetNarrowOwner}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{GetNarrowOwner()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider_ace3adabc48252d8e923f75eb5a250734} 
+std\+::optional$<$ const \textbf{ OSK\+::\+COLLISION\+::\+Narrow\+Collider\+Holder} $\ast$ $>$ OSK\+::\+COLLISION\+::\+INarrow\+Collider\+::\+Get\+Narrow\+Owner (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Holder de alto nivel que contiene a este collider. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!GetSupport@{GetSupport}}
+\index{GetSupport@{GetSupport}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{GetSupport()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a27717e8cb3cdc37f3c79e43d19922951} 
+\textbf{ Gjk\+Support} Convex\+Volume\+::\+Get\+Support (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{direction}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em direction} & Dirección en la que se busca el soporte. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Soporte (punto más alejado en la dirección {\ttfamily direction}). 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ OSK\+::\+COLLISION\+::\+IGjk\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a0db85d332a6ecdcc58f148c7041162b2}.
+
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!GetVertices@{GetVertices}}
+\index{GetVertices@{GetVertices}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{GetVertices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a9eb963d3e9eb20e7c857dc3e6347ee9c} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \& Convex\+Volume\+::\+Get\+Vertices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Vértices del collider, en espacio del mundo. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ OSK\+::\+COLLISION\+::\+ISat\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_sat_collider_a319d59f37beaffcdb05485cef800f75a}.
+
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!GetWorldSpaceAxis@{GetWorldSpaceAxis}}
+\index{GetWorldSpaceAxis@{GetWorldSpaceAxis}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{GetWorldSpaceAxis()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_ac70afb1f04343f09f5640daadcdc828b} 
+\textbf{ Convex\+Volume\+::\+Axis} Convex\+Volume\+::\+Get\+World\+Space\+Axis (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{face\+Id}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene un eje transformado definido por los puntos de la cara indicada. Se usa para la comprobación de colisiones. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em face\+Id} & Índice de la cara.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Eje de la cara.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El índice debe apuntar a una cara válida que no haya sido purgada por el proceso de optimización. 
+\end{DoxyPrecond}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!IsBehindPlane@{IsBehindPlane}}
+\index{IsBehindPlane@{IsBehindPlane}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{IsBehindPlane()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a6fbec8faa65f464438b307f231a540f1} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Is\+Behind\+Plane (\begin{DoxyParamCaption}\item[{\textbf{ Plane}}]{plane}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Comprueba si parte del collider está por detrás del plano. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em plane} & Plano a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si está completamente por detrás. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!IsFullyBehindPlane@{IsFullyBehindPlane}}
+\index{IsFullyBehindPlane@{IsFullyBehindPlane}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{IsFullyBehindPlane()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a02c47053df332f6ec975ce26239a9948} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Is\+Fully\+Behind\+Plane (\begin{DoxyParamCaption}\item[{\textbf{ Plane}}]{plane}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Comprueba si el collider está COMPLETMENTE por detrás del plano. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em plane} & Plano a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si está completamente por detrás. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!IsInsideFrustum@{IsInsideFrustum}}
+\index{IsInsideFrustum@{IsInsideFrustum}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{IsInsideFrustum()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a64c599fc78bd0160a9d6e5a8f1a20f74} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Is\+Inside\+Frustum (\begin{DoxyParamCaption}\item[{const \textbf{ Any\+Frustum} \&}]{frustum}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si el collider está dentro del frustum indicado. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!MergeFaces@{MergeFaces}}
+\index{MergeFaces@{MergeFaces}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{MergeFaces()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_aa4a9d00bd1c156e6d3447da73bcc2817} 
+void Convex\+Volume\+::\+Merge\+Faces (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+De-\/trianguliza el collider, juntando caras paralelas que están en el mismo plano. 
+
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!OnTransform@{OnTransform}}
+\index{OnTransform@{OnTransform}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{OnTransform()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a9596b617aa7187d8bb3a55d9e60061d1} 
+void Convex\+Volume\+::\+On\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Transforma los vértices. 
+
+
+
+Reimplementado de \textbf{ OSK\+::\+COLLISION\+::\+INarrow\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider_ab54bdee6159b9abd62a9568333d3c4a0}.
+
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider_adb6d11616a686bcba139815baf2a5ef1} 
+OSK\+::\+COLLISION\+::\+INarrow\+Collider\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ INarrow\+Collider}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}!OSK\_SERIALIZABLE@{OSK\_SERIALIZABLE}}
+\index{OSK\_SERIALIZABLE@{OSK\_SERIALIZABLE}!OSK::COLLISION::ConvexVolume@{OSK::COLLISION::ConvexVolume}}
+\doxysubsubsection{OSK\_SERIALIZABLE()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_ab1eb3c47ec99baf526e46d33f86ffcb0} 
+OSK\+::\+COLLISION\+::\+Convex\+Volume\+::\+OSK\+\_\+\+SERIALIZABLE (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+

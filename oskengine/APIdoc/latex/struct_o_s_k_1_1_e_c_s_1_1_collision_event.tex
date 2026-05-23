@@ -1,0 +1,83 @@
+\doxysection{Referencia de la estructura OSK\+::ECS\+::Collision\+Event}
+\label{struct_o_s_k_1_1_e_c_s_1_1_collision_event}\index{OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}}
+
+
+{\ttfamily \#include $<$Collision\+Event.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+EVENT} ("{}OSK\+::\+Collision\+Event"{})
+\item 
+\textbf{ Collision\+Event} ()=default
+\item 
+\textbf{ Collision\+Event} (\textbf{ Game\+Object\+Index} \textbf{ first\+Entity}, \textbf{ Game\+Object\+Index} \textbf{ second\+Entity}, const \textbf{ COLLISION\+::\+Detailed\+Collision\+Info} \&info)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object\+Index} \textbf{ first\+Entity} = \textbf{ EMPTY\+\_\+\+GAME\+\_\+\+OBJECT}
+\item 
+\textbf{ Game\+Object\+Index} \textbf{ second\+Entity} = \textbf{ EMPTY\+\_\+\+GAME\+\_\+\+OBJECT}
+\item 
+\textbf{ COLLISION\+::\+Detailed\+Collision\+Info} \textbf{ collision\+Info} = \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Evento que representa una colisión entre dos entidades. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}!CollisionEvent@{CollisionEvent}}
+\index{CollisionEvent@{CollisionEvent}!OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}}
+\doxysubsubsection{CollisionEvent()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_e_c_s_1_1_collision_event_aa0be5590e92ceca9db6f610c1c4e916b} 
+OSK\+::\+ECS\+::\+Collision\+Event\+::\+Collision\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}!CollisionEvent@{CollisionEvent}}
+\index{CollisionEvent@{CollisionEvent}!OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}}
+\doxysubsubsection{CollisionEvent()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_e_c_s_1_1_collision_event_aed3ad18df0e72efcc0e4716b5cc1776d} 
+OSK\+::\+ECS\+::\+Collision\+Event\+::\+Collision\+Event (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{first\+Entity}{, }\item[{\textbf{ Game\+Object\+Index}}]{second\+Entity}{, }\item[{const \textbf{ COLLISION\+::\+Detailed\+Collision\+Info} \&}]{info}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}!OSK\_EVENT@{OSK\_EVENT}}
+\index{OSK\_EVENT@{OSK\_EVENT}!OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}}
+\doxysubsubsection{OSK\_EVENT()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_e_c_s_1_1_collision_event_a42b177b2dcdd7394d28d43650b468f69} 
+OSK\+::\+ECS\+::\+Collision\+Event\+::\+OSK\+\_\+\+EVENT (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Collision\+Event"{}}]{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}!collisionInfo@{collisionInfo}}
+\index{collisionInfo@{collisionInfo}!OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}}
+\doxysubsubsection{collisionInfo}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_e_c_s_1_1_collision_event_ae5b2965f2b256f26ff046a1c50d2f216} 
+\textbf{ COLLISION\+::\+Detailed\+Collision\+Info} OSK\+::\+ECS\+::\+Collision\+Event\+::collision\+Info = \{\}}
+
+\index{OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}!firstEntity@{firstEntity}}
+\index{firstEntity@{firstEntity}!OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}}
+\doxysubsubsection{firstEntity}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_e_c_s_1_1_collision_event_a7f0ae13a4cf8468af6d3586b328df949} 
+\textbf{ Game\+Object\+Index} OSK\+::\+ECS\+::\+Collision\+Event\+::first\+Entity = \textbf{ EMPTY\+\_\+\+GAME\+\_\+\+OBJECT}}
+
+
+
+Primera entidad de la colisión. 
+
+\index{OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}!secondEntity@{secondEntity}}
+\index{secondEntity@{secondEntity}!OSK::ECS::CollisionEvent@{OSK::ECS::CollisionEvent}}
+\doxysubsubsection{secondEntity}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_e_c_s_1_1_collision_event_a753b3763a453787952d093d756f459ed} 
+\textbf{ Game\+Object\+Index} OSK\+::\+ECS\+::\+Collision\+Event\+::second\+Entity = \textbf{ EMPTY\+\_\+\+GAME\+\_\+\+OBJECT}}
+
+
+
+Segunda entidad de la colisión. 
+

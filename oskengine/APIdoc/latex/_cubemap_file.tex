@@ -1,0 +1,45 @@
+\doxysection{Archivo de descripción de mapa cúbico. }
+\label{_cubemap_file}\index{Archivo de descripción de mapa cúbico.@{Archivo de descripción de mapa cúbico.}}
+Indica los metadatos de un mapa cúbico almacenado en varios ficheros externos.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+\_\+type} & ({\ttfamily string}) Tipo de archivo de descripción. \\
+\hline
+{\em spec\+\_\+ver} & ({\ttfamily string}) Versión de la especificación del archivo. \\
+\hline
+{\em asset\+\_\+type} & ({\ttfamily string}) Tipo de recurso. \\
+\hline
+{\em name} & ({\ttfamily string}) Nombre de la fuente. \\
+\hline
+{\em faces\+\_\+files} & Rutas a los ficheros que almacenan las caras del mapa cúbico. Tipo\+: \doxysectref{Caras}{pág.}{_cubemap_file_entradas}{3}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily file\+\_\+type} debe ser {\ttfamily ASSET}. 
+
+{\ttfamily spec\+\_\+ver} debe ser 0. 
+
+{\ttfamily asset\+\_\+type} debe ser {\ttfamily OSK\+::\+Cubemap}. 
+
+{\ttfamily name} debe ser un identificador único para este mapa cúbico.
+\end{DoxyPrecond}
+\doxysubsubsubsection{Caras}\label{_cubemap_file_entradas}
+
+\begin{DoxyParams}{Parámetros}
+{\em right} & Ruta a la imagen derecha del mapa cúbico. \\
+\hline
+{\em left} & Ruta a la imagen izquierda del mapa cúbico. \\
+\hline
+{\em top} & Ruta a la imagen superior del mapa cúbico. \\
+\hline
+{\em bottom} & Ruta a la imagen inferior del mapa cúbico. \\
+\hline
+{\em front} & Ruta a la imagen delantera del mapa cúbico. \\
+\hline
+{\em back} & Ruta a la imagen trasera del mapa cúbico.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Todos los parámetros deben apuntar a archivos con extensión {\ttfamily .png}, {\ttfamily .jpg} o {\ttfamily .jpeg}. 
+\end{DoxyPrecond}

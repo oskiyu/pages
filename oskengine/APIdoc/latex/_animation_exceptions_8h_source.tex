@@ -1,0 +1,78 @@
+\doxysection{Animation\+Exceptions.\+h}
+\label{_animation_exceptions_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/AnimationExceptions.h@{C:/Users/Oscar/source/repos/OSKengine/Source/AnimationExceptions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}EngineException.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }ModelAnimationNotFoundException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ ModelAnimationNotFoundException(}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ name,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}ModelAnimationNotFoundException:\ La\ animación\ \{\}\ no\ existe."{}},\ name),}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }ModelSkinNotFoundException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ ModelSkinNotFoundException(}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ name,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}ModelSkinNotFoundException:\ La\ skin\ \{\}\ no\ existe."{}},\ name),}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{class\ }BoneNotFoundException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ BoneNotFoundException(}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ index,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}BoneNotFoundException:\ El\ bone\ con\ id\ \{\}\ no\ existe."{}},\ index),}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ BoneNotFoundException(}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ name,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}BoneNotFoundException:\ El\ bone\ \{\}\ no\ existe."{}},\ name),}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{class\ }BoneAlreadyAddedException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ BoneAlreadyAddedException(}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ index,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}BoneAlreadyAddedException:\ El\ hueso\ \{\}\ ya\ existe."{}},\ index),}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \}}
+
+\end{DoxyCode}

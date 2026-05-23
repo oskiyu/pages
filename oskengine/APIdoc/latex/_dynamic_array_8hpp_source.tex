@@ -1,0 +1,585 @@
+\doxysection{Dynamic\+Array.\+hpp}
+\label{_dynamic_array_8hpp_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/DynamicArray.hpp@{C:/Users/Oscar/source/repos/OSKengine/Source/DynamicArray.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}BadAllocException.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <malloc.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }OSK\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifdef\ OSK\_DEBUG}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ OSK\_SAFE}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifdef\ OSK\_FORCE\_SAFE}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ OSK\_SAFE}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ OSK\_SAFE}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifdef\ OSK\_FORCE\_UNSAFE}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifdef\ OSK\_SAFE}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#undef\ OSK\_SAFE}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ OSK\_CUSTOM\_DARRAY}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ OSK\_CUSTOM\_DARRAY}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifdef\ OSK\_CUSTOM\_DARRAY}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ DynamicArrayGrowthFactor\ =\ 2;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GrowthFactorType\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ EXPONENTIAL,}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ LINEAL}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{namespace\ }\_DArr\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T\_>}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{concept\ }IsCopyable\ =\ std::copyable<T\_>\ ||\ std::is\_copy\_assignable\_v<T\_>;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T\_>}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{concept\ }IsMovable\ =\ std::movable<T\_>\ ||\ std::is\_move\_assignable\_v<T\_>;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ requires\ ::std::copyable<T>\ ||\ ::std::movable<T>}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{class\ }DynamicArray\ \{}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ USize64\ INITIAL\_RESERVE\_SIZE\ =\ 10uL;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#ifndef\ OSK\_DARRAY\_CLASS\_ITER}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ OSK\_DARRAY\_CLASS\_ITER}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !OSK\_DARRAY\_CLASS\_ITER}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#ifdef\ OSK\_DARRAY\_CLASS\_ITER}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }Iterator\ \{}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }DynamicArray;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{explicit}\ Iterator(T*\ ptr)\ noexcept\ :\ m\_pointer(ptr)\ \{\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ Iterator\ operator++\ ()\ noexcept\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_pointer++;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ Iterator\ operator-\/-\/\ ()\ noexcept\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_pointer-\/-\/;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ operator<=>(\textcolor{keyword}{const}\ Iterator\&)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ T\&\ operator*()\ \{\ \textcolor{keywordflow}{return}\ *m\_pointer;\ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ T*\ GetPtr()\ \{\ \textcolor{keywordflow}{return}\ m\_pointer;\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ IsEmpty()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ m\_pointer\ ==\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ T*\ m\_pointer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }ConstIterator\ \{}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }DynamicArray;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ ConstIterator(\textcolor{keyword}{const}\ T*\ ptr)\ noexcept\ :\ m\_pointer(ptr)\ \{\ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ ConstIterator\ operator++\ ()\ noexcept\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_pointer++;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ ConstIterator\ operator-\/-\/\ ()\ noexcept\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_pointer-\/-\/;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ operator<=>(\textcolor{keyword}{const}\ ConstIterator\&)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ T\&\ operator*()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ *m\_pointer;\ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ T*\ GetPtr()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_pointer;\ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ IsEmpty()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ m\_pointer\ ==\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ m\_pointer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Iterator\ =\ T*;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }ConstIterator\ =\ \textcolor{keyword}{const}\ T*;}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#pragma\ region\ Constructores\ y\ destructores.}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ DynamicArray()\ :\ m\_capacity(INITIAL\_RESERVE\_SIZE)\ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ m\_data\ =\ \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(malloc(\textcolor{keyword}{sizeof}(T)\ *\ m\_capacity));}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ DynamicArray(\textcolor{keyword}{const}\ std::initializer\_list<T>\&\ list)\ \textcolor{keyword}{requires}\ \_DArr::IsCopyable<T>\ :\ m\_count(list.size()),\ m\_capacity(list.size())\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_count\ ==\ 0)\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ m\_data\ =\ \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(malloc(\textcolor{keyword}{sizeof}(T)\ *\ m\_capacity));}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex64\ index\ =\ 0uL;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ i\ :\ list)\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}(::std::addressof(m\_data[index]))\ T(i);}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ DynamicArray(\textcolor{keyword}{const}\ DynamicArray\&\ arr)\ \textcolor{keyword}{requires}\ \_DArr::IsCopyable<T>\ :\ m\_count(arr.m\_count),\ m\_capacity(arr.m\_count)\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ m\_data\ =\ \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(malloc(\textcolor{keyword}{sizeof}(T)\ *\ m\_capacity));}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (USize64\ i\ =\ 0;\ i\ <\ m\_count;\ i++)\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}(::std::addressof(m\_data[i]))\ T(arr.m\_data[i]);}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ growthFactorType\ =\ arr.growthFactorType;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ DynamicArray\&\ operator=(\textcolor{keyword}{const}\ DynamicArray\&\ arr)\ \textcolor{keyword}{requires}\ \_DArr::IsCopyable<T>\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\&arr\ ==\ \textcolor{keyword}{this})}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ Free();}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ Allocate(arr.m\_capacity);}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ growthFactorType\ =\ arr.growthFactorType;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (UIndex64\ i\ =\ 0;\ i\ <\ arr.m\_count;\ i++)}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (::std::addressof(m\_data[i]))\ T(arr.m\_data[i]);}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ m\_count\ =\ arr.m\_count;}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ DynamicArray(DynamicArray\&\&\ arr)\ noexcept\ :\ m\_capacity(arr.m\_count),\ m\_count(arr.m\_count)\ \ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ m\_data\ =\ \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(malloc(\textcolor{keyword}{sizeof}(T)\ *\ m\_capacity));}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (UIndex64\ i\ =\ 0;\ i\ <\ arr.m\_count;\ i++)\ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\_DArr::IsMovable<T>)\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (::std::addressof(m\_data[i]))\ T(std::move(arr.m\_data[i]));}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (::std::addressof(m\_data[i]))\ T(arr.m\_data[i]);}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ growthFactorType\ =\ arr.growthFactorType;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ DynamicArray\&\ operator=(DynamicArray\&\&\ arr)\ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\&arr\ ==\ \textcolor{keyword}{this})}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ Free();}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ Allocate(arr.m\_capacity);}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ growthFactorType\ =\ arr.growthFactorType;}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (UIndex64\ i\ =\ 0;\ i\ <\ arr.GetSize();\ i++)\ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ \ (\_DArr::IsMovable<T>)\ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InsertMove(::std::move(arr.m\_data[i]));}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\_DArr::IsCopyable<T>)\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InsertCopy(arr.m\_data[i]);}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ arr.Free();}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \string~DynamicArray()\ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ Free\ ();}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ DynamicArray\ CreateReserved(USize64\ reservedSize)\ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ DynamicArray\ output;}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ output.Reserve(reservedSize);}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ TArgs>\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ DynamicArray\ CreateResized(USize64\ size,\ TArgs...\ args)\ \textcolor{keyword}{requires}\ \_DArr::IsCopyable<T>\ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ DynamicArray\ output;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ output.Resize(size,\ args...);}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ TArgs>\ }
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ DynamicArray\ CreateResizedMove(USize64\ size,\ TArgs\&\&...\ args)\ \textcolor{keyword}{requires}\ \_DArr::IsMovable<T>\ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ DynamicArray\ output;}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ output.ResizeMove(size,\ args...);}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ DynamicArray\ CreateEmpty()\ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\#pragma\ region\ Funciones}}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Allocate(USize64\ count)\ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ m\_capacity\ =\ count;}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ T*\ previousData\ =\ m\_data;}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ m\_data\ =\ m\_data\ ==\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(malloc(\textcolor{keyword}{sizeof}(T)\ *\ count))}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(realloc(m\_data,\ \textcolor{keyword}{sizeof}(T)\ *\ count));}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ >\ 0\ \&\&\ !m\_data)}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ BadAllocException();}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ InsertCopy(\textcolor{keyword}{const}\ T\&\ element)\ \textcolor{keyword}{requires}\ \_DArr::IsCopyable<T>\ \{}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ EnsureSpace(m\_count\ +\ 1);}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (::std::addressof(m\_data[m\_count]))\ T(element);}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ m\_count++;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Insert(\textcolor{keyword}{const}\ T\&\ element)\ \textcolor{keyword}{requires}\ \_DArr::IsCopyable<T>\ \{}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ InsertCopy(element);}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ InsertMove(T\&\&\ element)\ \textcolor{keyword}{requires}\ \_DArr::IsMovable<T>\ \{}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ EnsureSpace(m\_count\ +\ 1);}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (::std::addressof(m\_data[m\_count]))\ T(::std::move(element));}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ m\_count++;}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Insert(T\&\&\ element)\ \textcolor{keyword}{requires}\ \_DArr::IsMovable<T>\ \{}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ InsertMove(::std::move(element));}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ At(UIndex64\ index)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#ifdef\ OSK\_SAFE}}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ <\ capacity,\ "{}DynamicArray:\ tried\ to\ access\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(capacity)\ +\ "{}\ reserved\ elements."{});}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ <\ size,\ "{}DynamicArray:\ tried\ to\ access\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(size)\ +\ "{}\ elements."{});}}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ >=\ 0,\ "{}DynamicArray:\ tried\ to\ access\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(capacity)\ +\ "{}\ reserved\ elements."{});}}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(HasBeenInitialized(),\ "{}DynamicArray:\ tried\ to\ access\ element\ from\ an\ uninitialized\ array."{});}}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data[index];}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ ConstAt(UIndex64\ index)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#ifdef\ OSK\_SAFE}}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ <\ capacity,\ "{}DynamicArray:\ tried\ to\ access\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(capacity)\ +\ "{}\ reserved\ elements."{});}}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ <\ size,\ "{}DynamicArray:\ tried\ to\ access\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(size)\ +\ "{}\ elements."{});}}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ >=\ 0,\ "{}DynamicArray:\ tried\ to\ access\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(capacity)\ +\ "{}\ reserved\ elements."{});}}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(HasBeenInitialized(),\ "{}DynamicArray:\ tried\ to\ access\ element\ from\ an\ uninitialized\ array."{});}}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data[index];}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ T\ AtCpy(UIndex64\ index)\ \textcolor{keyword}{const}\ \textcolor{keyword}{requires}\ \_DArr::IsCopyable<T>\ \{}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#ifdef\ OSK\_SAFE}}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ <\ capacity,\ "{}DynamicArray:\ tried\ to\ access\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(capacity)\ +\ "{}\ reserved\ elements."{});}}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ <\ size,\ "{}DynamicArray:\ tried\ to\ access\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(size)\ +\ "{}\ elements."{});}}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ >=\ 0,\ "{}DynamicArray:\ tried\ to\ access\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(capacity)\ +\ "{}\ reserved\ elements."{});}}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(HasBeenInitialized(),\ "{}DynamicArray:\ tried\ to\ access\ element\ from\ an\ uninitialized\ array."{});}}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data[index];}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ T\&\ At(UIndex64\ index)\ \{}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\#ifdef\ OSK\_SAFE}}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ <\ capacity,\ "{}DynamicArray:\ tried\ to\ access\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(capacity)\ +\ "{}\ reserved\ elements."{});}}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ <\ size,\ "{}DynamicArray:\ tried\ to\ access\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(size)\ +\ "{}\ elements."{});}}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ >=\ 0,\ "{}DynamicArray:\ tried\ to\ access\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(capacity)\ +\ "{}\ reserved\ elements."{});}}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(HasBeenInitialized(),\ "{}DynamicArray:\ tried\ to\ access\ element\ from\ an\ uninitialized\ array."{});}}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data[index];}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Push(\textcolor{keyword}{const}\ T\&\ elem)\ \textcolor{keyword}{requires}\ \_DArr::IsCopyable<T>\ \{}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ InsertCopy(elem);}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Push(T\&\&\ elem)\ \textcolor{keyword}{requires}\ \_DArr::IsMovable<T>\ \{}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ InsertMove(::std::move(elem));}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ T\&\ Peek()\ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ At(m\_count\ -\/\ 1);}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ T\ Pop()\ \textcolor{keyword}{requires}\ \_DArr::IsMovable<T>\ \{}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ T\ output\ =\ At(m\_count\ -\/\ 1);}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ RemoveLast();}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ InsertAll(\textcolor{keyword}{const}\ DynamicArray\&\ arr)\ \textcolor{keyword}{requires}\ \_DArr::IsCopyable<T>\ \{}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ EnsureSpace(m\_count\ +\ arr.m\_count);}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ T\&\ i\ :\ arr)}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InsertCopy(i);}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Reserve(USize64\ size)\ \{}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ Allocate(size);}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ TArgs>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Resize(USize64\ size,\ \textcolor{keyword}{const}\ TArgs\&...\ args)\ \{}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ oldCount\ =\ this-\/>m\_count;}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ Reserve(size);}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (UIndex64\ i\ =\ oldCount;\ i\ <\ size;\ i++)}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (::std::addressof(m\_data[i]))\ T(args...);}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_count\ =\ size;}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ TArgs>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ ResizeMove(USize64\ size,\ TArgs\&\&...\ args)\ \{}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ oldSize\ =\ this-\/>m\_count;}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ Reserve(size);}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (UIndex64\ i\ =\ oldSize;\ i\ <\ size;\ i++)}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (::std::addressof(m\_data[i]))\ T(args...);}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_count\ =\ size;}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveAt(UIndex64\ index)\ \{}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#ifdef\ OSK\_SAFE}}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ <\ capacity,\ "{}DynamicArray:\ tried\ to\ remove\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(capacity)\ +\ "{}\ reserved\ elements."{});}}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ <\ size,\ "{}DynamicArray:\ tried\ to\ remove\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(capacity)\ +\ "{}\ reserved\ elements."{});}}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(index\ >=\ 0,\ "{}DynamicArray:\ tried\ to\ remove\ element\ number\ "{}\ +\ std::to\_string(index)\ +\ "{},\ but\ there\ are\ only\ "{}\ +\ std::to\_string(capacity)\ +\ "{}\ reserved\ elements."{});}}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(HasBeenInitialized(),\ "{}DynamicArray:\ tried\ to\ remove\ element\ from\ an\ uninitialized\ array."{});}}
+\DoxyCodeLine{00522\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_DEBUG}}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ m\_data[index].\string~T();}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (UIndex64\ i\ =\ index;\ i\ <\ m\_count;\ i++)\ \{}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\_DArr::IsMovable<T>)\ \{}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (::std::addressof(m\_data[i]))\ T(::std::move(m\_data[i\ +\ 1]));}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (::std::addressof(m\_data[i]))\ T(m\_data[i\ +\ 1]);}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00534\ }
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ m\_count-\/-\/;}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Remove(\textcolor{keyword}{const}\ T\&\ elem)\ \{}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (UIndex64\ i\ =\ 0;\ i\ <\ m\_count;\ i++)}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_data[i]\ ==\ elem)}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RemoveAt(i);}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveLast()\ \{}
+\DoxyCodeLine{00555\ \textcolor{preprocessor}{\#ifdef\ OSK\_SAFE}}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OSK\_ASSERT(HasBeenInitialized(),\ "{}DynamicArray:\ tried\ to\ remove\ element\ from\ an\ uninitialized\ array."{});}}
+\DoxyCodeLine{00557\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_DEBUG}}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ m\_data[m\_count\ -\/\ 1].\string~T();}
+\DoxyCodeLine{00559\ }
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ m\_count-\/-\/;}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ContainsElement(\textcolor{keyword}{const}\ T\&\ elem)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !Find(elem).IsEmpty();}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00571\ }
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ UIndex64\ GetIndexOf(\textcolor{keyword}{const}\ T\&\ elem)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ConstIterator\ it\ =\ Find(elem);}
+\DoxyCodeLine{00581\ }
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it.GetPtr()}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{static\_cast<}USize64\textcolor{keyword}{>}(it.GetPtr()\ -\/\ m\_data)\ /\ \textcolor{keyword}{sizeof}(T)}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ std::numeric\_limits<UIndex64>::max();}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00586\ }
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ UIndex64\ NotFoundIndex\ =\ std::numeric\_limits<UIndex64>::max();}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ Iterator\ Find(\textcolor{keyword}{const}\ T\&\ elem)\ \{}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (USize64\ i\ =\ 0;\ i\ <\ m\_count;\ i++)}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (elem\ ==\ m\_data[i])}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Iterator(m\_data\ +\ i);}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Iterator(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ ConstIterator\ Find(\textcolor{keyword}{const}\ T\&\ elem)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (USize64\ i\ =\ 0;\ i\ <\ m\_count;\ i++)}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (elem\ ==\ m\_data[i])}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConstIterator(m\_data\ +\ i);}
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConstIterator(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Free()\ \{}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_data)\ \{}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Empty();}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ free(m\_data);}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_data\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00619\ }
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ m\_capacity\ =\ 0u;}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \ \ \ \ m\_count\ =\ 0u;}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00623\ }
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Empty()\ \{}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (USize64\ i\ =\ 0;\ i\ <\ m\_count;\ i++)}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_data[i].\string~T();}
+\DoxyCodeLine{00628\ }
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \ \ \ \ m\_count\ =\ 0;}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00631\ }
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ operator[]\ (UIndex64\ i)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ At(i);}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ T\&\ operator[]\ (UIndex64\ i)\ \{}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ At(i);}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00646\ }
+\DoxyCodeLine{00647\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00648\ }
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\#pragma\ region\ Getters\ \&\ setters}}
+\DoxyCodeLine{00650\ }
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ HasBeenInitialized()\ const\ noexcept\ \{}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data\ !=\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00656\ }
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsEmpty()\ const\ noexcept\ \{}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_count\ ==\ 0;}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ USize64\ GetSize()\ const\ noexcept\ \{}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_count;}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00666\ }
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ USize64\ GetReservedSize()\ const\ noexcept\ \{}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_capacity;}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00671\ }
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ GetData()\ const\ noexcept\ \{}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data;}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ T*\ GetData()\ noexcept\ \{}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data;}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00679\ }
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ std::span<T>\ GetFullSpan()\ \{}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::span<T>(m\_data,\ m\_count);}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ std::span<const\ T>\ GetFullSpan()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::span<T>(m\_data,\ m\_count);}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00687\ }
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ std::span<T>\ GetSpan(UIndex64\ startIndex,\ USize64\ count)\ \{}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::span<T>(m\_data\ +\ startIndex,\ count);}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00700\ }
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ std::span<const\ T>\ GetSpan(UIndex64\ startIndex,\ USize64\ count)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::span<T>(m\_data\ +\ startIndex,\ count);}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00713\ }
+\DoxyCodeLine{00714\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00715\ }
+\DoxyCodeLine{00716\ \textcolor{preprocessor}{\#pragma\ region\ Iteradores}}
+\DoxyCodeLine{00717\ }
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ Iterator\ begin()\ noexcept\ \{}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetIterator(0);}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ Iterator\ end()\ noexcept\ \{}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetIterator(m\_count);}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00724\ }
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ ConstIterator\ begin()\ const\ noexcept\ \{}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetConstIterator(0);}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ ConstIterator\ end()\ const\ noexcept\ \{}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetConstIterator(m\_count);}
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00731\ }
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ Iterator\ GetIterator(UIndex64\ index)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Iterator(m\_data\ +\ index);}
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ ConstIterator\ GetConstIterator(UIndex64\ index)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ConstIterator(m\_data\ +\ index);}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00744\ }
+\DoxyCodeLine{00745\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00746\ }
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ GrowthFactorType\ growthFactorType\ =\ GrowthFactorType::EXPONENTIAL;}
+\DoxyCodeLine{00749\ }
+\DoxyCodeLine{00750\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00751\ }
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ EnsureSpace(USize64\ newCount)\ \{}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!HasBeenInitialized()\ ||\ m\_capacity\ ==\ 0)}
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Allocate(INITIAL\_RESERVE\_SIZE);}
+\DoxyCodeLine{00755\ }
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newCount\ <\ m\_capacity\ -\/\ 1)}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00758\ }
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ USize64\ newAllocSize\ =\ growthFactorType\ ==\ GrowthFactorType::EXPONENTIAL}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ m\_capacity\ *\ DynamicArrayGrowthFactor}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ m\_capacity\ +\ DynamicArrayGrowthFactor;}
+\DoxyCodeLine{00762\ }
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \ \ \ \ Allocate(newAllocSize);}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00765\ }
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ T*\ m\_data\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00768\ }
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ USize64\ m\_capacity\ =\ 0;}
+\DoxyCodeLine{00771\ }
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ USize64\ m\_count\ =\ 0;}
+\DoxyCodeLine{00774\ }
+\DoxyCodeLine{00775\ \ \ \ \ \};}
+\DoxyCodeLine{00776\ }
+\DoxyCodeLine{00777\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{using\ }ArrayStack\ =\ DynamicArray<T>;}
+\DoxyCodeLine{00778\ }
+\DoxyCodeLine{00779\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00780\ }
+\DoxyCodeLine{00781\ \}}
+\DoxyCodeLine{00782\ }
+\DoxyCodeLine{00783\ }
+\DoxyCodeLine{00784\ \textcolor{preprocessor}{\#ifdef\ OSK\_SAFE}}
+\DoxyCodeLine{00785\ \textcolor{preprocessor}{\#undef\ OSK\_SAFE}}
+\DoxyCodeLine{00786\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OSK\_DS\_SAFE\_MODE}}
+
+\end{DoxyCode}

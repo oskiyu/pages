@@ -1,0 +1,55 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Detailed\+Collision\+Detector\+Dispatcher}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_detailed_collision_detector_dispatcher}\index{OSK::COLLISION::DetailedCollisionDetectorDispatcher@{OSK::COLLISION::DetailedCollisionDetectorDispatcher}}
+
+
+{\ttfamily \#include $<$Detailed\+Collision\+Detector\+Dispatcher.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Add\+Detector} (\textbf{ Unique\+Ptr}$<$ \textbf{ IDetailed\+Collision\+Detector} $>$ \&\&detector)
+\item 
+\textbf{ Detailed\+Collision\+Info} \textbf{ Get\+Collision} (const \textbf{ Narrow\+Collider\+Holder} \&first, const \textbf{ Narrow\+Collider\+Holder} \&second) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Contiene una lista de detectors y, cuando se quiere comprobar una colisión, ejecuta el detector conveniente. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::DetailedCollisionDetectorDispatcher@{OSK::COLLISION::DetailedCollisionDetectorDispatcher}!AddDetector@{AddDetector}}
+\index{AddDetector@{AddDetector}!OSK::COLLISION::DetailedCollisionDetectorDispatcher@{OSK::COLLISION::DetailedCollisionDetectorDispatcher}}
+\doxysubsubsection{AddDetector()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_detailed_collision_detector_dispatcher_a7c99a3cc30e8a2aa98795b86b8059275} 
+void OSK\+::\+COLLISION\+::\+Detailed\+Collision\+Detector\+Dispatcher\+::\+Add\+Detector (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ IDetailed\+Collision\+Detector} $>$ \&\&}]{detector}{}\end{DoxyParamCaption})}
+
+
+
+Añade un nuevo detector, que tendrá prioridad sobre los detectores anteriores. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em detector} & Detector a añadir. \\
+\hline
+\end{DoxyParams}
+\index{OSK::COLLISION::DetailedCollisionDetectorDispatcher@{OSK::COLLISION::DetailedCollisionDetectorDispatcher}!GetCollision@{GetCollision}}
+\index{GetCollision@{GetCollision}!OSK::COLLISION::DetailedCollisionDetectorDispatcher@{OSK::COLLISION::DetailedCollisionDetectorDispatcher}}
+\doxysubsubsection{GetCollision()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_detailed_collision_detector_dispatcher_a0059c280890a0bb2105c90579aa67339} 
+\textbf{ OSK\+::\+COLLISION\+::\+Detailed\+Collision\+Info} OSK\+::\+COLLISION\+::\+Detailed\+Collision\+Detector\+Dispatcher\+::\+Get\+Collision (\begin{DoxyParamCaption}\item[{const \textbf{ Narrow\+Collider\+Holder} \&}]{first}{, }\item[{const \textbf{ Narrow\+Collider\+Holder} \&}]{second}{}\end{DoxyParamCaption}) const}
+
+
+
+Comprueba si hay alguna colisión entre dos colliders. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first} & Primer collider. \\
+\hline
+{\em second} & Segundo collider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la comprobación. 
+\end{DoxyReturn}

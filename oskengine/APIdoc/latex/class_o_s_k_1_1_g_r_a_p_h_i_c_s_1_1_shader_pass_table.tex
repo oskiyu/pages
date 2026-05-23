@@ -1,0 +1,205 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Shader\+Pass\+Table}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table}\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+
+
+{\ttfamily \#include $<$IShader\+Pass.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Add\+Shader\+Pass} (\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $>$ \&\&pass)
+\item 
+void \textbf{ Remove\+Shader\+Pass} (std\+::string\+\_\+view pass\+Name)
+\item 
+void \textbf{ Remove\+All\+Passes} ()
+\item 
+bool \textbf{ Contains\+Shader\+Pass} (std\+::string\+\_\+view pass\+Name) const
+\item 
+\textbf{ GRAPHICS\+::\+IShader\+Pass} $\ast$ \textbf{ Get\+Shader\+Pass} (std\+::string\+\_\+view pass\+Name)
+\item 
+const \textbf{ GRAPHICS\+::\+IShader\+Pass} $\ast$ \textbf{ Get\+Shader\+Pass} (std\+::string\+\_\+view pass\+Name) const
+\item 
+void \textbf{ Add\+Compatible\+Object} (std\+::string\+\_\+view pass\+Name, \textbf{ ECS\+::\+Game\+Object\+Index} obj)
+\item 
+void \textbf{ Remove\+Compatible\+Object} (std\+::string\+\_\+view pass\+Name, \textbf{ ECS\+::\+Game\+Object\+Index} obj)
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ ECS\+::\+Game\+Object\+Index} $>$ \& \textbf{ Get\+Compatible\+Objects} (std\+::string\+\_\+view pass\+Name)
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ ECS\+::\+Game\+Object\+Index} $>$ \& \textbf{ Get\+Compatible\+Objects} (std\+::string\+\_\+view pass\+Name) const
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $\ast$ $>$ \& \textbf{ Get\+All\+Passes} ()
+\item 
+std\+::span$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $\ast$const $>$ \textbf{ Get\+All\+Passes} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Almacena los pases de renderizado de un sistema de renderizado, además de los objetos compatibles con cada paso. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}!AddCompatibleObject@{AddCompatibleObject}}
+\index{AddCompatibleObject@{AddCompatibleObject}!OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+\doxysubsubsection{AddCompatibleObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table_a3404dd8470ae516da7a0835087a9054f} 
+void Shader\+Pass\+Table\+::\+Add\+Compatible\+Object (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{pass\+Name}{, }\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Registra un objeto como compatible con un pase en concreto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pass\+Name} & Nombre del pase. \\
+\hline
+{\em obj} & ID del objeto compatible.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un pase dentro de la tabla con el nombre {\ttfamily pass\+Name}. 
+
+{\ttfamily obj} debe ser un ID válido. 
+
+{\ttfamily obj} no debe haber sido previamente añadido al pase indicado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}!AddShaderPass@{AddShaderPass}}
+\index{AddShaderPass@{AddShaderPass}!OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+\doxysubsubsection{AddShaderPass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table_a306b31dae9b6f22dbd42dc65711ccbd2} 
+void Shader\+Pass\+Table\+::\+Add\+Shader\+Pass (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $>$ \&\&}]{pass}{}\end{DoxyParamCaption})}
+
+
+
+Añade un nuevo pase a la tabla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pass} & Nuevo pase.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+No debe haber un pase con el mimso nombre dentro de la tabla. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}!ContainsShaderPass@{ContainsShaderPass}}
+\index{ContainsShaderPass@{ContainsShaderPass}!OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+\doxysubsubsection{ContainsShaderPass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table_a31bd5cd7c3c640f9267632a7e0bb30b6} 
+bool Shader\+Pass\+Table\+::\+Contains\+Shader\+Pass (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{pass\+Name}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si la tabla contiene un pase con el nombre {\ttfamily pass\+Name}. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}!GetAllPasses@{GetAllPasses}}
+\index{GetAllPasses@{GetAllPasses}!OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+\doxysubsubsection{GetAllPasses()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table_a10b5abce8edd1f2ac55fa21c0223a947} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $\ast$ $>$ \& Shader\+Pass\+Table\+::\+Get\+All\+Passes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Todos los pases almacenados en la tabla. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}!GetAllPasses@{GetAllPasses}}
+\index{GetAllPasses@{GetAllPasses}!OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+\doxysubsubsection{GetAllPasses()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table_ac99d262fab12f38374ecd280cfc073fc} 
+std\+::span$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $\ast$const $>$ Shader\+Pass\+Table\+::\+Get\+All\+Passes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Todos los pases almacenados en la tabla. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}!GetCompatibleObjects@{GetCompatibleObjects}}
+\index{GetCompatibleObjects@{GetCompatibleObjects}!OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+\doxysubsubsection{GetCompatibleObjects()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table_afc0b0c34872211ddaef63cca1a292559} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Game\+Object\+Index} $>$ \& Shader\+Pass\+Table\+::\+Get\+Compatible\+Objects (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{pass\+Name}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pass\+Name} & Nombre del pase. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista con los objetos compatibles con el pase. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un pase dentro de la tabla con el nombre {\ttfamily pass\+Name}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}!GetCompatibleObjects@{GetCompatibleObjects}}
+\index{GetCompatibleObjects@{GetCompatibleObjects}!OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+\doxysubsubsection{GetCompatibleObjects()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table_ab6640089ea49534b6c35e5f656b66dde} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Game\+Object\+Index} $>$ \& Shader\+Pass\+Table\+::\+Get\+Compatible\+Objects (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{pass\+Name}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}!GetShaderPass@{GetShaderPass}}
+\index{GetShaderPass@{GetShaderPass}!OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+\doxysubsubsection{GetShaderPass()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table_a19e1041595cdf69be58130d8b69b1a34} 
+\textbf{ IShader\+Pass} $\ast$ Shader\+Pass\+Table\+::\+Get\+Shader\+Pass (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{pass\+Name}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pass\+Name} & Nombre del pase. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Pase con el nombre dado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un pase dentro de la tabla con el nombre {\ttfamily pass\+Name}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}!GetShaderPass@{GetShaderPass}}
+\index{GetShaderPass@{GetShaderPass}!OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+\doxysubsubsection{GetShaderPass()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table_a9e0201040542879afcc739d4a50e5a83} 
+const \textbf{ IShader\+Pass} $\ast$ Shader\+Pass\+Table\+::\+Get\+Shader\+Pass (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{pass\+Name}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}!RemoveAllPasses@{RemoveAllPasses}}
+\index{RemoveAllPasses@{RemoveAllPasses}!OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+\doxysubsubsection{RemoveAllPasses()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table_abf87ae44e0e6a230dfcccf93a369efea} 
+void Shader\+Pass\+Table\+::\+Remove\+All\+Passes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Elimina todos los pases. 
+
+\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}!RemoveCompatibleObject@{RemoveCompatibleObject}}
+\index{RemoveCompatibleObject@{RemoveCompatibleObject}!OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+\doxysubsubsection{RemoveCompatibleObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table_a8eea8f309aecad5b5682bcd66eb77329} 
+void Shader\+Pass\+Table\+::\+Remove\+Compatible\+Object (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{pass\+Name}{, }\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Elimina un objeto como compatible con un pase en concreto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pass\+Name} & Nombre del pase. \\
+\hline
+{\em obj} & ID del objeto compatible.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un pase dentro de la tabla con el nombre {\ttfamily pass\+Name}. 
+
+{\ttfamily obj} debe haber sido previamente añadido al pase indicado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}!RemoveShaderPass@{RemoveShaderPass}}
+\index{RemoveShaderPass@{RemoveShaderPass}!OSK::GRAPHICS::ShaderPassTable@{OSK::GRAPHICS::ShaderPassTable}}
+\doxysubsubsection{RemoveShaderPass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table_aa946ee6a0e21a8d6194635204d033f85} 
+void Shader\+Pass\+Table\+::\+Remove\+Shader\+Pass (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{pass\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Elimina un pase de la tabla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pass\+Name} & Nombre del pase.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un pase dentro de la tabla con el nombre {\ttfamily pass\+Name}. 
+\end{DoxyPrecond}

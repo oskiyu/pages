@@ -1,0 +1,83 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Broad\+Collider\+Holder}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_collider_holder}\index{OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}}
+
+
+{\ttfamily \#include $<$Broad\+Collider\+Holder.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Broad\+Collider\+Holder} (\textbf{ Unique\+Ptr}$<$ \textbf{ IBroad\+Collider} $>$ \&\&collider)
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Broad\+Collider\+Holder} $>$ \textbf{ Create\+Copy} () const
+\item 
+\textbf{ IBroad\+Collider} $\ast$ \textbf{ Get\+Collider} ()
+\item 
+const \textbf{ IBroad\+Collider} $\ast$ \textbf{ Get\+Collider} () const
+\item 
+const \textbf{ Vector3f} \& \textbf{ Get\+Position} () const
+\item 
+void \textbf{ Update\+Position} (const \textbf{ Vector3f} \&position)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Contiene un collider de alto nivel. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}!BroadColliderHolder@{BroadColliderHolder}}
+\index{BroadColliderHolder@{BroadColliderHolder}!OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}}
+\doxysubsubsection{BroadColliderHolder()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_collider_holder_a0449f83e51e3e9eeca8b59bd23e8439a} 
+OSK\+::\+COLLISION\+::\+Broad\+Collider\+Holder\+::\+Broad\+Collider\+Holder (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ IBroad\+Collider} $>$ \&\&}]{collider}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}!CreateCopy@{CreateCopy}}
+\index{CreateCopy@{CreateCopy}!OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}}
+\doxysubsubsection{CreateCopy()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_collider_holder_a9d54b8040fe2f016d12a3ae6e5e4d69f} 
+\textbf{ OSK\+::\+Unique\+Ptr}$<$ \textbf{ OSK\+::\+COLLISION\+::\+Broad\+Collider\+Holder} $>$ OSK\+::\+COLLISION\+::\+Broad\+Collider\+Holder\+::\+Create\+Copy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Copia de este collider. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}!GetCollider@{GetCollider}}
+\index{GetCollider@{GetCollider}!OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}}
+\doxysubsubsection{GetCollider()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_collider_holder_a01308b46eafc19877676223016b0b2e6} 
+\textbf{ OSK\+::\+COLLISION\+::\+IBroad\+Collider} $\ast$ OSK\+::\+COLLISION\+::\+Broad\+Collider\+Holder\+::\+Get\+Collider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}!GetCollider@{GetCollider}}
+\index{GetCollider@{GetCollider}!OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}}
+\doxysubsubsection{GetCollider()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_collider_holder_a5ac2942819f4c5e24e61ab1256cdf1ea} 
+const \textbf{ OSK\+::\+COLLISION\+::\+IBroad\+Collider} $\ast$ OSK\+::\+COLLISION\+::\+Broad\+Collider\+Holder\+::\+Get\+Collider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}}
+\doxysubsubsection{GetPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_collider_holder_a1f028d377de627cc3431fe10423fbe28} 
+const \textbf{ OSK\+::\+Vector3f} \& OSK\+::\+COLLISION\+::\+Broad\+Collider\+Holder\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Posición en la que se encuentra el collider. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}!UpdatePosition@{UpdatePosition}}
+\index{UpdatePosition@{UpdatePosition}!OSK::COLLISION::BroadColliderHolder@{OSK::COLLISION::BroadColliderHolder}}
+\doxysubsubsection{UpdatePosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_collider_holder_a52845c1c4f339f57c45ac3a83f42a814} 
+void OSK\+::\+COLLISION\+::\+Broad\+Collider\+Holder\+::\+Update\+Position (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Establece la posición del collider. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Nueva posición del collider. \\
+\hline
+\end{DoxyParams}

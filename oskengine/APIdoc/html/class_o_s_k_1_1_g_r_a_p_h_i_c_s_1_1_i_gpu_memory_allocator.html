@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Referencia de la Clase OSK::GRAPHICS::IGpuMemoryAllocator</title>
+<title>OSKengine: Referencia de la clase OSK::GRAPHICS::IGpuMemoryAllocator</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html','','class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,121 +78,84 @@ $(document).ready(function(){initNavTree('class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Métodos públicos</a> &#124;
-<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
-<a href="#pro-methods">Métodos protegidos</a> &#124;
-<a href="#pro-attribs">Atributos protegidos</a> &#124;
-<a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator-members.html">Lista de todos los miembros</a>  </div>
-  <div class="headertitle"><div class="title">Referencia de la Clase OSK::GRAPHICS::IGpuMemoryAllocator<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">Referencia de la clase OSK::GRAPHICS::IGpuMemoryAllocator<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_i_gpu_memory_allocator_8h_source.html">IGpuMemoryAllocator.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
-<tr class="memitem:a5eb4af797b1cd9c31aa51233fcdf7af1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a5eb4af797b1cd9c31aa51233fcdf7af1">IGpuMemoryAllocator</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a8f655b1e1884b8285b6d90b3d8f94e98">device</a>)</td></tr>
-<tr class="separator:a5eb4af797b1cd9c31aa51233fcdf7af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9077dcba1bcd90e6cbb81564e542d40"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#ab9077dcba1bcd90e6cbb81564e542d40">~IGpuMemoryAllocator</a> ()</td></tr>
-<tr class="separator:ab9077dcba1bcd90e6cbb81564e542d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa89880ddaadfee627c68f7c4cb6d5d30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#aa89880ddaadfee627c68f7c4cb6d5d30">OSK_DEFINE_AS</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html">IGpuMemoryAllocator</a>)</td></tr>
-<tr class="separator:aa89880ddaadfee627c68f7c4cb6d5d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac941bb2cf771a2c6b377752952683e3b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#ac941bb2cf771a2c6b377752952683e3b">OSK_DISABLE_COPY</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html">IGpuMemoryAllocator</a>)</td></tr>
-<tr class="separator:ac941bb2cf771a2c6b377752952683e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac839849a86be993da03fb236ca9dc641"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_usage_info.html">GpuMemoryUsageInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#ac839849a86be993da03fb236ca9dc641">GetMemoryUsageInfo</a> () const</td></tr>
-<tr class="separator:ac839849a86be993da03fb236ca9dc641"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e6e793c72e2660b611c379a05a6793e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a0e6e793c72e2660b611c379a05a6793e">CreateImage</a> (const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info.html">GpuImageCreateInfo</a> &amp;info)=0</td></tr>
-<tr class="separator:a0e6e793c72e2660b611c379a05a6793e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a697ce75cd24f5a37a9a8c5c1fb45da89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a697ce75cd24f5a37a9a8c5c1fb45da89">CreateCubemapImage</a> (const <a class="el" href="namespace_o_s_k.html#a8a2dd07f1ac751a9b0baec4c534af48a">Vector2ui</a> &amp;faceSize, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aac59f9d056e083c0b49ea768f974e3e8">Format</a> format, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a19a2f70fc994c00eb022e520608c5ffa">GpuImageUsage</a> usage, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> sharedType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc.html">GpuImageSamplerDesc</a> samplerDesc={})</td></tr>
-<tr class="separator:a697ce75cd24f5a37a9a8c5c1fb45da89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a120578a39e288f0f957964042285d7c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a120578a39e288f0f957964042285d7c6">CreateVertexBuffer</a> (const void *data, <a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> vertexSize, <a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> numVertices, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;vertexInfo, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a>)</td></tr>
-<tr class="separator:a120578a39e288f0f957964042285d7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a076cd441a6e13abff0a67f8ab3a576be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a076cd441a6e13abff0a67f8ab3a576be">CreateVertexBuffer</a> (const void *data, <a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> vertexSize, <a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> numVertices, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;vertexInfo, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> transferQueue, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> finalQueue, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a>)</td></tr>
-<tr class="separator:a076cd441a6e13abff0a67f8ab3a576be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c247f6c0e0aea301763480ffd7ec4c2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a9c247f6c0e0aea301763480ffd7ec4c2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a9c247f6c0e0aea301763480ffd7ec4c2">CreateVertexBuffer</a> (const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; T &gt; &amp;vertices, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;vertexInfo, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a>)</td></tr>
-<tr class="separator:a9c247f6c0e0aea301763480ffd7ec4c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14f8c50d1b4861ba5612cccd20ac142c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a14f8c50d1b4861ba5612cccd20ac142c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a14f8c50d1b4861ba5612cccd20ac142c">CreateVertexBuffer</a> (const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; T &gt; &amp;vertices, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;vertexInfo, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> transferQueue, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> finalQueue, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a>)</td></tr>
-<tr class="separator:a14f8c50d1b4861ba5612cccd20ac142c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fd62d1cb0889a9e62c497da7b271229"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a1fd62d1cb0889a9e62c497da7b271229">CreateIndexBuffer</a> (const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a05f5134cdcc67a7889c57e39aa2f25ae">TIndexSize</a> &gt; &amp;indices, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90">GpuBufferUsage::INDEX_BUFFER</a>)</td></tr>
-<tr class="separator:a1fd62d1cb0889a9e62c497da7b271229"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ff4df81af81ca43021555f4cbcfd020"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a4ff4df81af81ca43021555f4cbcfd020">CreateIndexBuffer</a> (const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a05f5134cdcc67a7889c57e39aa2f25ae">TIndexSize</a> &gt; &amp;indices, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> transferQueue, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90">GpuBufferUsage::INDEX_BUFFER</a>)</td></tr>
-<tr class="separator:a4ff4df81af81ca43021555f4cbcfd020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf403fab83267d7b8e3b20e2f876106c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#adf403fab83267d7b8e3b20e2f876106c">CreateUniformBuffer</a> (<a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> size, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1da186495f7da296bf880df3a22a492b378">GpuQueueType::MAIN</a>, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa8d0be820da8f4fe5aa49e0ef3065ca29">GpuBufferUsage::UNIFORM_BUFFER</a>)</td></tr>
-<tr class="separator:adf403fab83267d7b8e3b20e2f876106c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73def66646469f2cfbe6bfe00e4b195e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a73def66646469f2cfbe6bfe00e4b195e">CreateStorageBuffer</a> (<a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> size, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa486db75420308f63af20d85e2b6489d">GpuBufferUsage::STORAGE_BUFFER</a>)</td></tr>
-<tr class="separator:a73def66646469f2cfbe6bfe00e4b195e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07b9a738d6348eee3bd68db2f50d3099"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a07b9a738d6348eee3bd68db2f50d3099">CreateStagingBuffer</a> (<a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> size, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa5f26ec9a42a626092bb3c25908b6659f">GpuBufferUsage::UPLOAD_ONLY</a>)</td></tr>
-<tr class="separator:a07b9a738d6348eee3bd68db2f50d3099"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aead4b69eb7b65e52698ff933259664be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#aead4b69eb7b65e52698ff933259664be">CreateBuffer</a> (<a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> size, <a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> alignment, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> memoryType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType)</td></tr>
-<tr class="separator:aead4b69eb7b65e52698ff933259664be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d2ef0db66de433acd03db324f4e9c9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a7d2ef0db66de433acd03db324f4e9c9d">CreateBottomAccelerationStructure</a> (const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;vertexBuffer, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;indexBuffer)</td></tr>
-<tr class="separator:a7d2ef0db66de433acd03db324f4e9c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5deed469fb7d581e2ce47fa157d959e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a5deed469fb7d581e2ce47fa157d959e6">CreateBottomAccelerationStructure</a> (const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;vertexBuffer, const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_buffer_view.html">VertexBufferView</a> &amp;vertexView, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;indexBuffer, const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_index_buffer_view.html">IndexBufferView</a> &amp;indexView)</td></tr>
-<tr class="separator:a5deed469fb7d581e2ce47fa157d959e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61c263f4cc2d7ce43e77a51768c4490b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_top_level_acceleration_structure.html">ITopLevelAccelerationStructure</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a61c263f4cc2d7ce43e77a51768c4490b">CreateTopAccelerationStructure</a> (<a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> * &gt; bottomStructures)</td></tr>
-<tr class="separator:a61c263f4cc2d7ce43e77a51768c4490b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acec87689e0c7f1f801b04fe724f9d269"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#acec87689e0c7f1f801b04fe724f9d269">RemoveMemoryBlock</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> *block)</td></tr>
-<tr class="separator:acec87689e0c7f1f801b04fe724f9d269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af41e891d6c39de6dd5fc95e7b9fe8eba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#af41e891d6c39de6dd5fc95e7b9fe8eba">FreeStagingMemory</a> ()</td></tr>
-<tr class="separator:af41e891d6c39de6dd5fc95e7b9fe8eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ae0adea9e3855cb789c59996b1b0522"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a7ae0adea9e3855cb789c59996b1b0522">GetDefaultNormalTexture</a> () const</td></tr>
-<tr class="separator:a7ae0adea9e3855cb789c59996b1b0522"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b22b2f1b7eada47b4ee5080b19bbec0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a9b22b2f1b7eada47b4ee5080b19bbec0">GetAlignment</a> (<a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> originalAlignment, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage) const</td></tr>
-<tr class="separator:a9b22b2f1b7eada47b4ee5080b19bbec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eb4af797b1cd9c31aa51233fcdf7af1" id="r_a5eb4af797b1cd9c31aa51233fcdf7af1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5eb4af797b1cd9c31aa51233fcdf7af1">IGpuMemoryAllocator</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *<a class="el" href="#a8f655b1e1884b8285b6d90b3d8f94e98">device</a>)</td></tr>
+<tr class="memitem:ab9077dcba1bcd90e6cbb81564e542d40" id="r_ab9077dcba1bcd90e6cbb81564e542d40"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9077dcba1bcd90e6cbb81564e542d40">~IGpuMemoryAllocator</a> ()</td></tr>
+<tr class="memitem:aa89880ddaadfee627c68f7c4cb6d5d30" id="r_aa89880ddaadfee627c68f7c4cb6d5d30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa89880ddaadfee627c68f7c4cb6d5d30">OSK_DEFINE_AS</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html">IGpuMemoryAllocator</a>)</td></tr>
+<tr class="memitem:ac941bb2cf771a2c6b377752952683e3b" id="r_ac941bb2cf771a2c6b377752952683e3b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac941bb2cf771a2c6b377752952683e3b">OSK_DISABLE_COPY</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html">IGpuMemoryAllocator</a>)</td></tr>
+<tr class="memitem:ac839849a86be993da03fb236ca9dc641" id="r_ac839849a86be993da03fb236ca9dc641"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_usage_info.html">GpuMemoryUsageInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac839849a86be993da03fb236ca9dc641">GetMemoryUsageInfo</a> () const</td></tr>
+<tr class="memitem:a0e6e793c72e2660b611c379a05a6793e" id="r_a0e6e793c72e2660b611c379a05a6793e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e6e793c72e2660b611c379a05a6793e">CreateImage</a> (const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info.html">GpuImageCreateInfo</a> &amp;info)=0</td></tr>
+<tr class="memitem:a697ce75cd24f5a37a9a8c5c1fb45da89" id="r_a697ce75cd24f5a37a9a8c5c1fb45da89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a697ce75cd24f5a37a9a8c5c1fb45da89">CreateCubemapImage</a> (const <a class="el" href="namespace_o_s_k.html#a6f5b4753cd85b4773d2880148fd031cf">Vector2ui</a> &amp;faceSize, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aac59f9d056e083c0b49ea768f974e3e8">Format</a> format, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a19a2f70fc994c00eb022e520608c5ffa">GpuImageUsage</a> usage, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> sharedType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc.html">GpuImageSamplerDesc</a> samplerDesc={})</td></tr>
+<tr class="memitem:a120578a39e288f0f957964042285d7c6" id="r_a120578a39e288f0f957964042285d7c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a120578a39e288f0f957964042285d7c6">CreateVertexBuffer</a> (const void *data, <a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> vertexSize, <a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> numVertices, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;vertexInfo, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a>)</td></tr>
+<tr class="memitem:a076cd441a6e13abff0a67f8ab3a576be" id="r_a076cd441a6e13abff0a67f8ab3a576be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a076cd441a6e13abff0a67f8ab3a576be">CreateVertexBuffer</a> (const void *data, <a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> vertexSize, <a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> numVertices, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;vertexInfo, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> transferQueue, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> finalQueue, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a>)</td></tr>
+<tr class="memitem:a9c247f6c0e0aea301763480ffd7ec4c2" id="r_a9c247f6c0e0aea301763480ffd7ec4c2"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a9c247f6c0e0aea301763480ffd7ec4c2 template"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c247f6c0e0aea301763480ffd7ec4c2">CreateVertexBuffer</a> (const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; T &gt; &amp;vertices, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;vertexInfo, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a>)</td></tr>
+<tr class="memitem:a14f8c50d1b4861ba5612cccd20ac142c" id="r_a14f8c50d1b4861ba5612cccd20ac142c"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a14f8c50d1b4861ba5612cccd20ac142c template"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14f8c50d1b4861ba5612cccd20ac142c">CreateVertexBuffer</a> (const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; T &gt; &amp;vertices, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;vertexInfo, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> transferQueue, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> finalQueue, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a>)</td></tr>
+<tr class="memitem:a1fd62d1cb0889a9e62c497da7b271229" id="r_a1fd62d1cb0889a9e62c497da7b271229"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fd62d1cb0889a9e62c497da7b271229">CreateIndexBuffer</a> (const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5df06fd78ce077c547552654e7d672a">TIndexSize</a> &gt; &amp;indices, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90">GpuBufferUsage::INDEX_BUFFER</a>)</td></tr>
+<tr class="memitem:a4ff4df81af81ca43021555f4cbcfd020" id="r_a4ff4df81af81ca43021555f4cbcfd020"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ff4df81af81ca43021555f4cbcfd020">CreateIndexBuffer</a> (const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5df06fd78ce077c547552654e7d672a">TIndexSize</a> &gt; &amp;indices, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> transferQueue, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90">GpuBufferUsage::INDEX_BUFFER</a>)</td></tr>
+<tr class="memitem:adf403fab83267d7b8e3b20e2f876106c" id="r_adf403fab83267d7b8e3b20e2f876106c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf403fab83267d7b8e3b20e2f876106c">CreateUniformBuffer</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> size, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1da186495f7da296bf880df3a22a492b378">GpuQueueType::MAIN</a>, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa8d0be820da8f4fe5aa49e0ef3065ca29">GpuBufferUsage::UNIFORM_BUFFER</a>)</td></tr>
+<tr class="memitem:a73def66646469f2cfbe6bfe00e4b195e" id="r_a73def66646469f2cfbe6bfe00e4b195e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73def66646469f2cfbe6bfe00e4b195e">CreateStorageBuffer</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> size, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa486db75420308f63af20d85e2b6489d">GpuBufferUsage::STORAGE_BUFFER</a>)</td></tr>
+<tr class="memitem:a07b9a738d6348eee3bd68db2f50d3099" id="r_a07b9a738d6348eee3bd68db2f50d3099"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07b9a738d6348eee3bd68db2f50d3099">CreateStagingBuffer</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> size, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage=<a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa5f26ec9a42a626092bb3c25908b6659f">GpuBufferUsage::UPLOAD_ONLY</a>)</td></tr>
+<tr class="memitem:aead4b69eb7b65e52698ff933259664be" id="r_aead4b69eb7b65e52698ff933259664be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aead4b69eb7b65e52698ff933259664be">CreateBuffer</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> size, <a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> alignment, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> memoryType, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a> queueType)</td></tr>
+<tr class="memitem:a7d2ef0db66de433acd03db324f4e9c9d" id="r_a7d2ef0db66de433acd03db324f4e9c9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d2ef0db66de433acd03db324f4e9c9d">CreateBottomAccelerationStructure</a> (const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;vertexBuffer, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;indexBuffer)</td></tr>
+<tr class="memitem:a5deed469fb7d581e2ce47fa157d959e6" id="r_a5deed469fb7d581e2ce47fa157d959e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5deed469fb7d581e2ce47fa157d959e6">CreateBottomAccelerationStructure</a> (const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;vertexBuffer, const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_buffer_view.html">VertexBufferView</a> &amp;vertexView, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;indexBuffer, const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_index_buffer_view.html">IndexBufferView</a> &amp;indexView)</td></tr>
+<tr class="memitem:a61c263f4cc2d7ce43e77a51768c4490b" id="r_a61c263f4cc2d7ce43e77a51768c4490b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_top_level_acceleration_structure.html">ITopLevelAccelerationStructure</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61c263f4cc2d7ce43e77a51768c4490b">CreateTopAccelerationStructure</a> (<a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> * &gt; bottomStructures)</td></tr>
+<tr class="memitem:acec87689e0c7f1f801b04fe724f9d269" id="r_acec87689e0c7f1f801b04fe724f9d269"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acec87689e0c7f1f801b04fe724f9d269">RemoveMemoryBlock</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> *block)</td></tr>
+<tr class="memitem:af41e891d6c39de6dd5fc95e7b9fe8eba" id="r_af41e891d6c39de6dd5fc95e7b9fe8eba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af41e891d6c39de6dd5fc95e7b9fe8eba">FreeStagingMemory</a> ()</td></tr>
+<tr class="memitem:a7ae0adea9e3855cb789c59996b1b0522" id="r_a7ae0adea9e3855cb789c59996b1b0522"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ae0adea9e3855cb789c59996b1b0522">GetDefaultNormalTexture</a> () const</td></tr>
+<tr class="memitem:a9b22b2f1b7eada47b4ee5080b19bbec0" id="r_a9b22b2f1b7eada47b4ee5080b19bbec0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b22b2f1b7eada47b4ee5080b19bbec0">GetAlignment</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> originalAlignment, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage) const</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Atributos públicos estáticos</h2></td></tr>
-<tr class="memitem:a15a307c693598df9c0af4e4a6417a48a"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a15a307c693598df9c0af4e4a6417a48a">SizeOfMemoryBlockInMb</a> = 16u</td></tr>
-<tr class="separator:a15a307c693598df9c0af4e4a6417a48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15a307c693598df9c0af4e4a6417a48a" id="r_a15a307c693598df9c0af4e4a6417a48a"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15a307c693598df9c0af4e4a6417a48a">SizeOfMemoryBlockInMb</a> = 16u</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Métodos protegidos</h2></td></tr>
-<tr class="memitem:a4b0540a7d4c3e5b60416fbf277a2f939"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a4b0540a7d4c3e5b60416fbf277a2f939">LoadDefaultNormalTexture</a> ()</td></tr>
-<tr class="separator:a4b0540a7d4c3e5b60416fbf277a2f939"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5ca444bce47c933bd73d3a55668647e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#ad5ca444bce47c933bd73d3a55668647e">_CreateBottomAccelerationStructure</a> ()=0</td></tr>
-<tr class="separator:ad5ca444bce47c933bd73d3a55668647e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f5e347a1ad04a7c6bb0403dbbe04426"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_top_level_acceleration_structure.html">ITopLevelAccelerationStructure</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a7f5e347a1ad04a7c6bb0403dbbe04426">_CreateTopAccelerationStructure</a> ()=0</td></tr>
-<tr class="separator:a7f5e347a1ad04a7c6bb0403dbbe04426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab93aa034917aa0f016bb7a5a938f9721"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#ab93aa034917aa0f016bb7a5a938f9721">CreateNewBufferBlock</a> (<a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> size, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> sharedType)=0</td></tr>
-<tr class="separator:ab93aa034917aa0f016bb7a5a938f9721"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93f39b81054115010fc7db9700e5135c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a93f39b81054115010fc7db9700e5135c">CreateNewImageBlock</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> *image, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a19a2f70fc994c00eb022e520608c5ffa">GpuImageUsage</a> usage, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> sharedType)=0</td></tr>
-<tr class="separator:a93f39b81054115010fc7db9700e5135c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ff33ac0ee31d7eca95ac339b9f5220a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a1ff33ac0ee31d7eca95ac339b9f5220a">GetNextBufferMemoryBlock</a> (<a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> size, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> sharedType)</td></tr>
-<tr class="separator:a1ff33ac0ee31d7eca95ac339b9f5220a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1758687db3fcec367ff605c0d5d152a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a1758687db3fcec367ff605c0d5d152a7">GetNextBufferMemorySubblock</a> (<a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> size, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> sharedType)</td></tr>
-<tr class="separator:a1758687db3fcec367ff605c0d5d152a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b0540a7d4c3e5b60416fbf277a2f939" id="r_a4b0540a7d4c3e5b60416fbf277a2f939"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b0540a7d4c3e5b60416fbf277a2f939">LoadDefaultNormalTexture</a> ()</td></tr>
+<tr class="memitem:ad5ca444bce47c933bd73d3a55668647e" id="r_ad5ca444bce47c933bd73d3a55668647e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5ca444bce47c933bd73d3a55668647e">_CreateBottomAccelerationStructure</a> ()=0</td></tr>
+<tr class="memitem:a7f5e347a1ad04a7c6bb0403dbbe04426" id="r_a7f5e347a1ad04a7c6bb0403dbbe04426"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_top_level_acceleration_structure.html">ITopLevelAccelerationStructure</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f5e347a1ad04a7c6bb0403dbbe04426">_CreateTopAccelerationStructure</a> ()=0</td></tr>
+<tr class="memitem:ab93aa034917aa0f016bb7a5a938f9721" id="r_ab93aa034917aa0f016bb7a5a938f9721"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab93aa034917aa0f016bb7a5a938f9721">CreateNewBufferBlock</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> size, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> sharedType)=0</td></tr>
+<tr class="memitem:a93f39b81054115010fc7db9700e5135c" id="r_a93f39b81054115010fc7db9700e5135c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93f39b81054115010fc7db9700e5135c">CreateNewImageBlock</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> *image, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a19a2f70fc994c00eb022e520608c5ffa">GpuImageUsage</a> usage, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> sharedType)=0</td></tr>
+<tr class="memitem:a1ff33ac0ee31d7eca95ac339b9f5220a" id="r_a1ff33ac0ee31d7eca95ac339b9f5220a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ff33ac0ee31d7eca95ac339b9f5220a">GetNextBufferMemoryBlock</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> size, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> sharedType)</td></tr>
+<tr class="memitem:a1758687db3fcec367ff605c0d5d152a7" id="r_a1758687db3fcec367ff605c0d5d152a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1758687db3fcec367ff605c0d5d152a7">GetNextBufferMemorySubblock</a> (<a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> size, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a> usage, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a> sharedType)</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Atributos protegidos</h2></td></tr>
-<tr class="memitem:a0937f3dc39365976fe1cec02aec91b02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_memory_block_info.html">GpuBufferMemoryBlockInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a0937f3dc39365976fe1cec02aec91b02">bufferMemoryBlocksInfo</a></td></tr>
-<tr class="separator:a0937f3dc39365976fe1cec02aec91b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c63090eab5d64c093fe10e09b07d303"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a8c63090eab5d64c093fe10e09b07d303">bufferMemoryBlocks</a></td></tr>
-<tr class="separator:a8c63090eab5d64c093fe10e09b07d303"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a648839e5f311218525260fd324108c5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a648839e5f311218525260fd324108c5c">imageMemoryBlocks</a></td></tr>
-<tr class="separator:a648839e5f311218525260fd324108c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e26b58f16d0e6790e96b65dbeded032"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a0e26b58f16d0e6790e96b65dbeded032">m_defaultNormalTexture</a></td></tr>
-<tr class="separator:a0e26b58f16d0e6790e96b65dbeded032"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f655b1e1884b8285b6d90b3d8f94e98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a8f655b1e1884b8285b6d90b3d8f94e98">device</a> = nullptr</td></tr>
-<tr class="separator:a8f655b1e1884b8285b6d90b3d8f94e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa769189d48cf4298630f025874f23f0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_k_1_1_mutex_holder.html">MutexHolder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#aa769189d48cf4298630f025874f23f0b">m_memoryAllocationMutex</a></td></tr>
-<tr class="separator:aa769189d48cf4298630f025874f23f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0937f3dc39365976fe1cec02aec91b02" id="r_a0937f3dc39365976fe1cec02aec91b02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_memory_block_info.html">GpuBufferMemoryBlockInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0937f3dc39365976fe1cec02aec91b02">bufferMemoryBlocksInfo</a></td></tr>
+<tr class="memitem:a8c63090eab5d64c093fe10e09b07d303" id="r_a8c63090eab5d64c093fe10e09b07d303"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c63090eab5d64c093fe10e09b07d303">bufferMemoryBlocks</a></td></tr>
+<tr class="memitem:a648839e5f311218525260fd324108c5c" id="r_a648839e5f311218525260fd324108c5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a648839e5f311218525260fd324108c5c">imageMemoryBlocks</a></td></tr>
+<tr class="memitem:a0e26b58f16d0e6790e96b65dbeded032" id="r_a0e26b58f16d0e6790e96b65dbeded032"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e26b58f16d0e6790e96b65dbeded032">m_defaultNormalTexture</a></td></tr>
+<tr class="memitem:a8f655b1e1884b8285b6d90b3d8f94e98" id="r_a8f655b1e1884b8285b6d90b3d8f94e98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f655b1e1884b8285b6d90b3d8f94e98">device</a> = nullptr</td></tr>
+<tr class="memitem:aa769189d48cf4298630f025874f23f0b" id="r_aa769189d48cf4298630f025874f23f0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_k_1_1_mutex_holder.html">MutexHolder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa769189d48cf4298630f025874f23f0b">m_memoryAllocationMutex</a></td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p >El asignador de memoria se encarga de reservar grandes bloques de memoria en la GPU, que después podrán ser usados para almacenar texturas, buffers, etc. </p>
-<p >La memoria de un bloque se divide en subbloques. Al reservar un recurso, se crea un subbloque que ocupará parte de la memoria del bloque.</p>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>El asignador de memoria se encarga de reservar grandes bloques de memoria en la GPU, que después podrán ser usados para almacenar texturas, buffers, etc. </p>
+<p>La memoria de un bloque se divide en subbloques. Al reservar un recurso, se crea un subbloque que ocupará parte de la memoria del bloque.</p>
 <dl class="section user"><dt>Thread-safe</dt><dd>Compatible con ejecución multihilo. </dd></dl>
-</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
 <a id="a5eb4af797b1cd9c31aa51233fcdf7af1" name="a5eb4af797b1cd9c31aa51233fcdf7af1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5eb4af797b1cd9c31aa51233fcdf7af1">&#9670;&nbsp;</a></span>IGpuMemoryAllocator()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eb4af797b1cd9c31aa51233fcdf7af1">&#9670;&#160;</a></span>IGpuMemoryAllocator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,14 +166,13 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">IGpuMemoryAllocator::IGpuMemoryAllocator </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *&#160;</td>
-          <td class="paramname"><em>device</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html">IGpu</a> *</td>          <td class="paramname"><span class="paramname"><em>device</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -219,7 +180,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="ab9077dcba1bcd90e6cbb81564e542d40" name="ab9077dcba1bcd90e6cbb81564e542d40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9077dcba1bcd90e6cbb81564e542d40">&#9670;&nbsp;</a></span>~IGpuMemoryAllocator()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9077dcba1bcd90e6cbb81564e542d40">&#9670;&#160;</a></span>~IGpuMemoryAllocator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,22 +191,22 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">IGpuMemoryAllocator::~IGpuMemoryAllocator </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
 <a id="ad5ca444bce47c933bd73d3a55668647e" name="ad5ca444bce47c933bd73d3a55668647e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5ca444bce47c933bd73d3a55668647e">&#9670;&nbsp;</a></span>_CreateBottomAccelerationStructure()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5ca444bce47c933bd73d3a55668647e">&#9670;&#160;</a></span>_CreateBottomAccelerationStructure()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,13 +217,13 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> &gt; OSK::GRAPHICS::IGpuMemoryAllocator::_CreateBottomAccelerationStructure </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -270,7 +231,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a7f5e347a1ad04a7c6bb0403dbbe04426" name="a7f5e347a1ad04a7c6bb0403dbbe04426"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f5e347a1ad04a7c6bb0403dbbe04426">&#9670;&nbsp;</a></span>_CreateTopAccelerationStructure()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f5e347a1ad04a7c6bb0403dbbe04426">&#9670;&#160;</a></span>_CreateTopAccelerationStructure()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,13 +242,13 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_top_level_acceleration_structure.html">ITopLevelAccelerationStructure</a> &gt; OSK::GRAPHICS::IGpuMemoryAllocator::_CreateTopAccelerationStructure </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -295,7 +256,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a7d2ef0db66de433acd03db324f4e9c9d" name="a7d2ef0db66de433acd03db324f4e9c9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d2ef0db66de433acd03db324f4e9c9d">&#9670;&nbsp;</a></span>CreateBottomAccelerationStructure() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d2ef0db66de433acd03db324f4e9c9d">&#9670;&#160;</a></span>CreateBottomAccelerationStructure() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -303,25 +264,18 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> &gt; IGpuMemoryAllocator::CreateBottomAccelerationStructure </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;&#160;</td>
-          <td class="paramname"><em>vertexBuffer</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vertexBuffer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;&#160;</td>
-          <td class="paramname"><em>indexBuffer</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>indexBuffer</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Crea una estructura de aceleración espacial para el trazado de rayos. </p>
-<p >La estructura será de bajo nivel y contendrá la geometría definida por los vértices e índices dados. </p><dl class="params"><dt>Parámetros</dt><dd>
+<p>La estructura será de bajo nivel y contendrá la geometría definida por los vértices e índices dados. </p><dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">vertexBuffer</td><td>Vértices del modelo 3D a partir del que se va a crear la estructura. </td></tr>
     <tr><td class="paramname">indexBuffer</td><td>Índices del modelo 3D a partir del que se va a crear la estructura. </td></tr>
@@ -334,7 +288,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a5deed469fb7d581e2ce47fa157d959e6" name="a5deed469fb7d581e2ce47fa157d959e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5deed469fb7d581e2ce47fa157d959e6">&#9670;&nbsp;</a></span>CreateBottomAccelerationStructure() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5deed469fb7d581e2ce47fa157d959e6">&#9670;&#160;</a></span>CreateBottomAccelerationStructure() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -342,37 +296,28 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> &gt; IGpuMemoryAllocator::CreateBottomAccelerationStructure </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;&#160;</td>
-          <td class="paramname"><em>vertexBuffer</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vertexBuffer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_buffer_view.html">VertexBufferView</a> &amp;&#160;</td>
-          <td class="paramname"><em>vertexView</em>, </td>
+          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_buffer_view.html">VertexBufferView</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vertexView</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;&#160;</td>
-          <td class="paramname"><em>indexBuffer</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>indexBuffer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_index_buffer_view.html">IndexBufferView</a> &amp;&#160;</td>
-          <td class="paramname"><em>indexView</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_index_buffer_view.html">IndexBufferView</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>indexView</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Crea una estructura de aceleración espacial para el trazado de rayos. </p>
-<p >La estructura será de bajo nivel y contendrá la geometría definida por los vértices e índices dados. </p><dl class="params"><dt>Parámetros</dt><dd>
+<p>La estructura será de bajo nivel y contendrá la geometría definida por los vértices e índices dados. </p><dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">vertexBuffer</td><td>Vértices del modelo 3D a partir del que se va a crear la estructura. </td></tr>
     <tr><td class="paramname">vertexView</td><td>View de los vértices. </td></tr>
@@ -387,7 +332,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="aead4b69eb7b65e52698ff933259664be" name="aead4b69eb7b65e52698ff933259664be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aead4b69eb7b65e52698ff933259664be">&#9670;&nbsp;</a></span>CreateBuffer()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aead4b69eb7b65e52698ff933259664be">&#9670;&#160;</a></span>CreateBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -395,37 +340,27 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt; IGpuMemoryAllocator::CreateBuffer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>alignment</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>alignment</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a>&#160;</td>
-          <td class="paramname"><em>memoryType</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a></td>          <td class="paramname"><span class="paramname"><em>memoryType</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>queueType</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>queueType</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -447,7 +382,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a697ce75cd24f5a37a9a8c5c1fb45da89" name="a697ce75cd24f5a37a9a8c5c1fb45da89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a697ce75cd24f5a37a9a8c5c1fb45da89">&#9670;&nbsp;</a></span>CreateCubemapImage()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a697ce75cd24f5a37a9a8c5c1fb45da89">&#9670;&#160;</a></span>CreateCubemapImage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -455,43 +390,32 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> &gt; IGpuMemoryAllocator::CreateCubemapImage </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespace_o_s_k.html#a8a2dd07f1ac751a9b0baec4c534af48a">Vector2ui</a> &amp;&#160;</td>
-          <td class="paramname"><em>faceSize</em>, </td>
+          <td class="paramtype">const <a class="el" href="namespace_o_s_k.html#a6f5b4753cd85b4773d2880148fd031cf">Vector2ui</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>faceSize</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aac59f9d056e083c0b49ea768f974e3e8">Format</a>&#160;</td>
-          <td class="paramname"><em>format</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aac59f9d056e083c0b49ea768f974e3e8">Format</a></td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a19a2f70fc994c00eb022e520608c5ffa">GpuImageUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a19a2f70fc994c00eb022e520608c5ffa">GpuImageUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a>&#160;</td>
-          <td class="paramname"><em>sharedType</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a></td>          <td class="paramname"><span class="paramname"><em>sharedType</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>queueType</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>queueType</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc.html">GpuImageSamplerDesc</a>&#160;</td>
-          <td class="paramname"><em>samplerDesc</em> = <code>{}</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc.html">GpuImageSamplerDesc</a></td>          <td class="paramname"><span class="paramname"><em>samplerDesc</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -515,7 +439,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a0e6e793c72e2660b611c379a05a6793e" name="a0e6e793c72e2660b611c379a05a6793e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e6e793c72e2660b611c379a05a6793e">&#9670;&nbsp;</a></span>CreateImage()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e6e793c72e2660b611c379a05a6793e">&#9670;&#160;</a></span>CreateImage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -526,14 +450,13 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> &gt; OSK::GRAPHICS::IGpuMemoryAllocator::CreateImage </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info.html">GpuImageCreateInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>info</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info.html">GpuImageCreateInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>info</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -550,7 +473,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a1fd62d1cb0889a9e62c497da7b271229" name="a1fd62d1cb0889a9e62c497da7b271229"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1fd62d1cb0889a9e62c497da7b271229">&#9670;&nbsp;</a></span>CreateIndexBuffer() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd62d1cb0889a9e62c497da7b271229">&#9670;&#160;</a></span>CreateIndexBuffer() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -558,25 +481,17 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt; IGpuMemoryAllocator::CreateIndexBuffer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a05f5134cdcc67a7889c57e39aa2f25ae">TIndexSize</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>indices</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5df06fd78ce077c547552654e7d672a">TIndexSize</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>indices</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>queueType</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>queueType</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em> = <code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90">GpuBufferUsage::INDEX_BUFFER</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90">GpuBufferUsage::INDEX_BUFFER</a></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -598,7 +513,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a4ff4df81af81ca43021555f4cbcfd020" name="a4ff4df81af81ca43021555f4cbcfd020"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ff4df81af81ca43021555f4cbcfd020">&#9670;&nbsp;</a></span>CreateIndexBuffer() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ff4df81af81ca43021555f4cbcfd020">&#9670;&#160;</a></span>CreateIndexBuffer() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -606,31 +521,22 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt; IGpuMemoryAllocator::CreateIndexBuffer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a05f5134cdcc67a7889c57e39aa2f25ae">TIndexSize</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>indices</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5df06fd78ce077c547552654e7d672a">TIndexSize</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>indices</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>transferQueue</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>transferQueue</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>queueType</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>queueType</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em> = <code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90">GpuBufferUsage::INDEX_BUFFER</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90">GpuBufferUsage::INDEX_BUFFER</a></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -653,7 +559,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="ab93aa034917aa0f016bb7a5a938f9721" name="ab93aa034917aa0f016bb7a5a938f9721"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab93aa034917aa0f016bb7a5a938f9721">&#9670;&nbsp;</a></span>CreateNewBufferBlock()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab93aa034917aa0f016bb7a5a938f9721">&#9670;&#160;</a></span>CreateNewBufferBlock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -664,30 +570,22 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> &gt; OSK::GRAPHICS::IGpuMemoryAllocator::CreateNewBufferBlock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a>&#160;</td>
-          <td class="paramname"><em>sharedType</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a></td>          <td class="paramname"><span class="paramname"><em>sharedType</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -695,7 +593,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a93f39b81054115010fc7db9700e5135c" name="a93f39b81054115010fc7db9700e5135c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93f39b81054115010fc7db9700e5135c">&#9670;&nbsp;</a></span>CreateNewImageBlock()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a93f39b81054115010fc7db9700e5135c">&#9670;&#160;</a></span>CreateNewImageBlock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -706,30 +604,22 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> &gt; OSK::GRAPHICS::IGpuMemoryAllocator::CreateNewImageBlock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> *&#160;</td>
-          <td class="paramname"><em>image</em>, </td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> *</td>          <td class="paramname"><span class="paramname"><em>image</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a19a2f70fc994c00eb022e520608c5ffa">GpuImageUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a19a2f70fc994c00eb022e520608c5ffa">GpuImageUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a>&#160;</td>
-          <td class="paramname"><em>sharedType</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a></td>          <td class="paramname"><span class="paramname"><em>sharedType</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -737,7 +627,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a07b9a738d6348eee3bd68db2f50d3099" name="a07b9a738d6348eee3bd68db2f50d3099"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07b9a738d6348eee3bd68db2f50d3099">&#9670;&nbsp;</a></span>CreateStagingBuffer()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a07b9a738d6348eee3bd68db2f50d3099">&#9670;&#160;</a></span>CreateStagingBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -745,31 +635,23 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt; IGpuMemoryAllocator::CreateStagingBuffer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>queueType</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>queueType</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em> = <code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa5f26ec9a42a626092bb3c25908b6659f">GpuBufferUsage::UPLOAD_ONLY</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa5f26ec9a42a626092bb3c25908b6659f">GpuBufferUsage::UPLOAD_ONLY</a></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Crea un buffer temporal con el tamaño dado. </p>
-<p >Este buffer alojará memoria en una región donde la CPU tiene acceso, de tal manera que se podrán enviar datos a esta región, y después la GPU podrá copiar esta región de memoria a una región de memoria de video más rápida. </p><dl class="params"><dt>Parámetros</dt><dd>
+<p>Este buffer alojará memoria en una región donde la CPU tiene acceso, de tal manera que se podrán enviar datos a esta región, y después la GPU podrá copiar esta región de memoria a una región de memoria de video más rápida. </p><dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">size</td><td>Tamaño del buffer, en bytes. </td></tr>
     <tr><td class="paramname">queueType</td><td>Tipo de cola en la que se almacenará. </td></tr>
@@ -785,7 +667,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a73def66646469f2cfbe6bfe00e4b195e" name="a73def66646469f2cfbe6bfe00e4b195e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73def66646469f2cfbe6bfe00e4b195e">&#9670;&nbsp;</a></span>CreateStorageBuffer()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a73def66646469f2cfbe6bfe00e4b195e">&#9670;&#160;</a></span>CreateStorageBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -793,25 +675,17 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt; IGpuMemoryAllocator::CreateStorageBuffer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>queueType</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>queueType</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em> = <code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa486db75420308f63af20d85e2b6489d">GpuBufferUsage::STORAGE_BUFFER</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa486db75420308f63af20d85e2b6489d">GpuBufferUsage::STORAGE_BUFFER</a></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -833,7 +707,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a61c263f4cc2d7ce43e77a51768c4490b" name="a61c263f4cc2d7ce43e77a51768c4490b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61c263f4cc2d7ce43e77a51768c4490b">&#9670;&nbsp;</a></span>CreateTopAccelerationStructure()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a61c263f4cc2d7ce43e77a51768c4490b">&#9670;&#160;</a></span>CreateTopAccelerationStructure()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -841,15 +715,14 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_top_level_acceleration_structure.html">ITopLevelAccelerationStructure</a> &gt; IGpuMemoryAllocator::CreateTopAccelerationStructure </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> * &gt;&#160;</td>
-          <td class="paramname"><em>bottomStructures</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure.html">IBottomLevelAccelerationStructure</a> * &gt;</td>          <td class="paramname"><span class="paramname"><em>bottomStructures</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Crea una estructura de aceleración espacial para el trazado de rayos. </p>
-<p >La estructura agrupará varias estructuras de bajo nivel. </p><dl class="params"><dt>Parámetros</dt><dd>
+<p>La estructura agrupará varias estructuras de bajo nivel. </p><dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">bottomStructures</td><td>Lista con todas las estructuras de bajo nivel a partir de los que se va a crear la estructura de alto nivel. </td></tr>
   </table>
@@ -861,7 +734,7 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="adf403fab83267d7b8e3b20e2f876106c" name="adf403fab83267d7b8e3b20e2f876106c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf403fab83267d7b8e3b20e2f876106c">&#9670;&nbsp;</a></span>CreateUniformBuffer()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adf403fab83267d7b8e3b20e2f876106c">&#9670;&#160;</a></span>CreateUniformBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -869,25 +742,17 @@ Atributos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt; IGpuMemoryAllocator::CreateUniformBuffer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>queueType</em> = <code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1da186495f7da296bf880df3a22a492b378">GpuQueueType::MAIN</a></code>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>queueType</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1da186495f7da296bf880df3a22a492b378">GpuQueueType::MAIN</a></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em> = <code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa8d0be820da8f4fe5aa49e0ef3065ca29">GpuBufferUsage::UNIFORM_BUFFER</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa8d0be820da8f4fe5aa49e0ef3065ca29">GpuBufferUsage::UNIFORM_BUFFER</a></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -909,12 +774,12 @@ Atributos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a9c247f6c0e0aea301763480ffd7ec4c2" name="a9c247f6c0e0aea301763480ffd7ec4c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c247f6c0e0aea301763480ffd7ec4c2">&#9670;&nbsp;</a></span>CreateVertexBuffer() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c247f6c0e0aea301763480ffd7ec4c2">&#9670;&#160;</a></span>CreateVertexBuffer() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -922,42 +787,33 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt; OSK::GRAPHICS::IGpuMemoryAllocator::CreateVertexBuffer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vertices</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vertices</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>vertexInfo</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vertexInfo</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>queueType</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>queueType</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em> = <code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Crea un buffer de vértices con los vértices dados. </p>
-<dl class="tparams"><dt>Parámetros del template</dt><dd>
+<dl class="tparams"><dt>Parámetros de plantilla</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>Tipo del vértice. </td></tr>
   </table>
@@ -980,12 +836,12 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a14f8c50d1b4861ba5612cccd20ac142c" name="a14f8c50d1b4861ba5612cccd20ac142c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14f8c50d1b4861ba5612cccd20ac142c">&#9670;&nbsp;</a></span>CreateVertexBuffer() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a14f8c50d1b4861ba5612cccd20ac142c">&#9670;&#160;</a></span>CreateVertexBuffer() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -993,48 +849,38 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt; OSK::GRAPHICS::IGpuMemoryAllocator::CreateVertexBuffer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vertices</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vertices</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>vertexInfo</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vertexInfo</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>transferQueue</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>transferQueue</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>finalQueue</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>finalQueue</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em> = <code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Crea un buffer de vértices con los vértices dados. </p>
-<dl class="tparams"><dt>Parámetros del template</dt><dd>
+<dl class="tparams"><dt>Parámetros de plantilla</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>Tipo del vértice. </td></tr>
   </table>
@@ -1058,7 +904,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a120578a39e288f0f957964042285d7c6" name="a120578a39e288f0f957964042285d7c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a120578a39e288f0f957964042285d7c6">&#9670;&nbsp;</a></span>CreateVertexBuffer() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a120578a39e288f0f957964042285d7c6">&#9670;&#160;</a></span>CreateVertexBuffer() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1066,43 +912,32 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt; IGpuMemoryAllocator::CreateVertexBuffer </td>
           <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a>&#160;</td>
-          <td class="paramname"><em>vertexSize</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a></td>          <td class="paramname"><span class="paramname"><em>vertexSize</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a>&#160;</td>
-          <td class="paramname"><em>numVertices</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a></td>          <td class="paramname"><span class="paramname"><em>numVertices</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>vertexInfo</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vertexInfo</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>queueType</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>queueType</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em> = <code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1127,7 +962,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a076cd441a6e13abff0a67f8ab3a576be" name="a076cd441a6e13abff0a67f8ab3a576be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a076cd441a6e13abff0a67f8ab3a576be">&#9670;&nbsp;</a></span>CreateVertexBuffer() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a076cd441a6e13abff0a67f8ab3a576be">&#9670;&#160;</a></span>CreateVertexBuffer() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1135,49 +970,37 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html">GpuBuffer</a> &gt; IGpuMemoryAllocator::CreateVertexBuffer </td>
           <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a>&#160;</td>
-          <td class="paramname"><em>vertexSize</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a></td>          <td class="paramname"><span class="paramname"><em>vertexSize</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a>&#160;</td>
-          <td class="paramname"><em>numVertices</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a></td>          <td class="paramname"><span class="paramname"><em>numVertices</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>vertexInfo</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info.html">VertexInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vertexInfo</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>transferQueue</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>transferQueue</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a>&#160;</td>
-          <td class="paramname"><em>finalQueue</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#af480a36d7bec77341500daf8dda20f1d">GpuQueueType</a></td>          <td class="paramname"><span class="paramname"><em>finalQueue</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em> = <code><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">GpuBufferUsage::VERTEX_BUFFER</a></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1203,7 +1026,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="af41e891d6c39de6dd5fc95e7b9fe8eba" name="af41e891d6c39de6dd5fc95e7b9fe8eba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af41e891d6c39de6dd5fc95e7b9fe8eba">&#9670;&nbsp;</a></span>FreeStagingMemory()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af41e891d6c39de6dd5fc95e7b9fe8eba">&#9670;&#160;</a></span>FreeStagingMemory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1211,7 +1034,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void IGpuMemoryAllocator::FreeStagingMemory </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1222,27 +1045,20 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a9b22b2f1b7eada47b4ee5080b19bbec0" name="a9b22b2f1b7eada47b4ee5080b19bbec0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b22b2f1b7eada47b4ee5080b19bbec0">&#9670;&nbsp;</a></span>GetAlignment()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b22b2f1b7eada47b4ee5080b19bbec0">&#9670;&#160;</a></span>GetAlignment()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> IGpuMemoryAllocator::GetAlignment </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> IGpuMemoryAllocator::GetAlignment </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>originalAlignment</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>originalAlignment</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span>&#160;) const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1251,7 +1067,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a7ae0adea9e3855cb789c59996b1b0522" name="a7ae0adea9e3855cb789c59996b1b0522"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ae0adea9e3855cb789c59996b1b0522">&#9670;&nbsp;</a></span>GetDefaultNormalTexture()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ae0adea9e3855cb789c59996b1b0522">&#9670;&#160;</a></span>GetDefaultNormalTexture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1259,7 +1075,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a> * IGpuMemoryAllocator::GetDefaultNormalTexture </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -1269,7 +1085,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="ac839849a86be993da03fb236ca9dc641" name="ac839849a86be993da03fb236ca9dc641"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac839849a86be993da03fb236ca9dc641">&#9670;&nbsp;</a></span>GetMemoryUsageInfo()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac839849a86be993da03fb236ca9dc641">&#9670;&#160;</a></span>GetMemoryUsageInfo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1277,7 +1093,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_usage_info.html">GpuMemoryUsageInfo</a> IGpuMemoryAllocator::GetMemoryUsageInfo </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -1290,7 +1106,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a1ff33ac0ee31d7eca95ac339b9f5220a" name="a1ff33ac0ee31d7eca95ac339b9f5220a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ff33ac0ee31d7eca95ac339b9f5220a">&#9670;&nbsp;</a></span>GetNextBufferMemoryBlock()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ff33ac0ee31d7eca95ac339b9f5220a">&#9670;&#160;</a></span>GetNextBufferMemoryBlock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1301,30 +1117,22 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> * IGpuMemoryAllocator::GetNextBufferMemoryBlock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a>&#160;</td>
-          <td class="paramname"><em>sharedType</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a></td>          <td class="paramname"><span class="paramname"><em>sharedType</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1347,7 +1155,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 </div>
 </div>
 <a id="a1758687db3fcec367ff605c0d5d152a7" name="a1758687db3fcec367ff605c0d5d152a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1758687db3fcec367ff605c0d5d152a7">&#9670;&nbsp;</a></span>GetNextBufferMemorySubblock()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1758687db3fcec367ff605c0d5d152a7">&#9670;&#160;</a></span>GetNextBufferMemorySubblock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1358,30 +1166,22 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> &gt; IGpuMemoryAllocator::GetNextBufferMemorySubblock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a>&#160;</td>
-          <td class="paramname"><em>usage</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7f">GpuBufferUsage</a></td>          <td class="paramname"><span class="paramname"><em>usage</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a>&#160;</td>
-          <td class="paramname"><em>sharedType</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a85a830e82585f3a565d1f097491042ce">GpuSharedMemoryType</a></td>          <td class="paramname"><span class="paramname"><em>sharedType</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1401,7 +1201,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 </div>
 </div>
 <a id="a4b0540a7d4c3e5b60416fbf277a2f939" name="a4b0540a7d4c3e5b60416fbf277a2f939"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b0540a7d4c3e5b60416fbf277a2f939">&#9670;&nbsp;</a></span>LoadDefaultNormalTexture()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b0540a7d4c3e5b60416fbf277a2f939">&#9670;&#160;</a></span>LoadDefaultNormalTexture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1412,13 +1212,13 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
         <tr>
           <td class="memname">void IGpuMemoryAllocator::LoadDefaultNormalTexture </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1426,7 +1226,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 </div>
 </div>
 <a id="aa89880ddaadfee627c68f7c4cb6d5d30" name="aa89880ddaadfee627c68f7c4cb6d5d30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa89880ddaadfee627c68f7c4cb6d5d30">&#9670;&nbsp;</a></span>OSK_DEFINE_AS()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa89880ddaadfee627c68f7c4cb6d5d30">&#9670;&#160;</a></span>OSK_DEFINE_AS()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1434,8 +1234,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
         <tr>
           <td class="memname">OSK::GRAPHICS::IGpuMemoryAllocator::OSK_DEFINE_AS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html">IGpuMemoryAllocator</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html">IGpuMemoryAllocator</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1444,7 +1243,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 </div>
 </div>
 <a id="ac941bb2cf771a2c6b377752952683e3b" name="ac941bb2cf771a2c6b377752952683e3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac941bb2cf771a2c6b377752952683e3b">&#9670;&nbsp;</a></span>OSK_DISABLE_COPY()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac941bb2cf771a2c6b377752952683e3b">&#9670;&#160;</a></span>OSK_DISABLE_COPY()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1452,8 +1251,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
         <tr>
           <td class="memname">OSK::GRAPHICS::IGpuMemoryAllocator::OSK_DISABLE_COPY </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html">IGpuMemoryAllocator</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html">IGpuMemoryAllocator</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1462,7 +1260,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 </div>
 </div>
 <a id="acec87689e0c7f1f801b04fe724f9d269" name="acec87689e0c7f1f801b04fe724f9d269"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acec87689e0c7f1f801b04fe724f9d269">&#9670;&nbsp;</a></span>RemoveMemoryBlock()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acec87689e0c7f1f801b04fe724f9d269">&#9670;&#160;</a></span>RemoveMemoryBlock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1470,8 +1268,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
         <tr>
           <td class="memname">void IGpuMemoryAllocator::RemoveMemoryBlock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> *&#160;</td>
-          <td class="paramname"><em>block</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> *</td>          <td class="paramname"><span class="paramname"><em>block</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1482,9 +1279,9 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 
 </div>
 </div>
-<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de datos miembro</h2>
 <a id="a8c63090eab5d64c093fe10e09b07d303" name="a8c63090eab5d64c093fe10e09b07d303"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c63090eab5d64c093fe10e09b07d303">&#9670;&nbsp;</a></span>bufferMemoryBlocks</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c63090eab5d64c093fe10e09b07d303">&#9670;&#160;</a></span>bufferMemoryBlocks</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1498,7 +1295,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1506,7 +1303,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 </div>
 </div>
 <a id="a0937f3dc39365976fe1cec02aec91b02" name="a0937f3dc39365976fe1cec02aec91b02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0937f3dc39365976fe1cec02aec91b02">&#9670;&nbsp;</a></span>bufferMemoryBlocksInfo</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0937f3dc39365976fe1cec02aec91b02">&#9670;&#160;</a></span>bufferMemoryBlocksInfo</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1520,7 +1317,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1530,7 +1327,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 </div>
 </div>
 <a id="a8f655b1e1884b8285b6d90b3d8f94e98" name="a8f655b1e1884b8285b6d90b3d8f94e98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f655b1e1884b8285b6d90b3d8f94e98">&#9670;&nbsp;</a></span>device</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f655b1e1884b8285b6d90b3d8f94e98">&#9670;&#160;</a></span>device</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1544,7 +1341,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1552,7 +1349,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 </div>
 </div>
 <a id="a648839e5f311218525260fd324108c5c" name="a648839e5f311218525260fd324108c5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a648839e5f311218525260fd324108c5c">&#9670;&nbsp;</a></span>imageMemoryBlocks</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a648839e5f311218525260fd324108c5c">&#9670;&#160;</a></span>imageMemoryBlocks</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1566,7 +1363,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1574,7 +1371,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 </div>
 </div>
 <a id="a0e26b58f16d0e6790e96b65dbeded032" name="a0e26b58f16d0e6790e96b65dbeded032"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e26b58f16d0e6790e96b65dbeded032">&#9670;&nbsp;</a></span>m_defaultNormalTexture</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e26b58f16d0e6790e96b65dbeded032">&#9670;&#160;</a></span>m_defaultNormalTexture</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1588,7 +1385,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1596,7 +1393,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 </div>
 </div>
 <a id="aa769189d48cf4298630f025874f23f0b" name="aa769189d48cf4298630f025874f23f0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa769189d48cf4298630f025874f23f0b">&#9670;&nbsp;</a></span>m_memoryAllocationMutex</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa769189d48cf4298630f025874f23f0b">&#9670;&#160;</a></span>m_memoryAllocationMutex</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1610,7 +1407,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1618,7 +1415,7 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 </div>
 </div>
 <a id="a15a307c693598df9c0af4e4a6417a48a" name="a15a307c693598df9c0af4e4a6417a48a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15a307c693598df9c0af4e4a6417a48a">&#9670;&nbsp;</a></span>SizeOfMemoryBlockInMb</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a15a307c693598df9c0af4e4a6417a48a">&#9670;&#160;</a></span>SizeOfMemoryBlockInMb</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1627,12 +1424,12 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> const IGpuMemoryAllocator::SizeOfMemoryBlockInMb = 16u</td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> const IGpuMemoryAllocator::SizeOfMemoryBlockInMb = 16u</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1644,11 +1441,19 @@ Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.</dd></dl>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespace_o_s_k.html">OSK</a></li><li class="navelem"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">GRAPHICS</a></li><li class="navelem"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html">IGpuMemoryAllocator</a></li>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="navelem"><a href="namespace_o_s_k.html">OSK</a></li><li class="navelem"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">GRAPHICS</a></li><li class="navelem"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html">IGpuMemoryAllocator</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

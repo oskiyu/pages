@@ -1,0 +1,28 @@
+\doxysection{Referencia del concepto OSK\+::ECS\+::Is\+Serializable\+Component}
+\label{concept_o_s_k_1_1_e_c_s_1_1_is_serializable_component}\index{OSK::ECS::IsSerializableComponent@{OSK::ECS::IsSerializableComponent}}
+
+
+{\ttfamily \#include $<$Serializable\+Component.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TComponent>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::ECS::IsSerializableComponent\ =\ \ IsEcsComponent<TComponent>\ \&\&\ \textcolor{keyword}{requires}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ::OSK::PERSISTENCE::SerializeComponent<TComponent>();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ::OSK::PERSISTENCE::DeserializeComponent<TComponent>();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ::OSK::PERSISTENCE::BinarySerializeComponent<TComponent>();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ::OSK::PERSISTENCE::BinaryDeserializeComponent<TComponent>();}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}
+Comprueba si un componente puede ser serializado y deserializado. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & tipo de componente. \\
+\hline
+\end{DoxyTemplParams}

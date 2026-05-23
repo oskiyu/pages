@@ -1,0 +1,17 @@
+\doxysection{Referencia del concepto OSK\+::Editor\+::Controllers\+::Is\+System\+Controller}
+\label{concept_o_s_k_1_1_editor_1_1_controllers_1_1_is_system_controller}\index{OSK::Editor::Controllers::IsSystemController@{OSK::Editor::Controllers::IsSystemController}}
+
+
+{\ttfamily \#include $<$ISystem\+Controller.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_TSystemController>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::Editor::Controllers::IsSystemController\ =\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::is\_base\_of\_v<ISystemController,\ \_TSystemController>\&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (\_TSystemController)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ \_TSystemController::GetSystemName()\ \};}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}

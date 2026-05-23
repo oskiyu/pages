@@ -1,0 +1,264 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::Logger}
+\label{class_o_s_k_1_1_i_o_1_1_logger}\index{OSK::IO::Logger@{OSK::IO::Logger}}
+
+
+{\ttfamily \#include $<$Logger.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ $\sim$\+Logger} () override
+\item 
+void \textbf{ Start} (const std\+::string \&path) override
+\item 
+void \textbf{ \+\_\+\+Log} (\textbf{ Log\+Level} level, const std\+::string \&msg) override
+\item 
+void \textbf{ Debug\+Log} (const std\+::string \&msg) override
+\item 
+void \textbf{ Info\+Log} (const std\+::string \&msg) override
+\item 
+void \textbf{ Save} () override
+\item 
+void \textbf{ Save} (const std\+::string \&path) override
+\item 
+void \textbf{ Clear} () override
+\item 
+void \textbf{ Close} () override
+\item 
+{\footnotesize template$<$typename ... T$>$ }\\void \textbf{ Log} (\textbf{ Log\+Level} level, T... args)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IO::Logger@{OSK::IO::Logger}!````~Logger@{$\sim$Logger}}
+\index{````~Logger@{$\sim$Logger}!OSK::IO::Logger@{OSK::IO::Logger}}
+\doxysubsubsection{$\sim$Logger()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_logger_afee741267f0de25da55208a6424eb84f} 
+Logger\+::$\sim$\+Logger (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::Logger@{OSK::IO::Logger}!\_Log@{\_Log}}
+\index{\_Log@{\_Log}!OSK::IO::Logger@{OSK::IO::Logger}}
+\doxysubsubsection{\_Log()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_logger_a1ed1d0f971eb85f3f43843e8e91e4937} 
+void Logger\+::\+\_\+\+Log (\begin{DoxyParamCaption}\item[{\textbf{ Log\+Level}}]{level}{, }\item[{const std\+::string \&}]{msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Manda un mensaje por el logger. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em level} & Nivel del mensaje. \\
+\hline
+{\em msg} & Mensaje a mostrar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El logger debe haber sido inicializado con \doxyref{Start()}{pág.}{class_o_s_k_1_1_i_o_1_1_logger_ac4a5fd32197b2301f4747863b4a94851}. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Logger\+Not\+Initialized\+Exception}{pág.}{class_o_s_k_1_1_i_o_1_1_logger_not_initialized_exception}} & si se incumple la precondición.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+ILogger} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_logger_ac20a3c33957904358aef36e1fc0cbe67}.
+
+\index{OSK::IO::Logger@{OSK::IO::Logger}!Clear@{Clear}}
+\index{Clear@{Clear}!OSK::IO::Logger@{OSK::IO::Logger}}
+\doxysubsubsection{Clear()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_logger_a156424fd3b6afe7e3a75b6a5c630cad2} 
+void Logger\+::\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Limpia los contenidos del archivo del log. 
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Logger\+Not\+Initialized\+Exception}{pág.}{class_o_s_k_1_1_i_o_1_1_logger_not_initialized_exception}} & si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+ILogger} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_logger_a697f67f5294d334990106e8fd17dd112}.
+
+\index{OSK::IO::Logger@{OSK::IO::Logger}!Close@{Close}}
+\index{Close@{Close}!OSK::IO::Logger@{OSK::IO::Logger}}
+\doxysubsubsection{Close()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_logger_ab9dc2748087a7452049b69cf1eb5aefe} 
+void Logger\+::\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Cierra el logger, guardando el archivo. 
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Logger\+Not\+Initialized\+Exception}{pág.}{class_o_s_k_1_1_i_o_1_1_logger_not_initialized_exception}} & si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+ILogger} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_logger_ae629914da0f9943d9530e7e031b1adbf}.
+
+\index{OSK::IO::Logger@{OSK::IO::Logger}!DebugLog@{DebugLog}}
+\index{DebugLog@{DebugLog}!OSK::IO::Logger@{OSK::IO::Logger}}
+\doxysubsubsection{DebugLog()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_logger_a35237e0c340d8499bb6b87439716394b} 
+void Logger\+::\+Debug\+Log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Manda un mensaje de depuración. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em msg} & Mensaje a mostrar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El logger debe haber sido inicializado con \doxyref{Start()}{pág.}{class_o_s_k_1_1_i_o_1_1_logger_ac4a5fd32197b2301f4747863b4a94851}. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Logger\+Not\+Initialized\+Exception}{pág.}{class_o_s_k_1_1_i_o_1_1_logger_not_initialized_exception}} & si se incumple la precondición.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+ILogger} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_logger_acf9ff05185e0586b194c493a512daeb1}.
+
+\index{OSK::IO::Logger@{OSK::IO::Logger}!InfoLog@{InfoLog}}
+\index{InfoLog@{InfoLog}!OSK::IO::Logger@{OSK::IO::Logger}}
+\doxysubsubsection{InfoLog()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_logger_af8346d68bed9f2a14c203e34115fbf10} 
+void Logger\+::\+Info\+Log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Manda un mensaje de información. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em msg} & Mensaje a mostrar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El logger debe haber sido inicializado con \doxyref{Start()}{pág.}{class_o_s_k_1_1_i_o_1_1_logger_ac4a5fd32197b2301f4747863b4a94851}. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Logger\+Not\+Initialized\+Exception}{pág.}{class_o_s_k_1_1_i_o_1_1_logger_not_initialized_exception}} & si se incumple la precondición.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+ILogger} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_logger_af32ae7d76d7cc07a0f12326ecde823b5}.
+
+\index{OSK::IO::Logger@{OSK::IO::Logger}!Log@{Log}}
+\index{Log@{Log}!OSK::IO::Logger@{OSK::IO::Logger}}
+\doxysubsubsection{Log()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_logger_a1dfd0c97446c03d33dd19aa822e54269} 
+template$<$typename ... T$>$ \\
+void OSK\+::\+IO\+::\+ILogger\+::\+Log (\begin{DoxyParamCaption}\item[{\textbf{ Log\+Level}}]{level}{, }\item[{T...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Manda un mensaje por el logger. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em level} & Nivel del mensaje. \\
+\hline
+{\em args} & Mensaje a mostrar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El logger debe haber sido inicializado con \doxyref{Start()}{pág.}{class_o_s_k_1_1_i_o_1_1_logger_ac4a5fd32197b2301f4747863b4a94851}. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Logger\+Not\+Initialized\+Exception}{pág.}{class_o_s_k_1_1_i_o_1_1_logger_not_initialized_exception}} & si se incumple la precondición.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::IO::Logger@{OSK::IO::Logger}!Save@{Save}}
+\index{Save@{Save}!OSK::IO::Logger@{OSK::IO::Logger}}
+\doxysubsubsection{Save()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_logger_aedf79797353d9b12855e2a614b675ff8} 
+void Logger\+::\+Save (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Guarda el archivo del log, en la ruta especificada al inicializarlo. 
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Logger\+Not\+Initialized\+Exception}{pág.}{class_o_s_k_1_1_i_o_1_1_logger_not_initialized_exception}} & si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+ILogger} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_logger_a685d7287459482177b42f52a9ae9fefe}.
+
+\index{OSK::IO::Logger@{OSK::IO::Logger}!Save@{Save}}
+\index{Save@{Save}!OSK::IO::Logger@{OSK::IO::Logger}}
+\doxysubsubsection{Save()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_logger_af699906e6125d14341f78f22ebcde6ba} 
+void Logger\+::\+Save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Guarda el archivo del log. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta donde guardar el archivo. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Logger\+Not\+Initialized\+Exception}{pág.}{class_o_s_k_1_1_i_o_1_1_logger_not_initialized_exception}} & si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+ILogger} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_logger_a3f3096b664a06539173f625e48d98bd9}.
+
+\index{OSK::IO::Logger@{OSK::IO::Logger}!Start@{Start}}
+\index{Start@{Start}!OSK::IO::Logger@{OSK::IO::Logger}}
+\doxysubsubsection{Start()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_logger_ac4a5fd32197b2301f4747863b4a94851} 
+void Logger\+::\+Start (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Inicializa el logger. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta donde se guardará el archivo de log. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+ILogger} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_logger_a0e0e00d640629c990198aca9815679d2}.
+

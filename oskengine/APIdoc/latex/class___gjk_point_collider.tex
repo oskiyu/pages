@@ -1,0 +1,134 @@
+\doxysection{Referencia de la clase \+\_\+\+Gjk\+Point\+Collider}
+\label{class___gjk_point_collider}\index{\_GjkPointCollider@{\_GjkPointCollider}}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \+\_\+\+Gjk\+Point\+Collider} (const \textbf{ OSK\+::\+Vector3f} \&\textbf{ point})
+\item 
+\textbf{ OSK\+::\+COLLISION\+::\+Gjk\+Support} \textbf{ Get\+Support} (const \textbf{ OSK\+::\+Vector3f} \&) const override
+\item 
+virtual bool \textbf{ Contains\+Point} (const Vector3f \&\textbf{ point}) const
+\item 
+bool \textbf{ Is\+Behind\+Plane} (Plane plane) const
+\item 
+bool \textbf{ Is\+Fully\+Behind\+Plane} (Plane plane) const
+\item 
+bool \textbf{ Is\+Inside\+Frustum} (const Any\+Frustum \&frustum) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+::\+Vector3f} \textbf{ point} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Dummy class para la comprobación contra un punto. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{\_GjkPointCollider@{\_GjkPointCollider}!\_GjkPointCollider@{\_GjkPointCollider}}
+\index{\_GjkPointCollider@{\_GjkPointCollider}!\_GjkPointCollider@{\_GjkPointCollider}}
+\doxysubsubsection{\_GjkPointCollider()}
+{\footnotesize\ttfamily \label{class___gjk_point_collider_a6641fe5a1714fccfd153ad98fcbcdfc7} 
+\+\_\+\+Gjk\+Point\+Collider\+::\+\_\+\+Gjk\+Point\+Collider (\begin{DoxyParamCaption}\item[{const \textbf{ OSK\+::\+Vector3f} \&}]{point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{\_GjkPointCollider@{\_GjkPointCollider}!ContainsPoint@{ContainsPoint}}
+\index{ContainsPoint@{ContainsPoint}!\_GjkPointCollider@{\_GjkPointCollider}}
+\doxysubsubsection{ContainsPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a24f9964fb50bfbac36c335a096239486} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Contains\+Point (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{point}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Comrpueba si un punto está dentro del collider. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em point} & Punto a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si el punto está dentro del collider. 
+\end{DoxyReturn}
+
+
+Reimplementado en \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a0367c0e40c455bd81fc6fc54243f3051}.
+
+\index{\_GjkPointCollider@{\_GjkPointCollider}!GetSupport@{GetSupport}}
+\index{GetSupport@{GetSupport}!\_GjkPointCollider@{\_GjkPointCollider}}
+\doxysubsubsection{GetSupport()}
+{\footnotesize\ttfamily \label{class___gjk_point_collider_a1e21961c4e8e4289cf8b8b41b4973810} 
+\textbf{ OSK\+::\+COLLISION\+::\+Gjk\+Support} \+\_\+\+Gjk\+Point\+Collider\+::\+Get\+Support (\begin{DoxyParamCaption}\item[{const \textbf{ OSK\+::\+Vector3f} \&}]{direction}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em direction} & Dirección en la que se busca el soporte. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Soporte (punto más alejado en la dirección {\ttfamily direction}). 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ OSK\+::\+COLLISION\+::\+IGjk\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a0db85d332a6ecdcc58f148c7041162b2}.
+
+\index{\_GjkPointCollider@{\_GjkPointCollider}!IsBehindPlane@{IsBehindPlane}}
+\index{IsBehindPlane@{IsBehindPlane}!\_GjkPointCollider@{\_GjkPointCollider}}
+\doxysubsubsection{IsBehindPlane()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a6fbec8faa65f464438b307f231a540f1} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Is\+Behind\+Plane (\begin{DoxyParamCaption}\item[{\textbf{ Plane}}]{plane}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Comprueba si parte del collider está por detrás del plano. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em plane} & Plano a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si está completamente por detrás. 
+\end{DoxyReturn}
+\index{\_GjkPointCollider@{\_GjkPointCollider}!IsFullyBehindPlane@{IsFullyBehindPlane}}
+\index{IsFullyBehindPlane@{IsFullyBehindPlane}!\_GjkPointCollider@{\_GjkPointCollider}}
+\doxysubsubsection{IsFullyBehindPlane()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a02c47053df332f6ec975ce26239a9948} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Is\+Fully\+Behind\+Plane (\begin{DoxyParamCaption}\item[{\textbf{ Plane}}]{plane}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Comprueba si el collider está COMPLETMENTE por detrás del plano. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em plane} & Plano a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si está completamente por detrás. 
+\end{DoxyReturn}
+\index{\_GjkPointCollider@{\_GjkPointCollider}!IsInsideFrustum@{IsInsideFrustum}}
+\index{IsInsideFrustum@{IsInsideFrustum}!\_GjkPointCollider@{\_GjkPointCollider}}
+\doxysubsubsection{IsInsideFrustum()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a64c599fc78bd0160a9d6e5a8f1a20f74} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Is\+Inside\+Frustum (\begin{DoxyParamCaption}\item[{const \textbf{ Any\+Frustum} \&}]{frustum}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si el collider está dentro del frustum indicado. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{\_GjkPointCollider@{\_GjkPointCollider}!point@{point}}
+\index{point@{point}!\_GjkPointCollider@{\_GjkPointCollider}}
+\doxysubsubsection{point}
+{\footnotesize\ttfamily \label{class___gjk_point_collider_a22440b811a0608969b6ace49eb41f0bc} 
+\textbf{ OSK\+::\+Vector3f} \+\_\+\+Gjk\+Point\+Collider\+::point \{\}}
+

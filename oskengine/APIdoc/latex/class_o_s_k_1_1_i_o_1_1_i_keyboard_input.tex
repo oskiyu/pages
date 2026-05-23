@@ -1,0 +1,125 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::IKeyboard\+Input}
+\label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input}\index{OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}}
+
+
+{\ttfamily \#include $<$IKeyboard\+Input.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+IUUID} ((\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+IKeyboard\+Input})
+\item 
+virtual \textbf{ $\sim$\+IKeyboard\+Input} ()=default
+\item 
+void \textbf{ Update\+Keyboard\+Input} ()
+\item 
+bool \textbf{ Is\+Key\+Down} (\textbf{ Key} key) const
+\item 
+bool \textbf{ Is\+Key\+Up} (\textbf{ Key} key) const
+\item 
+bool \textbf{ Is\+Key\+Stroked} (\textbf{ Key} key) const
+\item 
+bool \textbf{ Is\+Key\+Released} (\textbf{ Key} key) const
+\item 
+const \textbf{ Keyboard\+State} \& \textbf{ Get\+Keyboard\+State} () const
+\item 
+const \textbf{ Keyboard\+State} \& \textbf{ Get\+Previous\+Keyboard\+State} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Update\+Keyboard\+State} (\textbf{ Keyboard\+State} $\ast$current\+State)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para leer la entrada del usuario a través del teclado. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}!````~IKeyboardInput@{$\sim$IKeyboardInput}}
+\index{````~IKeyboardInput@{$\sim$IKeyboardInput}!OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}}
+\doxysubsubsection{$\sim$IKeyboardInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_ae3a32a68b5048f978c6f684bf2b3f84f} 
+virtual OSK\+::\+IO\+::\+IKeyboard\+Input\+::$\sim$\+IKeyboard\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}!GetKeyboardState@{GetKeyboardState}}
+\index{GetKeyboardState@{GetKeyboardState}!OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}}
+\doxysubsubsection{GetKeyboardState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a15cb672f73d50c4b56837d1bff8c1ea6} 
+const \textbf{ Keyboard\+State} \& IKeyboard\+Input\+::\+Get\+Keyboard\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Estado del teclado en el frame actual. 
+\end{DoxyReturn}
+\index{OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}!GetPreviousKeyboardState@{GetPreviousKeyboardState}}
+\index{GetPreviousKeyboardState@{GetPreviousKeyboardState}!OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}}
+\doxysubsubsection{GetPreviousKeyboardState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a343fbce9a28a6caad0e64162d8019168} 
+const \textbf{ Keyboard\+State} \& IKeyboard\+Input\+::\+Get\+Previous\+Keyboard\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Estado del teclado en el frame anterior. 
+\end{DoxyReturn}
+\index{OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}!IsKeyDown@{IsKeyDown}}
+\index{IsKeyDown@{IsKeyDown}!OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}}
+\doxysubsubsection{IsKeyDown()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_ae04d88d90a42cd1ab0082df5a0f5b1a2} 
+bool IKeyboard\+Input\+::\+Is\+Key\+Down (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si la tecla está siendo pulsada en este frame. 
+\end{DoxyReturn}
+\index{OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}!IsKeyReleased@{IsKeyReleased}}
+\index{IsKeyReleased@{IsKeyReleased}!OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}}
+\doxysubsubsection{IsKeyReleased()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a5f3685699c960781cfde47e7d8124f73} 
+bool IKeyboard\+Input\+::\+Is\+Key\+Released (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve true si la tecla ha dejado de pulsarse en el fotograma actual. 
+\end{DoxyReturn}
+\index{OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}!IsKeyStroked@{IsKeyStroked}}
+\index{IsKeyStroked@{IsKeyStroked}!OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}}
+\doxysubsubsection{IsKeyStroked()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a115f2d31971eed50226ba211d03c64eb} 
+bool IKeyboard\+Input\+::\+Is\+Key\+Stroked (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve true si la tecla ha comenzado a pulsarse en el fotograma actual. 
+\end{DoxyReturn}
+\index{OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}!IsKeyUp@{IsKeyUp}}
+\index{IsKeyUp@{IsKeyUp}!OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}}
+\doxysubsubsection{IsKeyUp()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a51cb4d13fc492dd6c6db831de6a0bc17} 
+bool IKeyboard\+Input\+::\+Is\+Key\+Up (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si la tecla no está siendo pulsada en este frame. 
+\end{DoxyReturn}
+\index{OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}!OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}}
+\index{OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}!OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}}
+\doxysubsubsection{OSK\_DEFINE\_IUUID()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_abd862085441fc8df0237f062ac731161} 
+OSK\+::\+IO\+::\+IKeyboard\+Input\+::\+OSK\+\_\+\+DEFINE\+\_\+\+IUUID (\begin{DoxyParamCaption}\item[{(\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+IKeyboard\+Input}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}!UpdateKeyboardInput@{UpdateKeyboardInput}}
+\index{UpdateKeyboardInput@{UpdateKeyboardInput}!OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}}
+\doxysubsubsection{UpdateKeyboardInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a6ead913a0ac93710b8f0c862318a60fb} 
+void IKeyboard\+Input\+::\+Update\+Keyboard\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza los estados internos del teclado. 
+
+\index{OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}!UpdateKeyboardState@{UpdateKeyboardState}}
+\index{UpdateKeyboardState@{UpdateKeyboardState}!OSK::IO::IKeyboardInput@{OSK::IO::IKeyboardInput}}
+\doxysubsubsection{UpdateKeyboardState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a4cb45dfcadc92c93ceb6bec001dcccb2} 
+virtual void OSK\+::\+IO\+::\+IKeyboard\+Input\+::\+Update\+Keyboard\+State (\begin{DoxyParamCaption}\item[{\textbf{ Keyboard\+State} $\ast$}]{current\+State}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+

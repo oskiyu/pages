@@ -1,0 +1,36 @@
+\doxysection{Renderpass\+Attachment\+Vk.\+h}
+\label{_renderpass_attachment_vk_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/RenderpassAttachmentVk.h@{C:/Users/Oscar/source/repos/OSKengine/Source/RenderpassAttachmentVk.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_VULKAN\_BACKEND}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vulkan/vulkan.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }RenderpassAttachmentVk\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ RenderpassAttachmentVk(}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ VkFormat\ targetFormat,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ VkAttachmentLoadOp\ loadOp,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ VkAttachmentStoreOp\ storeOp,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ VkImageLayout\ startLayout,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ VkImageLayout\ endLayout);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ VkAttachmentDescription\ GetDescription()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ VkAttachmentDescription\ m\_description\{\};}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OSK\_USE\_VULKAN\_BACKEND}}
+
+\end{DoxyCode}

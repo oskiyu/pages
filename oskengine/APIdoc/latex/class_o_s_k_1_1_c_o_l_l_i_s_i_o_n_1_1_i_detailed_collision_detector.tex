@@ -1,0 +1,52 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::IDetailed\+Collision\+Detector}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_detailed_collision_detector}\index{OSK::COLLISION::IDetailedCollisionDetector@{OSK::COLLISION::IDetailedCollisionDetector}}
+
+
+{\ttfamily \#include $<$IDetailed\+Collision\+Detector.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IDetailed\+Collision\+Detector} ()=default
+\item 
+virtual std\+::optional$<$ \textbf{ Detailed\+Collision\+Info} $>$ \textbf{ Get\+Collision} (const \textbf{ Narrow\+Collider\+Holder} \&first, const \textbf{ Narrow\+Collider\+Holder} \&second) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para un objeto que permite detectar una colisión entre dos colliders. 
+
+Permite configurar distintos algoritmos dependiendo del tipo de los colliders. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::COLLISION::IDetailedCollisionDetector@{OSK::COLLISION::IDetailedCollisionDetector}!````~IDetailedCollisionDetector@{$\sim$IDetailedCollisionDetector}}
+\index{````~IDetailedCollisionDetector@{$\sim$IDetailedCollisionDetector}!OSK::COLLISION::IDetailedCollisionDetector@{OSK::COLLISION::IDetailedCollisionDetector}}
+\doxysubsubsection{$\sim$IDetailedCollisionDetector()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_detailed_collision_detector_a30c83ccaeebd6f1f6f07eae869355b8e} 
+virtual OSK\+::\+COLLISION\+::\+IDetailed\+Collision\+Detector\+::$\sim$\+IDetailed\+Collision\+Detector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::IDetailedCollisionDetector@{OSK::COLLISION::IDetailedCollisionDetector}!GetCollision@{GetCollision}}
+\index{GetCollision@{GetCollision}!OSK::COLLISION::IDetailedCollisionDetector@{OSK::COLLISION::IDetailedCollisionDetector}}
+\doxysubsubsection{GetCollision()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_detailed_collision_detector_a5a7ca51fa1afc00f15f780fb63ff751e} 
+virtual std\+::optional$<$ \textbf{ Detailed\+Collision\+Info} $>$ OSK\+::\+COLLISION\+::\+IDetailed\+Collision\+Detector\+::\+Get\+Collision (\begin{DoxyParamCaption}\item[{const \textbf{ Narrow\+Collider\+Holder} \&}]{first}{, }\item[{const \textbf{ Narrow\+Collider\+Holder} \&}]{second}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first} & Primer collider. \\
+\hline
+{\em second} & Segundo collider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la detección de colisión.
+\end{DoxyReturn}
+Si este detector no puede detectar la colisión para los tipos de los colliders, devuelve vacío. 
+
+Implementado en \textbf{ OSK\+::\+COLLISION\+::\+Detailed\+Sphere\+Sphere\+Detector} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_detailed_sphere_sphere_detector_aba923b9e5be778cd29045ce016f6f16f}, \textbf{ OSK\+::\+COLLISION\+::\+Gjk\+Clipping\+Detector} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_clipping_detector_ae19969d08786f32ac7258f1ad635de7d} y \textbf{ OSK\+::\+COLLISION\+::\+Gjk\+Epa\+Detector} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_epa_detector_a9f92caf479d9d4e13b60370312b36f4c}.
+

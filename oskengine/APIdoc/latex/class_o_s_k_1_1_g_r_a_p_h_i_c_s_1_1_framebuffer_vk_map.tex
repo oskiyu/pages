@@ -1,0 +1,45 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Framebuffer\+Vk\+Map}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_framebuffer_vk_map}\index{OSK::GRAPHICS::FramebufferVkMap@{OSK::GRAPHICS::FramebufferVkMap}}
+
+
+{\ttfamily \#include $<$Framebuffer\+Vk\+Map.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Framebuffer\+Vk\+Map} (const Gpu\+Vk $\ast$gpu)
+\item 
+Framebuffer\+Vk $\ast$ \textbf{ Get\+Framebuffer} (const \textbf{ Framebuffer\+Vk\+Map\+Entry} \&entry, const Renderpass\+Vk \&renderpass)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Para un renderpass en concreto, devuelve el framebuffer que tenga enlazadas las vistas finales sobre las que se vaya a renderizar. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::FramebufferVkMap@{OSK::GRAPHICS::FramebufferVkMap}!FramebufferVkMap@{FramebufferVkMap}}
+\index{FramebufferVkMap@{FramebufferVkMap}!OSK::GRAPHICS::FramebufferVkMap@{OSK::GRAPHICS::FramebufferVkMap}}
+\doxysubsubsection{FramebufferVkMap()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_framebuffer_vk_map_aae43901ed73bcc45eef101a7f2ad3221} 
+Framebuffer\+Vk\+Map\+::\+Framebuffer\+Vk\+Map (\begin{DoxyParamCaption}\item[{const Gpu\+Vk $\ast$}]{gpu}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::FramebufferVkMap@{OSK::GRAPHICS::FramebufferVkMap}!GetFramebuffer@{GetFramebuffer}}
+\index{GetFramebuffer@{GetFramebuffer}!OSK::GRAPHICS::FramebufferVkMap@{OSK::GRAPHICS::FramebufferVkMap}}
+\doxysubsubsection{GetFramebuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_framebuffer_vk_map_a4dfca4f6fda4fe2e4b737de73f09bb28} 
+Framebuffer\+Vk $\ast$ Framebuffer\+Vk\+Map\+::\+Get\+Framebuffer (\begin{DoxyParamCaption}\item[{const \textbf{ Framebuffer\+Vk\+Map\+Entry} \&}]{entry}{, }\item[{const Renderpass\+Vk \&}]{renderpass}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve el framebuffer usable sobre las imÃ¡genes {\ttfamily entry}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em renderpass} & Renderpass dueÃ±o del framebuffer. \\
+\hline
+\end{DoxyParams}

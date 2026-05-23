@@ -1,0 +1,19 @@
+\doxysection{Referencia del concepto OSK\+::ECS\+::Is\+Ecs\+Component}
+\label{concept_o_s_k_1_1_e_c_s_1_1_is_ecs_component}\index{OSK::ECS::IsEcsComponent@{OSK::ECS::IsEcsComponent}}
+
+
+{\ttfamily \#include $<$Component.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TComponent>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::ECS::IsEcsComponent\ =\ \ \textcolor{keyword}{requires}\ (TComponent)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{TComponent::GetComponentTypeName()\};}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}
+Concepto que nos permite detectar si una clase cumple con las condiciones para ser un componente. 

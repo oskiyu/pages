@@ -1,0 +1,217 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::Constexpr\+Bit\+Set$<$ size $>$}
+\label{class_o_s_k_1_1_constexpr_bit_set}\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+
+
+{\ttfamily \#include $<$Constexpr\+Bit\+Set.\+hpp$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Constexpr\+Bit\+Set} ()
+\item 
+void \textbf{ Set\+True} (\textbf{ UIndex64} index)
+\item 
+void \textbf{ Set\+False} (\textbf{ UIndex64} index)
+\item 
+void \textbf{ Set\+Value} (\textbf{ UIndex64} index, bool value)
+\item 
+bool \textbf{ Get} (\textbf{ UIndex64} index) const
+\item 
+\textbf{ UIndex64} \textbf{ Get\+Next\+True\+Index} (\textbf{ UIndex64} initial\+Index=0) const
+\item 
+bool \textbf{ Is\+All\+False} () const
+\item 
+bool \textbf{ Is\+All\+True} () const
+\item 
+bool \textbf{ Is\+Compatible} (const \textbf{ Constexpr\+Bit\+Set} \&other) const
+\item 
+\textbf{ USize64} \textbf{ Get\+Length} () const
+\item 
+\textbf{ TByte} $\ast$ \textbf{ Get\+Data} () const
+\item 
+void \textbf{ Reset} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$\textbf{ USize64} size$>$\newline
+class OSK\+::\+Constexpr\+Bit\+Set$<$ size $>$}
+Un bitset representa un array de bits. 
+
+El número de bits está establecido en tiempo de compilación. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}!ConstexprBitSet@{ConstexprBitSet}}
+\index{ConstexprBitSet@{ConstexprBitSet}!OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+\doxysubsubsection{ConstexprBitSet()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_constexpr_bit_set_a0aac2f4ae767f20718fb4c283952c8c3} 
+template$<$\textbf{ USize64} size$>$ \\
+\textbf{ OSK\+::\+Constexpr\+Bit\+Set}$<$ size $>$\+::\+Constexpr\+Bit\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea un bitset. 
+
+\begin{DoxyNote}{Nota}
+El valor de los bits será 0. 
+\end{DoxyNote}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}!Get@{Get}}
+\index{Get@{Get}!OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+\doxysubsubsection{Get()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_constexpr_bit_set_adec8f9818ad235e147821413c1bdb973} 
+template$<$\textbf{ USize64} size$>$ \\
+bool \textbf{ OSK\+::\+Constexpr\+Bit\+Set}$<$ size $>$\+::\+Get (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el valor del bit en la posición dada. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe ser un índice válido ($<$ size). 
+\end{DoxyPrecond}
+\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}!GetData@{GetData}}
+\index{GetData@{GetData}!OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+\doxysubsubsection{GetData()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_constexpr_bit_set_a8d016d47a6859f533ed6e7ecfb67e4a1} 
+template$<$\textbf{ USize64} size$>$ \\
+\textbf{ TByte} $\ast$ \textbf{ OSK\+::\+Constexpr\+Bit\+Set}$<$ size $>$\+::\+Get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Array con los bits. 
+
+\begin{DoxyNote}{Nota}
+Los bits están almacenados dentro de los bytes. 
+\end{DoxyNote}
+\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}!GetLength@{GetLength}}
+\index{GetLength@{GetLength}!OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+\doxysubsubsection{GetLength()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_constexpr_bit_set_a573192c411c4512a60ce73a1338a971c} 
+template$<$\textbf{ USize64} size$>$ \\
+\textbf{ USize64} \textbf{ OSK\+::\+Constexpr\+Bit\+Set}$<$ size $>$\+::\+Get\+Length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Número de bits. 
+
+\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}!GetNextTrueIndex@{GetNextTrueIndex}}
+\index{GetNextTrueIndex@{GetNextTrueIndex}!OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+\doxysubsubsection{GetNextTrueIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_constexpr_bit_set_a20ea2ab3c40473f11c5b7a8b87357a86} 
+template$<$\textbf{ USize64} size$>$ \\
+\textbf{ UIndex64} \textbf{ OSK\+::\+Constexpr\+Bit\+Set}$<$ size $>$\+::\+Get\+Next\+True\+Index (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{initial\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el índice del siguiente bit en la secuencia que es 1. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em initial\+Index} & Posición desde la que se comienza la búsqueda. Incluido en la búsqueda.\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyNote}{Nota}
+Si no encuentra ningún bit después del dado, devuelve 0. 
+\end{DoxyNote}
+\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}!IsAllFalse@{IsAllFalse}}
+\index{IsAllFalse@{IsAllFalse}!OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+\doxysubsubsection{IsAllFalse()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_constexpr_bit_set_aaef70ed63eefe042a55d2ad352a86368} 
+template$<$\textbf{ USize64} size$>$ \\
+bool \textbf{ OSK\+::\+Constexpr\+Bit\+Set}$<$ size $>$\+::\+Is\+All\+False (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprueba si todos los bits valen 0. 
+
+\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}!IsAllTrue@{IsAllTrue}}
+\index{IsAllTrue@{IsAllTrue}!OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+\doxysubsubsection{IsAllTrue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_constexpr_bit_set_ad24c35fd64629d2a5cdd55d2a6e3542e} 
+template$<$\textbf{ USize64} size$>$ \\
+bool \textbf{ OSK\+::\+Constexpr\+Bit\+Set}$<$ size $>$\+::\+Is\+All\+True (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprueba si todos los bits valen 1. 
+
+\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}!IsCompatible@{IsCompatible}}
+\index{IsCompatible@{IsCompatible}!OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+\doxysubsubsection{IsCompatible()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_constexpr_bit_set_a676f02631856b21434e2ee88540add93} 
+template$<$\textbf{ USize64} size$>$ \\
+bool \textbf{ OSK\+::\+Constexpr\+Bit\+Set}$<$ size $>$\+::\+Is\+Compatible (\begin{DoxyParamCaption}\item[{const \textbf{ Constexpr\+Bit\+Set}$<$ size $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprueba si el otro bitset tiene en 1 los bits que este tiene en 1. 
+
+\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}!Reset@{Reset}}
+\index{Reset@{Reset}!OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+\doxysubsubsection{Reset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_constexpr_bit_set_ace730fdd308ea782b50cb8a2caa48942} 
+template$<$\textbf{ USize64} size$>$ \\
+void \textbf{ OSK\+::\+Constexpr\+Bit\+Set}$<$ size $>$\+::\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece el valor de todos los bits a 0. 
+
+\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}!SetFalse@{SetFalse}}
+\index{SetFalse@{SetFalse}!OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+\doxysubsubsection{SetFalse()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_constexpr_bit_set_a3c5453b3f053cc1262a885775876ede3} 
+template$<$\textbf{ USize64} size$>$ \\
+void \textbf{ OSK\+::\+Constexpr\+Bit\+Set}$<$ size $>$\+::\+Set\+False (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece el valor del bit dado a 0. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe ser un índice válido ($<$ size). 
+\end{DoxyPrecond}
+\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}!SetTrue@{SetTrue}}
+\index{SetTrue@{SetTrue}!OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+\doxysubsubsection{SetTrue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_constexpr_bit_set_aa850887db869ea162a2c29d5022beece} 
+template$<$\textbf{ USize64} size$>$ \\
+void \textbf{ OSK\+::\+Constexpr\+Bit\+Set}$<$ size $>$\+::\+Set\+True (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece el valor del bit dado a 1. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe ser un índice válido ($<$ size). 
+\end{DoxyPrecond}
+\index{OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}!SetValue@{SetValue}}
+\index{SetValue@{SetValue}!OSK::ConstexprBitSet$<$ size $>$@{OSK::ConstexprBitSet$<$ size $>$}}
+\doxysubsubsection{SetValue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_constexpr_bit_set_a6efdb72051790b8de4573799facbbb14} 
+template$<$\textbf{ USize64} size$>$ \\
+void \textbf{ OSK\+::\+Constexpr\+Bit\+Set}$<$ size $>$\+::\+Set\+Value (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{, }\item[{bool}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece el valor del bit en la posición dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em index} & Índice del bit.\\
+\hline
+{\em value} & Valor (1 ó 0).\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyPrecond}{Precondición}
+Debe ser un índice válido ($<$ size). 
+\end{DoxyPrecond}

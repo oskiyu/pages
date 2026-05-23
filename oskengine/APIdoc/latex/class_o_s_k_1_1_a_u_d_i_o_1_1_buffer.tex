@@ -1,0 +1,149 @@
+\doxysection{Referencia de la clase OSK\+::AUDIO\+::Buffer}
+\label{class_o_s_k_1_1_a_u_d_i_o_1_1_buffer}\index{OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}}
+
+
+{\ttfamily \#include $<$Audio\+Buffer.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ Handle} = ALCuint
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Buffer} ()=default
+\item 
+\textbf{ $\sim$\+Buffer} ()
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Buffer})
+\item 
+void \textbf{ Init} ()
+\item 
+void \textbf{ Fill} (const void $\ast$data, \textbf{ USize64} size, \textbf{ Format} format, \textbf{ USize32} samplerate)
+\item 
+\textbf{ Handle} \textbf{ Get\+Handle} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \textbf{ Handle} \textbf{ EMPTY\+\_\+\+HANDLE} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\doxyref{Buffer}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_buffer} que se usa para almacenar total o parcialmente un archivo de audio reproducible. 
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de los «\+Typedef» miembros de la clase}
+\index{OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}!Handle@{Handle}}
+\index{Handle@{Handle}!OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}}
+\doxysubsubsection{Handle}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_buffer_a241641ad285233a753b95ad7e6eb4df0} 
+using \textbf{ OSK\+::\+AUDIO\+::\+Buffer\+::\+Handle} = ALCuint}
+
+
+
+Identificador de un buffer. 
+
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}}
+\doxysubsubsection{Buffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_buffer_a7295f2df5a0c19eadb3068e0d3e0928c} 
+OSK\+::\+AUDIO\+::\+Buffer\+::\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Constructor vacío. 
+
+\index{OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}!````~Buffer@{$\sim$Buffer}}
+\index{````~Buffer@{$\sim$Buffer}!OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}}
+\doxysubsubsection{$\sim$Buffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_buffer_aba1259290fedfc59169b7b8463fafc8e} 
+AUDIO\+::\+Buffer\+::$\sim$\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destruye el buffer (si ha sido inicializado). 
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}!Fill@{Fill}}
+\index{Fill@{Fill}!OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}}
+\doxysubsubsection{Fill()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_buffer_a96f1b770c2d68b4cc30637dee41ee7ae} 
+void AUDIO\+::\+Buffer\+::\+Fill (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data}{, }\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ Format}}]{format}{, }\item[{\textbf{ USize32}}]{samplerate}{}\end{DoxyParamCaption})}
+
+
+
+Establece el contenido del buffer. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Datos de sonido. \\
+\hline
+{\em size} & Tamaño de los datos (en bytes). \\
+\hline
+{\em format} & Formato del audio. \\
+\hline
+{\em samplerate} & Tasa de refresco del audio.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El buffer debe haber sido inicializado con Init.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Audio\+Exception}{pág.}{class_o_s_k_1_1_audio_exception}} & Si ocurre algún error al rellenar el buffer. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}!GetHandle@{GetHandle}}
+\index{GetHandle@{GetHandle}!OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}}
+\doxysubsubsection{GetHandle()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_buffer_ac978ed8948158da1489dd80d2c8fabe5} 
+\textbf{ AUDIO\+::\+Buffer\+::\+Handle} AUDIO\+::\+Buffer\+::\+Get\+Handle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Identificador del buffer. 
+\end{DoxyReturn}
+\index{OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}!Init@{Init}}
+\index{Init@{Init}!OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}}
+\doxysubsubsection{Init()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_buffer_a5218fb0a675fa09ce7be8540a9c5e2de} 
+void AUDIO\+::\+Buffer\+::\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inicicaliza el buffer. 
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Audio\+Exception}{pág.}{class_o_s_k_1_1_audio_exception}} & Si ocurre algún error al generar el buffer. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_buffer_a79dff33e2dfebac686d96b715ec34f73} 
+OSK\+::\+AUDIO\+::\+Buffer\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Buffer}}]{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}!EMPTY\_HANDLE@{EMPTY\_HANDLE}}
+\index{EMPTY\_HANDLE@{EMPTY\_HANDLE}!OSK::AUDIO::Buffer@{OSK::AUDIO::Buffer}}
+\doxysubsubsection{EMPTY\_HANDLE}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_buffer_a2e676c34ceecfe4c0939b5fb70fbe301} 
+\textbf{ Handle} OSK\+::\+AUDIO\+::\+Buffer\+::\+EMPTY\+\_\+\+HANDLE = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Identificador vacío / nulo. 
+

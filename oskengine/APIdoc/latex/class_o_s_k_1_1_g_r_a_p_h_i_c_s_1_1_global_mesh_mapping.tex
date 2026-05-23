@@ -1,0 +1,204 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Global\+Mesh\+Mapping}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping}\index{OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}}
+
+
+{\ttfamily \#include $<$Mesh\+Mapping.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Global\+Mesh\+Mapping} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Global\+Mesh\+Mapping})
+\item 
+void \textbf{ Register\+Model} (\textbf{ Gpu\+Model\+Uuid} model\+Id)
+\item 
+void \textbf{ Unregister\+Model} (\textbf{ Gpu\+Model\+Uuid} model\+Id)
+\item 
+\textbf{ Global\+Per\+Model\+Data} \& \textbf{ Get\+Model\+Data} (\textbf{ Gpu\+Model\+Uuid} model\+Id)
+\item 
+const \textbf{ Global\+Per\+Model\+Data} \& \textbf{ Get\+Model\+Data} (\textbf{ Gpu\+Model\+Uuid} model\+Id) const
+\item 
+bool \textbf{ Has\+Model} (\textbf{ Gpu\+Model\+Uuid} model\+Id) const
+\item 
+void \textbf{ Set\+Previous\+Model\+Matrix} (\textbf{ ECS\+::\+Game\+Object\+Index} obj, glm\+::mat4 matrix)
+\item 
+glm\+::mat4 \textbf{ Get\+Previous\+Model\+Matrix} (\textbf{ ECS\+::\+Game\+Object\+Index} obj) const
+\item 
+void \textbf{ Remove\+Previous\+Model\+Matrix} (\textbf{ ECS\+::\+Game\+Object\+Index} obj)
+\item 
+bool \textbf{ Has\+Previous\+Model\+Matrix} (\textbf{ ECS\+::\+Game\+Object\+Index} obj) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura de datos con la información relevante de cada modelo y cada mesh para un pase de renderizado. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}!GlobalMeshMapping@{GlobalMeshMapping}}
+\index{GlobalMeshMapping@{GlobalMeshMapping}!OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}}
+\doxysubsubsection{GlobalMeshMapping()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping_a08c596039f0f4d088ec270826362bb7f} 
+OSK\+::\+GRAPHICS\+::\+Global\+Mesh\+Mapping\+::\+Global\+Mesh\+Mapping (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}!GetModelData@{GetModelData}}
+\index{GetModelData@{GetModelData}!OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}}
+\doxysubsubsection{GetModelData()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping_a3aaad1d72037680d0b95f7ae114e745d} 
+\textbf{ Global\+Per\+Model\+Data} \& Global\+Mesh\+Mapping\+::\+Get\+Model\+Data (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Model\+Uuid}}]{model\+Id}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em model\+Id} & ID del modelo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Datos del modelo.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe existir un modelo con identificador {\ttfamily model\+Id} registrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}!GetModelData@{GetModelData}}
+\index{GetModelData@{GetModelData}!OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}}
+\doxysubsubsection{GetModelData()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping_a17307e520cc6c8f17b003c91fc885ee6} 
+const \textbf{ Global\+Per\+Model\+Data} \& Global\+Mesh\+Mapping\+::\+Get\+Model\+Data (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Model\+Uuid}}]{model\+Id}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em model\+Id} & ID del modelo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Datos del modelo.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe existir un modelo con identificador {\ttfamily model\+Id} registrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}!GetPreviousModelMatrix@{GetPreviousModelMatrix}}
+\index{GetPreviousModelMatrix@{GetPreviousModelMatrix}!OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}}
+\doxysubsubsection{GetPreviousModelMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping_ac433d108dd8e07a2e2cf5c69d00b211d} 
+glm\+::mat4 Global\+Mesh\+Mapping\+::\+Get\+Previous\+Model\+Matrix (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto a obtener. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Matriz en el fotograma anterior.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haber una matriz registrada para el objeto {\ttfamily obj}. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}!HasModel@{HasModel}}
+\index{HasModel@{HasModel}!OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}}
+\doxysubsubsection{HasModel()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping_a623bfe51eaecf52c04887edd5c9d9d60} 
+bool Global\+Mesh\+Mapping\+::\+Has\+Model (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Model\+Uuid}}]{model\+Id}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si tiene registrado un modelo con el ID {\ttfamily model\+Id}. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}!HasPreviousModelMatrix@{HasPreviousModelMatrix}}
+\index{HasPreviousModelMatrix@{HasPreviousModelMatrix}!OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}}
+\doxysubsubsection{HasPreviousModelMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping_a16bb6c16d9cf7410094afbebb696a0b2} 
+bool Global\+Mesh\+Mapping\+::\+Has\+Previous\+Model\+Matrix (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si hay una matriz registrada para el objeto {\ttfamily obj}. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping_a3b4f1515e9c448b8c97cdc1a5a440017} 
+OSK\+::\+GRAPHICS\+::\+Global\+Mesh\+Mapping\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Global\+Mesh\+Mapping}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}!RegisterModel@{RegisterModel}}
+\index{RegisterModel@{RegisterModel}!OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}}
+\doxysubsubsection{RegisterModel()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping_ab28ce3be166cef07d421f2341641a04a} 
+void Global\+Mesh\+Mapping\+::\+Register\+Model (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Model\+Uuid}}]{model\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuevo modelo, añadiendo una entrada para él. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em model\+Id} & Identificador único del modelo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+No debe existir un modelo con identificador {\ttfamily model\+Id} registrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}!RemovePreviousModelMatrix@{RemovePreviousModelMatrix}}
+\index{RemovePreviousModelMatrix@{RemovePreviousModelMatrix}!OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}}
+\doxysubsubsection{RemovePreviousModelMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping_aab00bd7a49d8603f2b793a1620d1b37f} 
+void Global\+Mesh\+Mapping\+::\+Remove\+Previous\+Model\+Matrix (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Elimina la matriz del fotograma anterior del objeto {\ttfamily obj}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber una matriz registrada para el objeto {\ttfamily obj}. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}!SetPreviousModelMatrix@{SetPreviousModelMatrix}}
+\index{SetPreviousModelMatrix@{SetPreviousModelMatrix}!OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}}
+\doxysubsubsection{SetPreviousModelMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping_abf9af91362a7ff84a682b339fe98c203} 
+void Global\+Mesh\+Mapping\+::\+Set\+Previous\+Model\+Matrix (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{obj}{, }\item[{glm\+::mat4}]{matrix}{}\end{DoxyParamCaption})}
+
+
+
+Establece la matrix previa del objeto {\ttfamily obj}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto de la matriz. \\
+\hline
+{\em matrix} & Matriz del fotograma anterior. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}!UnregisterModel@{UnregisterModel}}
+\index{UnregisterModel@{UnregisterModel}!OSK::GRAPHICS::GlobalMeshMapping@{OSK::GRAPHICS::GlobalMeshMapping}}
+\doxysubsubsection{UnregisterModel()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping_a21a27c4d789d8dfd9b221e20069094f5} 
+void Global\+Mesh\+Mapping\+::\+Unregister\+Model (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Model\+Uuid}}]{model\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Elimina un modelo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em model\+Id} & Identificador único del modelo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe existir un modelo con identificador {\ttfamily model\+Id} registrado. 
+\end{DoxyPrecond}

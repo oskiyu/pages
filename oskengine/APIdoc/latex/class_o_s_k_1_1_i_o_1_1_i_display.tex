@@ -1,0 +1,213 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::IDisplay}
+\label{class_o_s_k_1_1_i_o_1_1_i_display}\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+
+
+{\ttfamily \#include $<$IDisplay.\+h$>$}
+
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Resolution\+Changed\+Event}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IDisplay} ()=default
+\item 
+virtual void \textbf{ Create} (\textbf{ Vector2ui} \textbf{ resolution}, const std\+::string \&title)=0
+\item 
+virtual void \textbf{ Update} ()=0
+\item 
+virtual void \textbf{ Close} ()=0
+\item 
+bool \textbf{ Is\+Open} () const
+\item 
+\textbf{ Vector2ui} \textbf{ Get\+Resolution} () const
+\item 
+float \textbf{ Get\+Screen\+Ratio} () const
+\item 
+\textbf{ USize32} \textbf{ Get\+Refresh\+Rate} () const
+\item 
+virtual void \textbf{ Query\+Interface} (\textbf{ TInterface\+Uuid} interface\+Uuid, void $\ast$$\ast$ptr) const =0
+\item 
+void \textbf{ Query\+Interface} (\textbf{ IUUID} uuid, void $\ast$$\ast$ptr) const
+\item 
+virtual void \textbf{ Query\+Const\+Interface} (\textbf{ TInterface\+Uuid} uuid, const void $\ast$$\ast$ptr) const =0
+\item 
+void \textbf{ Query\+Const\+Interface} (\textbf{ IUUID} uuid, const void $\ast$$\ast$ptr) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vector2ui} \textbf{ resolution} = \textbf{ Vector2ui\+::\+Zero}
+\item 
+\textbf{ USize32} \textbf{ refresh\+Rate} = 60
+\item 
+bool \textbf{ is\+Open} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz que representa un display\+: la pantalla sobre la que se renderiza. 
+
+Toda clase derivada puede también implementar estas otras interfaces\+:
+\begin{DoxyItemize}
+\item \doxyref{IFullscreenable\+Display}{pág.}{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display}. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!````~IDisplay@{$\sim$IDisplay}}
+\index{````~IDisplay@{$\sim$IDisplay}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{$\sim$IDisplay()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_a730805b9103d3bfa5dce186f4c1ab6b3} 
+virtual OSK\+::\+IO\+::\+IDisplay\+::$\sim$\+IDisplay (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!Close@{Close}}
+\index{Close@{Close}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{Close()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_a018f65daf04add6768c23f76ecf6ace1} 
+virtual void OSK\+::\+IO\+::\+IDisplay\+::\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Cierra el display. 
+
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!Create@{Create}}
+\index{Create@{Create}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_a02d15a8a04e8173df7436a15f094f444} 
+virtual void OSK\+::\+IO\+::\+IDisplay\+::\+Create (\begin{DoxyParamCaption}\item[{\textbf{ Vector2ui}}]{resolution}{, }\item[{const std\+::string \&}]{title}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Crea el display con los argumentos dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Resolución inicial, en píxeles. \\
+\hline
+{\em title} & Título del display, si se aplica. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!GetRefreshRate@{GetRefreshRate}}
+\index{GetRefreshRate@{GetRefreshRate}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{GetRefreshRate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_ab57e139f809dc42d6646c152cd7c3173} 
+\textbf{ USize32} IDisplay\+::\+Get\+Refresh\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Tasa de fotogramas por segundo soportado por el display. 
+\end{DoxyReturn}
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!GetResolution@{GetResolution}}
+\index{GetResolution@{GetResolution}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{GetResolution()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_af9f0406d0262f33b1384cfa01ea852f0} 
+\textbf{ Vector2ui} IDisplay\+::\+Get\+Resolution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Resolución actual, en píxeles. 
+\end{DoxyReturn}
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!GetScreenRatio@{GetScreenRatio}}
+\index{GetScreenRatio@{GetScreenRatio}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{GetScreenRatio()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_ad4696de06b0701f11dfe45ca874d056d} 
+float IDisplay\+::\+Get\+Screen\+Ratio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Resolución.\+X / Resolución.\+Y. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Si Resolución.\+Y es 0, devuelve 1. 
+\end{DoxyNote}
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!IsOpen@{IsOpen}}
+\index{IsOpen@{IsOpen}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{IsOpen()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_ada449806c6ae56f875feba2d89d6c49a} 
+bool IDisplay\+::\+Is\+Open (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si el display está activo. 
+\end{DoxyReturn}
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!QueryConstInterface@{QueryConstInterface}}
+\index{QueryConstInterface@{QueryConstInterface}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{QueryConstInterface()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a04792bb58288a5a2e890c506a8ad1a8c} 
+void OSK\+::\+IQuery\+Interface\+::\+Query\+Const\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ IUUID}}]{uuid}{, }\item[{const void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!QueryConstInterface@{QueryConstInterface}}
+\index{QueryConstInterface@{QueryConstInterface}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{QueryConstInterface()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a589dec31a1efd4e4f69b9513a7086825} 
+virtual void OSK\+::\+IQuery\+Interface\+::\+Query\+Const\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ TInterface\+Uuid}}]{uuid}{, }\item[{const void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!QueryInterface@{QueryInterface}}
+\index{QueryInterface@{QueryInterface}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{QueryInterface()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a96e28be0f3cec3a83c161d417162288f} 
+void OSK\+::\+IQuery\+Interface\+::\+Query\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ IUUID}}]{uuid}{, }\item[{void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Permite obtener un puntero para la interfaz dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & UUID de la interfaz. \\
+\hline
+{\em ptr} & Puntero a sobreescribir. Será nullptr si la clase no implementa la interfad indicada. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!QueryInterface@{QueryInterface}}
+\index{QueryInterface@{QueryInterface}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{QueryInterface()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_abf1b865ec9b11ced8c2d35660aab9346} 
+virtual void OSK\+::\+IQuery\+Interface\+::\+Query\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ TInterface\+Uuid}}]{interface\+Uuid}{, }\item[{void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Permite obtener un puntero para la interfaz dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em interface\+Uuid} & UUID de la interfaz. \\
+\hline
+{\em ptr} & Puntero a sobreescribir. Será nullptr si la clase no implementa la interfad indicada. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!Update@{Update}}
+\index{Update@{Update}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_a8a36d884b6cab3904331d910507cf2cc} 
+virtual void OSK\+::\+IO\+::\+IDisplay\+::\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Realiza cualquier función de actualización que necesite el display. 
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{isOpen}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_a3d363c853d51d6ecfc884caf33379fd4} 
+bool OSK\+::\+IO\+::\+IDisplay\+::is\+Open = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!refreshRate@{refreshRate}}
+\index{refreshRate@{refreshRate}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{refreshRate}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_a2c5c73709c23d7536821b2f68c324c86} 
+\textbf{ USize32} OSK\+::\+IO\+::\+IDisplay\+::refresh\+Rate = 60\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::IO::IDisplay@{OSK::IO::IDisplay}!resolution@{resolution}}
+\index{resolution@{resolution}!OSK::IO::IDisplay@{OSK::IO::IDisplay}}
+\doxysubsubsection{resolution}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_a0087d89a72a5d4faa930924ac33d68f7} 
+\textbf{ Vector2ui} OSK\+::\+IO\+::\+IDisplay\+::resolution = \textbf{ Vector2ui\+::\+Zero}\hspace{0.3cm}{\ttfamily [protected]}}
+

@@ -1,0 +1,77 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Threaded\+Command\+Pool\+Map}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_threaded_command_pool_map}\index{OSK::GRAPHICS::ThreadedCommandPoolMap@{OSK::GRAPHICS::ThreadedCommandPoolMap}}
+
+
+{\ttfamily \#include $<$Threaded\+Command\+Pool\+Map.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Threaded\+Command\+Pool\+Map} (const \textbf{ ICommand\+Queue} $\ast$linked\+Command\+Queue)
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Threaded\+Command\+Pool\+Map})
+\item 
+\textbf{ ICommand\+Pool} $\ast$ \textbf{ Get\+Command\+Pool} (std\+::thread\+::id thread\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Mapa que enlaza un hilo con un command pool de un tipo dado. 
+
+Todos los pools del mapa son del mismo tipo.
+
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::ThreadedCommandPoolMap@{OSK::GRAPHICS::ThreadedCommandPoolMap}!ThreadedCommandPoolMap@{ThreadedCommandPoolMap}}
+\index{ThreadedCommandPoolMap@{ThreadedCommandPoolMap}!OSK::GRAPHICS::ThreadedCommandPoolMap@{OSK::GRAPHICS::ThreadedCommandPoolMap}}
+\doxysubsubsection{ThreadedCommandPoolMap()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_threaded_command_pool_map_a9e721e031d03331edfac2603be885a8e} 
+Threaded\+Command\+Pool\+Map\+::\+Threaded\+Command\+Pool\+Map (\begin{DoxyParamCaption}\item[{const \textbf{ ICommand\+Queue} $\ast$}]{linked\+Command\+Queue}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Crea el mapa de pools. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em linked\+Command\+Queue} & Tipo de cola sobre la que se deben insertar las listas creadas por los pools de este mapa.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily linked\+Command\+Queue} debe ser un puntero estable. 
+\end{DoxyPrecond}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::ThreadedCommandPoolMap@{OSK::GRAPHICS::ThreadedCommandPoolMap}!GetCommandPool@{GetCommandPool}}
+\index{GetCommandPool@{GetCommandPool}!OSK::GRAPHICS::ThreadedCommandPoolMap@{OSK::GRAPHICS::ThreadedCommandPoolMap}}
+\doxysubsubsection{GetCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_threaded_command_pool_map_a28043a5abd5f603af31ba5dd287d88c2} 
+\textbf{ ICommand\+Pool} $\ast$ Threaded\+Command\+Pool\+Map\+::\+Get\+Command\+Pool (\begin{DoxyParamCaption}\item[{std\+::thread\+::id}]{thread\+Id}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em thread\+Id} & ID del hilo que esta tratando de obtener el command pool. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Command pool exclusivo del hilo.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::ThreadedCommandPoolMap@{OSK::GRAPHICS::ThreadedCommandPoolMap}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::GRAPHICS::ThreadedCommandPoolMap@{OSK::GRAPHICS::ThreadedCommandPoolMap}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_threaded_command_pool_map_a07853056c4e2d929f94d756f09e9b8d1} 
+OSK\+::\+GRAPHICS\+::\+Threaded\+Command\+Pool\+Map\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Threaded\+Command\+Pool\+Map}}]{}{}\end{DoxyParamCaption})}
+

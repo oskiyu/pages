@@ -1,0 +1,57 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Gpu\+Memory\+Usage\+Info}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_usage_info}\index{OSK::GRAPHICS::GpuMemoryUsageInfo@{OSK::GRAPHICS::GpuMemoryUsageInfo}}
+
+
+{\ttfamily \#include $<$Gpu\+Memory\+Usage\+Info.\+h$>$}
+
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Entry}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Entry} \textbf{ gpu\+Only\+Memory\+Info} \{\}
+\item 
+\textbf{ Entry} \textbf{ gpu\+And\+Cpu\+Memory\+Info} \{\}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Gpu\+Heap\+Memory\+Usage\+Info} $>$ \textbf{ heaps\+Info}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Información general sobre el uso de memoria GPU de la aplicación. Puede usarse para saber cuánto espacio se está usando, y cúanto queda disponible. 
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::GpuMemoryUsageInfo@{OSK::GRAPHICS::GpuMemoryUsageInfo}!gpuAndCpuMemoryInfo@{gpuAndCpuMemoryInfo}}
+\index{gpuAndCpuMemoryInfo@{gpuAndCpuMemoryInfo}!OSK::GRAPHICS::GpuMemoryUsageInfo@{OSK::GRAPHICS::GpuMemoryUsageInfo}}
+\doxysubsubsection{gpuAndCpuMemoryInfo}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_usage_info_ab15bea3028a62b318992953d3246da25} 
+\textbf{ Entry} OSK\+::\+GRAPHICS\+::\+Gpu\+Memory\+Usage\+Info\+::gpu\+And\+Cpu\+Memory\+Info \{\}}
+
+
+
+Información sobre la memoria compartida entre GPU y CPU. 
+
+\index{OSK::GRAPHICS::GpuMemoryUsageInfo@{OSK::GRAPHICS::GpuMemoryUsageInfo}!gpuOnlyMemoryInfo@{gpuOnlyMemoryInfo}}
+\index{gpuOnlyMemoryInfo@{gpuOnlyMemoryInfo}!OSK::GRAPHICS::GpuMemoryUsageInfo@{OSK::GRAPHICS::GpuMemoryUsageInfo}}
+\doxysubsubsection{gpuOnlyMemoryInfo}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_usage_info_ac26ad709ab5784381d54f2093c7cc376} 
+\textbf{ Entry} OSK\+::\+GRAPHICS\+::\+Gpu\+Memory\+Usage\+Info\+::gpu\+Only\+Memory\+Info \{\}}
+
+
+
+Información sobre la memoria GPU-\/only. 
+
+\index{OSK::GRAPHICS::GpuMemoryUsageInfo@{OSK::GRAPHICS::GpuMemoryUsageInfo}!heapsInfo@{heapsInfo}}
+\index{heapsInfo@{heapsInfo}!OSK::GRAPHICS::GpuMemoryUsageInfo@{OSK::GRAPHICS::GpuMemoryUsageInfo}}
+\doxysubsubsection{heapsInfo}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_usage_info_aeb241d74f039475f9b0951630f40de9a} 
+\textbf{ Dynamic\+Array}$<$\textbf{ Gpu\+Heap\+Memory\+Usage\+Info}$>$ OSK\+::\+GRAPHICS\+::\+Gpu\+Memory\+Usage\+Info\+::heaps\+Info}
+
+
+
+Información de cada heap individual. 
+

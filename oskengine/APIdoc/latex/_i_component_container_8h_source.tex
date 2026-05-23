@@ -1,0 +1,62 @@
+\doxysection{IComponent\+Container.\+h}
+\label{_i_component_container_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IComponentContainer.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IComponentContainer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Para\ ComponentType}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Component.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Para\ serialización.}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}BinaryBlock.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <json.hpp>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }SavedGameObjectTranslator;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IComponentContainer\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IComponentContainer()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ GameObjectDestroyerd(GameObjectIndex\ obj)\ =\ 0;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ nlohmann::json\ SerializeAll()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ DeserializeComponent(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ nlohmann::json\&\ data,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ GameObjectIndex\ obj,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ SavedGameObjectTranslator\&\ translator)\ =\ 0;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ PERSISTENCE::BinaryBlock\ BinarySerializeAll()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ BinaryDeserializeComponent(}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ PERSISTENCE::BinaryBlockReader*\ reader,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ GameObjectIndex\ obj,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ SavedGameObjectTranslator\&\ translator)\ =\ 0;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}*\ GetComponentAddress(GameObjectIndex\ obj)\ =\ 0;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ GetComponentAddress(GameObjectIndex\ obj)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetComponentType(ComponentType\ componentType);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ ComponentType\ GetComponentType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\_view\ GetComponentTypeName()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ ComponentType\ m\_componentType\ =\ 0;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \}}
+
+\end{DoxyCode}

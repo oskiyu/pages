@@ -1,0 +1,89 @@
+\doxysection{Collider\+Renderer.\+h}
+\label{_collider_renderer_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/ColliderRenderer.h@{C:/Users/Oscar/source/repos/OSKengine/Source/ColliderRenderer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ OSKengine\ by\ oskiyu}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Copyright\ (c)\ 2019-\/2023\ oskiyu.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}IRenderSystem.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ResourcesInFlight.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}AssetRef.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ISystem.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}MaterialInstance.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }Model3D;}
+\DoxyCodeLine{00019\ \}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }OSK::COLLISION\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }IBottomLevelCollider;}
+\DoxyCodeLine{00022\ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ ColliderRenderSystem\ :\ \textcolor{keyword}{public}\ IRenderSystem,\ \textcolor{keyword}{public}\ ISerializableSystem\ \{}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ OSK\_SYSTEM(\textcolor{stringliteral}{"{}OSK::ColliderRenderSystem"{}});}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ ColliderRenderSystem();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize(GameObjectIndex\ cameraObject);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateTargetImage(\textcolor{keyword}{const}\ Vector2ui\&\ size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Render(GRAPHICS::ICommandList*\ commandList,\ std::span<const\ ECS::GameObjectIndex>\ objects)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnObjectAdded(GameObjectIndex\ obj)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnObjectRemoved(GameObjectIndex\ obj)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupBottomLevelModel(GameObjectIndex\ obj);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::Material*\ GetTopLevelMaterial()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::Material*\ GetBottomLevelMaterial()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::Material*\ GetPointsMaterial()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ GameObjectIndex\ GetCurrentCameraObject()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ nlohmann::json\ SaveConfiguration()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ PERSISTENCE::BinaryBlock\ SaveBinaryConfiguration()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyConfiguration(\textcolor{keyword}{const}\ nlohmann::json\&\ config,\ \textcolor{keyword}{const}\ SavedGameObjectTranslator\&\ translator)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyConfiguration(PERSISTENCE::BinaryBlockReader*\ reader,\ \textcolor{keyword}{const}\ SavedGameObjectTranslator\&\ translator)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ GameObjectIndex\ m\_cameraObject\ =\ EMPTY\_GAME\_OBJECT;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_cameraGpuBuffers;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ material\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ lowLevelMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ pointMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::MaterialInstance>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_materialInstances;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::MaterialInstance>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_pointsMaterialInstances;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ std::unordered\_map<GameObjectIndex,\ DynamicArray<UniquePtr<GRAPHICS::GpuBuffer>>>\ m\_bottomLevelVertexBuffers;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ std::unordered\_map<GameObjectIndex,\ DynamicArray<UniquePtr<GRAPHICS::GpuBuffer>>>\ m\_bottomLevelIndexBuffers;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::Model3D>\ m\_cubeModel;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::Model3D>\ m\_sphereModel;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \}}
+
+\end{DoxyCode}

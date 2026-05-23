@@ -1,0 +1,800 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IGpu\+Memory\+Allocator}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator}\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+
+
+{\ttfamily \#include $<$IGpu\+Memory\+Allocator.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ IGpu\+Memory\+Allocator} (\textbf{ IGpu} $\ast$\textbf{ device})
+\item 
+virtual \textbf{ $\sim$\+IGpu\+Memory\+Allocator} ()
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IGpu\+Memory\+Allocator})
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ IGpu\+Memory\+Allocator})
+\item 
+\textbf{ Gpu\+Memory\+Usage\+Info} \textbf{ Get\+Memory\+Usage\+Info} () const
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Image} $>$ \textbf{ Create\+Image} (const \textbf{ Gpu\+Image\+Create\+Info} \&info)=0
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Image} $>$ \textbf{ Create\+Cubemap\+Image} (const \textbf{ Vector2ui} \&face\+Size, \textbf{ Format} format, \textbf{ Gpu\+Image\+Usage} usage, \textbf{ Gpu\+Shared\+Memory\+Type} shared\+Type, \textbf{ Gpu\+Queue\+Type} queue\+Type, \textbf{ Gpu\+Image\+Sampler\+Desc} sampler\+Desc=\{\})
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ Create\+Vertex\+Buffer} (const void $\ast$data, \textbf{ USize32} vertex\+Size, \textbf{ USize32} num\+Vertices, const \textbf{ Vertex\+Info} \&vertex\+Info, \textbf{ Gpu\+Queue\+Type} queue\+Type, \textbf{ Gpu\+Buffer\+Usage} usage=\textbf{ Gpu\+Buffer\+Usage\+::\+VERTEX\+\_\+\+BUFFER})
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ Create\+Vertex\+Buffer} (const void $\ast$data, \textbf{ USize32} vertex\+Size, \textbf{ USize32} num\+Vertices, const \textbf{ Vertex\+Info} \&vertex\+Info, \textbf{ Gpu\+Queue\+Type} transfer\+Queue, \textbf{ Gpu\+Queue\+Type} final\+Queue, \textbf{ Gpu\+Buffer\+Usage} usage=\textbf{ Gpu\+Buffer\+Usage\+::\+VERTEX\+\_\+\+BUFFER})
+\item 
+{\footnotesize template$<$typename T$>$ }\\\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ Create\+Vertex\+Buffer} (const \textbf{ Dynamic\+Array}$<$ T $>$ \&vertices, const \textbf{ Vertex\+Info} \&vertex\+Info, \textbf{ Gpu\+Queue\+Type} queue\+Type, \textbf{ Gpu\+Buffer\+Usage} usage=\textbf{ Gpu\+Buffer\+Usage\+::\+VERTEX\+\_\+\+BUFFER})
+\item 
+{\footnotesize template$<$typename T$>$ }\\\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ Create\+Vertex\+Buffer} (const \textbf{ Dynamic\+Array}$<$ T $>$ \&vertices, const \textbf{ Vertex\+Info} \&vertex\+Info, \textbf{ Gpu\+Queue\+Type} transfer\+Queue, \textbf{ Gpu\+Queue\+Type} final\+Queue, \textbf{ Gpu\+Buffer\+Usage} usage=\textbf{ Gpu\+Buffer\+Usage\+::\+VERTEX\+\_\+\+BUFFER})
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ Create\+Index\+Buffer} (const \textbf{ Dynamic\+Array}$<$ \textbf{ TIndex\+Size} $>$ \&indices, \textbf{ Gpu\+Queue\+Type} queue\+Type, \textbf{ Gpu\+Buffer\+Usage} usage=\textbf{ Gpu\+Buffer\+Usage\+::\+INDEX\+\_\+\+BUFFER})
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ Create\+Index\+Buffer} (const \textbf{ Dynamic\+Array}$<$ \textbf{ TIndex\+Size} $>$ \&indices, \textbf{ Gpu\+Queue\+Type} transfer\+Queue, \textbf{ Gpu\+Queue\+Type} queue\+Type, \textbf{ Gpu\+Buffer\+Usage} usage=\textbf{ Gpu\+Buffer\+Usage\+::\+INDEX\+\_\+\+BUFFER})
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ Create\+Uniform\+Buffer} (\textbf{ USize64} size, \textbf{ Gpu\+Queue\+Type} queue\+Type=\textbf{ Gpu\+Queue\+Type\+::\+MAIN}, \textbf{ Gpu\+Buffer\+Usage} usage=\textbf{ Gpu\+Buffer\+Usage\+::\+UNIFORM\+\_\+\+BUFFER})
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ Create\+Storage\+Buffer} (\textbf{ USize64} size, \textbf{ Gpu\+Queue\+Type} queue\+Type, \textbf{ Gpu\+Buffer\+Usage} usage=\textbf{ Gpu\+Buffer\+Usage\+::\+STORAGE\+\_\+\+BUFFER})
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ Create\+Staging\+Buffer} (\textbf{ USize64} size, \textbf{ Gpu\+Queue\+Type} queue\+Type, \textbf{ Gpu\+Buffer\+Usage} usage=\textbf{ Gpu\+Buffer\+Usage\+::\+UPLOAD\+\_\+\+ONLY})
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ Create\+Buffer} (\textbf{ USize64} size, \textbf{ USize64} alignment, \textbf{ Gpu\+Buffer\+Usage} usage, \textbf{ Gpu\+Shared\+Memory\+Type} memory\+Type, \textbf{ Gpu\+Queue\+Type} queue\+Type)
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IBottom\+Level\+Acceleration\+Structure} $>$ \textbf{ Create\+Bottom\+Acceleration\+Structure} (const \textbf{ Gpu\+Buffer} \&vertex\+Buffer, const \textbf{ Gpu\+Buffer} \&index\+Buffer)
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IBottom\+Level\+Acceleration\+Structure} $>$ \textbf{ Create\+Bottom\+Acceleration\+Structure} (const \textbf{ Gpu\+Buffer} \&vertex\+Buffer, const \textbf{ Vertex\+Buffer\+View} \&vertex\+View, const \textbf{ Gpu\+Buffer} \&index\+Buffer, const \textbf{ Index\+Buffer\+View} \&index\+View)
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ ITop\+Level\+Acceleration\+Structure} $>$ \textbf{ Create\+Top\+Acceleration\+Structure} (\textbf{ Dynamic\+Array}$<$ \textbf{ IBottom\+Level\+Acceleration\+Structure} $\ast$ $>$ bottom\+Structures)
+\item 
+void \textbf{ Remove\+Memory\+Block} (\textbf{ IGpu\+Memory\+Block} $\ast$block)
+\item 
+void \textbf{ Free\+Staging\+Memory} ()
+\item 
+const \textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Default\+Normal\+Texture} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Alignment} (\textbf{ USize64} original\+Alignment, \textbf{ Gpu\+Buffer\+Usage} usage) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static const \textbf{ USize64} \textbf{ Size\+Of\+Memory\+Block\+In\+Mb} = 16u
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Load\+Default\+Normal\+Texture} ()
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IBottom\+Level\+Acceleration\+Structure} $>$ \textbf{ \+\_\+\+Create\+Bottom\+Acceleration\+Structure} ()=0
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ ITop\+Level\+Acceleration\+Structure} $>$ \textbf{ \+\_\+\+Create\+Top\+Acceleration\+Structure} ()=0
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Block} $>$ \textbf{ Create\+New\+Buffer\+Block} (\textbf{ USize64} size, \textbf{ Gpu\+Buffer\+Usage} usage, \textbf{ Gpu\+Shared\+Memory\+Type} shared\+Type)=0
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Block} $>$ \textbf{ Create\+New\+Image\+Block} (\textbf{ Gpu\+Image} $\ast$image, \textbf{ Gpu\+Image\+Usage} usage, \textbf{ Gpu\+Shared\+Memory\+Type} shared\+Type)=0
+\item 
+\textbf{ IGpu\+Memory\+Block} $\ast$ \textbf{ Get\+Next\+Buffer\+Memory\+Block} (\textbf{ USize64} size, \textbf{ Gpu\+Buffer\+Usage} usage, \textbf{ Gpu\+Shared\+Memory\+Type} shared\+Type)
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Subblock} $>$ \textbf{ Get\+Next\+Buffer\+Memory\+Subblock} (\textbf{ USize64} size, \textbf{ Gpu\+Buffer\+Usage} usage, \textbf{ Gpu\+Shared\+Memory\+Type} shared\+Type)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Gpu\+Buffer\+Memory\+Block\+Info} $>$ \textbf{ buffer\+Memory\+Blocks\+Info}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Dynamic\+Array}$<$ \textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Block} $>$ $>$ $>$ \textbf{ buffer\+Memory\+Blocks}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ IGpu\+Memory\+Block} $\ast$ $>$ \textbf{ image\+Memory\+Blocks}
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Image} $>$ \textbf{ m\+\_\+default\+Normal\+Texture}
+\item 
+\textbf{ IGpu} $\ast$ \textbf{ device} = nullptr
+\item 
+\textbf{ Mutex\+Holder} \textbf{ m\+\_\+memory\+Allocation\+Mutex}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+El asignador de memoria se encarga de reservar grandes bloques de memoria en la GPU, que después podrán ser usados para almacenar texturas, buffers, etc. 
+
+La memoria de un bloque se divide en subbloques. Al reservar un recurso, se crea un subbloque que ocupará parte de la memoria del bloque.
+
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!IGpuMemoryAllocator@{IGpuMemoryAllocator}}
+\index{IGpuMemoryAllocator@{IGpuMemoryAllocator}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{IGpuMemoryAllocator()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a5eb4af797b1cd9c31aa51233fcdf7af1} 
+IGpu\+Memory\+Allocator\+::\+IGpu\+Memory\+Allocator (\begin{DoxyParamCaption}\item[{\textbf{ IGpu} $\ast$}]{device}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!````~IGpuMemoryAllocator@{$\sim$IGpuMemoryAllocator}}
+\index{````~IGpuMemoryAllocator@{$\sim$IGpuMemoryAllocator}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{$\sim$IGpuMemoryAllocator()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_ab9077dcba1bcd90e6cbb81564e542d40} 
+IGpu\+Memory\+Allocator\+::$\sim$\+IGpu\+Memory\+Allocator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!\_CreateBottomAccelerationStructure@{\_CreateBottomAccelerationStructure}}
+\index{\_CreateBottomAccelerationStructure@{\_CreateBottomAccelerationStructure}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{\_CreateBottomAccelerationStructure()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_ad5ca444bce47c933bd73d3a55668647e} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IBottom\+Level\+Acceleration\+Structure} $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::\+\_\+\+Create\+Bottom\+Acceleration\+Structure (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!\_CreateTopAccelerationStructure@{\_CreateTopAccelerationStructure}}
+\index{\_CreateTopAccelerationStructure@{\_CreateTopAccelerationStructure}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{\_CreateTopAccelerationStructure()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a7f5e347a1ad04a7c6bb0403dbbe04426} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ ITop\+Level\+Acceleration\+Structure} $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::\+\_\+\+Create\+Top\+Acceleration\+Structure (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateBottomAccelerationStructure@{CreateBottomAccelerationStructure}}
+\index{CreateBottomAccelerationStructure@{CreateBottomAccelerationStructure}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateBottomAccelerationStructure()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a7d2ef0db66de433acd03db324f4e9c9d} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IBottom\+Level\+Acceleration\+Structure} $>$ IGpu\+Memory\+Allocator\+::\+Create\+Bottom\+Acceleration\+Structure (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Buffer} \&}]{vertex\+Buffer}{, }\item[{const \textbf{ Gpu\+Buffer} \&}]{index\+Buffer}{}\end{DoxyParamCaption})}
+
+
+
+Crea una estructura de aceleración espacial para el trazado de rayos. 
+
+La estructura será de bajo nivel y contendrá la geometría definida por los vértices e índices dados. 
+\begin{DoxyParams}{Parámetros}
+{\em vertex\+Buffer} & Vértices del modelo 3D a partir del que se va a crear la estructura. \\
+\hline
+{\em index\+Buffer} & Índices del modelo 3D a partir del que se va a crear la estructura. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estructura de bajo nivel.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateBottomAccelerationStructure@{CreateBottomAccelerationStructure}}
+\index{CreateBottomAccelerationStructure@{CreateBottomAccelerationStructure}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateBottomAccelerationStructure()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a5deed469fb7d581e2ce47fa157d959e6} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IBottom\+Level\+Acceleration\+Structure} $>$ IGpu\+Memory\+Allocator\+::\+Create\+Bottom\+Acceleration\+Structure (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Buffer} \&}]{vertex\+Buffer}{, }\item[{const \textbf{ Vertex\+Buffer\+View} \&}]{vertex\+View}{, }\item[{const \textbf{ Gpu\+Buffer} \&}]{index\+Buffer}{, }\item[{const \textbf{ Index\+Buffer\+View} \&}]{index\+View}{}\end{DoxyParamCaption})}
+
+
+
+Crea una estructura de aceleración espacial para el trazado de rayos. 
+
+La estructura será de bajo nivel y contendrá la geometría definida por los vértices e índices dados. 
+\begin{DoxyParams}{Parámetros}
+{\em vertex\+Buffer} & Vértices del modelo 3D a partir del que se va a crear la estructura. \\
+\hline
+{\em vertex\+View} & View de los vértices. \\
+\hline
+{\em index\+Buffer} & Índices del modelo 3D a partir del que se va a crear la estructura. \\
+\hline
+{\em index\+View} & View de los índices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estructura de bajo nivel.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateBuffer@{CreateBuffer}}
+\index{CreateBuffer@{CreateBuffer}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_aead4b69eb7b65e52698ff933259664be} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ IGpu\+Memory\+Allocator\+::\+Create\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ USize64}}]{alignment}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{, }\item[{\textbf{ Gpu\+Shared\+Memory\+Type}}]{memory\+Type}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{queue\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Crea un buffer genérico de memoria en la GPU con las características dadas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño del buffer, en bytes. \\
+\hline
+{\em alignment} & Alineamiento del buffer respecto al inicio del bloque. \\
+\hline
+{\em usage} & Uso que se le dará al buffer. \\
+\hline
+{\em memory\+Type} & Tipo de memoria que se alojará. \\
+\hline
+{\em queue\+Type} & Tipo de cola en la que se almacenará. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Buffer en la GPU.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateCubemapImage@{CreateCubemapImage}}
+\index{CreateCubemapImage@{CreateCubemapImage}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateCubemapImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a697ce75cd24f5a37a9a8c5c1fb45da89} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Image} $>$ IGpu\+Memory\+Allocator\+::\+Create\+Cubemap\+Image (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{face\+Size}{, }\item[{\textbf{ Format}}]{format}{, }\item[{\textbf{ Gpu\+Image\+Usage}}]{usage}{, }\item[{\textbf{ Gpu\+Shared\+Memory\+Type}}]{shared\+Type}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{queue\+Type}{, }\item[{\textbf{ Gpu\+Image\+Sampler\+Desc}}]{sampler\+Desc}{ = {\ttfamily \{\}}}\end{DoxyParamCaption})}
+
+
+
+Crea una imagen cubemap sin inicializar en la GPU. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em face\+Size} & Resolución de cada cara, en píxeles. \\
+\hline
+{\em format} & Formato de todas las caras. \\
+\hline
+{\em usage} & Uso que se le va a dar al cubemap. \\
+\hline
+{\em shared\+Type} & Tipo de memoria preferente. \\
+\hline
+{\em queue\+Type} & Tipo de cola sobre la que se alojará. \\
+\hline
+{\em sampler\+Desc} & Sampler del cubemap. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Imagen sin información.
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondición}
+La imagen devuelta tendrá al menos el uso \doxyref{Gpu\+Image\+Usage\+::\+CUBEMAP}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaaf28b30e806ea29c1d6011d1feeea8913}.
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateImage@{CreateImage}}
+\index{CreateImage@{CreateImage}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a0e6e793c72e2660b611c379a05a6793e} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Image} $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::\+Create\+Image (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Image\+Create\+Info} \&}]{info}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Crea una nueva imagen en la GPU. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em info} & Información para la creación de la imagen.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateIndexBuffer@{CreateIndexBuffer}}
+\index{CreateIndexBuffer@{CreateIndexBuffer}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateIndexBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a1fd62d1cb0889a9e62c497da7b271229} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ IGpu\+Memory\+Allocator\+::\+Create\+Index\+Buffer (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ TIndex\+Size} $>$ \&}]{indices}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{queue\+Type}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{ = {\ttfamily \textbf{ Gpu\+Buffer\+Usage\+::\+INDEX\+\_\+\+BUFFER}}}\end{DoxyParamCaption})}
+
+
+
+Crea un buffer de índices con los índices dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em indices} & Lista de índices. \\
+\hline
+{\em queue\+Type} & Tipo de cola en la que se almacenará. \\
+\hline
+{\em usage} & Uso que se le dará al buffer, además de como index buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Buffer con los índices.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+El buffer se colocará preferentemente en un bloque con \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea95c8166e4f408834884bbe57fef928f6}. 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondición}
+El buffer siempre tendrá al menos los usos \doxyref{Gpu\+Buffer\+Usage\+::\+INDEX\+\_\+\+BUFFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90} y \doxyref{Gpu\+Buffer\+Usage\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fac61dfc60317a58b2843ec29f8e3c2359}.
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateIndexBuffer@{CreateIndexBuffer}}
+\index{CreateIndexBuffer@{CreateIndexBuffer}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateIndexBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a4ff4df81af81ca43021555f4cbcfd020} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ IGpu\+Memory\+Allocator\+::\+Create\+Index\+Buffer (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ TIndex\+Size} $>$ \&}]{indices}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{transfer\+Queue}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{queue\+Type}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{ = {\ttfamily \textbf{ Gpu\+Buffer\+Usage\+::\+INDEX\+\_\+\+BUFFER}}}\end{DoxyParamCaption})}
+
+
+
+Crea un buffer de índices con los índices dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em indices} & Lista de índices. \\
+\hline
+{\em queue\+Ttransfer\+Queueype} & Tipo de cola que se usará para la transferencia. \\
+\hline
+{\em queue\+Type} & Tipo de cola en la que se almacenará. \\
+\hline
+{\em usage} & Uso que se le dará al buffer, además de como index buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Buffer con los índices.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+El buffer se colocará preferentemente en un bloque con \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea95c8166e4f408834884bbe57fef928f6}. 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondición}
+El buffer siempre tendrá al menos los usos \doxyref{Gpu\+Buffer\+Usage\+::\+INDEX\+\_\+\+BUFFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90} y \doxyref{Gpu\+Buffer\+Usage\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fac61dfc60317a58b2843ec29f8e3c2359}.
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateNewBufferBlock@{CreateNewBufferBlock}}
+\index{CreateNewBufferBlock@{CreateNewBufferBlock}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateNewBufferBlock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_ab93aa034917aa0f016bb7a5a938f9721} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Block} $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::\+Create\+New\+Buffer\+Block (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{, }\item[{\textbf{ Gpu\+Shared\+Memory\+Type}}]{shared\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateNewImageBlock@{CreateNewImageBlock}}
+\index{CreateNewImageBlock@{CreateNewImageBlock}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateNewImageBlock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a93f39b81054115010fc7db9700e5135c} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Block} $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::\+Create\+New\+Image\+Block (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{, }\item[{\textbf{ Gpu\+Image\+Usage}}]{usage}{, }\item[{\textbf{ Gpu\+Shared\+Memory\+Type}}]{shared\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateStagingBuffer@{CreateStagingBuffer}}
+\index{CreateStagingBuffer@{CreateStagingBuffer}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateStagingBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a07b9a738d6348eee3bd68db2f50d3099} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ IGpu\+Memory\+Allocator\+::\+Create\+Staging\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{queue\+Type}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{ = {\ttfamily \textbf{ Gpu\+Buffer\+Usage\+::\+UPLOAD\+\_\+\+ONLY}}}\end{DoxyParamCaption})}
+
+
+
+Crea un buffer temporal con el tamaño dado. 
+
+Este buffer alojará memoria en una región donde la CPU tiene acceso, de tal manera que se podrán enviar datos a esta región, y después la GPU podrá copiar esta región de memoria a una región de memoria de video más rápida. 
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño del buffer, en bytes. \\
+\hline
+{\em queue\+Type} & Tipo de cola en la que se almacenará. \\
+\hline
+{\em usage} & Uso que se le va a dar al buffer, además de como staging buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Staging buffer.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+El buffer se colocará en un bloque con \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+AND\+\_\+\+CPU}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea096f8c31942629a91cc086cbda5f5465}. 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondición}
+El buffer siempre tendrá al menos los usos \doxyref{Gpu\+Buffer\+Usage\+::\+TRANSFER\+\_\+\+SOURCE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fafb3bb8503e5cd907a3a7b02a495c229e} $\vert$ \doxyref{Gpu\+Buffer\+Usage\+::\+UPLOAD\+\_\+\+ONLY}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fa5f26ec9a42a626092bb3c25908b6659f}.
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateStorageBuffer@{CreateStorageBuffer}}
+\index{CreateStorageBuffer@{CreateStorageBuffer}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateStorageBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a73def66646469f2cfbe6bfe00e4b195e} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ IGpu\+Memory\+Allocator\+::\+Create\+Storage\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{queue\+Type}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{ = {\ttfamily \textbf{ Gpu\+Buffer\+Usage\+::\+STORAGE\+\_\+\+BUFFER}}}\end{DoxyParamCaption})}
+
+
+
+Crea un storage buffer. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño, en bytes. \\
+\hline
+{\em queue\+Type} & Tipo de cola en la que se almacenará. \\
+\hline
+{\em usage} & Uso que se le dará al buffer, además de como storage buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Storage buffer.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+El buffer se colocará en un bloque con \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+AND\+\_\+\+CPU}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea096f8c31942629a91cc086cbda5f5465}. 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondición}
+El buffer siempre tendrá al menos el uso \doxyref{Gpu\+Buffer\+Usage\+::\+STORAGE\+\_\+\+BUFFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7faa486db75420308f63af20d85e2b6489d}.
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateTopAccelerationStructure@{CreateTopAccelerationStructure}}
+\index{CreateTopAccelerationStructure@{CreateTopAccelerationStructure}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateTopAccelerationStructure()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a61c263f4cc2d7ce43e77a51768c4490b} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ ITop\+Level\+Acceleration\+Structure} $>$ IGpu\+Memory\+Allocator\+::\+Create\+Top\+Acceleration\+Structure (\begin{DoxyParamCaption}\item[{\textbf{ Dynamic\+Array}$<$ \textbf{ IBottom\+Level\+Acceleration\+Structure} $\ast$ $>$}]{bottom\+Structures}{}\end{DoxyParamCaption})}
+
+
+
+Crea una estructura de aceleración espacial para el trazado de rayos. 
+
+La estructura agrupará varias estructuras de bajo nivel. 
+\begin{DoxyParams}{Parámetros}
+{\em bottom\+Structures} & Lista con todas las estructuras de bajo nivel a partir de los que se va a crear la estructura de alto nivel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estructura de alto nivel.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateUniformBuffer@{CreateUniformBuffer}}
+\index{CreateUniformBuffer@{CreateUniformBuffer}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateUniformBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_adf403fab83267d7b8e3b20e2f876106c} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ IGpu\+Memory\+Allocator\+::\+Create\+Uniform\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{queue\+Type}{ = {\ttfamily \textbf{ Gpu\+Queue\+Type\+::\+MAIN}}, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{ = {\ttfamily \textbf{ Gpu\+Buffer\+Usage\+::\+UNIFORM\+\_\+\+BUFFER}}}\end{DoxyParamCaption})}
+
+
+
+Crea un uniform buffer. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño del uniform buffer. \\
+\hline
+{\em queue\+Type} & Tipo de cola en la que se almacenará. \\
+\hline
+{\em usage} & Uso que se le dará al buffer, además de como uniform buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Uniform buffer.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+El buffer se colocará en un bloque con \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+AND\+\_\+\+CPU}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea096f8c31942629a91cc086cbda5f5465}. 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondición}
+El buffer siempre tendrá al menos el uso \doxyref{Gpu\+Buffer\+Usage\+::\+UNIFORM\+\_\+\+BUFFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fa8d0be820da8f4fe5aa49e0ef3065ca29}.
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateVertexBuffer@{CreateVertexBuffer}}
+\index{CreateVertexBuffer@{CreateVertexBuffer}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateVertexBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a9c247f6c0e0aea301763480ffd7ec4c2} 
+template$<$typename T$>$ \\
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::\+Create\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ T $>$ \&}]{vertices}{, }\item[{const \textbf{ Vertex\+Info} \&}]{vertex\+Info}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{queue\+Type}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{ = {\ttfamily \textbf{ Gpu\+Buffer\+Usage\+::\+VERTEX\+\_\+\+BUFFER}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea un buffer de vértices con los vértices dados. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo del vértice. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em vertices} & Lista con los vértices a añadir. \\
+\hline
+{\em vertex\+Info} & Información del tipo del vértice. \\
+\hline
+{\em queue\+Type} & Tipo de cola en la que se almacenará. \\
+\hline
+{\em usage} & Uso que se le dará al buffer, además de como vertex buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Buffer en la GPU con los vértices.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+El buffer se colocará preferentemente en un bloque con \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea95c8166e4f408834884bbe57fef928f6}. 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondición}
+El buffer siempre tendrá al menos los usos \doxyref{Gpu\+Buffer\+Usage\+::\+VERTEX\+\_\+\+BUFFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34} y \doxyref{Gpu\+Buffer\+Usage\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fac61dfc60317a58b2843ec29f8e3c2359}.
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateVertexBuffer@{CreateVertexBuffer}}
+\index{CreateVertexBuffer@{CreateVertexBuffer}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateVertexBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a14f8c50d1b4861ba5612cccd20ac142c} 
+template$<$typename T$>$ \\
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::\+Create\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ T $>$ \&}]{vertices}{, }\item[{const \textbf{ Vertex\+Info} \&}]{vertex\+Info}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{transfer\+Queue}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{final\+Queue}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{ = {\ttfamily \textbf{ Gpu\+Buffer\+Usage\+::\+VERTEX\+\_\+\+BUFFER}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea un buffer de vértices con los vértices dados. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo del vértice. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em vertices} & Lista con los vértices a añadir. \\
+\hline
+{\em vertex\+Info} & Información del tipo del vértice. \\
+\hline
+{\em transfer\+Queue} & Tipo de cola que se usará para transferir el contenido. \\
+\hline
+{\em final\+Queue} & Tipo de cola en la que se almacenará. \\
+\hline
+{\em usage} & Uso que se le dará al buffer, además de como vertex buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Buffer en la GPU con los vértices.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+El buffer se colocará preferentemente en un bloque con \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea95c8166e4f408834884bbe57fef928f6}. 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondición}
+El buffer siempre tendrá al menos los usos \doxyref{Gpu\+Buffer\+Usage\+::\+VERTEX\+\_\+\+BUFFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34} y \doxyref{Gpu\+Buffer\+Usage\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fac61dfc60317a58b2843ec29f8e3c2359}.
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateVertexBuffer@{CreateVertexBuffer}}
+\index{CreateVertexBuffer@{CreateVertexBuffer}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateVertexBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a120578a39e288f0f957964042285d7c6} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ IGpu\+Memory\+Allocator\+::\+Create\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data}{, }\item[{\textbf{ USize32}}]{vertex\+Size}{, }\item[{\textbf{ USize32}}]{num\+Vertices}{, }\item[{const \textbf{ Vertex\+Info} \&}]{vertex\+Info}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{queue\+Type}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{ = {\ttfamily \textbf{ Gpu\+Buffer\+Usage\+::\+VERTEX\+\_\+\+BUFFER}}}\end{DoxyParamCaption})}
+
+
+
+Crea un buffer de vértices con los vértices dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Puntero al array de vértices. \\
+\hline
+{\em vertex\+Size} & Tamaño de cada vértice individual, en bytes. \\
+\hline
+{\em num\+Vertices} & Número de vértices pasados. \\
+\hline
+{\em vertex\+Info} & Información del tipo de vértice. \\
+\hline
+{\em queue\+Type} & Tipo de cola en la que se almacenará. \\
+\hline
+{\em usage} & Uso que se le dará al buffer, además de como vertex buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Buffer en la GPU con los vértices.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+El buffer se colocará preferentemente en un bloque con \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea95c8166e4f408834884bbe57fef928f6}. 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondición}
+El buffer siempre tendrá al menos los usos \doxyref{Gpu\+Buffer\+Usage\+::\+VERTEX\+\_\+\+BUFFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34} y \doxyref{Gpu\+Buffer\+Usage\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fac61dfc60317a58b2843ec29f8e3c2359}.
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!CreateVertexBuffer@{CreateVertexBuffer}}
+\index{CreateVertexBuffer@{CreateVertexBuffer}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{CreateVertexBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a076cd441a6e13abff0a67f8ab3a576be} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ IGpu\+Memory\+Allocator\+::\+Create\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data}{, }\item[{\textbf{ USize32}}]{vertex\+Size}{, }\item[{\textbf{ USize32}}]{num\+Vertices}{, }\item[{const \textbf{ Vertex\+Info} \&}]{vertex\+Info}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{transfer\+Queue}{, }\item[{\textbf{ Gpu\+Queue\+Type}}]{final\+Queue}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{ = {\ttfamily \textbf{ Gpu\+Buffer\+Usage\+::\+VERTEX\+\_\+\+BUFFER}}}\end{DoxyParamCaption})}
+
+
+
+Crea un buffer de vértices con los vértices dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Puntero al array de vértices. \\
+\hline
+{\em vertex\+Size} & Tamaño de cada vértice individual, en bytes. \\
+\hline
+{\em num\+Vertices} & Número de vértices pasados. \\
+\hline
+{\em vertex\+Info} & Información del tipo de vértice. \\
+\hline
+{\em transfer\+Queue} & Tipo de cola que se usará para transferir el contenido. \\
+\hline
+{\em final\+Queue} & Tipo de cola en la que se almacenará. \\
+\hline
+{\em usage} & Uso que se le dará al buffer, además de como vertex buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Buffer en la GPU con los vértices.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+El buffer se colocará preferentemente en un bloque con \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea95c8166e4f408834884bbe57fef928f6}. 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondición}
+El buffer siempre tendrá al menos los usos \doxyref{Gpu\+Buffer\+Usage\+::\+VERTEX\+\_\+\+BUFFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34} y \doxyref{Gpu\+Buffer\+Usage\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fac61dfc60317a58b2843ec29f8e3c2359}.
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!FreeStagingMemory@{FreeStagingMemory}}
+\index{FreeStagingMemory@{FreeStagingMemory}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{FreeStagingMemory()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_af41e891d6c39de6dd5fc95e7b9fe8eba} 
+void IGpu\+Memory\+Allocator\+::\+Free\+Staging\+Memory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Libera toda la memoria usada para subir recursos. 
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!GetAlignment@{GetAlignment}}
+\index{GetAlignment@{GetAlignment}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{GetAlignment()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a9b22b2f1b7eada47b4ee5080b19bbec0} 
+\textbf{ USize64} IGpu\+Memory\+Allocator\+::\+Get\+Alignment (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{original\+Alignment}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!GetDefaultNormalTexture@{GetDefaultNormalTexture}}
+\index{GetDefaultNormalTexture@{GetDefaultNormalTexture}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{GetDefaultNormalTexture()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a7ae0adea9e3855cb789c59996b1b0522} 
+const \textbf{ Gpu\+Image} $\ast$ IGpu\+Memory\+Allocator\+::\+Get\+Default\+Normal\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!GetMemoryUsageInfo@{GetMemoryUsageInfo}}
+\index{GetMemoryUsageInfo@{GetMemoryUsageInfo}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{GetMemoryUsageInfo()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_ac839849a86be993da03fb236ca9dc641} 
+\textbf{ Gpu\+Memory\+Usage\+Info} IGpu\+Memory\+Allocator\+::\+Get\+Memory\+Usage\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene la información sobre el uso de memoria de esta GPU, incluyendo espacio usado y espacio disponible. 
+
+\begin{DoxyReturn}{Devuelve}
+Información sobre el uso de memoria de esta GPU.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!GetNextBufferMemoryBlock@{GetNextBufferMemoryBlock}}
+\index{GetNextBufferMemoryBlock@{GetNextBufferMemoryBlock}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{GetNextBufferMemoryBlock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a1ff33ac0ee31d7eca95ac339b9f5220a} 
+\textbf{ IGpu\+Memory\+Block} $\ast$ IGpu\+Memory\+Allocator\+::\+Get\+Next\+Buffer\+Memory\+Block (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{, }\item[{\textbf{ Gpu\+Shared\+Memory\+Type}}]{shared\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Devuelve un bloque con las características dadas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño míniimo del bloque, en bytes. \\
+\hline
+{\em usage} & Uso que se le dará a la memoria. \\
+\hline
+{\em shared\+Type} & Tipo de memoria. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Bloque con, al menos, el tamaño dado.
+\end{DoxyReturn}
+\begin{DoxyRemark}{Comentarios}
+Es posible que el tamaño del bloque sea mayor al indicado en size. 
+
+Si no hay ningún bloque con tamaño suficiente, se crea uno nuevo.
+\end{DoxyRemark}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!GetNextBufferMemorySubblock@{GetNextBufferMemorySubblock}}
+\index{GetNextBufferMemorySubblock@{GetNextBufferMemorySubblock}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{GetNextBufferMemorySubblock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a1758687db3fcec367ff605c0d5d152a7} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Subblock} $>$ IGpu\+Memory\+Allocator\+::\+Get\+Next\+Buffer\+Memory\+Subblock (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ Gpu\+Buffer\+Usage}}]{usage}{, }\item[{\textbf{ Gpu\+Shared\+Memory\+Type}}]{shared\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Devuelve un subbloque con las características dadas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño del subbloque, en bytes. \\
+\hline
+{\em usage} & Uso que se le dará a la memoria. \\
+\hline
+{\em shared\+Type} & Tipo de memoria. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Bloque con el tamaño dado.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!LoadDefaultNormalTexture@{LoadDefaultNormalTexture}}
+\index{LoadDefaultNormalTexture@{LoadDefaultNormalTexture}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{LoadDefaultNormalTexture()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a4b0540a7d4c3e5b60416fbf277a2f939} 
+void IGpu\+Memory\+Allocator\+::\+Load\+Default\+Normal\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_aa89880ddaadfee627c68f7c4cb6d5d30} 
+OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IGpu\+Memory\+Allocator}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_ac941bb2cf771a2c6b377752952683e3b} 
+OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ IGpu\+Memory\+Allocator}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!RemoveMemoryBlock@{RemoveMemoryBlock}}
+\index{RemoveMemoryBlock@{RemoveMemoryBlock}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{RemoveMemoryBlock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_acec87689e0c7f1f801b04fe724f9d269} 
+void IGpu\+Memory\+Allocator\+::\+Remove\+Memory\+Block (\begin{DoxyParamCaption}\item[{\textbf{ IGpu\+Memory\+Block} $\ast$}]{block}{}\end{DoxyParamCaption})}
+
+
+
+Quita uno de los bloques, que ha sido eliminado. 
+
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!bufferMemoryBlocks@{bufferMemoryBlocks}}
+\index{bufferMemoryBlocks@{bufferMemoryBlocks}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{bufferMemoryBlocks}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a8c63090eab5d64c093fe10e09b07d303} 
+\textbf{ Dynamic\+Array}$<$\textbf{ Dynamic\+Array}$<$\textbf{ Unique\+Ptr}$<$\textbf{ IGpu\+Memory\+Block}$>$ $>$ $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::buffer\+Memory\+Blocks\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!bufferMemoryBlocksInfo@{bufferMemoryBlocksInfo}}
+\index{bufferMemoryBlocksInfo@{bufferMemoryBlocksInfo}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{bufferMemoryBlocksInfo}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a0937f3dc39365976fe1cec02aec91b02} 
+\textbf{ Dynamic\+Array}$<$\textbf{ Gpu\+Buffer\+Memory\+Block\+Info}$>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::buffer\+Memory\+Blocks\+Info\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Información de los bloques. 
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!device@{device}}
+\index{device@{device}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{device}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a8f655b1e1884b8285b6d90b3d8f94e98} 
+\textbf{ IGpu}$\ast$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::device = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!imageMemoryBlocks@{imageMemoryBlocks}}
+\index{imageMemoryBlocks@{imageMemoryBlocks}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{imageMemoryBlocks}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a648839e5f311218525260fd324108c5c} 
+\textbf{ Dynamic\+Array}$<$\textbf{ IGpu\+Memory\+Block}$\ast$$>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::image\+Memory\+Blocks\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!m\_defaultNormalTexture@{m\_defaultNormalTexture}}
+\index{m\_defaultNormalTexture@{m\_defaultNormalTexture}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{m\_defaultNormalTexture}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a0e26b58f16d0e6790e96b65dbeded032} 
+\textbf{ Unique\+Ptr}$<$\textbf{ Gpu\+Image}$>$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::m\+\_\+default\+Normal\+Texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!m\_memoryAllocationMutex@{m\_memoryAllocationMutex}}
+\index{m\_memoryAllocationMutex@{m\_memoryAllocationMutex}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{m\_memoryAllocationMutex}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_aa769189d48cf4298630f025874f23f0b} 
+\textbf{ Mutex\+Holder} OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Allocator\+::m\+\_\+memory\+Allocation\+Mutex\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}!SizeOfMemoryBlockInMb@{SizeOfMemoryBlockInMb}}
+\index{SizeOfMemoryBlockInMb@{SizeOfMemoryBlockInMb}!OSK::GRAPHICS::IGpuMemoryAllocator@{OSK::GRAPHICS::IGpuMemoryAllocator}}
+\doxysubsubsection{SizeOfMemoryBlockInMb}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator_a15a307c693598df9c0af4e4a6417a48a} 
+\textbf{ USize64} const IGpu\+Memory\+Allocator\+::\+Size\+Of\+Memory\+Block\+In\+Mb = 16u\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+El tamaño de memoria que, por defecto, tendrá cada bloque de memoria. 
+
+\begin{DoxyNote}{Nota}
+Un bloque puede tener más tamaño, si se usa para almacenar un recurso que ocupe más espacio. 
+\end{DoxyNote}

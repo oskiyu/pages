@@ -1,0 +1,33 @@
+\doxysection{Collision\+Event.\+h}
+\label{_collision_event_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/CollisionEvent.h@{C:/Users/Oscar/source/repos/OSKengine/Source/CollisionEvent.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Event.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}DetailedCollisionInfo.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{struct\ }CollisionEvent\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ OSK\_EVENT(\textcolor{stringliteral}{"{}OSK::CollisionEvent"{}});}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ CollisionEvent()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ CollisionEvent(GameObjectIndex\ firstEntity,\ GameObjectIndex\ secondEntity,\ \textcolor{keyword}{const}\ COLLISION::DetailedCollisionInfo\&\ info)}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ :\ firstEntity(firstEntity),\ secondEntity(secondEntity),\ collisionInfo(info)\ \{\}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ GameObjectIndex\ firstEntity\ =\ EMPTY\_GAME\_OBJECT;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ GameObjectIndex\ secondEntity\ =\ EMPTY\_GAME\_OBJECT;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ COLLISION::DetailedCollisionInfo\ collisionInfo\ =\ \{\};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}

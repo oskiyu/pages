@@ -1,0 +1,138 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::Gamepad\+State}
+\label{class_o_s_k_1_1_i_o_1_1_gamepad_state}\index{OSK::IO::GamepadState@{OSK::IO::GamepadState}}
+
+
+{\ttfamily \#include $<$Gamepad\+State.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Gamepad\+State} ()=default
+\item 
+\textbf{ Gamepad\+State} (\textbf{ UIndex32} identifier)
+\item 
+\textbf{ Gamepad\+Button\+State} \textbf{ Get\+Button\+State} (\textbf{ Gamepad\+Button} button) const
+\item 
+bool \textbf{ Is\+Button\+Down} (\textbf{ Gamepad\+Button} button) const
+\item 
+bool \textbf{ Is\+Button\+Up} (\textbf{ Gamepad\+Button} button) const
+\item 
+float \textbf{ Get\+Axis\+State} (\textbf{ Gamepad\+Axis} axis) const
+\item 
+\textbf{ UIndex32} \textbf{ Get\+Identifier} () const
+\item 
+bool \textbf{ Is\+Connected} () const
+\item 
+void \textbf{ \+\_\+\+Set\+Button\+State} (\textbf{ Gamepad\+Button} button, \textbf{ Gamepad\+Button\+State} state)
+\item 
+void \textbf{ \+\_\+\+Set\+Axis\+State} (\textbf{ Gamepad\+Axis} axis, float value)
+\item 
+void \textbf{ \+\_\+\+Set\+Connection\+State} (bool is\+Connected)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa el estado actual de un gamepad conectado a la plataforma. 
+
+\begin{DoxyNote}{Nota}
+Puede no estar conectado, se debe comprobar que esté conectado.
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+En caso de no estar conectado, los valores devueltos pueden ser incoherentes. Comprobar siempre que el gamepad está conectado. 
+\end{DoxyWarning}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IO::GamepadState@{OSK::IO::GamepadState}!GamepadState@{GamepadState}}
+\index{GamepadState@{GamepadState}!OSK::IO::GamepadState@{OSK::IO::GamepadState}}
+\doxysubsubsection{GamepadState()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_gamepad_state_a835f5c74d9d5216bbefda5a240d9fb69} 
+OSK\+::\+IO\+::\+Gamepad\+State\+::\+Gamepad\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::IO::GamepadState@{OSK::IO::GamepadState}!GamepadState@{GamepadState}}
+\index{GamepadState@{GamepadState}!OSK::IO::GamepadState@{OSK::IO::GamepadState}}
+\doxysubsubsection{GamepadState()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_gamepad_state_a0d716ced6d1b2e331c7df629bc09b6e8} 
+Gamepad\+State\+::\+Gamepad\+State (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{identifier}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::GamepadState@{OSK::IO::GamepadState}!\_SetAxisState@{\_SetAxisState}}
+\index{\_SetAxisState@{\_SetAxisState}!OSK::IO::GamepadState@{OSK::IO::GamepadState}}
+\doxysubsubsection{\_SetAxisState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_gamepad_state_a7daa88f54f4c1183dde2cbc4b90fcf2a} 
+void Gamepad\+State\+::\+\_\+\+Set\+Axis\+State (\begin{DoxyParamCaption}\item[{\textbf{ Gamepad\+Axis}}]{axis}{, }\item[{float}]{value}{}\end{DoxyParamCaption})}
+
+\index{OSK::IO::GamepadState@{OSK::IO::GamepadState}!\_SetButtonState@{\_SetButtonState}}
+\index{\_SetButtonState@{\_SetButtonState}!OSK::IO::GamepadState@{OSK::IO::GamepadState}}
+\doxysubsubsection{\_SetButtonState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_gamepad_state_a8fe299f466fcf5935f69850d2ba637f7} 
+void Gamepad\+State\+::\+\_\+\+Set\+Button\+State (\begin{DoxyParamCaption}\item[{\textbf{ Gamepad\+Button}}]{button}{, }\item[{\textbf{ Gamepad\+Button\+State}}]{state}{}\end{DoxyParamCaption})}
+
+\index{OSK::IO::GamepadState@{OSK::IO::GamepadState}!\_SetConnectionState@{\_SetConnectionState}}
+\index{\_SetConnectionState@{\_SetConnectionState}!OSK::IO::GamepadState@{OSK::IO::GamepadState}}
+\doxysubsubsection{\_SetConnectionState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_gamepad_state_af3cdba016f819ae75022a1d51b153724} 
+void Gamepad\+State\+::\+\_\+\+Set\+Connection\+State (\begin{DoxyParamCaption}\item[{bool}]{is\+Connected}{}\end{DoxyParamCaption})}
+
+\index{OSK::IO::GamepadState@{OSK::IO::GamepadState}!GetAxisState@{GetAxisState}}
+\index{GetAxisState@{GetAxisState}!OSK::IO::GamepadState@{OSK::IO::GamepadState}}
+\doxysubsubsection{GetAxisState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_gamepad_state_a42d64406d8578512b3855c576a5e73c9} 
+float Gamepad\+State\+::\+Get\+Axis\+State (\begin{DoxyParamCaption}\item[{\textbf{ Gamepad\+Axis}}]{axis}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el estado del eje dado. 
+
+Véase \doxyref{OSK\+::\+IO\+::\+Gamepad\+Axis}{pág.}{namespace_o_s_k_1_1_i_o_a37e62c3e569002298eedcfd13bad4dd4}.
+
+\begin{DoxyNote}{Nota}
+Los valores mínimo y máximo pueden ser 0 a 1 ó -\/1 a 1. Véase \doxyref{OSK\+::\+IO\+::\+Gamepad\+Axis}{pág.}{namespace_o_s_k_1_1_i_o_a37e62c3e569002298eedcfd13bad4dd4}. 
+\end{DoxyNote}
+\index{OSK::IO::GamepadState@{OSK::IO::GamepadState}!GetButtonState@{GetButtonState}}
+\index{GetButtonState@{GetButtonState}!OSK::IO::GamepadState@{OSK::IO::GamepadState}}
+\doxysubsubsection{GetButtonState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_gamepad_state_ab1ba708769062c820dd521d9c72df482} 
+\textbf{ Gamepad\+Button\+State} Gamepad\+State\+::\+Get\+Button\+State (\begin{DoxyParamCaption}\item[{\textbf{ Gamepad\+Button}}]{button}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::IO::GamepadState@{OSK::IO::GamepadState}!GetIdentifier@{GetIdentifier}}
+\index{GetIdentifier@{GetIdentifier}!OSK::IO::GamepadState@{OSK::IO::GamepadState}}
+\doxysubsubsection{GetIdentifier()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_gamepad_state_a87a1418ba68c81b1870f9f92c8938b85} 
+\textbf{ UIndex32} Gamepad\+State\+::\+Get\+Identifier (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el identificador del mando. 
+
+Entre 0-\/3.
+
+\begin{DoxyNote}{Nota}
+El mando principal tendrá el identificador 0. 
+\end{DoxyNote}
+\index{OSK::IO::GamepadState@{OSK::IO::GamepadState}!IsButtonDown@{IsButtonDown}}
+\index{IsButtonDown@{IsButtonDown}!OSK::IO::GamepadState@{OSK::IO::GamepadState}}
+\doxysubsubsection{IsButtonDown()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_gamepad_state_a27f2e6f75e6f978083a82fd24ef7f0e2} 
+bool Gamepad\+State\+::\+Is\+Button\+Down (\begin{DoxyParamCaption}\item[{\textbf{ Gamepad\+Button}}]{button}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::IO::GamepadState@{OSK::IO::GamepadState}!IsButtonUp@{IsButtonUp}}
+\index{IsButtonUp@{IsButtonUp}!OSK::IO::GamepadState@{OSK::IO::GamepadState}}
+\doxysubsubsection{IsButtonUp()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_gamepad_state_a8ec30aac82fd180074ffe1e0fe2189c5} 
+bool Gamepad\+State\+::\+Is\+Button\+Up (\begin{DoxyParamCaption}\item[{\textbf{ Gamepad\+Button}}]{button}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::IO::GamepadState@{OSK::IO::GamepadState}!IsConnected@{IsConnected}}
+\index{IsConnected@{IsConnected}!OSK::IO::GamepadState@{OSK::IO::GamepadState}}
+\doxysubsubsection{IsConnected()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_gamepad_state_aa359f7b60c5bf64d787e1c2b4a7617d6} 
+bool Gamepad\+State\+::\+Is\+Connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Comrpueba si el mando está conectado. SI no o etá los valores devueltos por las otras funciones serán inválidos. 
+

@@ -1,0 +1,67 @@
+\doxysection{Referencia de la estructura OSK\+::Mutex\+Holder}
+\label{struct_o_s_k_1_1_mutex_holder}\index{OSK::MutexHolder@{OSK::MutexHolder}}
+
+
+{\ttfamily \#include $<$Mutex\+Holder.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Mutex\+Holder} ()=default
+\item 
+\textbf{ $\sim$\+Mutex\+Holder} ()=default
+\item 
+\textbf{ Mutex\+Holder} (const \textbf{ Mutex\+Holder} \&)
+\item 
+\textbf{ Mutex\+Holder} \& \textbf{ operator=} (const \textbf{ Mutex\+Holder} \&)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mutex \textbf{ mutex} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que contiene un mutex, de tal manera que permite usarlo como atributo de una clase sin invalidar las operaciones de copia y movimiento. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::MutexHolder@{OSK::MutexHolder}!MutexHolder@{MutexHolder}}
+\index{MutexHolder@{MutexHolder}!OSK::MutexHolder@{OSK::MutexHolder}}
+\doxysubsubsection{MutexHolder()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_mutex_holder_a31f149f33f752110a3d3d46ba882d372} 
+OSK\+::\+Mutex\+Holder\+::\+Mutex\+Holder (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::MutexHolder@{OSK::MutexHolder}!````~MutexHolder@{$\sim$MutexHolder}}
+\index{````~MutexHolder@{$\sim$MutexHolder}!OSK::MutexHolder@{OSK::MutexHolder}}
+\doxysubsubsection{$\sim$MutexHolder()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_mutex_holder_a54a8f7cd52cdf209469235d470af472e} 
+OSK\+::\+Mutex\+Holder\+::$\sim$\+Mutex\+Holder (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::MutexHolder@{OSK::MutexHolder}!MutexHolder@{MutexHolder}}
+\index{MutexHolder@{MutexHolder}!OSK::MutexHolder@{OSK::MutexHolder}}
+\doxysubsubsection{MutexHolder()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_mutex_holder_af2a8c368502438006c36f2adab108fc3} 
+OSK\+::\+Mutex\+Holder\+::\+Mutex\+Holder (\begin{DoxyParamCaption}\item[{const \textbf{ Mutex\+Holder} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::MutexHolder@{OSK::MutexHolder}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::MutexHolder@{OSK::MutexHolder}}
+\doxysubsubsection{operator=()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_mutex_holder_af83282e8b358c80a4a2bbd5cfbf05018} 
+\textbf{ Mutex\+Holder} \& OSK\+::\+Mutex\+Holder\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Mutex\+Holder} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::MutexHolder@{OSK::MutexHolder}!mutex@{mutex}}
+\index{mutex@{mutex}!OSK::MutexHolder@{OSK::MutexHolder}}
+\doxysubsubsection{mutex}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_mutex_holder_ac3e1c4f6165143242b9dd8f018bfd14b} 
+std\+::mutex OSK\+::\+Mutex\+Holder\+::mutex \{\}}
+

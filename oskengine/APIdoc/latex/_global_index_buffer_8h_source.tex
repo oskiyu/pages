@@ -1,0 +1,42 @@
+\doxysection{Global\+Index\+Buffer.\+h}
+\label{_global_index_buffer_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GlobalIndexBuffer.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GlobalIndexBuffer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{struct\ }GlobalIndexBufferRange\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ UIndex32\ firstIndex\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ USize32\ indexCount\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{struct\ }UnusedIndexBufferRange\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ UIndex32\ firstIndex\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ USize32\ indexCount\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ GlobalIndexBufferManager\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ UIndex32\ GetNextIndexesStart(USize32\ numIndexes)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ GlobalIndexBufferRange\ RegisterGeometry(USize32\ numIndices);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ DynamicArray<GlobalIndexBufferRange>\ m\_entries;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ DynamicArray<UnusedIndexBufferRange>\ m\_unusedEntries;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ UIndex64\ m\_tail\ =\ 0;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \}}
+
+\end{DoxyCode}

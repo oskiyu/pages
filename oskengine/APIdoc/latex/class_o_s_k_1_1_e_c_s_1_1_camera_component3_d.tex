@@ -1,0 +1,238 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Camera\+Component3D}
+\label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d}\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+
+
+{\ttfamily \#include $<$Camera\+Component3\+D.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT} ()
+\item 
+\textbf{ OSK\+\_\+\+COMPONENT} ("{}OSK\+::\+Camera\+Component3\+D"{})
+\item 
+float \textbf{ Get\+Fov} () const
+\item 
+void \textbf{ Set\+Fov} (float fov)
+\item 
+void \textbf{ Add\+Fov} (float diff)
+\item 
+void \textbf{ Set\+Fov\+Limits} (float min, float max)
+\item 
+float \textbf{ Get\+Near\+Plane} () const
+\item 
+float \textbf{ Get\+Far\+Plane} () const
+\item 
+void \textbf{ Set\+Planes} (float near, float far)
+\item 
+void \textbf{ Rotate} (float angleX, float angleY)
+\item 
+void \textbf{ Update\+Transform} (\textbf{ Transform3D} $\ast$transform)
+\item 
+\textbf{ Any\+Frustum} \textbf{ Get\+Frustum} (const \textbf{ Transform3D} \&transform) const
+\item 
+glm\+::mat4 \textbf{ Get\+Projection\+Matrix} () const
+\item 
+glm\+::mat4 \textbf{ Get\+Projection\+Matrix\+\_\+\+UnreversedZ} () const
+\item 
+glm\+::mat4 \textbf{ Get\+View\+Matrix} (const \textbf{ Transform3D} \&transform) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Cámara para un mundo tridimensional. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!AddFov@{AddFov}}
+\index{AddFov@{AddFov}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{AddFov()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_a238c5d98533c28072373bdf4db624271} 
+void Camera\+Component3\+D\+::\+Add\+Fov (\begin{DoxyParamCaption}\item[{float}]{diff}{}\end{DoxyParamCaption})}
+
+
+
+Añade FoV a la cámara. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em diff} & FoV delta.\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyNote}{Nota}
+Si el valor está fuera de los límites, se pondrá el valor válido 
+\end{DoxyNote}
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!GetFarPlane@{GetFarPlane}}
+\index{GetFarPlane@{GetFarPlane}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{GetFarPlane()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_a530798c537870e44bddc5614391e6453} 
+float Camera\+Component3\+D\+::\+Get\+Far\+Plane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el límite superior de distancia a partir de la cual no se renderizan objetos. 
+
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!GetFov@{GetFov}}
+\index{GetFov@{GetFov}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{GetFov()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_a13690a7d03a38e3a17260398cfd8de65} 
+float Camera\+Component3\+D\+::\+Get\+Fov (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+FoV de la cámara. 
+
+\begin{DoxyNote}{Nota}
+Zoom de la cámara. 
+\end{DoxyNote}
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!GetFrustum@{GetFrustum}}
+\index{GetFrustum@{GetFrustum}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{GetFrustum()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_a99c30a2e9d01dcd25765992677a077a5} 
+\textbf{ Any\+Frustum} Camera\+Component3\+D\+::\+Get\+Frustum (\begin{DoxyParamCaption}\item[{const \textbf{ Transform3D} \&}]{transform}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em transform} & Transform de la cámara. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Frustum de la cámara. 
+\end{DoxyReturn}
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!GetNearPlane@{GetNearPlane}}
+\index{GetNearPlane@{GetNearPlane}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{GetNearPlane()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_a69d2954a6b2406ee1083ea105ce7875c} 
+float Camera\+Component3\+D\+::\+Get\+Near\+Plane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el límite inferior de distancia a partir de la cual se renderizan objetos. 
+
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!GetProjectionMatrix@{GetProjectionMatrix}}
+\index{GetProjectionMatrix@{GetProjectionMatrix}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{GetProjectionMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_a68079a946e3c8d14718ef8d0f560b9c0} 
+glm\+::mat4 Camera\+Component3\+D\+::\+Get\+Projection\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Matriz proyección de la cámara, con depth Z invertido y far-\/plane infinito. 
+\end{DoxyReturn}
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!GetProjectionMatrix\_UnreversedZ@{GetProjectionMatrix\_UnreversedZ}}
+\index{GetProjectionMatrix\_UnreversedZ@{GetProjectionMatrix\_UnreversedZ}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{GetProjectionMatrix\_UnreversedZ()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_a0b87cc0f76a0a4afa3573bfa6a5889d6} 
+glm\+::mat4 Camera\+Component3\+D\+::\+Get\+Projection\+Matrix\+\_\+\+UnreversedZ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene la matriz proyección de la cámara con el rango de profundidad normal. 
+
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!GetViewMatrix@{GetViewMatrix}}
+\index{GetViewMatrix@{GetViewMatrix}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{GetViewMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_a5cc4bc7e2d2d8c23c93b13096970acdb} 
+glm\+::mat4 Camera\+Component3\+D\+::\+Get\+View\+Matrix (\begin{DoxyParamCaption}\item[{const \textbf{ Transform3D} \&}]{transform}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene la matriz view de la cámara. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em transform} & Transform de la cámara.\\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!OSK\_COMPONENT@{OSK\_COMPONENT}}
+\index{OSK\_COMPONENT@{OSK\_COMPONENT}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{OSK\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_ab542c00aad8fab84e59a66fc53de9d90} 
+OSK\+::\+ECS\+::\+Camera\+Component3\+D\+::\+OSK\+\_\+\+COMPONENT (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Camera\+Component3\+D"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}}
+\index{OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{OSK\_SERIALIZABLE\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_afa5beed998793a165c88cafb3f39029f} 
+OSK\+::\+ECS\+::\+Camera\+Component3\+D\+::\+OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{Rotate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_ae082cbaa29076b9d1baba6404ebef134} 
+void Camera\+Component3\+D\+::\+Rotate (\begin{DoxyParamCaption}\item[{float}]{angleX}{, }\item[{float}]{angleY}{}\end{DoxyParamCaption})}
+
+
+
+Rota la cámara. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em angleX} & Yaw.\\
+\hline
+{\em angleY} & Pitch.\\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!SetFov@{SetFov}}
+\index{SetFov@{SetFov}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{SetFov()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_ad842f6befbd2b4b5c276407789917e2d} 
+void Camera\+Component3\+D\+::\+Set\+Fov (\begin{DoxyParamCaption}\item[{float}]{fov}{}\end{DoxyParamCaption})}
+
+
+
+Establece el FoV de la cámara, si está en los límites de FoV. 
+
+\begin{DoxyNote}{Nota}
+Si el valor está fuera de los límites, se pondrá el valor válido más cercano. 
+\end{DoxyNote}
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!SetFovLimits@{SetFovLimits}}
+\index{SetFovLimits@{SetFovLimits}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{SetFovLimits()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_a01fc9ba97878f1946f54b919dd51a3ec} 
+void Camera\+Component3\+D\+::\+Set\+Fov\+Limits (\begin{DoxyParamCaption}\item[{float}]{min}{, }\item[{float}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Establece los límites mínimos y máximos de field of view. 
+
+\begin{DoxyPrecond}{Precondición}
+Max debe ser $>$ min. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+exception} & Si min $>$= max. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!SetPlanes@{SetPlanes}}
+\index{SetPlanes@{SetPlanes}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{SetPlanes()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_a2662c11c75d1fb870a3cadb86dd484ab} 
+void Camera\+Component3\+D\+::\+Set\+Planes (\begin{DoxyParamCaption}\item[{float}]{near}{, }\item[{float}]{far}{}\end{DoxyParamCaption})}
+
+
+
+Establece los límites de distancia de renderizado. Se renderizarán los objetos que estén dentro de los límites. 
+
+\begin{DoxyPrecond}{Precondición}
+Max debe ser $>$ min. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+exception} & si near $>$= far. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}!UpdateTransform@{UpdateTransform}}
+\index{UpdateTransform@{UpdateTransform}!OSK::ECS::CameraComponent3D@{OSK::ECS::CameraComponent3D}}
+\doxysubsubsection{UpdateTransform()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d_ae67d2d1b0d5bab6065d274cb185f08ef} 
+void Camera\+Component3\+D\+::\+Update\+Transform (\begin{DoxyParamCaption}\item[{\textbf{ Transform3D} $\ast$}]{transform}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza el transform de la cámara, para que tenga su rotación. 
+
+\begin{DoxyPrecond}{Precondición}
+transform no debe ser null. 
+\end{DoxyPrecond}

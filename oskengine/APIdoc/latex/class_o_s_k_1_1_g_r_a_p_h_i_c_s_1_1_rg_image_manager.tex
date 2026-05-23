@@ -1,0 +1,184 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Rg\+Image\+Manager}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager}\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+
+
+{\ttfamily \#include $<$Rg\+Image\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Rg\+Image\+Manager} (\textbf{ IRenderer} $\ast$renderer)
+\item 
+\textbf{ Gdr\+Image\+Uuid} \textbf{ Register\+Image} (const \textbf{ Rg\+Image\+Register\+Info} \&info, \textbf{ Rg\+Relative\+Size\+Image\+Register\+Args} size)
+\item 
+\textbf{ Gdr\+Image\+Uuid} \textbf{ Register\+Image} (const \textbf{ Rg\+Image\+Register\+Info} \&info, \textbf{ Rg\+Absolute\+Size\+Image\+Register\+Args} size)
+\item 
+\textbf{ Gdr\+Image\+Uuid} \textbf{ Register\+External\+Image} (\textbf{ Gpu\+Image} $\ast$image)
+\item 
+void \textbf{ Rebind\+External\+Image} (\textbf{ Gdr\+Image\+Uuid} uuid, \textbf{ Gpu\+Image} $\ast$new\+Image)
+\item 
+void \textbf{ Create\+Images} (std\+::span$<$ const \textbf{ Render\+Pass\+Entry} $>$ renderpasses)
+\item 
+\textbf{ Gpu\+Image} \& \textbf{ Get\+Image} (\textbf{ Gdr\+Image\+Uuid} uuid)
+\item 
+const \textbf{ Gpu\+Image} \& \textbf{ Get\+Image} (\textbf{ Gdr\+Image\+Uuid} uuid) const
+\item 
+void \textbf{ Set\+Framebuffer\+Resolution} (\textbf{ USize32} res)
+\item 
+void \textbf{ Set\+Framebuffer\+Resolution} (\textbf{ Vector2ui} res)
+\item 
+void \textbf{ Set\+Framebuffer\+Resolution} (\textbf{ Vector3ui} res)
+\item 
+void \textbf{ Recreate\+Relative\+Images} (std\+::span$<$ const \textbf{ Render\+Pass\+Entry} $>$ renderpasses)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Implementa el manejo de imágenes en el render-\/graph. 
+
+\begin{DoxyNote}{Nota}
+Es dueño de las imágenes. 
+\end{DoxyNote}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}!RgImageManager@{RgImageManager}}
+\index{RgImageManager@{RgImageManager}!OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+\doxysubsubsection{RgImageManager()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager_a20f39d71e1e098e7b719a7e7da944148} 
+Rg\+Image\+Manager\+::\+Rg\+Image\+Manager (\begin{DoxyParamCaption}\item[{\textbf{ IRenderer} $\ast$}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}!CreateImages@{CreateImages}}
+\index{CreateImages@{CreateImages}!OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+\doxysubsubsection{CreateImages()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager_a60c9a4878fe0b0ed51e38c95588019a4} 
+void Rg\+Image\+Manager\+::\+Create\+Images (\begin{DoxyParamCaption}\item[{std\+::span$<$ const \textbf{ Render\+Pass\+Entry} $>$}]{renderpasses}{}\end{DoxyParamCaption})}
+
+
+
+Crea las imágenes, teniendo en cuenta las dependencias declaradas en los renderpases. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em renderpasses} & Renderpases del render-\/graph. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}!GetImage@{GetImage}}
+\index{GetImage@{GetImage}!OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+\doxysubsubsection{GetImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager_a3fb2bfce0c35f7c9ff14ba7de09dc363} 
+\textbf{ Gpu\+Image} \& Rg\+Image\+Manager\+::\+Get\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Image\+Uuid}}]{uuid}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}!GetImage@{GetImage}}
+\index{GetImage@{GetImage}!OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+\doxysubsubsection{GetImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager_ac457d6113f894b836da2f80a3ff80731} 
+const \textbf{ Gpu\+Image} \& Rg\+Image\+Manager\+::\+Get\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Image\+Uuid}}]{uuid}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}!RebindExternalImage@{RebindExternalImage}}
+\index{RebindExternalImage@{RebindExternalImage}!OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+\doxysubsubsection{RebindExternalImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager_a25b423540b677f168b698be350dd95d4} 
+void Rg\+Image\+Manager\+::\+Rebind\+External\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Image\+Uuid}}]{uuid}{, }\item[{\textbf{ Gpu\+Image} $\ast$}]{new\+Image}{}\end{DoxyParamCaption})}
+
+
+
+Hace que {\ttfamily uuid} ahora apunte a la imagen {\ttfamily new\+Image}. 
+
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily uuid} debe haber sido creado mediante {\ttfamily Register\+External\+Image}. 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Útil para cuando dicha imagen cambia de resolución. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}!RecreateRelativeImages@{RecreateRelativeImages}}
+\index{RecreateRelativeImages@{RecreateRelativeImages}!OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+\doxysubsubsection{RecreateRelativeImages()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager_a0b16931f95fddf5fcd0a0d657a5c6cc6} 
+void Rg\+Image\+Manager\+::\+Recreate\+Relative\+Images (\begin{DoxyParamCaption}\item[{std\+::span$<$ const \textbf{ Render\+Pass\+Entry} $>$}]{renderpasses}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}!RegisterExternalImage@{RegisterExternalImage}}
+\index{RegisterExternalImage@{RegisterExternalImage}!OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+\doxysubsubsection{RegisterExternalImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager_a6f0347488ab465d41ea7153f1bb0edd3} 
+\textbf{ Gdr\+Image\+Uuid} Rg\+Image\+Manager\+::\+Register\+External\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{}\end{DoxyParamCaption})}
+
+
+
+Registra una imagen que ha sido cargada externamente, y que por lo tanto no debe ser creada. 
+
+\begin{DoxyReturn}{Devuelve}
+UUID asignado a la imagen. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}!RegisterImage@{RegisterImage}}
+\index{RegisterImage@{RegisterImage}!OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+\doxysubsubsection{RegisterImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager_afedb849dbce3865a9926b8bef5dd97d7} 
+\textbf{ Gdr\+Image\+Uuid} Rg\+Image\+Manager\+::\+Register\+Image (\begin{DoxyParamCaption}\item[{const \textbf{ Rg\+Image\+Register\+Info} \&}]{info}{, }\item[{\textbf{ Rg\+Absolute\+Size\+Image\+Register\+Args}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Registra una nueva imagen, que será creada y gestionada por el render-\/graph. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em info} & Información de la imagen. \\
+\hline
+{\em size} & Resolución de la imagen.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+UUID de la imagen. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}!RegisterImage@{RegisterImage}}
+\index{RegisterImage@{RegisterImage}!OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+\doxysubsubsection{RegisterImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager_aed59f5983adfab56f914b5563888394d} 
+\textbf{ Gdr\+Image\+Uuid} Rg\+Image\+Manager\+::\+Register\+Image (\begin{DoxyParamCaption}\item[{const \textbf{ Rg\+Image\+Register\+Info} \&}]{info}{, }\item[{\textbf{ Rg\+Relative\+Size\+Image\+Register\+Args}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Registra una nueva imagen, que será creada y gestionada por el render-\/graph. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em info} & Información de la imagen. \\
+\hline
+{\em size} & Resolución de la imagen, relativa a la resolución del framebuffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+UUID de la imagen. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}!SetFramebufferResolution@{SetFramebufferResolution}}
+\index{SetFramebufferResolution@{SetFramebufferResolution}!OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+\doxysubsubsection{SetFramebufferResolution()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager_a2c50a35bb720145842a0469b9d5f2e28} 
+void Rg\+Image\+Manager\+::\+Set\+Framebuffer\+Resolution (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{res}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza la referencia de tamaño del framebuffer, para poder cambiar la resolución de las imágenes ligadas al framebuffer. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em res} & Nueva resolución. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}!SetFramebufferResolution@{SetFramebufferResolution}}
+\index{SetFramebufferResolution@{SetFramebufferResolution}!OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+\doxysubsubsection{SetFramebufferResolution()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager_ac1ac0b29935d3e020b3878a1be8e0ac8} 
+void Rg\+Image\+Manager\+::\+Set\+Framebuffer\+Resolution (\begin{DoxyParamCaption}\item[{\textbf{ Vector2ui}}]{res}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}!SetFramebufferResolution@{SetFramebufferResolution}}
+\index{SetFramebufferResolution@{SetFramebufferResolution}!OSK::GRAPHICS::RgImageManager@{OSK::GRAPHICS::RgImageManager}}
+\doxysubsubsection{SetFramebufferResolution()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager_a6bc6bd793ab6495476bc2a0ae4229ca6} 
+void Rg\+Image\+Manager\+::\+Set\+Framebuffer\+Resolution (\begin{DoxyParamCaption}\item[{\textbf{ Vector3ui}}]{res}{}\end{DoxyParamCaption})}
+

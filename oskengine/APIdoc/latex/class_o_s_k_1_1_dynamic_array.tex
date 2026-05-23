@@ -1,0 +1,1062 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::Dynamic\+Array$<$ T $>$}
+\label{class_o_s_k_1_1_dynamic_array}\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Dynamic\+Array.\+hpp$>$}
+
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Const\+Iterator}
+\item 
+class \textbf{ Iterator}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dynamic\+Array} ()
+\item 
+\textbf{ Dynamic\+Array} (const std\+::initializer\+\_\+list$<$ T $>$ \&list)
+\item 
+\textbf{ Dynamic\+Array} (const \textbf{ Dynamic\+Array} \&arr)
+\item 
+\textbf{ Dynamic\+Array} \& \textbf{ operator=} (const \textbf{ Dynamic\+Array} \&arr)
+\item 
+\textbf{ Dynamic\+Array} (\textbf{ Dynamic\+Array} \&\&arr) noexcept
+\item 
+\textbf{ Dynamic\+Array} \& \textbf{ operator=} (\textbf{ Dynamic\+Array} \&\&arr)
+\item 
+\textbf{ $\sim$\+Dynamic\+Array} ()
+\item 
+void \textbf{ Allocate} (\textbf{ USize64} count)
+\item 
+void \textbf{ Insert\+Copy} (const T \&element)
+\item 
+void \textbf{ Insert} (const T \&element)
+\item 
+void \textbf{ Insert\+Move} (T \&\&element)
+\item 
+void \textbf{ Insert} (T \&\&element)
+\item 
+const T \& \textbf{ At} (\textbf{ UIndex64} index) const
+\item 
+const T \& \textbf{ Const\+At} (\textbf{ UIndex64} index) const
+\item 
+T \textbf{ At\+Cpy} (\textbf{ UIndex64} index) const
+\item 
+T \& \textbf{ At} (\textbf{ UIndex64} index)
+\item 
+void \textbf{ Push} (const T \&elem)
+\item 
+void \textbf{ Push} (T \&\&elem)
+\item 
+T \& \textbf{ Peek} ()
+\item 
+T \textbf{ Pop} ()
+\item 
+void \textbf{ Insert\+All} (const \textbf{ Dynamic\+Array} \&arr)
+\item 
+void \textbf{ Reserve} (\textbf{ USize64} size)
+\item 
+{\footnotesize template$<$typename... TArgs$>$ }\\void \textbf{ Resize} (\textbf{ USize64} size, const TArgs \&... args)
+\item 
+{\footnotesize template$<$typename... TArgs$>$ }\\void \textbf{ Resize\+Move} (\textbf{ USize64} size, TArgs \&\&... args)
+\item 
+void \textbf{ Remove\+At} (\textbf{ UIndex64} index)
+\item 
+void \textbf{ Remove} (const T \&elem)
+\item 
+void \textbf{ Remove\+Last} ()
+\item 
+bool \textbf{ Contains\+Element} (const T \&elem) const
+\item 
+\textbf{ UIndex64} \textbf{ Get\+Index\+Of} (const T \&elem) const
+\item 
+\textbf{ Iterator} \textbf{ Find} (const T \&elem)
+\item 
+\textbf{ Const\+Iterator} \textbf{ Find} (const T \&elem) const
+\item 
+void \textbf{ Free} ()
+\item 
+void \textbf{ Empty} ()
+\item 
+const T \& \textbf{ operator[$\,$]} (\textbf{ UIndex64} i) const
+\item 
+T \& \textbf{ operator[$\,$]} (\textbf{ UIndex64} i)
+\item 
+bool \textbf{ Has\+Been\+Initialized} () const noexcept
+\item 
+bool \textbf{ Is\+Empty} () const noexcept
+\item 
+\textbf{ USize64} \textbf{ Get\+Size} () const noexcept
+\item 
+\textbf{ USize64} \textbf{ Get\+Reserved\+Size} () const noexcept
+\item 
+const T $\ast$ \textbf{ Get\+Data} () const noexcept
+\item 
+T $\ast$ \textbf{ Get\+Data} () noexcept
+\item 
+std\+::span$<$ T $>$ \textbf{ Get\+Full\+Span} ()
+\item 
+std\+::span$<$ const T $>$ \textbf{ Get\+Full\+Span} () const
+\item 
+std\+::span$<$ T $>$ \textbf{ Get\+Span} (\textbf{ UIndex64} start\+Index, \textbf{ USize64} count)
+\item 
+std\+::span$<$ const T $>$ \textbf{ Get\+Span} (\textbf{ UIndex64} start\+Index, \textbf{ USize64} count) const
+\item 
+\textbf{ Iterator} \textbf{ begin} () noexcept
+\item 
+\textbf{ Iterator} \textbf{ end} () noexcept
+\item 
+constexpr \textbf{ Const\+Iterator} \textbf{ begin} () const noexcept
+\item 
+constexpr \textbf{ Const\+Iterator} \textbf{ end} () const noexcept
+\item 
+\textbf{ Iterator} \textbf{ Get\+Iterator} (\textbf{ UIndex64} index) noexcept
+\item 
+constexpr \textbf{ Const\+Iterator} \textbf{ Get\+Const\+Iterator} (\textbf{ UIndex64} index) const noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Dynamic\+Array} \textbf{ Create\+Reserved} (\textbf{ USize64} reserved\+Size)
+\item 
+{\footnotesize template$<$typename... TArgs$>$ \newline
+requires \+\_\+\+DArr\+::\+Is\+Copyable$<$T$>$}\\static \textbf{ Dynamic\+Array} \textbf{ Create\+Resized} (\textbf{ USize64} size, TArgs... args)
+\item 
+{\footnotesize template$<$typename... TArgs$>$ \newline
+requires \+\_\+\+DArr\+::\+Is\+Movable$<$T$>$}\\static \textbf{ Dynamic\+Array} \textbf{ Create\+Resized\+Move} (\textbf{ USize64} size, TArgs \&\&... args)
+\item 
+static \textbf{ Dynamic\+Array} \textbf{ Create\+Empty} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Growth\+Factor\+Type} \textbf{ growth\+Factor\+Type} = \textbf{ Growth\+Factor\+Type\+::\+EXPONENTIAL}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \textbf{ USize64} \textbf{ INITIAL\+\_\+\+RESERVE\+\_\+\+SIZE} = 10uL
+\item 
+static constexpr \textbf{ UIndex64} \textbf{ Not\+Found\+Index} = std\+::numeric\+\_\+limits$<$\textbf{ UIndex64}$>$\+::max()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename T$>$\newline
+class OSK\+::\+Dynamic\+Array$<$ T $>$}
+Dynamic array\+: array que puede cambiar de tamaño. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de elementos que van a ser almacenados. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyNote}{Nota}
+Usa memoria contígua. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+No ofrece estabilidad de punteros. 
+\end{DoxyWarning}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!DynamicArray@{DynamicArray}}
+\index{DynamicArray@{DynamicArray}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{DynamicArray()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a0508c283bcf64dbdf293df1e492f478d} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Dynamic\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea el dynamic array con espacio inicial para 10 elementos. 
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!DynamicArray@{DynamicArray}}
+\index{DynamicArray@{DynamicArray}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{DynamicArray()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_adc8bad96ab22918719699f775fa278b4} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Dynamic\+Array (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ T $>$ \&}]{list}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea el dynamic array con los elementos dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em list} & Elementos iniciales. \\
+\hline
+\end{DoxyParams}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!DynamicArray@{DynamicArray}}
+\index{DynamicArray@{DynamicArray}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{DynamicArray()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_ad33140dd1dcce56bb057fabc930fc328} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Dynamic\+Array (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ T $>$ \&}]{arr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de copia. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em arr} & Otro \doxyref{Dynamic\+Array}{pág.}{class_o_s_k_1_1_dynamic_array}. \\
+\hline
+\end{DoxyParams}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!DynamicArray@{DynamicArray}}
+\index{DynamicArray@{DynamicArray}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{DynamicArray()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a025af1366cff45d0c90eb67e3cadecac} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Dynamic\+Array (\begin{DoxyParamCaption}\item[{\textbf{ Dynamic\+Array}$<$ T $>$ \&\&}]{arr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Transfirere el contenido de {\ttfamily arr} a este array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em arr} & Otro array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Atención}
+Deja a {\ttfamily arr} en un estado inválido. 
+\end{DoxyWarning}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!````~DynamicArray@{$\sim$DynamicArray}}
+\index{````~DynamicArray@{$\sim$DynamicArray}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{$\sim$DynamicArray()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a1cf3a5ee0d59c31f8a06fe533fab3a86} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::$\sim$\textbf{ Dynamic\+Array} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destruye el array. 
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Allocate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_add0da186a5ac7cbca4b506177780926e} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Allocate (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reserva espacio para \textquotesingle{}size\textquotesingle{} elementos. Preserva los elementos anteriores. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Número final de elementos. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Bad\+Alloc\+Exception}{pág.}{class_o_s_k_1_1_bad_alloc_exception}} & Si no se puede reservar memoria. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!At@{At}}
+\index{At@{At}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{At()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_abd2de653966e28c2830be6375c9048ba} 
+template$<$typename T$>$ \\
+T \& \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+At (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!At@{At}}
+\index{At@{At}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{At()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_abb2718a784ceb0e0f31fdc7f5dbd782f} 
+template$<$typename T$>$ \\
+const T \& \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+At (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el elemento en la posición dada. 
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+error} & Si el índice es inválido. \\
+\hline
+{\em std\+::runtime\+\_\+error} & Si no ha sido correctamente inicializado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!AtCpy@{AtCpy}}
+\index{AtCpy@{AtCpy}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{AtCpy()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a373a3cf182af76e08ce95ec7dfcdc86a} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+At\+Cpy (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{begin()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_ab47c4b8469a6b27f2c106d98d1fe7261} 
+template$<$typename T$>$ \\
+\textbf{ Const\+Iterator} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{begin()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_aed916827911ede697ebc67847b6abb7d} 
+template$<$typename T$>$ \\
+\textbf{ Iterator} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!ConstAt@{ConstAt}}
+\index{ConstAt@{ConstAt}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{ConstAt()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a14866dce26e5f935f8b0bdbab8fefabd} 
+template$<$typename T$>$ \\
+const T \& \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Const\+At (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!ContainsElement@{ContainsElement}}
+\index{ContainsElement@{ContainsElement}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{ContainsElement()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a09be7ecaff61fd363a4065237faa1efa} 
+template$<$typename T$>$ \\
+bool \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Contains\+Element (\begin{DoxyParamCaption}\item[{const T \&}]{elem}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprueba si el elemento está presente en el array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em elem} & Elemento a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si el elemento está presente.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El tipo del elemento debe tener definido el operador de comparación \textquotesingle{}==\textquotesingle{}. 
+\end{DoxyPrecond}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!CreateEmpty@{CreateEmpty}}
+\index{CreateEmpty@{CreateEmpty}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{CreateEmpty()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a1416cf71bcd561b22b51cbce1c431f36} 
+template$<$typename T$>$ \\
+\textbf{ Dynamic\+Array} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Create\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Dynamic\+Array}{pág.}{class_o_s_k_1_1_dynamic_array} vacío. No genera ningún alojamiento de memoria. 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!CreateReserved@{CreateReserved}}
+\index{CreateReserved@{CreateReserved}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{CreateReserved()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a8b2e77286edd94db886e46f204f45c42} 
+template$<$typename T$>$ \\
+\textbf{ Dynamic\+Array} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Create\+Reserved (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{reserved\+Size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Crea un \doxyref{Dynamic\+Array}{pág.}{class_o_s_k_1_1_dynamic_array} con espacio reservado para el número de elementos dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em reserved\+Size} & Tamaño reservado. \\
+\hline
+\end{DoxyParams}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!CreateResized@{CreateResized}}
+\index{CreateResized@{CreateResized}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{CreateResized()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_ab58a35c600820a37f8ab913a6e3464e3} 
+template$<$typename T$>$ \\
+template$<$typename... TArgs$>$ \newline
+requires \+\_\+\+DArr\+::\+Is\+Copyable$<$T$>$\\
+\textbf{ Dynamic\+Array} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Create\+Resized (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{TArgs...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Crea un \doxyref{Dynamic\+Array}{pág.}{class_o_s_k_1_1_dynamic_array} con un número de elementos ya creados e insertados. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em ...\+TArgs} & Argumentos para el constructor de los elementos. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Número de elementos. \\
+\hline
+{\em ...\+args} & Argumentos para el constructor de los elementos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Dynamic\+Array}{pág.}{class_o_s_k_1_1_dynamic_array} con {\ttfamily size} elementos iguales. 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!CreateResizedMove@{CreateResizedMove}}
+\index{CreateResizedMove@{CreateResizedMove}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{CreateResizedMove()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a533d573c5c48149e1f66e25da29175a5} 
+template$<$typename T$>$ \\
+template$<$typename... TArgs$>$ \newline
+requires \+\_\+\+DArr\+::\+Is\+Movable$<$T$>$\\
+\textbf{ Dynamic\+Array} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Create\+Resized\+Move (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{TArgs \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Crea un \doxyref{Dynamic\+Array}{pág.}{class_o_s_k_1_1_dynamic_array} con un número de elementos ya creados e insertados. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em ...\+TArgs} & Argumentos para el constructor de los elementos. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Número de elementos. \\
+\hline
+{\em ...\+args} & Argumentos para el constructor de los elementos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Dynamic\+Array}{pág.}{class_o_s_k_1_1_dynamic_array} con {\ttfamily size} elementos iguales. 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Empty@{Empty}}
+\index{Empty@{Empty}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Empty()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_ad544522cb3202359757c98af4d37a37b} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina los elementos, sin liberar memoria. 
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!end@{end}}
+\index{end@{end}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{end()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_ad75efebed19f548bcea097e47ae68cc2} 
+template$<$typename T$>$ \\
+\textbf{ Const\+Iterator} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!end@{end}}
+\index{end@{end}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{end()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a34a7c3ad34a4482db41d62bc9c44279e} 
+template$<$typename T$>$ \\
+\textbf{ Iterator} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Find@{Find}}
+\index{Find@{Find}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Find()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a5183d7ce88d48babdb273bb341fcf2b0} 
+template$<$typename T$>$ \\
+\textbf{ Iterator} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Find (\begin{DoxyParamCaption}\item[{const T \&}]{elem}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em elem} & Elemento a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Obtiene el iterador del primer elemento almacenado que sea igual a el dado.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Devuelve un iterador vacío si no está.
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El tipo del elemento debe tener definido el operador de comparación \textquotesingle{}==\textquotesingle{}. 
+\end{DoxyPrecond}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Find@{Find}}
+\index{Find@{Find}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Find()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a79ef727331f58ebcd58837e8bfe2ee09} 
+template$<$typename T$>$ \\
+\textbf{ Const\+Iterator} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Find (\begin{DoxyParamCaption}\item[{const T \&}]{elem}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Free@{Free}}
+\index{Free@{Free}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Free()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a712ee677ebccc400ea7623d3ec966e4e} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina el array, liberando memoria. 
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!GetConstIterator@{GetConstIterator}}
+\index{GetConstIterator@{GetConstIterator}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{GetConstIterator()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_acff82d697db9eba0c123cffd2227d4f2} 
+template$<$typename T$>$ \\
+\textbf{ Const\+Iterator} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Get\+Const\+Iterator (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!GetData@{GetData}}
+\index{GetData@{GetData}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{GetData()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_ab8c4487ebf2c42cdb2be44a7a8e01bb0} 
+template$<$typename T$>$ \\
+const T $\ast$ \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+Punteros a los datos. 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!GetData@{GetData}}
+\index{GetData@{GetData}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{GetData()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_adb9931acdcd40b2886c9445e2d1b3b5d} 
+template$<$typename T$>$ \\
+T $\ast$ \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!GetFullSpan@{GetFullSpan}}
+\index{GetFullSpan@{GetFullSpan}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{GetFullSpan()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_aa623134157acd07f1e42312f2a98b81c} 
+template$<$typename T$>$ \\
+std\+::span$<$ T $>$ \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Get\+Full\+Span (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Span}{pág.}{class_o_s_k_1_1_span} con todos los elementos de la lista. 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!GetFullSpan@{GetFullSpan}}
+\index{GetFullSpan@{GetFullSpan}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{GetFullSpan()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_afe5fa626882b944c86ce07cdf6392eb0} 
+template$<$typename T$>$ \\
+std\+::span$<$ const T $>$ \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Get\+Full\+Span (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!GetIndexOf@{GetIndexOf}}
+\index{GetIndexOf@{GetIndexOf}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{GetIndexOf()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a5e97e5be3813bb2ecc0e58db21aed159} 
+template$<$typename T$>$ \\
+\textbf{ UIndex64} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Get\+Index\+Of (\begin{DoxyParamCaption}\item[{const T \&}]{elem}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em elem} & Elemento a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El tipo del elemento debe tener definido el operador de comparación \textquotesingle{}==\textquotesingle{}.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si no se encuentra, devuelve std\+::numeric\+\_\+limits$<$\+USize64$>$\+::max().
+\end{DoxyNote}
+\begin{DoxyReturn}{Devuelve}
+Obtiene el índice del primer elemento almacenado que sea igual a el dado. 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!GetIterator@{GetIterator}}
+\index{GetIterator@{GetIterator}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{GetIterator()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a2a003780499fc477bb8c960247b33ead} 
+template$<$typename T$>$ \\
+\textbf{ Iterator} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Get\+Iterator (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em index} & Índice del elemento buscado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el iterador que apunta a un elemento en particular.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily index} $<$ \doxyref{Get\+Size()}{pág.}{class_o_s_k_1_1_dynamic_array_af09578371bd52d5a934bc74c8dad5f0d}.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Puede no apuntar a un element válido. 
+\end{DoxyNote}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!GetReservedSize@{GetReservedSize}}
+\index{GetReservedSize@{GetReservedSize}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{GetReservedSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_abfdeb1af5c7537a8e00f74b6670e68ef} 
+template$<$typename T$>$ \\
+\textbf{ USize64} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Get\+Reserved\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el número de elementos reservados. 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{GetSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_af09578371bd52d5a934bc74c8dad5f0d} 
+template$<$typename T$>$ \\
+\textbf{ USize64} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el número de elementos almacenados. 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!GetSpan@{GetSpan}}
+\index{GetSpan@{GetSpan}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{GetSpan()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a1da0d5cb6c19aa886205984527ac158a} 
+template$<$typename T$>$ \\
+std\+::span$<$ T $>$ \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Get\+Span (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{start\+Index}{, }\item[{\textbf{ USize64}}]{count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea un span con un subrango de elementos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em start\+Index} & Índice del primer objeto. \\
+\hline
+{\em count} & Número de objetos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Span}{pág.}{class_o_s_k_1_1_span} con los objetos indicados.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily start\+Index} debe ser menor que el número de elementos de la lista. 
+
+{\ttfamily start\+Index} + {\ttfamily count} debe ser menor que el número de elementos de la lista. 
+\end{DoxyPrecond}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!GetSpan@{GetSpan}}
+\index{GetSpan@{GetSpan}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{GetSpan()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_afcffebbdf9842da7f00a975208678bfb} 
+template$<$typename T$>$ \\
+std\+::span$<$ const T $>$ \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Get\+Span (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{start\+Index}{, }\item[{\textbf{ USize64}}]{count}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea un span con un subrango de elementos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em start\+Index} & Índice del primer objeto. \\
+\hline
+{\em count} & Número de objetos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Span}{pág.}{class_o_s_k_1_1_span} con los objetos indicados.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily start\+Index} debe ser menor que el número de elementos de la lista. 
+
+{\ttfamily start\+Index} + {\ttfamily count} debe ser menor que el número de elementos de la lista. 
+\end{DoxyPrecond}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!HasBeenInitialized@{HasBeenInitialized}}
+\index{HasBeenInitialized@{HasBeenInitialized}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{HasBeenInitialized()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a24b36038b685ea5f33b2b9b279035cef} 
+template$<$typename T$>$ \\
+bool \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Has\+Been\+Initialized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Devuelve true si el array se ha inicializado. 
+
+\begin{DoxyReturn}{Devuelve}
+Estado del array. 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Insert@{Insert}}
+\index{Insert@{Insert}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Insert()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a4433c76207ce2ecad5e306b12575f1b3} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Insert (\begin{DoxyParamCaption}\item[{const T \&}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserta un elemento al final del array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em element} & Elemento añadido. \\
+\hline
+\end{DoxyParams}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Insert@{Insert}}
+\index{Insert@{Insert}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Insert()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a07109816f2e892682b6a7931c1992ffe} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Insert (\begin{DoxyParamCaption}\item[{T \&\&}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserta un elemento al final del array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em element} & Elemento al final del array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Puede dejar invalidados iteradores. 
+\end{DoxyNote}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!InsertAll@{InsertAll}}
+\index{InsertAll@{InsertAll}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{InsertAll()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a286f518150138acd1773a7cfaf2c8482} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Insert\+All (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ T $>$ \&}]{arr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Añade los elementos de \textquotesingle{}arr\textquotesingle{} a este array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em arr} & Elementos a añadir. \\
+\hline
+\end{DoxyParams}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!InsertCopy@{InsertCopy}}
+\index{InsertCopy@{InsertCopy}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{InsertCopy()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_ac2616a75ad6cd3bfd0b25a92d9794e0d} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Insert\+Copy (\begin{DoxyParamCaption}\item[{const T \&}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserta una copia del elemento al final del array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em element} & Elemento a copiar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El elemento es copiable. 
+\end{DoxyPrecond}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!InsertMove@{InsertMove}}
+\index{InsertMove@{InsertMove}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{InsertMove()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a97956b96f4d898bc7e115361acfecbc4} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Insert\+Move (\begin{DoxyParamCaption}\item[{T \&\&}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserta un elemento al final del array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em element} & Elemento añadido. \\
+\hline
+\end{DoxyParams}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!IsEmpty@{IsEmpty}}
+\index{IsEmpty@{IsEmpty}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{IsEmpty()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_ab772cd3a1f2c189505ea17d604dfc164} 
+template$<$typename T$>$ \\
+bool \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve true si el array está vacío. 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_aca0f60682752950c9beb418915836f64} 
+template$<$typename T$>$ \\
+\textbf{ Dynamic\+Array} \& \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ T $>$ \&}]{arr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copia el array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em arr} & Otro \doxyref{Dynamic\+Array}{pág.}{class_o_s_k_1_1_dynamic_array}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Dynamic\+Array}{pág.}{class_o_s_k_1_1_dynamic_array} copiado. 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a07bb58e89ee77270c05b0fe468781bf7} 
+template$<$typename T$>$ \\
+\textbf{ Dynamic\+Array} \& \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\textbf{ Dynamic\+Array}$<$ T $>$ \&\&}]{arr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transfirere el contenido de \textquotesingle{}arr\textquotesingle{} a este array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em arr} & Otro array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Atención}
+Deja a {\ttfamily arr} en un estado inválido. 
+\end{DoxyWarning}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{operator[]()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a83c067e25fd184b98c090d48783d59a0} 
+template$<$typename T$>$ \\
+T \& \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{operator[]()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_ae6999018ba5097a014b34cd27d5cbbda} 
+template$<$typename T$>$ \\
+const T \& \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{i}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el elemento en la posición dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & Posición en el array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Elemento en la posición dada.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily i} $<$ \doxyref{Get\+Size()}{pág.}{class_o_s_k_1_1_dynamic_array_af09578371bd52d5a934bc74c8dad5f0d}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+error} & Si el índice es inválido. \\
+\hline
+{\em std\+::runtime\+\_\+error} & Si no ha sido correctamente inicializado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Peek@{Peek}}
+\index{Peek@{Peek}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Peek()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_aaeaff756f3a64a0f2aef49f4d9d65bff} 
+template$<$typename T$>$ \\
+T \& \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Peek (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el último elemento de la lista. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+No lo quita de la lista. 
+\end{DoxyNote}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Pop@{Pop}}
+\index{Pop@{Pop}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Pop()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a420050a7415accf29579772312a624b5} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Pop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el último elemento de la lista. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondición}
+Quita el elemento de la lista. 
+\end{DoxyPostcond}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Push@{Push}}
+\index{Push@{Push}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Push()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a06244474d0bc1fe4e63fbd58c5f519ba} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Push (\begin{DoxyParamCaption}\item[{const T \&}]{elem}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Añade el elemento al final de la lista. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em elem} & Elemento a añadir.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Puede dejar invalidados iteradores. 
+\end{DoxyNote}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Push@{Push}}
+\index{Push@{Push}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Push()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a73b0dde2a59050156f68a5da1ce7876e} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Push (\begin{DoxyParamCaption}\item[{T \&\&}]{elem}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Añade el elemento al final de la lista. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em elem} & Elemento a añadir.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Puede dejar invalidados iteradores. 
+\end{DoxyNote}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Remove@{Remove}}
+\index{Remove@{Remove}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Remove()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a0a3bb760970ebe40178e9976c53d73ea} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Remove (\begin{DoxyParamCaption}\item[{const T \&}]{elem}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina el primer elemento dado de la lista. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em elem} & Elemento a eliminar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El tipo del elemento debe tener definido el operador de comparación \textquotesingle{}==\textquotesingle{}.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si no se encuentra ningún elemento, no ocurre nada. 
+
+Elimina únicamente la primera aparición. 
+\end{DoxyNote}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!RemoveAt@{RemoveAt}}
+\index{RemoveAt@{RemoveAt}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{RemoveAt()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a71586adb0f60f394f36a67df5004bd07} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Remove\+At (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina el elemento en la posición dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em index} & Índice del elemento.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily index} $<$ \doxyref{Get\+Size()}{pág.}{class_o_s_k_1_1_dynamic_array_af09578371bd52d5a934bc74c8dad5f0d}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+error} & Si el índice es inválido. \\
+\hline
+{\em std\+::runtime\+\_\+error} & Si no ha sido correctamente inicializado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!RemoveLast@{RemoveLast}}
+\index{RemoveLast@{RemoveLast}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{RemoveLast()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a90bb67f64f4e41f06ec2db0e18dc563f} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Remove\+Last (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina el último elemento del array. 
+
+\begin{DoxyPrecond}{Precondición}
+Hay al menos un elemento en la lista. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+error} & Si el array está vacío. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Reserve@{Reserve}}
+\index{Reserve@{Reserve}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Reserve()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a0e0196b5efddb49c06fb1aad6470e46e} 
+template$<$typename T$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Reserve (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cambia el tamaño del array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Nuevo tamaño, en número de elementos.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+Si {\ttfamily size} $>$= \doxyref{Get\+Size()}{pág.}{class_o_s_k_1_1_dynamic_array_af09578371bd52d5a934bc74c8dad5f0d}, entonces los datos se conservan. 
+\end{DoxyPostcond}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!Resize@{Resize}}
+\index{Resize@{Resize}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{Resize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_ab9ec1f86bf68d39a96933892b951fee9} 
+template$<$typename T$>$ \\
+template$<$typename... TArgs$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Resize (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{const TArgs \&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cambia el tamaño del array, insertando nuevos elementos. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em ...\+TArgs} & Tipos de los argumentos para construir los nuevos elementos. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Nuevo tamaño, en número de elementos. \\
+\hline
+{\em ...\+args} & Argumentos para construir los nuevos elementos.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+Si {\ttfamily size} $>$= \doxyref{Get\+Size()}{pág.}{class_o_s_k_1_1_dynamic_array_af09578371bd52d5a934bc74c8dad5f0d}, entonces los datos se conservan. 
+\end{DoxyPostcond}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!ResizeMove@{ResizeMove}}
+\index{ResizeMove@{ResizeMove}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{ResizeMove()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a39f0c1e376caa0a18b706e34eff1b810} 
+template$<$typename T$>$ \\
+template$<$typename... TArgs$>$ \\
+void \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Resize\+Move (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{TArgs \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cambia el tamaño del array, insertando nuevos elementos. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em ...\+TArgs} & Tipos de los argumentos para construir los nuevos elementos. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Nuevo tamaño, en número de elementos. \\
+\hline
+{\em ...\+args} & Argumentos para construir los nuevos elementos.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+Si {\ttfamily size} $>$= \doxyref{Get\+Size()}{pág.}{class_o_s_k_1_1_dynamic_array_af09578371bd52d5a934bc74c8dad5f0d}, entonces los datos se conservan. 
+\end{DoxyPostcond}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!growthFactorType@{growthFactorType}}
+\index{growthFactorType@{growthFactorType}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{growthFactorType}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a4a18937b8a6017fc9b8d86a9e8a592c3} 
+template$<$typename T$>$ \\
+\textbf{ Growth\+Factor\+Type} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::growth\+Factor\+Type = \textbf{ Growth\+Factor\+Type\+::\+EXPONENTIAL}}
+
+
+
+Comportamiento al aumentar de tamaño. 
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!INITIAL\_RESERVE\_SIZE@{INITIAL\_RESERVE\_SIZE}}
+\index{INITIAL\_RESERVE\_SIZE@{INITIAL\_RESERVE\_SIZE}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{INITIAL\_RESERVE\_SIZE}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a87445471ea429e28827b0453b8f177de} 
+template$<$typename T$>$ \\
+\textbf{ USize64} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+INITIAL\+\_\+\+RESERVE\+\_\+\+SIZE = 10uL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Tamaño inicial. 
+
+\index{OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}!NotFoundIndex@{NotFoundIndex}}
+\index{NotFoundIndex@{NotFoundIndex}!OSK::DynamicArray$<$ T $>$@{OSK::DynamicArray$<$ T $>$}}
+\doxysubsubsection{NotFoundIndex}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_a1423397cd2c6c80a52450ac91647f152} 
+template$<$typename T$>$ \\
+\textbf{ UIndex64} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Not\+Found\+Index = std\+::numeric\+\_\+limits$<$\textbf{ UIndex64}$>$\+::max()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+

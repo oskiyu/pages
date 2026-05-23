@@ -1,0 +1,15 @@
+\doxysection{Define\+As.\+h}
+\label{_define_as_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/DefineAs.h@{C:/Users/Oscar/source/repos/OSKengine/Source/DefineAs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Para\ std::is\_base\_of\_v}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ OSK\_DEFINE\_AS(className)\ \(\backslash\)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{template\ <typename\ T>\ constexpr\ const\ T*\ As()\ const\ requires\ std::is\_base\_of\_v<className,\ T>\ \{\ return\ static\_cast<const\ T*>(this);\ \}\ \(\backslash\)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{template\ <typename\ T>\ constexpr\ T*\ As()\ requires\ std::is\_base\_of\_v<className,\ T>\ \{\ return\ static\_cast<T*>(this);\ \}\ \(\backslash\)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{template\ <typename\ T>\ constexpr\ bool\ Is()\ const\ requires\ std::is\_base\_of\_v<className,\ T>\ \{\ return\ static\_cast<bool>(dynamic\_cast<const\ T*>(this));\ \}}}
+
+\end{DoxyCode}

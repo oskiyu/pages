@@ -1,0 +1,360 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::Unique\+Ptr$<$ T, TDeleter $>$}
+\label{class_o_s_k_1_1_unique_ptr}\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+
+
+{\ttfamily \#include $<$Unique\+Ptr.\+hpp$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \textbf{ Unique\+Ptr} () \textbf{ noexcept}=default
+\item 
+constexpr \textbf{ Unique\+Ptr} (T $\ast$data) \textbf{ noexcept}
+\item 
+\textbf{ $\sim$\+Unique\+Ptr} ()
+\item 
+\textbf{ Unique\+Ptr} (const \textbf{ Unique\+Ptr} \&) \textbf{ noexcept}=delete
+\item 
+\textbf{ Unique\+Ptr} \& \textbf{ operator=} (const \textbf{ Unique\+Ptr} \&) \textbf{ noexcept}=delete
+\item 
+\textbf{ Unique\+Ptr} (\textbf{ Unique\+Ptr} \&\&other) \textbf{ noexcept}
+\item 
+{\footnotesize template$<$std\+::derived\+\_\+from$<$ T $>$ TOther, typename TDeleter2$>$ \newline
+requires Concepts\+::\+Are\+Same\+Template$<$TDeleter, TDeleter2$>$}\\\textbf{ explicit} (false) \textbf{ Unique\+Ptr}(\textbf{ Unique\+Ptr}$<$ TOther
+\item 
+TDeleter2 \&\&other \textbf{ m\+\_\+deleter} (other.\+Get\+Deleter())
+\item 
+\textbf{ Unique\+Ptr} \& \textbf{ operator=} (\textbf{ Unique\+Ptr} \&\&other) \textbf{ noexcept}
+\item 
+{\footnotesize template$<$std\+::derived\+\_\+from$<$ T $>$ TOther, typename TDeleter2$>$ \newline
+requires Concepts\+::\+Are\+Same\+Template$<$TDeleter, TDeleter2$>$}\\\textbf{ Unique\+Ptr} \& \textbf{ operator=} (\textbf{ Unique\+Ptr}$<$ TOther, TDeleter2 $>$ \&\&other) \textbf{ noexcept}
+\item 
+T $\ast$ \textbf{ Release} ()
+\item 
+T $\ast$ \textbf{ Get\+Pointer} ()
+\item 
+const T $\ast$ \textbf{ Get\+Pointer} () const
+\item 
+T \& \textbf{ Get\+Value} ()
+\item 
+const T \& \textbf{ Get\+Value} () const
+\item 
+T $\ast$ \textbf{ operator-\/$>$} ()
+\item 
+const T $\ast$ \textbf{ operator-\/$>$} () const
+\item 
+T \& \textbf{ operator$\ast$} ()
+\item 
+const T \& \textbf{ operator$\ast$} () const
+\item 
+constexpr bool \textbf{ Has\+Value} () const
+\item 
+void \textbf{ Delete} ()
+\item 
+void \textbf{ Delete} ()
+\item 
+void \textbf{ Swap} (\textbf{ Unique\+Ptr}$<$ T $>$ \&other)
+\item 
+constexpr bool \textbf{ operator==} (const \textbf{ Unique\+Ptr} \&) const \textbf{ noexcept}=default
+\item 
+const TDeleter \& \textbf{ Get\+Deleter} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+TDeleter2 \&\&other \textbf{ noexcept}\+: m\+\_\+pointer(other.\+Release())
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$\newline
+class OSK\+::\+Unique\+Ptr$<$ T, TDeleter $>$}
+Estructura que es dueña de un objeto almacenado en heap. Al destruirse el \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr}, también se destruirá el objeto y se liberará la memoria asociada. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato del objeto.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyNote}{Nota}
+Usarse como miembro de una clase deshabilitará su constructor y su operador de copia.
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+Debe incluirse el tipo que se vaya a usar dentro del \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}T.h"{}}\ }
+
+\end{DoxyCode}
+ De lo contrario, no se llamará al destructor al eliminarse. 
+\end{DoxyWarning}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!UniquePtr@{UniquePtr}}
+\index{UniquePtr@{UniquePtr}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{UniquePtr()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_abb8f80657b1133f55431545f6968cffd} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+\textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Unique\+Ptr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+Crea un \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr} vacío. 
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!UniquePtr@{UniquePtr}}
+\index{UniquePtr@{UniquePtr}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{UniquePtr()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_aca1ba3a832762f49d6e62fe73e4f6580} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+\textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Unique\+Ptr (\begin{DoxyParamCaption}\item[{T $\ast$}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Crea un \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr} a partir del objeto almacenado en la dirección de memoria dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Puntero al objeto almacenado en memoria heap. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily data} debe haber sido creado con el operador new. 
+\end{DoxyPrecond}
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!````~UniquePtr@{$\sim$UniquePtr}}
+\index{````~UniquePtr@{$\sim$UniquePtr}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{$\sim$UniquePtr()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a54139b2f63dc2060ea91c0cd97111012} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+\textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::$\sim$\textbf{ Unique\+Ptr} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destruye el objeto, eliminándolo. Si no tenía ningún objeto, no ocurre nada. 
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!UniquePtr@{UniquePtr}}
+\index{UniquePtr@{UniquePtr}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{UniquePtr()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a8c0ae0dfdd42a443d8cd79bb9784daf1} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+\textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Unique\+Ptr (\begin{DoxyParamCaption}\item[{const \textbf{ Unique\+Ptr}$<$ T, TDeleter $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}, {\ttfamily [noexcept]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!UniquePtr@{UniquePtr}}
+\index{UniquePtr@{UniquePtr}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{UniquePtr()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a0d8d3c1bde6797cf0d046cd7ae1192d5} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+\textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Unique\+Ptr (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ T, TDeleter $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Crea un \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr} que pasa a poseer el objeto de otro \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr}. El otro \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr} se convierte en un \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr} vacío. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & El otro puntero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+Este \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr} pasa a poseer el objeto de {\ttfamily other}. 
+
+El \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr} {\ttfamily other} pasa a estar vacío. 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Nota}
+Si {\ttfamily other} está vacío, entonces este \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr} pasa a estar vacío. 
+\end{DoxyNote}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!Delete@{Delete}}
+\index{Delete@{Delete}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{Delete()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_ad4cd6d4d8678d202c3219a357a781f49} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+void \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Delete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!Delete@{Delete}}
+\index{Delete@{Delete}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{Delete()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a81c9dd351b1e554dcf7a81ad53e6f53f} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+void \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Delete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!explicit@{explicit}}
+\index{explicit@{explicit}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{explicit()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a909ead3f94eb43a07d8975655cdb531b} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+template$<$std\+::derived\+\_\+from$<$ T $>$ TOther, typename TDeleter2$>$ \newline
+requires Concepts\+::\+Are\+Same\+Template$<$TDeleter, TDeleter2$>$\\
+\textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::explicit (\begin{DoxyParamCaption}\item[{false}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!GetDeleter@{GetDeleter}}
+\index{GetDeleter@{GetDeleter}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{GetDeleter()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a3f4410cc3ff9ee181a0557baa48eb23b} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+const TDeleter \& \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Get\+Deleter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!GetPointer@{GetPointer}}
+\index{GetPointer@{GetPointer}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{GetPointer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a495b7d8cddb6f32a5bc81a2968a53f1a} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+T $\ast$ \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Get\+Pointer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!GetPointer@{GetPointer}}
+\index{GetPointer@{GetPointer}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{GetPointer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_ac8906f47744e9db224ff02f4b4a3ffc4} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+const T $\ast$ \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Get\+Pointer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!GetValue@{GetValue}}
+\index{GetValue@{GetValue}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{GetValue()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a023edd814f31b672353babd48825db48} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+T \& \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Get\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!GetValue@{GetValue}}
+\index{GetValue@{GetValue}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{GetValue()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a378e7020b630416841c2e11534331cdf} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+const T \& \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Get\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!HasValue@{HasValue}}
+\index{HasValue@{HasValue}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{HasValue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a044e77c486bda76e9ac705cd0bb9ac35} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+bool \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Has\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!m\_deleter@{m\_deleter}}
+\index{m\_deleter@{m\_deleter}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{m\_deleter()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a08530f0f4f041978657c151a637ba3f3} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+TDeleter2 \&\&other \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::m\+\_\+deleter (\begin{DoxyParamCaption}\item[{other.}]{Get\+Deleter}{()}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{operator$\ast$()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_aa71947e5e09ba4b56c8a587dcfc41363} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+T \& \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{operator$\ast$()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a2f90bab855d9e108469306ebb3c9d67b} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+const T \& \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{operator-\/$>$()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a5f3962372d014d96b6473176f592f67f} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+T $\ast$ \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{operator-\/$>$()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a505e6671182fe3cb5cfde8a6dbecb05a} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+const T $\ast$ \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a82001a18b72f4ba61d47c35858df1f3e} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+\textbf{ Unique\+Ptr} \& \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Unique\+Ptr}$<$ T, TDeleter $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}, {\ttfamily [noexcept]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a8a5233dea2f4d3c4eecedf70ad32c03d} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+\textbf{ Unique\+Ptr} \& \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::operator= (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ T, TDeleter $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Este puntero será dueño del puntero de other. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Otro puntero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+{\ttfamily other} queda vacío. 
+\end{DoxyPostcond}
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_ac225d8ccee75f503f31c3ac84c2c8c9d} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+template$<$std\+::derived\+\_\+from$<$ T $>$ TOther, typename TDeleter2$>$ \newline
+requires Concepts\+::\+Are\+Same\+Template$<$TDeleter, TDeleter2$>$\\
+\textbf{ Unique\+Ptr} \& \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::operator= (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ TOther, TDeleter2 $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{operator==()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a2475ab5de1cf340bf5244e3b5745b911} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+bool \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Unique\+Ptr}$<$ T, TDeleter $>$ \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!Release@{Release}}
+\index{Release@{Release}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{Release()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a473c84eca90e2635116d41da394475a4} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+T $\ast$ \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Release (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el puntero, y después vacía el \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr}. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero que poseía. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondición}
+El puntero almacenado pasa a ser nulo. 
+\end{DoxyPostcond}
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!Swap@{Swap}}
+\index{Swap@{Swap}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{Swap()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a3351f9808d27ba6cb8d99406dafde924} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+void \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::\+Swap (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Intercambia el objeto de este \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr} por el objeto del \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr} {\ttfamily other}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Otro \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr}, con el que se va a intercambiar el objeto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+Este \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr} almacena (y es dueño) del objeto que antes tenía {\ttfamily other}. 
+
+El \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr} {\ttfamily other} almacena (y es dueño) del objeto que antes tenía este \doxyref{Unique\+Ptr}{pág.}{class_o_s_k_1_1_unique_ptr}. 
+\end{DoxyPostcond}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}!noexcept@{noexcept}}
+\index{noexcept@{noexcept}!OSK::UniquePtr$<$ T, TDeleter $>$@{OSK::UniquePtr$<$ T, TDeleter $>$}}
+\doxysubsubsection{noexcept}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_unique_ptr_a55c09f8a0ab3cfea0e6b41ee9694598c} 
+template$<$typename T, typename TDeleter = std\+::default\+\_\+delete$<$\+T$>$$>$ \\
+TDeleter2\&\& other \textbf{ OSK\+::\+Unique\+Ptr}$<$ T, TDeleter $>$\+::noexcept}
+

@@ -1,0 +1,63 @@
+\doxysection{Rg\+Buffer\+Manager.\+h}
+\label{_rg_buffer_manager_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/RgBufferManager.h@{C:/Users/Oscar/source/repos/OSKengine/Source/RgBufferManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}ImageUuid.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}RenderGraphArgs.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}RgEntry.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }IRenderer;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }IRenderPass;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ RgBufferManager\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ RgBufferManager(IRenderer*\ renderer);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ GdrBufferUuid\ RegisterBuffer(\textcolor{keyword}{const}\ RgBufferRegisterInfo\&\ info);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ GdrBufferUuid\ RegisterBuffer(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ RgBufferRegisterInfo\&\ info,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ GdrBufferUuid\ reservedUuid);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ GdrBufferUuid\ ReserveUuid();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddBufferUse(GdrBufferUuid\ uuid,\ RgBufferUsage\ usage);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateBuffers(std::span<const\ RenderPassEntry>\ renderpasses);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ GpuBuffer\&\ GetBuffer(GdrBufferUuid\ uuid);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ GetBuffer(GdrBufferUuid\ uuid)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ std::unordered\_map<GdrBufferUuid,\ DynamicArray<PartialRgBufferDependency>>\ GetBufferDependencies(std::span<const\ RenderPassEntry>\ renderpasses);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map<GdrBufferUuid,\ GpuBufferUsage>\ GetBufferUses(\textcolor{keyword}{const}\ std::unordered\_map<GdrBufferUuid,\ DynamicArray<PartialRgBufferDependency>>\&\ dependencies);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ IRenderer*\ m\_renderer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ std::unordered\_map<GdrBufferUuid,\ GpuBuffer*>\ m\_buffersMap;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ DynamicArray<UniquePtr<GpuBuffer>>\ m\_buffers;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ std::unordered\_map<GdrBufferUuid,\ RgBufferRegisterInfo>\ m\_bufferInfos;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::unordered\_map<GdrBufferUuid,\ DynamicArray<PartialRgBufferDependency>>\ m\_bufferUses\{\};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \}}
+
+\end{DoxyCode}

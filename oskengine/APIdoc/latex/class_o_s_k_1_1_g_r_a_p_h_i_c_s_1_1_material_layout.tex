@@ -1,0 +1,213 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Material\+Layout}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout}\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+
+
+{\ttfamily \#include $<$Material\+Layout.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ Push\+Constants\+Container} = std\+::unordered\+\_\+map$<$std\+::string, \textbf{ Material\+Layout\+Push\+Constant}, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$$>$
+\item 
+using \textbf{ Push\+Constants\+Iterable} = \textbf{ Push\+Constants\+Container}
+\item 
+using \textbf{ Material\+Slots\+Container} = std\+::unordered\+\_\+map$<$std\+::string, \textbf{ Material\+Layout\+Slot}, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$$>$
+\item 
+using \textbf{ Material\+Slots\+Iterable} = \textbf{ Material\+Slots\+Container}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Material\+Layout} (const std\+::string \&material\+Name)
+\item 
+void \textbf{ Add\+Slot} (const \textbf{ Material\+Layout\+Slot} \&slot)
+\item 
+void \textbf{ Add\+Push\+Constant} (\textbf{ Material\+Layout\+Push\+Constant} push\+Constant)
+\item 
+const \textbf{ Material\+Layout\+Slot} \& \textbf{ Get\+Slot} (std\+::string\+\_\+view name) const
+\item 
+\textbf{ Material\+Layout\+Slot} \& \textbf{ Get\+Slot} (std\+::string\+\_\+view name)
+\item 
+const \textbf{ Material\+Layout\+Push\+Constant} \& \textbf{ Get\+Push\+Constant} (std\+::string\+\_\+view name) const
+\item 
+\textbf{ Material\+Layout\+Push\+Constant} \& \textbf{ Get\+Push\+Constant} (std\+::string\+\_\+view name)
+\item 
+const \textbf{ Material\+Slots\+Iterable} \& \textbf{ Get\+All\+Slots} () const
+\item 
+const \textbf{ Push\+Constants\+Iterable} \& \textbf{ Get\+All\+Push\+Constants} () const
+\item 
+\textbf{ Material\+Slots\+Iterable} \& \textbf{ Get\+All\+Slots} ()
+\item 
+\textbf{ Push\+Constants\+Iterable} \& \textbf{ Get\+All\+Push\+Constants} ()
+\item 
+std\+::string\+\_\+view \textbf{ Get\+Material\+Name} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+El layout de un material determina qué slots pertenecen a ese material. 
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de los «\+Typedef» miembros de la clase}
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!MaterialSlotsContainer@{MaterialSlotsContainer}}
+\index{MaterialSlotsContainer@{MaterialSlotsContainer}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{MaterialSlotsContainer}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_ae1a6b185cc12ad3f2ed324588e996614} 
+using \textbf{ OSK\+::\+GRAPHICS\+::\+Material\+Layout\+::\+Material\+Slots\+Container} = std\+::unordered\+\_\+map$<$std\+::string, \textbf{ Material\+Layout\+Slot}, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$$>$}
+
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!MaterialSlotsIterable@{MaterialSlotsIterable}}
+\index{MaterialSlotsIterable@{MaterialSlotsIterable}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{MaterialSlotsIterable}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_a1e33adb58fa8a6e529f26892fea44f3e} 
+using \textbf{ OSK\+::\+GRAPHICS\+::\+Material\+Layout\+::\+Material\+Slots\+Iterable} = \textbf{ Material\+Slots\+Container}}
+
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!PushConstantsContainer@{PushConstantsContainer}}
+\index{PushConstantsContainer@{PushConstantsContainer}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{PushConstantsContainer}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_a249a355612443d338939a587750ad675} 
+using \textbf{ OSK\+::\+GRAPHICS\+::\+Material\+Layout\+::\+Push\+Constants\+Container} = std\+::unordered\+\_\+map$<$std\+::string, \textbf{ Material\+Layout\+Push\+Constant}, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$$>$}
+
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!PushConstantsIterable@{PushConstantsIterable}}
+\index{PushConstantsIterable@{PushConstantsIterable}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{PushConstantsIterable}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_a7bb8fe6e5b2630d3d02f9201ead4c7cf} 
+using \textbf{ OSK\+::\+GRAPHICS\+::\+Material\+Layout\+::\+Push\+Constants\+Iterable} = \textbf{ Push\+Constants\+Container}}
+
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!MaterialLayout@{MaterialLayout}}
+\index{MaterialLayout@{MaterialLayout}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{MaterialLayout()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_a2786d1e3fb77800bcd7edae572901ef4} 
+Material\+Layout\+::\+Material\+Layout (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{material\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!AddPushConstant@{AddPushConstant}}
+\index{AddPushConstant@{AddPushConstant}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{AddPushConstant()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_accc4d04a6e7b796eb95519f9431798e5} 
+void Material\+Layout\+::\+Add\+Push\+Constant (\begin{DoxyParamCaption}\item[{\textbf{ Material\+Layout\+Push\+Constant}}]{push\+Constant}{}\end{DoxyParamCaption})}
+
+
+
+Registra un slot para un push constant. 
+
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!AddSlot@{AddSlot}}
+\index{AddSlot@{AddSlot}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{AddSlot()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_ab5ca4f05ed6d7cea3b81d9ee94f6350a} 
+void Material\+Layout\+::\+Add\+Slot (\begin{DoxyParamCaption}\item[{const \textbf{ Material\+Layout\+Slot} \&}]{slot}{}\end{DoxyParamCaption})}
+
+
+
+Añade el slot dado al layout. El nombre del slot se usará como llave. 
+
+\begin{DoxyWarning}{Atención}
+No pueden haber dos slots con el mismo nombre. 
+\end{DoxyWarning}
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!GetAllPushConstants@{GetAllPushConstants}}
+\index{GetAllPushConstants@{GetAllPushConstants}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{GetAllPushConstants()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_ab027ceca3b9f9ef99a3830c6fb14329f} 
+\textbf{ Material\+Layout\+::\+Push\+Constants\+Iterable} \& Material\+Layout\+::\+Get\+All\+Push\+Constants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve todos los slots push constants registrados. 
+
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!GetAllPushConstants@{GetAllPushConstants}}
+\index{GetAllPushConstants@{GetAllPushConstants}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{GetAllPushConstants()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_a089e52a906ad4716eea54341f134d3f2} 
+const \textbf{ Material\+Layout\+::\+Push\+Constants\+Iterable} \& Material\+Layout\+::\+Get\+All\+Push\+Constants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve todos los slots push constants registrados. 
+
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!GetAllSlots@{GetAllSlots}}
+\index{GetAllSlots@{GetAllSlots}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{GetAllSlots()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_a30baecbee5c59698db86f8c026c7792c} 
+\textbf{ Material\+Layout\+::\+Material\+Slots\+Iterable} \& Material\+Layout\+::\+Get\+All\+Slots (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene los slots. 
+
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!GetAllSlots@{GetAllSlots}}
+\index{GetAllSlots@{GetAllSlots}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{GetAllSlots()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_a9cef2a81162243692cfbdd17e4adf0da} 
+const \textbf{ Material\+Layout\+::\+Material\+Slots\+Iterable} \& Material\+Layout\+::\+Get\+All\+Slots (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene los slots. 
+
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!GetMaterialName@{GetMaterialName}}
+\index{GetMaterialName@{GetMaterialName}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{GetMaterialName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_a0b20a28bb460a88da625c2834df05035} 
+std\+::string\+\_\+view Material\+Layout\+::\+Get\+Material\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Nombre del material al que pertenece. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!GetPushConstant@{GetPushConstant}}
+\index{GetPushConstant@{GetPushConstant}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{GetPushConstant()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_a5fca43469e4a25b565d5f8906b864a08} 
+\textbf{ Material\+Layout\+Push\+Constant} \& Material\+Layout\+::\+Get\+Push\+Constant (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve el slot push constant con el nombre dado. 
+
+\begin{DoxyWarning}{Atención}
+No se hace comprobación de que el slot existe. 
+\end{DoxyWarning}
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!GetPushConstant@{GetPushConstant}}
+\index{GetPushConstant@{GetPushConstant}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{GetPushConstant()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_a3d3c7cc6e56e69cd529cae3f86023318} 
+const \textbf{ Material\+Layout\+Push\+Constant} \& Material\+Layout\+::\+Get\+Push\+Constant (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el slot push constant con el nombre dado. 
+
+\begin{DoxyWarning}{Atención}
+No se hace comprobación de que el slot existe. 
+\end{DoxyWarning}
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!GetSlot@{GetSlot}}
+\index{GetSlot@{GetSlot}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{GetSlot()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_a3084513dc7a1aaab62318ab31188dbc6} 
+\textbf{ Material\+Layout\+Slot} \& Material\+Layout\+::\+Get\+Slot (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el slot con el nombre dado, si existe. 
+
+\begin{DoxyWarning}{Atención}
+No se hace comprobación de que el slot existe. 
+\end{DoxyWarning}
+\index{OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}!GetSlot@{GetSlot}}
+\index{GetSlot@{GetSlot}!OSK::GRAPHICS::MaterialLayout@{OSK::GRAPHICS::MaterialLayout}}
+\doxysubsubsection{GetSlot()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_a7e801a567964d71f9d6565934246f55e} 
+const \textbf{ Material\+Layout\+Slot} \& Material\+Layout\+::\+Get\+Slot (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el slot con el nombre dado, si existe. 
+
+\begin{DoxyWarning}{Atención}
+No se hace comprobación de que el slot existe. 
+\end{DoxyWarning}

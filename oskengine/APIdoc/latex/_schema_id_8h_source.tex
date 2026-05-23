@@ -1,0 +1,43 @@
+\doxysection{Schema\+Id.\+h}
+\label{_schema_id_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/SchemaId.h@{C:/Users/Oscar/source/repos/OSKengine/Source/SchemaId.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}OSKmacros.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }OSK\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }SchemaId\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ SchemaId(\textcolor{keyword}{const}\ std::string\&\ name,\ UIndex32\ version)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ :\ m\_version(version),}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ m\_name(name),}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ m\_fullName(std::format(\textcolor{stringliteral}{"{}\{\}:\{\}"{}},\ m\_name,\ m\_version)),}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ m\_hashCode(std::hash<std::string>::\_Do\_hash(m\_fullName))\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::string\_view\ GetName()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_name;\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ UIndex32\ GetVersion()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_version;\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ USize64\ GetHashCode()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_hashCode;\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ UIndex32\ m\_version;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::string\ m\_name;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::string\ m\_fullName;\ \textcolor{comment}{//\ m\_name:m\_version}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ USize64\ m\_hashCode;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}

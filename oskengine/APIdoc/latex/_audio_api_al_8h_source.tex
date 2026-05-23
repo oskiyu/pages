@@ -1,0 +1,35 @@
+\doxysection{Audio\+Api\+Al.\+h}
+\label{_audio_api_al_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/AudioApiAl.h@{C:/Users/Oscar/source/repos/OSKengine/Source/AudioApiAl.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}IAudioApi.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <AL/alc.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }OSK::AUDIO\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ AudioApiAl\ :\ \textcolor{keyword}{public}\ IAudioApi\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ AudioApiAl()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetListenerPosition(\textcolor{keyword}{const}\ Vector3f\&\ position)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetListenerOrientation(\textcolor{keyword}{const}\ Vector3f\&\ forward,\ \textcolor{keyword}{const}\ Vector3f\&\ up)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetListenerVelocity(\textcolor{keyword}{const}\ Vector3f\&\ velocity)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ UniquePtr<IAudioSource>\ CreateNewSource()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterAllDevices()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}

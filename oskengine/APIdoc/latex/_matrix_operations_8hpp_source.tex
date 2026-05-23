@@ -1,0 +1,31 @@
+\doxysection{Matrix\+Operations.\+hpp}
+\label{_matrix_operations_8hpp_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/MatrixOperations.hpp@{C:/Users/Oscar/source/repos/OSKengine/Source/MatrixOperations.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::Math\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ Vector3f\ TransformPoint(\textcolor{keyword}{const}\ Vector3f\&\ point,\ \textcolor{keyword}{const}\ glm::mat4\&\ matrix)\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ glm::vec4\ p\ =\ glm::vec4(point.ToGlm(),\ 1.0f);}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ glm::vec4\ transformedPoint\ =\ matrix\ *\ p;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3f(glm::vec3(transformedPoint)\ /\ transformedPoint.w);}
+\DoxyCodeLine{00012\ \ \ \ \ \}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ Vector3f\ TranslatePoint(\textcolor{keyword}{const}\ Vector3f\&\ point,\ \textcolor{keyword}{const}\ glm::mat4\&\ matrix)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ glm::vec4\ p\ =\ glm::vec4(point.ToGlm(),\ 1.0f);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ glm::vec4\ transformedPoint\ =\ matrix\ *\ p;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3f(glm::vec3(transformedPoint)\ /\ transformedPoint.w);}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ Vector3f\ PositionFromMatrix(\textcolor{keyword}{const}\ glm::mat4\ matrix)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3f(glm::vec3(matrix\ *\ glm::vec4(0.0f,\ 0.0f,\ 0.0f,\ 1.0f)));}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,356 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::Pc\+User\+Input}
+\label{class_o_s_k_1_1_i_o_1_1_pc_user_input}\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+
+
+{\ttfamily \#include $<$Pc\+User\+Input.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Initialize} (\textbf{ Window} \&window)
+\item 
+void \textbf{ Update} () override
+\item 
+void \textbf{ Query\+Interface} (\textbf{ TInterface\+Uuid} uuid, void $\ast$$\ast$ptr) const override final
+\item 
+void \textbf{ Query\+Const\+Interface} (\textbf{ TInterface\+Uuid} uuid, const void $\ast$$\ast$ptr) const override
+\item 
+void \textbf{ Query\+Interface} (\textbf{ IUUID} uuid, void $\ast$$\ast$ptr) const
+\item 
+void \textbf{ Query\+Const\+Interface} (\textbf{ IUUID} uuid, const void $\ast$$\ast$ptr) const
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+IUUID} ((\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+IKeyboard\+Input})
+\item 
+void \textbf{ Update\+Keyboard\+Input} ()
+\item 
+bool \textbf{ Is\+Key\+Down} (\textbf{ Key} key) const
+\item 
+bool \textbf{ Is\+Key\+Up} (\textbf{ Key} key) const
+\item 
+bool \textbf{ Is\+Key\+Stroked} (\textbf{ Key} key) const
+\item 
+bool \textbf{ Is\+Key\+Released} (\textbf{ Key} key) const
+\item 
+const \textbf{ Keyboard\+State} \& \textbf{ Get\+Keyboard\+State} () const
+\item 
+const \textbf{ Keyboard\+State} \& \textbf{ Get\+Previous\+Keyboard\+State} () const
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+IUUID} ((\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+IMouse\+Input})
+\item 
+void \textbf{ Update\+Mouse\+Input} ()
+\item 
+const \textbf{ Mouse\+State} \& \textbf{ Get\+Mouse\+State} () const
+\item 
+const \textbf{ Mouse\+State} \& \textbf{ Get\+Previous\+Mouse\+State} () const
+\item 
+\textbf{ Mouse\+Motion\+Mode} \textbf{ Get\+Motion\+Mode} () const
+\item 
+\textbf{ Mouse\+Return\+Mode} \textbf{ Get\+Return\+Mode} () const
+\item 
+void \textbf{ Set\+Motion\+Mode} (\textbf{ Mouse\+Motion\+Mode} mode)
+\item 
+void \textbf{ Set\+Return\+Mode} (\textbf{ Mouse\+Return\+Mode} mode)
+\item 
+void \textbf{ Update\+Gamepad\+Input} ()
+\item 
+const \textbf{ Gamepad\+State} \& \textbf{ Get\+Gamepad\+State} (\textbf{ UIndex32} index) const
+\item 
+const \textbf{ Gamepad\+State} \& \textbf{ Get\+Previous\+Gamepad\+State} (\textbf{ UIndex32} index) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static const \textbf{ UIndex32} \textbf{ MAX\+\_\+\+GAMEPAD\+\_\+\+COUNT} = 4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Input para PC (Windows / Linux / Mac). 
+
+Implementa las interfaces\+:
+\begin{DoxyItemize}
+\item \doxyref{IKeyboard\+Input}{pág.}{class_o_s_k_1_1_i_o_1_1_i_keyboard_input}.
+\item \doxyref{IMouse\+Input}{pág.}{class_o_s_k_1_1_i_o_1_1_i_mouse_input}.
+\item \doxyref{IGamepad\+Input}{pág.}{class_o_s_k_1_1_i_o_1_1_i_gamepad_input}.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Nota}
+Se debe llamar a \doxyref{Pc\+User\+Input\+::\+Initialize}{pág.}{class_o_s_k_1_1_i_o_1_1_pc_user_input_a95edc57b450a9bb4f24083d66c94ba10}. 
+\end{DoxyNote}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!GetGamepadState@{GetGamepadState}}
+\index{GetGamepadState@{GetGamepadState}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{GetGamepadState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_ab9c06b0664acc36e4ec04be8b8928591} 
+const \textbf{ Gamepad\+State} \& IGamepad\+Input\+::\+Get\+Gamepad\+State (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estado del gamepad en el frame actual. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+0 $<$= index $<$ \doxyref{IGamepad\+Input\+::\+MAX\+\_\+\+GAMEPAD\+\_\+\+COUNT}{pág.}{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_a662403b4fe53409569cbea75fb586c21}. 
+\end{DoxyPrecond}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!GetKeyboardState@{GetKeyboardState}}
+\index{GetKeyboardState@{GetKeyboardState}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{GetKeyboardState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a15cb672f73d50c4b56837d1bff8c1ea6} 
+const \textbf{ Keyboard\+State} \& IKeyboard\+Input\+::\+Get\+Keyboard\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estado del teclado en el frame actual. 
+\end{DoxyReturn}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!GetMotionMode@{GetMotionMode}}
+\index{GetMotionMode@{GetMotionMode}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{GetMotionMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_adbc5f19a0feeb152d89a87f27393737d} 
+\textbf{ Mouse\+Motion\+Mode} OSK\+::\+IO\+::\+IMouse\+Input\+::\+Get\+Motion\+Mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estado actual de \doxyref{Mouse\+Motion\+Mode}{pág.}{namespace_o_s_k_1_1_i_o_a5ba6ec63fc3ebf3e796c86246821b317}. 
+\end{DoxyReturn}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!GetMouseState@{GetMouseState}}
+\index{GetMouseState@{GetMouseState}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{GetMouseState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_a7318a7b5af6b510996ea511cf82099ef} 
+const \textbf{ Mouse\+State} \& IMouse\+Input\+::\+Get\+Mouse\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estado del ratón en el frame actual. 
+\end{DoxyReturn}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!GetPreviousGamepadState@{GetPreviousGamepadState}}
+\index{GetPreviousGamepadState@{GetPreviousGamepadState}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{GetPreviousGamepadState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_a774b14dd77656ab61f6639ada8544db4} 
+const \textbf{ Gamepad\+State} \& IGamepad\+Input\+::\+Get\+Previous\+Gamepad\+State (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estado del gamepad en el frame anterior. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+0 $<$= index $<$ \doxyref{IGamepad\+Input\+::\+MAX\+\_\+\+GAMEPAD\+\_\+\+COUNT}{pág.}{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_a662403b4fe53409569cbea75fb586c21}. 
+\end{DoxyPrecond}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!GetPreviousKeyboardState@{GetPreviousKeyboardState}}
+\index{GetPreviousKeyboardState@{GetPreviousKeyboardState}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{GetPreviousKeyboardState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a343fbce9a28a6caad0e64162d8019168} 
+const \textbf{ Keyboard\+State} \& IKeyboard\+Input\+::\+Get\+Previous\+Keyboard\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estado del teclado en el frame anterior. 
+\end{DoxyReturn}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!GetPreviousMouseState@{GetPreviousMouseState}}
+\index{GetPreviousMouseState@{GetPreviousMouseState}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{GetPreviousMouseState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_a7b7bf657bc628b0315e7a716592b3759} 
+const \textbf{ Mouse\+State} \& IMouse\+Input\+::\+Get\+Previous\+Mouse\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estado del ratón en el frame anterior. 
+\end{DoxyReturn}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!GetReturnMode@{GetReturnMode}}
+\index{GetReturnMode@{GetReturnMode}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{GetReturnMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_ab5c2bc0a8af9a1336066ac2310f90486} 
+\textbf{ Mouse\+Return\+Mode} OSK\+::\+IO\+::\+IMouse\+Input\+::\+Get\+Return\+Mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estado actual de \doxyref{Mouse\+Return\+Mode}{pág.}{namespace_o_s_k_1_1_i_o_a2f854259da792bdb856dedf2a07ee49d}. 
+\end{DoxyReturn}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{Initialize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_pc_user_input_a95edc57b450a9bb4f24083d66c94ba10} 
+void Pc\+User\+Input\+::\+Initialize (\begin{DoxyParamCaption}\item[{\textbf{ Window} \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Establece los callbacks para el manejo del ratón. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em window} & Ventana del juego. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!IsKeyDown@{IsKeyDown}}
+\index{IsKeyDown@{IsKeyDown}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{IsKeyDown()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_ae04d88d90a42cd1ab0082df5a0f5b1a2} 
+bool IKeyboard\+Input\+::\+Is\+Key\+Down (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si la tecla está siendo pulsada en este frame. 
+\end{DoxyReturn}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!IsKeyReleased@{IsKeyReleased}}
+\index{IsKeyReleased@{IsKeyReleased}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{IsKeyReleased()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a5f3685699c960781cfde47e7d8124f73} 
+bool IKeyboard\+Input\+::\+Is\+Key\+Released (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve true si la tecla ha dejado de pulsarse en el fotograma actual. 
+\end{DoxyReturn}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!IsKeyStroked@{IsKeyStroked}}
+\index{IsKeyStroked@{IsKeyStroked}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{IsKeyStroked()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a115f2d31971eed50226ba211d03c64eb} 
+bool IKeyboard\+Input\+::\+Is\+Key\+Stroked (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve true si la tecla ha comenzado a pulsarse en el fotograma actual. 
+\end{DoxyReturn}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!IsKeyUp@{IsKeyUp}}
+\index{IsKeyUp@{IsKeyUp}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{IsKeyUp()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a51cb4d13fc492dd6c6db831de6a0bc17} 
+bool IKeyboard\+Input\+::\+Is\+Key\+Up (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si la tecla no está siendo pulsada en este frame. 
+\end{DoxyReturn}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}}
+\index{OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{OSK\_DEFINE\_IUUID()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_abd862085441fc8df0237f062ac731161} 
+OSK\+::\+IO\+::\+IKeyboard\+Input\+::\+OSK\+\_\+\+DEFINE\+\_\+\+IUUID (\begin{DoxyParamCaption}\item[{(\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+IKeyboard\+Input}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}}
+\index{OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{OSK\_DEFINE\_IUUID()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_a8a9711f524a4014b2dd4af12183e8e7f} 
+OSK\+::\+IO\+::\+IMouse\+Input\+::\+OSK\+\_\+\+DEFINE\+\_\+\+IUUID (\begin{DoxyParamCaption}\item[{(\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+IMouse\+Input}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!QueryConstInterface@{QueryConstInterface}}
+\index{QueryConstInterface@{QueryConstInterface}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{QueryConstInterface()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_pc_user_input_afe5e6cb12858e2283b37b3b93889ae03} 
+void Pc\+User\+Input\+::\+Query\+Const\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ TInterface\+Uuid}}]{uuid}{, }\item[{const void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementa \textbf{ OSK\+::\+IQuery\+Interface} \doxyref{}{pág.}{class_o_s_k_1_1_i_query_interface_a589dec31a1efd4e4f69b9513a7086825}.
+
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!QueryConstInterface@{QueryConstInterface}}
+\index{QueryConstInterface@{QueryConstInterface}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{QueryConstInterface()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a04792bb58288a5a2e890c506a8ad1a8c} 
+void OSK\+::\+IQuery\+Interface\+::\+Query\+Const\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ IUUID}}]{uuid}{, }\item[{const void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!QueryInterface@{QueryInterface}}
+\index{QueryInterface@{QueryInterface}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{QueryInterface()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_pc_user_input_adc05725ed42f9df7fcc020822378a49f} 
+void Pc\+User\+Input\+::\+Query\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ TInterface\+Uuid}}]{interface\+Uuid}{, }\item[{void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Permite obtener un puntero para la interfaz dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em interface\+Uuid} & UUID de la interfaz. \\
+\hline
+{\em ptr} & Puntero a sobreescribir. Será nullptr si la clase no implementa la interfad indicada. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ OSK\+::\+IQuery\+Interface} \doxyref{}{pág.}{class_o_s_k_1_1_i_query_interface_abf1b865ec9b11ced8c2d35660aab9346}.
+
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!QueryInterface@{QueryInterface}}
+\index{QueryInterface@{QueryInterface}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{QueryInterface()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a96e28be0f3cec3a83c161d417162288f} 
+void OSK\+::\+IQuery\+Interface\+::\+Query\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ IUUID}}]{uuid}{, }\item[{void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Permite obtener un puntero para la interfaz dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & UUID de la interfaz. \\
+\hline
+{\em ptr} & Puntero a sobreescribir. Será nullptr si la clase no implementa la interfad indicada. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!SetMotionMode@{SetMotionMode}}
+\index{SetMotionMode@{SetMotionMode}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{SetMotionMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_a0d4d2b0ab6e1f34b42dc8f3a6eef843a} 
+void OSK\+::\+IO\+::\+IMouse\+Input\+::\+Set\+Motion\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ Mouse\+Motion\+Mode}}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Actualiza el \doxyref{Mouse\+Motion\+Mode}{pág.}{namespace_o_s_k_1_1_i_o_a5ba6ec63fc3ebf3e796c86246821b317}. 
+
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!SetReturnMode@{SetReturnMode}}
+\index{SetReturnMode@{SetReturnMode}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{SetReturnMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_aeb8e1c1d58ecab6d32c6263037c68977} 
+void OSK\+::\+IO\+::\+IMouse\+Input\+::\+Set\+Return\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ Mouse\+Return\+Mode}}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Actualiza el \doxyref{Mouse\+Return\+Mode}{pág.}{namespace_o_s_k_1_1_i_o_a2f854259da792bdb856dedf2a07ee49d}. 
+
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!Update@{Update}}
+\index{Update@{Update}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_pc_user_input_a5c7436beb80ce38b65cba45329706a57} 
+void Pc\+User\+Input\+::\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza los estados internos del input. 
+
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+IUser\+Input} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_user_input_a1ee1f3ddbf93a862ac93eac60bf6a38f}.
+
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!UpdateGamepadInput@{UpdateGamepadInput}}
+\index{UpdateGamepadInput@{UpdateGamepadInput}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{UpdateGamepadInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_a45f7ec790e1814a8e897bd67168c6113} 
+void IGamepad\+Input\+::\+Update\+Gamepad\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Actualiza los estados internos de los gamepads. 
+
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!UpdateKeyboardInput@{UpdateKeyboardInput}}
+\index{UpdateKeyboardInput@{UpdateKeyboardInput}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{UpdateKeyboardInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_keyboard_input_a6ead913a0ac93710b8f0c862318a60fb} 
+void IKeyboard\+Input\+::\+Update\+Keyboard\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Actualiza los estados internos del teclado. 
+
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!UpdateMouseInput@{UpdateMouseInput}}
+\index{UpdateMouseInput@{UpdateMouseInput}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{UpdateMouseInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_a86a3e1a8b3bc18bc48a270f38fbe2976} 
+void IMouse\+Input\+::\+Update\+Mouse\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Actualiza los estados internos del ratón. 
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::IO::PcUserInput@{OSK::IO::PcUserInput}!MAX\_GAMEPAD\_COUNT@{MAX\_GAMEPAD\_COUNT}}
+\index{MAX\_GAMEPAD\_COUNT@{MAX\_GAMEPAD\_COUNT}!OSK::IO::PcUserInput@{OSK::IO::PcUserInput}}
+\doxysubsubsection{MAX\_GAMEPAD\_COUNT}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_gamepad_input_a662403b4fe53409569cbea75fb586c21} 
+const \textbf{ UIndex32} OSK\+::\+IO\+::\+IGamepad\+Input\+::\+MAX\+\_\+\+GAMEPAD\+\_\+\+COUNT = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Número máximo de gamepads que pueden estar conectados. 
+

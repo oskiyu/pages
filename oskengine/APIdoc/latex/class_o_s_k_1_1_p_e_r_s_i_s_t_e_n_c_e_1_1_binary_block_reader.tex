@@ -1,0 +1,120 @@
+\doxysection{Referencia de la clase OSK\+::PERSISTENCE\+::Binary\+Block\+Reader}
+\label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_reader}\index{OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}}
+
+
+{\ttfamily \#include $<$Binary\+Block.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Binary\+Block\+Reader} (std\+::span$<$ const \textbf{ TByte} $>$ data)
+\item 
+\textbf{ Binary\+Block\+Reader} (std\+::span$<$ const \textbf{ TByte} $>$ data, \textbf{ UIndex64} offset)
+\item 
+{\footnotesize template$<$typename T$>$ }\\T \textbf{ Read} ()
+\item 
+std\+::string \textbf{ Read\+String} ()
+\item 
+\textbf{ UIndex64} \textbf{ Get\+Current\+Index} () const
+\item 
+\textbf{ UIndex64} \textbf{ Get\+Original\+Offset} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Lector de un bloque binario. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}!BinaryBlockReader@{BinaryBlockReader}}
+\index{BinaryBlockReader@{BinaryBlockReader}!OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}}
+\doxysubsubsection{BinaryBlockReader()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_reader_ab79fd7a9e634036c0d5cb44174b21870} 
+Binary\+Block\+Reader\+::\+Binary\+Block\+Reader (\begin{DoxyParamCaption}\item[{std\+::span$<$ const \textbf{ TByte} $>$}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Crea un lector sobre los datos indicados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Datos a leer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El contenedor a partir del cual se ha creado {\ttfamily data} debe ser estable. 
+\end{DoxyPrecond}
+\index{OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}!BinaryBlockReader@{BinaryBlockReader}}
+\index{BinaryBlockReader@{BinaryBlockReader}!OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}}
+\doxysubsubsection{BinaryBlockReader()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_reader_a2bbf19412d863ae3ab73158648f804f3} 
+Binary\+Block\+Reader\+::\+Binary\+Block\+Reader (\begin{DoxyParamCaption}\item[{std\+::span$<$ const \textbf{ TByte} $>$}]{data}{, }\item[{\textbf{ UIndex64}}]{offset}{}\end{DoxyParamCaption})}
+
+
+
+Crea un lector sobre los datos indicados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Datos a leer. \\
+\hline
+{\em offset} & Offset inicial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El contenedor a partir del cual se ha creado {\ttfamily data} debe ser estable. 
+\end{DoxyPrecond}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}!GetCurrentIndex@{GetCurrentIndex}}
+\index{GetCurrentIndex@{GetCurrentIndex}!OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}}
+\doxysubsubsection{GetCurrentIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_reader_af6502bc878c0e9e3ffa7f9bec72b5841} 
+\textbf{ UIndex64} Binary\+Block\+Reader\+::\+Get\+Current\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Posición actual del cursor. 
+\end{DoxyReturn}
+\index{OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}!GetOriginalOffset@{GetOriginalOffset}}
+\index{GetOriginalOffset@{GetOriginalOffset}!OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}}
+\doxysubsubsection{GetOriginalOffset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_reader_aedf5ae7657ad7c75575511e5590f8b89} 
+\textbf{ UIndex64} Binary\+Block\+Reader\+::\+Get\+Original\+Offset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Offset original del reader. 
+\end{DoxyReturn}
+\index{OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}!Read@{Read}}
+\index{Read@{Read}!OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}}
+\doxysubsubsection{Read()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_reader_a072434b3366e305b5f8003a6c5212a5e} 
+template$<$typename T$>$ \\
+T OSK\+::\+PERSISTENCE\+::\+Binary\+Block\+Reader\+::\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lee un dato del bloque. Avanza el cursor. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+Dato leído. 
+\end{DoxyReturn}
+\index{OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}!ReadString@{ReadString}}
+\index{ReadString@{ReadString}!OSK::PERSISTENCE::BinaryBlockReader@{OSK::PERSISTENCE::BinaryBlockReader}}
+\doxysubsubsection{ReadString()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_reader_afdfe0cb4b75ca1d8b2d7a433219e980b} 
+std\+::string Binary\+Block\+Reader\+::\+Read\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Lee un string. Avanza el cursor. 
+
+\begin{DoxyReturn}{Devuelve}
+String leído. 
+\end{DoxyReturn}

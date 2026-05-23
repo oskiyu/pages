@@ -1,0 +1,48 @@
+\doxysection{Render\+Subpass\+Vk.\+h}
+\label{_render_subpass_vk_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/RenderSubpassVk.h@{C:/Users/Oscar/source/repos/OSKengine/Source/RenderSubpassVk.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_VULKAN\_BACKEND}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vulkan/vulkan.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}RenderpassAttachmentVk.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ RenderSubpassVk\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ RenderSubpassVk(}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ VkPipelineBindPoint\ bindPoint,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<RenderpassAttachmentVk>\&\ colorAttachments,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ std::optional<RenderpassAttachmentVk>\ depthAttachment);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ VkSubpassDescription\ GetDescription()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ DynamicArray<VkSubpassDependency>\ GetDependencies()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetColorAttachments(\textcolor{keyword}{const}\ DynamicArray<RenderpassAttachmentVk>\&\ attachments);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ VkSubpassDescription\ m\_description\{\};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ DynamicArray<RenderpassAttachmentVk>\ m\_attachments\{\};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::optional<RenderpassAttachmentVk>\ m\_depthAttachment;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ DynamicArray<VkAttachmentReference>\ m\_references\{\};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ VkAttachmentReference\ m\_depthReference\{\};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OSK\_USE\_VULKAN\_BACKEND}}
+
+\end{DoxyCode}

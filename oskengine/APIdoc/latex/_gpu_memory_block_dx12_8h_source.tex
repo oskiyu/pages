@@ -1,0 +1,67 @@
+\doxysection{Gpu\+Memory\+Block\+Dx12.\+h}
+\label{_gpu_memory_block_dx12_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GpuMemoryBlockDx12.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GpuMemoryBlockDx12.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_DIRECTX12\_BACKEND}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}IGpuMemoryBlock.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <wrl.h>}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }Microsoft::WRL;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <d3d12.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuBufferUsage;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Format;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuImageUsage;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }GpuImage;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }GpuBuffer;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ GpuMemoryBlockDx12\ :\ \textcolor{keyword}{public}\ IGpuMemoryBlock\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \string~GpuMemoryBlockDx12()\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ memory-\/>Release();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ UniquePtr<GpuMemoryBlockDx12>\ CreateNewBufferBlock(USize64\ reservedSize,\ IGpu*\ device,\ GpuSharedMemoryType\ type,\ GpuBufferUsage\ bufferUSage);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ UniquePtr<GpuMemoryBlockDx12>\ CreateNewImageBlock(GpuImage*\ image,\ IGpu*\ device,\ GpuSharedMemoryType\ type,\ GpuImageUsage\ imageUSage,\ USize32\ numLayers);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ ComPtr<ID3D12Heap>\&\ GetMemory()\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ memory;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ UniquePtr<IGpuMemorySubblock>\ CreateNewMemorySubblock(USize64\ size,\ USize64\ offset)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ GpuMemoryBlockDx12(USize64\ reservedSize,\ IGpu*\ device,\ GpuSharedMemoryType\ type,\ GpuBufferUsage\ bufferUSage);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ GpuMemoryBlockDx12(GpuImage*\ image,\ IGpu*\ device,\ GpuSharedMemoryType\ type,\ GpuImageUsage\ imageUSage,\ USize32\ numLayers);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ ComPtr<ID3D12Heap>\ memory;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ D3D12\_RESOURCE\_DESC\ resourceDesc\{\};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ sizeX\ =\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ sizeY\ =\ 0;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ Format\ format;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ image\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBuffer*\ buffer;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}\ resource;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

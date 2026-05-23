@@ -1,0 +1,148 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Rg\+Buffer\+Manager}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_manager}\index{OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}}
+
+
+{\ttfamily \#include $<$Rg\+Buffer\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Rg\+Buffer\+Manager} (\textbf{ IRenderer} $\ast$renderer)
+\item 
+\textbf{ Gdr\+Buffer\+Uuid} \textbf{ Register\+Buffer} (const \textbf{ Rg\+Buffer\+Register\+Info} \&info)
+\item 
+\textbf{ Gdr\+Buffer\+Uuid} \textbf{ Register\+Buffer} (const \textbf{ Rg\+Buffer\+Register\+Info} \&info, \textbf{ Gdr\+Buffer\+Uuid} reserved\+Uuid)
+\item 
+\textbf{ Gdr\+Buffer\+Uuid} \textbf{ Reserve\+Uuid} ()
+\item 
+void \textbf{ Add\+Buffer\+Use} (\textbf{ Gdr\+Buffer\+Uuid} uuid, \textbf{ Rg\+Buffer\+Usage} usage)
+\item 
+void \textbf{ Create\+Buffers} (std\+::span$<$ const \textbf{ Render\+Pass\+Entry} $>$ renderpasses)
+\item 
+\textbf{ Gpu\+Buffer} \& \textbf{ Get\+Buffer} (\textbf{ Gdr\+Buffer\+Uuid} uuid)
+\item 
+const \textbf{ Gpu\+Buffer} \& \textbf{ Get\+Buffer} (\textbf{ Gdr\+Buffer\+Uuid} uuid) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Implementa el manejo de buffers en el render-\/graph. 
+
+\begin{DoxyNote}{Nota}
+Es dueño de los buffers. 
+\end{DoxyNote}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}!RgBufferManager@{RgBufferManager}}
+\index{RgBufferManager@{RgBufferManager}!OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}}
+\doxysubsubsection{RgBufferManager()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_manager_ae1a0649b880672de9ee3223f95e4a843} 
+Rg\+Buffer\+Manager\+::\+Rg\+Buffer\+Manager (\begin{DoxyParamCaption}\item[{\textbf{ IRenderer} $\ast$}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}!AddBufferUse@{AddBufferUse}}
+\index{AddBufferUse@{AddBufferUse}!OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}}
+\doxysubsubsection{AddBufferUse()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_manager_ae05072d29730986182cb2524e4b4d7f8} 
+void Rg\+Buffer\+Manager\+::\+Add\+Buffer\+Use (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Buffer\+Uuid}}]{uuid}{, }\item[{\textbf{ Rg\+Buffer\+Usage}}]{usage}{}\end{DoxyParamCaption})}
+
+
+
+Añade una dependencia de uso a un buffer. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & Buffer cuya dependencia se quiere añadir. \\
+\hline
+{\em usage} & Nueva dependencia de uso. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}!CreateBuffers@{CreateBuffers}}
+\index{CreateBuffers@{CreateBuffers}!OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}}
+\doxysubsubsection{CreateBuffers()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_manager_ae27dfd9c3208bff57be4d171a9a99764} 
+void Rg\+Buffer\+Manager\+::\+Create\+Buffers (\begin{DoxyParamCaption}\item[{std\+::span$<$ const \textbf{ Render\+Pass\+Entry} $>$}]{renderpasses}{}\end{DoxyParamCaption})}
+
+
+
+Crea los buffers, teniendo en cuenta tanto las dependencias de los renderpasses como las dependencias delcaradas mediante la función {\ttfamily Add\+Buffer\+Use}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em renderpasses} & Renderpasses del render-\/graph. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}!GetBuffer@{GetBuffer}}
+\index{GetBuffer@{GetBuffer}!OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}}
+\doxysubsubsection{GetBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_manager_a4d2d7c8c184a00b92ee5a7628cc227be} 
+\textbf{ Gpu\+Buffer} \& Rg\+Buffer\+Manager\+::\+Get\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Buffer\+Uuid}}]{uuid}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}!GetBuffer@{GetBuffer}}
+\index{GetBuffer@{GetBuffer}!OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}}
+\doxysubsubsection{GetBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_manager_a6856ac14d0fc95fddb0ca6ab0a200b6b} 
+const \textbf{ Gpu\+Buffer} \& Rg\+Buffer\+Manager\+::\+Get\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Buffer\+Uuid}}]{uuid}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}!RegisterBuffer@{RegisterBuffer}}
+\index{RegisterBuffer@{RegisterBuffer}!OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}}
+\doxysubsubsection{RegisterBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_manager_a147500a38315ddad72796d9b032f5e29} 
+\textbf{ Gdr\+Buffer\+Uuid} Rg\+Buffer\+Manager\+::\+Register\+Buffer (\begin{DoxyParamCaption}\item[{const \textbf{ Rg\+Buffer\+Register\+Info} \&}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuevo buffer, que será creado y gestionado por el render-\/graph. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em info} & Información del buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+UUID del buffer.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+No crea el buffer, solo lo registra. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}!RegisterBuffer@{RegisterBuffer}}
+\index{RegisterBuffer@{RegisterBuffer}!OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}}
+\doxysubsubsection{RegisterBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_manager_af4458178a24dcb91f85f7e199ed769bf} 
+\textbf{ Gdr\+Buffer\+Uuid} Rg\+Buffer\+Manager\+::\+Register\+Buffer (\begin{DoxyParamCaption}\item[{const \textbf{ Rg\+Buffer\+Register\+Info} \&}]{info}{, }\item[{\textbf{ Gdr\+Buffer\+Uuid}}]{reserved\+Uuid}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuevo buffer, que será creado y gestionado por el render-\/graph. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em info} & Información del buffer. \\
+\hline
+{\em reserved\+Uuid} & UUID reservado donde se registrará el buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+UUID del buffer.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+No crea el buffer, solo lo registra. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}!ReserveUuid@{ReserveUuid}}
+\index{ReserveUuid@{ReserveUuid}!OSK::GRAPHICS::RgBufferManager@{OSK::GRAPHICS::RgBufferManager}}
+\doxysubsubsection{ReserveUuid()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_manager_abdc2d2adbbbcac71b1af29b396c8e689} 
+\textbf{ Gdr\+Buffer\+Uuid} Rg\+Buffer\+Manager\+::\+Reserve\+Uuid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reserva un UUID que será creado más adelante. 
+
+\begin{DoxyReturn}{Devuelve}
+UUID reservado pero no registrado. 
+\end{DoxyReturn}

@@ -1,0 +1,15 @@
+\doxysection{Referencia del concepto OSK\+::Is\+Job}
+\label{concept_o_s_k_1_1_is_job}\index{OSK::IsJob@{OSK::IsJob}}
+
+
+{\ttfamily \#include $<$IJob.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TJob>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::IsJob\ =\ \ \textcolor{keyword}{requires}\ (TJob)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ TJob::GetTypeName()\ \};}
+\DoxyCodeLine{\ \ \ \ \}\ \&\&\ std::is\_base\_of\_v<IJob,\ TJob>}
+
+\end{DoxyCode}

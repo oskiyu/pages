@@ -1,0 +1,144 @@
+\doxysection{Referencia de la clase OSK\+::Spline3D}
+\label{class_o_s_k_1_1_spline3_d}\index{OSK::Spline3D@{OSK::Spline3D}}
+
+
+{\ttfamily \#include $<$Spline3\+D.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Add\+Point} (const \textbf{ Vector3f} \&point)
+\item 
+\textbf{ USize64} \textbf{ Get\+Point\+Count} () const
+\item 
+const \textbf{ Vector3f} \& \textbf{ Get\+Point} (\textbf{ UIndex64} index) const
+\item 
+void \textbf{ Normalize} ()
+\item 
+\textbf{ UIndex64} \textbf{ Get\+Closest\+Point\+Index} (const \textbf{ Vector3f} \&position) const
+\item 
+\textbf{ UIndex64} \textbf{ Get\+Closest\+Forward\+Point\+Index} (const \textbf{ Vector3f} \&position, const \textbf{ Vector3f} \&direction) const
+\item 
+const \textbf{ Vector3f} \& \textbf{ Get\+Closest\+Point} (const \textbf{ Vector3f} \&position) const
+\item 
+const \textbf{ Vector3f} \& \textbf{ Get\+Closest\+Forward\+Point} (const \textbf{ Vector3f} \&position, const \textbf{ Vector3f} \&direction) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa un spline representado por puntos 3D. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::Spline3D@{OSK::Spline3D}!AddPoint@{AddPoint}}
+\index{AddPoint@{AddPoint}!OSK::Spline3D@{OSK::Spline3D}}
+\doxysubsubsection{AddPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_spline3_d_a23eb322a973f8e8d46f50d191c5d4a87} 
+void Spline3\+D\+::\+Add\+Point (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{point}{}\end{DoxyParamCaption})}
+
+
+
+Añade un punto al final del spline. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em point} & Nuevo punto. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Spline3D@{OSK::Spline3D}!GetClosestForwardPoint@{GetClosestForwardPoint}}
+\index{GetClosestForwardPoint@{GetClosestForwardPoint}!OSK::Spline3D@{OSK::Spline3D}}
+\doxysubsubsection{GetClosestForwardPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_spline3_d_a8306758a2beca3b03e1d6d35383fccdb} 
+const \textbf{ Vector3f} \& Spline3\+D\+::\+Get\+Closest\+Forward\+Point (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{position}{, }\item[{const \textbf{ Vector3f} \&}]{direction}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Posición en el mundo 3D. \\
+\hline
+{\em direction} & Dirección de búsqueda. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Punto del spline más cercano en la dirección dada. 
+\end{DoxyReturn}
+\index{OSK::Spline3D@{OSK::Spline3D}!GetClosestForwardPointIndex@{GetClosestForwardPointIndex}}
+\index{GetClosestForwardPointIndex@{GetClosestForwardPointIndex}!OSK::Spline3D@{OSK::Spline3D}}
+\doxysubsubsection{GetClosestForwardPointIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_spline3_d_a638f4780e53056bfca0f3d19bec2149c} 
+\textbf{ UIndex64} Spline3\+D\+::\+Get\+Closest\+Forward\+Point\+Index (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{position}{, }\item[{const \textbf{ Vector3f} \&}]{direction}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Posición en el mundo 3D. \\
+\hline
+{\em direction} & Dirección de búsqueda. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Índice del punto del spline más cercano en la dirección dada. 
+\end{DoxyReturn}
+\index{OSK::Spline3D@{OSK::Spline3D}!GetClosestPoint@{GetClosestPoint}}
+\index{GetClosestPoint@{GetClosestPoint}!OSK::Spline3D@{OSK::Spline3D}}
+\doxysubsubsection{GetClosestPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_spline3_d_a52876a65fc38bd197d931db0fde545f2} 
+const \textbf{ Vector3f} \& Spline3\+D\+::\+Get\+Closest\+Point (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{position}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Posición en el mundo 3D. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Punto del spline más cercano. 
+\end{DoxyReturn}
+\index{OSK::Spline3D@{OSK::Spline3D}!GetClosestPointIndex@{GetClosestPointIndex}}
+\index{GetClosestPointIndex@{GetClosestPointIndex}!OSK::Spline3D@{OSK::Spline3D}}
+\doxysubsubsection{GetClosestPointIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_spline3_d_a5e863171e1bc1c8108cb3b9d0dde03ec} 
+\textbf{ UIndex64} Spline3\+D\+::\+Get\+Closest\+Point\+Index (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{position}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Posición en el mundo 3D. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Índice del punto del spline más cercano. 
+\end{DoxyReturn}
+\index{OSK::Spline3D@{OSK::Spline3D}!GetPoint@{GetPoint}}
+\index{GetPoint@{GetPoint}!OSK::Spline3D@{OSK::Spline3D}}
+\doxysubsubsection{GetPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_spline3_d_aeac45c4769161c8a48a398bee7e199e4} 
+const \textbf{ Vector3f} \& Spline3\+D\+::\+Get\+Point (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el punto del spline con el índice dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em index} & Índice (posición) del punto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+points[index \% \doxyref{Get\+Point\+Count()}{pág.}{class_o_s_k_1_1_spline3_d_a216c0fc7502ccc1cfc2b60f537830c4d}] 
+\end{DoxyReturn}
+\index{OSK::Spline3D@{OSK::Spline3D}!GetPointCount@{GetPointCount}}
+\index{GetPointCount@{GetPointCount}!OSK::Spline3D@{OSK::Spline3D}}
+\doxysubsubsection{GetPointCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_spline3_d_a216c0fc7502ccc1cfc2b60f537830c4d} 
+\textbf{ USize64} Spline3\+D\+::\+Get\+Point\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Número de puntos del spline. 
+\end{DoxyReturn}
+\index{OSK::Spline3D@{OSK::Spline3D}!Normalize@{Normalize}}
+\index{Normalize@{Normalize}!OSK::Spline3D@{OSK::Spline3D}}
+\doxysubsubsection{Normalize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_spline3_d_acd7d8772367382a51f78d59768133336} 
+void Spline3\+D\+::\+Normalize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Elimina puntos duplicados. 
+

@@ -1,0 +1,45 @@
+\doxysection{Loaded\+Material\+Info.\+h}
+\label{_loaded_material_info_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/LoadedMaterialInfo.h@{C:/Users/Oscar/source/repos/OSKengine/Source/LoadedMaterialInfo.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{struct\ }LoadedMaterialInfoV1\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }Config\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ resourceMaxCount\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ usesUnspecifiedSizedArrays\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}\ config\{\};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::optional<std::string>\ vertexShaderPath;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::optional<std::string>\ fragmentShaderPath;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::optional<std::string>\ tesselationControlShaderPath;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::optional<std::string>\ tesselationEvaluationShaderPath;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::optional<std::string>\ computeShaderPath;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::optional<std::string>\ rayGenShaderPath;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::optional<std::string>\ rayMissShaderPath;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::optional<std::string>\ rayClosestHitShaderPath;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::optional<std::string>\ meshAmplificationShaderPath;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::optional<std::string>\ meshShaderPath;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ std::unordered\_map<OSK::UIndex32,\ std::string>\ slotNames;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}

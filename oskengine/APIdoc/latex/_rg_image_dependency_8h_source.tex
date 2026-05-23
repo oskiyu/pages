@@ -1,0 +1,64 @@
+\doxysection{Rg\+Image\+Dependency.\+h}
+\label{_rg_image_dependency_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/RgImageDependency.h@{C:/Users/Oscar/source/repos/OSKengine/Source/RgImageDependency.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}RgDependencyType.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Format.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}GpuImageUsage.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}GpuBarrierInfo.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}GpuImageRange.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}GpuImageViewConfig.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ImageUuid.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}RgDependencyShaderBinding.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{struct\ }PartialRgImageDependency\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ GdrImageUuid\ imageRefId;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ GpuExclusiveImageUsage\ usage\ =\ GpuExclusiveImageUsage::UNKNOWN;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{struct\ }RgImageDependency\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ RgImageDependency\ ColorTarget(GdrImageUuid\ imageRefId);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ RgImageDependency\ ComputeTarget(GdrImageUuid\ imageRefId,\ \textcolor{keyword}{const}\ std::string\&\ slot,\ \textcolor{keyword}{const}\ std::string\&\ binding);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ RgImageDependency\ Sampled\_Fragment\_SingleMipLevel(GdrImageUuid\ imageRefId,\ \textcolor{keyword}{const}\ std::string\&\ slot,\ \textcolor{keyword}{const}\ std::string\&\ binding);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ GdrImageUuid\ imageRefId;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ RgDependencyType\ type\ =\ RgDependencyType::READ\_WRITE;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ GpuExclusiveImageUsage\ usage\ =\ GpuExclusiveImageUsage::UNKNOWN;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ GpuCommandStage\ stage\ =\ GpuCommandStage::NONE;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ GpuImageRange\ range\{\};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ GpuImageViewConfig\ viewConfig\{\};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ GpuImageSamplerDesc\ samplerDesc\{\};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ RgDependencyShaderBinding\ shaderBinding\{\};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ UIndex32\ arrayIndex\ =\ 0;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ clearIfTargetImage\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::optional<UIndex16>\ frameInFlight;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}

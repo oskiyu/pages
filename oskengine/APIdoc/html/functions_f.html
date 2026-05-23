@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Miembros de las clases</title>
+<title>OSKengine: Miembros de clases</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('functions_f.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('functions_f.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,15 +78,22 @@ $(document).ready(function(){initNavTree('functions_f.html',''); initResizable()
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="contents">
-<div class="textblock">Lista de todos los campos de clases con enlaces a las classes a que pertenecen:</div>
+<div class="textblock">Lista de todos los campos de clases con enlaces a las clases a las que pertenecen:</div>
 
-<h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
+<h3 class="doxsection"><a id="index_f" name="index_f"></a>- f -</h3><ul>
 <li>face&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sat_info.html#affda46810795fe5afde06204c4f67a41">OSK::COLLISION::SatInfo</a></li>
 <li>FaceIndices&#160;:&#160;<a class="el" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume.html#a2f99e2f9743d5185adaca37474366960">OSK::COLLISION::ConvexVolume</a></li>
 <li>FaceProjection()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_face_projection.html#ad0ea04b34b24bb05aa0332567d7e76f8">OSK::COLLISION::FaceProjection</a></li>
@@ -100,11 +106,14 @@ $(document).ready(function(){initNavTree('functions_f.html',''); initResizable()
 <li>Fill()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_a_u_d_i_o_1_1_buffer.html#a96f1b770c2d68b4cc30637dee41ee7ae">OSK::AUDIO::Buffer</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d.html#ac7fb795c6dc141e36b04966cdc8984df">OSK::GRAPHICS::SdfBindlessBufferContent2D</a></li>
 <li>fill&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d.html#ac75cfc42b91940cf084768126bf00fc7">OSK::GRAPHICS::SdfDrawCall2D</a></li>
 <li>filteringType&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc.html#a7e95181a05295e608cbd46d2ba40e86f">OSK::GRAPHICS::GpuImageSamplerDesc</a></li>
+<li>FinalRegisterDeferredPass()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a1041b89fa930a9cf1a22e1440b5d9be4">OSK::GRAPHICS::GdrPipeline</a></li>
 <li>Find()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_dynamic_array.html#a5183d7ce88d48babdb273bb341fcf2b0">OSK::DynamicArray&lt; T &gt;</a></li>
 <li>FinishedBlockReaderException()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_finished_block_reader_exception.html#a204eba2b9d03d7ade20342f41e13e3d4">OSK::FinishedBlockReaderException</a></li>
 <li>first&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_pair.html#a71b76e984cdf5577771558ea24493d72">OSK::Pair&lt; T1, T2 &gt;</a></li>
 <li>firstEntity&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_e_c_s_1_1_collision_event.html#a7f0ae13a4cf8468af6d3586b328df949">OSK::ECS::CollisionEvent</a></li>
+<li>firstIndex&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range.html#a52d8ecc84689d9840c7e6a145944281f">OSK::GRAPHICS::GlobalIndexBufferRange</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range.html#a87318f757c6c8cd608d0488f5d344a8c">OSK::GRAPHICS::UnusedIndexBufferRange</a></li>
 <li>firstMeshId&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_lod.html#a451ad4a4f494bb32b210752c5f0707ef">OSK::GRAPHICS::GpuModel3D::Lod</a></li>
+<li>firstVertex&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_vertex_buffer_range.html#a987a33cda91de852f127e541322d2d5f">OSK::GRAPHICS::GlobalVertexBufferRange</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_vertex_buffer_range.html#a5c891f204a735462dc83f4d07c835bf5">OSK::GRAPHICS::UnusedVertexBufferRange</a></li>
 <li>Flip()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_bit_set.html#a344cbfda5691aacc8468764b9f1445a1">OSK::BitSet</a></li>
 <li>floatInfo&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d.html#abe26f1a9b8de4536c3107830e8b8e7c4">OSK::GRAPHICS::SdfBindlessBufferContent2D</a></li>
 <li>FlushUpdate()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot.html#a71d6977bf0f937b5086a32ca8af9d3b3">OSK::GRAPHICS::IMaterialSlot</a></li>
@@ -115,17 +124,22 @@ $(document).ready(function(){initNavTree('functions_f.html',''); initResizable()
 <li>FontLibraryInitializationException()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_library_initialization_exception.html#a2370d37977fbedafd483fe7a2472b542">OSK::ASSETS::FontLibraryInitializationException</a></li>
 <li>FontLodaingException()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_lodaing_exception.html#a9768a7234cf90f9c8c68fb79976d9b7c">OSK::ASSETS::FontLodaingException</a></li>
 <li>fontSize&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_instance.html#aec4428c171fd1ac107bb5bc103da2343">OSK::ASSETS::FontInstance</a></li>
-<li>format&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info.html#a752fd3e26192ce973e993a015893b3f6">OSK::GRAPHICS::GpuImageCreateInfo</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_info.html#aa7f11d77863049fbfa7b99ee38a76943">OSK::GRAPHICS::RenderTargetAttachmentInfo</a></li>
+<li>format&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info.html#a752fd3e26192ce973e993a015893b3f6">OSK::GRAPHICS::GpuImageCreateInfo</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map_entry_per_attachment.html#a4734317f5478184f1f7f7852b3271b65">OSK::GRAPHICS::RenderpassVkMapEntryPerAttachment</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_info.html#aa7f11d77863049fbfa7b99ee38a76943">OSK::GRAPHICS::RenderTargetAttachmentInfo</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info.html#aa2d2131d0396bc9217fd5bec2cef6de6">OSK::GRAPHICS::RgImageRegisterInfo</a></li>
 <li>formats&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info.html#a031c05fb2778c508449834a5281e84fd">OSK::GRAPHICS::PipelineCreateInfo</a></li>
 <li>fragmentPath&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info.html#a4c3aff625b37077df47c3b631db00301">OSK::GRAPHICS::PipelineCreateInfo</a></li>
+<li>fragmentShaderPath&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_loaded_material_info_v1.html#afbda7b5c23e4a82982bb6d52e9864314">OSK::GRAPHICS::LoadedMaterialInfoV1</a></li>
+<li>FramebufferVkMap()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_framebuffer_vk_map.html#aae43901ed73bcc45eef101a7f2ad3221">OSK::GRAPHICS::FramebufferVkMap</a></li>
+<li>frameInFlight&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a5f09223aee1695924de7c0afb650f257">OSK::GRAPHICS::RgBufferDependency</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a73da83674cea07ce4a971704535160a7">OSK::GRAPHICS::RgImageDependency</a></li>
 <li>Free()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_bit_set.html#a3f0833e81de5d6a323a40d33c912b11b">OSK::BitSet</a>, <a class="el" href="class_o_s_k_1_1_dynamic_array.html#a712ee677ebccc400ea7623d3ec966e4e">OSK::DynamicArray&lt; T &gt;</a></li>
 <li>FreeContainer()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_u_i_1_1_free_container.html#af56dc48e27f9026798f580c50722b577">OSK::UI::FreeContainer</a></li>
 <li>FreeStagingMemory()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#af41e891d6c39de6dd5fc95e7b9fe8eba">OSK::GRAPHICS::IGpuMemoryAllocator</a></li>
 <li>frictionCoefficient&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_component.html#aca400926c4aac6f1f181a8675fde8e01">OSK::ECS::PhysicsComponent</a></li>
 <li>From()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_epa_minkowski_hull.html#a485dad84d616d3fa54bcef6defef4257">OSK::COLLISION::EpaMinkowskiHull</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d.html#a8fa147e05d945ecdd291e5f0c5051e43">OSK::GRAPHICS::SdfBindlessBufferContent2D</a></li>
+<li>From1D()&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html#a1052274a7f185c22b920351898b2f878">OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html#a30b5bad6dd456b27dc2fc8949cece208">OSK::GRAPHICS::RgRelativeSizeImageRegisterArgs</a></li>
+<li>From2D()&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args.html#a8bb30115294e3196a2be071c6ebe2aa2">OSK::GRAPHICS::RgAbsoluteSizeImageRegisterArgs</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args.html#aa1108aa27a034e059de907d88aaa66b6">OSK::GRAPHICS::RgRelativeSizeImageRegisterArgs</a></li>
 <li>FromBytes()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_color.html#a701abb7cdee003efa0a3f753aaa5d7db">OSK::Color</a></li>
 <li>FromData()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block.html#abbaaf1d36d5e56c60e2907f4a9367b11">OSK::PERSISTENCE::BinaryBlock</a></li>
-<li>FromGlm()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_quaternion.html#a0cbf0edcbfd33647de6fa20d641d2216">OSK::Quaternion</a></li>
+<li>FromGlm()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_quaternion.html#a0cbf0edcbfd33647de6fa20d641d2216">OSK::Quaternion</a>, <a class="el" href="class_o_s_k_1_1_vector2__t.html#ab62acef16b89c7a10ad4877da5dffd27">OSK::Vector2_t&lt; T &gt;</a></li>
 <li>FromMatrix()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_transform_component3_d.html#a15d2f5de9cdff01ae156fe55f130b512">OSK::ECS::TransformComponent3D</a></li>
 <li>FromTo()&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_resource_queue_transfer_info.html#aabd113fa88f5c71a5b440136065590ab">OSK::GRAPHICS::ResourceQueueTransferInfo</a></li>
 <li>frontFaceType&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info.html#a735bb08e92ec77c4f39f8a80ebf1c149">OSK::GRAPHICS::PipelineCreateInfo</a></li>
@@ -134,10 +148,11 @@ $(document).ready(function(){initNavTree('functions_f.html',''); initResizable()
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

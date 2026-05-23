@@ -1,0 +1,42 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Gjk\+Epa\+Detector}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_epa_detector}\index{OSK::COLLISION::GjkEpaDetector@{OSK::COLLISION::GjkEpaDetector}}
+
+
+{\ttfamily \#include $<$Gjk\+Epa\+Detector.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::optional$<$ \textbf{ Detailed\+Collision\+Info} $>$ \textbf{ Get\+Collision} (const \textbf{ Narrow\+Collider\+Holder} \&first, const \textbf{ Narrow\+Collider\+Holder} \&second) const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Usa el algoritmo GJK para detección de colisiones, y el algoritmo EPA para obtener el MTV y un punto de contacto. 
+
+Todos los {\ttfamily IBottom\+Level\+Collider} son también {\ttfamily \doxyref{IGjk\+Collider}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider}}, por lo que este detector es compatible con todos los colliders, independientemente de su tipo.
+
+Por ello, es el detector que se usa por defecto. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::GjkEpaDetector@{OSK::COLLISION::GjkEpaDetector}!GetCollision@{GetCollision}}
+\index{GetCollision@{GetCollision}!OSK::COLLISION::GjkEpaDetector@{OSK::COLLISION::GjkEpaDetector}}
+\doxysubsubsection{GetCollision()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_epa_detector_a9f92caf479d9d4e13b60370312b36f4c} 
+std\+::optional$<$ \textbf{ OSK\+::\+COLLISION\+::\+Detailed\+Collision\+Info} $>$ OSK\+::\+COLLISION\+::\+Gjk\+Epa\+Detector\+::\+Get\+Collision (\begin{DoxyParamCaption}\item[{const \textbf{ Narrow\+Collider\+Holder} \&}]{first}{, }\item[{const \textbf{ Narrow\+Collider\+Holder} \&}]{second}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first} & Primer collider. \\
+\hline
+{\em second} & Segundo collider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la detección de colisión.
+\end{DoxyReturn}
+Si este detector no puede detectar la colisión para los tipos de los colliders, devuelve vacío. 
+
+Implementa \textbf{ OSK\+::\+COLLISION\+::\+IDetailed\+Collision\+Detector} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_detailed_collision_detector_a5a7ca51fa1afc00f15f780fb63ff751e}.
+

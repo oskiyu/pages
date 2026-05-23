@@ -1,0 +1,59 @@
+\doxysection{Bottom\+Level\+Acceleration\+Structure\+Vk.\+h}
+\label{_bottom_level_acceleration_structure_vk_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/BottomLevelAccelerationStructureVk.h@{C:/Users/Oscar/source/repos/OSKengine/Source/BottomLevelAccelerationStructureVk.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_VULKAN\_BACKEND}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}IBottomLevelAccelerationStructure.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vulkan/vulkan.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ BottomLevelAccelerationStructureVk\ :\ \textcolor{keyword}{public}\ IBottomLevelAccelerationStructure\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \string~BottomLevelAccelerationStructureVk();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Setup(}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ vertexBuffer,\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VertexBufferView\&\ vertexView,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ indexBuffer,\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IndexBufferView\&\ indexView,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ RtAccelerationStructureFlags\ flags)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(ICommandList*\ cmdList)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ USize32\ GetNumTriangles()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ VkAccelerationStructureGeometryKHR\ GetGeometryInfo()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ VkAccelerationStructureKHR\ GetHandle()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ VkDeviceOrHostAddressConstKHR\ GetGpuAddress()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ VkDeviceAddress\ GetBufferDeviceAddress(\textcolor{keyword}{const}\ VkBuffer\ buffer,\ \textcolor{keyword}{const}\ VkDevice\ logicalDevice);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ VkDeviceAddress\ GetBlasDeviceAddress(\textcolor{keyword}{const}\ VkAccelerationStructureKHR\ tlas,\ \textcolor{keyword}{const}\ VkDevice\ logicalDevice);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ accelerationStructureBuffer;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ buildBuffer;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ VkAccelerationStructureKHR\ accelerationStructureHandle\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ VkAccelerationStructureGeometryKHR\ geometryInfo\{\};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ VkDeviceOrHostAddressConstKHR\ accelerationStructureGpuAddress\{\};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ USize32\ numTriangles\ =\ 0;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,430 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Physics\+Component}
+\label{class_o_s_k_1_1_e_c_s_1_1_physics_component}\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+
+
+{\ttfamily \#include $<$Physics\+Component.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT} ()
+\item 
+\textbf{ OSK\+\_\+\+COMPONENT} ("{}OSK\+::\+Physics\+Component"{})
+\item 
+void \textbf{ Set\+Immovable} ()
+\item 
+bool \textbf{ Is\+Immovable} () const
+\item 
+void \textbf{ Set\+Mass} (float new\+Mass)
+\item 
+void \textbf{ Set\+Inverse\+Mass} (float new\+Inverse\+Mass)
+\item 
+float \textbf{ Get\+Mass} () const
+\item 
+float \textbf{ Get\+Inverse\+Mass} () const
+\item 
+glm\+::mat3 \textbf{ Get\+Inertia\+Tensor} () const
+\item 
+glm\+::mat3 \textbf{ Get\+Inverse\+Inertia\+Tensor} () const
+\item 
+void \textbf{ Set\+Inertia\+Tensor} (const glm\+::mat3 \&tensor)
+\item 
+void \textbf{ Set\+Inverse\+Inertia\+Tensor} (const glm\+::mat3 \&inverse\+Tensor)
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Velocity} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Current\+Frame\+Velocity\+Delta} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Velocity\+Of\+Point} (const \textbf{ Vector3f} \&local\+Space\+Point) const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Acceleration} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Angular\+Velocity} () const
+\item 
+void \textbf{ \+\_\+\+Reset\+Forces} ()
+\item 
+void \textbf{ \+\_\+\+Reset\+Current\+Frame\+Deltas} ()
+\item 
+void \textbf{ Apply\+Force} (const \textbf{ Vector3f} \&force)
+\item 
+void \textbf{ Apply\+Impulse} (const \textbf{ Vector3f} \&impulse, const \textbf{ Vector3f} \&local\+Space\+Point)
+\item 
+void \textbf{ \+\_\+\+Set\+Velocity} (\textbf{ Vector3f} velocity)
+\item 
+void \textbf{ \+\_\+\+Set\+Angular\+Velocity} (\textbf{ Vector3f} angular\+Velocity)
+\item 
+void \textbf{ \+\_\+\+Set\+Acceleration} (\textbf{ Vector3f} acceleration)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Vector3f} \textbf{ Get\+Torque} (const \textbf{ Vector3f} \&local\+Space\+Point, const \textbf{ Vector3f} \&force)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vector3f} \textbf{ center\+Of\+Mass\+Offset} = \textbf{ Vector3f\+::\+Zero}
+\item 
+float \textbf{ friction\+Coefficient} = 0.\+5f
+\item 
+float \textbf{ coefficient\+Of\+Restitution} = 0.\+2f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Componente que permite simular las físicas de la entidad. 
+
+\begin{DoxyParagraph}{Multihilo}
+Las llamadas que están relacionadas con la obtención de velocidades (lineal y angular, total y por fotograma) y las llamadas relacionadas con la aplicación de fuerzas son thread-\/safe. 
+\end{DoxyParagraph}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!\_ResetCurrentFrameDeltas@{\_ResetCurrentFrameDeltas}}
+\index{\_ResetCurrentFrameDeltas@{\_ResetCurrentFrameDeltas}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{\_ResetCurrentFrameDeltas()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a9ea91a98968eb5ccac348c1523a0d987} 
+void Physics\+Component\+::\+\_\+\+Reset\+Current\+Frame\+Deltas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reestablece el cambio de velocidad en el frame. 
+
+\begin{DoxyWarning}{Atención}
+No es thread-\/safe. 
+\end{DoxyWarning}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!\_ResetForces@{\_ResetForces}}
+\index{\_ResetForces@{\_ResetForces}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{\_ResetForces()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_abffd20a6e941da3f80e25893c551270f} 
+void Physics\+Component\+::\+\_\+\+Reset\+Forces (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Quita todas las fuerzas aplicadas. 
+
+\begin{DoxyWarning}{Atención}
+No es thread-\/safe. 
+\end{DoxyWarning}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!\_SetAcceleration@{\_SetAcceleration}}
+\index{\_SetAcceleration@{\_SetAcceleration}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{\_SetAcceleration()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_aa7a2de92420b516483f7d2577e7b6516} 
+void Physics\+Component\+::\+\_\+\+Set\+Acceleration (\begin{DoxyParamCaption}\item[{\textbf{ Vector3f}}]{acceleration}{}\end{DoxyParamCaption})}
+
+
+
+Establece la acceleración del objeto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em acceleration} & Nueva aceleración. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Atención}
+No es thread-\/safe. 
+\end{DoxyWarning}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!\_SetAngularVelocity@{\_SetAngularVelocity}}
+\index{\_SetAngularVelocity@{\_SetAngularVelocity}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{\_SetAngularVelocity()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_aca5faf584b79cb71f81990be8ad62d54} 
+void Physics\+Component\+::\+\_\+\+Set\+Angular\+Velocity (\begin{DoxyParamCaption}\item[{\textbf{ Vector3f}}]{angular\+Velocity}{}\end{DoxyParamCaption})}
+
+
+
+Establece la velocidad angular del objeto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em angular\+Velocity} & Nueva velocidad angular. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Atención}
+No es thread-\/safe. 
+\end{DoxyWarning}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!\_SetVelocity@{\_SetVelocity}}
+\index{\_SetVelocity@{\_SetVelocity}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{\_SetVelocity()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a31401fd6693441c222af77e6733f178c} 
+void Physics\+Component\+::\+\_\+\+Set\+Velocity (\begin{DoxyParamCaption}\item[{\textbf{ Vector3f}}]{velocity}{}\end{DoxyParamCaption})}
+
+
+
+Establece la velocidad del objeto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em velocity} & Nueva velocidad. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Atención}
+No es thread-\/safe. 
+\end{DoxyWarning}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!ApplyForce@{ApplyForce}}
+\index{ApplyForce@{ApplyForce}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{ApplyForce()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a1cbc609910bc3743fdb9e8b454d3ef20} 
+void Physics\+Component\+::\+Apply\+Force (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{force}{}\end{DoxyParamCaption})}
+
+
+
+Ejerce una fuerza sobre el centro de masa del objeto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em force} & Fuerza (en Newtons\+: kg$\ast$m/s2). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!ApplyImpulse@{ApplyImpulse}}
+\index{ApplyImpulse@{ApplyImpulse}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{ApplyImpulse()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_aa199f088819273869cfff21b3b99ca9a} 
+void Physics\+Component\+::\+Apply\+Impulse (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{impulse}{, }\item[{const \textbf{ Vector3f} \&}]{local\+Space\+Point}{}\end{DoxyParamCaption})}
+
+
+
+Ejerce un impulso sobre el punto del objeto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em impulse} & Impulso (en Newtons\+: kg$\ast$m/s). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!GetAcceleration@{GetAcceleration}}
+\index{GetAcceleration@{GetAcceleration}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{GetAcceleration()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a8231e239542164328fc8fa736ea77763} 
+\textbf{ Vector3f} Physics\+Component\+::\+Get\+Acceleration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Aceleración (m/s). En espacio del mundo. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!GetAngularVelocity@{GetAngularVelocity}}
+\index{GetAngularVelocity@{GetAngularVelocity}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{GetAngularVelocity()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a06d932741447c2789d5bf9fa178e26e9} 
+\textbf{ Vector3f} Physics\+Component\+::\+Get\+Angular\+Velocity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Velocidad angular (rad/s). 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!GetCurrentFrameVelocityDelta@{GetCurrentFrameVelocityDelta}}
+\index{GetCurrentFrameVelocityDelta@{GetCurrentFrameVelocityDelta}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{GetCurrentFrameVelocityDelta()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a472cee08498106f192b570f4999d8c99} 
+\textbf{ Vector3f} Physics\+Component\+::\+Get\+Current\+Frame\+Velocity\+Delta (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Cambio de velocidad en el frame actual. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!GetInertiaTensor@{GetInertiaTensor}}
+\index{GetInertiaTensor@{GetInertiaTensor}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{GetInertiaTensor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_ad104908de8c2c04cc6858ad9ffe1fa11} 
+glm\+::mat3 Physics\+Component\+::\+Get\+Inertia\+Tensor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Matriz de momento de inercia. 
+\end{DoxyReturn}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!GetInverseInertiaTensor@{GetInverseInertiaTensor}}
+\index{GetInverseInertiaTensor@{GetInverseInertiaTensor}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{GetInverseInertiaTensor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a1d9df009bc19fc3989621a67ea50be91} 
+glm\+::mat3 Physics\+Component\+::\+Get\+Inverse\+Inertia\+Tensor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Matriz inversa del momento de inercia. 
+\end{DoxyReturn}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!GetInverseMass@{GetInverseMass}}
+\index{GetInverseMass@{GetInverseMass}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{GetInverseMass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_aed0d309c07fb8227f6406a298fbbdb1d} 
+float Physics\+Component\+::\+Get\+Inverse\+Mass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+1 / masa del objeto. Para masas infinitas, devuelve 0. 
+\end{DoxyReturn}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!GetMass@{GetMass}}
+\index{GetMass@{GetMass}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{GetMass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a5ec81df95c766222811cb411e50ba368} 
+float Physics\+Component\+::\+Get\+Mass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Masa del objeto. 
+\end{DoxyReturn}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!GetTorque@{GetTorque}}
+\index{GetTorque@{GetTorque}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{GetTorque()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a47074a1b3ad682decf7e7e250fd8e997} 
+\textbf{ Vector3f} Physics\+Component\+::\+Get\+Torque (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{local\+Space\+Point}{, }\item[{const \textbf{ Vector3f} \&}]{force}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!GetVelocity@{GetVelocity}}
+\index{GetVelocity@{GetVelocity}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{GetVelocity()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a0a076f85be521ce66724e60170df9995} 
+\textbf{ Vector3f} Physics\+Component\+::\+Get\+Velocity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Velocidad (en espacio del mundo). 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!GetVelocityOfPoint@{GetVelocityOfPoint}}
+\index{GetVelocityOfPoint@{GetVelocityOfPoint}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{GetVelocityOfPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_afac74572b57f9ef22e4bbdb7247e098a} 
+\textbf{ Vector3f} Physics\+Component\+::\+Get\+Velocity\+Of\+Point (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{local\+Space\+Point}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em local\+Space\+Point} & Punto del objeto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Velocidad del punto (en espacio del mundo). 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!IsImmovable@{IsImmovable}}
+\index{IsImmovable@{IsImmovable}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{IsImmovable()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a072a1454c8ff761bc89295b7b62d04d5} 
+bool Physics\+Component\+::\+Is\+Immovable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si el objeto tiene masa infinita. Inverse mass = 0.\+0f. 
+\end{DoxyReturn}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!OSK\_COMPONENT@{OSK\_COMPONENT}}
+\index{OSK\_COMPONENT@{OSK\_COMPONENT}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{OSK\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_ac8f99a444d1502275bcc12b370eac652} 
+OSK\+::\+ECS\+::\+Physics\+Component\+::\+OSK\+\_\+\+COMPONENT (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Physics\+Component"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}}
+\index{OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{OSK\_SERIALIZABLE\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a24be8afb37e471c38d7d756e10451783} 
+OSK\+::\+ECS\+::\+Physics\+Component\+::\+OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!SetImmovable@{SetImmovable}}
+\index{SetImmovable@{SetImmovable}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{SetImmovable()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a42a2265072fdf6068fab4eb26820d8a2} 
+void Physics\+Component\+::\+Set\+Immovable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Establece el objeto como inmovible. 
+
+\begin{DoxySeeAlso}{Ver también}
+\doxyref{Set\+Mass}{pág.}{class_o_s_k_1_1_e_c_s_1_1_physics_component_ad33a6ccaf85590a4c5bcd0aa0e24b843}(0.\+0f). 
+\end{DoxySeeAlso}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!SetInertiaTensor@{SetInertiaTensor}}
+\index{SetInertiaTensor@{SetInertiaTensor}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{SetInertiaTensor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a0d5af64d99b45d6af7f34f07a468836a} 
+void Physics\+Component\+::\+Set\+Inertia\+Tensor (\begin{DoxyParamCaption}\item[{const glm\+::mat3 \&}]{tensor}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!SetInverseInertiaTensor@{SetInverseInertiaTensor}}
+\index{SetInverseInertiaTensor@{SetInverseInertiaTensor}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{SetInverseInertiaTensor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a0f7d8a1ed85b371a41e3a88d69ec85b0} 
+void Physics\+Component\+::\+Set\+Inverse\+Inertia\+Tensor (\begin{DoxyParamCaption}\item[{const glm\+::mat3 \&}]{inverse\+Tensor}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!SetInverseMass@{SetInverseMass}}
+\index{SetInverseMass@{SetInverseMass}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{SetInverseMass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a1564a658b0afe10aa7e319c3099e44df} 
+void Physics\+Component\+::\+Set\+Inverse\+Mass (\begin{DoxyParamCaption}\item[{float}]{new\+Inverse\+Mass}{}\end{DoxyParamCaption})}
+
+
+
+Establece la inversa de la masa del objeto. También actualiza la masa. Para masas infinitas, establecer a 0. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em new\+Inverse\+Mass} & Masa inversa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily new\+Mass} $>$ 0. 
+\end{DoxyPrecond}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!SetMass@{SetMass}}
+\index{SetMass@{SetMass}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{SetMass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_ad33a6ccaf85590a4c5bcd0aa0e24b843} 
+void Physics\+Component\+::\+Set\+Mass (\begin{DoxyParamCaption}\item[{float}]{new\+Mass}{}\end{DoxyParamCaption})}
+
+
+
+Establece la masa del objeto. También actualiza la masa inversa. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em new\+Mass} & Masa del objeto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily new\+Mass} $>$ 0. 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Para una masa infinita, usar Set\+Inverse\+Mass(0). 
+\end{DoxyNote}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!centerOfMassOffset@{centerOfMassOffset}}
+\index{centerOfMassOffset@{centerOfMassOffset}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{centerOfMassOffset}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_a139ede070b866acdb153120c51b5e8b7} 
+\textbf{ Vector3f} OSK\+::\+ECS\+::\+Physics\+Component\+::center\+Of\+Mass\+Offset = \textbf{ Vector3f\+::\+Zero}}
+
+
+
+Centro de gravedad del objeto, en espacio local. 
+
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!coefficientOfRestitution@{coefficientOfRestitution}}
+\index{coefficientOfRestitution@{coefficientOfRestitution}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{coefficientOfRestitution}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_afbc57ad27cbbf0fdf1e8b03aabf0ba6a} 
+float OSK\+::\+ECS\+::\+Physics\+Component\+::coefficient\+Of\+Restitution = 0.\+2f}
+
+
+
+Coeficiente de resitución, que indica la cantidad de rebote del objeto. 
+
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily coefficient\+Of\+Restitution} $>$= 0. 
+
+{\ttfamily coefficient\+Of\+Restitution} $<$= 1. 
+\end{DoxyPrecond}
+\index{OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}!frictionCoefficient@{frictionCoefficient}}
+\index{frictionCoefficient@{frictionCoefficient}!OSK::ECS::PhysicsComponent@{OSK::ECS::PhysicsComponent}}
+\doxysubsubsection{frictionCoefficient}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_physics_component_aca400926c4aac6f1f181a8675fde8e01} 
+float OSK\+::\+ECS\+::\+Physics\+Component\+::friction\+Coefficient = 0.\+5f}
+
+
+
+Cantidad de fricción dinámica. 
+

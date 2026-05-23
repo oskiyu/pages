@@ -1,0 +1,75 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Gpu\+Geometry\+Entry}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_geometry_entry}\index{OSK::GRAPHICS::GpuGeometryEntry@{OSK::GRAPHICS::GpuGeometryEntry}}
+
+
+{\ttfamily \#include $<$Gpu\+Geometry\+Desc.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Gpu\+Geometry\+Entry} ()=default
+\item 
+\textbf{ Gpu\+Geometry\+Entry} (\textbf{ Global\+Index\+Buffer\+Range} \textbf{ indexes\+Entry}, \textbf{ Global\+Vertex\+Buffer\+Range} \textbf{ attribs\+Indexes\+Entry}, std\+::unordered\+\_\+map$<$ \textbf{ Vertex\+Attrib\+Uuid}, \textbf{ Global\+Vertex\+Buffer\+Range} $>$ \&\&\textbf{ vertex\+Entries\+Per\+Attrib})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Global\+Index\+Buffer\+Range} \textbf{ indexes\+Entry} \{\}
+\item 
+\textbf{ Global\+Vertex\+Buffer\+Range} \textbf{ attribs\+Indexes\+Entry} \{\}
+\item 
+std\+::unordered\+\_\+map$<$ \textbf{ Vertex\+Attrib\+Uuid}, \textbf{ Global\+Vertex\+Buffer\+Range} $>$ \textbf{ vertex\+Entries\+Per\+Attrib} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Información sobre en qué zonas de los buffers globales de geometría se ha almacenado una geometría en concreto. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::GpuGeometryEntry@{OSK::GRAPHICS::GpuGeometryEntry}!GpuGeometryEntry@{GpuGeometryEntry}}
+\index{GpuGeometryEntry@{GpuGeometryEntry}!OSK::GRAPHICS::GpuGeometryEntry@{OSK::GRAPHICS::GpuGeometryEntry}}
+\doxysubsubsection{GpuGeometryEntry()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_geometry_entry_af0c1bd777372c5eabb31faea0939bb7a} 
+OSK\+::\+GRAPHICS\+::\+Gpu\+Geometry\+Entry\+::\+Gpu\+Geometry\+Entry (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::GRAPHICS::GpuGeometryEntry@{OSK::GRAPHICS::GpuGeometryEntry}!GpuGeometryEntry@{GpuGeometryEntry}}
+\index{GpuGeometryEntry@{GpuGeometryEntry}!OSK::GRAPHICS::GpuGeometryEntry@{OSK::GRAPHICS::GpuGeometryEntry}}
+\doxysubsubsection{GpuGeometryEntry()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_geometry_entry_a80f871e70c8243488fd7320671e62ba2} 
+OSK\+::\+GRAPHICS\+::\+Gpu\+Geometry\+Entry\+::\+Gpu\+Geometry\+Entry (\begin{DoxyParamCaption}\item[{\textbf{ Global\+Index\+Buffer\+Range}}]{indexes\+Entry}{, }\item[{\textbf{ Global\+Vertex\+Buffer\+Range}}]{attribs\+Indexes\+Entry}{, }\item[{std\+::unordered\+\_\+map$<$ \textbf{ Vertex\+Attrib\+Uuid}, \textbf{ Global\+Vertex\+Buffer\+Range} $>$ \&\&}]{vertex\+Entries\+Per\+Attrib}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::GpuGeometryEntry@{OSK::GRAPHICS::GpuGeometryEntry}!attribsIndexesEntry@{attribsIndexesEntry}}
+\index{attribsIndexesEntry@{attribsIndexesEntry}!OSK::GRAPHICS::GpuGeometryEntry@{OSK::GRAPHICS::GpuGeometryEntry}}
+\doxysubsubsection{attribsIndexesEntry}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_geometry_entry_ab179a686117464ef761817ad09455e94} 
+\textbf{ Global\+Vertex\+Buffer\+Range} OSK\+::\+GRAPHICS\+::\+Gpu\+Geometry\+Entry\+::attribs\+Indexes\+Entry \{\}}
+
+
+
+Estructuras con los índices de cada uno de los atributos. 
+
+\index{OSK::GRAPHICS::GpuGeometryEntry@{OSK::GRAPHICS::GpuGeometryEntry}!indexesEntry@{indexesEntry}}
+\index{indexesEntry@{indexesEntry}!OSK::GRAPHICS::GpuGeometryEntry@{OSK::GRAPHICS::GpuGeometryEntry}}
+\doxysubsubsection{indexesEntry}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_geometry_entry_afec4b3539edd4850787e7d97ff1b60e2} 
+\textbf{ Global\+Index\+Buffer\+Range} OSK\+::\+GRAPHICS\+::\+Gpu\+Geometry\+Entry\+::indexes\+Entry \{\}}
+
+
+
+Índices de la geometría. 
+
+\index{OSK::GRAPHICS::GpuGeometryEntry@{OSK::GRAPHICS::GpuGeometryEntry}!vertexEntriesPerAttrib@{vertexEntriesPerAttrib}}
+\index{vertexEntriesPerAttrib@{vertexEntriesPerAttrib}!OSK::GRAPHICS::GpuGeometryEntry@{OSK::GRAPHICS::GpuGeometryEntry}}
+\doxysubsubsection{vertexEntriesPerAttrib}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_geometry_entry_a48b5a831f0fc56f44dd45c06307ad446} 
+std\+::unordered\+\_\+map$<$\textbf{ Vertex\+Attrib\+Uuid}, \textbf{ Global\+Vertex\+Buffer\+Range}$>$ OSK\+::\+GRAPHICS\+::\+Gpu\+Geometry\+Entry\+::vertex\+Entries\+Per\+Attrib \{\}}
+
+
+
+Atributos de los vértices. 
+

@@ -1,0 +1,33 @@
+\doxysection{Broad\+Collision\+Detector\+Dispatcher.\+h}
+\label{_broad_collision_detector_dispatcher_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/BroadCollisionDetectorDispatcher.h@{C:/Users/Oscar/source/repos/OSKengine/Source/BroadCollisionDetectorDispatcher.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}IBroadCollisionDetector.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::COLLISION\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ BroadCollisionDetectorDispatcher\ final\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddDetector(UniquePtr<IBroadCollisionDetector>\&\&\ detector);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ GetCollision(}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ BroadColliderHolder\&\ first,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ BroadColliderHolder\&\ second)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ DynamicArray<UniquePtr<IBroadCollisionDetector>>\ m\_detectors;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}

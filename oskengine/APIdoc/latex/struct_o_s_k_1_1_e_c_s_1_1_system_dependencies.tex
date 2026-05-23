@@ -1,0 +1,80 @@
+\doxysection{Referencia de la estructura OSK\+::ECS\+::System\+Dependencies}
+\label{struct_o_s_k_1_1_e_c_s_1_1_system_dependencies}\index{OSK::ECS::SystemDependencies@{OSK::ECS::SystemDependencies}}
+
+
+{\ttfamily \#include $<$ISystem.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ System\+Dependencies} \textbf{ Empty} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::set$<$ std\+::string, std\+::less$<$$>$ $>$ \textbf{ execute\+After\+These}
+\item 
+std\+::set$<$ std\+::string, std\+::less$<$$>$ $>$ \textbf{ execute\+Before\+These}
+\item 
+bool \textbf{ exclusive\+Execution} = false
+\item 
+bool \textbf{ single\+Threaded} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Dependencias explícitas de un sistema. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::SystemDependencies@{OSK::ECS::SystemDependencies}!Empty@{Empty}}
+\index{Empty@{Empty}!OSK::ECS::SystemDependencies@{OSK::ECS::SystemDependencies}}
+\doxysubsubsection{Empty()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_e_c_s_1_1_system_dependencies_a14a8f67d02ee860a5caaaed7605bb0a9} 
+\textbf{ System\+Dependencies} OSK\+::\+ECS\+::\+System\+Dependencies\+::\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::ECS::SystemDependencies@{OSK::ECS::SystemDependencies}!exclusiveExecution@{exclusiveExecution}}
+\index{exclusiveExecution@{exclusiveExecution}!OSK::ECS::SystemDependencies@{OSK::ECS::SystemDependencies}}
+\doxysubsubsection{exclusiveExecution}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_e_c_s_1_1_system_dependencies_af76f9f6fcb31a84722671b3824fc3146} 
+bool OSK\+::\+ECS\+::\+System\+Dependencies\+::exclusive\+Execution = false}
+
+
+
+Indica si este sistema debe ser ejecutado sin que otros sistemas puedan ejecutarse al mismo tiempo. 
+
+\index{OSK::ECS::SystemDependencies@{OSK::ECS::SystemDependencies}!executeAfterThese@{executeAfterThese}}
+\index{executeAfterThese@{executeAfterThese}!OSK::ECS::SystemDependencies@{OSK::ECS::SystemDependencies}}
+\doxysubsubsection{executeAfterThese}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_e_c_s_1_1_system_dependencies_af2ab300f72c34de2fe7faeb3237e9860} 
+std\+::set$<$std\+::string, std\+::less$<$$>$ $>$ OSK\+::\+ECS\+::\+System\+Dependencies\+::execute\+After\+These}
+
+
+
+Sistemas que deben ejecutarse antes del sistema. 
+
+\index{OSK::ECS::SystemDependencies@{OSK::ECS::SystemDependencies}!executeBeforeThese@{executeBeforeThese}}
+\index{executeBeforeThese@{executeBeforeThese}!OSK::ECS::SystemDependencies@{OSK::ECS::SystemDependencies}}
+\doxysubsubsection{executeBeforeThese}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_e_c_s_1_1_system_dependencies_a6d53867b765e4fe60afbe02b283fe76e} 
+std\+::set$<$std\+::string, std\+::less$<$$>$ $>$ OSK\+::\+ECS\+::\+System\+Dependencies\+::execute\+Before\+These}
+
+
+
+Sistemas que deben ejecutarse después del sistema. 
+
+\index{OSK::ECS::SystemDependencies@{OSK::ECS::SystemDependencies}!singleThreaded@{singleThreaded}}
+\index{singleThreaded@{singleThreaded}!OSK::ECS::SystemDependencies@{OSK::ECS::SystemDependencies}}
+\doxysubsubsection{singleThreaded}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_e_c_s_1_1_system_dependencies_a8d4a3a4916a8b6758a8f6ffffcc5b384} 
+bool OSK\+::\+ECS\+::\+System\+Dependencies\+::single\+Threaded = false}
+
+
+
+Indica si este sistema debe ser ejecutado exclusivamente en un único hilo. 
+
+Permite que otros sistemas puedan ejecutarse al mismo tiempo. 

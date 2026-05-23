@@ -1,0 +1,45 @@
+\doxysection{Android\+Display.\+h}
+\label{_android_display_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/AndroidDisplay.h@{C:/Users/Oscar/source/repos/OSKengine/Source/AndroidDisplay.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ OSK\_ANDROID}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}IDisplay.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }ANativeWindow;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{struct\ }android\_app;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }OSK::IO\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ AndroidWindow\ :\ \textcolor{keyword}{public}\ IDisplay\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ AndroidWindow(android\_app*\ app);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \string~AndroidWindow()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(Vector2ui\ \_,\ \textcolor{keyword}{const}\ std::string\&\ title)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Close()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ QueryInterface(TInterfaceUuid\ interfaceUuid,\ \textcolor{keywordtype}{void}**\ ptr)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ QueryConstInterface(TInterfaceUuid\ uuid,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}**\ ptr)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ ANativeWindow*\ GetNativeWindow();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ANativeWindow*\ GetNativeWindow()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ android\_app*\ m\_app\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OSK\_ANDROID}}
+
+\end{DoxyCode}

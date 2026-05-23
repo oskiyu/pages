@@ -1,0 +1,797 @@
+  % Handle batch mode
+  % to overcome problems with too many open files
+  \let\mypdfximage\pdfximage\def\pdfximage{\immediate\mypdfximage}
+  \RequirePackage{iftex}
+  \ifLuaTeX
+    \directlua{pdf.setminorversion(7)}
+  \fi
+  \ifXeTeX
+    \special{pdf:minorversion 7}
+  \fi
+  \ifPDFTeX
+    \pdfminorversion=7
+  \fi
+  % Set document class depending on configuration
+  \documentclass[twoside]{book}
+  %% moved from doxygen.sty due to workaround for LaTex 2019 version and unmaintained tabu package
+  \usepackage{ifthen}
+  \ifx\requestedLaTeXdate\undefined
+    \usepackage{array}
+  \else
+    \usepackage{array}[=2016-10-06]
+  \fi
+  %%
+  % Packages required by doxygen
+  \makeatletter
+  \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
+  % suppress package identification of infwarerr as it contains the word "warning"
+  \let\@@protected@wlog\protected@wlog
+  \def\protected@wlog#1{\wlog{package info suppressed}}
+  \RequirePackage{infwarerr}
+  \let\protected@wlog\@@protected@wlog
+  \makeatother
+  \IfFormatAtLeastTF{2016/01/01}{}{\usepackage{fixltx2e}} % for \textsubscript
+  \ifPDFTeX
+    \IfFormatAtLeastTF{2015/01/01}{\pdfsuppresswarningpagegroup=1}{}
+  \fi
+  \usepackage{doxygen}
+  \usepackage{graphicx}
+  \iftutex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures={TeX}}
+    \usepackage{unicode-math}
+  \else
+    \usepackage[utf8]{inputenc}
+  \fi
+  \usepackage{makeidx}
+  \PassOptionsToPackage{warn}{textcomp}
+  \usepackage{textcomp}
+  \usepackage[nointegrals]{wasysym}
+  \usepackage{ifxetex}
+  % NLS support packages
+  \usepackage[spanish, es-noshorthands, shorthands=off]{babel}
+  % Define default fonts
+  % Font selection
+  \iftutex
+  \else
+    \usepackage[T1]{fontenc}
+  \fi
+  % set main and monospaced font
+  \usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\renewcommand{\familydefault}{\sfdefault}
+  \doxyallsectionsfont{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \renewcommand{\DoxyLabelFont}{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+   % Arguments of doxygenemoji:
+   % 1) ':<text>:' form of the emoji, already LaTeX-escaped
+   % 2) file with the name of the emoji without the .png extension
+   % in case image exist use this otherwise use the ':<text>:' form
+   \newcommand{\doxygenemoji}[2]{%
+     \IfFileExists{./#2.png}{\raisebox{-0.1em}{\includegraphics[height=0.9em]{./#2.png}}}{#1}%
+   }
+  % Page & text layout
+  \usepackage{geometry}
+  \geometry{%
+    a4paper,%
+    top=2.5cm,%
+    bottom=2.5cm,%
+    left=2.5cm,%
+    right=2.5cm%
+  }
+  \usepackage{changepage}
+  % Allow a bit of overflow to go unnoticed by other means
+  \tolerance=750
+  \hfuzz=15pt
+  \hbadness=750
+  \setlength{\emergencystretch}{15pt}
+  \setlength{\parindent}{0cm}
+  \newcommand{\doxynormalparskip}{\setlength{\parskip}{3ex plus 2ex minus 2ex}}
+  \newcommand{\doxytocparskip}{\setlength{\parskip}{1ex plus 0ex minus 0ex}}
+  \doxynormalparskip
+  % Redefine paragraph/subparagraph environments, using sectsty fonts
+  \makeatletter
+  \renewcommand{\paragraph}{%
+    \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@parafont%
+    }%
+  }
+  \renewcommand{\subparagraph}{%
+    \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@subparafont%
+    }%
+  }
+  \makeatother
+  \makeatletter
+  \newcommand\hrulefilll{\leavevmode\leaders\hrule\hskip 0pt plus 1filll\kern\z@}
+  \makeatother
+  % Headers & footers
+  \usepackage{fancyhdr}
+  \pagestyle{fancyplain}
+  \renewcommand{\footrulewidth}{0.4pt}
+  \fancypagestyle{fancyplain}{
+    \fancyhf{}
+    \fancyhead[LE, RO]{\bfseries\thepage}
+    \fancyhead[LO]{\bfseries\rightmark}
+    \fancyhead[RE]{\bfseries\leftmark}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Generado por Doxygen }
+  }
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Generado por Doxygen }
+    \renewcommand{\headrulewidth}{0pt}
+  }
+  \pagestyle{fancyplain}
+  \renewcommand{\chaptermark}[1]{%
+    \markboth{#1}{}%
+  }
+  \renewcommand{\sectionmark}[1]{%
+    \markright{\thesection\ #1}%
+  }
+  % ToC, LoF, LoT, bibliography, and index
+  % Indices & bibliography
+  \usepackage[numbers]{natbib}
+  \usepackage[titles]{tocloft}
+  \setcounter{tocdepth}{3}
+  \setcounter{secnumdepth}{5}
+  % creating indexes
+  \makeindex
+  \ifPDFTeX
+\usepackage{newunicodechar}
+  \makeatletter
+    \def\doxynewunicodechar#1#2{%
+    \@tempswafalse
+    \edef\nuc@tempa{\detokenize{#1}}%
+    \if\relax\nuc@tempa\relax
+      \nuc@emptyargerr
+    \else
+      \edef\@tempb{\expandafter\@car\nuc@tempa\@nil}%
+      \nuc@check
+      \if@tempswa
+        \@namedef{u8:\nuc@tempa}{#2}%
+      \fi
+    \fi
+  }
+  \makeatother
+  \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \doxynewunicodechar{²}{${}^{2}$}% Superscript two
+  \doxynewunicodechar{³}{${}^{3}$}% Superscript three
+\fi
+  % Hyperlinks
+  % Custom commands used by the header
+  % Custom commands
+  \newcommand{\clearemptydoublepage}{%
+    \newpage{\pagestyle{empty}\cleardoublepage}%
+  }
+  % caption style definition
+  \usepackage{caption}
+  \captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
+  % in page table of contents
+  \IfFormatAtLeastTF{2023/05/01}{\usepackage[deeplevels]{etoc}}{\usepackage[deeplevels]{etoc_doxygen}}
+  \etocsettocstyle{\doxytocparskip}{\doxynormalparskip}
+  \etocsetlevel{subsubsubsection}{4}
+  \etocsetlevel{subsubsubsubsection}{5}
+  \etocsetlevel{subsubsubsubsubsection}{6}
+  \etocsetlevel{subsubsubsubsubsubsection}{7}
+  \etocsetlevel{paragraph}{8}
+  \etocsetlevel{subparagraph}{9}
+  % prevent numbers overlap the titles in toc
+  \renewcommand{\numberline}[1]{#1~}
+% End of preamble, now comes the document contents
+%===== C O N T E N T S =====
+\begin{document}
+  \raggedbottom
+  % Titlepage & ToC
+  \pagenumbering{alph}
+  \begin{titlepage}
+  \vspace*{7cm}
+  \begin{center}%
+  {\Large OSKengine}\\
+  [1ex]\large Indev \\
+  \vspace*{1cm}
+  {\large Generado por Doxygen 1.14.0}\\
+  \end{center}
+  \end{titlepage}
+  \clearemptydoublepage
+  \pagenumbering{roman}
+  \tableofcontents
+  \clearemptydoublepage
+  \pagenumbering{arabic}
+%--- Begin generated contents ---
+\input{index}
+\input{jsonfiles}
+\input{md_ecs_01messaging}
+\input{md_philosophy}
+\input{md_style}
+\input{md__version_history}
+\chapter{Índice de espacios de nombres}
+\input{namespaces}
+\chapter{Índice de conceptos}
+\input{concepts}
+\chapter{Índice jerárquico}
+\input{hierarchy}
+\chapter{Índice de clases}
+\input{annotated}
+\chapter{Documentación de espacios de nombres}
+\input{namespace_o_s_k}
+\input{namespace_o_s_k_1_1___d_arr}
+\input{namespace_o_s_k_1_1_a_s_s_e_t_s}
+\input{namespace_o_s_k_1_1_a_u_d_i_o}
+\input{namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n}
+\input{namespace_o_s_k_1_1_concepts}
+\input{namespace_o_s_k_1_1_e_c_s}
+\input{namespace_o_s_k_1_1_editor}
+\input{namespace_o_s_k_1_1_editor_1_1_controllers}
+\input{namespace_o_s_k_1_1_editor_1_1_u_i}
+\input{namespace_o_s_k_1_1_editor_1_1_u_i_1_1_constants}
+\input{namespace_o_s_k_1_1_editor_1_1_views}
+\input{namespace_o_s_k_1_1_e_f_traits}
+\input{namespace_o_s_k_1_1_g_a_m_e}
+\input{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s}
+\input{namespace_o_s_k_1_1_i_o}
+\input{namespace_o_s_k_1_1_m_a_t_h}
+\input{namespace_o_s_k_1_1_math}
+\input{namespace_o_s_k_1_1_m_e_m_o_r_y}
+\input{namespace_o_s_k_1_1_n_e_t}
+\input{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e}
+\input{namespace_o_s_k_1_1_p_h_y_s_i_c_s}
+\input{namespace_o_s_k_1_1_u_i}
+\input{namespacetinygltf}
+\chapter{Documentación de conceptos}
+\input{concept_o_s_k_1_1___d_arr_1_1_is_copyable}
+\input{concept_o_s_k_1_1___d_arr_1_1_is_movable}
+\input{concept_o_s_k_1_1_concepts_1_1_are_same_template}
+\input{concept_o_s_k_1_1_concepts_1_1_is_copyable}
+\input{concept_o_s_k_1_1_concepts_1_1_is_movable}
+\input{concept_o_s_k_1_1_e_c_s_1_1_is_consumer_system}
+\input{concept_o_s_k_1_1_e_c_s_1_1_is_ecs_component}
+\input{concept_o_s_k_1_1_e_c_s_1_1_is_ecs_event}
+\input{concept_o_s_k_1_1_e_c_s_1_1_is_ecs_system}
+\input{concept_o_s_k_1_1_e_c_s_1_1_is_iterator_system}
+\input{concept_o_s_k_1_1_e_c_s_1_1_is_serializable_component}
+\input{concept_o_s_k_1_1_e_c_s_1_1_is_serializable_system}
+\input{concept_o_s_k_1_1_editor_1_1_controllers_1_1_is_component_controller}
+\input{concept_o_s_k_1_1_editor_1_1_controllers_1_1_is_system_controller}
+\input{concept_o_s_k_1_1_editor_1_1_views_1_1_is_component_view}
+\input{concept_o_s_k_1_1_editor_1_1_views_1_1_is_system_view}
+\input{concept_o_s_k_1_1_e_f_traits_1_1_is_enum}
+\input{concept_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_is_vertex_attribute}
+\input{concept_o_s_k_1_1_is_console_command}
+\input{concept_o_s_k_1_1_is_job}
+\input{concept_o_s_k_1_1_m_a_t_h_1_1_is_integer}
+\input{concept_o_s_k_1_1_m_a_t_h_1_1_is_numeric}
+\chapter{Documentación de clases}
+\input{class___gjk_point_collider}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_aabb_aabb_collision_detector}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_acceleration_structure_creation_exception}
+\input{struct_a_l_ccontext_deleter}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animated_g_buffer_pass}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_channel}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_sampler}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_skin}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animator}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_anim_mesh_loader}
+\input{struct_o_s_k_1_1_concepts_1_1_are_same_template__t}
+\input{struct_o_s_k_1_1_concepts_1_1_are_same_template__t_3_01_t_3_01_t1_01_4_00_01_t_3_01_t2_01_4_01_4}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_description_file_not_found_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_loader_already_registered_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_loader_job}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_loader_not_found_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_ref}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_assets_map}
+\input{struct_o_s_k_1_1_atomic_holder}
+\input{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_api_al}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_audio_asset}
+\input{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_device_al}
+\input{class_o_s_k_1_1_audio_device_creation_exception}
+\input{class_o_s_k_1_1_audio_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_audio_loader}
+\input{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_source_al}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_axis_aligned_bounding_box}
+\input{class_o_s_k_1_1_bad_alloc_exception}
+\input{class_o_s_k_1_1_base_uuid}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_billboard_g_buffer_pass}
+\input{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block}
+\input{class_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_1_1_binary_block_reader}
+\input{class_o_s_k_1_1_bit_set}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bone_already_added_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bone_not_found_exception}
+\input{class_o_s_k_1_1_u_i_1_1_border_layout}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_collider_holder}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_collision_detector_dispatcher}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_gjk_collision_detector}
+\input{class_o_s_k_1_1_a_u_d_i_o_1_1_buffer}
+\input{class_o_s_k_1_1_m_e_m_o_r_y_1_1_buffer}
+\input{class_o_s_k_1_1_u_i_1_1_button}
+\input{class_o_s_k_1_1_e_c_s_1_1_camera_component2_d}
+\input{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_camera_component_controller3_d}
+\input{class_o_s_k_1_1_editor_1_1_views_1_1_camera_component_view}
+\input{struct_o_s_k_1_1_e_c_s_1_1_deferred_render_system_1_1_camera_info}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info}
+\input{class_o_s_k_1_1_u_i_1_1_collapsible_wrapper}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider}
+\input{class_o_s_k_1_1_e_c_s_1_1_collider_render_system}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_collider_render_system_controller}
+\input{class_o_s_k_1_1_editor_1_1_views_1_1_collider_render_system_view}
+\input{class_o_s_k_1_1_e_c_s_1_1_collision_component}
+\input{struct_o_s_k_1_1_e_c_s_1_1_collision_event}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collision_info}
+\input{class_o_s_k_1_1_e_c_s_1_1_collision_system}
+\input{class_o_s_k_1_1_color}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_creation_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_end_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_reset_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_start_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_submit_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_pool_creation_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_queue_submit_exception}
+\input{class_o_s_k_1_1_e_c_s_1_1_component_already_registered_exception}
+\input{class_o_s_k_1_1_e_c_s_1_1_component_container}
+\input{class_o_s_k_1_1_e_c_s_1_1_component_manager}
+\input{class_o_s_k_1_1_e_c_s_1_1_component_not_found_exception}
+\input{class_o_s_k_1_1_e_c_s_1_1_component_not_registered_exception}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_loaded_material_info_v1_1_1_config}
+\input{class_o_s_k_1_1_u_i_1_1_console}
+\input{class_o_s_k_1_1_console_command_executor}
+\input{class_o_s_k_1_1_constexpr_bit_set}
+\input{class_o_s_k_1_1_dynamic_array_1_1_const_iterator}
+\input{class_o_s_k_1_1_e_c_s_1_1_consumer_system_execution_job}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info}
+\input{class_o_s_k_1_1_cpu_mesh3_d}
+\input{class_o_s_k_1_1_cpu_model3_d}
+\input{struct_o_s_k_1_1_cpu_vertex3_d}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_cubemap_texture}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_cubemap_texture_loader}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_deferred_push_constants}
+\input{class_o_s_k_1_1_e_c_s_1_1_deferred_render_system}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_deferred_render_system_controller}
+\input{class_o_s_k_1_1_editor_1_1_views_1_1_deferred_render_system_view}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_descriptor_layout_creation_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_descriptor_pool_creation_exception}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_detailed_collision_detector_dispatcher}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_detailed_collision_info}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_detailed_sphere_sphere_detector}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_directional_light}
+\input{class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_distance_constraint}
+\input{class_o_s_k_1_1_divide_by_zero_exception}
+\input{class_o_s_k_1_1_u_i_1_1_dropdown}
+\input{class_o_s_k_1_1_dynamic_array}
+\input{class_o_s_k_1_1_editor_1_1_editor}
+\input{class_o_s_k_1_1_editor_1_1_u_i_1_1_editor_bottom_bar}
+\input{class_o_s_k_1_1_editor_1_1_u_i_1_1_editor_header}
+\input{class_o_s_k_1_1_editor_hide_command}
+\input{class_o_s_k_1_1_editor_1_1_u_i_1_1_editor_panel_title}
+\input{class_o_s_k_1_1_editor_show_command}
+\input{class_o_s_k_1_1_editor_1_1_u_i_1_1_editor_ui}
+\input{class_o_s_k_1_1_u_i_1_1_dropdown_1_1_element}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_empty_vertex}
+\input{class_o_s_k_1_1_engine}
+\input{class_o_s_k_1_1_engine_exception}
+\input{class_o_s_k_1_1_e_c_s_1_1_entity_component_system}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_usage_info_1_1_entry}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info_1_1_entry}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_epa_minkowski_hull}
+\input{class_o_s_k_1_1_e_c_s_1_1_event_already_registered_exception}
+\input{class_o_s_k_1_1_e_c_s_1_1_event_container}
+\input{class_o_s_k_1_1_e_c_s_1_1_event_manager}
+\input{class_o_s_k_1_1_e_c_s_1_1_event_not_registered_exception}
+\input{struct_o_s_k_1_1_e_c_s_1_1_event_queue_span}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_example_compute_pass}
+\input{class_o_s_k_1_1_exit_command}
+\input{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sat_info_1_1_face}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_face_projection}
+\input{class_o_s_k_1_1_i_o_1_1_file_i_o}
+\input{class_o_s_k_1_1_i_o_1_1_file_not_found_exception}
+\input{class_o_s_k_1_1_finished_block_reader_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font}
+\input{struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_character}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_character_lodaing_exception}
+\input{struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_instance}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_library_initialization_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_loader}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_lodaing_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_framebuffer_vk_map}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_framebuffer_vk_map_entry}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner}
+\input{class_o_s_k_1_1_u_i_1_1_free_container}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_fxaa_pass}
+\input{class_o_s_k_1_1_e_c_s_1_1_game_object_manager}
+\input{class_o_s_k_1_1_n_e_t_1_1_game_object_translator}
+\input{class_o_s_k_1_1_i_o_1_1_gamepad_state}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_g_buffer}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass}
+\input{class_o_s_k_1_1_e_c_s_1_1_gdr_deferred_render_system}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model}
+\input{struct_o_s_k_1_1_e_c_s_1_1_gdr_geometry_component}
+\input{struct_o_s_k_1_1_e_c_s_1_1_gdr_material_component}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline}
+\input{struct_o_s_k_1_1_e_c_s_1_1_gdr_textured_component}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_vertex3_d}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_clipping_detector}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_epa_detector}
+\input{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_gjk_support}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_mesh_mapping}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_per_model_data}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_vertex_buffer_manager}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_vertex_buffer_range}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_creation_exception}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_memory_block_info}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_range}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_geometry_desc}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_geometry_entry}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_heap_memory_usage_info}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_range}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_alignments}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_alloc_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_block_not_enough_space_exception}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_mapped_range}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_not_mapped_exception}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_usage_info}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_mesh3_d}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_not_compatible_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_not_found_exception}
+\input{class_o_s_k_1_1_gpu_stats_command}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_grass_render_pass}
+\input{structstd_1_1hash_3_01_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_framebuffer_vk_map_entry_01_4}
+\input{structstd_1_1hash_3_01_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc_01_4}
+\input{structstd_1_1hash_3_01_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_01_4}
+\input{structstd_1_1hash_3_01_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map_entry_01_4}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass}
+\input{class_o_s_k_1_1_u_i_1_1_horizontal_container}
+\input{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader}
+\input{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api}
+\input{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_device}
+\input{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_broad_collider}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_broad_collision_detector}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue}
+\input{class_o_s_k_1_1_e_c_s_1_1_i_component_container}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_component_controller}
+\input{class_o_s_k_1_1_editor_1_1_views_1_1_i_component_view}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_compute_pipeline}
+\input{class_o_s_k_1_1_i_console_command}
+\input{class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint}
+\input{class_o_s_k_1_1_e_c_s_1_1_i_consumer_system}
+\input{class_o_s_k_1_1_u_i_1_1_i_container}
+\input{class_o_s_k_1_1_i_debug_game}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_deferred_resolver}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_detailed_collision_detector}
+\input{class_o_s_k_1_1_i_o_1_1_i_display}
+\input{class_o_s_k_1_1_u_i_1_1_i_element}
+\input{class_o_s_k_1_1_e_c_s_1_1_i_event_container}
+\input{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display}
+\input{class_o_s_k_1_1_i_game}
+\input{class_o_s_k_1_1_i_o_1_1_i_gamepad_input}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_sampler}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_object}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_vertex_description}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_graphics_pipeline}
+\input{class_o_s_k_1_1_i_o_1_1_i_input_listener}
+\input{class_o_s_k_1_1_i_iterable}
+\input{class_o_s_k_1_1_i_iterator}
+\input{class_o_s_k_1_1_e_c_s_1_1_i_iterator_system}
+\input{class_o_s_k_1_1_i_job}
+\input{class_o_s_k_1_1_i_o_1_1_i_keyboard_input}
+\input{class_o_s_k_1_1_i_o_1_1_i_logger}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_image_creation_exception}
+\input{class_o_s_k_1_1_u_i_1_1_image_view}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_image_view_creation_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_mesh_pipeline}
+\input{class_o_s_k_1_1_i_o_1_1_i_mouse_input}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_index_buffer_view}
+\input{struct_o_s_k_1_1_transform3_d_1_1_inheritance_config}
+\input{class_o_s_k_1_1_i_o_1_1_initialize_window_exception}
+\input{class_o_s_k_1_1_i_o_1_1_input_manager}
+\input{class_o_s_k_1_1_invalid_argument_exception}
+\input{class_o_s_k_1_1_invalid_binary_deserialization_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_invalid_description_file_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_invalid_index_buffer_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_invalid_material_exception}
+\input{class_o_s_k_1_1_e_c_s_1_1_invalid_object_exception}
+\input{class_o_s_k_1_1_invalid_object_state_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_invalid_vertex_buffer_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_layout}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass}
+\input{class_o_s_k_1_1_i_query_interface}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_ray_collider}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_raytracing_pipeline}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass}
+\input{class_o_s_k_1_1_e_c_s_1_1_i_render_system}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_irradiance_map}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_irradiance_map_loader}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_rt_shader_table}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_sat_collider}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_render_pass}
+\input{class_o_s_k_1_1_e_c_s_1_1_i_serializable_system}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shader_pass}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_shadows_pass}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain}
+\input{class_o_s_k_1_1_e_c_s_1_1_i_system}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller}
+\input{class_o_s_k_1_1_editor_1_1_views_1_1_i_system_view}
+\input{class_o_s_k_1_1_dynamic_array_1_1_iterator}
+\input{class_o_s_k_1_1_e_c_s_1_1_iterator_system_execution_job}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_top_level_acceleration_structure}
+\input{class_o_s_k_1_1_i_o_1_1_i_touch_input}
+\input{class_o_s_k_1_1_e_c_s_1_1_i_typed_consumer_system}
+\input{class_o_s_k_1_1_i_o_1_1_i_user_input}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_vertex_attribute}
+\input{class_o_s_k_1_1_job_count_map}
+\input{class_o_s_k_1_1_job_queue}
+\input{class_o_s_k_1_1_job_system}
+\input{class_o_s_k_1_1_i_o_1_1_keyboard_state}
+\input{class_o_s_k_1_1_kilograms}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_lights_buffer_struct}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_loaded_material_info_v1}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_mesh_mapping}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_mesh_data}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_model_data}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_lod}
+\input{class_o_s_k_1_1_i_o_1_1_logger}
+\input{class_o_s_k_1_1_i_o_1_1_logger_not_initialized_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_logical_device_creation_exception}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_material}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_instance}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_binding}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_builder}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_push_constant}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_slot}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_not_found_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_slot_creation_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_system}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_matrix_buffer_not_created_exception}
+\input{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_model3_d}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_model_animation_not_found_exception}
+\input{class_o_s_k_1_1_e_c_s_1_1_model_component3_d}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_model_component_controller3_d}
+\input{class_o_s_k_1_1_editor_1_1_views_1_1_model_component_view3_d}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_model_loader3_d}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_model_skin_not_found_exception}
+\input{class_o_s_k_1_1_i_o_1_1_mouse_state}
+\input{struct_o_s_k_1_1_mutex_holder}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_narrow_collider_holder}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_no_compatible_gpu_memory_exception}
+\input{class_o_s_k_1_1_not_implemented_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_no_vertex_bone_indices_found_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_no_vertex_bone_weights_found_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_no_vertex_color_found_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_no_vertex_normals_found_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_no_vertex_positions_found_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_no_vertex_tangents_found_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_no_vertex_tex_coords_found_exception}
+\input{class_o_s_k_1_1_e_c_s_1_1_object_already_has_component_exception}
+\input{class_o_s_k_1_1_editor_1_1_u_i_1_1_object_list}
+\input{class_o_s_k_1_1_editor_1_1_u_i_1_1_object_properties_panel}
+\input{class_o_s_k_1_1_overflow_conversion_exception}
+\input{struct_o_s_k_1_1_pair}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pbr_ibl_config}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pbr_material_info}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pbr_resolver_pass}
+\input{class_o_s_k_1_1_e_c_s_1_1_physics_component}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_physics_component_controller3_d}
+\input{class_o_s_k_1_1_editor_1_1_views_1_1_physics_component_view}
+\input{class_o_s_k_1_1_e_c_s_1_1_physics_resolver}
+\input{class_o_s_k_1_1_e_c_s_1_1_physics_system}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_physics_system_controller}
+\input{class_o_s_k_1_1_editor_1_1_views_1_1_physics_system_view}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_creation_exception}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_key}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_layout_creation_exception}
+\input{struct_o_s_k_1_1_plane}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_point_light}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_position_only_vertex3_d}
+\input{class_o_s_k_1_1_post_process_input_not_set_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_pre_built_collider}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_pre_built_collider_loader}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_pre_built_spline3_d}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_pre_built_spline_loader3_d}
+\input{struct_o_s_k_1_1_e_c_s_1_1_deferred_render_system_1_1_previous_camera_info}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info}
+\input{struct_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_1_1_previous_display_state}
+\input{class_o_s_k_1_1_editor_1_1_u_i_1_1_properties_panel}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_push_const2_d}
+\input{class_o_s_k_1_1_quaternion}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_queue_familes}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_queue_family}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_raw_asset_file_not_found_exception}
+\input{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray_cast_result}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_ray_tracing_not_supported_exception}
+\input{class_o_s_k_1_1_e_c_s_1_1_render_bounds_renderer}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_render_bounds_render_system_controller}
+\input{class_o_s_k_1_1_editor_1_1_views_1_1_render_bounds_render_system_view}
+\input{class_o_s_k_1_1_rendered_not_created_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderer_creation_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_pass_dependencies}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_pass_entry}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_pass_image_info}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map_entry}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map_entry_per_attachment}
+\input{class_o_s_k_1_1_e_c_s_1_1_render_system2_d}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_info}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_to_swapchain_pass}
+\input{struct_o_s_k_1_1_i_o_1_1_i_display_1_1_resolution_changed_event}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_resource_queue_transfer_info}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block_1_1_reusable_memory_subblock}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_absolute_size_image_register_args}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_manager}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_dependency_shader_binding}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_geometry_manager}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_size_info}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_relative_size_image_register_args}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_shader_binding_table_creation_exception}
+\input{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sat_info}
+\input{class_o_s_k_1_1_e_c_s_1_1_saved_game_object_translator}
+\input{class_o_s_k_1_1_schema_id}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_batch2_d}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_renderer2_d}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_global_information_buffer_content2_d}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_string_info}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_compiling_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_loading_exception}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_factory}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_table}
+\input{class_o_s_k_1_1_shader_reflection_exception}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_stage_vk}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadows_static_pass}
+\input{class_o_s_k_1_1_shared_ptr}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_simplex}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton}
+\input{class_o_s_k_1_1_e_c_s_1_1_skybox_render_system}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_skybox_render_system_controller}
+\input{class_o_s_k_1_1_editor_1_1_views_1_1_skybox_render_system_view}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_smaa_pass}
+\input{class_o_s_k_1_1_span}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_specular_map}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_specular_map_loader}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_aabb_collision_detector}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_collider}
+\input{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_sphere_broad_collision_detector}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_spirv_reflection_data}
+\input{class_o_s_k_1_1_spline3_d}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_batch}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite_renderer}
+\input{struct_sprite_renderer_global_information}
+\input{class_o_s_k_1_1_static_array}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_static_g_buffer_pass}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_static_mesh_loader}
+\input{class_o_s_k_1_1_static_uuid_provider}
+\input{class_o_s_k_1_1_stop_watch}
+\input{struct_o_s_k_1_1_string_hasher}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_swapchain_creation_exception}
+\input{class_o_s_k_1_1_e_c_s_1_1_system_already_registered_exception}
+\input{class_o_s_k_1_1_e_c_s_1_1_system_cyclic_dependency_exception}
+\input{struct_o_s_k_1_1_e_c_s_1_1_system_dependencies}
+\input{class_o_s_k_1_1_e_c_s_1_1_system_execution_graph}
+\input{struct_o_s_k_1_1_e_c_s_1_1_system_execution_set}
+\input{class_o_s_k_1_1_editor_1_1_u_i_1_1_system_list}
+\input{class_o_s_k_1_1_e_c_s_1_1_system_manager}
+\input{class_o_s_k_1_1_e_c_s_1_1_system_not_found_exception}
+\input{class_o_s_k_1_1_editor_1_1_u_i_1_1_system_properties_panel}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_t_asset_loader}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_t_component_controller}
+\input{class_o_s_k_1_1_u_i_1_1_text_input}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_texture_coordinates2_d}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture_loader}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_texture_table}
+\input{class_o_s_k_1_1_u_i_1_1_text_view}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_threaded_command_pool_map}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass}
+\input{struct_o_s_k_1_1_i_o_1_1_touch_input}
+\input{class_o_s_k_1_1_e_c_s_1_1_transform2_d}
+\input{class_o_s_k_1_1_transform3_d}
+\input{class_o_s_k_1_1_e_c_s_1_1_transform_applier_system}
+\input{class_o_s_k_1_1_e_c_s_1_1_transform_component3_d}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_transform_component_controller3_d}
+\input{class_o_s_k_1_1_editor_1_1_views_1_1_transform_component_view3_d}
+\input{class_o_s_k_1_1_editor_1_1_controllers_1_1_t_system_controller}
+\input{class_o_s_k_1_1_unique_ptr}
+\input{class_o_s_k_1_1_unreachable_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_unsupported_index_type_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_unsupported_joint_type_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_unsupported_mesh_properties}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_unsupported_model_image_format_exception}
+\input{class_o_s_k_1_1_a_s_s_e_t_s_1_1_unsupported_polygon_mode_exception}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_vertex_buffer_range}
+\input{class_o_s_k_1_1_uuid_provider}
+\input{class_o_s_k_1_1_vector2__t}
+\input{class_o_s_k_1_1_vector3__t}
+\input{class_o_s_k_1_1_vector4__t}
+\input{struct_o_s_k_1_1_version}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex2_d}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex3_d}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_anim3_d}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_animation_attributes3_d}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attribute_entry}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes3_d}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes_buffer_ref}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_buffer_view}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_collision_debug3_d}
+\input{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_info}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_position_attribute3_d}
+\input{class_o_s_k_1_1_u_i_1_1_vertical_container}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_map}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertices_attributes_maps}
+\input{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_viewport}
+\input{class_o_s_k_1_1_window_not_created_exception}
+\chapter{Ejemplos}
+\input{uniform-example}
+\input{1_80-example}
+\input{0_85-example}
+\input{2_80-example}
+%--- End generated contents ---
+% Index
+  \backmatter
+  \newpage
+  \phantomsection
+  \clearemptydoublepage
+  \addcontentsline{toc}{chapter}{\indexname}
+  \printindex
+% Required for some languages (in combination with latexdocumentpre from the header)
+\end{document}

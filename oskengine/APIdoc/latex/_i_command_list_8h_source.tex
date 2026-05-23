@@ -1,0 +1,343 @@
+\doxysection{ICommand\+List.\+h}
+\label{_i_command_list_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/ICommandList.h@{C:/Users/Oscar/source/repos/OSKengine/Source/ICommandList.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Vector4.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Color.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}RenderpassType.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}IGpuObject.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ Para\ \`{}GpuImageRange\ =\ \{\}`.}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}IGpuImage.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ Para\ \`{}ResourceQueueTransfer::Empty()`.}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}ResourceQueueTransfer.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ Para\ \`{}GpuImageRange::\{\}`.}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}GpuImageRange.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}Viewport.h"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Materiales.}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{class\ }Material;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }IMaterialSlot;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{class\ }MaterialInstance;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Pipelines.}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{class\ }IGraphicsPipeline;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{class\ }IRaytracingPipeline;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{class\ }IComputePipeline;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{class\ }IMeshPipeline;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Imágenes.}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{class\ }GpuImage;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuImageLayout;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{class\ }CopyImageInfo;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{class\ }RenderTarget;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Buffers.}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{struct\ }GpuBufferRange;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ Barriers.}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{struct\ }GpuBarrierInfo;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Otros.}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{class\ }ICommandPool;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{struct\ }RenderPassImageInfo\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ GpuImage*\ targetImage\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ UIndex32\ arrayLevel\ =\ 0;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ clear\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00063\ \ \ \ \ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{enum\ class}\ RenderpassAutoSync\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ ON,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ OFF}
+\DoxyCodeLine{00068\ \ \ \ \ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ ICommandList\ :\ \textcolor{keyword}{public}\ IGpuObject\ \{}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \string~ICommandList()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ OSK\_DEFINE\_AS(ICommandList);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Reset()\ =\ 0;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Start()\ =\ 0;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Close()\ =\ 0;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetGpuImageBarrier(}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ image,\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout\ previousLayout,\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout\ nextLayout,}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo\ previous,\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo\ next,\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImageRange\&\ range\ =\ \{\},}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ResourceQueueTransferInfo\ queueTranfer\ =\ ResourceQueueTransferInfo::Empty())\ =\ 0;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetGpuImageBarrier(}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ image,}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout\ nextLayout,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo\ previous,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo\ next,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImageRange\&\ range\ =\ \{\},}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ResourceQueueTransferInfo\ queueTranfer\ =\ ResourceQueueTransferInfo::Empty());}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetGpuImageBarrier(}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ image,}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageLayout\ nextLayout,}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo\ next,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImageRange\&\ range\ =\ \{\},}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ResourceQueueTransferInfo\ queueTranfer\ =\ ResourceQueueTransferInfo::Empty());}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetGpuBufferBarrier(}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBuffer*\ buffer,}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBufferRange\&\ range,}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo\ previous,}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo\ next,}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ResourceQueueTransferInfo\ queueTranfer\ =\ ResourceQueueTransferInfo::Empty())\ =\ 0;}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetGpuBufferBarrier(}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBuffer*\ buffer,}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBufferRange\&\ range,}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo\ next,}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ResourceQueueTransferInfo\ queueTranfer\ =\ ResourceQueueTransferInfo::Empty());}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#pragma\ region\ Pases}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BeginGraphicsRenderpass(}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ RenderTarget*\ renderTarget,}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\&\ color\ =\ Color::Black,}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ autoSync\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ BeginGraphicsRenderpass(}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ DynamicArray<RenderPassImageInfo>\ colorImages,}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ std::optional<RenderPassImageInfo>\ depthImage,}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\&\ color\ =\ Color::Black,}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ autoSync\ =\ \textcolor{keyword}{true})\ =\ 0;}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ClearImage(}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ image,}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImageRange\&\ range\ =\ \{\},}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\&\ color\ =\ Color::Black)\ =\ 0;}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ EndGraphicsRenderpass(\textcolor{keywordtype}{bool}\ autoSync\ =\ \textcolor{keyword}{true})\ =\ 0;}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetViewport(\textcolor{keyword}{const}\ Viewport\&\ viewport);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Viewport\&\ GetCurrentViewport()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetScissor(\textcolor{keyword}{const}\ Vector4ui\&\ scissor)\ =\ 0;}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#pragma\ region\ Binding}}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindMaterial(\textcolor{keyword}{const}\ Material\&\ material);}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ BindVertexBufferRange(\textcolor{keyword}{const}\ GpuBuffer\&\ buffer,\ \textcolor{keyword}{const}\ VertexBufferView\&\ view)\ =\ 0;}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindVertexBuffer(\textcolor{keyword}{const}\ GpuBuffer\&\ buffer);}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ BindIndexBufferRange(\textcolor{keyword}{const}\ GpuBuffer\&\ buffer,\ \textcolor{keyword}{const}\ IndexBufferView\&\ view)\ =\ 0;}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindIndexBuffer(\textcolor{keyword}{const}\ GpuBuffer\&\ buffer);}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ BindMaterialInstance(\textcolor{keyword}{const}\ MaterialInstance\&\ instance);}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ BindMaterialSlot(\textcolor{keyword}{const}\ IMaterialSlot\&\ slot)\ =\ 0;}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ PushMaterialConstants(}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ pushConstName,}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ size);}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ PushMaterialConstants(\textcolor{keyword}{const}\ std::string\&\ pushConstName,\ \textcolor{keyword}{const}\ T\&\ data)\ \{}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ PushMaterialConstants(pushConstName,\ \&data,\ \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ PushMaterialConstants(}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ pushConstName,}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ size,}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ offset)\ =\ 0;}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#pragma\ region\ Drawing}}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ DrawSingleInstance(USize32\ numIndices)\ =\ 0;}
+\DoxyCodeLine{00551\ }
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ DrawSingleMesh(UIndex32\ firstIndex,\ USize32\ numIndices)\ =\ 0;}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ DrawInstances(UIndex32\ firstIndex,\ USize32\ numIndices,\ UIndex32\ firstInstance,\ USize32\ instanceCount)\ =\ 0;}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ DrawMeshShader(\textcolor{keyword}{const}\ Vector3ui\&\ groupCount)\ =\ 0;}
+\DoxyCodeLine{00599\ }
+\DoxyCodeLine{00600\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00601\ }
+\DoxyCodeLine{00602\ \textcolor{preprocessor}{\#pragma\ region\ Ray-\/tracing}}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ TraceRays(}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ raygenEntry,}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ closestHitEntry,}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ missEntry,}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2ui\&\ resolution)\ =\ 0;}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00636\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00637\ }
+\DoxyCodeLine{00638\ \textcolor{preprocessor}{\#pragma\ region\ Compute}}
+\DoxyCodeLine{00639\ }
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ DispatchCompute(\textcolor{keyword}{const}\ Vector3ui\&\ groupCount)\ =\ 0;}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00657\ }
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\#pragma\ region\ Transfer}}
+\DoxyCodeLine{00659\ }
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ CopyBufferToImage(}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ source,}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ dest,}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ layer\ =\ 0,}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ USize64\ offset\ =\ 0)\ =\ 0;}
+\DoxyCodeLine{00695\ }
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ RawCopyImageToImage(}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImage\&\ source,}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ destination,}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CopyImageInfo\&\ copyInfo)\ =\ 0;}
+\DoxyCodeLine{00720\ }
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ CopyImageToImage(}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImage\&\ source,}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ destination,}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CopyImageInfo\&\ copyInfo,}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageFilteringType\ filter)\ =\ 0;}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ CopyBufferToBuffer(}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ source,}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBuffer*\ dest,}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \ \ \ \ USize64\ size,}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \ \ \ \ USize64\ sourceOffset,}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \ \ \ \ USize64\ destOffset)\ =\ 0;}
+\DoxyCodeLine{00764\ }
+\DoxyCodeLine{00765\ }
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterStagingBuffer(UniquePtr<GpuBuffer>\&\&\ stagingBuffer);}
+\DoxyCodeLine{00777\ }
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DeleteAllStagingBuffers();}
+\DoxyCodeLine{00781\ }
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_SetSingleTimeUse();}
+\DoxyCodeLine{00783\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00784\ }
+\DoxyCodeLine{00785\ \textcolor{preprocessor}{\#pragma\ region\ Resource\ queue\ transfer}}
+\DoxyCodeLine{00786\ }
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ TransferToQueue(}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ image,}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ICommandQueue\&\ sourceQueue,}
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ICommandQueue\&\ targetQueue);}
+\DoxyCodeLine{00804\ }
+\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ TransferToQueue(}
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ image,}
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ICommandQueue\&\ targetQueue);}
+\DoxyCodeLine{00816\ }
+\DoxyCodeLine{00817\ }
+\DoxyCodeLine{00831\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ TransferToQueue(}
+\DoxyCodeLine{00832\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBuffer*\ buffer,}
+\DoxyCodeLine{00833\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ICommandQueue\&\ sourceQueue,}
+\DoxyCodeLine{00834\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ICommandQueue\&\ targetQueue);}
+\DoxyCodeLine{00835\ }
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ TransferToQueue(}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBuffer*\ buffer,}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ICommandQueue\&\ targetQueue);}
+\DoxyCodeLine{00847\ }
+\DoxyCodeLine{00848\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00849\ }
+\DoxyCodeLine{00850\ }
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ AddDebugMarker(\textcolor{keyword}{const}\ std::string\&\ mark,\ \textcolor{keyword}{const}\ Color\&\ color)\ =\ 0;}
+\DoxyCodeLine{00856\ }
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ StartDebugSection(\textcolor{keyword}{const}\ std::string\&\ mark,\ \textcolor{keyword}{const}\ Color\&\ color)\ =\ 0;}
+\DoxyCodeLine{00861\ }
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ EndDebugSection()\ =\ 0;}
+\DoxyCodeLine{00864\ }
+\DoxyCodeLine{00865\ }
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ ICommandPool*\ GetOwnerPool();}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ICommandPool*\ GetOwnerPool()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00871\ \ \ \ \ \ \ \ \ GpuQueueType\ GetCompatibleQueueType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00872\ }
+\DoxyCodeLine{00873\ \ \ \ \ \ \ \ \ UIndex32\ \_GetCommandListIndex()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00874\ }
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ClearImagesCache()\ \{\}}
+\DoxyCodeLine{00876\ }
+\DoxyCodeLine{00877\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00878\ }
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ ICommandList(ICommandPool*\ commandPool);}
+\DoxyCodeLine{00880\ }
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_SetSingleTime();}
+\DoxyCodeLine{00882\ }
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ BindGraphicsPipeline(\textcolor{keyword}{const}\ IGraphicsPipeline\&\ pipeline)\ =\ 0;}
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ BindComputePipeline(\textcolor{keyword}{const}\ IComputePipeline\&\ pipeline)\ =\ 0;}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ BindRayTracingPipeline(\textcolor{keyword}{const}\ IRaytracingPipeline\&\ pipeline)\ =\ 0;}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ BindMeshPipeline(\textcolor{keyword}{const}\ IMeshPipeline\&\ pipeline)\ =\ 0;}
+\DoxyCodeLine{00887\ }
+\DoxyCodeLine{00888\ }
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IGraphicsPipeline*\ graphics\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IRaytracingPipeline*\ raytracing;}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IComputePipeline*\ compute;}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IMeshPipeline*\ mesh;}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ \}\ m\_currentPipeline\{\};}
+\DoxyCodeLine{00897\ }
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Material*\ m\_currentlyBoundMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00900\ }
+\DoxyCodeLine{00901\ }
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ DynamicArray<RenderPassImageInfo>\ m\_currentlyBoundColorImages;}
+\DoxyCodeLine{00904\ }
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \ \ RenderPassImageInfo\ m\_currentlyBoundDepthImage;}
+\DoxyCodeLine{00907\ }
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ RenderpassType\ m\_currentlyBoundRenderTargetType\ =\ RenderpassType::INTERMEDIATE;}
+\DoxyCodeLine{00910\ }
+\DoxyCodeLine{00911\ }
+\DoxyCodeLine{00912\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00913\ }
+\DoxyCodeLine{00915\ \ \ \ \ \ \ \ \ Viewport\ m\_currentViewport\ =\ \{\};}
+\DoxyCodeLine{00916\ }
+\DoxyCodeLine{00918\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isSingleUse\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00919\ }
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ DynamicArray<UniquePtr<GpuBuffer>>\ m\_stagingBuffersToDelete;}
+\DoxyCodeLine{00923\ }
+\DoxyCodeLine{00926\ \ \ \ \ \ \ \ \ DynamicArray<GpuImage*>\ m\_imagesToQueueTransfer;}
+\DoxyCodeLine{00927\ }
+\DoxyCodeLine{00929\ \ \ \ \ \ \ \ \ ICommandPool*\ m\_ownerPool\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00930\ }
+\DoxyCodeLine{00931\ \ \ \ \ \};}
+\DoxyCodeLine{00932\ }
+\DoxyCodeLine{00933\ \}}
+
+\end{DoxyCode}

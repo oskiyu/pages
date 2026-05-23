@@ -1,0 +1,27 @@
+\doxysection{Render\+Target\+Attachment\+Info.\+h}
+\label{_render_target_attachment_info_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/RenderTargetAttachmentInfo.h@{C:/Users/Oscar/source/repos/OSKengine/Source/RenderTargetAttachmentInfo.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}GpuImageSamplerDesc.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GpuImageUsage.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Format.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{struct\ }RenderTargetAttachmentInfo\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ Format\ format\ =\ Format::UNKNOWN;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ GpuImageUsage\ usage\ =\ GpuImageUsage::UNKNOWN;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ GpuImageSamplerDesc\ sampler\ =\ GpuImageSamplerDesc::CreateDefault\_NoMipMap();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}

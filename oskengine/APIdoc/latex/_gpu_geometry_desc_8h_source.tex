@@ -1,0 +1,64 @@
+\doxysection{Gpu\+Geometry\+Desc.\+h}
+\label{_gpu_geometry_desc_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GpuGeometryDesc.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GpuGeometryDesc.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Vertex.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}VertexAttributes.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}GlobalIndexBuffer.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}GlobalVertexBuffer.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{struct\ }GpuGeometryEntry\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ GpuGeometryEntry()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ GpuGeometryEntry(}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ GlobalIndexBufferRange\ indexesEntry,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ GlobalVertexBufferRange\ attribsIndexesEntry,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<VertexAttribUuid,\ GlobalVertexBufferRange>\&\&\ vertexEntriesPerAttrib)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ indexesEntry(indexesEntry),}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ attribsIndexesEntry(attribsIndexesEntry),}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ vertexEntriesPerAttrib(std::move(vertexEntriesPerAttrib))}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ GlobalIndexBufferRange\ indexesEntry\{\};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ GlobalVertexBufferRange\ attribsIndexesEntry\{\};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::unordered\_map<VertexAttribUuid,\ GlobalVertexBufferRange>\ vertexEntriesPerAttrib\{\};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ GpuGeometryDesc\ \{}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ GpuGeometryDesc(\textcolor{keyword}{const}\ DynamicArray<TIndexSize>\&\ indexes);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<TIndexSize>\&\ GetIndexes()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ VerticesAttributesMaps\&\ GetAttributesMap();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VerticesAttributesMaps\&\ GetAttributesMap()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ GpuGeometryEntry\ entry\ =\ \{\};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ DynamicArray<TIndexSize>\ m\_indexes;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ VerticesAttributesMaps\ m\_attributes;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \}}
+
+\end{DoxyCode}

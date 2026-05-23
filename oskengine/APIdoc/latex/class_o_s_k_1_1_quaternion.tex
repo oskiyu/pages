@@ -1,0 +1,276 @@
+\doxysection{Referencia de la clase OSK\+::Quaternion}
+\label{class_o_s_k_1_1_quaternion}\index{OSK::Quaternion@{OSK::Quaternion}}
+
+
+{\ttfamily \#include $<$Quaternion.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Quaternion} ()=default
+\item 
+void \textbf{ Rotate\+\_\+\+World\+Space} (float angle, const \textbf{ Vector3f} \&axis)
+\item 
+void \textbf{ Rotate\+\_\+\+Local\+Space} (float angle, const \textbf{ Vector3f} \&axis)
+\item 
+\textbf{ Quaternion} \textbf{ operator+} (const \textbf{ Quaternion} \&other) const
+\item 
+\textbf{ Quaternion} \& \textbf{ operator+=} (const \textbf{ Quaternion} \&other)
+\item 
+\textbf{ Quaternion} \textbf{ operator-\/} (const \textbf{ Quaternion} \&other) const
+\item 
+\textbf{ Quaternion} \& \textbf{ operator-\/=} (const \textbf{ Quaternion} \&other)
+\item 
+\textbf{ Vector3f} \textbf{ Rotate\+Vector} (const \textbf{ Vector3f} \&vec) const
+\item 
+\textbf{ Vector3f} \textbf{ To\+Euler\+Angles} () const
+\item 
+\textbf{ Quaternion} \textbf{ Interpolate} (const \textbf{ Quaternion} \&other, float factor) const
+\item 
+glm\+::quat \textbf{ To\+Glm} () const
+\item 
+glm\+::mat4 \textbf{ To\+Mat4} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Quaternion} \textbf{ Empty} ()
+\item 
+static \textbf{ Quaternion} \textbf{ Create\+From\+Euler\+Angles} (const \textbf{ Vector3f} \&rot)
+\item 
+static \textbf{ Quaternion} \textbf{ From\+Glm} (const glm\+::quat \&quat)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa un cuaternión, para representar una orientación. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::Quaternion@{OSK::Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{Quaternion()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_ab297a7a6ebea147111c4547aefa8f126} 
+OSK\+::\+Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Crea un cuaternión vacío. 
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::Quaternion@{OSK::Quaternion}!CreateFromEulerAngles@{CreateFromEulerAngles}}
+\index{CreateFromEulerAngles@{CreateFromEulerAngles}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{CreateFromEulerAngles()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_add8e5106b98ff75f9d02db8955885307} 
+\textbf{ Quaternion} OSK\+::\+Quaternion\+::\+Create\+From\+Euler\+Angles (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{rot}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un cuaternión a partir de las coordenadas de Euler. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em rot} & Rotación (Euler). \\
+\hline
+\end{DoxyParams}
+\index{OSK::Quaternion@{OSK::Quaternion}!Empty@{Empty}}
+\index{Empty@{Empty}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{Empty()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_a80a60fb66fbc1e762489c72283578818} 
+\textbf{ Quaternion} Quaternion\+::\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un cuaternión vacío. 
+
+\index{OSK::Quaternion@{OSK::Quaternion}!FromGlm@{FromGlm}}
+\index{FromGlm@{FromGlm}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{FromGlm()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_a0cbf0edcbfd33647de6fa20d641d2216} 
+\textbf{ Quaternion} Quaternion\+::\+From\+Glm (\begin{DoxyParamCaption}\item[{const glm\+::quat \&}]{quat}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un cuaternión a partir del dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em quat} & Cuaternión original. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Quaternion@{OSK::Quaternion}!Interpolate@{Interpolate}}
+\index{Interpolate@{Interpolate}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{Interpolate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_af54cdc7831c4cf47741c86b34c22cfd8} 
+\textbf{ Quaternion} OSK\+::\+Quaternion\+::\+Interpolate (\begin{DoxyParamCaption}\item[{const \textbf{ Quaternion} \&}]{other}{, }\item[{float}]{factor}{}\end{DoxyParamCaption}) const}
+
+
+
+Interpola este cuaternion con otro. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Otro cuaternion. \\
+\hline
+{\em factor} & Factor de interpolación. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Quaternion}{pág.}{class_o_s_k_1_1_quaternion} interpolado. 
+\end{DoxyReturn}
+\index{OSK::Quaternion@{OSK::Quaternion}!operator+@{operator+}}
+\index{operator+@{operator+}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{operator+()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_a38ded2615fe0716baf02ecab8573371a} 
+\textbf{ Quaternion} Quaternion\+::operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ Quaternion} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Aplica una rotación en un nuevo quaternion. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Rotación a aplicar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nuevo cuaternion, resultado de aplicar {\ttfamily other} sobre este cuaternión. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Este cuaternión no será modificado. 
+\end{DoxyNote}
+\index{OSK::Quaternion@{OSK::Quaternion}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{operator+=()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_a72ef12aabea6b197ca0c386f8692131c} 
+\textbf{ Quaternion} \& Quaternion\+::operator+= (\begin{DoxyParamCaption}\item[{const \textbf{ Quaternion} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Aplica una rotación al quaternion. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Rotación a aplicar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Self. 
+\end{DoxyReturn}
+\index{OSK::Quaternion@{OSK::Quaternion}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{operator-\/()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_a524feebd4ef483ae67d6325b8bff2d19} 
+\textbf{ Quaternion} Quaternion\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \textbf{ Quaternion} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Otro cuaternión. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Diferencia entre este cuaternion y el otro (this -\/ other). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Este cuaternión no será modificado. 
+\end{DoxyNote}
+\index{OSK::Quaternion@{OSK::Quaternion}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{operator-\/=()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_a682c2bc53ef117e70dd633271ddd65b4} 
+\textbf{ Quaternion} \& Quaternion\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \textbf{ Quaternion} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Quita una rotación del cuaternión. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Otro cuaternión. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Self. 
+\end{DoxyReturn}
+\index{OSK::Quaternion@{OSK::Quaternion}!Rotate\_LocalSpace@{Rotate\_LocalSpace}}
+\index{Rotate\_LocalSpace@{Rotate\_LocalSpace}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{Rotate\_LocalSpace()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_a75e8c10361739559544d11313264bd0c} 
+void Quaternion\+::\+Rotate\+\_\+\+Local\+Space (\begin{DoxyParamCaption}\item[{float}]{angle}{, }\item[{const \textbf{ Vector3f} \&}]{axis}{}\end{DoxyParamCaption})}
+
+
+
+Rota el cuaternión dado un eje, que se interpreta en espacio local. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em angle} & Ángulo que se va a rotar. \\
+\hline
+{\em axis} & Eje, en coordenadas del cuaternión, sobre el que se va a rotar. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Quaternion@{OSK::Quaternion}!Rotate\_WorldSpace@{Rotate\_WorldSpace}}
+\index{Rotate\_WorldSpace@{Rotate\_WorldSpace}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{Rotate\_WorldSpace()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_adb48d1d2334b6a47fde67ab2313e6447} 
+void Quaternion\+::\+Rotate\+\_\+\+World\+Space (\begin{DoxyParamCaption}\item[{float}]{angle}{, }\item[{const \textbf{ Vector3f} \&}]{axis}{}\end{DoxyParamCaption})}
+
+
+
+Rota el cuaternión dado un eje, que se interpreta en espacio del mundo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em angle} & Ángulo que se va a rotar. \\
+\hline
+{\em axis} & Eje, en coordenadas del mundo, sobre el que se va a rotar. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Quaternion@{OSK::Quaternion}!RotateVector@{RotateVector}}
+\index{RotateVector@{RotateVector}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{RotateVector()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_ac0e494c7cb54c40e9ed6cd477948030b} 
+\textbf{ Vector3f} Quaternion\+::\+Rotate\+Vector (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{vec}{}\end{DoxyParamCaption}) const}
+
+
+
+Rota un vector con la orientación de este quaternión. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vec} & Vector a rotar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Vector rotado. 
+\end{DoxyReturn}
+\index{OSK::Quaternion@{OSK::Quaternion}!ToEulerAngles@{ToEulerAngles}}
+\index{ToEulerAngles@{ToEulerAngles}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{ToEulerAngles()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_a7ca39363e99e03a9feacca9c5691ce51} 
+\textbf{ Vector3f} Quaternion\+::\+To\+Euler\+Angles (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Rotación del cuaternión como coordenadas de Euler. 
+\end{DoxyReturn}
+\index{OSK::Quaternion@{OSK::Quaternion}!ToGlm@{ToGlm}}
+\index{ToGlm@{ToGlm}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{ToGlm()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_ac88cc76e26ff73c65e593e6273c8f4e9} 
+glm\+::quat Quaternion\+::\+To\+Glm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Cuaternión en formato GLM. 
+\end{DoxyReturn}
+\index{OSK::Quaternion@{OSK::Quaternion}!ToMat4@{ToMat4}}
+\index{ToMat4@{ToMat4}!OSK::Quaternion@{OSK::Quaternion}}
+\doxysubsubsection{ToMat4()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_quaternion_a5ab0ea79fd870ee2e32b836c2c4f5525} 
+glm\+::mat4 Quaternion\+::\+To\+Mat4 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Matriz de rotación. 
+\end{DoxyReturn}

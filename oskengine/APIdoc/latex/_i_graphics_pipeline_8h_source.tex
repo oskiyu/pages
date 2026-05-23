@@ -1,0 +1,40 @@
+\doxysection{IGraphics\+Pipeline.\+h}
+\label{_i_graphics_pipeline_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IGraphicsPipeline.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IGraphicsPipeline.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}IPipelineLayout.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Format.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}IGpuObject.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }MaterialLayout;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }IGpu;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{struct\ }PipelineCreateInfo;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }VertexInfo;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IGraphicsPipeline\ :\ \textcolor{keyword}{public}\ IGpuObject\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IGraphicsPipeline()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Create(\textcolor{keyword}{const}\ MaterialLayout*\ layout,\ IGpu*\ device,\ \textcolor{keyword}{const}\ PipelineCreateInfo\&\ info,\ \textcolor{keyword}{const}\ VertexInfo\&\ vertexInfo)\ =\ 0;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ OSK\_DEFINE\_AS(IGraphicsPipeline);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IPipelineLayout*\ GetLayout()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ UniquePtr<IPipelineLayout>\ layout;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \}}
+
+\end{DoxyCode}

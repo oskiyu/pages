@@ -1,0 +1,265 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IMaterial\+Slot}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot}\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+
+
+{\ttfamily \#include $<$IMaterial\+Slot.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IMaterial\+Slot} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IMaterial\+Slot})
+\item 
+virtual void \textbf{ Set\+Gpu\+Image} (std\+::string\+\_\+view binding, const \textbf{ IGpu\+Image\+View} \&image, const \textbf{ IGpu\+Image\+Sampler} \&sampler, \textbf{ UIndex32} array\+Index=0)=0
+\item 
+void \textbf{ Set\+Gpu\+Image} (std\+::string\+\_\+view binding, const \textbf{ IGpu\+Image\+View} \&image, const \textbf{ Gpu\+Image\+Sampler\+Desc} \&sampler\+Info, \textbf{ UIndex32} array\+Index=0)
+\item 
+virtual void \textbf{ Set\+Storage\+Image} (std\+::string\+\_\+view binding, const \textbf{ IGpu\+Image\+View} \&image, \textbf{ UIndex32} array\+Index=0)=0
+\item 
+virtual void \textbf{ Set\+Uniform\+Buffer} (std\+::string\+\_\+view binding, const \textbf{ Gpu\+Buffer} \&buffer, const \textbf{ Gpu\+Buffer\+Range} \&range=\textbf{ Gpu\+Buffer\+Range\+::\+Create\+Full\+Range}(), \textbf{ UIndex32} array\+Index=0)=0
+\item 
+virtual void \textbf{ Set\+Storage\+Buffer} (std\+::string\+\_\+view binding, const \textbf{ Gpu\+Buffer} \&buffer, const \textbf{ Gpu\+Buffer\+Range} \&range=\textbf{ Gpu\+Buffer\+Range\+::\+Create\+Full\+Range}(), \textbf{ UIndex32} array\+Index=0)=0
+\item 
+virtual void \textbf{ Set\+Acceleration\+Structure} (std\+::string\+\_\+view binding, const \textbf{ ITop\+Level\+Acceleration\+Structure} \&acceleration\+Structure, \textbf{ UIndex32} array\+Index=0)=0
+\item 
+virtual void \textbf{ Flush\+Update} ()=0
+\item 
+std\+::string\+\_\+view \textbf{ Get\+Name} () const
+\item 
+virtual void \textbf{ Set\+Debug\+Name} (const std\+::string \&name)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ IMaterial\+Slot} (const \textbf{ Material\+Layout} $\ast$layout, const std\+::string \&name)
+\item 
+const \textbf{ Material\+Layout} $\ast$ \textbf{ Get\+Layout} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Un slot contiene referencias a los recursos (UNIFORM BUFFER, TEXTURE, etc...) a los que se accederá en los shaders. 
+
+\begin{DoxyWarning}{Atención}
+Establecer los recursos mediante Set$<$...$>$ no actualizará los recursos que realmente se enviarán a los shaders, debe llamarse explícitamente a \doxyref{Flush\+Update()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a71d6977bf0f937b5086a32ca8af9d3b3}. 
+\end{DoxyWarning}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!IMaterialSlot@{IMaterialSlot}}
+\index{IMaterialSlot@{IMaterialSlot}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{IMaterialSlot()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_adbb0631957189108acba37897877c3a3} 
+IMaterial\+Slot\+::\+IMaterial\+Slot (\begin{DoxyParamCaption}\item[{const \textbf{ Material\+Layout} $\ast$}]{layout}{, }\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!````~IMaterialSlot@{$\sim$IMaterialSlot}}
+\index{````~IMaterialSlot@{$\sim$IMaterialSlot}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{$\sim$IMaterialSlot()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a49409314a65d27a7043557d85626cb8b} 
+virtual OSK\+::\+GRAPHICS\+::\+IMaterial\+Slot\+::$\sim$\+IMaterial\+Slot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!FlushUpdate@{FlushUpdate}}
+\index{FlushUpdate@{FlushUpdate}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{FlushUpdate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a71d6977bf0f937b5086a32ca8af9d3b3} 
+virtual void OSK\+::\+GRAPHICS\+::\+IMaterial\+Slot\+::\+Flush\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Actualiza los recursos que se enviarán a los shaders. 
+
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!GetLayout@{GetLayout}}
+\index{GetLayout@{GetLayout}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{GetLayout()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a93ee0f5408d447cab27c68ad56ed4e51} 
+const \textbf{ Material\+Layout} $\ast$ IMaterial\+Slot\+::\+Get\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_aa4d65f7aeb21ec850ee91fa48e5d5bdf} 
+std\+::string\+\_\+view IMaterial\+Slot\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Nombre del slot. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_ab30032f172e8c5956f56b0d63694ad63} 
+OSK\+::\+GRAPHICS\+::\+IMaterial\+Slot\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IMaterial\+Slot}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!SetAccelerationStructure@{SetAccelerationStructure}}
+\index{SetAccelerationStructure@{SetAccelerationStructure}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{SetAccelerationStructure()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a091e0ef80de0b35c8ab579fac1b8b2b9} 
+virtual void OSK\+::\+GRAPHICS\+::\+IMaterial\+Slot\+::\+Set\+Acceleration\+Structure (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{binding}{, }\item[{const \textbf{ ITop\+Level\+Acceleration\+Structure} \&}]{acceleration\+Structure}{, }\item[{\textbf{ UIndex32}}]{array\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece la estructura de aceleración para trazado de rayos que será asignado al binding con el nombre dado. Puede usarse esta función para alternar el recurso que está asignado al binding. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em binding} & Nombre del binding al que se asignará la estructura de aceleración. \\
+\hline
+{\em acceleration\+Structure} & Estructura de aceleración a establecer. \\
+\hline
+{\em array\+Index} & Índice dentro del array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Si el binding no se corresponde con un array de estructuas de aceleración, {\ttfamily array\+Index} debe ser 0.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+No surgirá efecto hasta que se llame a {\ttfamily \doxyref{Flush\+Update()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a71d6977bf0f937b5086a32ca8af9d3b3}}. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!SetDebugName@{SetDebugName}}
+\index{SetDebugName@{SetDebugName}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{SetDebugName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_object_a4ced0b9bf575c7801e54f046604eee10} 
+virtual void OSK\+::\+GRAPHICS\+::\+IGpu\+Object\+::\+Set\+Debug\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Establece un nombre que lo identifique. Para debug. 
+
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!SetGpuImage@{SetGpuImage}}
+\index{SetGpuImage@{SetGpuImage}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{SetGpuImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a1dd4a9b4022a45a51d7c7c09dabdfdf8} 
+void IMaterial\+Slot\+::\+Set\+Gpu\+Image (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{binding}{, }\item[{const \textbf{ IGpu\+Image\+View} \&}]{image}{, }\item[{const \textbf{ Gpu\+Image\+Sampler\+Desc} \&}]{sampler\+Info}{, }\item[{\textbf{ UIndex32}}]{array\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Establece la imagen que será asignada al binding con el nombre dado. Puede usarse esta función para alternar el recurso que está asignado al binding. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em binding} & Nombre del binding al que se asignará la imagen. \\
+\hline
+{\em image} & Imagen que se asignará. \\
+\hline
+{\em array\+Index} & Índice de la imagen, para arrays de imágenes. \\
+\hline
+{\em sampler\+Info} & Información del sampler que se usará para procesar la imagen.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Si el binding no se corresponde con un array de imágenes, {\ttfamily array\+Index} debe ser 0.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+No surgirá efecto hasta que se llame a {\ttfamily \doxyref{Flush\+Update()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a71d6977bf0f937b5086a32ca8af9d3b3}}. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!SetGpuImage@{SetGpuImage}}
+\index{SetGpuImage@{SetGpuImage}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{SetGpuImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a52bef7962a9a49a1dd9911447f875ef9} 
+virtual void OSK\+::\+GRAPHICS\+::\+IMaterial\+Slot\+::\+Set\+Gpu\+Image (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{binding}{, }\item[{const \textbf{ IGpu\+Image\+View} \&}]{image}{, }\item[{const \textbf{ IGpu\+Image\+Sampler} \&}]{sampler}{, }\item[{\textbf{ UIndex32}}]{array\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece la imagen que será asignada al binding con el nombre dado. Puede usarse esta función para alternar el recurso que está asignado al binding. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em binding} & Nombre del binding al que se asignará la imagen. \\
+\hline
+{\em image} & Imagen que se asignará. \\
+\hline
+{\em array\+Index} & Índice de la imagen, para arrays de imágenes. \\
+\hline
+{\em sampler} & Sampler que se usará para procesar la imagen.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Si el binding no se corresponde con un array de imágenes, {\ttfamily array\+Index} debe ser 0.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+No surgirá efecto hasta que se llame a {\ttfamily \doxyref{Flush\+Update()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a71d6977bf0f937b5086a32ca8af9d3b3}}. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!SetStorageBuffer@{SetStorageBuffer}}
+\index{SetStorageBuffer@{SetStorageBuffer}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{SetStorageBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a359e2bf83c01d094411ed5aaf47d1634} 
+virtual void OSK\+::\+GRAPHICS\+::\+IMaterial\+Slot\+::\+Set\+Storage\+Buffer (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{binding}{, }\item[{const \textbf{ Gpu\+Buffer} \&}]{buffer}{, }\item[{const \textbf{ Gpu\+Buffer\+Range} \&}]{range}{ = {\ttfamily \textbf{ Gpu\+Buffer\+Range\+::\+Create\+Full\+Range}()}, }\item[{\textbf{ UIndex32}}]{array\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece el buffer que será usado como storage buffer asignado al binding con el nombre dado. Puede usarse esta función para alternar el recurso que está asignado al binding. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em binding} & Nombre del binding al que se asignará el STORAGE BUFFER. \\
+\hline
+{\em buffer} & Buffer asignado. \\
+\hline
+{\em range} & Rango del buffer que será visible. Por defecto, todo el buffer. \\
+\hline
+{\em array\+Index} & Índice dentro del array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Si el binding no se corresponde con un array de buffers, {\ttfamily array\+Index} debe ser 0.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+No surgirá efecto hasta que se llame a {\ttfamily \doxyref{Flush\+Update()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a71d6977bf0f937b5086a32ca8af9d3b3}}. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!SetStorageImage@{SetStorageImage}}
+\index{SetStorageImage@{SetStorageImage}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{SetStorageImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a6b47488b27321e32b0a24f81e257b407} 
+virtual void OSK\+::\+GRAPHICS\+::\+IMaterial\+Slot\+::\+Set\+Storage\+Image (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{binding}{, }\item[{const \textbf{ IGpu\+Image\+View} \&}]{image}{, }\item[{\textbf{ UIndex32}}]{array\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece la imagen que será usada como storage image asignada al binding con el nombre dado. Puede usarse esta función para alternar el recurso que está asignado al binding. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em binding} & Nombre del binding al que se asignará la imagen. \\
+\hline
+{\em image} & Imagen que se asignará. \\
+\hline
+{\em array\+Index} & Índice de la imagen, para arrays de imágenes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Si el binding no se corresponde con un array de imágenes, {\ttfamily array\+Index} debe ser 0.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+No surgirá efecto hasta que se llame a {\ttfamily \doxyref{Flush\+Update()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a71d6977bf0f937b5086a32ca8af9d3b3}}. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}!SetUniformBuffer@{SetUniformBuffer}}
+\index{SetUniformBuffer@{SetUniformBuffer}!OSK::GRAPHICS::IMaterialSlot@{OSK::GRAPHICS::IMaterialSlot}}
+\doxysubsubsection{SetUniformBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_aafa88596c42cbf328275edb5c109c4b3} 
+virtual void OSK\+::\+GRAPHICS\+::\+IMaterial\+Slot\+::\+Set\+Uniform\+Buffer (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{binding}{, }\item[{const \textbf{ Gpu\+Buffer} \&}]{buffer}{, }\item[{const \textbf{ Gpu\+Buffer\+Range} \&}]{range}{ = {\ttfamily \textbf{ Gpu\+Buffer\+Range\+::\+Create\+Full\+Range}()}, }\item[{\textbf{ UIndex32}}]{array\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece el UNIFORM BUFFER que será asignado al binding con el nombre dado. Puede usarse esta función para alternar el recurso que está asignado al binding. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em binding} & Nombre del binding al que se asignará el UNIFORM BUFFER. \\
+\hline
+{\em buffer} & Buffer asignado. \\
+\hline
+{\em range} & Rango del buffer que será visible. Por defecto, todo el buffer. \\
+\hline
+{\em array\+Index} & Índice dentro del array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Si el binding no se corresponde con un array de buffers, {\ttfamily array\+Index} debe ser 0.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+No surgirá efecto hasta que se llame a {\ttfamily \doxyref{Flush\+Update()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_material_slot_a71d6977bf0f937b5086a32ca8af9d3b3}}. 
+\end{DoxyNote}

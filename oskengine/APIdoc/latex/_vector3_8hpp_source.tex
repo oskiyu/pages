@@ -1,0 +1,246 @@
+\doxysection{Vector3.\+hpp}
+\label{_vector3_8hpp_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Vector3.hpp@{C:/Users/Oscar/source/repos/OSKengine/Source/Vector3.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ToString.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }Vector3\_t\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }TNumericType\ =\ T;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ OSKAPI\_CALL\ Vector3\_t\ \textcolor{keyword}{const}\ Zero;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ OSKAPI\_CALL\ Vector3\_t\ \textcolor{keyword}{const}\ One;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ Vector3\_t()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ Vector3\_t(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ T\&\ y,\ \textcolor{keyword}{const}\ T\&\ z)\ :\ x(x),\ y(y),\ z(z)\ \{}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ Vector3\_t(\textcolor{keyword}{const}\ T\&\ value)\ :\ x(value),\ y(value),\ z(value)\ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ Vector3\_t(\textcolor{keyword}{const}\ glm::vec3\&\ vec)\ :\ x(vec.x),\ y(vec.y),\ z(vec.z)\ \{}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Vector3\_t\ operator+(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3\_t(x\ +\ vec.x,\ y\ +\ vec.y,\ z\ +\ vec.z);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ Vector3\_t\&\ operator+=(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ vec.x;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ vec.y;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ vec.z;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Vector3\_t\ operator-\/()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3\_t(-\/x,\ -\/y,\ -\/z);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ Vector3\_t\ operator-\/(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3\_t(x\ -\/\ vec.x,\ y\ -\/\ vec.y,\ z\ -\/\ vec.z);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ Vector3\_t\&\ operator-\/=(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ x\ -\/=\ vec.x;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ vec.y;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ z\ -\/=\ vec.z;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ Vector3\_t\ operator*(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3\_t(x\ *\ vec.x,\ y\ *\ vec.y,\ z\ *\ vec.z);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ Vector3\_t\&\ operator*=(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ x\ *=\ vec.x;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ y\ *=\ vec.y;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ z\ *=\ vec.z;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ Vector3\_t\ operator*(\textcolor{keyword}{const}\ T\&\ value)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3\_t(x\ *\ value,\ y\ *\ value,\ z\ *\ value);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ Vector3\_t\&\ operator*=(\textcolor{keyword}{const}\ T\&\ value)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ x\ *=\ value;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ y\ *=\ value;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ z\ *=\ value;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ Vector3\_t\ operator/(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3\_t(x\ /\ vec.x,\ y\ /\ vec.y,\ z\ /\ vec.z);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ Vector3\_t\&\ operator/=(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ x\ /=\ vec.x;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ y\ /=\ vec.y;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ z\ /=\ vec.z;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ Vector3\_t\ operator/(\textcolor{keyword}{const}\ T\&\ value)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3\_t(x\ /\ value,\ y\ /\ value,\ z\ /\ value);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ Vector3\_t\&\ operator/=(\textcolor{keyword}{const}\ T\&\ value)\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ x\ /=\ value;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ y\ /=\ value;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ z\ /=\ value;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ Equals(\textcolor{keyword}{const}\ Vector3\_t\&\ other,\ \textcolor{keywordtype}{float}\ epsilon)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::abs(x\ -\/\ other.x)\ <\ epsilon\ \&\&}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::abs(y\ -\/\ other.y)\ <\ epsilon\ \&\&}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::abs(z\ -\/\ other.z)\ <\ epsilon;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ Vector3\_t\&)\ \textcolor{keyword}{const}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ T\ GetLenght()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::sqrt(x\ *\ x\ +\ y\ *\ y\ +\ z\ *\ z);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ T\ GetDistanceTo(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ dx\ =\ x\ -\/\ vec.x;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ dy\ =\ y\ -\/\ vec.y;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ dz\ =\ z\ -\/\ vec.z;}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::sqrt(dx\ *\ dx\ +\ dy\ *\ dy\ +\ dz\ *\ dz);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ T\ GetDistanceTo2(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ T\ dx\ =\ x\ -\/\ vec.x;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ T\ dy\ =\ y\ -\/\ vec.y;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ T\ dz\ =\ z\ -\/\ vec.z;}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dx\ *\ dx\ +\ dy\ *\ dy\ +\ dz\ *\ dz;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ T\ Dot(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x\ *\ vec.x\ +\ y\ *\ vec.y\ +\ z\ *\ vec.z;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ Vector3\_t\ Cross(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3\_t(y\ *\ vec.z\ -\/\ z\ *\ vec.y,\ z\ *\ vec.x\ -\/\ x\ *\ vec.z,\ x\ *\ vec.y\ -\/\ y\ *\ vec.x);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ T\ GetAngle(\textcolor{keyword}{const}\ Vector3\_t\&\ vec)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ num\ =\ this-\/>Dot(vec);}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ den\ =\ this-\/>GetLenght()\ *\ vec.GetLenght();}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_cos\ =\ num\ /\ den;}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_cos\ >\ 1.0f)\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_cos\ =\ 1.0f;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\_cos\ <\ -\/1.0f)\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_cos\ =\ -\/1.0f;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::degrees(glm::acos(\_cos));}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ Vector3\_t\ GetNormalized()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ T\ length\ =\ GetLenght();}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3\_t(x\ /\ length,\ y\ /\ length,\ z\ /\ length);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Normalize()\ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ T\ length\ =\ GetLenght();}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ x\ /=\ length;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ y\ /=\ length;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ z\ /=\ length;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ glm::vec3\ ToGlm()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::vec3(x,\ y,\ z);}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ P>\ \textcolor{keyword}{inline}\ Vector3\_t<P>\ ToVec3()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Vector3\_t<P>(x,\ y,\ z);}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ Vector3\_t<float\_t>\ ToVector3f()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ToVec3<float>();}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ Vector3\_t<double\_t>\ ToVector3d()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ToVec3<double\_t>();}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ Vector3\_t<int32\_t>\ ToVector3i()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ToVec3<int32\_t>();}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ Vector3\_t<uint32\_t>\ ToVector3ui()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ToVec3<uint32\_t>();}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ ToString()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}\{\ "{}}\ +\ std::to\_string(x)\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ std::to\_string(y)\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ std::to\_string(z)\ +\ \textcolor{stringliteral}{"{}\ \}"{}};}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsNaN()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ return\ ::std::isnan(x)\ ||\ ::std::isnan(y)\ ||\ ::std::isnan(z);}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ T\ x;}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ T\ y;}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ T\ z;}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ \};}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keyword}{using\ }Vector3f\ =\ Vector3\_t<float\_t>;}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keyword}{using\ }Vector3d\ =\ Vector3\_t<double\_t>;}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keyword}{using\ }Vector3i\ =\ Vector3\_t<int32\_t>;}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keyword}{using\ }Vector3ui\ =\ Vector3\_t<uint32\_t>;}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ std::string\ ToString<Vector3f>(\textcolor{keyword}{const}\ Vector3f\&\ value)\ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value.ToString();}
+\DoxyCodeLine{00307\ \ \ \ \ \}}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \}}
+
+\end{DoxyCode}

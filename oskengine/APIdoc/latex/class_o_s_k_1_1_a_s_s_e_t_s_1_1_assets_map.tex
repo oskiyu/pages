@@ -1,0 +1,173 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::ASSETS\+::Assets\+Map$<$ TAsset\+Type $>$}
+\label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_assets_map}\index{OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}}
+
+
+{\ttfamily \#include $<$Assets\+Map.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Register} (const std\+::string \&asset\+File\+Path)
+\item 
+\textbf{ Asset\+Ref}$<$ TAsset\+Type $>$ \textbf{ Get\+Existing\+Reference} (std\+::string\+\_\+view asset\+File\+Path)
+\item 
+\textbf{ Asset\+Ref}$<$ TAsset\+Type $>$ \textbf{ Get\+Reference\+\_\+\+Or\+Register} (std\+::string\+\_\+view asset\+File\+Path)
+\item 
+TAsset\+Type $\ast$ \textbf{ Get\+Asset} (std\+::string\+\_\+view asset\+File\+Path)
+\item 
+bool \textbf{ Has\+Asset} (std\+::string\+\_\+view asset\+File\+Path) const
+\item 
+void \textbf{ Set\+As\+Loaded} (std\+::string\+\_\+view asset\+File\+Path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename TAsset\+Type$>$\newline
+requires std\+::is\+\_\+base\+\_\+of\+\_\+v$<$\textbf{ IAsset}, TAsset\+Type$>$\newline
+class OSK\+::\+ASSETS\+::\+Assets\+Map$<$ TAsset\+Type $>$}
+Mapa thread-\/safe que contiene los assets de un loader. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TAsset\+Type} & Tipo de asset.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}!GetAsset@{GetAsset}}
+\index{GetAsset@{GetAsset}!OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}}
+\doxysubsubsection{GetAsset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_assets_map_aacb4f628e171a28d0abe5fb7d3f1ab48} 
+template$<$typename TAsset\+Type$>$ \\
+TAsset\+Type $\ast$ \textbf{ OSK\+::\+ASSETS\+::\+Assets\+Map}$<$ TAsset\+Type $>$\+::\+Get\+Asset (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{asset\+File\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción del asset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Asset.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El asset {\ttfamily asset\+File\+Path} debe haber sido previamente registrado.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}!GetExistingReference@{GetExistingReference}}
+\index{GetExistingReference@{GetExistingReference}!OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}}
+\doxysubsubsection{GetExistingReference()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_assets_map_a8d8306a956159e8b6f360b29b6ae40b8} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ Asset\+Ref}$<$ TAsset\+Type $>$ \textbf{ OSK\+::\+ASSETS\+::\+Assets\+Map}$<$ TAsset\+Type $>$\+::\+Get\+Existing\+Reference (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{asset\+File\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción que describe el asset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia al asset indicado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El asset {\ttfamily asset\+File\+Path} debe haber sido previamente registrado.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}!GetReference\_OrRegister@{GetReference\_OrRegister}}
+\index{GetReference\_OrRegister@{GetReference\_OrRegister}!OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}}
+\doxysubsubsection{GetReference\_OrRegister()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_assets_map_a7c243c5702de93c32c113a836398b25a} 
+template$<$typename TAsset\+Type$>$ \\
+\textbf{ Asset\+Ref}$<$ TAsset\+Type $>$ \textbf{ OSK\+::\+ASSETS\+::\+Assets\+Map}$<$ TAsset\+Type $>$\+::\+Get\+Reference\+\_\+\+Or\+Register (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{asset\+File\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra el asset si no estaba previamente registrado. Después, devuelve una referencia al asset. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción que describe el asset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Asset indicado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El asset {\ttfamily asset\+File\+Path} debe haber sido previamente registrado.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}!HasAsset@{HasAsset}}
+\index{HasAsset@{HasAsset}!OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}}
+\doxysubsubsection{HasAsset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_assets_map_a3d9a2cfdadd1de637e1a018bae5e1723} 
+template$<$typename TAsset\+Type$>$ \\
+bool \textbf{ OSK\+::\+ASSETS\+::\+Assets\+Map}$<$ TAsset\+Type $>$\+::\+Has\+Asset (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{asset\+File\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción del asset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Si se ha registrado el asset indicado.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}!Register@{Register}}
+\index{Register@{Register}!OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}}
+\doxysubsubsection{Register()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_assets_map_adb2c495d16d5c03649043fcd803c9d7f} 
+template$<$typename TAsset\+Type$>$ \\
+void \textbf{ OSK\+::\+ASSETS\+::\+Assets\+Map}$<$ TAsset\+Type $>$\+::\+Register (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un nuevo asset, creando su \doxyref{Asset\+Owning\+Ref}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción que describe el asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El asset {\ttfamily asset\+File\+Path} no debe haber sido previamente registrado.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}!SetAsLoaded@{SetAsLoaded}}
+\index{SetAsLoaded@{SetAsLoaded}!OSK::ASSETS::AssetsMap$<$ TAssetType $>$@{OSK::ASSETS::AssetsMap$<$ TAssetType $>$}}
+\doxysubsubsection{SetAsLoaded()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_assets_map_a3e9c2c70ff6bf1785b5d76acdbf84f41} 
+template$<$typename TAsset\+Type$>$ \\
+void \textbf{ OSK\+::\+ASSETS\+::\+Assets\+Map}$<$ TAsset\+Type $>$\+::\+Set\+As\+Loaded (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{asset\+File\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece el flag del asset para indicar que ha sido cargado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción que describe el asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El asset {\ttfamily asset\+File\+Path} debe haber sido previamente registrado.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}

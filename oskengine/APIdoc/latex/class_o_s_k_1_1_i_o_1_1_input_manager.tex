@@ -1,0 +1,58 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::Input\+Manager}
+\label{class_o_s_k_1_1_i_o_1_1_input_manager}\index{OSK::IO::InputManager@{OSK::IO::InputManager}}
+
+
+{\ttfamily \#include $<$Input\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Add\+Listener} (\textbf{ IInput\+Listener} $\ast$listener)
+\item 
+void \textbf{ Remove\+Listener} (\textbf{ IInput\+Listener} $\ast$listener)
+\item 
+void \textbf{ \+\_\+\+Update} (const \textbf{ IUser\+Input} \&input)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Maneja los input listeners del juego, llamando a sus funciones cuando sea necesario. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::InputManager@{OSK::IO::InputManager}!\_Update@{\_Update}}
+\index{\_Update@{\_Update}!OSK::IO::InputManager@{OSK::IO::InputManager}}
+\doxysubsubsection{\_Update()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_input_manager_af8e91447f16eb71efc953b51a8437edb} 
+void Input\+Manager\+::\+\_\+\+Update (\begin{DoxyParamCaption}\item[{const \textbf{ IUser\+Input} \&}]{input}{}\end{DoxyParamCaption})}
+
+
+
+Comprueba el estado del input, llamando a las funciones de los listeneres cuando sea necesario. 
+
+\index{OSK::IO::InputManager@{OSK::IO::InputManager}!AddListener@{AddListener}}
+\index{AddListener@{AddListener}!OSK::IO::InputManager@{OSK::IO::InputManager}}
+\doxysubsubsection{AddListener()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_input_manager_a0eb1e1b01f71fc4f20df182a4b69c089} 
+void Input\+Manager\+::\+Add\+Listener (\begin{DoxyParamCaption}\item[{\textbf{ IInput\+Listener} $\ast$}]{listener}{}\end{DoxyParamCaption})}
+
+
+
+Añade un listener para que sea manejado por el juego. 
+
+\begin{DoxyNote}{Nota}
+Si el listener ya ha sido añadido, no ocurre nada. 
+\end{DoxyNote}
+\index{OSK::IO::InputManager@{OSK::IO::InputManager}!RemoveListener@{RemoveListener}}
+\index{RemoveListener@{RemoveListener}!OSK::IO::InputManager@{OSK::IO::InputManager}}
+\doxysubsubsection{RemoveListener()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_input_manager_a33cc695133fa579007e7d1773c9179af} 
+void Input\+Manager\+::\+Remove\+Listener (\begin{DoxyParamCaption}\item[{\textbf{ IInput\+Listener} $\ast$}]{listener}{}\end{DoxyParamCaption})}
+
+
+
+Quita un listener para que ya no sea manejado por el juego. 
+
+\begin{DoxyNote}{Nota}
+Si el listener no está dentro del manager, no ocurre nada. 
+\end{DoxyNote}

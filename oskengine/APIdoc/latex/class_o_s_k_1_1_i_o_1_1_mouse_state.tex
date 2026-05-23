@@ -1,0 +1,176 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::Mouse\+State}
+\label{class_o_s_k_1_1_i_o_1_1_mouse_state}\index{OSK::IO::MouseState@{OSK::IO::MouseState}}
+
+
+{\ttfamily \#include $<$Mouse\+State.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Mouse\+State} ()
+\item 
+\textbf{ Button\+State} \textbf{ Get\+Button\+State} (\textbf{ Mouse\+Button} button) const
+\item 
+bool \textbf{ Is\+Button\+Down} (\textbf{ Mouse\+Button} button) const
+\item 
+bool \textbf{ Is\+Button\+Up} (\textbf{ Mouse\+Button} button) const
+\item 
+\textbf{ Vector2i} \textbf{ Get\+Position} () const
+\item 
+\textbf{ Vector2f} \textbf{ Get\+Relative\+Position} () const
+\item 
+int \textbf{ Get\+Scroll} () const
+\item 
+int \textbf{ Get\+Horizontal\+Scroll} () const
+\item 
+void \textbf{ \+\_\+\+Set\+ScrollX} (int \textbf{ x})
+\item 
+void \textbf{ \+\_\+\+Set\+ScrollY} (int \textbf{ y})
+\item 
+void \textbf{ \+\_\+\+Set\+Position} (const \textbf{ Vector2i} \&pos)
+\item 
+void \textbf{ \+\_\+\+Set\+Relative\+Position} (const \textbf{ Vector2f} \&pos)
+\item 
+void \textbf{ \+\_\+\+Set\+Button\+State} (\textbf{ Mouse\+Button} button, \textbf{ Button\+State} state)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Struct que almacena el estado del ratón en un determinado momento. Contiene la posición, el scroll y el estado de los botones. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!MouseState@{MouseState}}
+\index{MouseState@{MouseState}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{MouseState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_aa4eb6af864f7688f7f3c3c346282fd43} 
+Mouse\+State\+::\+Mouse\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!\_SetButtonState@{\_SetButtonState}}
+\index{\_SetButtonState@{\_SetButtonState}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{\_SetButtonState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_abda1cba5a272211dc538769f209675a5} 
+void Mouse\+State\+::\+\_\+\+Set\+Button\+State (\begin{DoxyParamCaption}\item[{\textbf{ Mouse\+Button}}]{button}{, }\item[{\textbf{ Button\+State}}]{state}{}\end{DoxyParamCaption})}
+
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!\_SetPosition@{\_SetPosition}}
+\index{\_SetPosition@{\_SetPosition}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{\_SetPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_a4840f77d345c9ccb15884cf065fba5cd} 
+void Mouse\+State\+::\+\_\+\+Set\+Position (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2i} \&}]{pos}{}\end{DoxyParamCaption})}
+
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!\_SetRelativePosition@{\_SetRelativePosition}}
+\index{\_SetRelativePosition@{\_SetRelativePosition}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{\_SetRelativePosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_ae3436a08cc6a33409b213d967a253145} 
+void Mouse\+State\+::\+\_\+\+Set\+Relative\+Position (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2f} \&}]{pos}{}\end{DoxyParamCaption})}
+
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!\_SetScrollX@{\_SetScrollX}}
+\index{\_SetScrollX@{\_SetScrollX}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{\_SetScrollX()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_a5ad7a9d20d4e27a768b7b75cf09c1695} 
+void Mouse\+State\+::\+\_\+\+Set\+ScrollX (\begin{DoxyParamCaption}\item[{int}]{x}{}\end{DoxyParamCaption})}
+
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!\_SetScrollY@{\_SetScrollY}}
+\index{\_SetScrollY@{\_SetScrollY}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{\_SetScrollY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_a2447faf4f22ee0566f34eb5d81c2d015} 
+void Mouse\+State\+::\+\_\+\+Set\+ScrollY (\begin{DoxyParamCaption}\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!GetButtonState@{GetButtonState}}
+\index{GetButtonState@{GetButtonState}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{GetButtonState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_ab81f3eeb6c2c5db16d67dc17012dae40} 
+\textbf{ Button\+State} Mouse\+State\+::\+Get\+Button\+State (\begin{DoxyParamCaption}\item[{\textbf{ Mouse\+Button}}]{button}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el estado de un botón. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em button} & Botón del ratón.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado.
+\end{DoxyReturn}
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!GetHorizontalScroll@{GetHorizontalScroll}}
+\index{GetHorizontalScroll@{GetHorizontalScroll}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{GetHorizontalScroll()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_a794de4f95d312a5f0dda1c0bfff19953} 
+int Mouse\+State\+::\+Get\+Horizontal\+Scroll (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Rueda del ratón horizontal. 
+
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{GetPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_ad995123f54868e8ebe61d2bbc7f72700} 
+\textbf{ Vector2i} Mouse\+State\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Posición en píxeles respecto a la esquina superior izquierda de la ventana. 
+
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!GetRelativePosition@{GetRelativePosition}}
+\index{GetRelativePosition@{GetRelativePosition}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{GetRelativePosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_a5443529638d2411041d6d8e4eefdf948} 
+\textbf{ Vector2f} Mouse\+State\+::\+Get\+Relative\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Posición en porcentaje respecto a la esquina superior izquierda de la ventana. Entre 0.\+0 y 1.\+0. 0.\+0 = borde izquierdo. 1.\+0 = borde derecho. 
+
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!GetScroll@{GetScroll}}
+\index{GetScroll@{GetScroll}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{GetScroll()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_aae76dbd214b5aa6024087e35c046568e} 
+int Mouse\+State\+::\+Get\+Scroll (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Rueda del ratón vertical (la normal). 
+
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!IsButtonDown@{IsButtonDown}}
+\index{IsButtonDown@{IsButtonDown}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{IsButtonDown()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_af0b7921cedc90d38386069181705dfb9} 
+bool Mouse\+State\+::\+Is\+Button\+Down (\begin{DoxyParamCaption}\item[{\textbf{ Mouse\+Button}}]{button}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene si un botón está siendo pulsado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em button} & Botón del ratón.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado.
+\end{DoxyReturn}
+\index{OSK::IO::MouseState@{OSK::IO::MouseState}!IsButtonUp@{IsButtonUp}}
+\index{IsButtonUp@{IsButtonUp}!OSK::IO::MouseState@{OSK::IO::MouseState}}
+\doxysubsubsection{IsButtonUp()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_mouse_state_ab95a9e6d331d6f00fd823fe7afe694e9} 
+bool Mouse\+State\+::\+Is\+Button\+Up (\begin{DoxyParamCaption}\item[{\textbf{ Mouse\+Button}}]{button}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene si un botón no está siendo pulsado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em button} & Botón del ratón.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado.
+\end{DoxyReturn}

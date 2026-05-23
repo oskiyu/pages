@@ -25,5 +25,6 @@ var class_o_s_k_1_1_e_c_s_1_1_physics_system =
     [ "SaveConfiguration", "class_o_s_k_1_1_e_c_s_1_1_physics_system.html#af944f51b806014e01368df98d60be26c", null ],
     [ "SetActivationStatus", "class_o_s_k_1_1_e_c_s_1_1_physics_system.html#a97458cf11d6b977bad992387a2d67297", null ],
     [ "SetCompatibleObjects", "class_o_s_k_1_1_e_c_s_1_1_physics_system.html#ab81242d97f6424629a9362246838e772", null ],
-    [ "ToggleActivationStatus", "class_o_s_k_1_1_e_c_s_1_1_physics_system.html#a01bbb5166a33e4484f42fcc6f03494b4", null ]
+    [ "ToggleActivationStatus", "class_o_s_k_1_1_e_c_s_1_1_physics_system.html#a01bbb5166a33e4484f42fcc6f03494b4", null ],
+    [ "m_constraints", "class_o_s_k_1_1_e_c_s_1_1_physics_system.html#afed8f708310a6f3ebfee8d61a8737718", null ]
 ];

@@ -1,0 +1,15 @@
+\doxysection{Vulkan\+Typedefs.\+h}
+\label{_vulkan_typedefs_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/VulkanTypedefs.h@{C:/Users/Oscar/source/repos/OSKengine/Source/VulkanTypedefs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ OSK\_VULKAN\_TYPEDEF(type)\ \(\backslash\)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{struct\ type\#\#\_T;\(\backslash\)}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{using\ type\ =\ type\#\#\_T*}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ OSK\_VULKAN\_FLAGS\_TYPEDEF(type)\ using\ type\ =\ ::OSK::USize32;}}
+
+\end{DoxyCode}

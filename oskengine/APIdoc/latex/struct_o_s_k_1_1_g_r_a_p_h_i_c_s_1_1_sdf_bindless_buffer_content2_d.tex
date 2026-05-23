@@ -1,0 +1,115 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Sdf\+Bindless\+Buffer\+Content2D}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d}\index{OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}}
+
+
+{\ttfamily \#include $<$Sdf\+Bindless\+Buffer\+Content2\+D.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Fill} (const \textbf{ Sdf\+Draw\+Call2D} \&draw\+Call)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Sdf\+Bindless\+Buffer\+Content2D} \textbf{ From} (const \textbf{ Sdf\+Draw\+Call2D} \&draw\+Call)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vector3i} \textbf{ type\+Info} \{\}
+\item 
+\textbf{ Vector4f} \textbf{ texture\+Coords} \{\}
+\item 
+\textbf{ Color} \textbf{ main\+Color} \{\}
+\item 
+\textbf{ Color} \textbf{ secondary\+Color} \{\}
+\item 
+\textbf{ Vector4f} \textbf{ float\+Info} \{\}
+\item 
+glm\+::mat4 \textbf{ matrix} = glm\+::mat4(1.\+0f)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Contenido para una instancia renderizada por el renderizador Signed Field Distance 2D Bind-\/less. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}!Fill@{Fill}}
+\index{Fill@{Fill}!OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}}
+\doxysubsubsection{Fill()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d_ac7fb795c6dc141e36b04966cdc8984df} 
+void OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Buffer\+Content2\+D\+::\+Fill (\begin{DoxyParamCaption}\item[{const \textbf{ Sdf\+Draw\+Call2D} \&}]{draw\+Call}{}\end{DoxyParamCaption})}
+
+
+
+Rellena la estructura con la información de renderizado indicada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em draw\+Call} & Información de renderizado. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}!From@{From}}
+\index{From@{From}!OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}}
+\doxysubsubsection{From()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d_a8fa147e05d945ecdd291e5f0c5051e43} 
+\textbf{ OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Buffer\+Content2D} OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Buffer\+Content2\+D\+::\+From (\begin{DoxyParamCaption}\item[{const \textbf{ Sdf\+Draw\+Call2D} \&}]{draw\+Call}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em draw\+Call} & Información del renderizado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Información procesada para insertarse directamente en el buffer de la GPU. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}!floatInfo@{floatInfo}}
+\index{floatInfo@{floatInfo}!OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}}
+\doxysubsubsection{floatInfo}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d_abe26f1a9b8de4536c3107830e8b8e7c4} 
+\textbf{ Vector4f} OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Buffer\+Content2\+D\+::float\+Info \{\}}
+
+
+
+x\+: Center position.\+x y\+: Center position.\+y z\+: border width W\+: padding 
+
+\index{OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}!mainColor@{mainColor}}
+\index{mainColor@{mainColor}!OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}}
+\doxysubsubsection{mainColor}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d_ad46e2af3367b5c8c6fc255f3c421503f} 
+\textbf{ Color} OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Buffer\+Content2\+D\+::main\+Color \{\}}
+
+\index{OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}!matrix@{matrix}}
+\index{matrix@{matrix}!OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}}
+\doxysubsubsection{matrix}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d_ad03e45c10b1ce91cba8474d29d392f8a} 
+glm\+::mat4 OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Buffer\+Content2\+D\+::matrix = glm\+::mat4(1.\+0f)}
+
+\index{OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}!secondaryColor@{secondaryColor}}
+\index{secondaryColor@{secondaryColor}!OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}}
+\doxysubsubsection{secondaryColor}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d_ad02cc7c7247f09ed9738b5fbb0a5e69e} 
+\textbf{ Color} OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Buffer\+Content2\+D\+::secondary\+Color \{\}}
+
+\index{OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}!textureCoords@{textureCoords}}
+\index{textureCoords@{textureCoords}!OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}}
+\doxysubsubsection{textureCoords}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d_adb9b5d52a61520bbb9c29773896be9ed} 
+\textbf{ Vector4f} OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Buffer\+Content2\+D\+::texture\+Coords \{\}}
+
+\index{OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}!typeInfo@{typeInfo}}
+\index{typeInfo@{typeInfo}!OSK::GRAPHICS::SdfBindlessBufferContent2D@{OSK::GRAPHICS::SdfBindlessBufferContent2D}}
+\doxysubsubsection{typeInfo}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_buffer_content2_d_aa3fa0841f0f80cd5e28d2a8ba3213bba} 
+\textbf{ Vector3i} OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Buffer\+Content2\+D\+::type\+Info \{\}}
+
+
+
+x\+: shape y\+: content\+Type z\+: fill 
+

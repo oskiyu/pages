@@ -1,0 +1,297 @@
+\doxysection{Entity\+Component\+System.\+h}
+\label{_entity_component_system_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/EntityComponentSystem.h@{C:/Users/Oscar/source/repos/OSKengine/Source/EntityComponentSystem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ComponentManager.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}GameObjectManager.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}SystemManager.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}EventManager.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ISystem.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}IRenderSystem.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Assert.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}SystemAlreadyRegisteredException.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}EcsExceptions.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}SavedGameObjectTranslator.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }OSK::IO\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }ILogger;}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{using\ }ExternalEcsListUuid\ =\ BaseUuid<class\ ExternalEcsList\_t>;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{class\ }EntityComponentSystem\ final\ \{}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ EntityComponentSystem(IO::ILogger*\ logger);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ OSK\_DISABLE\_COPY(EntityComponentSystem)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ OSK\_DISABLE\_MOVE(EntityComponentSystem)}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnTick(TDeltaTime\ deltaTime);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnRender(GRAPHICS::ICommandList*\ commandList);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#pragma\ region\ Serialization}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Save(std::string\_view\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SaveBinary(std::string\_view\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ SavedGameObjectTranslator\ LoadScene(std::string\_view\ path);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ SavedGameObjectTranslator\ LoadBinaryScene(std::string\_view\ path);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#pragma\ region\ Components}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponent>\ \textcolor{keyword}{requires}\ IsEcsComponent<TComponent>}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterComponent()\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !m\_componentManager-\/>ComponentHasBeenRegistered<TComponent>(),\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ComponentAlreadyRegisteredException(TComponent::GetComponentTypeName()))}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ m\_componentManager-\/>RegisterComponent<TComponent>();}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponent>\ \textcolor{keyword}{requires}\ IsEcsComponent<TComponent>}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ TComponent\&\ AddComponent(GameObjectIndex\ obj,\ \textcolor{keyword}{const}\ TComponent\&\ component)\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ EnsureRegistered<TComponent>();}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ objectHasComponent\ =\ ObjectHasComponent<TComponent>(obj);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(!objectHasComponent,\ ObjectAlreadyHasComponentException(TComponent::GetComponentTypeName(),\ obj))}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ TComponent\&\ oComponent\ =\ m\_componentManager-\/>AddComponent(obj,\ component);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cambio\ de\ signature\ del\ objeto.}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gameObjectManager-\/>AddComponent(obj,\ m\_componentManager-\/>GetComponentType<TComponent>());}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ m\_systemManager-\/>GameObjectSignatureChanged(obj,\ m\_gameObjectManager-\/>GetSignature(obj));}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ oComponent;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponent>\ \textcolor{keyword}{requires}\ IsEcsComponent<TComponent>}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ TComponent\&\ AddComponent(GameObjectIndex\ obj,\ TComponent\&\&\ component)\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ EnsureRegistered<TComponent>();}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ objectHasComponent\ =\ ObjectHasComponent<TComponent>(obj);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(!objectHasComponent,\ ObjectAlreadyHasComponentException(TComponent::GetComponentTypeName(),\ obj))}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ oComponent\ =\ m\_componentManager-\/>AddComponentMove<TComponent>(obj,\ std::move(component));}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cambio\ de\ signature\ del\ objeto.}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gameObjectManager-\/>AddComponent(obj,\ m\_componentManager-\/>GetComponentType<TComponent>());}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ m\_systemManager-\/>GameObjectSignatureChanged(obj,\ m\_gameObjectManager-\/>GetSignature(obj));}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ UpdateExternalObjectList(obj);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ oComponent;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponent>\ \textcolor{keyword}{requires}\ IsEcsComponent<TComponent>}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ObjectHasComponent(GameObjectIndex\ obj)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(m\_componentManager-\/>ComponentHasBeenRegistered<TComponent>(),\ ComponentNotRegisteredException(TComponent::GetComponentTypeName()));}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_gameObjectManager-\/>GetSignature(obj).Get(}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_componentManager-\/>GetComponentType<TComponent>()}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ObjectHasComponent(GameObjectIndex\ obj,\ ComponentType\ componentType)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponent>\ \textcolor{keyword}{requires}\ IsEcsComponent<TComponent>}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveComponent(GameObjectIndex\ obj)\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ EnsureRegistered<TComponent>();}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(ObjectHasComponent<TComponent>(obj),\ ComponentNotFoundException(TComponent::GetComponentTypeName(),\ obj))}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ m\_componentManager-\/>RemoveComponent<TComponent>(obj);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gameObjectManager-\/>RemoveComponent(obj,\ m\_componentManager-\/>GetComponentType<TComponent>());}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ m\_systemManager-\/>GameObjectSignatureChanged(obj,\ m\_gameObjectManager-\/>GetSignature(obj));}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ UpdateExternalObjectList(obj);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponent>\ \textcolor{keyword}{requires}\ IsEcsComponent<TComponent>}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ TComponent\&\ GetComponent(GameObjectIndex\ obj)\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(m\_componentManager-\/>ComponentHasBeenRegistered<TComponent>(),\ ComponentNotRegisteredException(TComponent::GetComponentTypeName()));}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(ObjectHasComponent<TComponent>(obj),\ ComponentNotFoundException(TComponent::GetComponentTypeName(),\ obj))}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_componentManager-\/>GetComponent<TComponent>(obj);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponent>\ \textcolor{keyword}{requires}\ IsEcsComponent<TComponent>}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TComponent\&\ GetComponent(GameObjectIndex\ obj)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(m\_componentManager-\/>ComponentHasBeenRegistered<TComponent>(),\ ComponentNotRegisteredException(TComponent::GetComponentTypeName()));}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(ObjectHasComponent<TComponent>(obj),\ ComponentNotFoundException(TComponent::GetComponentTypeName(),\ obj))}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_componentManager-\/>GetComponent<TComponent>(obj);}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ GetComponentAddress(GameObjectIndex\ obj,\ ComponentType\ type);}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ GetComponentAddress(GameObjectIndex\ obj,\ ComponentType\ type)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponent>\ \textcolor{keyword}{requires}\ IsEcsComponent<TComponent>}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ ComponentType\ GetComponentType()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(m\_componentManager-\/>ComponentHasBeenRegistered<TComponent>(),\ ComponentNotRegisteredException(TComponent::GetComponentTypeName()));}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_componentManager-\/>GetComponentType<TComponent>();}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ DynamicArray<ComponentType>\ GetObjectComponentsTypes(GameObjectIndex\ obj)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ std::string\ GetComponentTypeName(ComponentType\ type)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#pragma\ region\ System}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TSystem>\ \textcolor{keyword}{requires}\ IsEcsSystem<TSystem>}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ TSystem*\ RegisterSystem(\textcolor{keyword}{const}\ SystemDependencies\&\ dependencies)\ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(!m\_systemManager-\/>ContainsSystem<TSystem>(),\ SystemAlreadyRegisteredException(TSystem::GetSystemName()))}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ TSystem*\ output\ =\ m\_systemManager-\/>RegisterSystem<TSystem>(dependencies);}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ ((ISystem*)output)-\/>OnCreate();}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_base\_of\_v<IRenderSystem,\ TSystem>)\ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_renderSystems.Insert(\textcolor{keyword}{reinterpret\_cast<}IRenderSystem*\textcolor{keyword}{>}(output));}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TSystem>\ \textcolor{keywordtype}{void}\ RemoveSystem()\ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HasSystem<TSystem>(),}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SystemNotFoundException(TSystem::GetSystemName()))}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_base\_of\_v<IRenderSystem,\ TSystem>)\ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_renderSystems.Remove(\textcolor{keyword}{reinterpret\_cast<}IRenderSystem*\textcolor{keyword}{>}(m\_systemManager-\/>GetSystem<TSystem>()));}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ m\_systemManager-\/>RemoveSystem<TSystem>();}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TSystem>\ \textcolor{keyword}{requires}\ IsEcsSystem<TSystem>}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ TSystem*\ GetSystem()\ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HasSystem<TSystem>(),}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SystemNotFoundException(TSystem::GetSystemName()))}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_systemManager-\/>GetSystem<TSystem>();}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TSystem>\ \textcolor{keyword}{requires}\ IsEcsSystem<TSystem>}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TSystem*\ GetSystem()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HasSystem<TSystem>(),}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SystemNotFoundException(TSystem::GetSystemName()))}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_systemManager-\/>GetSystem<TSystem>();}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ ISystem*\ GetSystemByName(std::string\_view\ name);}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TSystem>\ \textcolor{keyword}{requires}\ IsEcsSystem<TSystem>}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ HasSystem()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_systemManager-\/>ContainsSystem<TSystem>();}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#pragma\ region\ Event}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TEvent>\ \textcolor{keyword}{requires}\ IsEcsEvent<TEvent>}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterEventType()\ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ m\_eventManager-\/>RegisterEventType<TEvent>();}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TEvent>\ \textcolor{keyword}{requires}\ IsEcsEvent<TEvent>}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ PublishEvent(\textcolor{keyword}{const}\ TEvent\&\ event)\ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_eventManager-\/>EventHasBeenRegistered<TEvent>(),}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EventNotRegisteredException(TEvent::GetEventName()));}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ m\_eventManager-\/>PublishEvent(event);}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TEvent>\ \textcolor{keyword}{requires}\ IsEcsEvent<TEvent>}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<TEvent>\&\ GetEventQueue()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_eventManager-\/>EventHasBeenRegistered<TEvent>(),}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EventNotRegisteredException(TEvent::GetEventName()));}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_eventManager-\/>GetEventQueue<TEvent>();}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TEvent>\ \textcolor{keyword}{requires}\ IsEcsEvent<TEvent>}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ EventHasBeenRegistered()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_eventManager-\/>EventHasBeenRegistered<TEvent>();}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_ClearEventQueues();}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ ExternalEcsListUuid\ RegisterExternalList(\textcolor{keyword}{const}\ Signature\&\ signature);}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ std::unordered\_set<GameObjectIndex>\ GetCompatibleObjects(ExternalEcsListUuid\ uuid);}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ GameObjectIndex\ OSKAPI\_CALL\ SpawnObject();}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OSKAPI\_CALL\ DestroyObject(GameObjectIndex*\ obj);}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ std::span<const\ GameObjectIndex>\ GetLivingObjects()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ DynamicArray<const\ ISystem*>\ GetAllSystems()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00455\ }
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OSKAPI\_CALL\ EndFrame();}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ OSKAPI\_CALL\ IsGameObjectAlive(GameObjectIndex\ obj)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ OSKAPI\_CALL\ DynamicArray<IRenderSystem*>\&\ GetRenderSystems()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponent>\ \textcolor{keyword}{requires}\ IsEcsComponent<TComponent>}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ EnsureRegistered()\ \{}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_componentManager-\/>ComponentHasBeenRegistered<TComponent>())\ \{}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RegisterComponent<TComponent>();}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ ExternalUuidToStr(ExternalEcsListUuid\ uuid);}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ IO::ILogger*\ m\_logger\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ UniquePtr<SystemManager>\ \ \ \ \ m\_systemManager\ \ \ \ \ =\ MakeUnique<SystemManager>();}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ UniquePtr<ComponentManager>\ \ m\_componentManager\ \ =\ MakeUnique<ComponentManager>();}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ UniquePtr<GameObjectManager>\ m\_gameObjectManager\ =\ MakeUnique<GameObjectManager>();}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ UniquePtr<EventManager>\ \ \ \ \ \ m\_eventManager\ \ \ \ \ \ =\ MakeUnique<EventManager>();}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ DynamicArray<IRenderSystem*>\ m\_renderSystems;}
+\DoxyCodeLine{00488\ }
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ StringHashMap<Signature>\ m\_externalSignatures;}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ StringHashMap<std::unordered\_set<GameObjectIndex>>\ m\_externalCompatibleObjsLists;}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateExternalObjectList(GameObjectIndex\ obj);}
+\DoxyCodeLine{00496\ }
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveExternalObject(GameObjectIndex\ obj);}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00500\ \ \ \ \ \};}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \}}
+
+\end{DoxyCode}

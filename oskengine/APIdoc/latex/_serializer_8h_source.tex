@@ -1,0 +1,105 @@
+\doxysection{Serializer.\+h}
+\label{_serializer_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Serializer.h@{C:/Users/Oscar/source/repos/OSKengine/Source/Serializer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ OSKengine\ by\ oskiyu}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Copyright\ (c)\ 2019-\/2023\ oskiyu.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <json.hpp>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}BinaryBlock.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }SavedGameObjectTranslator;}
+\DoxyCodeLine{00013\ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }OSK::PERSISTENCE\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ JSON:\ General\ -\/-\/-\/\ //}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00027\ \ \ \ \ nlohmann::json\ SerializeData(\textcolor{keyword}{const}\ T\&\ data)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00039\ \ \ \ \ T\ DeserializeData(\textcolor{keyword}{const}\ nlohmann::json\&\ data)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Binary:\ general\ -\/-\/-\/\ //}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00051\ \ \ \ \ BinaryBlock\ BinarySerializeData(\textcolor{keyword}{const}\ T\&\ data)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00063\ \ \ \ \ T\ BinaryDeserializeData(BinaryBlockReader*\ reader)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ JSON:\ Scene\ -\/-\/-\/\ //}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00076\ \ \ \ \ nlohmann::json\ SerializeComponent(\textcolor{keyword}{const}\ T\&\ data)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00089\ \ \ \ \ T\ DeserializeComponent(}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ nlohmann::json\&\ data,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ECS::SavedGameObjectTranslator\&\ gameObjectTranslator)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Binary:\ Scene\ -\/-\/-\/\ //}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00096\ \ \ \ \ BinaryBlock\ BinarySerializeComponent(\textcolor{keyword}{const}\ T\&\ data)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00099\ \ \ \ \ T\ BinaryDeserializeComponent(}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ BinaryBlockReader*\ reader,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ECS::SavedGameObjectTranslator\&\ gameObjectTranslator)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ OSK\_SERIALIZABLE()\ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{template\ <typename\ T>\ \(\backslash\)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{friend\ ::nlohmann::json\ OSK::PERSISTENCE::SerializeData(const\ T\&\ data);\ \(\backslash\)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{template\ <typename\ T>\ \(\backslash\)}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{friend\ T\ OSK::PERSISTENCE::DeserializeData(const\ ::nlohmann::json\&\ data);\ \(\backslash\)}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{template\ <typename\ T>\ \(\backslash\)}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{friend\ OSK::PERSISTENCE::BinaryBlock\ OSK::PERSISTENCE::BinarySerializeData(const\ T\&\ data);\ \(\backslash\)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{template\ <typename\ T>\ \(\backslash\)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{friend\ T\ OSK::PERSISTENCE::BinaryDeserializeData(OSK::PERSISTENCE::BinaryBlockReader*\ reader);\ \(\backslash\)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ OSK\_SERIALIZABLE\_COMPONENT()\ \(\backslash\)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{template\ <typename\ T>\ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{friend\ ::nlohmann::json\ OSK::PERSISTENCE::SerializeComponent(const\ T\&\ data);\ \(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{template\ <typename\ T>\ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{friend\ T\ OSK::PERSISTENCE::DeserializeComponent(const\ ::nlohmann::json\&\ data,\ const\ ::OSK::ECS::SavedGameObjectTranslator\&\ gameObjectTranslator);\ \(\backslash\)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{template\ <typename\ T>\ \(\backslash\)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{friend\ OSK::PERSISTENCE::BinaryBlock\ OSK::PERSISTENCE::BinarySerializeComponent(const\ T\&\ data);\ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{template\ <typename\ T>\ \(\backslash\)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{friend\ T\ OSK::PERSISTENCE::BinaryDeserializeComponent(OSK::PERSISTENCE::BinaryBlockReader*\ reader,\ const\ ::OSK::ECS::SavedGameObjectTranslator\&\ gameObjectTranslator);\ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ OSK\_SERIALIZATION(type)\ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{namespace\ OSK::PERSISTENCE\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{template\ <>\ \(\backslash\)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{::nlohmann::json\ OSKAPI\_CALL\ SerializeData<type>(const\ type\&\ data);\ \(\backslash\)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{template\ <>\ \(\backslash\)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{type\ OSKAPI\_CALL\ DeserializeData<type>(const\ ::nlohmann::json\&\ json);\ \(\backslash\)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{template\ <>\ \(\backslash\)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{OSK::PERSISTENCE::BinaryBlock\ OSKAPI\_CALL\ BinarySerializeData<type>(const\ type\&\ data);\ \(\backslash\)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{template\ <>\ \(\backslash\)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{type\ OSKAPI\_CALL\ BinaryDeserializeData<type>(OSK::PERSISTENCE::BinaryBlockReader*\ reader);\ \(\backslash\)}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ OSK\_COMPONENT\_SERIALIZATION(type)\ \(\backslash\)}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{namespace\ OSK::PERSISTENCE\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{template\ <>\ \(\backslash\)}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{::nlohmann::json\ OSKAPI\_CALL\ SerializeComponent<type>(const\ type\&\ data);\ \(\backslash\)}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{template\ <>\ \(\backslash\)}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{type\ OSKAPI\_CALL\ DeserializeComponent<type>(const\ ::nlohmann::json\&\ json,\ const\ ::OSK::ECS::SavedGameObjectTranslator\&\ gameObjectTranslator);\ \(\backslash\)}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{template\ <>\ \(\backslash\)}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{OSK::PERSISTENCE::BinaryBlock\ OSKAPI\_CALL\ BinarySerializeComponent<type>(const\ type\&\ data);\ \(\backslash\)}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{template\ <>\ \(\backslash\)}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{type\ OSKAPI\_CALL\ BinaryDeserializeComponent<type>(OSK::PERSISTENCE::BinaryBlockReader*\ reader,\ const\ ::OSK::ECS::SavedGameObjectTranslator\&\ gameObjectTranslator);\ \(\backslash\)}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}

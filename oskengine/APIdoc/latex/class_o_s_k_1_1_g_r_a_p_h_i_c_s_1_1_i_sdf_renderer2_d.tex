@@ -1,0 +1,262 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::ISdf\+Renderer2D}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d}\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+
+
+{\ttfamily \#include $<$ISdf\+Renderer2\+D.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+ISdf\+Renderer2D} ()=default
+\item 
+virtual void \textbf{ Set\+Material} (\textbf{ Material} $\ast$material)
+\item 
+void \textbf{ Set\+Camera} (const \textbf{ ECS\+::\+Camera\+Component2D} \&camera, const \textbf{ ECS\+::\+Transform2D} \&camera\+Transform)
+\item 
+void \textbf{ Set\+Camera} (\textbf{ ECS\+::\+Game\+Object\+Index} game\+Object)
+\item 
+void \textbf{ Set\+Camera} (\textbf{ Vector2f} position, \textbf{ Vector2f} size)
+\item 
+virtual void \textbf{ Begin} (\textbf{ ICommand\+List} $\ast$command\+List)
+\item 
+virtual void \textbf{ Draw} (const \textbf{ Sdf\+Draw\+Call2D} \&draw\+Call)=0
+\item 
+virtual void \textbf{ Draw} (const \textbf{ Sdf\+String\+Info} \&string\+Call)=0
+\item 
+virtual void \textbf{ End} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ Sdf\+Draw\+Call2D} $>$ \textbf{ Get\+Text\+Draw\+Calls} (const \textbf{ Sdf\+String\+Info} \&text)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ ISdf\+Renderer2D} (\textbf{ ECS\+::\+Entity\+Component\+System} $\ast$ecs)
+\item 
+glm\+::mat4 \textbf{ Get\+Current\+Camera\+Matrix} () const
+\item 
+\textbf{ ICommand\+List} $\ast$ \textbf{ Get\+Current\+Command\+List} ()
+\item 
+\textbf{ Material} $\ast$ \textbf{ Get\+Current\+Material} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase para el renderizado 2D. Permite usar tanto sprites como formas definidas mediante signed-\/field distances. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!````~ISdfRenderer2D@{$\sim$ISdfRenderer2D}}
+\index{````~ISdfRenderer2D@{$\sim$ISdfRenderer2D}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{$\sim$ISdfRenderer2D()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_af3e5bda3c565f3d862f82701fe434ffa} 
+virtual OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::$\sim$\+ISdf\+Renderer2D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!ISdfRenderer2D@{ISdfRenderer2D}}
+\index{ISdfRenderer2D@{ISdfRenderer2D}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{ISdfRenderer2D()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_a60d0f97683f4eac61bb86f272518b182} 
+OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+ISdf\+Renderer2D (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Entity\+Component\+System} $\ast$}]{ecs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!Begin@{Begin}}
+\index{Begin@{Begin}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{Begin()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_ab5d50457a25b68195314ffbade54937f} 
+void OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+Begin (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{command\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Comienza el proceso de renderizado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command\+List} & Lista de comandos sobre la que se grabarán los comandos.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily command\+List} debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}.
+
+El renderizador debe estar cerrado, que es el estado por defecto.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El renderizador pasa a estar abierto. 
+\end{DoxyPostcond}
+
+
+Reimplementado en \textbf{ OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Renderer2D} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_renderer2_d_a4237eb771b3250fe5b963f3e272871c9}.
+
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!Draw@{Draw}}
+\index{Draw@{Draw}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{Draw()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_a44893a9a301124a0bd92b5bc59161685} 
+virtual void OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+Draw (\begin{DoxyParamCaption}\item[{const \textbf{ Sdf\+Draw\+Call2D} \&}]{draw\+Call}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Renderiza el elemento indicado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em draw\+Call} & Propiedades del elemento a renderizar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe estar abierto (debe haberse llamado previamente a Begin). 
+\end{DoxyPrecond}
+
+
+Implementado en \textbf{ OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Renderer2D} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_renderer2_d_a8b477d0165e03912e9d548d9f3b60618}.
+
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!Draw@{Draw}}
+\index{Draw@{Draw}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{Draw()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_ac0219cd73f37cfba6bf65636d0187ee7} 
+virtual void OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+Draw (\begin{DoxyParamCaption}\item[{const \textbf{ Sdf\+String\+Info} \&}]{string\+Call}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Renderiza el texto indicado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em string\+Call} & Propiedades del texto a renderizar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe estar abierto (debe haberse llamado previamente a Begin). 
+\end{DoxyPrecond}
+
+
+Implementado en \textbf{ OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Renderer2D} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_renderer2_d_aea912a5fc391f0d0b193fcc74a509f58}.
+
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!End@{End}}
+\index{End@{End}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{End()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_ac68f526e26f26f78b32e0d3eac6d362a} 
+void OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Finaliza el proceso de renderizado. 
+
+\begin{DoxyPrecond}{Precondición}
+El renderizador debe estar abierto (debe haberse llamado previamente a Begin).
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El renderizador pasa a estar cerrado. 
+\end{DoxyPostcond}
+
+
+Reimplementado en \textbf{ OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Renderer2D} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_renderer2_d_af7bf87d580c0e10400ecfe5bc6bd5d14}.
+
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!GetCurrentCameraMatrix@{GetCurrentCameraMatrix}}
+\index{GetCurrentCameraMatrix@{GetCurrentCameraMatrix}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{GetCurrentCameraMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_ac6de4fce47ac31b8a1ec1362d7f2aed8} 
+glm\+::mat4 OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+Get\+Current\+Camera\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!GetCurrentCommandList@{GetCurrentCommandList}}
+\index{GetCurrentCommandList@{GetCurrentCommandList}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{GetCurrentCommandList()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_aa32ce0a450286778e5a9791a039764eb} 
+\textbf{ OSK\+::\+GRAPHICS\+::\+ICommand\+List} $\ast$ OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+Get\+Current\+Command\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!GetCurrentMaterial@{GetCurrentMaterial}}
+\index{GetCurrentMaterial@{GetCurrentMaterial}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{GetCurrentMaterial()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_ade14918d0369e8aad1c25b59cdef0c11} 
+\textbf{ OSK\+::\+GRAPHICS\+::\+Material} $\ast$ OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+Get\+Current\+Material (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!GetTextDrawCalls@{GetTextDrawCalls}}
+\index{GetTextDrawCalls@{GetTextDrawCalls}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{GetTextDrawCalls()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_a1b5d6ddb44d8c157f5aedc30b4d33d56} 
+\textbf{ OSK\+::\+Dynamic\+Array}$<$ \textbf{ OSK\+::\+GRAPHICS\+::\+Sdf\+Draw\+Call2D} $>$ OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+Get\+Text\+Draw\+Calls (\begin{DoxyParamCaption}\item[{const \textbf{ Sdf\+String\+Info} \&}]{text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em text} & Información de un texto a renderizar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de llamadas de renderizado necesarias para renderizar el texto indicado. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!SetCamera@{SetCamera}}
+\index{SetCamera@{SetCamera}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{SetCamera()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_a186779c299900280ae97a13424e489ee} 
+void OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+Set\+Camera (\begin{DoxyParamCaption}\item[{const \textbf{ ECS\+::\+Camera\+Component2D} \&}]{camera}{, }\item[{const \textbf{ ECS\+::\+Transform2D} \&}]{camera\+Transform}{}\end{DoxyParamCaption})}
+
+
+
+Establece la cámara 2D con la que se renderizarán los próximos sprites. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em camera} & Cámara 2D. \\
+\hline
+{\em camera\+Transform} & Transform de la cámara. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!SetCamera@{SetCamera}}
+\index{SetCamera@{SetCamera}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{SetCamera()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_a0487a57ef2afda6d0f7edceb647e9919} 
+void OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+Set\+Camera (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{game\+Object}{}\end{DoxyParamCaption})}
+
+
+
+Establece la cámara 2D con la que se renderizarán los próximos sprites. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em game\+Object} & ID de un objeto con una cámara 2D. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily game\+Object} debe tener un componente del tipo Camera\+Component2D. 
+
+{\ttfamily game\+Object} debe tener un componente del tipo Transform2D. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!SetCamera@{SetCamera}}
+\index{SetCamera@{SetCamera}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{SetCamera()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_abfbbf46ad29306aa3ea9ec94b1f8162b} 
+void OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+Set\+Camera (\begin{DoxyParamCaption}\item[{\textbf{ Vector2f}}]{position}{, }\item[{\textbf{ Vector2f}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Establece la cámara 2D con la que se renderizarán los próximos sprites. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Posición de la cámara en el mundo. \\
+\hline
+{\em size} & Resolución de la imagen de la cámara. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}!SetMaterial@{SetMaterial}}
+\index{SetMaterial@{SetMaterial}!OSK::GRAPHICS::ISdfRenderer2D@{OSK::GRAPHICS::ISdfRenderer2D}}
+\doxysubsubsection{SetMaterial()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_sdf_renderer2_d_a8de6463d159f353f4ff2f59352e7f21b} 
+void OSK\+::\+GRAPHICS\+::\+ISdf\+Renderer2\+D\+::\+Set\+Material (\begin{DoxyParamCaption}\item[{\textbf{ Material} $\ast$}]{material}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Establece el material que se usará sobre los siguientes elementos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em material} & \doxyref{Material}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material} a usar. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \textbf{ OSK\+::\+GRAPHICS\+::\+Sdf\+Bindless\+Renderer2D} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_bindless_renderer2_d_a81133ac606d89130b0398fab528e3a60}.
+

@@ -1,0 +1,127 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Gpu\+Model3D\+::Texture\+Table}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_texture_table}\index{OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}}
+
+
+{\ttfamily \#include $<$Gpu\+Model3\+D.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+const \textbf{ IGpu\+Image\+View} $\ast$ \textbf{ Get\+Image\+View} (\textbf{ UIndex64} image\+Index) const
+\item 
+\textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Image} (\textbf{ UIndex64} image\+Index)
+\item 
+void \textbf{ Set\+Texture} (\textbf{ UIndex64} index, \textbf{ ASSETS\+::\+Asset\+Ref}$<$ \textbf{ ASSETS\+::\+Texture} $>$ texture)
+\item 
+void \textbf{ Set\+Gpu\+Image\+View} (\textbf{ UIndex64} index, const \textbf{ IGpu\+Image\+View} $\ast$view)
+\item 
+void \textbf{ Add\+Texture} (\textbf{ ASSETS\+::\+Asset\+Ref}$<$ \textbf{ ASSETS\+::\+Texture} $>$ texture)
+\item 
+void \textbf{ Add\+Gpu\+Image\+View} (const \textbf{ IGpu\+Image\+View} $\ast$view)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Almacena referencias a las texturas o imágenes que usará un material de un modelo 3D. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}!AddGpuImageView@{AddGpuImageView}}
+\index{AddGpuImageView@{AddGpuImageView}!OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}}
+\doxysubsubsection{AddGpuImageView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_texture_table_a703507bfa97b807a19143312dbc55363} 
+void Gpu\+Model3\+D\+::\+Texture\+Table\+::\+Add\+Gpu\+Image\+View (\begin{DoxyParamCaption}\item[{const \textbf{ IGpu\+Image\+View} $\ast$}]{view}{}\end{DoxyParamCaption})}
+
+
+
+Añade una nueva textura a la tabla. Comienza en el índice 0, y cada llamada aumenta en 1 el siguiente índice. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em texture} & Textura a enlazar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Puede sobreescribir imágenes enlazadas con Set\+Texture o Set\+Gpu\+Image\+View. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}!AddTexture@{AddTexture}}
+\index{AddTexture@{AddTexture}!OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}}
+\doxysubsubsection{AddTexture()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_texture_table_af11b9fc47cf4c99d59e5bbbf931e7673} 
+void Gpu\+Model3\+D\+::\+Texture\+Table\+::\+Add\+Texture (\begin{DoxyParamCaption}\item[{\textbf{ ASSETS\+::\+Asset\+Ref}$<$ \textbf{ ASSETS\+::\+Texture} $>$}]{texture}{}\end{DoxyParamCaption})}
+
+
+
+Añade una nueva textura a la tabla. Comienza en el índice 0, y cada llamada aumenta en 1 el siguiente índice. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em texture} & Textura a enlazar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Puede sobreescribir imágenes enlazadas con Set\+Texture o Set\+Gpu\+Image\+View. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}!GetImage@{GetImage}}
+\index{GetImage@{GetImage}!OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}}
+\doxysubsubsection{GetImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_texture_table_a6e32a6f2f761b5dec9f194a95de8a26f} 
+\textbf{ Gpu\+Image} $\ast$ Gpu\+Model3\+D\+::\+Texture\+Table\+::\+Get\+Image (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{image\+Index}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}!GetImageView@{GetImageView}}
+\index{GetImageView@{GetImageView}!OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}}
+\doxysubsubsection{GetImageView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_texture_table_a08b86724edeb43bf74a784f4b7d8d9e0} 
+const \textbf{ IGpu\+Image\+View} $\ast$ Gpu\+Model3\+D\+::\+Texture\+Table\+::\+Get\+Image\+View (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{image\+Index}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image\+Index} & Índice de la imagen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Image view de la imagen indicada. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily image\+Index} debe corresponderse con una imagen existente. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}!SetGpuImageView@{SetGpuImageView}}
+\index{SetGpuImageView@{SetGpuImageView}!OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}}
+\doxysubsubsection{SetGpuImageView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_texture_table_acbb19ec704592b9b3b494ad8a9979cb3} 
+void Gpu\+Model3\+D\+::\+Texture\+Table\+::\+Set\+Gpu\+Image\+View (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{, }\item[{const \textbf{ IGpu\+Image\+View} $\ast$}]{view}{}\end{DoxyParamCaption})}
+
+
+
+Establece la imagen en el índice dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em index} & Índice de la imagen. \\
+\hline
+{\em view} & Imagen a enlazar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+No actualiza el índice interno usado por Add\+Texture y Add\+Gpu\+Image\+View. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!OSK::GRAPHICS::GpuModel3D::TextureTable@{OSK::GRAPHICS::GpuModel3D::TextureTable}}
+\doxysubsubsection{SetTexture()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_texture_table_a6098544ba1413edac988b232779da455} 
+void Gpu\+Model3\+D\+::\+Texture\+Table\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{index}{, }\item[{\textbf{ ASSETS\+::\+Asset\+Ref}$<$ \textbf{ ASSETS\+::\+Texture} $>$}]{texture}{}\end{DoxyParamCaption})}
+
+
+
+Establece la textura en el índice dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em index} & Índice de la imagen. \\
+\hline
+{\em texture} & Textura a enlazar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+No actualiza el índice interno usado por Add\+Texture y Add\+Gpu\+Image\+View. 
+\end{DoxyNote}

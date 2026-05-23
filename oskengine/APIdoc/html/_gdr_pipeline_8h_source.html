@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/GdrPipeline.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_gdr_pipeline_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">GdrPipeline.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;ApiCall.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;RgBufferDependency.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;RgImageDependency.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;GdrDeferredPass.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;ResourcesInFlight.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;RenderPass.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">class </span><a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html">   23</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a862196df51b424f2b7fd73a467cee671">GdrPipeline</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a862196df51b424f2b7fd73a467cee671">GdrPipeline</a>(<a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>* renderGraph);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordtype">void</span> UpdateCameraBuffers(</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <a class="code hl_typedef" href="namespace_o_s_k.html#a4adcec192332b5042bbc87103e1185f0">UIndex16</a> frameIndex,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keyword">const</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html">GdrDeferredPass::CameraInfo</a>&amp; cameraInfo,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keyword">const</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html">GdrDeferredPass::PreviousCameraInfo</a>&amp; previousCameraInfo);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordtype">void</span> RegisterAll();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordtype">void</span> FinalRegisterAll();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordtype">void</span> RegisterDeferredPass();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a1041b89fa930a9cf1a22e1440b5d9be4">FinalRegisterDeferredPass</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a7a08666cb4558437403d6bf1c25f35e8">RegisterGBuffer</a>();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#ad291e89b3d78e288fa864c0a449e6886">RegisterCameras3D</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a2b50618c55df96aecf9821f84d9d8d95">   84</a></span>        <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>* <a class="code hl_variable" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a2b50618c55df96aecf9821f84d9d8d95">m_renderGraph</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a863429ff05a0f0cecaf3bae86a49a425">   86</a></span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a91f1ed9546c0f1fdd1b88fb1c7de0a29">RenderPassUuid</a> <a class="code hl_variable" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a863429ff05a0f0cecaf3bae86a49a425">m_deferredPass</a> = <a class="code hl_function" href="class_o_s_k_1_1_base_uuid.html#a53756a73f42ce2fa498419505069d6a1">RenderPassUuid::CreateEmpty</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#ad946d77a7c2c69eba113b571991c3ec5">   90</a></span>        std::array&lt;GdrImageUuid, 5&gt; <a class="code hl_variable" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#ad946d77a7c2c69eba113b571991c3ec5">m_gBufferUuids</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a2528270f81a1d7c617c98926cdcb6358">   91</a></span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a48c1092c3802b0eb44159dd4dcd66c96">GdrImageUuid</a> <a class="code hl_variable" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a2528270f81a1d7c617c98926cdcb6358">m_depthImageUuid</a> = <a class="code hl_function" href="class_o_s_k_1_1_base_uuid.html#a53756a73f42ce2fa498419505069d6a1">GdrImageUuid::CreateEmpty</a>();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a94f8f0ab25ef934af12a0d66d5135977">   93</a></span>        std::array&lt;GdrBufferUuid, MAX_RESOURCES_IN_FLIGHT&gt; <a class="code hl_variable" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a94f8f0ab25ef934af12a0d66d5135977">m_cameraBuffer</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a34b1cff335c5b236382e54e4d109bb29">   94</a></span>        std::array&lt;GdrBufferUuid, MAX_RESOURCES_IN_FLIGHT&gt; <a class="code hl_variable" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a34b1cff335c5b236382e54e4d109bb29">m_previousCameraBuffer</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    };</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
+<div class="ttc" id="aclass_o_s_k_1_1_base_uuid_html_a53756a73f42ce2fa498419505069d6a1"><div class="ttname"><a href="class_o_s_k_1_1_base_uuid.html#a53756a73f42ce2fa498419505069d6a1">OSK::BaseUuid&lt; class RgRenderPass &gt;::CreateEmpty</a></div><div class="ttdeci">static constexpr BaseUuid CreateEmpty()</div><div class="ttdef"><b>Definition</b> Uuid.h:38</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_html_a1041b89fa930a9cf1a22e1440b5d9be4"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a1041b89fa930a9cf1a22e1440b5d9be4">OSK::GRAPHICS::GdrPipeline::FinalRegisterDeferredPass</a></div><div class="ttdeci">void FinalRegisterDeferredPass()</div><div class="ttdoc">Actualiza los contenidos de los buffers de cÃ¡maras.</div><div class="ttdef"><b>Definition</b> GdrPipeline.cpp:102</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_html_a2528270f81a1d7c617c98926cdcb6358"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a2528270f81a1d7c617c98926cdcb6358">OSK::GRAPHICS::GdrPipeline::m_depthImageUuid</a></div><div class="ttdeci">GdrImageUuid m_depthImageUuid</div><div class="ttdef"><b>Definition</b> GdrPipeline.h:91</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_html_a2b50618c55df96aecf9821f84d9d8d95"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a2b50618c55df96aecf9821f84d9d8d95">OSK::GRAPHICS::GdrPipeline::m_renderGraph</a></div><div class="ttdeci">RenderGraph * m_renderGraph</div><div class="ttdef"><b>Definition</b> GdrPipeline.h:84</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_html_a34b1cff335c5b236382e54e4d109bb29"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a34b1cff335c5b236382e54e4d109bb29">OSK::GRAPHICS::GdrPipeline::m_previousCameraBuffer</a></div><div class="ttdeci">std::array&lt; GdrBufferUuid, MAX_RESOURCES_IN_FLIGHT &gt; m_previousCameraBuffer</div><div class="ttdef"><b>Definition</b> GdrPipeline.h:94</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_html_a7a08666cb4558437403d6bf1c25f35e8"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a7a08666cb4558437403d6bf1c25f35e8">OSK::GRAPHICS::GdrPipeline::RegisterGBuffer</a></div><div class="ttdeci">void RegisterGBuffer()</div><div class="ttdoc">Registra todas las imÃ¡genes del GBuffer, tanto las de color como las de profundidad.</div><div class="ttdef"><b>Definition</b> GdrPipeline.cpp:45</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_html_a862196df51b424f2b7fd73a467cee671"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a862196df51b424f2b7fd73a467cee671">OSK::GRAPHICS::GdrPipeline::GdrPipeline</a></div><div class="ttdeci">GdrPipeline(RenderGraph *renderGraph)</div><div class="ttdef"><b>Definition</b> GdrPipeline.cpp:9</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_html_a863429ff05a0f0cecaf3bae86a49a425"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a863429ff05a0f0cecaf3bae86a49a425">OSK::GRAPHICS::GdrPipeline::m_deferredPass</a></div><div class="ttdeci">RenderPassUuid m_deferredPass</div><div class="ttdef"><b>Definition</b> GdrPipeline.h:86</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_html_a94f8f0ab25ef934af12a0d66d5135977"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#a94f8f0ab25ef934af12a0d66d5135977">OSK::GRAPHICS::GdrPipeline::m_cameraBuffer</a></div><div class="ttdeci">std::array&lt; GdrBufferUuid, MAX_RESOURCES_IN_FLIGHT &gt; m_cameraBuffer</div><div class="ttdef"><b>Definition</b> GdrPipeline.h:93</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_html_ad291e89b3d78e288fa864c0a449e6886"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#ad291e89b3d78e288fa864c0a449e6886">OSK::GRAPHICS::GdrPipeline::RegisterCameras3D</a></div><div class="ttdeci">void RegisterCameras3D()</div><div class="ttdoc">Registra los buffers de la cÃ¡mara y de la cÃ¡mara del frame anterior.</div><div class="ttdef"><b>Definition</b> GdrPipeline.cpp:27</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_html_ad946d77a7c2c69eba113b571991c3ec5"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline.html#ad946d77a7c2c69eba113b571991c3ec5">OSK::GRAPHICS::GdrPipeline::m_gBufferUuids</a></div><div class="ttdeci">std::array&lt; GdrImageUuid, 5 &gt; m_gBufferUuids</div><div class="ttdoc">ImÃ¡genes de renderizado del GBuffer (sin contar profundidad).</div><div class="ttdef"><b>Definition</b> GdrPipeline.h:90</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">OSK::GRAPHICS::RenderGraph</a></div><div class="ttdoc">Grafo de renderizado, que contiene tanto los pases de renderizado como los recursos que estos necesit...</div><div class="ttdef"><b>Definition</b> RenderGraph.h:52</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></div><div class="ttdef"><b>Definition</b> AccelerationStructuresExceptions.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a48c1092c3802b0eb44159dd4dcd66c96"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a48c1092c3802b0eb44159dd4dcd66c96">OSK::GRAPHICS::GdrImageUuid</a></div><div class="ttdeci">BaseUuid&lt; class GdrImage &gt; GdrImageUuid</div><div class="ttdoc">Identificador de una imagen usada en un render-graph.</div><div class="ttdef"><b>Definition</b> ImageUuid.h:9</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a91f1ed9546c0f1fdd1b88fb1c7de0a29"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a91f1ed9546c0f1fdd1b88fb1c7de0a29">OSK::GRAPHICS::RenderPassUuid</a></div><div class="ttdeci">BaseUuid&lt; class RgRenderPass &gt; RenderPassUuid</div><div class="ttdoc">Identificador único para un renderpass dentro de un rendergraph.</div><div class="ttdef"><b>Definition</b> RenderPass.h:180</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a4adcec192332b5042bbc87103e1185f0"><div class="ttname"><a href="namespace_o_s_k.html#a4adcec192332b5042bbc87103e1185f0">OSK::UIndex16</a></div><div class="ttdeci">uint16_t UIndex16</div><div class="ttdoc">Índice de un elemento, almacenado en un unsigned int de 16 bits.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:10</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html">OSK::GRAPHICS::GdrDeferredPass::CameraInfo</a></div><div class="ttdoc">Estructura con la información almacenada en los uniform buffers de la cámara.</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:70</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html">OSK::GRAPHICS::GdrDeferredPass::PreviousCameraInfo</a></div><div class="ttdoc">Estructura con la información almacenada en los uniform buffers de la cámara del frame anterior.</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:83</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>GdrPipeline.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

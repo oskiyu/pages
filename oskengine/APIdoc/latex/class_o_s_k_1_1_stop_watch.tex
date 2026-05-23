@@ -1,0 +1,112 @@
+\doxysection{Referencia de la clase OSK\+::Stop\+Watch}
+\label{class_o_s_k_1_1_stop_watch}\index{OSK::StopWatch@{OSK::StopWatch}}
+
+
+{\ttfamily \#include $<$Stop\+Watch.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum class \textbf{ State} \{ \textbf{ STOPPED} = 0
+, \textbf{ RUNNING}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Start} ()
+\item 
+void \textbf{ Stop} ()
+\item 
+\textbf{ TDelta\+Time} \textbf{ Get\+Elapsed\+Time} () const
+\item 
+\textbf{ State} \textbf{ Get\+Current\+State} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que es capaz de medir el tiempo transcurrido entre dos instantes. 
+
+\label{doc-enum-members}
+\doxysubsection{Documentación de las enumeraciones miembro de la clase}
+\index{OSK::StopWatch@{OSK::StopWatch}!State@{State}}
+\index{State@{State}!OSK::StopWatch@{OSK::StopWatch}}
+\doxysubsubsection{State}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_stop_watch_a452c9c56fe49535197b485e78bfd7e91} 
+enum class \textbf{ OSK\+::\+Stop\+Watch\+::\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Estados en los que se puede encontrar un \doxyref{Stop\+Watch}{pág.}{class_o_s_k_1_1_stop_watch}. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOPPED@{STOPPED}!OSK::StopWatch@{OSK::StopWatch}}\index{OSK::StopWatch@{OSK::StopWatch}!STOPPED@{STOPPED}}}\label{class_o_s_k_1_1_stop_watch_a452c9c56fe49535197b485e78bfd7e91a09d4d696b4e935115b9313e3c412509a} 
+STOPPED&El \doxyref{Stop\+Watch}{pág.}{class_o_s_k_1_1_stop_watch} está parado. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RUNNING@{RUNNING}!OSK::StopWatch@{OSK::StopWatch}}\index{OSK::StopWatch@{OSK::StopWatch}!RUNNING@{RUNNING}}}\label{class_o_s_k_1_1_stop_watch_a452c9c56fe49535197b485e78bfd7e91a43491564ebcfd38568918efbd6e840fd} 
+RUNNING&El \doxyref{Stop\+Watch}{pág.}{class_o_s_k_1_1_stop_watch} está midiendo el tiempo transcurrido. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::StopWatch@{OSK::StopWatch}!GetCurrentState@{GetCurrentState}}
+\index{GetCurrentState@{GetCurrentState}!OSK::StopWatch@{OSK::StopWatch}}
+\doxysubsubsection{GetCurrentState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_stop_watch_aef39c0b34611054078fabf11c4a30744} 
+\textbf{ Stop\+Watch\+::\+State} Stop\+Watch\+::\+Get\+Current\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Estado actual del \doxyref{Stop\+Watch}{pág.}{class_o_s_k_1_1_stop_watch}. 
+\end{DoxyReturn}
+\index{OSK::StopWatch@{OSK::StopWatch}!GetElapsedTime@{GetElapsedTime}}
+\index{GetElapsedTime@{GetElapsedTime}!OSK::StopWatch@{OSK::StopWatch}}
+\doxysubsubsection{GetElapsedTime()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_stop_watch_ad66711a179bce35d0497e6ebb0794cfe} 
+\textbf{ TDelta\+Time} Stop\+Watch\+::\+Get\+Elapsed\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyPrecond}{Precondición}
+Debe haberse llamado al menos una vez a \doxyref{Start()}{pág.}{class_o_s_k_1_1_stop_watch_ae5b9841218988c9250f0bf962cd817b8}. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Devuelve}
+Tiempo (en segundos) medidos por el \doxyref{Stop\+Watch}{pág.}{class_o_s_k_1_1_stop_watch}\+:
+\begin{DoxyItemize}
+\item Si el estado actual es \doxyref{State\+::\+RUNNING}{pág.}{class_o_s_k_1_1_stop_watch_a452c9c56fe49535197b485e78bfd7e91a43491564ebcfd38568918efbd6e840fd}, entonces devuelve el tiempo transcurrido desde la última llamada a \doxyref{Start()}{pág.}{class_o_s_k_1_1_stop_watch_ae5b9841218988c9250f0bf962cd817b8}.
+\item Si el estado actual es \doxyref{State\+::\+STOPPED}{pág.}{class_o_s_k_1_1_stop_watch_a452c9c56fe49535197b485e78bfd7e91a09d4d696b4e935115b9313e3c412509a}, entonces devuelve el tiempo transcurrido entre la última llamada a \doxyref{Start()}{pág.}{class_o_s_k_1_1_stop_watch_ae5b9841218988c9250f0bf962cd817b8} y la última llamada a \doxyref{Stop()}{pág.}{class_o_s_k_1_1_stop_watch_aa74b63a5ed1e7c097cc011af3b6601c6}. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\index{OSK::StopWatch@{OSK::StopWatch}!Start@{Start}}
+\index{Start@{Start}!OSK::StopWatch@{OSK::StopWatch}}
+\doxysubsubsection{Start()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_stop_watch_ae5b9841218988c9250f0bf962cd817b8} 
+void Stop\+Watch\+::\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Comienza el conteo de tiempo. 
+
+\begin{DoxyPrecond}{Precondición}
+El estado anterior a esta llamada debe ser \doxyref{State\+::\+STOPPED}{pág.}{class_o_s_k_1_1_stop_watch_a452c9c56fe49535197b485e78bfd7e91a09d4d696b4e935115b9313e3c412509a}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El estado después de esta llamada será \doxyref{State\+::\+RUNNING}{pág.}{class_o_s_k_1_1_stop_watch_a452c9c56fe49535197b485e78bfd7e91a43491564ebcfd38568918efbd6e840fd}. 
+\end{DoxyPostcond}
+\index{OSK::StopWatch@{OSK::StopWatch}!Stop@{Stop}}
+\index{Stop@{Stop}!OSK::StopWatch@{OSK::StopWatch}}
+\doxysubsubsection{Stop()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_stop_watch_aa74b63a5ed1e7c097cc011af3b6601c6} 
+void Stop\+Watch\+::\+Stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Detiene el conteo de tiempo. 
+
+\begin{DoxyPrecond}{Precondición}
+El estado anterior a esta llamada debe ser \doxyref{State\+::\+RUNNING}{pág.}{class_o_s_k_1_1_stop_watch_a452c9c56fe49535197b485e78bfd7e91a43491564ebcfd38568918efbd6e840fd}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El estado después de esta llamada será \doxyref{State\+::\+STOPPED}{pág.}{class_o_s_k_1_1_stop_watch_a452c9c56fe49535197b485e78bfd7e91a09d4d696b4e935115b9313e3c412509a}. 
+\end{DoxyPostcond}

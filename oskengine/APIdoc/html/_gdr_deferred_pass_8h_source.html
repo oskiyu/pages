@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/GdrDeferredPass.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_gdr_deferred_pass_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">GdrDeferredPass.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;ApiCall.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;RenderPass.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;RenderGraphArgs.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;span&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;GlobalIndexBuffer.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;DynamicArray.hpp&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;EntityComponentSystem.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">class </span><a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attribute_entry.html">VertexAttributeEntry</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model.html">   17</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model.html">GdrDrawCall_Model</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model.html#a26e7bc54b89e23912f14cdae41d16afb">   18</a></span>        glm::mat4 <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model.html#a26e7bc54b89e23912f14cdae41d16afb">matrix</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model.html#adc102399a5069b60ab91593790be5eb0">   19</a></span>        glm::mat4 <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model.html#adc102399a5069b60ab91593790be5eb0">prviousMatrix</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    };</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html">   22</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html">GdrDrawCall_MaterialInfo</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html#a1dd9a655d6f99c7101b2484ac21ce2e8">   23</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a31a299dbb3a3a60d90d16d1a4eca9651">Vector2f</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html#a1dd9a655d6f99c7101b2484ac21ce2e8">metallicRoughness</a> = <a class="code hl_variable" href="class_o_s_k_1_1_vector2__t.html#a5a6119fdac1a258faeade0da8ac6108a">Vector2f::Zero</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html#a199147be2bbce8e3de082b488c1f198a">   24</a></span>        <a class="code hl_class" href="class_o_s_k_1_1_color.html">Color</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html#a199147be2bbce8e3de082b488c1f198a">emissive</a> = <a class="code hl_variable" href="class_o_s_k_1_1_color.html#a8104cda6ccbe569dfbecadf99764823e">Color::Empty</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html#ace4755bbd6fd3c4e9c3a5c8593a689fc">   26</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html#ace4755bbd6fd3c4e9c3a5c8593a689fc">albedoImageIdx</a> = 0;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html#aea090a26f489873ca009b0794c2b4200">   27</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html#aea090a26f489873ca009b0794c2b4200">normalImageIdx</a> = 0;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    };</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref.html">   30</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref.html">VertexAttribBufferRef</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref.html#a63b50ce088f3ac83a9afc203fa3915c6">   31</a></span>        <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html">RgBufferRef</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref.html#a63b50ce088f3ac83a9afc203fa3915c6">bufferRef</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref.html#abd8202a6fa5d43fb701bda6cb5583f9a">   32</a></span>        std::string <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref.html#abd8202a6fa5d43fb701bda6cb5583f9a">bindingName</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    };</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray&lt;VertexAttribBufferRef&gt;</a> <a class="code hl_function" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a6a0a500aa6772f5c4c103a1645d1fd3e">VertexAttribBufferRefToList</a>(std::span&lt;const VertexAttributeEntry&gt; entries, <span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>&amp; rg);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass.html">   38</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass.html#a7383607f12455ccc47ac9bdc5275f223">GdrDeferredPass</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ae6ce5294d1ec51e718c47cd90abcd8f9">IRenderPass</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass.html#a7383607f12455ccc47ac9bdc5275f223">GdrDeferredPass</a>(</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>* rg,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            std::span&lt;const GdrBufferUuid&gt; attributes,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a29fabf2ed2f1692c68cdced51f520d74">GdrBufferUuid</a> indexes,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a29fabf2ed2f1692c68cdced51f520d74">GdrBufferUuid</a> attribsIndexes,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            std::span&lt;const GdrImageUuid&gt; colorTargets,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a48c1092c3802b0eb44159dd4dcd66c96">GdrImageUuid</a> depthTarget,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            std::span&lt;const GdrBufferUuid&gt; cameraBuffer,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            std::span&lt;const GdrBufferUuid&gt; previousCameraBuffer);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass.html#a5c29ac785357ba31ee262c7b4cd2af63">RegisterFullDependencies</a>(</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            std::span&lt;const VertexAttribBufferRef&gt; attributes,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keyword">const</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html">RgBufferRef</a>&amp; indexes,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keyword">const</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html">RgBufferRef</a>&amp; attribsIndexes,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            std::span&lt;const RgBufferRef&gt; cameraBuffer,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            std::span&lt;const RgBufferRef&gt; previousCameraBuffer);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass.html#a7f09763103e3a76ecbe825f81c8879fb">Execute</a>(<a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html">ICommandList</a>* cmdList) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass.html#a5edda6f52bce68d719ab7dcc90d8b574">   61</a></span>        std::string_view <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass.html#a5edda6f52bce68d719ab7dcc90d8b574">GetName</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;OSK::GdrDeferredPass&quot;</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="};">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html">   70</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html">CameraInfo</a> {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#a4e673e4bf9f13ba47bbb857cdd3ab5f7">   71</a></span>            <span class="keyword">alignas</span>(16) glm::mat4 <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#a4e673e4bf9f13ba47bbb857cdd3ab5f7">projectionMatrix</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#a7dc5a05945feb5b9c84fa9bc05f81da1">   72</a></span>            <span class="keyword">alignas</span>(16) glm::mat4 <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#a7dc5a05945feb5b9c84fa9bc05f81da1">viewMatrix</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#ad3ce6fed489334b941bf8d726a5d0163">   73</a></span>            <span class="keyword">alignas</span>(16) glm::mat4 <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#ad3ce6fed489334b941bf8d726a5d0163">projectionViewMatrix</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#aa49288b908fd4d3db8e7877df8da9972">   75</a></span>            <span class="keyword">alignas</span>(16) <a class="code hl_typedef" href="namespace_o_s_k.html#a98c42bf0a7665f299a3a66c8d4cdcdc2">Vector4f</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#aa49288b908fd4d3db8e7877df8da9972">position</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#ab563f6a5d6013388a44bce96bc3c9fdc">   77</a></span>            <span class="keyword">alignas</span>(16) <a class="code hl_typedef" href="namespace_o_s_k.html#a31a299dbb3a3a60d90d16d1a4eca9651">Vector2f</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#ab563f6a5d6013388a44bce96bc3c9fdc">nearFarPlanes</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        };</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="};">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html">   83</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html">PreviousCameraInfo</a> {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html#aee9aef36d5086cac35f83cd4aa6d31d5">   84</a></span>            <span class="keyword">alignas</span>(16) glm::mat4 <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html#aee9aef36d5086cac35f83cd4aa6d31d5">projectionMatrix</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html#acc3467f87a023851f76fd2ff6d38b5a7">   85</a></span>            <span class="keyword">alignas</span>(16) glm::mat4 <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html#acc3467f87a023851f76fd2ff6d38b5a7">viewMatrix</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html#aa50b4392956733c6ac7afecad8427331">   86</a></span>            <span class="keyword">alignas</span>(16) glm::mat4 <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html#aa50b4392956733c6ac7afecad8427331">projectionViewMatrix</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        };</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_e_c_s.html#a4929d0651368056cdccebd71058de0fd">ECS::ExternalEcsListUuid</a> m_objectListUuid = <a class="code hl_function" href="class_o_s_k_1_1_base_uuid.html#a53756a73f42ce2fa498419505069d6a1">ECS::ExternalEcsListUuid::CreateEmpty</a>();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">RenderGraph</a>* m_renderGraph;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a29fabf2ed2f1692c68cdced51f520d74">GdrBufferUuid</a> m_indexBuffer;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a29fabf2ed2f1692c68cdced51f520d74">GdrBufferUuid</a> m_instancesBuffer;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a29fabf2ed2f1692c68cdced51f520d74">GdrBufferUuid</a> m_materialsBuffer;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        std::unordered_map&lt;GdrImageUuid, USize32&gt; m_imageIndexes;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray&lt;GdrDrawCall_MaterialInfo&gt;</a> m_drawCalls_Materials;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray&lt;GdrDrawCall_Model&gt;</a>         m_drawCalls_Models;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray&lt;GlobalIndexBufferRange&gt;</a>   m_drawCallsIndexes;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    };</div>
+</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+<div class="ttc" id="aclass_o_s_k_1_1_base_uuid_html_a53756a73f42ce2fa498419505069d6a1"><div class="ttname"><a href="class_o_s_k_1_1_base_uuid.html#a53756a73f42ce2fa498419505069d6a1">OSK::BaseUuid&lt; class ExternalEcsList_t &gt;::CreateEmpty</a></div><div class="ttdeci">static constexpr BaseUuid CreateEmpty()</div><div class="ttdef"><b>Definition</b> Uuid.h:38</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_color_html"><div class="ttname"><a href="class_o_s_k_1_1_color.html">OSK::Color</a></div><div class="ttdoc">Representa un color en formato RGBA float.</div><div class="ttdef"><b>Definition</b> Color.hpp:12</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_color_html_a8104cda6ccbe569dfbecadf99764823e"><div class="ttname"><a href="class_o_s_k_1_1_color.html#a8104cda6ccbe569dfbecadf99764823e">OSK::Color::Empty</a></div><div class="ttdeci">static Color const Empty</div><div class="ttdoc">Color vacío (0, 0, 0, 0).</div><div class="ttdef"><b>Definition</b> Color.hpp:117</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_dynamic_array_html"><div class="ttname"><a href="class_o_s_k_1_1_dynamic_array.html">OSK::DynamicArray</a></div><div class="ttdoc">Dynamic array: array que puede cambiar de tamaño.</div><div class="ttdef"><b>Definition</b> DynamicArray.hpp:66</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_html_a5c29ac785357ba31ee262c7b4cd2af63"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass.html#a5c29ac785357ba31ee262c7b4cd2af63">OSK::GRAPHICS::GdrDeferredPass::RegisterFullDependencies</a></div><div class="ttdeci">void RegisterFullDependencies(std::span&lt; const VertexAttribBufferRef &gt; attributes, const RgBufferRef &amp;indexes, const RgBufferRef &amp;attribsIndexes, std::span&lt; const RgBufferRef &gt; cameraBuffer, std::span&lt; const RgBufferRef &gt; previousCameraBuffer)</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.cpp:183</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_html_a5edda6f52bce68d719ab7dcc90d8b574"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass.html#a5edda6f52bce68d719ab7dcc90d8b574">OSK::GRAPHICS::GdrDeferredPass::GetName</a></div><div class="ttdeci">std::string_view GetName() const override</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:61</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_html_a7383607f12455ccc47ac9bdc5275f223"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass.html#a7383607f12455ccc47ac9bdc5275f223">OSK::GRAPHICS::GdrDeferredPass::GdrDeferredPass</a></div><div class="ttdeci">GdrDeferredPass(RenderGraph *rg, std::span&lt; const GdrBufferUuid &gt; attributes, GdrBufferUuid indexes, GdrBufferUuid attribsIndexes, std::span&lt; const GdrImageUuid &gt; colorTargets, GdrImageUuid depthTarget, std::span&lt; const GdrBufferUuid &gt; cameraBuffer, std::span&lt; const GdrBufferUuid &gt; previousCameraBuffer)</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.cpp:34</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_html_a7f09763103e3a76ecbe825f81c8879fb"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass.html#a7f09763103e3a76ecbe825f81c8879fb">OSK::GRAPHICS::GdrDeferredPass::Execute</a></div><div class="ttdeci">void Execute(ICommandList *cmdList) override</div><div class="ttdoc">Lógica de renderizado del renderpass.</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.cpp:302</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html">OSK::GRAPHICS::ICommandList</a></div><div class="ttdoc">Una lista de comandos contiene una serie de comandos que serán enviados a la GPU para su ejecución....</div><div class="ttdef"><b>Definition</b> ICommandList.h:78</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass_html_ae6ce5294d1ec51e718c47cd90abcd8f9"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#ae6ce5294d1ec51e718c47cd90abcd8f9">OSK::GRAPHICS::IRenderPass::IRenderPass</a></div><div class="ttdeci">IRenderPass(std::optional&lt; std::string_view &gt; materialName, RenderPassType type)</div><div class="ttdoc">Inicializa el render-pass.</div><div class="ttdef"><b>Definition</b> RenderPass.cpp:17</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">OSK::GRAPHICS::RenderGraph</a></div><div class="ttdoc">Grafo de renderizado, que contiene tanto los pases de renderizado como los recursos que estos necesit...</div><div class="ttdef"><b>Definition</b> RenderGraph.h:52</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html_a5a6119fdac1a258faeade0da8ac6108a"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html#a5a6119fdac1a258faeade0da8ac6108a">OSK::Vector2_t&lt; float_t &gt;::Zero</a></div><div class="ttdeci">static OSKAPI_CALL Vector2_t const Zero</div><div class="ttdef"><b>Definition</b> Vector2.hpp:21</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_e_c_s_html_a4929d0651368056cdccebd71058de0fd"><div class="ttname"><a href="namespace_o_s_k_1_1_e_c_s.html#a4929d0651368056cdccebd71058de0fd">OSK::ECS::ExternalEcsListUuid</a></div><div class="ttdeci">BaseUuid&lt; class ExternalEcsList_t &gt; ExternalEcsListUuid</div><div class="ttdef"><b>Definition</b> EntityComponentSystem.h:25</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></div><div class="ttdef"><b>Definition</b> AccelerationStructuresExceptions.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a29fabf2ed2f1692c68cdced51f520d74"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a29fabf2ed2f1692c68cdced51f520d74">OSK::GRAPHICS::GdrBufferUuid</a></div><div class="ttdeci">BaseUuid&lt; class GdrBuffer &gt; GdrBufferUuid</div><div class="ttdoc">Identificador de un buffer usado en un render-graph.</div><div class="ttdef"><b>Definition</b> ImageUuid.h:13</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a48c1092c3802b0eb44159dd4dcd66c96"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a48c1092c3802b0eb44159dd4dcd66c96">OSK::GRAPHICS::GdrImageUuid</a></div><div class="ttdeci">BaseUuid&lt; class GdrImage &gt; GdrImageUuid</div><div class="ttdoc">Identificador de una imagen usada en un render-graph.</div><div class="ttdef"><b>Definition</b> ImageUuid.h:9</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a6a0a500aa6772f5c4c103a1645d1fd3e"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a6a0a500aa6772f5c4c103a1645d1fd3e">OSK::GRAPHICS::VertexAttribBufferRefToList</a></div><div class="ttdeci">DynamicArray&lt; VertexAttribBufferRef &gt; VertexAttribBufferRefToList(std::span&lt; const VertexAttributeEntry &gt; entries, const RenderGraph &amp;rg)</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.cpp:18</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a31a299dbb3a3a60d90d16d1a4eca9651"><div class="ttname"><a href="namespace_o_s_k.html#a31a299dbb3a3a60d90d16d1a4eca9651">OSK::Vector2f</a></div><div class="ttdeci">Vector2_t&lt; float_t &gt; Vector2f</div><div class="ttdoc">Precisión = float.</div><div class="ttdef"><b>Definition</b> Vector2.hpp:261</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a382ed4c8a6994201cbad5d4e1335861b"><div class="ttname"><a href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">OSK::UIndex32</a></div><div class="ttdeci">uint32_t UIndex32</div><div class="ttdoc">Índice de un elemento, almacenado en un unsigned int de 32 bits.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:21</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a98c42bf0a7665f299a3a66c8d4cdcdc2"><div class="ttname"><a href="namespace_o_s_k.html#a98c42bf0a7665f299a3a66c8d4cdcdc2">OSK::Vector4f</a></div><div class="ttdeci">Vector4_t&lt; float_t &gt; Vector4f</div><div class="ttdoc">Precisión = float.</div><div class="ttdef"><b>Definition</b> Vector4.hpp:364</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html">OSK::GRAPHICS::GdrDeferredPass::CameraInfo</a></div><div class="ttdoc">Estructura con la información almacenada en los uniform buffers de la cámara.</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:70</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info_html_a4e673e4bf9f13ba47bbb857cdd3ab5f7"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#a4e673e4bf9f13ba47bbb857cdd3ab5f7">OSK::GRAPHICS::GdrDeferredPass::CameraInfo::projectionMatrix</a></div><div class="ttdeci">glm::mat4 projectionMatrix</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:71</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info_html_a7dc5a05945feb5b9c84fa9bc05f81da1"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#a7dc5a05945feb5b9c84fa9bc05f81da1">OSK::GRAPHICS::GdrDeferredPass::CameraInfo::viewMatrix</a></div><div class="ttdeci">glm::mat4 viewMatrix</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:72</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info_html_aa49288b908fd4d3db8e7877df8da9972"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#aa49288b908fd4d3db8e7877df8da9972">OSK::GRAPHICS::GdrDeferredPass::CameraInfo::position</a></div><div class="ttdeci">Vector4f position</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:75</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info_html_ab563f6a5d6013388a44bce96bc3c9fdc"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#ab563f6a5d6013388a44bce96bc3c9fdc">OSK::GRAPHICS::GdrDeferredPass::CameraInfo::nearFarPlanes</a></div><div class="ttdeci">Vector2f nearFarPlanes</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:77</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info_html_ad3ce6fed489334b941bf8d726a5d0163"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_camera_info.html#ad3ce6fed489334b941bf8d726a5d0163">OSK::GRAPHICS::GdrDeferredPass::CameraInfo::projectionViewMatrix</a></div><div class="ttdeci">glm::mat4 projectionViewMatrix</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:73</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html">OSK::GRAPHICS::GdrDeferredPass::PreviousCameraInfo</a></div><div class="ttdoc">Estructura con la información almacenada en los uniform buffers de la cámara del frame anterior.</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:83</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info_html_aa50b4392956733c6ac7afecad8427331"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html#aa50b4392956733c6ac7afecad8427331">OSK::GRAPHICS::GdrDeferredPass::PreviousCameraInfo::projectionViewMatrix</a></div><div class="ttdeci">glm::mat4 projectionViewMatrix</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:86</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info_html_acc3467f87a023851f76fd2ff6d38b5a7"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html#acc3467f87a023851f76fd2ff6d38b5a7">OSK::GRAPHICS::GdrDeferredPass::PreviousCameraInfo::viewMatrix</a></div><div class="ttdeci">glm::mat4 viewMatrix</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:85</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info_html_aee9aef36d5086cac35f83cd4aa6d31d5"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_deferred_pass_1_1_previous_camera_info.html#aee9aef36d5086cac35f83cd4aa6d31d5">OSK::GRAPHICS::GdrDeferredPass::PreviousCameraInfo::projectionMatrix</a></div><div class="ttdeci">glm::mat4 projectionMatrix</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:84</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html">OSK::GRAPHICS::GdrDrawCall_MaterialInfo</a></div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:22</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info_html_a199147be2bbce8e3de082b488c1f198a"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html#a199147be2bbce8e3de082b488c1f198a">OSK::GRAPHICS::GdrDrawCall_MaterialInfo::emissive</a></div><div class="ttdeci">Color emissive</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:24</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info_html_a1dd9a655d6f99c7101b2484ac21ce2e8"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html#a1dd9a655d6f99c7101b2484ac21ce2e8">OSK::GRAPHICS::GdrDrawCall_MaterialInfo::metallicRoughness</a></div><div class="ttdeci">Vector2f metallicRoughness</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:23</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info_html_ace4755bbd6fd3c4e9c3a5c8593a689fc"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html#ace4755bbd6fd3c4e9c3a5c8593a689fc">OSK::GRAPHICS::GdrDrawCall_MaterialInfo::albedoImageIdx</a></div><div class="ttdeci">UIndex32 albedoImageIdx</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:26</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info_html_aea090a26f489873ca009b0794c2b4200"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___material_info.html#aea090a26f489873ca009b0794c2b4200">OSK::GRAPHICS::GdrDrawCall_MaterialInfo::normalImageIdx</a></div><div class="ttdeci">UIndex32 normalImageIdx</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:27</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model.html">OSK::GRAPHICS::GdrDrawCall_Model</a></div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:17</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model_html_a26e7bc54b89e23912f14cdae41d16afb"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model.html#a26e7bc54b89e23912f14cdae41d16afb">OSK::GRAPHICS::GdrDrawCall_Model::matrix</a></div><div class="ttdeci">glm::mat4 matrix</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:18</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model_html_adc102399a5069b60ab91593790be5eb0"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_draw_call___model.html#adc102399a5069b60ab91593790be5eb0">OSK::GRAPHICS::GdrDrawCall_Model::prviousMatrix</a></div><div class="ttdeci">glm::mat4 prviousMatrix</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:19</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_ref.html">OSK::GRAPHICS::RgBufferRef</a></div><div class="ttdoc">Referencia al rango de un buffer.</div><div class="ttdef"><b>Definition</b> RenderGraphArgs.h:157</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref.html">OSK::GRAPHICS::VertexAttribBufferRef</a></div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:30</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref_html_a63b50ce088f3ac83a9afc203fa3915c6"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref.html#a63b50ce088f3ac83a9afc203fa3915c6">OSK::GRAPHICS::VertexAttribBufferRef::bufferRef</a></div><div class="ttdeci">RgBufferRef bufferRef</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:31</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref_html_abd8202a6fa5d43fb701bda6cb5583f9a"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attrib_buffer_ref.html#abd8202a6fa5d43fb701bda6cb5583f9a">OSK::GRAPHICS::VertexAttribBufferRef::bindingName</a></div><div class="ttdeci">std::string bindingName</div><div class="ttdef"><b>Definition</b> GdrDeferredPass.h:32</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attribute_entry_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attribute_entry.html">OSK::GRAPHICS::VertexAttributeEntry</a></div><div class="ttdef"><b>Definition</b> RgGeometryManager.h:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>GdrDeferredPass.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

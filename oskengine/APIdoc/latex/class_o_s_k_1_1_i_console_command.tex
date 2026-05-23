@@ -1,0 +1,121 @@
+\doxysection{Referencia de la clase OSK\+::IConsole\+Command}
+\label{class_o_s_k_1_1_i_console_command}\index{OSK::IConsoleCommand@{OSK::IConsoleCommand}}
+
+
+{\ttfamily \#include $<$Console\+Command.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IConsole\+Command} ()=default
+\item 
+virtual void \textbf{ Execute} (\textbf{ UI\+::\+Console} $\ast$console, std\+::span$<$ const std\+::string $>$ params) const =0
+\item 
+bool \textbf{ Is\+Compatible\+With} (std\+::span$<$ const std\+::string $>$ message\+Words) const
+\item 
+std\+::span$<$ const std\+::string $>$ \textbf{ Get\+Command\+Words} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Set\+Command\+Words} (const \textbf{ Dynamic\+Array}$<$ std\+::string $>$ \&words)
+\item 
+void \textbf{ Set\+Command\+Words} (\textbf{ Dynamic\+Array}$<$ std\+::string $>$ \&\&words)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa un comando de consola que se puede ejecutar. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IConsoleCommand@{OSK::IConsoleCommand}!````~IConsoleCommand@{$\sim$IConsoleCommand}}
+\index{````~IConsoleCommand@{$\sim$IConsoleCommand}!OSK::IConsoleCommand@{OSK::IConsoleCommand}}
+\doxysubsubsection{$\sim$IConsoleCommand()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_console_command_a7a24715483861ac961a4b9746dd2831d} 
+virtual OSK\+::\+IConsole\+Command\+::$\sim$\+IConsole\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IConsoleCommand@{OSK::IConsoleCommand}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::IConsoleCommand@{OSK::IConsoleCommand}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_console_command_af4d476bbca5a0923f5bdd1bcb8556eaf} 
+virtual void OSK\+::\+IConsole\+Command\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ UI\+::\+Console} $\ast$}]{console}{, }\item[{std\+::span$<$ const std\+::string $>$}]{params}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Ejecuta el comando. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em console} & Consola sobre la que se mandó el mensaje. \\
+\hline
+{\em params} & Parámetros del comando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Los parámetros ({\ttfamily params}) deben ser las palabras del mensaje una vez se han quitado las palabras obligatorias del comando. 
+\end{DoxyPrecond}
+
+
+Implementado en \textbf{ OSK\+::\+Editor\+Hide\+Command} \doxyref{}{pág.}{class_o_s_k_1_1_editor_hide_command_a4f5ff37f373e28979793acf7a4add0bf}, \textbf{ OSK\+::\+Editor\+Show\+Command} \doxyref{}{pág.}{class_o_s_k_1_1_editor_show_command_a3d129a916064491791a71629e3060ae0}, \textbf{ OSK\+::\+Exit\+Command} \doxyref{}{pág.}{class_o_s_k_1_1_exit_command_a45056e5e892aa471486cf221f07f80b6} y \textbf{ OSK\+::\+Gpu\+Stats\+Command} \doxyref{}{pág.}{class_o_s_k_1_1_gpu_stats_command_a587a9db50e35b550b7a8bb2873e939ab}.
+
+\index{OSK::IConsoleCommand@{OSK::IConsoleCommand}!GetCommandWords@{GetCommandWords}}
+\index{GetCommandWords@{GetCommandWords}!OSK::IConsoleCommand@{OSK::IConsoleCommand}}
+\doxysubsubsection{GetCommandWords()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_console_command_a406a3d0addd248e074612e77d0ceb867} 
+std\+::span$<$ const std\+::string $>$ IConsole\+Command\+::\+Get\+Command\+Words (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Palabras sueltas y ordenadas obligatorias del comando. 
+\end{DoxyReturn}
+\index{OSK::IConsoleCommand@{OSK::IConsoleCommand}!IsCompatibleWith@{IsCompatibleWith}}
+\index{IsCompatibleWith@{IsCompatibleWith}!OSK::IConsoleCommand@{OSK::IConsoleCommand}}
+\doxysubsubsection{IsCompatibleWith()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_console_command_ad9db57f37d2dc6c8199f67e46ce2e7d7} 
+bool IConsole\+Command\+::\+Is\+Compatible\+With (\begin{DoxyParamCaption}\item[{std\+::span$<$ const std\+::string $>$}]{message\+Words}{}\end{DoxyParamCaption}) const}
+
+
+
+Comrpueba si las palabras de un mensaje son compatibles con este comando. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em message\+Words} & Palabras sueltas del mensaje, en orden. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si es compatible con este comando (por lo que se debe ejecutar este comando). 
+\end{DoxyReturn}
+\index{OSK::IConsoleCommand@{OSK::IConsoleCommand}!SetCommandWords@{SetCommandWords}}
+\index{SetCommandWords@{SetCommandWords}!OSK::IConsoleCommand@{OSK::IConsoleCommand}}
+\doxysubsubsection{SetCommandWords()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_console_command_abcce4ffc28474203372b430f2d2af978} 
+void IConsole\+Command\+::\+Set\+Command\+Words (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ std\+::string $>$ \&}]{words}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Establece el texto que debe tener el mensaje para ser considerado este comando. 
+
+Se insertan las palabras sueltas del comando, en orden. 
+\begin{DoxyParams}{Parámetros}
+{\em words} & Palabras que componen la parte obligatoria del comando.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily words.\+Get\+Size()} $>$ 0. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si {\ttfamily words.\+Get\+Size()} == 0. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::IConsoleCommand@{OSK::IConsoleCommand}!SetCommandWords@{SetCommandWords}}
+\index{SetCommandWords@{SetCommandWords}!OSK::IConsoleCommand@{OSK::IConsoleCommand}}
+\doxysubsubsection{SetCommandWords()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_console_command_afd78e72c790aca5d685e1585edfd63f0} 
+void IConsole\+Command\+::\+Set\+Command\+Words (\begin{DoxyParamCaption}\item[{\textbf{ Dynamic\+Array}$<$ std\+::string $>$ \&\&}]{words}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+

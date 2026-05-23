@@ -1,0 +1,47 @@
+\doxysection{Framebuffer\+Vk.\+h}
+\label{_framebuffer_vk_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/FramebufferVk.h@{C:/Users/Oscar/source/repos/OSKengine/Source/FramebufferVk.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_VULKAN\_BACKEND}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vulkan/vulkan.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}GpuImageViewVk.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}GpuVk.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }RenderpassVk;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ FramebufferVk\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ FramebufferVk(\textcolor{keyword}{const}\ GpuVk\&\ device,\ \textcolor{keyword}{const}\ RenderpassVk\&\ renderpass,\ std::span<const\ GpuImageViewVk*\ const>\ views);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \string~FramebufferVk();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ OSK\_DISABLE\_COPY(FramebufferVk);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ FramebufferVk(FramebufferVk\&\&)\ noexcept;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ FramebufferVk\&\ operator=(FramebufferVk\&\&)\ noexcept;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ VkFramebuffer\ GetFramebuffer()\ const;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ private:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ VkFramebuffer\ m\_framebuffer\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ VkDevice\ m\_device\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OSK\_USE\_VULKAN\_BACKEND}}
+
+\end{DoxyCode}

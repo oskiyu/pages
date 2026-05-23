@@ -1,0 +1,339 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Gpu\+Image\+View\+Config}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config}\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+
+
+{\ttfamily \#include $<$Gpu\+Image\+View\+Config.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum class \textbf{ Mip\+Map\+Mode} \{ \textbf{ ALL\+\_\+\+LEVELS}
+, \textbf{ LEVEL\+\_\+\+RANGE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+auto \textbf{ operator$<$=$>$} (const \textbf{ Gpu\+Image\+View\+Config} \&) const =default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Gpu\+Image\+View\+Config} \textbf{ Create\+Sampled\+\_\+\+Default} ()
+\item 
+static \textbf{ Gpu\+Image\+View\+Config} \textbf{ Create\+Sampled\+\_\+\+Single\+Mip\+Level} (\textbf{ UIndex32} mip\+Level)
+\item 
+static \textbf{ Gpu\+Image\+View\+Config} \textbf{ Create\+Sampled\+\_\+\+Mip\+Level\+Ranged} (\textbf{ UIndex32} \textbf{ base\+Mip\+Level}, \textbf{ UIndex32} \textbf{ top\+Mip\+Level})
+\item 
+static \textbf{ Gpu\+Image\+View\+Config} \textbf{ Create\+Sampled\+\_\+\+Array} (\textbf{ UIndex32} base\+Layer, \textbf{ USize32} layer\+Count)
+\item 
+static \textbf{ Gpu\+Image\+View\+Config} \textbf{ Create\+Sampled\+\_\+\+Cubemap} ()
+\item 
+static \textbf{ Gpu\+Image\+View\+Config} \textbf{ Create\+Storage\+\_\+\+Default} ()
+\item 
+static \textbf{ Gpu\+Image\+View\+Config} \textbf{ Create\+Target\+\_\+\+Color} ()
+\item 
+static \textbf{ Gpu\+Image\+View\+Config} \textbf{ Create\+Target\+\_\+\+Depth} ()
+\item 
+static \textbf{ Gpu\+Image\+View\+Config} \textbf{ Create\+Target\+\_\+\+Stencil} ()
+\item 
+static \textbf{ Gpu\+Image\+View\+Config} \textbf{ Create\+Target\+\_\+\+Depth\+Stencil} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Sampled\+Channel} \textbf{ channel} = \textbf{ Sampled\+Channel\+::\+COLOR}
+\item 
+\textbf{ Sampled\+Array\+Type} \textbf{ array\+Type} = \textbf{ Sampled\+Array\+Type\+::\+SINGLE\+\_\+\+LAYER}
+\item 
+\textbf{ UIndex32} \textbf{ base\+Array\+Level} = 0
+\item 
+\textbf{ USize32} \textbf{ array\+Level\+Count} = 1
+\item 
+\textbf{ UIndex32} \textbf{ base\+Mip\+Level} = 0
+\item 
+\textbf{ UIndex32} \textbf{ top\+Mip\+Level} = 0
+\item 
+\textbf{ View\+Usage} \textbf{ usage} = \textbf{ View\+Usage\+::\+SAMPLED}
+\item 
+enum \textbf{ OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+View\+Config\+::\+Mip\+Map\+Mode} \textbf{ mip\+Map\+Mode} = \textbf{ Mip\+Map\+Mode\+::\+ALL\+\_\+\+LEVELS}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Configuración de un image view. Desribe las características de un image view. 
+
+\label{doc-enum-members}
+\doxysubsection{Documentación de las enumeraciones miembro de la clase}
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!MipMapMode@{MipMapMode}}
+\index{MipMapMode@{MipMapMode}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{MipMapMode}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a1690f98f669efbb826db4d8e6fcea973} 
+enum class \textbf{ OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+View\+Config\+::\+Mip\+Map\+Mode}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Configuración sobre los mip-\/maps. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALL\_LEVELS@{ALL\_LEVELS}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!ALL\_LEVELS@{ALL\_LEVELS}}}\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a1690f98f669efbb826db4d8e6fcea973a4776ba0983e65f0407a99bdaf25f493f} 
+ALL\+\_\+\+LEVELS&Se tendrá acceso a todos los mip-\/levels. Tanto {\ttfamily base\+Mip\+Level} como {\ttfamily top\+Mip\+Level} serán ignorados. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEVEL\_RANGE@{LEVEL\_RANGE}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!LEVEL\_RANGE@{LEVEL\_RANGE}}}\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a1690f98f669efbb826db4d8e6fcea973ac8cebb4771eb722be0be6a8970641176} 
+LEVEL\+\_\+\+RANGE&Se usará el rango de niveles definidos por {\ttfamily base\+Mip\+Level} y {\ttfamily top\+Mip\+Level}. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!CreateSampled\_Array@{CreateSampled\_Array}}
+\index{CreateSampled\_Array@{CreateSampled\_Array}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{CreateSampled\_Array()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_af4f9f1b4daeeef0b79622cff349e55bd} 
+\textbf{ Gpu\+Image\+View\+Config} Gpu\+Image\+View\+Config\+::\+Create\+Sampled\+\_\+\+Array (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{base\+Layer}{, }\item[{\textbf{ USize32}}]{layer\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea una configuración para un uso normal de una textura, que es un array. Usa todos los mip-\/levels. Canal = \doxyref{Sampled\+Channel\+::\+COLOR}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a02ed44392ae1f51786ead8911c3afe9da04bd834032febb3fda8c6936ee140949}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em base\+Layer} & Primera capa del array. Por defecto, 0. \\
+\hline
+{\em layer\+Count} & Número de capas.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily layer\+Count} $>$= 1. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!CreateSampled\_Cubemap@{CreateSampled\_Cubemap}}
+\index{CreateSampled\_Cubemap@{CreateSampled\_Cubemap}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{CreateSampled\_Cubemap()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_aa436759dec18df0fa0549a8bb3fbd01a} 
+\textbf{ Gpu\+Image\+View\+Config} Gpu\+Image\+View\+Config\+::\+Create\+Sampled\+\_\+\+Cubemap (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea una configuración para un uso normal de un cubemap. Usa todos los mip-\/levels. Canal = \doxyref{Sampled\+Channel\+::\+COLOR}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a02ed44392ae1f51786ead8911c3afe9da04bd834032febb3fda8c6936ee140949}. 
+
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!CreateSampled\_Default@{CreateSampled\_Default}}
+\index{CreateSampled\_Default@{CreateSampled\_Default}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{CreateSampled\_Default()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a525b8b5e5f7fa1fd0616058c06863d13} 
+\textbf{ Gpu\+Image\+View\+Config} Gpu\+Image\+View\+Config\+::\+Create\+Sampled\+\_\+\+Default (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea una configuración para un uso normal de una textura. Canal = \doxyref{Sampled\+Channel\+::\+COLOR}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a02ed44392ae1f51786ead8911c3afe9da04bd834032febb3fda8c6936ee140949}. Imagen simple que usa la primera imagen de array. Usa todos los mip-\/levels. 
+
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!CreateSampled\_MipLevelRanged@{CreateSampled\_MipLevelRanged}}
+\index{CreateSampled\_MipLevelRanged@{CreateSampled\_MipLevelRanged}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{CreateSampled\_MipLevelRanged()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a7fe1e0bdfbd59170a80a6b7c6f486c8d} 
+\textbf{ Gpu\+Image\+View\+Config} Gpu\+Image\+View\+Config\+::\+Create\+Sampled\+\_\+\+Mip\+Level\+Ranged (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{base\+Mip\+Level}{, }\item[{\textbf{ UIndex32}}]{top\+Mip\+Level}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea una configuración para un uso normal de una textura, en la que se usan los mip-\/levels del rango indicado. Canal = \doxyref{Sampled\+Channel\+::\+COLOR}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a02ed44392ae1f51786ead8911c3afe9da04bd834032febb3fda8c6936ee140949}. Imagen simple que usa la primera imagen de array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em base\+Mip\+Level} & Nivel más detallado (por defecto 0 para el rango completo). Inclusive. \\
+\hline
+{\em top\+Mip\+Level} & Nivel menos detallado. Inclusive.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Todos los niveles de mip indicados dentro del rango deben existir en la imagen original. 
+
+{\ttfamily base\+Mip\+Level} $<$= {\ttfamily top\+Mip\+Level}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!CreateSampled\_SingleMipLevel@{CreateSampled\_SingleMipLevel}}
+\index{CreateSampled\_SingleMipLevel@{CreateSampled\_SingleMipLevel}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{CreateSampled\_SingleMipLevel()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a30162d64bf66e4ab0354ca3d41e68b74} 
+\textbf{ Gpu\+Image\+View\+Config} Gpu\+Image\+View\+Config\+::\+Create\+Sampled\+\_\+\+Single\+Mip\+Level (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{mip\+Level}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea una configuración para un uso normal de una textura, en la que se usa únicamente el mip-\/level indicado. Canal = \doxyref{Sampled\+Channel\+::\+COLOR}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a02ed44392ae1f51786ead8911c3afe9da04bd834032febb3fda8c6936ee140949}. Imagen simple que usa la primera imagen de array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mip\+Level} & Mip level usado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily mip\+Level} debe existir en la imagen original. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!CreateStorage\_Default@{CreateStorage\_Default}}
+\index{CreateStorage\_Default@{CreateStorage\_Default}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{CreateStorage\_Default()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a5ef9697fb532638395659e4c8a02b2e2} 
+\textbf{ Gpu\+Image\+View\+Config} Gpu\+Image\+View\+Config\+::\+Create\+Storage\+\_\+\+Default (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea una configuración para un uso normal al escribir a una imagen de storage. Canal = \doxyref{Sampled\+Channel\+::\+COLOR}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a02ed44392ae1f51786ead8911c3afe9da04bd834032febb3fda8c6936ee140949}. Usa el mip-\/level 0. Usa el primer nivel de array. 
+
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!CreateTarget\_Color@{CreateTarget\_Color}}
+\index{CreateTarget\_Color@{CreateTarget\_Color}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{CreateTarget\_Color()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a424a066b2bacf5b09e0d6aa00f3d9cce} 
+\textbf{ Gpu\+Image\+View\+Config} Gpu\+Image\+View\+Config\+::\+Create\+Target\+\_\+\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea una configuración para renderizar a una imagen de color. Usa el mip-\/level 0. Usa el primer nivel de array. 
+
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!CreateTarget\_Depth@{CreateTarget\_Depth}}
+\index{CreateTarget\_Depth@{CreateTarget\_Depth}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{CreateTarget\_Depth()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a3184b9cf473155cad5df433cac2c07a1} 
+\textbf{ Gpu\+Image\+View\+Config} Gpu\+Image\+View\+Config\+::\+Create\+Target\+\_\+\+Depth (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea una configuración para renderizar a una imagen de profundidad. Usa el mip-\/level 0. Usa el primer nivel de array. 
+
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!CreateTarget\_DepthStencil@{CreateTarget\_DepthStencil}}
+\index{CreateTarget\_DepthStencil@{CreateTarget\_DepthStencil}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{CreateTarget\_DepthStencil()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_ac5d9d91d0d3a8141a1978040887d411a} 
+\textbf{ Gpu\+Image\+View\+Config} Gpu\+Image\+View\+Config\+::\+Create\+Target\+\_\+\+Depth\+Stencil (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea una configuración para renderizar a una imagen de profundidad Y stencil. Usa el mip-\/level 0. Usa el primer nivel de array. 
+
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!CreateTarget\_Stencil@{CreateTarget\_Stencil}}
+\index{CreateTarget\_Stencil@{CreateTarget\_Stencil}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{CreateTarget\_Stencil()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a017265188b7a721a4f3b02105da9cd67} 
+\textbf{ Gpu\+Image\+View\+Config} Gpu\+Image\+View\+Config\+::\+Create\+Target\+\_\+\+Stencil (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea una configuración para renderizar a una imagen de stencil. Usa el mip-\/level 0. Usa el primer nivel de array. 
+
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!operator$<$=$>$@{operator$<$=$>$}}
+\index{operator$<$=$>$@{operator$<$=$>$}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{operator$<$=$>$()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a40d7a8fe5013093fb8c74734b88079aa} 
+auto OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+View\+Config\+::operator$<$=$>$ (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Image\+View\+Config} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!arrayLevelCount@{arrayLevelCount}}
+\index{arrayLevelCount@{arrayLevelCount}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{arrayLevelCount}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_ac50ea75f158345c56e87d45b908c7e23} 
+\textbf{ USize32} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+View\+Config\+::array\+Level\+Count = 1}
+
+
+
+Número de capas del array. 
+
+\begin{DoxyPrecond}{Precondición}
+Para imágenes simples, debe ser 1. 
+
+Para arrays, debe ser $>$ 1. 
+
+Para un único cubemap, debe ser 6 y {\ttfamily array\+Type} debe ser \doxyref{Sampled\+Array\+Type\+::\+SINGLE\+\_\+\+LAYER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a55e114ba828198c2146f5233e462ba39a827be7f5269fdb21e2fb90ab4f60e785}. 
+
+Para array de cubemaps, debe ser múltiplo de 6 y {\ttfamily array\+Type} debe ser \doxyref{Sampled\+Array\+Type\+::\+ARRAY}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a55e114ba828198c2146f5233e462ba39acb4fb1757fb37c43cded35d3eb857c43}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!arrayType@{arrayType}}
+\index{arrayType@{arrayType}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{arrayType}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_ac5d4648824ecc9db871b22ff330faad9} 
+\textbf{ Sampled\+Array\+Type} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+View\+Config\+::array\+Type = \textbf{ Sampled\+Array\+Type\+::\+SINGLE\+\_\+\+LAYER}}
+
+
+
+Representa si es una única imagen (o capa) o si representa un conjunto de capsa (array). Por defecto, una única capa. 
+
+\begin{DoxyNote}{Nota}
+Si se va a representar un único cubemap, debe ser \doxyref{Sampled\+Array\+Type\+::\+SINGLE\+\_\+\+LAYER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a55e114ba828198c2146f5233e462ba39a827be7f5269fdb21e2fb90ab4f60e785}. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!baseArrayLevel@{baseArrayLevel}}
+\index{baseArrayLevel@{baseArrayLevel}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{baseArrayLevel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a10f0649310fcec90686eb46d8f76117b} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+View\+Config\+::base\+Array\+Level = 0}
+
+
+
+Capa base del array. Para imágenes simples, debe ser 0. 
+
+\begin{DoxyPrecond}{Precondición}
+Para cubemaps, debe ser múltiplo de 6. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!baseMipLevel@{baseMipLevel}}
+\index{baseMipLevel@{baseMipLevel}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{baseMipLevel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a695b6625e33642f1b88046ab17062192} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+View\+Config\+::base\+Mip\+Level = 0}
+
+
+
+Detalle máximo de mip-\/level. Por defecto, 0 (más alto). 
+
+\begin{DoxyPrecond}{Precondición}
+Debe ser menor o igual que {\ttfamily top\+Mip\+Level}. 
+
+Para usar un único mip-\/level, debe ser igual a {\ttfamily top\+Mip\+Level}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!channel@{channel}}
+\index{channel@{channel}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{channel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a17df0b8be3e96e062f080e184665e862} 
+\textbf{ Sampled\+Channel} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+View\+Config\+::channel = \textbf{ Sampled\+Channel\+::\+COLOR}}
+
+
+
+Canal de la imagen que se va a acceder. Por defecto, COLOR. 
+
+\begin{DoxyNote}{Nota}
+Se pueden combinar varios de estos canales. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!mipMapMode@{mipMapMode}}
+\index{mipMapMode@{mipMapMode}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{mipMapMode}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_ad3a4ed2cd23d9f751c72d0865dcd6036} 
+enum \textbf{ OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+View\+Config\+::\+Mip\+Map\+Mode} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+View\+Config\+::mip\+Map\+Mode = \textbf{ Mip\+Map\+Mode\+::\+ALL\+\_\+\+LEVELS}}
+
+
+
+Configuración sobre los mip-\/maps. Por defecto, usará todos los niveles. 
+
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!topMipLevel@{topMipLevel}}
+\index{topMipLevel@{topMipLevel}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{topMipLevel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_a2194f333b46be2d75af3343c49089169} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+View\+Config\+::top\+Mip\+Level = 0}
+
+
+
+Detalle mínimo del mip-\/level. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe ser mayor o igual que {\ttfamily base\+Mip\+Level}. 
+
+Para usar un único mip-\/level, debe ser igual a {\ttfamily base\+Mip\+Level}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}!usage@{usage}}
+\index{usage@{usage}!OSK::GRAPHICS::GpuImageViewConfig@{OSK::GRAPHICS::GpuImageViewConfig}}
+\doxysubsubsection{usage}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_aee9bc303f2bce8bcf14d18b181eb286f} 
+\textbf{ View\+Usage} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+View\+Config\+::usage = \textbf{ View\+Usage\+::\+SAMPLED}}
+
+
+
+Uso que se le va a dar. Por defecto, SAMPLED. 
+

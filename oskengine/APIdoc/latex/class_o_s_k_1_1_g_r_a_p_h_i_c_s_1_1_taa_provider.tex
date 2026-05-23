@@ -1,0 +1,203 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Taa\+Provider}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider}\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+
+
+{\ttfamily \#include $<$Taa\+Provider.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Initialize\+Taa} (const \textbf{ Vector2ui} \&resolution, const \textbf{ Gpu\+Image} $\ast$input\+Image, const \textbf{ Gpu\+Image} $\ast$motion\+Images)
+\item 
+void \textbf{ Resize\+Taa} (const \textbf{ Vector2ui} \&resolution, const \textbf{ Gpu\+Image} $\ast$input\+Images, const \textbf{ Gpu\+Image} $\ast$motion\+Images)
+\item 
+void \textbf{ Set\+Max\+Jitter} (\textbf{ UIndex32} max\+Jitter\+Index)
+\item 
+\textbf{ UIndex32} \textbf{ Get\+Current\+Frame\+Jitter\+Index} () const
+\item 
+bool \textbf{ Is\+Active} () const
+\item 
+void \textbf{ Set\+Activation\+Status} (bool is\+Active)
+\item 
+void \textbf{ Activate} ()
+\item 
+void \textbf{ Dectivate} ()
+\item 
+void \textbf{ Toggle\+Activation} ()
+\item 
+void \textbf{ Execute\+Taa} (\textbf{ ICommand\+List} $\ast$command\+List)
+\item 
+\textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Taa\+Output} ()
+\item 
+const \textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Taa\+Output} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \textbf{ Material\+Path} = "{}Resources/Materials/PBR/TAA/taa.\+json"{}
+\item 
+static constexpr auto \textbf{ Sharpening\+Material\+Path} = "{}Resources/Materials/PBR/TAA/sharpen.\+json"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que contiene la funcionalidad del renderizado de Temporal Anti-\/\+Aliasing. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!Activate@{Activate}}
+\index{Activate@{Activate}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{Activate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_a93bd749c62c6f9a95e1ce9f4cd421f6c} 
+void OSK\+::\+GRAPHICS\+::\+Taa\+Provider\+::\+Activate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!Dectivate@{Dectivate}}
+\index{Dectivate@{Dectivate}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{Dectivate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_a7eeba10d97da7caa1f4e7fc0698711d5} 
+void OSK\+::\+GRAPHICS\+::\+Taa\+Provider\+::\+Dectivate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!ExecuteTaa@{ExecuteTaa}}
+\index{ExecuteTaa@{ExecuteTaa}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{ExecuteTaa()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_a28f0749fc516604c8d8527d411051898} 
+void Taa\+Provider\+::\+Execute\+Taa (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{command\+List}{}\end{DoxyParamCaption})}
+
+
+
+Ejecuta el sistema de Temporal Anti-\/\+Aliasing. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command\+List} & Lista de comandos sobre la que se va a ejecutar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haberse inicializado correctamente el sistema TAA mediante Initialize\+Taa. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!GetCurrentFrameJitterIndex@{GetCurrentFrameJitterIndex}}
+\index{GetCurrentFrameJitterIndex@{GetCurrentFrameJitterIndex}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{GetCurrentFrameJitterIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_a87b8f49ef21cae8a5f45c23b174399a4} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Taa\+Provider\+::\+Get\+Current\+Frame\+Jitter\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Índice de jitter de este frame. Si está desactivado, será 0. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!GetTaaOutput@{GetTaaOutput}}
+\index{GetTaaOutput@{GetTaaOutput}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{GetTaaOutput()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_a2b7f709496cee4e21b5ddb7e12383f3b} 
+\textbf{ Compute\+Render\+Target} \& OSK\+::\+GRAPHICS\+::\+Taa\+Provider\+::\+Get\+Taa\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Render target sobre el que se ejecuta el TAA. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!GetTaaOutput@{GetTaaOutput}}
+\index{GetTaaOutput@{GetTaaOutput}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{GetTaaOutput()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_a1c3c070e295f3796c34aa8956b8d7753} 
+const \textbf{ Compute\+Render\+Target} \& OSK\+::\+GRAPHICS\+::\+Taa\+Provider\+::\+Get\+Taa\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Render target sobre el que se ejecuta el TAA. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!InitializeTaa@{InitializeTaa}}
+\index{InitializeTaa@{InitializeTaa}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{InitializeTaa()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_ac62e5ac44d69ff300346ea154882df59} 
+void Taa\+Provider\+::\+Initialize\+Taa (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{resolution}{, }\item[{const \textbf{ Gpu\+Image} $\ast$}]{input\+Image}{, }\item[{const \textbf{ Gpu\+Image} $\ast$}]{motion\+Images}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa el sistema de Temporal Anti-\/\+Aliasing. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Resolución, en píxeles. \\
+\hline
+{\em input\+Images} & Imágenes de entrada para TAA. \\
+\hline
+{\em motion\+Images} & Imágenes de velocidad.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Las imágenes {\ttfamily input\+Images} deben tener la misma resolución que {\ttfamily resolution}. 
+
+Las imágenes {\ttfamily motion\+Images} deben tener la misma resolución que {\ttfamily resolution}.
+
+Las imágenes {\ttfamily motion\+Images} deben producir los vectores de movimiento normalizados (NDC). 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!IsActive@{IsActive}}
+\index{IsActive@{IsActive}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{IsActive()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_a66604dd89b5dbfd66c49b8ce21944fd4} 
+bool OSK\+::\+GRAPHICS\+::\+Taa\+Provider\+::\+Is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!ResizeTaa@{ResizeTaa}}
+\index{ResizeTaa@{ResizeTaa}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{ResizeTaa()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_a90725eb0aac28b7d1eb9c1880f9d9e21} 
+void Taa\+Provider\+::\+Resize\+Taa (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{resolution}{, }\item[{const \textbf{ Gpu\+Image} $\ast$}]{input\+Images}{, }\item[{const \textbf{ Gpu\+Image} $\ast$}]{motion\+Images}{}\end{DoxyParamCaption})}
+
+
+
+Cambia de resolución el sistema de Temporal Anti-\/\+Aliasing. Además, reestablece las imágenes de entrada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Resolución, en píxeles. \\
+\hline
+{\em input\+Images} & Imágenes de entrada para TAA. \\
+\hline
+{\em motion\+Images} & Imágenes de velocidad.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Las imágenes {\ttfamily input\+Images} deben tener la misma resolución que {\ttfamily resolution}. 
+
+Las imágenes {\ttfamily motion\+Images} deben tener la misma resolución que {\ttfamily resolution}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!SetActivationStatus@{SetActivationStatus}}
+\index{SetActivationStatus@{SetActivationStatus}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{SetActivationStatus()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_aaff0a9f1e14ead34d422d352617f769e} 
+void OSK\+::\+GRAPHICS\+::\+Taa\+Provider\+::\+Set\+Activation\+Status (\begin{DoxyParamCaption}\item[{bool}]{is\+Active}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!SetMaxJitter@{SetMaxJitter}}
+\index{SetMaxJitter@{SetMaxJitter}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{SetMaxJitter()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_ad35fec26149be8abf1f5c613b7b94810} 
+void OSK\+::\+GRAPHICS\+::\+Taa\+Provider\+::\+Set\+Max\+Jitter (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{max\+Jitter\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establace el índice máximo de jitter. EL jitter en cada frame estará entre 1 y max\+Jitter (ambos incluidos). Si TAA está desactivado, el jitter será 0. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em max\+Jitter\+Index} & Ínidice máximo de jitter. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!ToggleActivation@{ToggleActivation}}
+\index{ToggleActivation@{ToggleActivation}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{ToggleActivation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_a9ab1b308dc978c2d7bbc6c68a2ae543a} 
+void OSK\+::\+GRAPHICS\+::\+Taa\+Provider\+::\+Toggle\+Activation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!MaterialPath@{MaterialPath}}
+\index{MaterialPath@{MaterialPath}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{MaterialPath}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_a769d9b55b742b3ad28137988cea215b9} 
+auto OSK\+::\+GRAPHICS\+::\+Taa\+Provider\+::\+Material\+Path = "{}Resources/Materials/PBR/TAA/taa.\+json"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\index{OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}!SharpeningMaterialPath@{SharpeningMaterialPath}}
+\index{SharpeningMaterialPath@{SharpeningMaterialPath}!OSK::GRAPHICS::TaaProvider@{OSK::GRAPHICS::TaaProvider}}
+\doxysubsubsection{SharpeningMaterialPath}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_taa_provider_ac405b3734ea298ffabaf0fd21f75ad17} 
+auto OSK\+::\+GRAPHICS\+::\+Taa\+Provider\+::\+Sharpening\+Material\+Path = "{}Resources/Materials/PBR/TAA/sharpen.\+json"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+

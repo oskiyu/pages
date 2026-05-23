@@ -1,0 +1,64 @@
+\doxysection{Quaternion.\+h}
+\label{_quaternion_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Quaternion.h@{C:/Users/Oscar/source/repos/OSKengine/Source/Quaternion.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <glm/gtc/quaternion.hpp>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }OSK\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ Quaternion\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ Quaternion()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Quaternion\ Empty();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Quaternion\ CreateFromEulerAngles(\textcolor{keyword}{const}\ Vector3f\&\ rot);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Quaternion\ FromGlm(\textcolor{keyword}{const}\ glm::quat\&\ quat);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Rotate\_WorldSpace(\textcolor{keywordtype}{float}\ angle,\ \textcolor{keyword}{const}\ Vector3f\&\ axis);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Rotate\_LocalSpace(\textcolor{keywordtype}{float}\ angle,\ \textcolor{keyword}{const}\ Vector3f\&\ axis);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Quaternion\ operator+(\textcolor{keyword}{const}\ Quaternion\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ Quaternion\&\ operator+=(\textcolor{keyword}{const}\ Quaternion\&\ other);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ Quaternion\ operator-\/(\textcolor{keyword}{const}\ Quaternion\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ Quaternion\&\ operator-\/=(\textcolor{keyword}{const}\ Quaternion\&\ other);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ Vector3f\ RotateVector(\textcolor{keyword}{const}\ Vector3f\&\ vec)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ Vector3f\ ToEulerAngles()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ Quaternion\ Interpolate(\textcolor{keyword}{const}\ Quaternion\&\ other,\ \textcolor{keywordtype}{float}\ factor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ glm::quat\ ToGlm()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ glm::mat4\ ToMat4()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ glm::quat\ m\_quaternion\ =\ glm::identity<glm::quat>();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,175 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Hbao\+Pass}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass}\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+
+
+{\ttfamily \#include $<$Hbao\+Pass.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Create} (const \textbf{ Vector2ui} \&size) override
+\item 
+void \textbf{ Resize} (const \textbf{ Vector2ui} \&size) override
+\item 
+void \textbf{ Execute} (\textbf{ ICommand\+List} $\ast$compute\+Cmd\+List) override
+\item 
+void \textbf{ Set\+Color\+Input} (\textbf{ Gpu\+Image} $\ast$image)
+\item 
+void \textbf{ Set\+Normals\+Input} (\textbf{ Gpu\+Image} $\ast$image)
+\item 
+void \textbf{ Set\+Depth\+Input} (\textbf{ Gpu\+Image} $\ast$image)
+\item 
+void \textbf{ Update\+Camera} (const glm\+::mat4 \&inverse\+Projection, const glm\+::mat4 \&view, float near\+Plane)
+\item 
+\textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Output} ()
+\item 
+const \textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Output} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \textbf{ Hbao\+Material} = "{}Resources/Materials/Post\+Process/HBAO/hbao.\+json"{}
+\item 
+static constexpr auto \textbf{ Blur\+Material} = "{}Resources/Materials/Post\+Process/HBAO/blur.\+json"{}
+\item 
+static constexpr auto \textbf{ Resolve\+Material} = "{}Resources/Materials/Post\+Process/HBAO/resolve.\+json"{}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}!Create@{Create}}
+\index{Create@{Create}!OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_a72bc7a71c9552e6eafcedb01cc6482d2} 
+void Hbao\+Pass\+::\+Create (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Crea el render target de salida. Se puede sobreescribir por efectos de post-\/procesado específicos para crear recursos intermedios. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Resolución (tanto de entrada como de salida). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a92aa17faa014d558ac7cc79eb982c03c}.
+
+\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_a869e7920ed892a2c4c4576fa57fff723} 
+void Hbao\+Pass\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{compute\+Cmd\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Genera la imagen final. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em compute\+Cmd\+List} & Lista de comandos sobre la que se ejecutará.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Se deben haber establecido las imágenes de entrada con {\ttfamily IPost\+Process\+Pass\+::\+Set\+Input}. 
+
+Las imágenes de entrada establecidas con {\ttfamily IPost\+Process\+Pass\+::\+Set\+Input} deben estar en un estado válido. 
+
+{\ttfamily compute\+Cmd\+List} debe soportar, al menos .
+
+Se deben haber establecido las entradas necesarias para el pase. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Post\+Process\+Input\+Not\+Set\+Exception}{pág.}{class_o_s_k_1_1_post_process_input_not_set_exception}} & si no se han establecido las entradas necesarias. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a05388cf0f2e8bc5e1b94cdc76cd58c8e}.
+
+\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+\doxysubsubsection{GetOutput()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_ae65dc5bc46fb7657d6f18b148e7ea5cd} 
+\textbf{ Compute\+Render\+Target} \& IPost\+Process\+Pass\+::\+Get\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Render target con la imagen final en las imágenes de color. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+\doxysubsubsection{GetOutput()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a4b49581bc321be779142519f48d7b263} 
+const \textbf{ Compute\+Render\+Target} \& IPost\+Process\+Pass\+::\+Get\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Render target con la imagen final en las imágenes de color. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}!Resize@{Resize}}
+\index{Resize@{Resize}!OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+\doxysubsubsection{Resize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_a13edc6194b3b9e4d62137181893f9080} 
+void Hbao\+Pass\+::\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Cambia de tamaño el render target de salida. Se puede sobreescribir para crear recursos intermedios. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño de la imagen final. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a5755b9283180f003c9d77fbebebfb322}.
+
+\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}!SetColorInput@{SetColorInput}}
+\index{SetColorInput@{SetColorInput}!OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+\doxysubsubsection{SetColorInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_a794637c24d465508f3e19de21ae52ecf} 
+void Hbao\+Pass\+::\+Set\+Color\+Input (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}!SetDepthInput@{SetDepthInput}}
+\index{SetDepthInput@{SetDepthInput}!OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+\doxysubsubsection{SetDepthInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_ac13e51c6786522724c4d7a75752dc2f3} 
+void Hbao\+Pass\+::\+Set\+Depth\+Input (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}!SetNormalsInput@{SetNormalsInput}}
+\index{SetNormalsInput@{SetNormalsInput}!OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+\doxysubsubsection{SetNormalsInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_a726328a31b6a21afeb7900d1641e451f} 
+void Hbao\+Pass\+::\+Set\+Normals\+Input (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}!UpdateCamera@{UpdateCamera}}
+\index{UpdateCamera@{UpdateCamera}!OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+\doxysubsubsection{UpdateCamera()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_a95b76de32e9d6740f18dda5790349cf9} 
+void Hbao\+Pass\+::\+Update\+Camera (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{inverse\+Projection}{, }\item[{const glm\+::mat4 \&}]{view}{, }\item[{float}]{near\+Plane}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}!BlurMaterial@{BlurMaterial}}
+\index{BlurMaterial@{BlurMaterial}!OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+\doxysubsubsection{BlurMaterial}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_aa8a7b724b5d431be4dba73bd1aa7ef0c} 
+auto OSK\+::\+GRAPHICS\+::\+Hbao\+Pass\+::\+Blur\+Material = "{}Resources/Materials/Post\+Process/HBAO/blur.\+json"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}!HbaoMaterial@{HbaoMaterial}}
+\index{HbaoMaterial@{HbaoMaterial}!OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+\doxysubsubsection{HbaoMaterial}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_a75f86cfcd4dd8a447f6eac9aa8523257} 
+auto OSK\+::\+GRAPHICS\+::\+Hbao\+Pass\+::\+Hbao\+Material = "{}Resources/Materials/Post\+Process/HBAO/hbao.\+json"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\index{OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}!ResolveMaterial@{ResolveMaterial}}
+\index{ResolveMaterial@{ResolveMaterial}!OSK::GRAPHICS::HbaoPass@{OSK::GRAPHICS::HbaoPass}}
+\doxysubsubsection{ResolveMaterial}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_a78dd3d8d2584e6c897563fc6928e7266} 
+auto OSK\+::\+GRAPHICS\+::\+Hbao\+Pass\+::\+Resolve\+Material = "{}Resources/Materials/Post\+Process/HBAO/resolve.\+json"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+

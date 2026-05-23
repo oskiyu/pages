@@ -1,0 +1,70 @@
+\chapter{Design philosophy \& implementation }
+\label{md_philosophy}\index{Design philosophy \& implementation@{Design philosophy \& implementation}}
+\label{md_philosophy_autotoc_md279}%
+
+
+{\bfseries{OSKengine}} is being developed following the core ideas of {\bfseries{customization}} and {\bfseries{extensibility}}.
+
+Its design allows the game developers to easily modify the engine by adding new gameplay systems, render systems, asset types and loaders without actually changing the engine\textquotesingle{}s code.
+
+In fact, its modular design allows the developers to disable whole systems they may not use, and they may even bypass core elements of the engine such as the ECS functionality.\doxysection{ECS architecture}\label{md_philosophy_autotoc_md280}
+The ECS system is the core of the engine. With this architecture, game functionality is divided into\+:
+\begin{DoxyItemize}
+\item {\bfseries{Entities}} (known as {\itshape game objects} in {\bfseries{OSKengine}}) represent gameplay actors, such as players, NPCs, enemies or unanimated objects. Entities themselves have no data or functionality and consist of an unique identifier. Each entity can have components attached to it.
+\item {\bfseries{Components}} represent a structure with data. The data contained within a component contains information that is used together. For example, the {\ttfamily Transform3D} component contains an object\textquotesingle{}s position, rotation and scale; while the component {\ttfamily Model3D} contains relevant data used to render a 3D object. Components themselves have no functionality and act as mere data holders.
+\item {\bfseries{Systems}} implement functionality. There are different systems, each one implementing a certain functionality. For example, a {\itshape render system} will handle 3D rendering, while a {\itshape collision system} will handle collisions between entities. In order to execute the functionality, each system will iterate through all relevant entities (which contain all components needed to implement the functionality), grab all the necessary components and execute the functionality.
+\end{DoxyItemize}
+
+The ECS system provides a great amount of customization and extensibility, as developers can develop their own components and systems and add them to the engine without changing the engine source code, and the engine will correctly manage them.
+
+{\bfseries{OSKengine}} has a series of built-\/in components and systems, including\+:
+\begin{DoxyItemize}
+\item Rendering components and systems.
+\item 3D animation system.
+\item Hierarchical transform components (representing location, rotation and scale).
+\item Input system.
+\item Collision \& physics systems ({\itshape work in progress}).
+\end{DoxyItemize}
+
+Developers can disable any of these systems if they want.\doxysection{Rendering}\label{md_philosophy_autotoc_md281}
+The renderer is designed to allow a lower-\/level access to the GPU while still offering an abstraction layer over graphics APIs like {\itshape DirectX} or {\itshape Vulkan}. To accomplish this, a fine abstraction layer is developed over native API elements, such as\+:
+\begin{DoxyItemize}
+\item Images.
+\item Buffers (including vertex buffers, index buffers, uniform buffers, etc...).
+\item Command lists.
+\end{DoxyItemize}
+
+In the case of pipelines, a higher-\/level abstraction layer is offered\+: the {\bfseries{material system}}.\doxysubsection{Material System}\label{md_philosophy_autotoc_md282}
+The material system encapsules both the pipeline objects used for rendering and compute, as well as all the data necessary to perform those actions. The following classes were developed\+:\doxysubsubsubsection{Material}\label{md_philosophy_autotoc_md283}
+Represents a {\itshape material schema}, which defines\+:
+\begin{DoxyItemize}
+\item The specific shaders used, which can be\+:
+\begin{DoxyItemize}
+\item {\itshape Vertex}, {\itshape fragment} and/or {\itshape tessellation shaders}, in the case of a {\bfseries{graphics material}}.
+\item {\itshape Compute shaders}, in the case of a {\bfseries{compute material}}.
+\item {\itshape Ray generation}, {\itshape closest-\/hit} and {\itshape miss shaders} in case of a {\bfseries{ray-\/tracing material}}.
+\end{DoxyItemize}
+\item A schema for input/output resources (such as buffers or images) in the form of a {\itshape material slot layout}.
+\end{DoxyItemize}\doxysubsubsubsection{Material Slot}\label{md_philosophy_autotoc_md284}
+A material slot (similar to a {\itshape descriptor set} in {\itshape Vulkan}) is used to group input resources instances that are used together. It works as a dictionary, mapping the name of a binding to its resource.\doxysubsubsubsection{Material Binding}\label{md_philosophy_autotoc_md285}
+A specific input resource, which can be\+:
+\begin{DoxyItemize}
+\item Uniform (read-\/only) buffers.
+\item Storage (read-\/write) buffers.
+\item Samplers\+: read-\/only images.
+\item Storage images\+: read-\/write images. Its name will be the one this specific binding is given within the shader.
+\end{DoxyItemize}\doxysubsubsubsection{Material Instance}\label{md_philosophy_autotoc_md286}
+Created from a specific {\itshape material}. Contains\+:
+\begin{DoxyItemize}
+\item The native pipeline that groups shaders being used.
+\item A map of initialized material slots.
+\end{DoxyItemize}
+
+A material is defined in a {\ttfamily JSON} file. This file includes\+:
+\begin{DoxyItemize}
+\item Path(s) to precompiled shaders used by this material.
+\item Names set to specific slots for easier use (otherwise their names will be their descriptor set index).
+\end{DoxyItemize}
+
+When loading a material, it will automatically create its layout according to the shaders used, so there is no need to manually declare all slots and bindings in C++ code.\doxysubsection{High-\/level abstraction}\label{md_philosophy_autotoc_md287}
+{\bfseries{OSKengine}}\textquotesingle{}s render systems are implemented within the ECS system, using the previously mentioned abstraction layer. 

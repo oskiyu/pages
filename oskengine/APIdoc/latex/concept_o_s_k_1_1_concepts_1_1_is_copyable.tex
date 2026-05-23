@@ -1,0 +1,13 @@
+\doxysection{Referencia del concepto OSK\+::Concepts\+::Is\+Copyable}
+\label{concept_o_s_k_1_1_concepts_1_1_is_copyable}\index{OSK::Concepts::IsCopyable@{OSK::Concepts::IsCopyable}}
+
+
+{\ttfamily \#include $<$Concepts.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::Concepts::IsCopyable\ =\ \ ::std::copyable<T>\ ||\ ::std::is\_copy\_assignable\_v<T>}
+
+\end{DoxyCode}

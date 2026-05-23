@@ -1,0 +1,261 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Copy\+Image\+Info}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info}\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+
+
+{\ttfamily \#include $<$Copy\+Image\+Info.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Set\+Copy\+Size} (\textbf{ USize32} size)
+\item 
+void \textbf{ Set\+Copy\+Size} (\textbf{ Vector2ui} size)
+\item 
+void \textbf{ Set\+Copy\+Size} (\textbf{ Vector3ui} size)
+\item 
+void \textbf{ Set\+Source\+Offset} (\textbf{ USize32} offset)
+\item 
+void \textbf{ Set\+Source\+Offset} (\textbf{ Vector2ui} offset)
+\item 
+void \textbf{ Set\+Source\+Offset} (\textbf{ Vector3ui} offset)
+\item 
+void \textbf{ Set\+Destination\+Offset} (\textbf{ USize32} offset)
+\item 
+void \textbf{ Set\+Destination\+Offset} (\textbf{ Vector2ui} offset)
+\item 
+void \textbf{ Set\+Destination\+Offset} (\textbf{ Vector3ui} offset)
+\item 
+void \textbf{ Set\+Copy\+All\+Levels} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Copy\+Image\+Info} \textbf{ Create\+Default1D} (\textbf{ USize32} size)
+\item 
+static \textbf{ Copy\+Image\+Info} \textbf{ Create\+Default2D} (\textbf{ Vector2ui} size)
+\item 
+static \textbf{ Copy\+Image\+Info} \textbf{ Create\+Default3D} (\textbf{ Vector3ui} size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vector3ui} \textbf{ source\+Offset} = \textbf{ Vector3ui\+::\+Zero}
+\item 
+\textbf{ Vector3ui} \textbf{ destination\+Offset} = \textbf{ Vector3ui\+::\+Zero}
+\item 
+\textbf{ Vector3ui} \textbf{ copy\+Size} = \textbf{ Vector3ui\+::\+Zero}
+\item 
+\textbf{ UIndex32} \textbf{ source\+Array\+Level} = 0
+\item 
+\textbf{ UIndex32} \textbf{ destination\+Array\+Level} = 0
+\item 
+\textbf{ UIndex32} \textbf{ num\+Array\+Levels} = 1
+\item 
+\textbf{ UIndex32} \textbf{ source\+Mip\+Level} = 0
+\item 
+\textbf{ UIndex32} \textbf{ destination\+Mip\+Level} = 0
+\item 
+\textbf{ Sampled\+Channel} \textbf{ source\+Channel} = \textbf{ Sampled\+Channel\+::\+COLOR}
+\item 
+\textbf{ Sampled\+Channel} \textbf{ destination\+Channel} = \textbf{ Sampled\+Channel\+::\+COLOR}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static const \textbf{ UIndex32} \textbf{ ALL\+\_\+\+ARRAY\+\_\+\+LEVELS} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Parámetros para la copia de una imagen a otra en la GPU. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!CreateDefault1D@{CreateDefault1D}}
+\index{CreateDefault1D@{CreateDefault1D}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{CreateDefault1D()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_aa9f1e429a1238b4b6f840ba639bbdaf7} 
+\textbf{ Copy\+Image\+Info} Copy\+Image\+Info\+::\+Create\+Default1D (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!CreateDefault2D@{CreateDefault2D}}
+\index{CreateDefault2D@{CreateDefault2D}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{CreateDefault2D()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a7e9f0faebb4c50aeb56da24e6226d0e5} 
+\textbf{ Copy\+Image\+Info} Copy\+Image\+Info\+::\+Create\+Default2D (\begin{DoxyParamCaption}\item[{\textbf{ Vector2ui}}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!CreateDefault3D@{CreateDefault3D}}
+\index{CreateDefault3D@{CreateDefault3D}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{CreateDefault3D()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a81aeb8e11204e199b888b88c08c763f2} 
+\textbf{ Copy\+Image\+Info} Copy\+Image\+Info\+::\+Create\+Default3D (\begin{DoxyParamCaption}\item[{\textbf{ Vector3ui}}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!SetCopyAllLevels@{SetCopyAllLevels}}
+\index{SetCopyAllLevels@{SetCopyAllLevels}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{SetCopyAllLevels()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_ab18783adf508b4a12a5f4adb1ed9b3be} 
+void Copy\+Image\+Info\+::\+Set\+Copy\+All\+Levels (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!SetCopySize@{SetCopySize}}
+\index{SetCopySize@{SetCopySize}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{SetCopySize()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_aea40d73fbcc9abe6d33e36b01ee9b34c} 
+void Copy\+Image\+Info\+::\+Set\+Copy\+Size (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{size}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!SetCopySize@{SetCopySize}}
+\index{SetCopySize@{SetCopySize}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{SetCopySize()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_aa2c7dc0adb20b82e360f6a7163756de0} 
+void Copy\+Image\+Info\+::\+Set\+Copy\+Size (\begin{DoxyParamCaption}\item[{\textbf{ Vector2ui}}]{size}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!SetCopySize@{SetCopySize}}
+\index{SetCopySize@{SetCopySize}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{SetCopySize()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_ad24bc26e61eb97626ff13f459888f06a} 
+void Copy\+Image\+Info\+::\+Set\+Copy\+Size (\begin{DoxyParamCaption}\item[{\textbf{ Vector3ui}}]{size}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!SetDestinationOffset@{SetDestinationOffset}}
+\index{SetDestinationOffset@{SetDestinationOffset}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{SetDestinationOffset()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a85552a7d99352c1725f707d75ace3c29} 
+void Copy\+Image\+Info\+::\+Set\+Destination\+Offset (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{offset}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!SetDestinationOffset@{SetDestinationOffset}}
+\index{SetDestinationOffset@{SetDestinationOffset}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{SetDestinationOffset()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a42d20d416215cbde4a08e97158ea91b1} 
+void Copy\+Image\+Info\+::\+Set\+Destination\+Offset (\begin{DoxyParamCaption}\item[{\textbf{ Vector2ui}}]{offset}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!SetDestinationOffset@{SetDestinationOffset}}
+\index{SetDestinationOffset@{SetDestinationOffset}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{SetDestinationOffset()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a533f2cbe7c99b35e3f695b9ee1594a26} 
+void Copy\+Image\+Info\+::\+Set\+Destination\+Offset (\begin{DoxyParamCaption}\item[{\textbf{ Vector3ui}}]{offset}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!SetSourceOffset@{SetSourceOffset}}
+\index{SetSourceOffset@{SetSourceOffset}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{SetSourceOffset()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_aab10b1bdf38106e2560af454a6aa0778} 
+void Copy\+Image\+Info\+::\+Set\+Source\+Offset (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{offset}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!SetSourceOffset@{SetSourceOffset}}
+\index{SetSourceOffset@{SetSourceOffset}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{SetSourceOffset()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a728107f5db9659d1342842c5244a60e1} 
+void Copy\+Image\+Info\+::\+Set\+Source\+Offset (\begin{DoxyParamCaption}\item[{\textbf{ Vector2ui}}]{offset}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!SetSourceOffset@{SetSourceOffset}}
+\index{SetSourceOffset@{SetSourceOffset}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{SetSourceOffset()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_aebf751d95acbcf0894d18df47319c056} 
+void Copy\+Image\+Info\+::\+Set\+Source\+Offset (\begin{DoxyParamCaption}\item[{\textbf{ Vector3ui}}]{offset}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!ALL\_ARRAY\_LEVELS@{ALL\_ARRAY\_LEVELS}}
+\index{ALL\_ARRAY\_LEVELS@{ALL\_ARRAY\_LEVELS}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{ALL\_ARRAY\_LEVELS}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a2c66c62b2a3543dc6a1d2f7964f281eb} 
+const \textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Copy\+Image\+Info\+::\+ALL\+\_\+\+ARRAY\+\_\+\+LEVELS = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!copySize@{copySize}}
+\index{copySize@{copySize}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{copySize}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a8f57dd71e3947db4dc5e96a804cdf62b} 
+\textbf{ Vector3ui} OSK\+::\+GRAPHICS\+::\+Copy\+Image\+Info\+::copy\+Size = \textbf{ Vector3ui\+::\+Zero}}
+
+
+
+Área copiada. 
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!destinationArrayLevel@{destinationArrayLevel}}
+\index{destinationArrayLevel@{destinationArrayLevel}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{destinationArrayLevel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_aadc5d77e4d2c94002cfad012a2aa47dd} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Copy\+Image\+Info\+::destination\+Array\+Level = 0}
+
+
+
+Capa de destino a partir de la cual se escribirá. 
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!destinationChannel@{destinationChannel}}
+\index{destinationChannel@{destinationChannel}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{destinationChannel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a107b614c1e98fbb332b04550f92b2794} 
+\textbf{ Sampled\+Channel} OSK\+::\+GRAPHICS\+::\+Copy\+Image\+Info\+::destination\+Channel = \textbf{ Sampled\+Channel\+::\+COLOR}}
+
+
+
+Canal sobre el que se realizará la copia. 
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!destinationMipLevel@{destinationMipLevel}}
+\index{destinationMipLevel@{destinationMipLevel}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{destinationMipLevel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a0c1dde0d4d37a0451fa9a94576ce74a9} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Copy\+Image\+Info\+::destination\+Mip\+Level = 0}
+
+
+
+Mip level de la imagen de destino al que se copiará. 
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!destinationOffset@{destinationOffset}}
+\index{destinationOffset@{destinationOffset}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{destinationOffset}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a1b7a9ade1920cb02d936ad364f0ae90e} 
+\textbf{ Vector3ui} OSK\+::\+GRAPHICS\+::\+Copy\+Image\+Info\+::destination\+Offset = \textbf{ Vector3ui\+::\+Zero}}
+
+
+
+Localización del área copiada de la imagen final. Esquina superior izquierda. 
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!numArrayLevels@{numArrayLevels}}
+\index{numArrayLevels@{numArrayLevels}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{numArrayLevels}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_aa80560c1e7b54f7294cee5cd1ed9b50d} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Copy\+Image\+Info\+::num\+Array\+Levels = 1}
+
+
+
+Número de capas que se van a copiar. Para copiar todas las capas, establecer como ALL\+\_\+\+ARRAY\+\_\+\+LEVELS. 
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!sourceArrayLevel@{sourceArrayLevel}}
+\index{sourceArrayLevel@{sourceArrayLevel}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{sourceArrayLevel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a80538faa6f4dfd301b47335183aac818} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Copy\+Image\+Info\+::source\+Array\+Level = 0}
+
+
+
+Capa de origen a partir de la cual se copiará. 
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!sourceChannel@{sourceChannel}}
+\index{sourceChannel@{sourceChannel}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{sourceChannel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a99e3ebc388f2f61f62130f6f0fab4796} 
+\textbf{ Sampled\+Channel} OSK\+::\+GRAPHICS\+::\+Copy\+Image\+Info\+::source\+Channel = \textbf{ Sampled\+Channel\+::\+COLOR}}
+
+
+
+Canal desde el cual se leerá la información. 
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!sourceMipLevel@{sourceMipLevel}}
+\index{sourceMipLevel@{sourceMipLevel}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{sourceMipLevel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_ab8215ae0a291974eb74beca71d867f4e} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Copy\+Image\+Info\+::source\+Mip\+Level = 0}
+
+
+
+Mip level de la imagen de origen desde el cual se copiará. 
+
+\index{OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}!sourceOffset@{sourceOffset}}
+\index{sourceOffset@{sourceOffset}!OSK::GRAPHICS::CopyImageInfo@{OSK::GRAPHICS::CopyImageInfo}}
+\doxysubsubsection{sourceOffset}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info_a0c2a4e6c09ac4120494fcdebfe0f89b0} 
+\textbf{ Vector3ui} OSK\+::\+GRAPHICS\+::\+Copy\+Image\+Info\+::source\+Offset = \textbf{ Vector3ui\+::\+Zero}}
+
+
+
+Localización del área copiada de la imagen de origen. Esquina superior izquierda. 
+

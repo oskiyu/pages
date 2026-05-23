@@ -91,13 +91,13 @@ $(document).ready(function(){initNavTree('md_ecs_messaging.html',''); initResiza
 <div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
 Introduction</h1>
 <p >ECS has proven to be an elegant way of decoupling data and functionality in an extensible way. In our current ECS implementation, system are entirely independent from each other. However, there will be occassions in which a channel of communication between systems needs to exist (for example, a physics systems will need to react to collisions previously detected by the collision system).</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Previous concepts</h1>
 <ul>
 <li><b>Component(s) dependency</b>: the minimum set of components an entity must possess in order for it to be compatible with a given system. May represent an empty set.</li>
 <li><b>Explicit component(s) dependency</b>: a component(s) dependency expressed as a component signature, wich contains the components identifiers of all neceessary components.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Design</h1>
 <p >To implement such functionality when needed, an event handling system must be implemented. This introduces the folllowing concepts:</p>
 <ul>
@@ -120,16 +120,16 @@ Design</h1>
 <li><b>Picky systems</b>: system that implementing functionality by picking certain entities from all compatible ones. Basically, <em>consumer</em> systems.</li>
 </ul>
 <p >This second division is the most important one, as it heavily affects system implementation.</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Implementation details</h1>
 <p >In order to implement this messaging system we will follow an architecture that resembles the current ECS architecture. To do so, an <b>MessageContainer</b> templated class is instantiated for each event type. Each of these containers will contain a queue of messages.</p>
 <p >Each <em>consumer</em> system will "subscribe" to one of these containers (though a container may be subscribed by many different consumers). Each frame, the consumer will iterate through the message queue, grab the corresponding entitites, and act accordingly.</p>
 <p >Each event type will have an explicit components dependency. Every message of that type generated must refer to an entity that is compatible with the event dependency.</p>
 <p >Consumer systems have an implicit component dependency, that is inherited from its subscribed event type. Therefore, all entities picked from the message queue are compatible with the consumer system.</p>
 <p >In order for this new architecture to work properly, a time dependency is added between producer and consumer systems: producer systems will all execute first, and consumer systems will only start execution after the last producer system has finished execution. This way, all consumer systems will have access to all relevant messages produced during the current frame. </p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Summary</h1>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 New &amp; revised concepts</h2>
 <ul>
 <li><b>Event</b>: something that happens that is relevant to one or more systems. May be generated outside of the ECS framework. Each event has an explicit components dependency.</li>
@@ -167,7 +167,7 @@ New classes</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generado el Jueves, 16 de Octubre de 2025 17:24:49 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

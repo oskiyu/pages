@@ -1,0 +1,96 @@
+\doxysection{Gpu\+Image\+View\+Config.\+h}
+\label{_gpu_image_view_config_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GpuImageViewConfig.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GpuImageViewConfig.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <compare>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Para\ hash.}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}GpuImageUsage.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{enum\ class}\ ViewUsage\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ SAMPLED,}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ COLOR\_TARGET,}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ DEPTH\_STENCIL\_TARGET,}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ DEPTH\_ONLY\_TARGET,}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ STORAGE}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{struct\ }OSKAPI\_CALL\ GpuImageViewConfig\ \{}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageViewConfig\ CreateSampled\_Default();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageViewConfig\ CreateSampled\_SingleMipLevel(UIndex32\ mipLevel);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageViewConfig\ CreateSampled\_MipLevelRanged(UIndex32\ baseMipLevel,\ UIndex32\ topMipLevel);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageViewConfig\ CreateSampled\_Array(UIndex32\ baseLayer,\ USize32\ layerCount);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageViewConfig\ CreateSampled\_Cubemap();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageViewConfig\ CreateStorage\_Default();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageViewConfig\ CreateTarget\_Color();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageViewConfig\ CreateTarget\_Depth();}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageViewConfig\ CreateTarget\_Stencil();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GpuImageViewConfig\ CreateTarget\_DepthStencil();}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ operator<=>(\textcolor{keyword}{const}\ GpuImageViewConfig\&)\ \textcolor{keyword}{const}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ SampledChannel\ channel\ =\ SampledChannel::COLOR;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ SampledArrayType\ arrayType\ =\ SampledArrayType::SINGLE\_LAYER;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ UIndex32\ baseArrayLevel\ =\ 0;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ USize32\ arrayLevelCount\ =\ 1;}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ UIndex32\ baseMipLevel\ =\ 0;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ UIndex32\ topMipLevel\ =\ 0;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ ViewUsage\ usage\ =\ ViewUsage::SAMPLED;}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ MipMapMode\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ ALL\_LEVELS,}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ LEVEL\_RANGE}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ mipMapMode\ =\ MipMapMode::ALL\_LEVELS;}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \textcolor{keyword}{template}<>\ \textcolor{keyword}{struct\ }std::hash<OSK::GRAPHICS::GpuImageViewConfig>\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ std::size\_t\ operator()(\textcolor{keyword}{const}\ OSK::GRAPHICS::GpuImageViewConfig\&\ viewConfig)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::hash<std::size\_t>()(}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ (std::size\_t)(viewConfig.usage));}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ @todo\ improve}}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \};}
+
+\end{DoxyCode}

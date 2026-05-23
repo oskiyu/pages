@@ -1,0 +1,59 @@
+\doxysection{GBuffer.\+h}
+\label{_g_buffer_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GBuffer.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GBuffer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}RenderTarget.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }ICommandList;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ GBuffer\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ Target\ :\ UIndex32\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ COLOR\ =\ 0,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ NORMAL\ =\ 1,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ METALLIC\_ROUGHNESS\ =\ 2,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ MOTION\ =\ 3,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ EMISSIVE\ =\ 4,}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ DEPTH\ =\ std::numeric\_limits<UIndex32>::max()}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ std::array<Target,\ 5>\ ColorTargetTypes;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2ui\&\ resolution,\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageSamplerDesc\ sampler\ =\ GpuImageSamplerDesc::CreateDefault\_NoMipMap(),\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageUsage\ usage\ =\ GpuImageUsage::COLOR\ |\ GpuImageUsage::SAMPLED);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Resize(\textcolor{keyword}{const}\ Vector2ui\&\ resolution);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ GpuImage*\ GetImage(Target\ targetType);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImage*\ GetImage(Target\ targetType)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindPipelineBarriers(ICommandList*\ cmdList);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BeginRenderpass(ICommandList*\ cmdList,\ Color\ color,\ \textcolor{keywordtype}{bool}\ autoSync\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ RenderTarget\ renderTarget;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \}}
+
+\end{DoxyCode}

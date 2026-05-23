@@ -1,0 +1,248 @@
+\doxysection{Referencia del espacio de nombres OSK\+::ECS}
+\label{namespace_o_s_k_1_1_e_c_s}\index{OSK::ECS@{OSK::ECS}}
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Camera\+Component2D}
+\item 
+class \textbf{ Camera\+Component3D}
+\item 
+class \textbf{ Collider\+Render\+System}
+\item 
+class \textbf{ Collision\+Component}
+\item 
+struct \textbf{ Collision\+Event}
+\item 
+class \textbf{ Collision\+System}
+\item 
+class \textbf{ Component\+Already\+Registered\+Exception}
+\item 
+class \textbf{ Component\+Container}
+\item 
+class \textbf{ Component\+Manager}
+\item 
+class \textbf{ Component\+Not\+Found\+Exception}
+\item 
+class \textbf{ Component\+Not\+Registered\+Exception}
+\item 
+class \textbf{ Consumer\+System\+Execution\+Job}
+\item 
+class \textbf{ Deferred\+Render\+System}
+\item 
+class \textbf{ Entity\+Component\+System}
+\item 
+class \textbf{ Event\+Already\+Registered\+Exception}
+\item 
+class \textbf{ Event\+Container}
+\item 
+class \textbf{ Event\+Manager}
+\item 
+class \textbf{ Event\+Not\+Registered\+Exception}
+\item 
+struct \textbf{ Event\+Queue\+Span}
+\item 
+class \textbf{ Game\+Object\+Manager}
+\item 
+class \textbf{ Gdr\+Deferred\+Render\+System}
+\item 
+struct \textbf{ Gdr\+Geometry\+Component}
+\item 
+struct \textbf{ Gdr\+Material\+Component}
+\item 
+struct \textbf{ Gdr\+Textured\+Component}
+\item 
+class \textbf{ Hybrid\+Render\+System}
+\item 
+class \textbf{ IComponent\+Container}
+\item 
+class \textbf{ IConsumer\+System}
+\item 
+class \textbf{ IEvent\+Container}
+\item 
+class \textbf{ IIterator\+System}
+\item 
+class \textbf{ Invalid\+Object\+Exception}
+\item 
+class \textbf{ IRender\+System}
+\item 
+class \textbf{ ISerializable\+System}
+\item 
+class \textbf{ ISystem}
+\item 
+class \textbf{ Iterator\+System\+Execution\+Job}
+\item 
+class \textbf{ ITyped\+Consumer\+System}
+\item 
+class \textbf{ Model\+Component3D}
+\item 
+class \textbf{ Object\+Already\+Has\+Component\+Exception}
+\item 
+class \textbf{ Physics\+Component}
+\item 
+class \textbf{ Physics\+Resolver}
+\item 
+class \textbf{ Physics\+System}
+\item 
+class \textbf{ Render\+Bounds\+Renderer}
+\item 
+class \textbf{ Render\+System2D}
+\item 
+class \textbf{ Saved\+Game\+Object\+Translator}
+\item 
+class \textbf{ Skybox\+Render\+System}
+\item 
+class \textbf{ System\+Already\+Registered\+Exception}
+\item 
+class \textbf{ System\+Cyclic\+Dependency\+Exception}
+\item 
+struct \textbf{ System\+Dependencies}
+\item 
+class \textbf{ System\+Execution\+Graph}
+\item 
+struct \textbf{ System\+Execution\+Set}
+\item 
+class \textbf{ System\+Manager}
+\item 
+class \textbf{ System\+Not\+Found\+Exception}
+\item 
+class \textbf{ Transform2D}
+\item 
+class \textbf{ Transform\+Applier\+System}
+\item 
+class \textbf{ Transform\+Component3D}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Conceptos}
+\begin{DoxyCompactItemize}
+\item 
+concept \textbf{ Is\+Ecs\+Component}
+\item 
+concept \textbf{ Is\+Ecs\+Event}
+\item 
+concept \textbf{ Is\+Consumer\+System}
+\item 
+concept \textbf{ Is\+Iterator\+System}
+\item 
+concept \textbf{ Is\+Ecs\+System}
+\item 
+concept \textbf{ Is\+Serializable\+System}
+\item 
+concept \textbf{ Is\+Serializable\+Component}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ Component\+Type} = uint16\+\_\+t
+\item 
+using \textbf{ Component\+Index} = \textbf{ UIndex64}
+\item 
+using \textbf{ Signature} = \textbf{ Constexpr\+Bit\+Set}$<$\textbf{ MAX\+\_\+\+COMPONENT\+\_\+\+TYPES}$>$
+\item 
+using \textbf{ External\+Ecs\+List\+Uuid} = \textbf{ Base\+Uuid}$<$class External\+Ecs\+List\+\_\+t$>$
+\item 
+using \textbf{ Game\+Object\+Index} = \textbf{ Base\+Uuid}$<$class Game\+Object\+Index\+Tag$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \textbf{ Component\+Type} \textbf{ MAX\+\_\+\+COMPONENT\+\_\+\+TYPES} = 256
+\item 
+constexpr \textbf{ Game\+Object\+Index} \textbf{ EMPTY\+\_\+\+GAME\+\_\+\+OBJECT} = \textbf{ Game\+Object\+Index\+::\+Create\+Empty}()
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de «typedef»}
+\index{OSK::ECS@{OSK::ECS}!ComponentIndex@{ComponentIndex}}
+\index{ComponentIndex@{ComponentIndex}!OSK::ECS@{OSK::ECS}}
+\doxysubsubsection{ComponentIndex}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_e_c_s_a90846bb0cf12235cbeb41ccdac6266c3} 
+using \textbf{ OSK\+::\+ECS\+::\+Component\+Index} = \textbf{ UIndex64}}
+
+
+
+Índice que ocupa un componente en un contenedor. 
+
+\index{OSK::ECS@{OSK::ECS}!ComponentType@{ComponentType}}
+\index{ComponentType@{ComponentType}!OSK::ECS@{OSK::ECS}}
+\doxysubsubsection{ComponentType}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_e_c_s_a95b3fa53385506953113ea055e091357} 
+using \textbf{ OSK\+::\+ECS\+::\+Component\+Type} = uint16\+\_\+t}
+
+
+
+Identificador único para un componente. 
+
+Un componente es una estructura que almacena datos específicos para uno o varios sistemas. Los componentes no ejecutan lógica alguna, y sólo son contenedores de información relacionada con un Game\+Object.
+
+\begin{DoxyWarning}{Atención}
+Para que una clase pueda ser usada como componente, debe tener implementado OSK\+\_\+\+COMPONENT(class\+Name). 
+
+Este debe ser un identificador único\+: no pueden haber dos tipos de componentes con el mismo class\+Name.
+\end{DoxyWarning}
+\begin{DoxyNote}{Nota}
+Cada Game\+Object sólo puede tener un componente de cada tipo. 
+\end{DoxyNote}
+\index{OSK::ECS@{OSK::ECS}!ExternalEcsListUuid@{ExternalEcsListUuid}}
+\index{ExternalEcsListUuid@{ExternalEcsListUuid}!OSK::ECS@{OSK::ECS}}
+\doxysubsubsection{ExternalEcsListUuid}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_e_c_s_a4929d0651368056cdccebd71058de0fd} 
+using \textbf{ OSK\+::\+ECS\+::\+External\+Ecs\+List\+Uuid} = \textbf{ Base\+Uuid}$<$class External\+Ecs\+List\+\_\+t$>$}
+
+\index{OSK::ECS@{OSK::ECS}!GameObjectIndex@{GameObjectIndex}}
+\index{GameObjectIndex@{GameObjectIndex}!OSK::ECS@{OSK::ECS}}
+\doxysubsubsection{GameObjectIndex}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_e_c_s_a5b92aeaa6be2ce0d96e7f571aa917042} 
+using \textbf{ OSK\+::\+ECS\+::\+Game\+Object\+Index} = \textbf{ Base\+Uuid}$<$class Game\+Object\+Index\+Tag$>$}
+
+
+
+Identificador único para un Game Object. 
+
+Un game object es una entidad que vive en el juego. Puede tener asignado cero, uno o varios componentes.
+
+Un componente es una estructura que almacena datos específicos para uno o varios sistemas. Los componentes no ejecutan lógica alguna, y sólo son contenedores de información relacionada con un Game\+Object.
+
+\begin{DoxyWarning}{Atención}
+Cada Game\+Object sólo puede tener un componente de cada tipo. 
+\end{DoxyWarning}
+\index{OSK::ECS@{OSK::ECS}!Signature@{Signature}}
+\index{Signature@{Signature}!OSK::ECS@{OSK::ECS}}
+\doxysubsubsection{Signature}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_e_c_s_a9c0e00962e3504ffd2435edb417d2d42} 
+using \textbf{ OSK\+::\+ECS\+::\+Signature} = \textbf{ Constexpr\+Bit\+Set}$<$\textbf{ MAX\+\_\+\+COMPONENT\+\_\+\+TYPES}$>$}
+
+
+
+Un signature permite saber qué componentes contiene un Game\+Object. Es un bitset, donde el bit en la posición \textquotesingle{}X\textquotesingle{} indicará si el Game\+Object tiene un componente del tipo. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(ComponentType\ ==\ X)\ }
+
+\end{DoxyCode}
+ .
+
+Los sistemas también tienen su propio signature, que indica qué componentes necesita tener un Game\+Object para ser procesado por ese sistema. 
+
+\label{doc-var-members}
+\doxysubsection{Documentación de variables}
+\index{OSK::ECS@{OSK::ECS}!EMPTY\_GAME\_OBJECT@{EMPTY\_GAME\_OBJECT}}
+\index{EMPTY\_GAME\_OBJECT@{EMPTY\_GAME\_OBJECT}!OSK::ECS@{OSK::ECS}}
+\doxysubsubsection{EMPTY\_GAME\_OBJECT}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_e_c_s_a46b3731582093c6a4b02a2024b9edf81} 
+\textbf{ Game\+Object\+Index} OSK\+::\+ECS\+::\+EMPTY\+\_\+\+GAME\+\_\+\+OBJECT = \textbf{ Game\+Object\+Index\+::\+Create\+Empty}()\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+El ID no identifica a ningún objeto válido. 
+
+\index{OSK::ECS@{OSK::ECS}!MAX\_COMPONENT\_TYPES@{MAX\_COMPONENT\_TYPES}}
+\index{MAX\_COMPONENT\_TYPES@{MAX\_COMPONENT\_TYPES}!OSK::ECS@{OSK::ECS}}
+\doxysubsubsection{MAX\_COMPONENT\_TYPES}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_e_c_s_a417cae262226a5518eb4bc6f099de8c6} 
+\textbf{ Component\+Type} OSK\+::\+ECS\+::\+MAX\+\_\+\+COMPONENT\+\_\+\+TYPES = 256\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Número máximo de tipos de componentes que se pueden registrar (y que, por lo tanto, se pueden utilizar). 
+

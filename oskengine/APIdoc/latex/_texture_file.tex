@@ -1,0 +1,32 @@
+\doxysection{Archivo de descripción de una textura 2D. }
+\label{_texture_file}\index{Archivo de descripción de una textura 2D.@{Archivo de descripción de una textura 2D.}}
+Indica los metadatos de una textura 3D almacenada en un fichero externo.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+\_\+type} & ({\ttfamily string}) Tipo de archivo de descripción. \\
+\hline
+{\em spec\+\_\+ver} & ({\ttfamily string}) Versión de la especificación del archivo. \\
+\hline
+{\em asset\+\_\+type} & ({\ttfamily string}) Tipo de recurso. \\
+\hline
+{\em name} & ({\ttfamily string}) Nombre de la textura. \\
+\hline
+{\em raw\+\_\+asset\+\_\+path} & ({\ttfamily string}) Ruta al fichero que almacena la textura. \\
+\hline
+{\em is\+\_\+hdr} & ({\ttfamily bool}) [{\itshape opcional}] Indica si la imagen tiene un formato HDR.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily file\+\_\+type} debe ser {\ttfamily ASSET}. 
+
+{\ttfamily spec\+\_\+ver} debe ser 0. 
+
+{\ttfamily asset\+\_\+type} debe ser {\ttfamily OSK\+::\+Texture}. 
+
+{\ttfamily name} debe ser un identificador único para esta textura.
+
+Si {\ttfamily is\+\_\+hdr} no está presente (o está presente y es {\ttfamily false}), entonces el archivo indicado por {\ttfamily raw\+\_\+asset\+\_\+path} debe tener extensión {\ttfamily .png}, {\ttfamily .jpg} o {\ttfamily .jpeg}. 
+
+Si {\ttfamily is\+\_\+hdr} está presente y es {\ttfamily true}, entonces el archivo indicado por {\ttfamily raw\+\_\+asset\+\_\+path} debe tener extensión {\ttfamily .hdr}. 
+\end{DoxyPrecond}

@@ -1,0 +1,139 @@
+\doxysection{Printable\+Keys.\+h}
+\label{_printable_keys_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/PrintableKeys.h@{C:/Users/Oscar/source/repos/OSKengine/Source/PrintableKeys.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}KeyboardState.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }OSK::IO\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ Key\ PrintableKeys[]\ =\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ Key::SPACE,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ Key::COMMA,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ Key::MINUS,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Key::PERIOD,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ Key::SLASH,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ Key::KEY\_0,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ Key::KEY\_1,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ Key::KEY\_2,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Key::KEY\_3,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ Key::KEY\_4,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ Key::KEY\_5,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ Key::KEY\_6,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Key::KEY\_7,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ Key::KEY\_8,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ Key::KEY\_9,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ Key::SEMICOLON,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ Key::EQUAL,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ Key::A,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ Key::B,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ Key::C,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ Key::D,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ Key::E,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ Key::F,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ Key::G,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ Key::H,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ Key::I,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ Key::J,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ Key::K,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ Key::L,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ Key::M,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ Key::N,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Key::O,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ Key::P,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Key::Q,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Key::R,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ Key::S,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ Key::T,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Key::U,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ Key::V,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ Key::W,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ Key::x,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ Key::y,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ Key::Z,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ Key::LEFT\_BRACKET,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ Key::RIGHT\_BRACKET,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ Key::BACKSLASH,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ Key::TAB,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ Key::KEYPAD\_0,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ Key::KEYPAD\_1,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ Key::KEYPAD\_2,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ Key::KEYPAD\_3,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ Key::KEYPAD\_4,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Key::KEYPAD\_5,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ Key::KEYPAD\_6,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ Key::KEYPAD\_7,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ Key::KEYPAD\_8,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ Key::KEYPAD\_9}
+\DoxyCodeLine{00071\ \ \ \ \ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ GetPrintableKeyText(\textcolor{keyword}{const}\ Key\&\ key,\ \textcolor{keywordtype}{bool}\ isMayus)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (key)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::SPACE:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::COMMA:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{','};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::MINUS:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'-\/'};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::PERIOD:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::SLASH:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'/'};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEY\_0:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEY\_1:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'1'};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEY\_2:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'2'};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEY\_3:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'3'};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEY\_4:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'4'};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEY\_5:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'5'};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEY\_6:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'6'};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEY\_7:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'7'};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEY\_8:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'8'};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEY\_9:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'9'};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::SEMICOLON:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{';'};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::EQUAL:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'='};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::A:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'A'}\ :\ \textcolor{charliteral}{'a'};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::B:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'B'}\ :\ \textcolor{charliteral}{'b'};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::C:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'C'}\ :\ \textcolor{charliteral}{'c'};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::D:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'D'}\ :\ \textcolor{charliteral}{'d'};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::E:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'E'}\ :\ \textcolor{charliteral}{'e'};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::F:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'F'}\ :\ \textcolor{charliteral}{'f'};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::G:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'G'}\ :\ \textcolor{charliteral}{'g'};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::H:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'H'}\ :\ \textcolor{charliteral}{'h'};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::I:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'I'}\ :\ \textcolor{charliteral}{'i'};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::J:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'J'}\ :\ \textcolor{charliteral}{'j'};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::K:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'K'}\ :\ \textcolor{charliteral}{'k'};}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::L:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'L'}\ :\ \textcolor{charliteral}{'l'};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::M:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'M'}\ :\ \textcolor{charliteral}{'m'};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::N:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'N'}\ :\ \textcolor{charliteral}{'n'};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::O:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'O'}\ :\ \textcolor{charliteral}{'o'};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::P:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'P'}\ :\ \textcolor{charliteral}{'p'};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::Q:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'Q'}\ :\ \textcolor{charliteral}{'q'};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::R:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'R'}\ :\ \textcolor{charliteral}{'r'};}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::S:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'S'}\ :\ \textcolor{charliteral}{'s'};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::T:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'T'}\ :\ \textcolor{charliteral}{'t'};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::U:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'U'}\ :\ \textcolor{charliteral}{'u'};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::V:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'V'}\ :\ \textcolor{charliteral}{'v'};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::W:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'W'}\ :\ \textcolor{charliteral}{'w'};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::x:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'X'}\ :\ \textcolor{charliteral}{'x'};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::y:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'Y'}\ :\ \textcolor{charliteral}{'y'};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::Z:\ \textcolor{keywordflow}{return}\ isMayus\ ?\ \textcolor{charliteral}{'Z'}\ :\ \textcolor{charliteral}{'z'};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::LEFT\_BRACKET:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'\{'};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::RIGHT\_BRACKET:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'\}'};}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::BACKSLASH:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::TAB:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'\(\backslash\)t'};}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEYPAD\_0:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEYPAD\_1:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'1'};}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEYPAD\_2:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'2'};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEYPAD\_3:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'3'};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEYPAD\_4:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'4'};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEYPAD\_5:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'5'};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEYPAD\_6:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'6'};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEYPAD\_7:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'7'};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEYPAD\_8:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'8'};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Key::KEYPAD\_9:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'9'};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \}}
+
+\end{DoxyCode}

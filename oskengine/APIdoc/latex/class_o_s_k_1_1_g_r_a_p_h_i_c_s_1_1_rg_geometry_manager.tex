@@ -1,0 +1,165 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Rg\+Geometry\+Manager}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_geometry_manager}\index{OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}}
+
+
+{\ttfamily \#include $<$Rg\+Geometry\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Rg\+Geometry\+Manager} (\textbf{ IRenderer} $\ast$renderer, \textbf{ Rg\+Buffer\+Manager} $\ast$manager, \textbf{ USize64} max\+Vertices)
+\item 
+void \textbf{ Register\+Vertex\+Attribute} (\textbf{ Vertex\+Attrib\+Uuid} uuid, std\+::string name, \textbf{ USize32} attribute\+Size, \textbf{ Gdr\+Buffer\+Uuid} buffer\+Uuid)
+\item 
+void \textbf{ Register\+Unified\+Geometry\+Buffers} ()
+\item 
+void \textbf{ Partially\+Register\+Unified\+Geometry\+Buffers} ()
+\item 
+void \textbf{ Prepare\+Unified\+Geometry\+Buffers\+References} ()
+\item 
+\textbf{ Gpu\+Geometry\+Entry} \textbf{ Register\+Geometry} (const \textbf{ Gpu\+Geometry\+Desc} \&geometry)
+\item 
+std\+::span$<$ const \textbf{ Vertex\+Attribute\+Entry} $>$ \textbf{ Get\+Registered\+Attribs} () const
+\item 
+std\+::span$<$ const \textbf{ Gdr\+Buffer\+Uuid} $>$ \textbf{ Get\+Registered\+Attribs\+Buffer\+Uuids} () const
+\item 
+\textbf{ Rg\+Buffer\+Ref} \textbf{ Get\+Attribs\+Indexes} () const
+\item 
+\textbf{ Rg\+Buffer\+Ref} \textbf{ Get\+Indexes\+Buffer} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Maneja la geometría almacenada en un render-\/graph\+: 
+
+
+\begin{DoxyItemize}
+\item Descripciones de buffers de atributos de vértices.
+\item Descripciones de buffers de índices.
+\end{DoxyItemize}
+
+Funciona bajo un modelo de renderizado con vertex pulling, por lo que no tiene un buffer de vértices tradicional.
+
+Los vértices se dividen en buffers (uno por cada tipo de atributo soportado).
+
+Los vértices no tienen por qué tener todos los mismos atributos. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}!RgGeometryManager@{RgGeometryManager}}
+\index{RgGeometryManager@{RgGeometryManager}!OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}}
+\doxysubsubsection{RgGeometryManager()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_geometry_manager_a2e3f955226797ef7eb3ad5d853e0ce64} 
+Rg\+Geometry\+Manager\+::\+Rg\+Geometry\+Manager (\begin{DoxyParamCaption}\item[{\textbf{ IRenderer} $\ast$}]{renderer}{, }\item[{\textbf{ Rg\+Buffer\+Manager} $\ast$}]{manager}{, }\item[{\textbf{ USize64}}]{max\+Vertices}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Inicializa el manejador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em renderer} & Renderizador. \\
+\hline
+{\em manager} & Manager de buffers del render-\/graph. \\
+\hline
+{\em max\+Vertices} & Número máximo de vértices a soportar. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}!GetAttribsIndexes@{GetAttribsIndexes}}
+\index{GetAttribsIndexes@{GetAttribsIndexes}!OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}}
+\doxysubsubsection{GetAttribsIndexes()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_geometry_manager_ac3e0f1757c5dd9e829f4dbd507bbe985} 
+\textbf{ Rg\+Buffer\+Ref} Rg\+Geometry\+Manager\+::\+Get\+Attribs\+Indexes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}!GetIndexesBuffer@{GetIndexesBuffer}}
+\index{GetIndexesBuffer@{GetIndexesBuffer}!OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}}
+\doxysubsubsection{GetIndexesBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_geometry_manager_ad046f41e6545db5ca25ae74897e0d8e6} 
+\textbf{ Rg\+Buffer\+Ref} Rg\+Geometry\+Manager\+::\+Get\+Indexes\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}!GetRegisteredAttribs@{GetRegisteredAttribs}}
+\index{GetRegisteredAttribs@{GetRegisteredAttribs}!OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}}
+\doxysubsubsection{GetRegisteredAttribs()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_geometry_manager_a50c33231086ce9b3cdd91c47373127fd} 
+std\+::span$<$ const \textbf{ Vertex\+Attribute\+Entry} $>$ Rg\+Geometry\+Manager\+::\+Get\+Registered\+Attribs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}!GetRegisteredAttribsBufferUuids@{GetRegisteredAttribsBufferUuids}}
+\index{GetRegisteredAttribsBufferUuids@{GetRegisteredAttribsBufferUuids}!OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}}
+\doxysubsubsection{GetRegisteredAttribsBufferUuids()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_geometry_manager_a06dc1c32fa2d86685a34652b8eb8820c} 
+std\+::span$<$ const \textbf{ Gdr\+Buffer\+Uuid} $>$ Rg\+Geometry\+Manager\+::\+Get\+Registered\+Attribs\+Buffer\+Uuids (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}!PartiallyRegisterUnifiedGeometryBuffers@{PartiallyRegisterUnifiedGeometryBuffers}}
+\index{PartiallyRegisterUnifiedGeometryBuffers@{PartiallyRegisterUnifiedGeometryBuffers}!OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}}
+\doxysubsubsection{PartiallyRegisterUnifiedGeometryBuffers()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_geometry_manager_acbc77bd67ca0af8489ec570ce020a5d2} 
+void Rg\+Geometry\+Manager\+::\+Partially\+Register\+Unified\+Geometry\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}!PrepareUnifiedGeometryBuffersReferences@{PrepareUnifiedGeometryBuffersReferences}}
+\index{PrepareUnifiedGeometryBuffersReferences@{PrepareUnifiedGeometryBuffersReferences}!OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}}
+\doxysubsubsection{PrepareUnifiedGeometryBuffersReferences()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_geometry_manager_ae7a80bc3e0bc0233f77205e3877432c1} 
+void Rg\+Geometry\+Manager\+::\+Prepare\+Unified\+Geometry\+Buffers\+References (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}!RegisterGeometry@{RegisterGeometry}}
+\index{RegisterGeometry@{RegisterGeometry}!OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}}
+\doxysubsubsection{RegisterGeometry()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_geometry_manager_ab3b44c37b5878a57deb59ca4f42108b1} 
+\textbf{ Gpu\+Geometry\+Entry} Rg\+Geometry\+Manager\+::\+Register\+Geometry (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Geometry\+Desc} \&}]{geometry}{}\end{DoxyParamCaption})}
+
+
+
+Registra una geomatría en concreto, incorporándola a los buffers correspondientes. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em geometry} & Geometría a registrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Información sobre el registro. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}!RegisterUnifiedGeometryBuffers@{RegisterUnifiedGeometryBuffers}}
+\index{RegisterUnifiedGeometryBuffers@{RegisterUnifiedGeometryBuffers}!OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}}
+\doxysubsubsection{RegisterUnifiedGeometryBuffers()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_geometry_manager_a95ddb4077bb9a33ac0775ed77ea197af} 
+void Rg\+Geometry\+Manager\+::\+Register\+Unified\+Geometry\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Crea y registra los buffers de vértices, de índices y de atributos. 
+
+\begin{DoxyPrecond}{Precondición}
+Deben haberse registrado todos los atributos a usar mediante {\ttfamily Register\+Vertex\+Attribute(...)}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}!RegisterVertexAttribute@{RegisterVertexAttribute}}
+\index{RegisterVertexAttribute@{RegisterVertexAttribute}!OSK::GRAPHICS::RgGeometryManager@{OSK::GRAPHICS::RgGeometryManager}}
+\doxysubsubsection{RegisterVertexAttribute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_geometry_manager_a249c7af83140285fd687cfa95ce76920} 
+void Rg\+Geometry\+Manager\+::\+Register\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{\textbf{ Vertex\+Attrib\+Uuid}}]{uuid}{, }\item[{std\+::string}]{name}{, }\item[{\textbf{ USize32}}]{attribute\+Size}{, }\item[{\textbf{ Gdr\+Buffer\+Uuid}}]{buffer\+Uuid}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuevo tipo de atributo de vértice. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & Indentificadro del atributo. \\
+\hline
+{\em name} & Nombre del atributo. \\
+\hline
+{\em attribute\+Size} & Tamaño de la estructura \\
+\hline
+{\em buffer\+Uuid} & UUID del buffer que será creado. del atributo, en bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Si ya existía un atributo con el identificador {\ttfamily uuid}, se sobreescribirá.
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+No se deben haber registrado los buffers mediante {\ttfamily Register\+Unified\+Geometry\+Buffers} (si se llama a esta función después de {\ttfamily Register\+Unified\+Geometry\+Buffers}, será ignorada). 
+\end{DoxyPrecond}

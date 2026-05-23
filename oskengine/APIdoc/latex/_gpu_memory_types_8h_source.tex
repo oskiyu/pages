@@ -1,0 +1,57 @@
+\doxysection{Gpu\+Memory\+Types.\+h}
+\label{_gpu_memory_types_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GpuMemoryTypes.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GpuMemoryTypes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}EnumFlags.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ToString.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuSharedMemoryType\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ GPU\_AND\_CPU,}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ GPU\_ONLY}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuMemoryUsage\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ BUFFER,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ IMAGE}
+\DoxyCodeLine{00043\ \ \ \ \ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuBufferUsage\ \{}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ UNIFORM\_BUFFER\ =\ 1,}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ VERTEX\_BUFFER\ =\ 2,}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ INDEX\_BUFFER\ =\ 4,}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ TRANSFER\_SOURCE\ =\ 8,}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ TRANSFER\_DESTINATION\ =\ 16,}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ RT\_ACCELERATION\_STRUCTURE\ =\ 32,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ RT\_SHADER\_BINDING\_TABLE\ =\ 64,}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ RT\_ACCELERATION\_STRUCTURE\_BUILDING\ =\ 128,}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ STORAGE\_BUFFER\ =\ 256,}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ UPLOAD\_ONLY\ =\ 512}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ OSK\_FLAGS(OSK::GRAPHICS::GpuBufferUsage);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{template}\ <>\ std::string\ OSK::ToString<OSK::GRAPHICS::GpuSharedMemoryType>(\textcolor{keyword}{const}\ OSK::GRAPHICS::GpuSharedMemoryType\&\ type);}
+\DoxyCodeLine{00113\ \textcolor{keyword}{template}\ <>\ std::string\ OSK::ToString<OSK::GRAPHICS::GpuMemoryUsage>(\textcolor{keyword}{const}\ OSK::GRAPHICS::GpuMemoryUsage\&\ usage);}
+\DoxyCodeLine{00114\ \textcolor{keyword}{template}\ <>\ std::string\ OSK::ToString<OSK::GRAPHICS::GpuBufferUsage>(\textcolor{keyword}{const}\ OSK::GRAPHICS::GpuBufferUsage\&\ usage);}
+
+\end{DoxyCode}

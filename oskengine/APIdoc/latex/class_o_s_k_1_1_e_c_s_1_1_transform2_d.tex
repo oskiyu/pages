@@ -1,0 +1,384 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Transform2D}
+\label{class_o_s_k_1_1_e_c_s_1_1_transform2_d}\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+
+
+{\ttfamily \#include $<$Transform\+Component2\+D.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT} ()
+\item 
+\textbf{ OSK\+\_\+\+COMPONENT} ("{}OSK\+::\+Transform2\+D"{})
+\item 
+\textbf{ Transform2D} (\textbf{ ECS\+::\+Game\+Object\+Index} owner)
+\item 
+\textbf{ Transform2D} (\textbf{ ECS\+::\+Game\+Object\+Index} owner, const \textbf{ Vector2f} \&position, const \textbf{ Vector2f} \&scale, float rotation)
+\item 
+void \textbf{ Set\+Position} (const \textbf{ Vector2f} \&position)
+\item 
+void \textbf{ Set\+Scale} (const \textbf{ Vector2f} \&scale)
+\item 
+void \textbf{ Set\+Rotation} (float rotation)
+\item 
+void \textbf{ Add\+Position} (const \textbf{ Vector2f} \&position\+Delta)
+\item 
+void \textbf{ Add\+Scale} (const \textbf{ Vector2f} \&scale\+Delta)
+\item 
+void \textbf{ Add\+Rotation} (float rotation\+Delta)
+\item 
+void \textbf{ Update\+Model} ()
+\item 
+void \textbf{ Attach\+To\+Object} (\textbf{ ECS\+::\+Game\+Object\+Index} base\+Transform)
+\item 
+void \textbf{ Un\+Attach} ()
+\item 
+\textbf{ Vector4} \textbf{ Get\+Rectangle} () const
+\item 
+\textbf{ Vector2f} \textbf{ Get\+Position} () const
+\item 
+\textbf{ Vector2f} \textbf{ Get\+Scale} () const
+\item 
+float \textbf{ Get\+Rotation} () const
+\item 
+\textbf{ Vector2f} \textbf{ Get\+Local\+Position} () const
+\item 
+\textbf{ Vector2f} \textbf{ Get\+Local\+Scale} () const
+\item 
+float \textbf{ Get\+Local\+Rotation} () const
+\item 
+glm\+::mat4 \textbf{ Get\+As\+Matrix} () const
+\item 
+\textbf{ ECS\+::\+Game\+Object\+Index} \textbf{ Get\+Parent\+Object} () const
+\item 
+\textbf{ Vector2f} \textbf{ Get\+Position\+Offset} () const
+\item 
+\textbf{ Vector2f} \textbf{ Get\+Scale\+Offset} () const
+\item 
+float \textbf{ Get\+Rotation\+Offset} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que almacena el \textquotesingle{}transform\textquotesingle{} de un objeto en un mundo 2D. El transform contiene posición, escala y rotación. A este transform se pueden enlazar otros transform ahijados, de tal manera que al cambiar el transform padre, el resto de transforms también ven sus variables cambiadas. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!Transform2D@{Transform2D}}
+\index{Transform2D@{Transform2D}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{Transform2D()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a9da50f666bba0e2e276bffd09619674d} 
+Transform2\+D\+::\+Transform2D (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Transform por defecto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em owner} & ID de la entidad que posee este transform. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!Transform2D@{Transform2D}}
+\index{Transform2D@{Transform2D}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{Transform2D()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_ab1f3aa0708f80a4a769767820362d6c1} 
+Transform2\+D\+::\+Transform2D (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{owner}{, }\item[{const \textbf{ Vector2f} \&}]{position}{, }\item[{const \textbf{ Vector2f} \&}]{scale}{, }\item[{float}]{rotation}{}\end{DoxyParamCaption})}
+
+
+
+Crea el transform. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em owner} & ID de la entidad que posee este transform. \\
+\hline
+{\em position} & Posición en el mundo. \\
+\hline
+{\em scale} & Escala en el mundo. \\
+\hline
+{\em rotation} & Rotación en el mundo. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!AddPosition@{AddPosition}}
+\index{AddPosition@{AddPosition}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{AddPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_ac046e0ab46c2a6fa2751878bf2f37d8b} 
+void Transform2\+D\+::\+Add\+Position (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2f} \&}]{position\+Delta}{}\end{DoxyParamCaption})}
+
+
+
+Suma el vector 3D a la posición. 
+
+\begin{DoxyNote}{Nota}
+También actualiza la matriz modelo, y la de sus hijos.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em position\+Delta} & Posición a añadir.\\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!AddRotation@{AddRotation}}
+\index{AddRotation@{AddRotation}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{AddRotation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_af00c1ff614688e5186afc380bd165b5d} 
+void Transform2\+D\+::\+Add\+Rotation (\begin{DoxyParamCaption}\item[{float}]{rotation\+Delta}{}\end{DoxyParamCaption})}
+
+
+
+Cambia la rotación del transform. 
+
+\begin{DoxyNote}{Nota}
+También actualiza la matriz modelo, y la de sus hijos.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em rotation\+Delta} & Ángulo añadido.\\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!AddScale@{AddScale}}
+\index{AddScale@{AddScale}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{AddScale()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a634dd290e5247d4acd9b3b2767e07a8f} 
+void Transform2\+D\+::\+Add\+Scale (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2f} \&}]{scale\+Delta}{}\end{DoxyParamCaption})}
+
+
+
+Suma un vector 3D a la escala. 
+
+\begin{DoxyNote}{Nota}
+También actualiza la matriz modelo, y la de sus hijos.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em scale\+Delta} & Escala a añadir.\\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!AttachToObject@{AttachToObject}}
+\index{AttachToObject@{AttachToObject}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{AttachToObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_aa827ca5dff4d21765bca9e8b8ae844b5} 
+void Transform2\+D\+::\+Attach\+To\+Object (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{base\+Transform}{}\end{DoxyParamCaption})}
+
+
+
+Enlaza este transform a su nuevo transform padre. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em base\+Transform} & Tranform padre.\\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!GetAsMatrix@{GetAsMatrix}}
+\index{GetAsMatrix@{GetAsMatrix}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{GetAsMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a669799b8f24dcf098f19691e5f364c8d} 
+glm\+::mat4 Transform2\+D\+::\+Get\+As\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Matriz modelo. 
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!GetLocalPosition@{GetLocalPosition}}
+\index{GetLocalPosition@{GetLocalPosition}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{GetLocalPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a7aaef83f2558478aaa78a76d95cc29c3} 
+\textbf{ Vector2f} Transform2\+D\+::\+Get\+Local\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Posición local. 
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!GetLocalRotation@{GetLocalRotation}}
+\index{GetLocalRotation@{GetLocalRotation}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{GetLocalRotation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a431355230454747b783e0906be086f82} 
+float Transform2\+D\+::\+Get\+Local\+Rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Rotación local. 
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!GetLocalScale@{GetLocalScale}}
+\index{GetLocalScale@{GetLocalScale}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{GetLocalScale()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a9a032657c7e0c7fc79747c1187113459} 
+\textbf{ Vector2f} Transform2\+D\+::\+Get\+Local\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Escala local. 
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!GetParentObject@{GetParentObject}}
+\index{GetParentObject@{GetParentObject}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{GetParentObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_aedce50a9a71d8bcb4d3473b3fb8c3c33} 
+\textbf{ Game\+Object\+Index} Transform2\+D\+::\+Get\+Parent\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Transform padre. 
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{GetPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a2d2374dad6577691b06de20be2793ed5} 
+\textbf{ Vector2f} Transform2\+D\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Vector posición en el mundo 2D. 
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!GetPositionOffset@{GetPositionOffset}}
+\index{GetPositionOffset@{GetPositionOffset}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{GetPositionOffset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a753ad7d3af1fdbff04014f9509996a32} 
+\textbf{ Vector2f} Transform2\+D\+::\+Get\+Position\+Offset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Posición respecto al padre. 
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!GetRectangle@{GetRectangle}}
+\index{GetRectangle@{GetRectangle}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{GetRectangle()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_af8809a78af649742525faa777cbcc6f0} 
+\textbf{ Vector4} Transform2\+D\+::\+Get\+Rectangle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve un rectángulo con la posición y el tamaño de este transform. 
+
+\begin{DoxyReturn}{Devuelve}
+Rectángulo del transform.
+\end{DoxyReturn}
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!GetRotation@{GetRotation}}
+\index{GetRotation@{GetRotation}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{GetRotation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a0b811ac01223cfcf4b9ac7db944ac2ce} 
+float Transform2\+D\+::\+Get\+Rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Rotación en el mundo 2D. 
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!GetRotationOffset@{GetRotationOffset}}
+\index{GetRotationOffset@{GetRotationOffset}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{GetRotationOffset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a27ca983bacf9a68f54be702b551b11af} 
+float Transform2\+D\+::\+Get\+Rotation\+Offset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Rotación respecto al padre. 
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!GetScale@{GetScale}}
+\index{GetScale@{GetScale}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{GetScale()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_ace07318c83dd719c38af0dcf4cd87dae} 
+\textbf{ Vector2f} Transform2\+D\+::\+Get\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Vector escala en el mundo 2D. 
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!GetScaleOffset@{GetScaleOffset}}
+\index{GetScaleOffset@{GetScaleOffset}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{GetScaleOffset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_ab803cb73e5cb2afde4822ee668ad977f} 
+\textbf{ Vector2f} Transform2\+D\+::\+Get\+Scale\+Offset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Escala respecto al padre. 
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!OSK\_COMPONENT@{OSK\_COMPONENT}}
+\index{OSK\_COMPONENT@{OSK\_COMPONENT}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{OSK\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a4c4da189e15e6241f6503fb7446491e5} 
+OSK\+::\+ECS\+::\+Transform2\+D\+::\+OSK\+\_\+\+COMPONENT (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Transform2\+D"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}}
+\index{OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{OSK\_SERIALIZABLE\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_afad2f349cd7d5d2bdbbe08653ecf13fd} 
+OSK\+::\+ECS\+::\+Transform2\+D\+::\+OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{SetPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a36c2a3334b8d219b9d3a674f725dca1c} 
+void Transform2\+D\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2f} \&}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Establece la posición. 
+
+\begin{DoxyNote}{Nota}
+También actualiza la matriz modelo, y la de sus hijos.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Nueva posición respecto al padre.\\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!SetRotation@{SetRotation}}
+\index{SetRotation@{SetRotation}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{SetRotation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_ad0b16b933da9061638161ea51ced132e} 
+void Transform2\+D\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{rotation}{}\end{DoxyParamCaption})}
+
+
+
+Establece la rotación del transform. 
+
+\begin{DoxyNote}{Nota}
+También actualiza la matriz modelo, y la de sus hijos.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em rotation} & Ángulo.\\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!SetScale@{SetScale}}
+\index{SetScale@{SetScale}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{SetScale()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a73ce39d854f1c6fd17105ed2f1b2dedb} 
+void Transform2\+D\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2f} \&}]{scale}{}\end{DoxyParamCaption})}
+
+
+
+Establece la escala. 
+
+\begin{DoxyNote}{Nota}
+También actualiza la matriz modelo, y la de sus hijos.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em scale} & Nueva escala respecto al padre.\\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!UnAttach@{UnAttach}}
+\index{UnAttach@{UnAttach}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{UnAttach()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_ab84d05bbd2b23163b4fd8f6684c3699c} 
+void Transform2\+D\+::\+Un\+Attach (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Libera este transform de su padre. 
+
+\index{OSK::ECS::Transform2D@{OSK::ECS::Transform2D}!UpdateModel@{UpdateModel}}
+\index{UpdateModel@{UpdateModel}!OSK::ECS::Transform2D@{OSK::ECS::Transform2D}}
+\doxysubsubsection{UpdateModel()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_transform2_d_a7f0d1cae30ec803e5d55019c97bce79a} 
+void Transform2\+D\+::\+Update\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza la matriz modelo, y la de sus hijos. 
+

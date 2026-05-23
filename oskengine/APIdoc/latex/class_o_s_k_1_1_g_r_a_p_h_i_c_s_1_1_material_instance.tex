@@ -1,0 +1,131 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Material\+Instance}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_instance}\index{OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}}
+
+
+{\ttfamily \#include $<$Material\+Instance.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Material\+Instance} (\textbf{ Material} $\ast$material)
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Material\+Instance})
+\item 
+\textbf{ OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR} (\textbf{ Material\+Instance})
+\item 
+void \textbf{ Register\+Slot} (const std\+::string \&name)
+\item 
+const \textbf{ IMaterial\+Slot} $\ast$ \textbf{ Get\+Slot} (std\+::string\+\_\+view name) const
+\item 
+\textbf{ IMaterial\+Slot} $\ast$ \textbf{ Get\+Slot} (std\+::string\+\_\+view name)
+\item 
+\textbf{ Material} $\ast$ \textbf{ Get\+Material} () const
+\item 
+const \textbf{ Material\+Layout} $\ast$ \textbf{ Get\+Layout} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Mientras que un \doxyref{Material}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material} define a grandes rasgos el comportamiento al renderizarse los objetos, un \doxyref{Material\+Instance}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_instance} permite ajustar el renderizado más finamente, permitiendo asignar qué recursos se envían a los shaders (UNIFORM BUFFER, TEXTURE, etc...). 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}!MaterialInstance@{MaterialInstance}}
+\index{MaterialInstance@{MaterialInstance}!OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}}
+\doxysubsubsection{MaterialInstance()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_instance_a0f82bba6d8404b11a5a594af377f50d4} 
+Material\+Instance\+::\+Material\+Instance (\begin{DoxyParamCaption}\item[{\textbf{ Material} $\ast$}]{material}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Crea una instancia del material. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em material} & \doxyref{Material}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material} del que se crea la instancia.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}!GetLayout@{GetLayout}}
+\index{GetLayout@{GetLayout}!OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}}
+\doxysubsubsection{GetLayout()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_instance_a5d7d87b3da1560a7a77fd9b3cafc957f} 
+const \textbf{ Material\+Layout} $\ast$ Material\+Instance\+::\+Get\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el layout de esta instancia (es decir, el layout del material padre). 
+
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}!GetMaterial@{GetMaterial}}
+\index{GetMaterial@{GetMaterial}!OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}}
+\doxysubsubsection{GetMaterial()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_instance_ac3d9ff9441f2ff807e666f7c067ae1f2} 
+\textbf{ Material} $\ast$ Material\+Instance\+::\+Get\+Material (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el material del que es instancia esta instancia. 
+
+\index{OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}!GetSlot@{GetSlot}}
+\index{GetSlot@{GetSlot}!OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}}
+\doxysubsubsection{GetSlot()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_instance_a4db368aaf0c8874b22b3f4b86fb0302d} 
+\textbf{ IMaterial\+Slot} $\ast$ Material\+Instance\+::\+Get\+Slot (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}!GetSlot@{GetSlot}}
+\index{GetSlot@{GetSlot}!OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}}
+\doxysubsubsection{GetSlot()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_instance_a47899c087b966e4a76d4ad321e309638} 
+const \textbf{ IMaterial\+Slot} $\ast$ Material\+Instance\+::\+Get\+Slot (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el slot con el nombre dado. 
+
+\index{OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}!OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}}
+\index{OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}!OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}}
+\doxysubsubsection{OSK\_DEFAULT\_MOVE\_OPERATOR()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_instance_ad42a69c08df7f4e5544022c8bcf28b11} 
+OSK\+::\+GRAPHICS\+::\+Material\+Instance\+::\+OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR (\begin{DoxyParamCaption}\item[{\textbf{ Material\+Instance}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_instance_a5516aa78e1e2e3f922ac5dd7bd495583} 
+OSK\+::\+GRAPHICS\+::\+Material\+Instance\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Material\+Instance}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}!RegisterSlot@{RegisterSlot}}
+\index{RegisterSlot@{RegisterSlot}!OSK::GRAPHICS::MaterialInstance@{OSK::GRAPHICS::MaterialInstance}}
+\doxysubsubsection{RegisterSlot()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_instance_a2293d59b8bd0c6c02dfb5cafc41261c0} 
+void Material\+Instance\+::\+Register\+Slot (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Registra un slot. 
+
+\begin{DoxyNote}{Nota}
+TODOS los slots del \doxyref{Material}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material} (presentes en su layout) deben registrarse.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Descriptor\+Pool\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_descriptor_pool_creation_exception}} & Si hay algún error nativo durante la creación del material slot. \\
+\hline
+{\em \doxyref{Descriptor\+Layout\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_descriptor_layout_creation_exception}} & Si hay algún error nativo durante la creación del material slot. \\
+\hline
+{\em \doxyref{Material\+Slot\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_slot_creation_exception}} & Si hay algún error durante la creación del material slot. \\
+\hline
+\end{DoxyExceptions}

@@ -1,0 +1,598 @@
+\doxysection{Referencia del espacio de nombres OSK}
+\label{namespace_o_s_k}\index{OSK@{OSK}}
+\doxysubsubsection*{Espacios de nombres}
+\begin{DoxyCompactItemize}
+\item 
+namespace \textbf{ \+\_\+\+DArr}
+\item 
+namespace \textbf{ ASSETS}
+\item 
+namespace \textbf{ AUDIO}
+\item 
+namespace \textbf{ COLLISION}
+\item 
+namespace \textbf{ Concepts}
+\item 
+namespace \textbf{ ECS}
+\item 
+namespace \textbf{ Editor}
+\item 
+namespace \textbf{ EFTraits}
+\item 
+namespace \textbf{ GAME}
+\item 
+namespace \textbf{ GRAPHICS}
+\item 
+namespace \textbf{ IO}
+\item 
+namespace \textbf{ MATH}
+\item 
+namespace \textbf{ Math}
+\item 
+namespace \textbf{ MEMORY}
+\item 
+namespace \textbf{ NET}
+\item 
+namespace \textbf{ PERSISTENCE}
+\item 
+namespace \textbf{ PHYSICS}
+\item 
+namespace \textbf{ UI}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Atomic\+Holder}
+\item 
+class \textbf{ Audio\+Device\+Creation\+Exception}
+\item 
+class \textbf{ Audio\+Exception}
+\item 
+class \textbf{ Bad\+Alloc\+Exception}
+\item 
+class \textbf{ Base\+Uuid}
+\item 
+class \textbf{ Bit\+Set}
+\item 
+class \textbf{ Color}
+\item 
+class \textbf{ Console\+Command\+Executor}
+\item 
+class \textbf{ Constexpr\+Bit\+Set}
+\item 
+class \textbf{ Cpu\+Mesh3D}
+\item 
+class \textbf{ Cpu\+Model3D}
+\item 
+struct \textbf{ Cpu\+Vertex3D}
+\item 
+class \textbf{ Divide\+By\+Zero\+Exception}
+\item 
+class \textbf{ Dynamic\+Array}
+\item 
+class \textbf{ Editor\+Hide\+Command}
+\item 
+class \textbf{ Editor\+Show\+Command}
+\item 
+class \textbf{ Engine}
+\item 
+class \textbf{ Engine\+Exception}
+\item 
+class \textbf{ Exit\+Command}
+\item 
+class \textbf{ Finished\+Block\+Reader\+Exception}
+\item 
+class \textbf{ Gpu\+Stats\+Command}
+\item 
+class \textbf{ IConsole\+Command}
+\item 
+class \textbf{ IDebug\+Game}
+\item 
+class \textbf{ IGame}
+\item 
+class \textbf{ IIterable}
+\item 
+class \textbf{ IIterator}
+\item 
+class \textbf{ IJob}
+\item 
+class \textbf{ Invalid\+Argument\+Exception}
+\item 
+class \textbf{ Invalid\+Binary\+Deserialization\+Exception}
+\item 
+class \textbf{ Invalid\+Object\+State\+Exception}
+\item 
+class \textbf{ IQuery\+Interface}
+\item 
+class \textbf{ Job\+Count\+Map}
+\item 
+class \textbf{ Job\+Queue}
+\item 
+class \textbf{ Job\+System}
+\item 
+class \textbf{ Kilograms}
+\item 
+struct \textbf{ Mutex\+Holder}
+\item 
+class \textbf{ Not\+Implemented\+Exception}
+\item 
+class \textbf{ Overflow\+Conversion\+Exception}
+\item 
+struct \textbf{ Pair}
+\item 
+struct \textbf{ Plane}
+\item 
+class \textbf{ Post\+Process\+Input\+Not\+Set\+Exception}
+\item 
+class \textbf{ Quaternion}
+\item 
+class \textbf{ Rendered\+Not\+Created\+Exception}
+\item 
+class \textbf{ Schema\+Id}
+\item 
+class \textbf{ Shader\+Reflection\+Exception}
+\item 
+class \textbf{ Shared\+Ptr}
+\item 
+class \textbf{ Span}
+\item 
+class \textbf{ Spline3D}
+\item 
+class \textbf{ Static\+Array}
+\item 
+class \textbf{ Static\+Uuid\+Provider}
+\item 
+class \textbf{ Stop\+Watch}
+\item 
+struct \textbf{ String\+Hasher}
+\item 
+class \textbf{ Transform3D}
+\item 
+class \textbf{ Unique\+Ptr}
+\item 
+class \textbf{ Unreachable\+Exception}
+\item 
+class \textbf{ Uuid\+Provider}
+\item 
+class \textbf{ Vector2\+\_\+t}
+\item 
+class \textbf{ Vector3\+\_\+t}
+\item 
+class \textbf{ Vector4\+\_\+t}
+\item 
+struct \textbf{ Version}
+\item 
+class \textbf{ Window\+Not\+Created\+Exception}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Conceptos}
+\begin{DoxyCompactItemize}
+\item 
+concept \textbf{ Is\+Console\+Command}
+\item 
+concept \textbf{ Is\+Job}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ TByte} = uint8\+\_\+t
+\item 
+using \textbf{ TInterface\+Uuid} = \textbf{ UIndex32}
+\item 
+{\footnotesize template$<$typename T$>$ }\\using \textbf{ Array\+Stack} = \textbf{ Dynamic\+Array}$<$T$>$
+\item 
+using \textbf{ Any\+Frustum} = \textbf{ Dynamic\+Array}$<$\textbf{ Plane}$>$
+\item 
+{\footnotesize template$<$typename T$>$ }\\using \textbf{ String\+Hash\+Map} = std\+::unordered\+\_\+map$<$std\+::string, T, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$$>$
+\item 
+using \textbf{ UIndex16} = uint16\+\_\+t
+\item 
+using \textbf{ USize16} = uint16\+\_\+t
+\item 
+using \textbf{ UIndex32} = uint32\+\_\+t
+\item 
+using \textbf{ USize32} = uint32\+\_\+t
+\item 
+using \textbf{ UIndex64} = uint64\+\_\+t
+\item 
+using \textbf{ USize64} = uint64\+\_\+t
+\item 
+using \textbf{ TDelta\+Time} = float
+\item 
+using \textbf{ Vector2f} = \textbf{ Vector2\+\_\+t}$<$float\+\_\+t$>$
+\item 
+using \textbf{ Vector2d} = \textbf{ Vector2\+\_\+t}$<$double\+\_\+t$>$
+\item 
+using \textbf{ Vector2i} = \textbf{ Vector2\+\_\+t}$<$int32\+\_\+t$>$
+\item 
+using \textbf{ Vector2ui} = \textbf{ Vector2\+\_\+t}$<$uint32\+\_\+t$>$
+\item 
+using \textbf{ Vector3f} = \textbf{ Vector3\+\_\+t}$<$float\+\_\+t$>$
+\item 
+using \textbf{ Vector3d} = \textbf{ Vector3\+\_\+t}$<$double\+\_\+t$>$
+\item 
+using \textbf{ Vector3i} = \textbf{ Vector3\+\_\+t}$<$int32\+\_\+t$>$
+\item 
+using \textbf{ Vector3ui} = \textbf{ Vector3\+\_\+t}$<$uint32\+\_\+t$>$
+\item 
+typedef \textbf{ Vector4\+\_\+t}$<$ float\+\_\+t $>$ \textbf{ Vector4}
+\item 
+typedef \textbf{ Vector4\+\_\+t}$<$ float\+\_\+t $>$ \textbf{ Vector4f}
+\item 
+typedef \textbf{ Vector4\+\_\+t}$<$ double\+\_\+t $>$ \textbf{ Vector4d}
+\item 
+typedef \textbf{ Vector4\+\_\+t}$<$ int32\+\_\+t $>$ \textbf{ Vector4i}
+\item 
+typedef \textbf{ Vector4\+\_\+t}$<$ uint32\+\_\+t $>$ \textbf{ Vector4ui}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum class \textbf{ Growth\+Factor\+Type} \{ \textbf{ EXPONENTIAL}
+, \textbf{ LINEAL}
+ \}
+\item 
+enum class \textbf{ IUUID} \+: TInterface\+Uuid \{ \newline
+\textbf{ IGamepad\+Input} = 1
+, \textbf{ IKeyboard\+Input}
+, \textbf{ IMouse\+Input}
+, \textbf{ IFullscreenable\+Display}
+, \newline
+\textbf{ ITouch\+Input}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dynamic\+Array}$<$ std\+::string $>$ \textbf{ Tokenize} (std\+::string\+\_\+view string, char delimiter)
+\item 
+{\footnotesize template$<$typename T$>$ }\\std\+::string \textbf{ To\+String} (const T \&value)
+\item 
+{\footnotesize template$<$typename T, typename... TArgs$>$ }\\\textbf{ Unique\+Ptr}$<$ T $>$ \textbf{ Make\+Unique} (TArgs \&\&... args)
+\item 
+template$<$$>$ std\+::string \textbf{ To\+String$<$ Vector3f $>$} (const \textbf{ Vector3f} \&value)
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de «typedef»}
+\index{OSK@{OSK}!AnyFrustum@{AnyFrustum}}
+\index{AnyFrustum@{AnyFrustum}!OSK@{OSK}}
+\doxysubsubsection{AnyFrustum}
+{\footnotesize\ttfamily \label{namespace_o_s_k_aea2ae74d72c40655808c8e6c73d810a3} 
+using \textbf{ OSK\+::\+Any\+Frustum} = \textbf{ Dynamic\+Array}$<$\textbf{ Plane}$>$}
+
+
+
+Frustum con un número indeterminado de planos. 
+
+\index{OSK@{OSK}!ArrayStack@{ArrayStack}}
+\index{ArrayStack@{ArrayStack}!OSK@{OSK}}
+\doxysubsubsection{ArrayStack}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a80a928aa5bfcd59556252b2fb2914d9e} 
+template$<$typename T$>$ \\
+using \textbf{ OSK\+::\+Array\+Stack} = \textbf{ Dynamic\+Array}$<$T$>$}
+
+\index{OSK@{OSK}!StringHashMap@{StringHashMap}}
+\index{StringHashMap@{StringHashMap}!OSK@{OSK}}
+\doxysubsubsection{StringHashMap}
+{\footnotesize\ttfamily \label{namespace_o_s_k_ad5295fe48541d66a3096e05e198b36df} 
+template$<$typename T$>$ \\
+using \textbf{ OSK\+::\+String\+Hash\+Map} = std\+::unordered\+\_\+map$<$std\+::string, T, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$$>$}
+
+\index{OSK@{OSK}!TByte@{TByte}}
+\index{TByte@{TByte}!OSK@{OSK}}
+\doxysubsubsection{TByte}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a79ac5831e0b2433213dacbfc636f4d8f} 
+using \textbf{ OSK\+::\+TByte} = uint8\+\_\+t}
+
+
+
+Unsigned byte. 
+
+\index{OSK@{OSK}!TDeltaTime@{TDeltaTime}}
+\index{TDeltaTime@{TDeltaTime}!OSK@{OSK}}
+\doxysubsubsection{TDeltaTime}
+{\footnotesize\ttfamily \label{namespace_o_s_k_adfc76cbcf35e5506ee24168edfe15bb0} 
+using \textbf{ OSK\+::\+TDelta\+Time} = float}
+
+
+
+Delta de tiempo, medido en segundos. 
+
+\index{OSK@{OSK}!TInterfaceUuid@{TInterfaceUuid}}
+\index{TInterfaceUuid@{TInterfaceUuid}!OSK@{OSK}}
+\doxysubsubsection{TInterfaceUuid}
+{\footnotesize\ttfamily \label{namespace_o_s_k_aed5a2c041eae5bf40f89478aa65332d9} 
+using \textbf{ OSK\+::\+TInterface\+Uuid} = \textbf{ UIndex32}}
+
+
+
+Tipo de dato para identificar un UUID de una interfaz. 
+
+\index{OSK@{OSK}!UIndex16@{UIndex16}}
+\index{UIndex16@{UIndex16}!OSK@{OSK}}
+\doxysubsubsection{UIndex16}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a4adcec192332b5042bbc87103e1185f0} 
+using \textbf{ OSK\+::\+UIndex16} = uint16\+\_\+t}
+
+
+
+Índice de un elemento, almacenado en un unsigned int de 16 bits. 
+
+\index{OSK@{OSK}!UIndex32@{UIndex32}}
+\index{UIndex32@{UIndex32}!OSK@{OSK}}
+\doxysubsubsection{UIndex32}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a382ed4c8a6994201cbad5d4e1335861b} 
+using \textbf{ OSK\+::\+UIndex32} = uint32\+\_\+t}
+
+
+
+Índice de un elemento, almacenado en un unsigned int de 32 bits. 
+
+\index{OSK@{OSK}!UIndex64@{UIndex64}}
+\index{UIndex64@{UIndex64}!OSK@{OSK}}
+\doxysubsubsection{UIndex64}
+{\footnotesize\ttfamily \label{namespace_o_s_k_ac0ea6d3df0641acb0fd4620c6f5ef68a} 
+using \textbf{ OSK\+::\+UIndex64} = uint64\+\_\+t}
+
+
+
+Índice de un elemento, almacenado en un unsigned int de 64 bits. 
+
+\index{OSK@{OSK}!USize16@{USize16}}
+\index{USize16@{USize16}!OSK@{OSK}}
+\doxysubsubsection{USize16}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a79499e5441f89c99e801513438a132e7} 
+using \textbf{ OSK\+::\+USize16} = uint16\+\_\+t}
+
+
+
+Tamaño, almacenado en un unsigned int de 32 bits. 
+
+\index{OSK@{OSK}!USize32@{USize32}}
+\index{USize32@{USize32}!OSK@{OSK}}
+\doxysubsubsection{USize32}
+{\footnotesize\ttfamily \label{namespace_o_s_k_acf682b0e024acc36806435295480d2ed} 
+using \textbf{ OSK\+::\+USize32} = uint32\+\_\+t}
+
+
+
+Tamaño, almacenado en un unsigned int de 32 bits. 
+
+\index{OSK@{OSK}!USize64@{USize64}}
+\index{USize64@{USize64}!OSK@{OSK}}
+\doxysubsubsection{USize64}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a83ff197aaa32126d84ad65f1d6d5a3b5} 
+using \textbf{ OSK\+::\+USize64} = uint64\+\_\+t}
+
+
+
+Tamaño, almacenado en un unsigned int de 64 bits. 
+
+\index{OSK@{OSK}!Vector2d@{Vector2d}}
+\index{Vector2d@{Vector2d}!OSK@{OSK}}
+\doxysubsubsection{Vector2d}
+{\footnotesize\ttfamily \label{namespace_o_s_k_ac0a2333f80b0cc4a81aa80670939dcfb} 
+using \textbf{ OSK\+::\+Vector2d} = \textbf{ Vector2\+\_\+t}$<$double\+\_\+t$>$}
+
+
+
+Precisión = double. 
+
+\index{OSK@{OSK}!Vector2f@{Vector2f}}
+\index{Vector2f@{Vector2f}!OSK@{OSK}}
+\doxysubsubsection{Vector2f}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a31a299dbb3a3a60d90d16d1a4eca9651} 
+using \textbf{ OSK\+::\+Vector2f} = \textbf{ Vector2\+\_\+t}$<$float\+\_\+t$>$}
+
+
+
+Precisión = float. 
+
+\index{OSK@{OSK}!Vector2i@{Vector2i}}
+\index{Vector2i@{Vector2i}!OSK@{OSK}}
+\doxysubsubsection{Vector2i}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a87fa693452f97753b08b838de0e691ce} 
+using \textbf{ OSK\+::\+Vector2i} = \textbf{ Vector2\+\_\+t}$<$int32\+\_\+t$>$}
+
+
+
+Precisión = int32. 
+
+\index{OSK@{OSK}!Vector2ui@{Vector2ui}}
+\index{Vector2ui@{Vector2ui}!OSK@{OSK}}
+\doxysubsubsection{Vector2ui}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a6f5b4753cd85b4773d2880148fd031cf} 
+using \textbf{ OSK\+::\+Vector2ui} = \textbf{ Vector2\+\_\+t}$<$uint32\+\_\+t$>$}
+
+
+
+Precisión = uint32. 
+
+\index{OSK@{OSK}!Vector3d@{Vector3d}}
+\index{Vector3d@{Vector3d}!OSK@{OSK}}
+\doxysubsubsection{Vector3d}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a069eab393d5d49c351e70e415b51d686} 
+using \textbf{ OSK\+::\+Vector3d} = \textbf{ Vector3\+\_\+t}$<$double\+\_\+t$>$}
+
+
+
+Precisión = double. 
+
+\index{OSK@{OSK}!Vector3f@{Vector3f}}
+\index{Vector3f@{Vector3f}!OSK@{OSK}}
+\doxysubsubsection{Vector3f}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a72b3268907c9cd41f0daf0a42e1c9dca} 
+using \textbf{ OSK\+::\+Vector3f} = \textbf{ Vector3\+\_\+t}$<$float\+\_\+t$>$}
+
+
+
+Precisión = float. 
+
+\index{OSK@{OSK}!Vector3i@{Vector3i}}
+\index{Vector3i@{Vector3i}!OSK@{OSK}}
+\doxysubsubsection{Vector3i}
+{\footnotesize\ttfamily \label{namespace_o_s_k_ab1c2351e07d002972c29d7eee6a2bf1b} 
+using \textbf{ OSK\+::\+Vector3i} = \textbf{ Vector3\+\_\+t}$<$int32\+\_\+t$>$}
+
+
+
+Precisión = int. 
+
+\index{OSK@{OSK}!Vector3ui@{Vector3ui}}
+\index{Vector3ui@{Vector3ui}!OSK@{OSK}}
+\doxysubsubsection{Vector3ui}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a322fa8cc7a5b01f5178546195aca9f26} 
+using \textbf{ OSK\+::\+Vector3ui} = \textbf{ Vector3\+\_\+t}$<$uint32\+\_\+t$>$}
+
+
+
+Precisión = unsigned int. 
+
+\index{OSK@{OSK}!Vector4@{Vector4}}
+\index{Vector4@{Vector4}!OSK@{OSK}}
+\doxysubsubsection{Vector4}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} 
+typedef \textbf{ Vector4\+\_\+t}$<$float\+\_\+t$>$ \textbf{ OSK\+::\+Vector4}}
+
+
+
+Precisión = float. 
+
+\index{OSK@{OSK}!Vector4d@{Vector4d}}
+\index{Vector4d@{Vector4d}!OSK@{OSK}}
+\doxysubsubsection{Vector4d}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a981145547bf46772b84e01915910c9f1} 
+typedef \textbf{ Vector4\+\_\+t}$<$double\+\_\+t$>$ \textbf{ OSK\+::\+Vector4d}}
+
+
+
+Precisión = double. 
+
+\index{OSK@{OSK}!Vector4f@{Vector4f}}
+\index{Vector4f@{Vector4f}!OSK@{OSK}}
+\doxysubsubsection{Vector4f}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a98c42bf0a7665f299a3a66c8d4cdcdc2} 
+typedef \textbf{ Vector4\+\_\+t}$<$float\+\_\+t$>$ \textbf{ OSK\+::\+Vector4f}}
+
+
+
+Precisión = float. 
+
+\index{OSK@{OSK}!Vector4i@{Vector4i}}
+\index{Vector4i@{Vector4i}!OSK@{OSK}}
+\doxysubsubsection{Vector4i}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a42dabbf4f34b56544b7d1f1df8996c2c} 
+typedef \textbf{ Vector4\+\_\+t}$<$int32\+\_\+t$>$ \textbf{ OSK\+::\+Vector4i}}
+
+
+
+Precisión = int32. 
+
+\index{OSK@{OSK}!Vector4ui@{Vector4ui}}
+\index{Vector4ui@{Vector4ui}!OSK@{OSK}}
+\doxysubsubsection{Vector4ui}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a388745491b9a70d4760a7b979ef3fe19} 
+typedef \textbf{ Vector4\+\_\+t}$<$uint32\+\_\+t$>$ \textbf{ OSK\+::\+Vector4ui}}
+
+
+
+Precisión = uint32. 
+
+
+
+\label{doc-enum-members}
+\doxysubsection{Documentación de enumeraciones}
+\index{OSK@{OSK}!GrowthFactorType@{GrowthFactorType}}
+\index{GrowthFactorType@{GrowthFactorType}!OSK@{OSK}}
+\doxysubsubsection{GrowthFactorType}
+{\footnotesize\ttfamily \label{namespace_o_s_k_abaa28774128d414c059ee31f2759d274} 
+enum class \textbf{ OSK\+::\+Growth\+Factor\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Comportamiento del array cuando no hay espacio\+: -\/EXPONENTIAL\+: se amplia de manera exponencial (Capacity $\ast$ Factor). -\/LINEAL\+: se amplia de manera lineal (Capacity + Factor). 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXPONENTIAL@{EXPONENTIAL}!OSK@{OSK}}\index{OSK@{OSK}!EXPONENTIAL@{EXPONENTIAL}}}\label{namespace_o_s_k_abaa28774128d414c059ee31f2759d274adcd5fc33e211f31cef0cd7cb36518d31} 
+EXPONENTIAL&Se amplia de manera exponencial (Capacity $\ast$ Factor). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LINEAL@{LINEAL}!OSK@{OSK}}\index{OSK@{OSK}!LINEAL@{LINEAL}}}\label{namespace_o_s_k_abaa28774128d414c059ee31f2759d274a9b9ff7f1774e06092c715225f3c8a59e} 
+LINEAL&Se amplia de manera lineal (Capacity + Factor). \\
+\hline
+
+\end{DoxyEnumFields}
+\index{OSK@{OSK}!IUUID@{IUUID}}
+\index{IUUID@{IUUID}!OSK@{OSK}}
+\doxysubsubsection{IUUID}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a0287ef455fdcae91ac6c147bf0d4b7b5} 
+enum class \textbf{ OSK\+::\+IUUID} \+: \textbf{ TInterface\+Uuid}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Identificador único para una interfaz. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IGamepadInput@{IGamepadInput}!OSK@{OSK}}\index{OSK@{OSK}!IGamepadInput@{IGamepadInput}}}\label{namespace_o_s_k_a0287ef455fdcae91ac6c147bf0d4b7b5afb2484f39d9382ef3653d83720e30ca3} 
+IGamepad\+Input&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IKeyboardInput@{IKeyboardInput}!OSK@{OSK}}\index{OSK@{OSK}!IKeyboardInput@{IKeyboardInput}}}\label{namespace_o_s_k_a0287ef455fdcae91ac6c147bf0d4b7b5afa1b6f895a7dcf321fcbbc85207eee58} 
+IKeyboard\+Input&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IMouseInput@{IMouseInput}!OSK@{OSK}}\index{OSK@{OSK}!IMouseInput@{IMouseInput}}}\label{namespace_o_s_k_a0287ef455fdcae91ac6c147bf0d4b7b5a3b1efa14e99a4a5e24d8b1e386aa7994} 
+IMouse\+Input&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IFullscreenableDisplay@{IFullscreenableDisplay}!OSK@{OSK}}\index{OSK@{OSK}!IFullscreenableDisplay@{IFullscreenableDisplay}}}\label{namespace_o_s_k_a0287ef455fdcae91ac6c147bf0d4b7b5aecda737c019bd2db19e2493667819307} 
+IFullscreenable\+Display&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITouchInput@{ITouchInput}!OSK@{OSK}}\index{OSK@{OSK}!ITouchInput@{ITouchInput}}}\label{namespace_o_s_k_a0287ef455fdcae91ac6c147bf0d4b7b5a8a48886985031d0c7055c44b63e1af11} 
+ITouch\+Input&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones}
+\index{OSK@{OSK}!MakeUnique@{MakeUnique}}
+\index{MakeUnique@{MakeUnique}!OSK@{OSK}}
+\doxysubsubsection{MakeUnique()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a9eb9f9297be2a8044dda7480321e6661} 
+template$<$typename T, typename... TArgs$>$ \\
+\textbf{ Unique\+Ptr}$<$ T $>$ OSK\+::\+Make\+Unique (\begin{DoxyParamCaption}\item[{TArgs \&\&...}]{args}{}\end{DoxyParamCaption})}
+
+\index{OSK@{OSK}!Tokenize@{Tokenize}}
+\index{Tokenize@{Tokenize}!OSK@{OSK}}
+\doxysubsubsection{Tokenize()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a82a1d748670add36cb14ffc4005db327} 
+\textbf{ OSK\+::\+Dynamic\+Array}$<$ std\+::string $>$ OSK\+::\+Tokenize (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{string}{, }\item[{char}]{delimiter}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em string} & \\
+\hline
+{\em delimiter} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\index{OSK@{OSK}!ToString@{ToString}}
+\index{ToString@{ToString}!OSK@{OSK}}
+\doxysubsubsection{ToString()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a0e02ca313c1894ead83ab76001063684} 
+template$<$typename T$>$ \\
+std\+::string OSK\+::\+To\+String (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})}
+
+\index{OSK@{OSK}!ToString$<$ Vector3f $>$@{ToString$<$ Vector3f $>$}}
+\index{ToString$<$ Vector3f $>$@{ToString$<$ Vector3f $>$}!OSK@{OSK}}
+\doxysubsubsection{ToString$<$ Vector3f $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_a0dca3cd726dfffc28cbd9c0538cdfe16} 
+template$<$$>$ \\
+std\+::string \textbf{ OSK\+::\+To\+String}$<$ \textbf{ Vector3f} $>$ (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

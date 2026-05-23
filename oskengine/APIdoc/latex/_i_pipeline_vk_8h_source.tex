@@ -1,0 +1,63 @@
+\doxysection{IPipeline\+Vk.\+h}
+\label{_i_pipeline_vk_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IPipelineVk.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IPipelineVk.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vulkan/vulkan.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}VertexInfo.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}PipelineCreateInfo.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{enum\ class}\ ShaderStage;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }GpuVk;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{struct\ }ShaderStageVk\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ VkShaderModule\ shaderModule\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ VkPipelineShaderStageCreateInfo\ shaderCreateInfo\{\};}
+\DoxyCodeLine{00018\ \ \ \ \ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IPipelineVk\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IPipelineVk();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ VkPipeline\ GetPipeline()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ protected:}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ VkShaderModule\ CreateShaderModule(}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ std::span<const\ char>\ code,\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ name,\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ VkDevice\ logicalDevice);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ VkVertexInputBindingDescription\ GetBindingDescription(\textcolor{keyword}{const}\ VertexInfo\&\ info)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ VkFormat\ GetVertexAttribFormat(\textcolor{keyword}{const}\ VertexInfo::Entry\&\ entry)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ DynamicArray<VkVertexInputAttributeDescription>\ GetAttributeDescription(\textcolor{keyword}{const}\ VertexInfo\&\ info)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ VkPipelineColorBlendAttachmentState\ GetColorBlendInfo(\textcolor{keyword}{const}\ PipelineCreateInfo\&\ info)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ VkPolygonMode\ GetPolygonMode(PolygonMode\ mode)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ VkCullModeFlagBits\ GetCullMode(PolygonCullMode\ mode)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ VkFrontFace\ GetFrontFaceMode(PolygonFrontFaceType\ type)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ VkShaderStageFlagBits\ GetShaderStageVk(ShaderStage\ stage)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ VkPipelineRasterizationStateCreateInfo\ GetResterizerInfo(\textcolor{keyword}{const}\ PipelineCreateInfo\&\ info)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ VkPipelineDepthStencilStateCreateInfo\ GetDepthInfo(\textcolor{keyword}{const}\ PipelineCreateInfo\&\ info)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ VkPipelineMultisampleStateCreateInfo\ GetMsaaInfo(\textcolor{keyword}{const}\ PipelineCreateInfo\&\ info,\ \textcolor{keyword}{const}\ GpuVk\&\ gpu)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ VkPipelineTessellationStateCreateInfo\ GetTesselationInfo(\textcolor{keyword}{const}\ PipelineCreateInfo\&\ info)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ ShaderStageVk\ LoadShader(\textcolor{keyword}{const}\ std::string\&\ path,\ ShaderStage\ stage);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ DynamicArray<VkPipelineShaderStageCreateInfo>\ shaderStagesInfo;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ DynamicArray<VkShaderModule>\ shaderModulesToDelete;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ VkPipeline\ pipeline\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}

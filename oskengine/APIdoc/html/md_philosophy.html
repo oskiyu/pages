@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>OSKengine: Design philosophy &amp; implementation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('md_philosophy.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('md_philosophy.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,48 +78,56 @@ $(document).ready(function(){initNavTree('md_philosophy.html',''); initResizable
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div><div class="header">
   <div class="headertitle"><div class="title">Design philosophy &amp; implementation </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><b>OSKengine</b> is being developed following the core ideas of <b>customization</b> and <b>extensibility</b>.</p>
-<p >Its design allows the game developers to easily modify the engine by adding new gameplay systems, render systems, asset types and loaders without actually changing the engine's code.</p>
-<p >In fact, its modular design allows the developers to disable whole systems they may not use, and they may even bypass core elements of the engine such as the ECS functionality.</p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md279"></a></p>
+<p><b>OSKengine</b> is being developed following the core ideas of <b>customization</b> and <b>extensibility</b>.</p>
+<p>Its design allows the game developers to easily modify the engine by adding new gameplay systems, render systems, asset types and loaders without actually changing the engine's code.</p>
+<p>In fact, its modular design allows the developers to disable whole systems they may not use, and they may even bypass core elements of the engine such as the ECS functionality.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md280"></a>
 ECS architecture</h1>
-<p >The ECS system is the core of the engine. With this architecture, game functionality is divided into:</p><ul>
+<p>The ECS system is the core of the engine. With this architecture, game functionality is divided into:</p><ul>
 <li><b>Entities</b> (known as <em>game objects</em> in <b>OSKengine</b>) represent gameplay actors, such as players, NPCs, enemies or unanimated objects. Entities themselves have no data or functionality and consist of an unique identifier. Each entity can have components attached to it.</li>
-<li><b>Components</b> represent a structure with data. The data contained within a component contains information that is used together. For example, the <code>Transform3D</code> component contains an object's position, rotation and scale; while the component <code>Model3D</code> contains relevant data used to render a 3D object. Components themselves have no functionality and act as mere data holders.</li>
+<li><b>Components</b> represent a structure with data. The data contained within a component contains information that is used together. For example, the <span class="tt">Transform3D</span> component contains an object's position, rotation and scale; while the component <span class="tt">Model3D</span> contains relevant data used to render a 3D object. Components themselves have no functionality and act as mere data holders.</li>
 <li><b>Systems</b> implement functionality. There are different systems, each one implementing a certain functionality. For example, a <em>render system</em> will handle 3D rendering, while a <em>collision system</em> will handle collisions between entities. In order to execute the functionality, each system will iterate through all relevant entities (which contain all components needed to implement the functionality), grab all the necessary components and execute the functionality.</li>
 </ul>
-<p >The ECS system provides a great amount of customization and extensibility, as developers can develop their own components and systems and add them to the engine without changing the engine source code, and the engine will correctly manage them.</p>
-<p ><b>OSKengine</b> has a series of built-in components and systems, including:</p><ul>
+<p>The ECS system provides a great amount of customization and extensibility, as developers can develop their own components and systems and add them to the engine without changing the engine source code, and the engine will correctly manage them.</p>
+<p><b>OSKengine</b> has a series of built-in components and systems, including:</p><ul>
 <li>Rendering components and systems.</li>
 <li>3D animation system.</li>
 <li>Hierarchical transform components (representing location, rotation and scale).</li>
 <li>Input system.</li>
 <li>Collision &amp; physics systems (<em>work in progress</em>).</li>
 </ul>
-<p >Developers can disable any of these systems if they want.</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<p>Developers can disable any of these systems if they want.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md281"></a>
 Rendering</h1>
-<p >The renderer is designed to allow a lower-level access to the GPU while still offering an abstraction layer over graphics APIs like <em>DirectX</em> or <em>Vulkan</em>. To accomplish this, a fine abstraction layer is developed over native API elements, such as:</p><ul>
+<p>The renderer is designed to allow a lower-level access to the GPU while still offering an abstraction layer over graphics APIs like <em>DirectX</em> or <em>Vulkan</em>. To accomplish this, a fine abstraction layer is developed over native API elements, such as:</p><ul>
 <li>Images.</li>
 <li>Buffers (including vertex buffers, index buffers, uniform buffers, etc...).</li>
 <li>Command lists.</li>
 </ul>
-<p >In the case of pipelines, a higher-level abstraction layer is offered: the <b>material system</b>.</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<p>In the case of pipelines, a higher-level abstraction layer is offered: the <b>material system</b>.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md282"></a>
 Material System</h2>
-<p >The material system encapsules both the pipeline objects used for rendering and compute, as well as all the data necessary to perform those actions. The following classes were developed:</p>
-<h4><a class="anchor" id="autotoc_md12"></a>
+<p>The material system encapsules both the pipeline objects used for rendering and compute, as well as all the data necessary to perform those actions. The following classes were developed:</p>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md283"></a>
 Material</h4>
-<p >Represents a <em>material schema</em>, which defines:</p><ul>
+<p>Represents a <em>material schema</em>, which defines:</p><ul>
 <li>The specific shaders used, which can be:<ul>
 <li><em>Vertex</em>, <em>fragment</em> and/or <em>tessellation shaders</em>, in the case of a <b>graphics material</b>.</li>
 <li><em>Compute shaders</em>, in the case of a <b>compute material</b>.</li>
@@ -129,38 +136,46 @@ Material</h4>
 </li>
 <li>A schema for input/output resources (such as buffers or images) in the form of a <em>material slot layout</em>.</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md13"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md284"></a>
 Material Slot</h4>
-<p >A material slot (similar to a <em>descriptor set</em> in <em>Vulkan</em>) is used to group input resources instances that are used together. It works as a dictionary, mapping the name of a binding to its resource.</p>
-<h4><a class="anchor" id="autotoc_md14"></a>
+<p>A material slot (similar to a <em>descriptor set</em> in <em>Vulkan</em>) is used to group input resources instances that are used together. It works as a dictionary, mapping the name of a binding to its resource.</p>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md285"></a>
 Material Binding</h4>
-<p >A specific input resource, which can be:</p><ul>
+<p>A specific input resource, which can be:</p><ul>
 <li>Uniform (read-only) buffers.</li>
 <li>Storage (read-write) buffers.</li>
 <li>Samplers: read-only images.</li>
 <li>Storage images: read-write images. Its name will be the one this specific binding is given within the shader.</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md15"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md286"></a>
 Material Instance</h4>
-<p >Created from a specific <em>material</em>. Contains:</p><ul>
+<p>Created from a specific <em>material</em>. Contains:</p><ul>
 <li>The native pipeline that groups shaders being used.</li>
 <li>A map of initialized material slots.</li>
 </ul>
-<p >A material is defined in a <code>JSON</code> file. This file includes:</p><ul>
+<p>A material is defined in a <span class="tt">JSON</span> file. This file includes:</p><ul>
 <li>Path(s) to precompiled shaders used by this material.</li>
 <li>Names set to specific slots for easier use (otherwise their names will be their descriptor set index).</li>
 </ul>
-<p >When loading a material, it will automatically create its layout according to the shaders used, so there is no need to manually declare all slots and bindings in C++ code.</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<p>When loading a material, it will automatically create its layout according to the shaders used, so there is no need to manually declare all slots and bindings in C++ code.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md287"></a>
 High-level abstraction</h2>
-<p ><b>OSKengine</b>'s render systems are implemented within the ECS system, using the previously mentioned abstraction layer. </p>
+<p><b>OSKengine</b>'s render systems are implemented within the ECS system, using the previously mentioned abstraction layer. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

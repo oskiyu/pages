@@ -1,0 +1,94 @@
+\doxysection{Referencia del espacio de nombres OSK\+::AUDIO}
+\label{namespace_o_s_k_1_1_a_u_d_i_o}\index{OSK::AUDIO@{OSK::AUDIO}}
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Audio\+Api\+Al}
+\item 
+class \textbf{ Audio\+Device\+Al}
+\item 
+class \textbf{ Audio\+Source\+Al}
+\item 
+class \textbf{ Buffer}
+\item 
+class \textbf{ IAudio\+Api}
+\item 
+class \textbf{ IAudio\+Device}
+\item 
+class \textbf{ IAudio\+Source}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum class \textbf{ Format} \{ \textbf{ MONO8}
+, \textbf{ MONO16}
+, \textbf{ STEREO8}
+, \textbf{ STEREO16}
+ \}
+\item 
+enum class \textbf{ Audio\+State} \{ \textbf{ PLAYING}
+, \textbf{ PAUSED}
+, \textbf{ STOPPED}
+, \textbf{ UNKNOWN}
+ \}
+\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\doxysubsection{Documentación de enumeraciones}
+\index{OSK::AUDIO@{OSK::AUDIO}!AudioState@{AudioState}}
+\index{AudioState@{AudioState}!OSK::AUDIO@{OSK::AUDIO}}
+\doxysubsubsection{AudioState}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_a_u_d_i_o_addc6f8d4c0f711311adac345c3d99780} 
+enum class \textbf{ OSK\+::\+AUDIO\+::\+Audio\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Estado en el que puede estar una fuente de audio. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAYING@{PLAYING}!OSK::AUDIO@{OSK::AUDIO}}\index{OSK::AUDIO@{OSK::AUDIO}!PLAYING@{PLAYING}}}\label{namespace_o_s_k_1_1_a_u_d_i_o_addc6f8d4c0f711311adac345c3d99780a50366a49630a416ab3ccaa004196027e} 
+PLAYING&El audio se está reproduciendo. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAUSED@{PAUSED}!OSK::AUDIO@{OSK::AUDIO}}\index{OSK::AUDIO@{OSK::AUDIO}!PAUSED@{PAUSED}}}\label{namespace_o_s_k_1_1_a_u_d_i_o_addc6f8d4c0f711311adac345c3d99780a99b2439e63f73ad515f7ab2447a80673} 
+PAUSED&El audio está pausado. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOPPED@{STOPPED}!OSK::AUDIO@{OSK::AUDIO}}\index{OSK::AUDIO@{OSK::AUDIO}!STOPPED@{STOPPED}}}\label{namespace_o_s_k_1_1_a_u_d_i_o_addc6f8d4c0f711311adac345c3d99780a09d4d696b4e935115b9313e3c412509a} 
+STOPPED&El audio está parado (en su posición inicial). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNKNOWN@{UNKNOWN}!OSK::AUDIO@{OSK::AUDIO}}\index{OSK::AUDIO@{OSK::AUDIO}!UNKNOWN@{UNKNOWN}}}\label{namespace_o_s_k_1_1_a_u_d_i_o_addc6f8d4c0f711311adac345c3d99780a696b031073e74bf2cb98e5ef201d4aa3} 
+UNKNOWN&\\
+\hline
+
+\end{DoxyEnumFields}
+\index{OSK::AUDIO@{OSK::AUDIO}!Format@{Format}}
+\index{Format@{Format}!OSK::AUDIO@{OSK::AUDIO}}
+\doxysubsubsection{Format}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_a_u_d_i_o_a9b7d1161590a1c1696d33442daa725be} 
+enum class \textbf{ OSK\+::\+AUDIO\+::\+Format}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Formato de un audio. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONO8@{MONO8}!OSK::AUDIO@{OSK::AUDIO}}\index{OSK::AUDIO@{OSK::AUDIO}!MONO8@{MONO8}}}\label{namespace_o_s_k_1_1_a_u_d_i_o_a9b7d1161590a1c1696d33442daa725bea6bb6d6a0741f2a5afd00611ed1ef5f8b} 
+MONO8&Audio de un solo canal con 8 bits por sample. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONO16@{MONO16}!OSK::AUDIO@{OSK::AUDIO}}\index{OSK::AUDIO@{OSK::AUDIO}!MONO16@{MONO16}}}\label{namespace_o_s_k_1_1_a_u_d_i_o_a9b7d1161590a1c1696d33442daa725bea59e5ab3f0c1c59504cf28fc887787eab} 
+MONO16&Audio de un solo canal con 16 bits por sample. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STEREO8@{STEREO8}!OSK::AUDIO@{OSK::AUDIO}}\index{OSK::AUDIO@{OSK::AUDIO}!STEREO8@{STEREO8}}}\label{namespace_o_s_k_1_1_a_u_d_i_o_a9b7d1161590a1c1696d33442daa725beae155ffb380a7c880b0f0365cdaa2d9c3} 
+STEREO8&Audio de dos canales con 8 bits por sample. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STEREO16@{STEREO16}!OSK::AUDIO@{OSK::AUDIO}}\index{OSK::AUDIO@{OSK::AUDIO}!STEREO16@{STEREO16}}}\label{namespace_o_s_k_1_1_a_u_d_i_o_a9b7d1161590a1c1696d33442daa725bead5190b906ac55686db8812dad0ec42d7} 
+STEREO16&Audio de dos canales con 16 bits por sample. \\
+\hline
+
+\end{DoxyEnumFields}

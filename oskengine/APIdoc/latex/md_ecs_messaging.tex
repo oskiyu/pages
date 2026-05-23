@@ -1,0 +1,77 @@
+\doxysection{Introduction}\label{md_ecs_messaging_autotoc_md1}
+ECS has proven to be an elegant way of decoupling data and functionality in an extensible way. In our current ECS implementation, system are entirely independent from each other. However, there will be occassions in which a channel of communication between systems needs to exist (for example, a physics systems will need to react to collisions previously detected by the collision system).\doxysection{Previous concepts}\label{md_ecs_messaging_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\bfseries{Component(s) dependency}}\+: the minimum set of components an entity must possess in order for it to be compatible with a given system. May represent an empty set.
+\item {\bfseries{Explicit component(s) dependency}}\+: a component(s) dependency expressed as a component signature, wich contains the components identifiers of all neceessary components.
+\end{DoxyItemize}\doxysection{Design}\label{md_ecs_messaging_autotoc_md4}
+To implement such functionality when needed, an event handling system must be implemented. This introduces the folllowing concepts\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Event}}\+: something that happens that is relevant to one or many systems.
+\item {\bfseries{Message}}\+: data structure that represents an event. Includes\+:
+\begin{DoxyItemize}
+\item Entity ID.
+\item Event data.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Under these concepts, we need to allow systems to send messages to other systems. To implement this functionality, ECS systems get divided into three categories\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Pure system}}\+: an independent system, with no input nor output messaging channels. Equivalent to currently implemented systems.
+\item {\bfseries{Producer system}}\+: a system with one or more open output messaging channels.
+\item {\bfseries{Consumer system}}\+: a system with one single open input messaging channels.
+\end{DoxyItemize}
+
+These system can also be divided into two different categories, depending on how they select the entities to aplly functionality\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Iterator systems}}\+: systems that implement functionality by iterating one or more times through all compatible entities. This includes both {\itshape pure} and {\itshape producer} systems.
+\item {\bfseries{Picky systems}}\+: system that implementing functionality by picking certain entities from all compatible ones. Basically, {\itshape consumer} systems.
+\end{DoxyItemize}
+
+This second division is the most important one, as it heavily affects system implementation.\doxysection{Implementation details}\label{md_ecs_messaging_autotoc_md5}
+In order to implement this messaging system we will follow an architecture that resembles the current ECS architecture. To do so, an {\bfseries{Message\+Container}} templated class is instantiated for each event type. Each of these containers will contain a queue of messages.
+
+Each {\itshape consumer} system will \char`\"{}subscribe\char`\"{} to one of these containers (though a container may be subscribed by many different consumers). Each frame, the consumer will iterate through the message queue, grab the corresponding entitites, and act accordingly.
+
+Each event type will have an explicit components dependency. Every message of that type generated must refer to an entity that is compatible with the event dependency.
+
+Consumer systems have an implicit component dependency, that is inherited from its subscribed event type. Therefore, all entities picked from the message queue are compatible with the consumer system.
+
+In order for this new architecture to work properly, a time dependency is added between producer and consumer systems\+: producer systems will all execute first, and consumer systems will only start execution after the last producer system has finished execution. This way, all consumer systems will have access to all relevant messages produced during the current frame. \doxysection{Summary}\label{md_ecs_messaging_autotoc_md6}
+\doxysubsection{New \& revised concepts}\label{md_ecs_messaging_autotoc_md7}
+
+\begin{DoxyItemize}
+\item {\bfseries{Event}}\+: something that happens that is relevant to one or more systems. May be generated outside of the ECS framework. Each event has an explicit components dependency.
+\item {\bfseries{Event type}}\+: represents an archtype of an event.
+\item {\bfseries{Message}}\+: data structure that represents an instance of an event. Contains\+:
+\begin{DoxyItemize}
+\item {\bfseries{Entity list}}\+: list of entities affected by the event. All affected entities must be compatible with the event\textquotesingle{}s components dependency.
+\item {\bfseries{Event data}}\+: data structure with relevant data that may be needed by the consumer systems.
+\end{DoxyItemize}
+\item {\bfseries{Components dependency}}\+: the minimum set of components an entity must possess in order for it to be compatible with a given system {\itshape {\bfseries{or event type}}}.
+\item {\bfseries{Implicit components dependency}}\+: a {\itshape components dependency} not explicitly expressed, but instead inherited in some way.
+\item {\bfseries{Pure system}}\+: an independent system, with no input nor output messaging channels.
+\item {\bfseries{Producer system}}\+: a system with one or more output messaging channels.
+\item {\bfseries{Consumer system}}\+: a system with one single input messaging channel.
+\item {\bfseries{Iterator systems}}\+: systems that implement functionality by iterating one or more times through all compatible entities. This includes both {\itshape pure} and {\itshape producer} systems.
+\item {\bfseries{Picky systems}}\+: system that implementing functionality by picking certain entities from all compatible ones. Basically, {\itshape consumer} systems.
+\item {\bfseries{Subscription}}\+: relationship {\ttfamily (1 to 0\+:n)} between an event type and a consumer system, in which the consumer has access to all messages of the subscribed event type. Indirectly creates a {\ttfamily (0\+:n to 0\+:n)} relationship between producer an consumer systems.
+\item {\bfseries{Message queue}}\+: data structure with a set of messages corresponding to a given event type. FIFO.
+\item {\bfseries{Messaging channel}}\+: unidirectional channel of communication that sends messages of a given type, going from producer systems to consumer systems.
+\begin{DoxyItemize}
+\item {\bfseries{Input messaging channel}}\+: for a given consumer system, its linked messaging channel.
+\item {\bfseries{Output messaging channel}}\+: for a given producer system, one of its linked messaging channels.
+\end{DoxyItemize}
+\item {\bfseries{Message publishing}}\+: action of creating a new instance of a message (for a given event type) and sending it through all compatible messaging channels. Must only be used by {\itshape producer systems}.
+\end{DoxyItemize}\doxysubsection{New classes}\label{md_ecs_messaging_autotoc_md8}
+
+\begin{DoxyItemize}
+\item {\bfseries{IMessage\+Container}}\+: common interface for all message containers.
+\item {\bfseries{Message\+Container}}\+: templated class that contains the message queue for a given event type. 
+\end{DoxyItemize}

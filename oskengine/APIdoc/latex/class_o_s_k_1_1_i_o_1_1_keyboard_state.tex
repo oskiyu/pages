@@ -1,0 +1,100 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::Keyboard\+State}
+\label{class_o_s_k_1_1_i_o_1_1_keyboard_state}\index{OSK::IO::KeyboardState@{OSK::IO::KeyboardState}}
+
+
+{\ttfamily \#include $<$Keyboard\+State.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Keyboard\+State} ()
+\item 
+\textbf{ Key\+State} \textbf{ Get\+Key\+State} (\textbf{ Key} key) const
+\item 
+bool \textbf{ Is\+Key\+Down} (\textbf{ Key} key) const
+\item 
+bool \textbf{ Is\+Key\+Up} (\textbf{ Key} key) const
+\item 
+void \textbf{ \+\_\+\+Set\+Key\+State} (\textbf{ Key} key, \textbf{ Key\+State} state)
+\item 
+void \textbf{ operator=} (const \textbf{ Keyboard\+State} \&other)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa el estado del teclado en un instante determinado. Contiene el estado (presionado o suelto) de las teclas. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IO::KeyboardState@{OSK::IO::KeyboardState}!KeyboardState@{KeyboardState}}
+\index{KeyboardState@{KeyboardState}!OSK::IO::KeyboardState@{OSK::IO::KeyboardState}}
+\doxysubsubsection{KeyboardState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_keyboard_state_a408807475b344a15e75e56757d7715d7} 
+Keyboard\+State\+::\+Keyboard\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::KeyboardState@{OSK::IO::KeyboardState}!\_SetKeyState@{\_SetKeyState}}
+\index{\_SetKeyState@{\_SetKeyState}!OSK::IO::KeyboardState@{OSK::IO::KeyboardState}}
+\doxysubsubsection{\_SetKeyState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_keyboard_state_aa9050a71661db1622ca20abf45130982} 
+void Keyboard\+State\+::\+\_\+\+Set\+Key\+State (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{, }\item[{\textbf{ Key\+State}}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Establece el valor que va a tener la tecla, esté presionada o no. 
+
+\begin{DoxyWarning}{Atención}
+Función interna\+: para llamarse desde la ventana. 
+\end{DoxyWarning}
+\index{OSK::IO::KeyboardState@{OSK::IO::KeyboardState}!GetKeyState@{GetKeyState}}
+\index{GetKeyState@{GetKeyState}!OSK::IO::KeyboardState@{OSK::IO::KeyboardState}}
+\doxysubsubsection{GetKeyState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_keyboard_state_a34fa2bf30b1532db4066b72fa2b8f7cd} 
+\textbf{ Key\+State} Keyboard\+State\+::\+Get\+Key\+State (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna el estado de una tecla dada. 
+
+\begin{DoxyReturn}{Devuelve}
+RELEASED o PRESSED.
+\end{DoxyReturn}
+\index{OSK::IO::KeyboardState@{OSK::IO::KeyboardState}!IsKeyDown@{IsKeyDown}}
+\index{IsKeyDown@{IsKeyDown}!OSK::IO::KeyboardState@{OSK::IO::KeyboardState}}
+\doxysubsubsection{IsKeyDown()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_keyboard_state_a7b0105eda9c1f9c4f0182781a0cb0506} 
+bool Keyboard\+State\+::\+Is\+Key\+Down (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption}) const}
+
+
+
+Comprueba si una tecla está siendo pulsada. 
+
+\begin{DoxyReturn}{Devuelve}
+\textquotesingle{}true\textquotesingle{} = PRESSED. \textquotesingle{}false\textquotesingle{} = RELEASED.
+\end{DoxyReturn}
+\index{OSK::IO::KeyboardState@{OSK::IO::KeyboardState}!IsKeyUp@{IsKeyUp}}
+\index{IsKeyUp@{IsKeyUp}!OSK::IO::KeyboardState@{OSK::IO::KeyboardState}}
+\doxysubsubsection{IsKeyUp()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_keyboard_state_a13ac7fab7db9af7320e82a60bef49354} 
+bool Keyboard\+State\+::\+Is\+Key\+Up (\begin{DoxyParamCaption}\item[{\textbf{ Key}}]{key}{}\end{DoxyParamCaption}) const}
+
+
+
+Comprueba si una tecla no está siendo pulsada. 
+
+\begin{DoxyReturn}{Devuelve}
+\textquotesingle{}true\textquotesingle{} = RELEASED. \textquotesingle{}false\textquotesingle{} = PRESSED.
+\end{DoxyReturn}
+\index{OSK::IO::KeyboardState@{OSK::IO::KeyboardState}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::IO::KeyboardState@{OSK::IO::KeyboardState}}
+\doxysubsubsection{operator=()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_keyboard_state_af394cade4c71f70caab4b5700250718b} 
+void Keyboard\+State\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Keyboard\+State} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copia los estados del otro teclado a este. 
+

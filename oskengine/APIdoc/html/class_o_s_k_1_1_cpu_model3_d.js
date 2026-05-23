@@ -7,5 +7,6 @@ var class_o_s_k_1_1_cpu_model3_d =
     [ "GetAnimationSkins", "class_o_s_k_1_1_cpu_model3_d.html#a806c0cc99a6251d08c5d43a36f90e7ec", null ],
     [ "GetInitialTransform", "class_o_s_k_1_1_cpu_model3_d.html#aeb4439527505c8363074eb5069bb5930", null ],
     [ "GetMeshes", "class_o_s_k_1_1_cpu_model3_d.html#a58bf6740b41c3721e52393dea1e61531", null ],
+    [ "GetTotalVertexCount", "class_o_s_k_1_1_cpu_model3_d.html#a9eea884937cc5a6c9807997b3ddda105", null ],
     [ "SetInitialTransform", "class_o_s_k_1_1_cpu_model3_d.html#aa792ace5f0a1a1b98c322ec00d42affc", null ]
 ];

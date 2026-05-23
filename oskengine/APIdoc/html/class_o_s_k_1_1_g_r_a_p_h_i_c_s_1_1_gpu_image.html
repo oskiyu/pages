@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Referencia de la Clase OSK::GRAPHICS::GpuImage</title>
+<title>OSKengine: Referencia de la clase OSK::GRAPHICS::GpuImage</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html','','class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,125 +78,87 @@ $(document).ready(function(){initNavTree('class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gp
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-types">Tipos públicos</a> &#124;
-<a href="#pub-methods">Métodos públicos</a> &#124;
-<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
-<a href="#pro-methods">Métodos protegidos</a> &#124;
-<a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image-members.html">Lista de todos los miembros</a>  </div>
-  <div class="headertitle"><div class="title">Referencia de la Clase OSK::GRAPHICS::GpuImage<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">Referencia de la clase OSK::GRAPHICS::GpuImage<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_i_gpu_image_8h_source.html">IGpuImage.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Tipos públicos</h2></td></tr>
-<tr class="memitem:a3ba7ae34f0300d29e55316008bb2e8a6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a3ba7ae34f0300d29e55316008bb2e8a6">ArrayLevelIndex</a> = <a class="el" href="namespace_o_s_k.html#a43f31f9c290a00d031c7f9530ec350e1">UIndex32</a></td></tr>
-<tr class="separator:a3ba7ae34f0300d29e55316008bb2e8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8353e7a46a31b3c28ee049b8122893bb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a8353e7a46a31b3c28ee049b8122893bb">MipLevelIndex</a> = <a class="el" href="namespace_o_s_k.html#a43f31f9c290a00d031c7f9530ec350e1">UIndex32</a></td></tr>
-<tr class="separator:a8353e7a46a31b3c28ee049b8122893bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ba7ae34f0300d29e55316008bb2e8a6" id="r_a3ba7ae34f0300d29e55316008bb2e8a6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ba7ae34f0300d29e55316008bb2e8a6">ArrayLevelIndex</a> = <a class="el" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a></td></tr>
+<tr class="memitem:a8353e7a46a31b3c28ee049b8122893bb" id="r_a8353e7a46a31b3c28ee049b8122893bb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8353e7a46a31b3c28ee049b8122893bb">MipLevelIndex</a> = <a class="el" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
-<tr class="memitem:ab16bd72ad08c771a3cc118a707da3d05"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#ab16bd72ad08c771a3cc118a707da3d05">~GpuImage</a> () override</td></tr>
-<tr class="separator:ab16bd72ad08c771a3cc118a707da3d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19029af61d187fb611a0a816c10be9cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a19029af61d187fb611a0a816c10be9cf">OSK_DISABLE_COPY</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a>)</td></tr>
-<tr class="separator:a19029af61d187fb611a0a816c10be9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b63a991ed71aced4871b3c820b51b28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a9b63a991ed71aced4871b3c820b51b28">OSK_DEFAULT_MOVE_OPERATOR</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a>)</td></tr>
-<tr class="separator:a9b63a991ed71aced4871b3c820b51b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad4727fbb277a8df99db8c3c76b79a16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#aad4727fbb277a8df99db8c3c76b79a16">OSK_DEFINE_AS</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a>)</td></tr>
-<tr class="separator:aad4727fbb277a8df99db8c3c76b79a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bfdcd50355d8d342d60b7307b98f652"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a7bfdcd50355d8d342d60b7307b98f652">GetMemory</a> () const</td></tr>
-<tr class="separator:a7bfdcd50355d8d342d60b7307b98f652"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebe572df2d27e160c45d7ff352d57d47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#aebe572df2d27e160c45d7ff352d57d47">GetMemory</a> ()</td></tr>
-<tr class="separator:aebe572df2d27e160c45d7ff352d57d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cdc2606857e5e0a547bde0473c3dbd7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a4cdc2606857e5e0a547bde0473c3dbd7">GetBuffer</a> () const</td></tr>
-<tr class="separator:a4cdc2606857e5e0a547bde0473c3dbd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9425e73b15aa414e64acfee073b36739"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a9425e73b15aa414e64acfee073b36739">GetBuffer</a> ()</td></tr>
-<tr class="separator:a9425e73b15aa414e64acfee073b36739"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58ea4b1441818954122dcf570874a0fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a58ea4b1441818954122dcf570874a0fa">SetBlock</a> (<a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> &gt; &amp;&amp;buffer)</td></tr>
-<tr class="separator:a58ea4b1441818954122dcf570874a0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7693dce157e863e4a115302b1ab16ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a9aefa8f75d8dc4aa960e084f84362f3a">Vector3ui</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#aa7693dce157e863e4a115302b1ab16ce">GetSize3D</a> () const</td></tr>
-<tr class="separator:aa7693dce157e863e4a115302b1ab16ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a398791ff8776fa8bb3a589713d0cad49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a8a2dd07f1ac751a9b0baec4c534af48a">Vector2ui</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a398791ff8776fa8bb3a589713d0cad49">GetSize2D</a> () const</td></tr>
-<tr class="separator:a398791ff8776fa8bb3a589713d0cad49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06ed388f9c9e1bbb5cb4dd9132f3b89e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a06ed388f9c9e1bbb5cb4dd9132f3b89e">GetSize1D</a> () const</td></tr>
-<tr class="separator:a06ed388f9c9e1bbb5cb4dd9132f3b89e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad23f506b8bdde8faac2dac9d6a86f7e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#ad23f506b8bdde8faac2dac9d6a86f7e7">_SetPhysicalSize</a> (const <a class="el" href="namespace_o_s_k.html#a9aefa8f75d8dc4aa960e084f84362f3a">Vector3ui</a> &amp;size)</td></tr>
-<tr class="separator:ad23f506b8bdde8faac2dac9d6a86f7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a010e504f13e07ce86e1d82e344493860"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a9aefa8f75d8dc4aa960e084f84362f3a">Vector3ui</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a010e504f13e07ce86e1d82e344493860">GetPhysicalSize</a> () const</td></tr>
-<tr class="separator:a010e504f13e07ce86e1d82e344493860"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fbd0307d9e9147312004fecca6b73ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aac59f9d056e083c0b49ea768f974e3e8">Format</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a7fbd0307d9e9147312004fecca6b73ba">GetFormat</a> () const</td></tr>
-<tr class="separator:a7fbd0307d9e9147312004fecca6b73ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abce3e3ba3ec90fc147c6de62884e55ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ab91ccc08d13454cfeb3c4f78deb72d59">GpuImageDimension</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#abce3e3ba3ec90fc147c6de62884e55ab">GetDimension</a> () const</td></tr>
-<tr class="separator:abce3e3ba3ec90fc147c6de62884e55ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a339142f665e7289fafcd8e52cb03f9cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a19a2f70fc994c00eb022e520608c5ffa">GpuImageUsage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a339142f665e7289fafcd8e52cb03f9cb">GetUsage</a> () const</td></tr>
-<tr class="separator:a339142f665e7289fafcd8e52cb03f9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a702c7bef88e759bb87abe45620749350"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a702c7bef88e759bb87abe45620749350">GetNumLayers</a> () const</td></tr>
-<tr class="separator:a702c7bef88e759bb87abe45620749350"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7276e4f4cf69f8bae00f16005700871c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a8a2dd07f1ac751a9b0baec4c534af48a">Vector2ui</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a7276e4f4cf69f8bae00f16005700871c">GetMipLevelSize2D</a> (<a class="el" href="namespace_o_s_k.html#a43f31f9c290a00d031c7f9530ec350e1">UIndex32</a> mipLevel) const</td></tr>
-<tr class="separator:a7276e4f4cf69f8bae00f16005700871c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a217992f6d3fcb28043b60531004c5e92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc.html">GpuImageSamplerDesc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a217992f6d3fcb28043b60531004c5e92">GetImageSampler</a> () const</td></tr>
-<tr class="separator:a217992f6d3fcb28043b60531004c5e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0220799f28ec1c45c888926243867e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#aa0220799f28ec1c45c888926243867e9">GetMipLevels</a> () const</td></tr>
-<tr class="separator:aa0220799f28ec1c45c888926243867e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab031c2a09018645472e9ede6a5ec80a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#ab031c2a09018645472e9ede6a5ec80a5">GetNumberOfBytes</a> () const</td></tr>
-<tr class="separator:ab031c2a09018645472e9ede6a5ec80a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77f77a6e47e58fe073ea68575f15ce83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a77f77a6e47e58fe073ea68575f15ce83">GetPhysicalNumberOfBytes</a> () const</td></tr>
-<tr class="separator:a77f77a6e47e58fe073ea68575f15ce83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab204c850f3bec73e19dcf2d2de90f59f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#ab204c850f3bec73e19dcf2d2de90f59f">GetMsaaSampleCount</a> () const</td></tr>
-<tr class="separator:ab204c850f3bec73e19dcf2d2de90f59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa92d9b6d8fdd9712055b0e57f904e393"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad104d68df20e4df59f9a73783fda907c">GpuImageTiling</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#aa92d9b6d8fdd9712055b0e57f904e393">GetImageTiling</a> () const</td></tr>
-<tr class="separator:aa92d9b6d8fdd9712055b0e57f904e393"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee44857e300e500743cb18908f0aed4d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view.html">IGpuImageView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#aee44857e300e500743cb18908f0aed4d">GetView</a> (const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config.html">GpuImageViewConfig</a> &amp;viewConfig) const</td></tr>
-<tr class="separator:aee44857e300e500743cb18908f0aed4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2460c9775450cee2e6c78dbd93b9a65b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a2460c9775450cee2e6c78dbd93b9a65b">SetCurrentBarrier</a> (const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info.html">GpuBarrierInfo</a> &amp;barrier)</td></tr>
-<tr class="separator:a2460c9775450cee2e6c78dbd93b9a65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb49f20c0190e37bdaf0f9f8033ca343"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info.html">GpuBarrierInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#afb49f20c0190e37bdaf0f9f8033ca343">GetCurrentBarrier</a> () const</td></tr>
-<tr class="separator:afb49f20c0190e37bdaf0f9f8033ca343"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ee62443c9fa13533ea29c39278dfa4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a2ee62443c9fa13533ea29c39278dfa4a">_SetLayout</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a3ba7ae34f0300d29e55316008bb2e8a6">ArrayLevelIndex</a> baseArrayLevel, <a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> arrayLevelCount, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a8353e7a46a31b3c28ee049b8122893bb">MipLevelIndex</a> baseMipLevel, <a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> mipLevelCount, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a20f40e3d3e967090ee1884e0c77b9df9">GpuImageLayout</a> layout)</td></tr>
-<tr class="separator:a2ee62443c9fa13533ea29c39278dfa4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f8931d8dd3223f782626038f4f7de48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a7f8931d8dd3223f782626038f4f7de48">_InitDefaultLayout</a> ()</td></tr>
-<tr class="separator:a7f8931d8dd3223f782626038f4f7de48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59319dfcb8e3faef4a097b96df72f5d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a20f40e3d3e967090ee1884e0c77b9df9">GpuImageLayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a59319dfcb8e3faef4a097b96df72f5d9">_GetLayout</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a3ba7ae34f0300d29e55316008bb2e8a6">ArrayLevelIndex</a> arrayLevel, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a8353e7a46a31b3c28ee049b8122893bb">MipLevelIndex</a> mipLevel) const</td></tr>
-<tr class="separator:a59319dfcb8e3faef4a097b96df72f5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c997800da887d20302015081fae501f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue.html">ICommandQueue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a7c997800da887d20302015081fae501f">GetOwnerQueue</a> () const</td></tr>
-<tr class="separator:a7c997800da887d20302015081fae501f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37af01f8773a01828493840aa69f5164"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a37af01f8773a01828493840aa69f5164">_UpdateOwnerQueue</a> (const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue.html">ICommandQueue</a> *ownerQueue)</td></tr>
-<tr class="separator:a37af01f8773a01828493840aa69f5164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ced0b9bf575c7801e54f046604eee10"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_object.html#a4ced0b9bf575c7801e54f046604eee10">SetDebugName</a> (const std::string &amp;name)=0</td></tr>
-<tr class="separator:a4ced0b9bf575c7801e54f046604eee10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab16bd72ad08c771a3cc118a707da3d05" id="r_ab16bd72ad08c771a3cc118a707da3d05"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab16bd72ad08c771a3cc118a707da3d05">~GpuImage</a> () override</td></tr>
+<tr class="memitem:a19029af61d187fb611a0a816c10be9cf" id="r_a19029af61d187fb611a0a816c10be9cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19029af61d187fb611a0a816c10be9cf">OSK_DISABLE_COPY</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a>)</td></tr>
+<tr class="memitem:a9b63a991ed71aced4871b3c820b51b28" id="r_a9b63a991ed71aced4871b3c820b51b28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b63a991ed71aced4871b3c820b51b28">OSK_DEFAULT_MOVE_OPERATOR</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a>)</td></tr>
+<tr class="memitem:aad4727fbb277a8df99db8c3c76b79a16" id="r_aad4727fbb277a8df99db8c3c76b79a16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad4727fbb277a8df99db8c3c76b79a16">OSK_DEFINE_AS</a> (<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a>)</td></tr>
+<tr class="memitem:a7bfdcd50355d8d342d60b7307b98f652" id="r_a7bfdcd50355d8d342d60b7307b98f652"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bfdcd50355d8d342d60b7307b98f652">GetMemory</a> () const</td></tr>
+<tr class="memitem:aebe572df2d27e160c45d7ff352d57d47" id="r_aebe572df2d27e160c45d7ff352d57d47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebe572df2d27e160c45d7ff352d57d47">GetMemory</a> ()</td></tr>
+<tr class="memitem:a4cdc2606857e5e0a547bde0473c3dbd7" id="r_a4cdc2606857e5e0a547bde0473c3dbd7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cdc2606857e5e0a547bde0473c3dbd7">GetBuffer</a> () const</td></tr>
+<tr class="memitem:a9425e73b15aa414e64acfee073b36739" id="r_a9425e73b15aa414e64acfee073b36739"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9425e73b15aa414e64acfee073b36739">GetBuffer</a> ()</td></tr>
+<tr class="memitem:a58ea4b1441818954122dcf570874a0fa" id="r_a58ea4b1441818954122dcf570874a0fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58ea4b1441818954122dcf570874a0fa">SetBlock</a> (<a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> &gt; &amp;&amp;buffer)</td></tr>
+<tr class="memitem:aa7693dce157e863e4a115302b1ab16ce" id="r_aa7693dce157e863e4a115302b1ab16ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a322fa8cc7a5b01f5178546195aca9f26">Vector3ui</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7693dce157e863e4a115302b1ab16ce">GetSize3D</a> () const</td></tr>
+<tr class="memitem:a398791ff8776fa8bb3a589713d0cad49" id="r_a398791ff8776fa8bb3a589713d0cad49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a6f5b4753cd85b4773d2880148fd031cf">Vector2ui</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a398791ff8776fa8bb3a589713d0cad49">GetSize2D</a> () const</td></tr>
+<tr class="memitem:a06ed388f9c9e1bbb5cb4dd9132f3b89e" id="r_a06ed388f9c9e1bbb5cb4dd9132f3b89e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06ed388f9c9e1bbb5cb4dd9132f3b89e">GetSize1D</a> () const</td></tr>
+<tr class="memitem:ad23f506b8bdde8faac2dac9d6a86f7e7" id="r_ad23f506b8bdde8faac2dac9d6a86f7e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad23f506b8bdde8faac2dac9d6a86f7e7">_SetPhysicalSize</a> (const <a class="el" href="namespace_o_s_k.html#a322fa8cc7a5b01f5178546195aca9f26">Vector3ui</a> &amp;size)</td></tr>
+<tr class="memitem:a010e504f13e07ce86e1d82e344493860" id="r_a010e504f13e07ce86e1d82e344493860"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a322fa8cc7a5b01f5178546195aca9f26">Vector3ui</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a010e504f13e07ce86e1d82e344493860">GetPhysicalSize</a> () const</td></tr>
+<tr class="memitem:a7fbd0307d9e9147312004fecca6b73ba" id="r_a7fbd0307d9e9147312004fecca6b73ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aac59f9d056e083c0b49ea768f974e3e8">Format</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fbd0307d9e9147312004fecca6b73ba">GetFormat</a> () const</td></tr>
+<tr class="memitem:abce3e3ba3ec90fc147c6de62884e55ab" id="r_abce3e3ba3ec90fc147c6de62884e55ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ab91ccc08d13454cfeb3c4f78deb72d59">GpuImageDimension</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abce3e3ba3ec90fc147c6de62884e55ab">GetDimension</a> () const</td></tr>
+<tr class="memitem:a339142f665e7289fafcd8e52cb03f9cb" id="r_a339142f665e7289fafcd8e52cb03f9cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a19a2f70fc994c00eb022e520608c5ffa">GpuImageUsage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a339142f665e7289fafcd8e52cb03f9cb">GetUsage</a> () const</td></tr>
+<tr class="memitem:a702c7bef88e759bb87abe45620749350" id="r_a702c7bef88e759bb87abe45620749350"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a702c7bef88e759bb87abe45620749350">GetNumLayers</a> () const</td></tr>
+<tr class="memitem:a7276e4f4cf69f8bae00f16005700871c" id="r_a7276e4f4cf69f8bae00f16005700871c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a6f5b4753cd85b4773d2880148fd031cf">Vector2ui</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7276e4f4cf69f8bae00f16005700871c">GetMipLevelSize2D</a> (<a class="el" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a> mipLevel) const</td></tr>
+<tr class="memitem:a217992f6d3fcb28043b60531004c5e92" id="r_a217992f6d3fcb28043b60531004c5e92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc.html">GpuImageSamplerDesc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a217992f6d3fcb28043b60531004c5e92">GetImageSampler</a> () const</td></tr>
+<tr class="memitem:aa0220799f28ec1c45c888926243867e9" id="r_aa0220799f28ec1c45c888926243867e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0220799f28ec1c45c888926243867e9">GetMipLevels</a> () const</td></tr>
+<tr class="memitem:ab031c2a09018645472e9ede6a5ec80a5" id="r_ab031c2a09018645472e9ede6a5ec80a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab031c2a09018645472e9ede6a5ec80a5">GetNumberOfBytes</a> () const</td></tr>
+<tr class="memitem:a77f77a6e47e58fe073ea68575f15ce83" id="r_a77f77a6e47e58fe073ea68575f15ce83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77f77a6e47e58fe073ea68575f15ce83">GetPhysicalNumberOfBytes</a> () const</td></tr>
+<tr class="memitem:ab204c850f3bec73e19dcf2d2de90f59f" id="r_ab204c850f3bec73e19dcf2d2de90f59f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab204c850f3bec73e19dcf2d2de90f59f">GetMsaaSampleCount</a> () const</td></tr>
+<tr class="memitem:aa92d9b6d8fdd9712055b0e57f904e393" id="r_aa92d9b6d8fdd9712055b0e57f904e393"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad104d68df20e4df59f9a73783fda907c">GpuImageTiling</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa92d9b6d8fdd9712055b0e57f904e393">GetImageTiling</a> () const</td></tr>
+<tr class="memitem:aee44857e300e500743cb18908f0aed4d" id="r_aee44857e300e500743cb18908f0aed4d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view.html">IGpuImageView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee44857e300e500743cb18908f0aed4d">GetView</a> (const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config.html">GpuImageViewConfig</a> &amp;viewConfig) const</td></tr>
+<tr class="memitem:a2460c9775450cee2e6c78dbd93b9a65b" id="r_a2460c9775450cee2e6c78dbd93b9a65b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2460c9775450cee2e6c78dbd93b9a65b">SetCurrentBarrier</a> (const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info.html">GpuBarrierInfo</a> &amp;barrier)</td></tr>
+<tr class="memitem:afb49f20c0190e37bdaf0f9f8033ca343" id="r_afb49f20c0190e37bdaf0f9f8033ca343"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info.html">GpuBarrierInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb49f20c0190e37bdaf0f9f8033ca343">GetCurrentBarrier</a> () const</td></tr>
+<tr class="memitem:a2ee62443c9fa13533ea29c39278dfa4a" id="r_a2ee62443c9fa13533ea29c39278dfa4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ee62443c9fa13533ea29c39278dfa4a">_SetLayout</a> (<a class="el" href="#a3ba7ae34f0300d29e55316008bb2e8a6">ArrayLevelIndex</a> baseArrayLevel, <a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> arrayLevelCount, <a class="el" href="#a8353e7a46a31b3c28ee049b8122893bb">MipLevelIndex</a> baseMipLevel, <a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> mipLevelCount, <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a20f40e3d3e967090ee1884e0c77b9df9">GpuImageLayout</a> layout)</td></tr>
+<tr class="memitem:a7f8931d8dd3223f782626038f4f7de48" id="r_a7f8931d8dd3223f782626038f4f7de48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f8931d8dd3223f782626038f4f7de48">_InitDefaultLayout</a> ()</td></tr>
+<tr class="memitem:a59319dfcb8e3faef4a097b96df72f5d9" id="r_a59319dfcb8e3faef4a097b96df72f5d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a20f40e3d3e967090ee1884e0c77b9df9">GpuImageLayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59319dfcb8e3faef4a097b96df72f5d9">_GetLayout</a> (<a class="el" href="#a3ba7ae34f0300d29e55316008bb2e8a6">ArrayLevelIndex</a> arrayLevel, <a class="el" href="#a8353e7a46a31b3c28ee049b8122893bb">MipLevelIndex</a> mipLevel) const</td></tr>
+<tr class="memitem:a7c997800da887d20302015081fae501f" id="r_a7c997800da887d20302015081fae501f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue.html">ICommandQueue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c997800da887d20302015081fae501f">GetOwnerQueue</a> () const</td></tr>
+<tr class="memitem:a37af01f8773a01828493840aa69f5164" id="r_a37af01f8773a01828493840aa69f5164"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37af01f8773a01828493840aa69f5164">_UpdateOwnerQueue</a> (const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue.html">ICommandQueue</a> *ownerQueue)</td></tr>
+<tr class="memitem:a4ced0b9bf575c7801e54f046604eee10" id="r_a4ced0b9bf575c7801e54f046604eee10"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_object.html#a4ced0b9bf575c7801e54f046604eee10">SetDebugName</a> (const std::string &amp;name)=0</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Métodos públicos estáticos</h2></td></tr>
-<tr class="memitem:a2959c99eb619d28195621022a33c575c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a2959c99eb619d28195621022a33c575c">GetMipLevels</a> (uint32_t sizeX, uint32_t sizeY)</td></tr>
-<tr class="separator:a2959c99eb619d28195621022a33c575c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2959c99eb619d28195621022a33c575c" id="r_a2959c99eb619d28195621022a33c575c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2959c99eb619d28195621022a33c575c">GetMipLevels</a> (uint32_t sizeX, uint32_t sizeY)</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Métodos protegidos</h2></td></tr>
-<tr class="memitem:a4ae7ada841a1cd42ccaf2ce91c23277c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a4ae7ada841a1cd42ccaf2ce91c23277c">GpuImage</a> (const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info.html">GpuImageCreateInfo</a> &amp;info, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue.html">ICommandQueue</a> *ownerQueue)</td></tr>
-<tr class="separator:a4ae7ada841a1cd42ccaf2ce91c23277c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a851e09ba9f3ca5786b5a294088b06b9c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view.html">IGpuImageView</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a851e09ba9f3ca5786b5a294088b06b9c">CreateView</a> (const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config.html">GpuImageViewConfig</a> &amp;viewConfig) const =0</td></tr>
-<tr class="separator:a851e09ba9f3ca5786b5a294088b06b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ae7ada841a1cd42ccaf2ce91c23277c" id="r_a4ae7ada841a1cd42ccaf2ce91c23277c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ae7ada841a1cd42ccaf2ce91c23277c">GpuImage</a> (const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info.html">GpuImageCreateInfo</a> &amp;info, const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue.html">ICommandQueue</a> *ownerQueue)</td></tr>
+<tr class="memitem:a851e09ba9f3ca5786b5a294088b06b9c" id="r_a851e09ba9f3ca5786b5a294088b06b9c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view.html">IGpuImageView</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a851e09ba9f3ca5786b5a294088b06b9c">CreateView</a> (const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config.html">GpuImageViewConfig</a> &amp;viewConfig) const =0</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p >Representación interna de una imagen en la GPU. </p>
-</div><h2 class="groupheader">Documentación de los 'Typedef' miembros de la clase</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Representación interna de una imagen en la GPU. </p>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentación de los «Typedef» miembros de la clase</h2>
 <a id="a3ba7ae34f0300d29e55316008bb2e8a6" name="a3ba7ae34f0300d29e55316008bb2e8a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ba7ae34f0300d29e55316008bb2e8a6">&#9670;&nbsp;</a></span>ArrayLevelIndex</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ba7ae34f0300d29e55316008bb2e8a6">&#9670;&#160;</a></span>ArrayLevelIndex</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a3ba7ae34f0300d29e55316008bb2e8a6">OSK::GRAPHICS::GpuImage::ArrayLevelIndex</a> =  <a class="el" href="namespace_o_s_k.html#a43f31f9c290a00d031c7f9530ec350e1">UIndex32</a></td>
+          <td class="memname">using <a class="el" href="#a3ba7ae34f0300d29e55316008bb2e8a6">OSK::GRAPHICS::GpuImage::ArrayLevelIndex</a> = <a class="el" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -207,13 +168,13 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a8353e7a46a31b3c28ee049b8122893bb" name="a8353e7a46a31b3c28ee049b8122893bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8353e7a46a31b3c28ee049b8122893bb">&#9670;&nbsp;</a></span>MipLevelIndex</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8353e7a46a31b3c28ee049b8122893bb">&#9670;&#160;</a></span>MipLevelIndex</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a8353e7a46a31b3c28ee049b8122893bb">OSK::GRAPHICS::GpuImage::MipLevelIndex</a> =  <a class="el" href="namespace_o_s_k.html#a43f31f9c290a00d031c7f9530ec350e1">UIndex32</a></td>
+          <td class="memname">using <a class="el" href="#a8353e7a46a31b3c28ee049b8122893bb">OSK::GRAPHICS::GpuImage::MipLevelIndex</a> = <a class="el" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -222,9 +183,9 @@ Métodos protegidos</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
 <a id="ab16bd72ad08c771a3cc118a707da3d05" name="ab16bd72ad08c771a3cc118a707da3d05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab16bd72ad08c771a3cc118a707da3d05">&#9670;&nbsp;</a></span>~GpuImage()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab16bd72ad08c771a3cc118a707da3d05">&#9670;&#160;</a></span>~GpuImage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -235,13 +196,13 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname">GpuImage::~GpuImage </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -249,7 +210,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a4ae7ada841a1cd42ccaf2ce91c23277c" name="a4ae7ada841a1cd42ccaf2ce91c23277c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ae7ada841a1cd42ccaf2ce91c23277c">&#9670;&nbsp;</a></span>GpuImage()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ae7ada841a1cd42ccaf2ce91c23277c">&#9670;&#160;</a></span>GpuImage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -260,34 +221,27 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname">GpuImage::GpuImage </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info.html">GpuImageCreateInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>info</em>, </td>
+          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info.html">GpuImageCreateInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>info</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue.html">ICommandQueue</a> *&#160;</td>
-          <td class="paramname"><em>ownerQueue</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue.html">ICommandQueue</a> *</td>          <td class="paramname"><span class="paramname"><em>ownerQueue</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section pre"><dt>Precondición</dt><dd><code>ownerQueue</code> debe ser estable. </dd></dl>
+<dl class="section pre"><dt>Precondición</dt><dd><code class="param">ownerQueue</code> debe ser estable. </dd></dl>
 
 </div>
 </div>
-<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
 <a id="a59319dfcb8e3faef4a097b96df72f5d9" name="a59319dfcb8e3faef4a097b96df72f5d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59319dfcb8e3faef4a097b96df72f5d9">&#9670;&nbsp;</a></span>_GetLayout()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a59319dfcb8e3faef4a097b96df72f5d9">&#9670;&#160;</a></span>_GetLayout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -295,19 +249,12 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a20f40e3d3e967090ee1884e0c77b9df9">GpuImageLayout</a> GpuImage::_GetLayout </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a3ba7ae34f0300d29e55316008bb2e8a6">ArrayLevelIndex</a>&#160;</td>
-          <td class="paramname"><em>arrayLevel</em>, </td>
+          <td class="paramtype"><a class="el" href="#a3ba7ae34f0300d29e55316008bb2e8a6">ArrayLevelIndex</a></td>          <td class="paramname"><span class="paramname"><em>arrayLevel</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a8353e7a46a31b3c28ee049b8122893bb">MipLevelIndex</a>&#160;</td>
-          <td class="paramname"><em>mipLevel</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="paramtype"><a class="el" href="#a8353e7a46a31b3c28ee049b8122893bb">MipLevelIndex</a></td>          <td class="paramname"><span class="paramname"><em>mipLevel</em></span>&#160;) const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -325,7 +272,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a7f8931d8dd3223f782626038f4f7de48" name="a7f8931d8dd3223f782626038f4f7de48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f8931d8dd3223f782626038f4f7de48">&#9670;&nbsp;</a></span>_InitDefaultLayout()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f8931d8dd3223f782626038f4f7de48">&#9670;&#160;</a></span>_InitDefaultLayout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -333,7 +280,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname">void GpuImage::_InitDefaultLayout </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -344,7 +291,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a2ee62443c9fa13533ea29c39278dfa4a" name="a2ee62443c9fa13533ea29c39278dfa4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ee62443c9fa13533ea29c39278dfa4a">&#9670;&nbsp;</a></span>_SetLayout()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ee62443c9fa13533ea29c39278dfa4a">&#9670;&#160;</a></span>_SetLayout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,37 +299,27 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname">void GpuImage::_SetLayout </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a3ba7ae34f0300d29e55316008bb2e8a6">ArrayLevelIndex</a>&#160;</td>
-          <td class="paramname"><em>baseArrayLevel</em>, </td>
+          <td class="paramtype"><a class="el" href="#a3ba7ae34f0300d29e55316008bb2e8a6">ArrayLevelIndex</a></td>          <td class="paramname"><span class="paramname"><em>baseArrayLevel</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a>&#160;</td>
-          <td class="paramname"><em>arrayLevelCount</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a></td>          <td class="paramname"><span class="paramname"><em>arrayLevelCount</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a8353e7a46a31b3c28ee049b8122893bb">MipLevelIndex</a>&#160;</td>
-          <td class="paramname"><em>baseMipLevel</em>, </td>
+          <td class="paramtype"><a class="el" href="#a8353e7a46a31b3c28ee049b8122893bb">MipLevelIndex</a></td>          <td class="paramname"><span class="paramname"><em>baseMipLevel</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a>&#160;</td>
-          <td class="paramname"><em>mipLevelCount</em>, </td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a></td>          <td class="paramname"><span class="paramname"><em>mipLevelCount</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a20f40e3d3e967090ee1884e0c77b9df9">GpuImageLayout</a>&#160;</td>
-          <td class="paramname"><em>layout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a20f40e3d3e967090ee1884e0c77b9df9">GpuImageLayout</a></td>          <td class="paramname"><span class="paramname"><em>layout</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -402,7 +339,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="ad23f506b8bdde8faac2dac9d6a86f7e7" name="ad23f506b8bdde8faac2dac9d6a86f7e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad23f506b8bdde8faac2dac9d6a86f7e7">&#9670;&nbsp;</a></span>_SetPhysicalSize()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad23f506b8bdde8faac2dac9d6a86f7e7">&#9670;&#160;</a></span>_SetPhysicalSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -410,8 +347,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname">void GpuImage::_SetPhysicalSize </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespace_o_s_k.html#a9aefa8f75d8dc4aa960e084f84362f3a">Vector3ui</a> &amp;&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="namespace_o_s_k.html#a322fa8cc7a5b01f5178546195aca9f26">Vector3ui</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -420,7 +356,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a37af01f8773a01828493840aa69f5164" name="a37af01f8773a01828493840aa69f5164"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37af01f8773a01828493840aa69f5164">&#9670;&nbsp;</a></span>_UpdateOwnerQueue()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a37af01f8773a01828493840aa69f5164">&#9670;&#160;</a></span>_UpdateOwnerQueue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -428,8 +364,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname">void GpuImage::_UpdateOwnerQueue </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue.html">ICommandQueue</a> *&#160;</td>
-          <td class="paramname"><em>ownerQueue</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue.html">ICommandQueue</a> *</td>          <td class="paramname"><span class="paramname"><em>ownerQueue</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -442,12 +377,12 @@ Métodos protegidos</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section pre"><dt>Precondición</dt><dd><code>ownerQueue</code> debe ser estable. </dd></dl>
+<dl class="section pre"><dt>Precondición</dt><dd><code class="param">ownerQueue</code> debe ser estable. </dd></dl>
 
 </div>
 </div>
 <a id="a851e09ba9f3ca5786b5a294088b06b9c" name="a851e09ba9f3ca5786b5a294088b06b9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a851e09ba9f3ca5786b5a294088b06b9c">&#9670;&nbsp;</a></span>CreateView()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a851e09ba9f3ca5786b5a294088b06b9c">&#9670;&#160;</a></span>CreateView()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -458,14 +393,13 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname">virtual <a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view.html">IGpuImageView</a> &gt; OSK::GRAPHICS::GpuImage::CreateView </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config.html">GpuImageViewConfig</a> &amp;&#160;</td>
-          <td class="paramname"><em>viewConfig</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config.html">GpuImageViewConfig</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewConfig</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -488,7 +422,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a9425e73b15aa414e64acfee073b36739" name="a9425e73b15aa414e64acfee073b36739"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9425e73b15aa414e64acfee073b36739">&#9670;&nbsp;</a></span>GetBuffer() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9425e73b15aa414e64acfee073b36739">&#9670;&#160;</a></span>GetBuffer() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -496,7 +430,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> * GpuImage::GetBuffer </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -505,7 +439,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a4cdc2606857e5e0a547bde0473c3dbd7" name="a4cdc2606857e5e0a547bde0473c3dbd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cdc2606857e5e0a547bde0473c3dbd7">&#9670;&nbsp;</a></span>GetBuffer() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cdc2606857e5e0a547bde0473c3dbd7">&#9670;&#160;</a></span>GetBuffer() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -513,7 +447,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html">IGpuMemorySubblock</a> * GpuImage::GetBuffer </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -523,7 +457,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="afb49f20c0190e37bdaf0f9f8033ca343" name="afb49f20c0190e37bdaf0f9f8033ca343"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb49f20c0190e37bdaf0f9f8033ca343">&#9670;&nbsp;</a></span>GetCurrentBarrier()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afb49f20c0190e37bdaf0f9f8033ca343">&#9670;&#160;</a></span>GetCurrentBarrier()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -531,7 +465,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info.html">GpuBarrierInfo</a> &amp; GpuImage::GetCurrentBarrier </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -541,7 +475,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="abce3e3ba3ec90fc147c6de62884e55ab" name="abce3e3ba3ec90fc147c6de62884e55ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abce3e3ba3ec90fc147c6de62884e55ab">&#9670;&nbsp;</a></span>GetDimension()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abce3e3ba3ec90fc147c6de62884e55ab">&#9670;&#160;</a></span>GetDimension()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -549,7 +483,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ab91ccc08d13454cfeb3c4f78deb72d59">GpuImageDimension</a> GpuImage::GetDimension </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -559,7 +493,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a7fbd0307d9e9147312004fecca6b73ba" name="a7fbd0307d9e9147312004fecca6b73ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fbd0307d9e9147312004fecca6b73ba">&#9670;&nbsp;</a></span>GetFormat()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fbd0307d9e9147312004fecca6b73ba">&#9670;&#160;</a></span>GetFormat()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -567,7 +501,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aac59f9d056e083c0b49ea768f974e3e8">Format</a> GpuImage::GetFormat </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -577,7 +511,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a217992f6d3fcb28043b60531004c5e92" name="a217992f6d3fcb28043b60531004c5e92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a217992f6d3fcb28043b60531004c5e92">&#9670;&nbsp;</a></span>GetImageSampler()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a217992f6d3fcb28043b60531004c5e92">&#9670;&#160;</a></span>GetImageSampler()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -585,7 +519,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc.html">GpuImageSamplerDesc</a> GpuImage::GetImageSampler </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -595,7 +529,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="aa92d9b6d8fdd9712055b0e57f904e393" name="aa92d9b6d8fdd9712055b0e57f904e393"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa92d9b6d8fdd9712055b0e57f904e393">&#9670;&nbsp;</a></span>GetImageTiling()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa92d9b6d8fdd9712055b0e57f904e393">&#9670;&#160;</a></span>GetImageTiling()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -603,7 +537,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad104d68df20e4df59f9a73783fda907c">GpuImageTiling</a> GpuImage::GetImageTiling </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -613,7 +547,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="aebe572df2d27e160c45d7ff352d57d47" name="aebe572df2d27e160c45d7ff352d57d47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebe572df2d27e160c45d7ff352d57d47">&#9670;&nbsp;</a></span>GetMemory() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aebe572df2d27e160c45d7ff352d57d47">&#9670;&#160;</a></span>GetMemory() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -621,7 +555,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> * GpuImage::GetMemory </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -630,7 +564,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a7bfdcd50355d8d342d60b7307b98f652" name="a7bfdcd50355d8d342d60b7307b98f652"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bfdcd50355d8d342d60b7307b98f652">&#9670;&nbsp;</a></span>GetMemory() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bfdcd50355d8d342d60b7307b98f652">&#9670;&#160;</a></span>GetMemory() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -638,7 +572,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> * GpuImage::GetMemory </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -648,7 +582,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="aa0220799f28ec1c45c888926243867e9" name="aa0220799f28ec1c45c888926243867e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0220799f28ec1c45c888926243867e9">&#9670;&nbsp;</a></span>GetMipLevels() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0220799f28ec1c45c888926243867e9">&#9670;&#160;</a></span>GetMipLevels() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -656,7 +590,7 @@ Métodos protegidos</h2></td></tr>
         <tr>
           <td class="memname">unsigned int GpuImage::GetMipLevels </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -666,7 +600,7 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a2959c99eb619d28195621022a33c575c" name="a2959c99eb619d28195621022a33c575c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2959c99eb619d28195621022a33c575c">&#9670;&nbsp;</a></span>GetMipLevels() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2959c99eb619d28195621022a33c575c">&#9670;&#160;</a></span>GetMipLevels() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -675,26 +609,19 @@ Métodos protegidos</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> GpuImage::GetMipLevels </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> GpuImage::GetMipLevels </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>sizeX</em>, </td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>sizeX</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>sizeY</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>sizeY</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -710,16 +637,15 @@ Métodos protegidos</h2></td></tr>
 </div>
 </div>
 <a id="a7276e4f4cf69f8bae00f16005700871c" name="a7276e4f4cf69f8bae00f16005700871c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7276e4f4cf69f8bae00f16005700871c">&#9670;&nbsp;</a></span>GetMipLevelSize2D()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7276e4f4cf69f8bae00f16005700871c">&#9670;&#160;</a></span>GetMipLevelSize2D()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#a8a2dd07f1ac751a9b0baec4c534af48a">Vector2ui</a> GpuImage::GetMipLevelSize2D </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a6f5b4753cd85b4773d2880148fd031cf">Vector2ui</a> GpuImage::GetMipLevelSize2D </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a43f31f9c290a00d031c7f9530ec350e1">UIndex32</a>&#160;</td>
-          <td class="paramname"><em>mipLevel</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a></td>          <td class="paramname"><span class="paramname"><em>mipLevel</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -740,15 +666,15 @@ La imagen debe ser 2D o cubemap. </dd></dl>
 </div>
 </div>
 <a id="ab204c850f3bec73e19dcf2d2de90f59f" name="ab204c850f3bec73e19dcf2d2de90f59f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab204c850f3bec73e19dcf2d2de90f59f">&#9670;&nbsp;</a></span>GetMsaaSampleCount()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab204c850f3bec73e19dcf2d2de90f59f">&#9670;&#160;</a></span>GetMsaaSampleCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> GpuImage::GetMsaaSampleCount </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> GpuImage::GetMsaaSampleCount </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -758,15 +684,15 @@ La imagen debe ser 2D o cubemap. </dd></dl>
 </div>
 </div>
 <a id="ab031c2a09018645472e9ede6a5ec80a5" name="ab031c2a09018645472e9ede6a5ec80a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab031c2a09018645472e9ede6a5ec80a5">&#9670;&nbsp;</a></span>GetNumberOfBytes()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab031c2a09018645472e9ede6a5ec80a5">&#9670;&#160;</a></span>GetNumberOfBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> GpuImage::GetNumberOfBytes </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> GpuImage::GetNumberOfBytes </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -776,15 +702,15 @@ La imagen debe ser 2D o cubemap. </dd></dl>
 </div>
 </div>
 <a id="a702c7bef88e759bb87abe45620749350" name="a702c7bef88e759bb87abe45620749350"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a702c7bef88e759bb87abe45620749350">&#9670;&nbsp;</a></span>GetNumLayers()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a702c7bef88e759bb87abe45620749350">&#9670;&#160;</a></span>GetNumLayers()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> GpuImage::GetNumLayers </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> GpuImage::GetNumLayers </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -795,7 +721,7 @@ La imagen debe ser 2D o cubemap. </dd></dl>
 </div>
 </div>
 <a id="a7c997800da887d20302015081fae501f" name="a7c997800da887d20302015081fae501f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c997800da887d20302015081fae501f">&#9670;&nbsp;</a></span>GetOwnerQueue()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c997800da887d20302015081fae501f">&#9670;&#160;</a></span>GetOwnerQueue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -803,7 +729,7 @@ La imagen debe ser 2D o cubemap. </dd></dl>
         <tr>
           <td class="memname">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue.html">ICommandQueue</a> * GpuImage::GetOwnerQueue </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -814,15 +740,15 @@ La imagen debe ser 2D o cubemap. </dd></dl>
 </div>
 </div>
 <a id="a77f77a6e47e58fe073ea68575f15ce83" name="a77f77a6e47e58fe073ea68575f15ce83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77f77a6e47e58fe073ea68575f15ce83">&#9670;&nbsp;</a></span>GetPhysicalNumberOfBytes()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a77f77a6e47e58fe073ea68575f15ce83">&#9670;&#160;</a></span>GetPhysicalNumberOfBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#ab0d4421c4a5b6dd3cb62a2269e49fe50">USize64</a> GpuImage::GetPhysicalNumberOfBytes </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a83ff197aaa32126d84ad65f1d6d5a3b5">USize64</a> GpuImage::GetPhysicalNumberOfBytes </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -833,15 +759,15 @@ La imagen debe ser 2D o cubemap. </dd></dl>
 </div>
 </div>
 <a id="a010e504f13e07ce86e1d82e344493860" name="a010e504f13e07ce86e1d82e344493860"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a010e504f13e07ce86e1d82e344493860">&#9670;&nbsp;</a></span>GetPhysicalSize()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a010e504f13e07ce86e1d82e344493860">&#9670;&#160;</a></span>GetPhysicalSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#a9aefa8f75d8dc4aa960e084f84362f3a">Vector3ui</a> GpuImage::GetPhysicalSize </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a322fa8cc7a5b01f5178546195aca9f26">Vector3ui</a> GpuImage::GetPhysicalSize </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -850,15 +776,15 @@ La imagen debe ser 2D o cubemap. </dd></dl>
 </div>
 </div>
 <a id="a06ed388f9c9e1bbb5cb4dd9132f3b89e" name="a06ed388f9c9e1bbb5cb4dd9132f3b89e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06ed388f9c9e1bbb5cb4dd9132f3b89e">&#9670;&nbsp;</a></span>GetSize1D()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a06ed388f9c9e1bbb5cb4dd9132f3b89e">&#9670;&#160;</a></span>GetSize1D()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> GpuImage::GetSize1D </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> GpuImage::GetSize1D </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -868,15 +794,15 @@ La imagen debe ser 2D o cubemap. </dd></dl>
 </div>
 </div>
 <a id="a398791ff8776fa8bb3a589713d0cad49" name="a398791ff8776fa8bb3a589713d0cad49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a398791ff8776fa8bb3a589713d0cad49">&#9670;&nbsp;</a></span>GetSize2D()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a398791ff8776fa8bb3a589713d0cad49">&#9670;&#160;</a></span>GetSize2D()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#a8a2dd07f1ac751a9b0baec4c534af48a">Vector2ui</a> GpuImage::GetSize2D </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a6f5b4753cd85b4773d2880148fd031cf">Vector2ui</a> GpuImage::GetSize2D </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -886,15 +812,15 @@ La imagen debe ser 2D o cubemap. </dd></dl>
 </div>
 </div>
 <a id="aa7693dce157e863e4a115302b1ab16ce" name="aa7693dce157e863e4a115302b1ab16ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7693dce157e863e4a115302b1ab16ce">&#9670;&nbsp;</a></span>GetSize3D()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7693dce157e863e4a115302b1ab16ce">&#9670;&#160;</a></span>GetSize3D()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_o_s_k.html#a9aefa8f75d8dc4aa960e084f84362f3a">Vector3ui</a> GpuImage::GetSize3D </td>
+          <td class="memname"><a class="el" href="namespace_o_s_k.html#a322fa8cc7a5b01f5178546195aca9f26">Vector3ui</a> GpuImage::GetSize3D </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -904,7 +830,7 @@ La imagen debe ser 2D o cubemap. </dd></dl>
 </div>
 </div>
 <a id="a339142f665e7289fafcd8e52cb03f9cb" name="a339142f665e7289fafcd8e52cb03f9cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a339142f665e7289fafcd8e52cb03f9cb">&#9670;&nbsp;</a></span>GetUsage()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a339142f665e7289fafcd8e52cb03f9cb">&#9670;&#160;</a></span>GetUsage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -912,7 +838,7 @@ La imagen debe ser 2D o cubemap. </dd></dl>
         <tr>
           <td class="memname"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a19a2f70fc994c00eb022e520608c5ffa">GpuImageUsage</a> GpuImage::GetUsage </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -922,7 +848,7 @@ La imagen debe ser 2D o cubemap. </dd></dl>
 </div>
 </div>
 <a id="aee44857e300e500743cb18908f0aed4d" name="aee44857e300e500743cb18908f0aed4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee44857e300e500743cb18908f0aed4d">&#9670;&nbsp;</a></span>GetView()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aee44857e300e500743cb18908f0aed4d">&#9670;&#160;</a></span>GetView()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -930,8 +856,7 @@ La imagen debe ser 2D o cubemap. </dd></dl>
         <tr>
           <td class="memname">const <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_image_view.html">IGpuImageView</a> * GpuImage::GetView </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config.html">GpuImageViewConfig</a> &amp;&#160;</td>
-          <td class="paramname"><em>viewConfig</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config.html">GpuImageViewConfig</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewConfig</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -943,7 +868,7 @@ La imagen debe ser 2D o cubemap. </dd></dl>
     <tr><td class="paramname">channel</td><td>Canal de la imagen accedido por el view. </td></tr>
     <tr><td class="paramname">arrayType</td><td>Configura si es una única imagen o si el view afecta a todo un array. </td></tr>
     <tr><td class="paramname">baseArrayLevel</td><td>Capa base representada. </td></tr>
-    <tr><td class="paramname">layerCount</td><td>Número de capas representadas (si <code>arrayType</code> es <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a55e114ba828198c2146f5233e462ba39acb4fb1757fb37c43cded35d3eb857c43">SampledArrayType::ARRAY</a>). </td></tr>
+    <tr><td class="paramname">layerCount</td><td>Número de capas representadas (si <code class="param">arrayType</code> es <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a55e114ba828198c2146f5233e462ba39acb4fb1757fb37c43cded35d3eb857c43">SampledArrayType::ARRAY</a>). </td></tr>
     <tr><td class="paramname">baseMipLevel</td><td>Mip level más detallado. </td></tr>
     <tr><td class="paramname">topMipLevel</td><td>Mip level menos detallado. </td></tr>
     <tr><td class="paramname">usage</td><td>Uso del view. </td></tr>
@@ -951,11 +876,11 @@ La imagen debe ser 2D o cubemap. </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>View con las características dadas.</dd></dl>
-<dl class="section pre"><dt>Precondición</dt><dd>Si <code>layerCount</code> &gt; 1, entonces <code>arrayType</code> debe ser <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a55e114ba828198c2146f5233e462ba39acb4fb1757fb37c43cded35d3eb857c43">SampledArrayType::ARRAY</a>. </dd>
+<dl class="section pre"><dt>Precondición</dt><dd>Si <code class="param">layerCount</code> &gt; 1, entonces <code class="param">arrayType</code> debe ser <a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a55e114ba828198c2146f5233e462ba39acb4fb1757fb37c43cded35d3eb857c43">SampledArrayType::ARRAY</a>. </dd>
 <dd>
-<code>topMipLevel</code> &gt;= <code>baseMipLevel</code>. </dd>
+<code class="param">topMipLevel</code> &gt;= <code class="param">baseMipLevel</code>. </dd>
 <dd>
-Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLevel</code> deben existir en la imagen original.</dd></dl>
+Los mip levels indicados por el rango <code class="param">topMipLevel</code> y <code class="param">baseMipLevel</code> deben existir en la imagen original.</dd></dl>
 <dl class="exception"><dt>Excepciones</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_image_view_creation_exception.html">ImageViewCreationException</a></td><td>Si hay algún error al crear el view. </td></tr>
@@ -966,7 +891,7 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
 </div>
 </div>
 <a id="a9b63a991ed71aced4871b3c820b51b28" name="a9b63a991ed71aced4871b3c820b51b28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b63a991ed71aced4871b3c820b51b28">&#9670;&nbsp;</a></span>OSK_DEFAULT_MOVE_OPERATOR()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b63a991ed71aced4871b3c820b51b28">&#9670;&#160;</a></span>OSK_DEFAULT_MOVE_OPERATOR()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -974,8 +899,7 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
         <tr>
           <td class="memname">OSK::GRAPHICS::GpuImage::OSK_DEFAULT_MOVE_OPERATOR </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -984,7 +908,7 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
 </div>
 </div>
 <a id="aad4727fbb277a8df99db8c3c76b79a16" name="aad4727fbb277a8df99db8c3c76b79a16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad4727fbb277a8df99db8c3c76b79a16">&#9670;&nbsp;</a></span>OSK_DEFINE_AS()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aad4727fbb277a8df99db8c3c76b79a16">&#9670;&#160;</a></span>OSK_DEFINE_AS()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -992,8 +916,7 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
         <tr>
           <td class="memname">OSK::GRAPHICS::GpuImage::OSK_DEFINE_AS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1002,7 +925,7 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
 </div>
 </div>
 <a id="a19029af61d187fb611a0a816c10be9cf" name="a19029af61d187fb611a0a816c10be9cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19029af61d187fb611a0a816c10be9cf">&#9670;&nbsp;</a></span>OSK_DISABLE_COPY()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a19029af61d187fb611a0a816c10be9cf">&#9670;&#160;</a></span>OSK_DISABLE_COPY()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1010,8 +933,7 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
         <tr>
           <td class="memname">OSK::GRAPHICS::GpuImage::OSK_DISABLE_COPY </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1020,7 +942,7 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
 </div>
 </div>
 <a id="a58ea4b1441818954122dcf570874a0fa" name="a58ea4b1441818954122dcf570874a0fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58ea4b1441818954122dcf570874a0fa">&#9670;&nbsp;</a></span>SetBlock()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a58ea4b1441818954122dcf570874a0fa">&#9670;&#160;</a></span>SetBlock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1028,8 +950,7 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
         <tr>
           <td class="memname">void GpuImage::SetBlock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>buffer</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr</a>&lt; <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html">IGpuMemoryBlock</a> &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1038,7 +959,7 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
 </div>
 </div>
 <a id="a2460c9775450cee2e6c78dbd93b9a65b" name="a2460c9775450cee2e6c78dbd93b9a65b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2460c9775450cee2e6c78dbd93b9a65b">&#9670;&nbsp;</a></span>SetCurrentBarrier()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2460c9775450cee2e6c78dbd93b9a65b">&#9670;&#160;</a></span>SetCurrentBarrier()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1046,8 +967,7 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
         <tr>
           <td class="memname">void GpuImage::SetCurrentBarrier </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info.html">GpuBarrierInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>barrier</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info.html">GpuBarrierInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>barrier</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1064,7 +984,7 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
 </div>
 </div>
 <a id="a4ced0b9bf575c7801e54f046604eee10" name="a4ced0b9bf575c7801e54f046604eee10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ced0b9bf575c7801e54f046604eee10">&#9670;&nbsp;</a></span>SetDebugName()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ced0b9bf575c7801e54f046604eee10">&#9670;&#160;</a></span>SetDebugName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1075,14 +995,13 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
         <tr>
           <td class="memname">virtual void OSK::GRAPHICS::IGpuObject::SetDebugName </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel inherited">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1093,11 +1012,19 @@ Los mip levels indicados por el rango <code>topMipLevel</code> y <code>baseMipLe
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespace_o_s_k.html">OSK</a></li><li class="navelem"><a class="el" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">GRAPHICS</a></li><li class="navelem"><a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a></li>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="navelem"><a href="namespace_o_s_k.html">OSK</a></li><li class="navelem"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">GRAPHICS</a></li><li class="navelem"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html">GpuImage</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

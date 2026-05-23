@@ -1,0 +1,66 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::ICompute\+Pipeline}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_compute_pipeline}\index{OSK::GRAPHICS::IComputePipeline@{OSK::GRAPHICS::IComputePipeline}}
+
+
+{\ttfamily \#include $<$ICompute\+Pipeline.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+ICompute\+Pipeline} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ ICompute\+Pipeline})
+\item 
+const \textbf{ IPipeline\+Layout} $\ast$ \textbf{ Get\+Layout} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IPipeline\+Layout} $>$ \textbf{ layout}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IComputePipeline@{OSK::GRAPHICS::IComputePipeline}!````~IComputePipeline@{$\sim$IComputePipeline}}
+\index{````~IComputePipeline@{$\sim$IComputePipeline}!OSK::GRAPHICS::IComputePipeline@{OSK::GRAPHICS::IComputePipeline}}
+\doxysubsubsection{$\sim$IComputePipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_compute_pipeline_a6ec374b6f52c25f2b191086d11f4fcbc} 
+virtual OSK\+::\+GRAPHICS\+::\+ICompute\+Pipeline\+::$\sim$\+ICompute\+Pipeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IComputePipeline@{OSK::GRAPHICS::IComputePipeline}!GetLayout@{GetLayout}}
+\index{GetLayout@{GetLayout}!OSK::GRAPHICS::IComputePipeline@{OSK::GRAPHICS::IComputePipeline}}
+\doxysubsubsection{GetLayout()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_compute_pipeline_ad9d8033c64ed092d78c891675b1abddb} 
+const \textbf{ IPipeline\+Layout} $\ast$ ICompute\+Pipeline\+::\+Get\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el layout usado por este pipeline. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber creado correctamente el pipeline. 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si no se ha creado correctamente el pipeline, devolverá null. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::IComputePipeline@{OSK::GRAPHICS::IComputePipeline}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::IComputePipeline@{OSK::GRAPHICS::IComputePipeline}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_compute_pipeline_aedf9791062bfce836471af4392198993} 
+OSK\+::\+GRAPHICS\+::\+ICompute\+Pipeline\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ ICompute\+Pipeline}}]{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::IComputePipeline@{OSK::GRAPHICS::IComputePipeline}!layout@{layout}}
+\index{layout@{layout}!OSK::GRAPHICS::IComputePipeline@{OSK::GRAPHICS::IComputePipeline}}
+\doxysubsubsection{layout}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_compute_pipeline_a53719aebd4ab7500057d691345f98bb4} 
+\textbf{ Unique\+Ptr}$<$\textbf{ IPipeline\+Layout}$>$ OSK\+::\+GRAPHICS\+::\+ICompute\+Pipeline\+::layout\hspace{0.3cm}{\ttfamily [protected]}}
+

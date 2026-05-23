@@ -1,0 +1,77 @@
+\doxysection{Bloom\+Pass.\+h}
+\label{_bloom_pass_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/BloomPass.h@{C:/Users/Oscar/source/repos/OSKengine/Source/BloomPass.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}IPostProcessPass.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}MaterialInstance.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }ICommandList;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }IGpuStorageBuffer;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }Material;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ BloomPass\ :\ \textcolor{keyword}{public}\ IPostProcessPass\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ DownscaleMaterial\ =\ \textcolor{stringliteral}{"{}Resources/Materials/PostProcess/Bloom/downscale.json"{}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ UpscaleMaterial\ =\ \textcolor{stringliteral}{"{}Resources/Materials/PostProcess/Bloom/upscale.json"{}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ ResolveMaterial\ =\ \textcolor{stringliteral}{"{}Resources/Materials/PostProcess/Bloom/final.json"{}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetInput(GpuImage*\ inputImage);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(\textcolor{keyword}{const}\ Vector2ui\&\ size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Resize(\textcolor{keyword}{const}\ Vector2ui\&\ size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Execute(ICommandList*\ computeCmdList)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupMaterialInstances();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ InitialCopy(ICommandList*\ computeCmdList);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ExecuteSinglePass(}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ ICommandList*\ computeCmdList,\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ sourceMipLevel,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ destMipLevel);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DownscaleBloom(ICommandList*\ computeCmdList);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpscaleBloom(ICommandList*\ computeCmdList);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Resolve(ICommandList*\ computeCmdList);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ UIndex32\ GetNumPasses()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ UIndex32\ maxNumPasses\ =\ 8;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ std::array<UniquePtr<MaterialInstance>,\ maxNumPasses>\ m\_downscalingMaterialInstances\{\};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ std::array<UniquePtr<MaterialInstance>,\ maxNumPasses>\ m\_upscalingMaterialInstances\{\};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ UniquePtr<MaterialInstance>\ m\_resolveInstance;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ GpuImage*\ m\_inputImage\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ Material*\ m\_downscaleMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ Material*\ m\_upscaleMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ Material*\ m\_resolveMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \}}
+
+\end{DoxyCode}

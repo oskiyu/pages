@@ -1,0 +1,94 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Ray\+Cast\+Result}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray_cast_result}\index{OSK::COLLISION::RayCastResult@{OSK::COLLISION::RayCastResult}}
+
+
+{\ttfamily \#include $<$Ray\+Cast\+Result.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ Result} () const
+\item 
+const \textbf{ Vector3f} \& \textbf{ Get\+Intersection\+Point} () const
+\item 
+\textbf{ ECS\+::\+Game\+Object\+Index} \textbf{ Get\+Object} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Ray\+Cast\+Result} \textbf{ False} ()
+\item 
+static \textbf{ Ray\+Cast\+Result} \textbf{ True} (const \textbf{ Vector3f} \&intersection, \textbf{ ECS\+::\+Game\+Object\+Index} game\+Object)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa el resultado de trazar un rayo en la escena. El resultado puede ser positivo en caso de que el rayo haya interseccionado con algun objeto, o negativo en caso contrario. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::RayCastResult@{OSK::COLLISION::RayCastResult}!False@{False}}
+\index{False@{False}!OSK::COLLISION::RayCastResult@{OSK::COLLISION::RayCastResult}}
+\doxysubsubsection{False()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray_cast_result_af10022f2f38d51befdf03b1e9394b2b6} 
+\textbf{ Ray\+Cast\+Result} Ray\+Cast\+Result\+::\+False (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un resultado falso (sin intersección). 
+
+\begin{DoxyReturn}{Devuelve}
+Resultado negativo. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::RayCastResult@{OSK::COLLISION::RayCastResult}!GetIntersectionPoint@{GetIntersectionPoint}}
+\index{GetIntersectionPoint@{GetIntersectionPoint}!OSK::COLLISION::RayCastResult@{OSK::COLLISION::RayCastResult}}
+\doxysubsubsection{GetIntersectionPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray_cast_result_a19066a70c7a0cd8885436b110c896aa2} 
+const \textbf{ Vector3f} \& Ray\+Cast\+Result\+::\+Get\+Intersection\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el punto de intersección más cercano al origen. 
+
+\begin{DoxyReturn}{Devuelve}
+Punto de intersección. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::RayCastResult@{OSK::COLLISION::RayCastResult}!GetObject@{GetObject}}
+\index{GetObject@{GetObject}!OSK::COLLISION::RayCastResult@{OSK::COLLISION::RayCastResult}}
+\doxysubsubsection{GetObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray_cast_result_a52125b83816e2937039230ec2dfa1e9d} 
+\textbf{ ECS\+::\+Game\+Object\+Index} Ray\+Cast\+Result\+::\+Get\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Objeto con el que intersecciona. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::RayCastResult@{OSK::COLLISION::RayCastResult}!Result@{Result}}
+\index{Result@{Result}!OSK::COLLISION::RayCastResult@{OSK::COLLISION::RayCastResult}}
+\doxysubsubsection{Result()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray_cast_result_a83e344de56ed72aca712f0aba0a9b0f6} 
+bool Ray\+Cast\+Result\+::\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve true si hubo intersección, o false en caso contrario. 
+
+\index{OSK::COLLISION::RayCastResult@{OSK::COLLISION::RayCastResult}!True@{True}}
+\index{True@{True}!OSK::COLLISION::RayCastResult@{OSK::COLLISION::RayCastResult}}
+\doxysubsubsection{True()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_ray_cast_result_aa2f2f5c5ef956e33398edd0e733948e7} 
+\textbf{ Ray\+Cast\+Result} Ray\+Cast\+Result\+::\+True (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{intersection}{, }\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{game\+Object}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un resultado verdadero (con intersección). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em intersection} & Punto de intersección más cercano. \\
+\hline
+{\em game\+Object} & Objeto interseccionado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado positivo. 
+\end{DoxyReturn}

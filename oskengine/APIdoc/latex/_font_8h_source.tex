@@ -1,0 +1,61 @@
+\doxysection{Font.\+h}
+\label{_font_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Font.h@{C:/Users/Oscar/source/repos/OSKengine/Source/Font.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}IAsset.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}IGpuImage.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Vector4.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}FontInstance.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}FontCharacter.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }Material;}
+\DoxyCodeLine{00012\ \}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ Font\ :\ \textcolor{keyword}{public}\ IAsset\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ OSK\_ASSET\_TYPE\_REG(\textcolor{stringliteral}{"{}OSK::Font"{}});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ OSK\_DISABLE\_COPY(Font);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ OSK\_DEFAULT\_MOVE\_OPERATOR(Font);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ Font(\textcolor{keyword}{const}\ std::string\&\ assetFile);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_SetFontFilePath(\textcolor{keyword}{const}\ std::string\&\ rawFile);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ LoadSizedFont(USize32\ size);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UnloadSizedFont(USize32\ size);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ GRAPHICS::GpuImage*\ GetGpuImage(USize32\ fontSize);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ FontCharacter\&\ GetCharacterInfo(USize32\ size,\ \textcolor{keywordtype}{char}\ character);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ FontInstance\&\ GetInstance(USize32\ fontSize);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ FontInstance\&\ GetExistingInstance(USize32\ fontSize)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ContainsInstance(USize32\ fontSize)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetMaterial(GRAPHICS::Material*\ material);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ GetMaterial()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ std::unordered\_map<USize32,\ FontInstance>\ m\_instances;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ std::string\ m\_fontFile;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ m\_material\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \}}
+
+\end{DoxyCode}

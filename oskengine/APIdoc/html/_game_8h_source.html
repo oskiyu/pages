@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Fichero Fuente C:/Users/Oscar/source/repos/OSKengine/Source/Game.h</title>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/Game.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_game_8h_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('_game_8h_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,9 +78,16 @@ $(document).ready(function(){initNavTree('_game_8h_source.html',''); initResizab
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
@@ -92,111 +98,168 @@ $(document).ready(function(){initNavTree('_game_8h_source.html',''); initResizab
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Para OSKAPI_CALL.</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;ApiCall.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// Tipos.</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;NumericTypes.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;Vector2.hpp&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// Interfaz.</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;IUiContainer.h&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;UiFreeContainer.h&quot;</span> <span class="comment">// Para el root.</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;UniquePtr.hpp&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;DefaultElementsProfiles.h&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k.html">OSK</a> {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">struct </span>Version;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_i_game.html">   29</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_class" href="class_o_s_k_1_1_i_game.html">IGame</a> {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_i_game.html#a8bbe8755f305ca2c169f547b9eaec5a7">   33</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a8bbe8755f305ca2c169f547b9eaec5a7">~IGame</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#pragma region ECS</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> RegisterAssets();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> RegisterComponents();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> RegisterSystems();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> RegisterConsoleCommands();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#pragma endregion</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnCreate();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnTick_BeforeEcs(<a class="code hl_typedef" href="namespace_o_s_k.html#ae6d305af5698a56db8c3ab3afc10fdd4">TDeltaTime</a> deltaTime);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnTick_AfterEcs(<a class="code hl_typedef" href="namespace_o_s_k.html#ae6d305af5698a56db8c3ab3afc10fdd4">TDeltaTime</a> deltaTime);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_i_game.html#a1fd5e113ad6425b6a8fdc99c87c49167">   74</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a1fd5e113ad6425b6a8fdc99c87c49167">BuildFrame</a>() = 0;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnExit();</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnWindowResize(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2ui</a>&amp; size);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordtype">void</span> _Run();</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Platforms.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Tipos.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;NumericTypes.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Vector2.hpp&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// Interfaz.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;IUiContainer.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;UiFreeContainer.h&quot;</span> <span class="comment">// Para el root.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;UniquePtr.hpp&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;DefaultElementsProfiles.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;RenderGraph.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k.html">OSK</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_version.html">Version</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_i_game.html">   32</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#acdfda3776c555db145edc9ca7c1f8c9c">IGame</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_i_game.html#a8bbe8755f305ca2c169f547b9eaec5a7">   36</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a8bbe8755f305ca2c169f547b9eaec5a7">~IGame</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#pragma region ECS</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a92ccf921e939bcf8409ab9326e7571b4">RegisterAssets</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a6c43af37f9365f6490d1a0a2c9250f0e">RegisterComponents</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a6595c60375b1f2f14e6e96e1f8ca404e">RegisterSystems</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#ada3405ad0fa8ce05d683ceae975d46d8">RegisterConsoleCommands</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#ab00e969b9d69316da10501747d0fdebe">OnCreate</a>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a07bd829bc126bc2b590b24f1c27ce45d">OnTick_BeforeEcs</a>(<a class="code hl_typedef" href="namespace_o_s_k.html#adfc76cbcf35e5506ee24168edfe15bb0">TDeltaTime</a> deltaTime);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a048a3bb0ab1c54e14c42e614abacb3da">OnTick_AfterEcs</a>(<a class="code hl_typedef" href="namespace_o_s_k.html#adfc76cbcf35e5506ee24168edfe15bb0">TDeltaTime</a> deltaTime);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a4988ddabd30b3b3f442d3b9ae6763087">BuildFrame</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a02044212501aee6fc59d1a75c0129892">OnExit</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a49a11ed87fecf78d0ac7297b34382e5f">OnWindowResize</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespace_o_s_k.html#a6f5b4753cd85b4773d2880148fd031cf">Vector2ui</a>&amp; size);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordtype">void</span> Exit();</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> GetFps() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_class" href="class_o_s_k_1_1_u_i_1_1_i_container.html">UI::IContainer</a>&amp; GetRootUiElement();</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_u_i_1_1_i_container.html">UI::IContainer</a>&amp; GetRootUiElement() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keyword">explicit</span> <a class="code hl_class" href="class_o_s_k_1_1_i_game.html">IGame</a>(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">GAME::DefaultContentProfile</a> defaultContentProfile);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_i_game.html#af033542cc50642b5e1325ee4c7c93cf7">  104</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#af033542cc50642b5e1325ee4c7c93cf7">CreateWindow</a>() = 0;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_i_game.html#a3fff81bfbca1fc25efa8a10f2318d46b">  107</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a3fff81bfbca1fc25efa8a10f2318d46b">SetupEngine</a>() = 0;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#ifdef OSK_ANDROID</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a89e60fc451a486d268ac823807487b37">_Run</a>(<span class="keyword">struct</span> android_app* app);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> AndroidHandleAppCommand(android_app* app, int32_t cmd);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a89e60fc451a486d268ac823807487b37">_Run</a>();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#ae8194150599c2c8d05a49efe80fe1b47">Exit</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a0784dba46a0bf58bff2ab1aa174ebd35">GetFps</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <a class="code hl_class" href="class_o_s_k_1_1_u_i_1_1_i_container.html">UI::IContainer</a>&amp; <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#af8e323d17f81981e648453442a11f596">GetRootUiElement</a>();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_u_i_1_1_i_container.html">UI::IContainer</a>&amp; <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#af8e323d17f81981e648453442a11f596">GetRootUiElement</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordtype">void</span> HandleResizeEvents();</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordtype">void</span> UpdateFps(<a class="code hl_typedef" href="namespace_o_s_k.html#ae6d305af5698a56db8c3ab3afc10fdd4">TDeltaTime</a> deltaTime);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a3287b1a8e1ce748ac134e0f75ce54b99">SetRenderGraph</a>(<a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;GRAPHICS::RenderGraph&gt;</a>&amp;&amp; renderGraph);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">GRAPHICS::RenderGraph</a>* <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#ab9acfea175e079da2c34b503873726a4">GetRenderGraph</a>();</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">GAME::DefaultContentProfile</a> m_defaultContentProfile = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69a5fb1f955b45e38e31789286a1790398d">GAME::DefaultContentProfile::ALL</a>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a7df04d20dd1c7a2f6d36b7c18ece8788">RecreateWindow</a>();</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#ae6d305af5698a56db8c3ab3afc10fdd4">TDeltaTime</a> m_deltaTime = 1.0f;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keyword">protected</span>:</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#ae6d305af5698a56db8c3ab3afc10fdd4">TDeltaTime</a> m_framerateCountTimer = 0.0f;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> m_currentFps = 0;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">USize32</a> m_frameCount = 0;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;UI::IContainer&gt;</a> m_rootUiElement;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    };</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#acdfda3776c555db145edc9ca7c1f8c9c">IGame</a>(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">GAME::DefaultContentProfile</a> defaultContentProfile);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_i_game.html#af033542cc50642b5e1325ee4c7c93cf7">  121</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#af033542cc50642b5e1325ee4c7c93cf7">CreateWindow</a>() = 0;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_i_game.html#a3fff81bfbca1fc25efa8a10f2318d46b">  124</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a3fff81bfbca1fc25efa8a10f2318d46b">SetupEngine</a>() = 0;</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
-<div class="ttc" id="aclass_o_s_k_1_1_i_game_html"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></div><div class="ttdoc">Esta clase representa la clase principal de un juego de OSKengine. No es estrictamente necesaria para...</div><div class="ttdef"><b>Definition:</b> Game.h:29</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a1fd5e113ad6425b6a8fdc99c87c49167"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a1fd5e113ad6425b6a8fdc99c87c49167">OSK::IGame::BuildFrame</a></div><div class="ttdeci">virtual void BuildFrame()=0</div><div class="ttdoc">Esta función debe renderizar la imagen final que se representará en la ventana.</div></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#ab57d0dcc6931b9f39bf9ed76e18560c7">OnTick_Keyboard</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_i_keyboard_input.html">IO::IKeyboardInput</a>&amp; keyboard);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#aa7dddcf3c3a2ab0c8b581b8ec48b1f3b">OnTick_Mouse</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_i_mouse_input.html">IO::IMouseInput</a>&amp; mouse);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_i_keyboard_input.html">IO::IKeyboardInput</a>* <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a6c1eaaa28364add7d280a4437fe541a5">GetKeyboard</a>();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_i_mouse_input.html">IO::IMouseInput</a>* <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a6ddb5c43a607fef4a0a4f25289838dce">GetMouse</a>();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_i_gamepad_input.html">IO::IGamepadInput</a>* <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a3562899f16a90c4a48a9613eb76e392e">GetGamepad</a>();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_i_touch_input.html">IO::ITouchInput</a>* <a class="code hl_function" href="class_o_s_k_1_1_i_game.html#a80ddba904923fefed3a18c1781590e4d">GetTouchs</a>();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordtype">void</span> HandleResizeEvents();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordtype">void</span> UpdateFps(<a class="code hl_typedef" href="namespace_o_s_k.html#adfc76cbcf35e5506ee24168edfe15bb0">TDeltaTime</a> deltaTime);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordtype">void</span> UpdateUi();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">GAME::DefaultContentProfile</a> m_defaultContentProfile = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69a5fb1f955b45e38e31789286a1790398d">GAME::DefaultContentProfile::ALL</a>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;GRAPHICS::RenderGraph&gt;</a> m_renderGraph;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#adfc76cbcf35e5506ee24168edfe15bb0">TDeltaTime</a> m_deltaTime = 1.0f;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#adfc76cbcf35e5506ee24168edfe15bb0">TDeltaTime</a> m_framerateCountTimer = 0.0f;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> m_currentFps = 0;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> m_frameCount = 0;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;UI::IContainer&gt;</a> m_rootUiElement;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    };</div>
+</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html">OSK::GRAPHICS::RenderGraph</a></div><div class="ttdoc">Grafo de renderizado, que contiene tanto los pases de renderizado como los recursos que estos necesit...</div><div class="ttdef"><b>Definition</b> RenderGraph.h:52</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a02044212501aee6fc59d1a75c0129892"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a02044212501aee6fc59d1a75c0129892">OSK::IGame::OnExit</a></div><div class="ttdeci">virtual void OnExit()</div><div class="ttdoc">Función que se ejecuta al salir del juego.</div><div class="ttdef"><b>Definition</b> Game.cpp:75</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a048a3bb0ab1c54e14c42e614abacb3da"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a048a3bb0ab1c54e14c42e614abacb3da">OSK::IGame::OnTick_AfterEcs</a></div><div class="ttdeci">virtual void OnTick_AfterEcs(TDeltaTime deltaTime)</div><div class="ttdoc">Función que se ejecuta cada frame, después que los sistemas ECS.</div><div class="ttdef"><b>Definition</b> Game.cpp:62</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a0784dba46a0bf58bff2ab1aa174ebd35"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a0784dba46a0bf58bff2ab1aa174ebd35">OSK::IGame::GetFps</a></div><div class="ttdeci">USize32 GetFps() const</div><div class="ttdef"><b>Definition</b> Game.cpp:352</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a07bd829bc126bc2b590b24f1c27ce45d"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a07bd829bc126bc2b590b24f1c27ce45d">OSK::IGame::OnTick_BeforeEcs</a></div><div class="ttdeci">virtual void OnTick_BeforeEcs(TDeltaTime deltaTime)</div><div class="ttdoc">Función que se ejecuta cada frame, antes que los sistemas ECS.</div><div class="ttdef"><b>Definition</b> Game.cpp:58</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a3287b1a8e1ce748ac134e0f75ce54b99"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a3287b1a8e1ce748ac134e0f75ce54b99">OSK::IGame::SetRenderGraph</a></div><div class="ttdeci">void SetRenderGraph(UniquePtr&lt; GRAPHICS::RenderGraph &gt; &amp;&amp;renderGraph)</div><div class="ttdef"><b>Definition</b> Game.cpp:377</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a3562899f16a90c4a48a9613eb76e392e"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a3562899f16a90c4a48a9613eb76e392e">OSK::IGame::GetGamepad</a></div><div class="ttdeci">IO::IGamepadInput * GetGamepad()</div><div class="ttdef"><b>Definition</b> Game.cpp:317</div></div>
 <div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a3fff81bfbca1fc25efa8a10f2318d46b"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a3fff81bfbca1fc25efa8a10f2318d46b">OSK::IGame::SetupEngine</a></div><div class="ttdeci">virtual void SetupEngine()=0</div><div class="ttdoc">Debe inicializar el renderizador del Engine.</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a4988ddabd30b3b3f442d3b9ae6763087"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a4988ddabd30b3b3f442d3b9ae6763087">OSK::IGame::BuildFrame</a></div><div class="ttdeci">virtual void BuildFrame()</div><div class="ttdoc">Esta función debe renderizar la imagen final que se representará en la ventana.</div><div class="ttdef"><b>Definition</b> Game.cpp:66</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a49a11ed87fecf78d0ac7297b34382e5f"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a49a11ed87fecf78d0ac7297b34382e5f">OSK::IGame::OnWindowResize</a></div><div class="ttdeci">virtual void OnWindowResize(const Vector2ui &amp;size)</div><div class="ttdoc">Función que se ejecuta cuando la ventana cambia de tamaño.</div><div class="ttdef"><b>Definition</b> Game.cpp:333</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a6595c60375b1f2f14e6e96e1f8ca404e"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a6595c60375b1f2f14e6e96e1f8ca404e">OSK::IGame::RegisterSystems</a></div><div class="ttdeci">virtual void RegisterSystems()</div><div class="ttdoc">Registra los sistemas específicos del juego.</div><div class="ttdef"><b>Definition</b> Game.cpp:46</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a6c1eaaa28364add7d280a4437fe541a5"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a6c1eaaa28364add7d280a4437fe541a5">OSK::IGame::GetKeyboard</a></div><div class="ttdeci">IO::IKeyboardInput * GetKeyboard()</div><div class="ttdef"><b>Definition</b> Game.cpp:305</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a6c43af37f9365f6490d1a0a2c9250f0e"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a6c43af37f9365f6490d1a0a2c9250f0e">OSK::IGame::RegisterComponents</a></div><div class="ttdeci">virtual void RegisterComponents()</div><div class="ttdoc">Registra los componentes específicos del juego.</div><div class="ttdef"><b>Definition</b> Game.cpp:42</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a6ddb5c43a607fef4a0a4f25289838dce"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a6ddb5c43a607fef4a0a4f25289838dce">OSK::IGame::GetMouse</a></div><div class="ttdeci">IO::IMouseInput * GetMouse()</div><div class="ttdef"><b>Definition</b> Game.cpp:311</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a7df04d20dd1c7a2f6d36b7c18ece8788"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a7df04d20dd1c7a2f6d36b7c18ece8788">OSK::IGame::RecreateWindow</a></div><div class="ttdeci">void RecreateWindow()</div><div class="ttdef"><b>Definition</b> Game.cpp:337</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a80ddba904923fefed3a18c1781590e4d"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a80ddba904923fefed3a18c1781590e4d">OSK::IGame::GetTouchs</a></div><div class="ttdeci">IO::ITouchInput * GetTouchs()</div><div class="ttdef"><b>Definition</b> Game.cpp:323</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a89e60fc451a486d268ac823807487b37"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a89e60fc451a486d268ac823807487b37">OSK::IGame::_Run</a></div><div class="ttdeci">void _Run()</div><div class="ttdoc">Inicia la ejecución del juego.</div><div class="ttdef"><b>Definition</b> Game.cpp:112</div></div>
 <div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a8bbe8755f305ca2c169f547b9eaec5a7"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a8bbe8755f305ca2c169f547b9eaec5a7">OSK::IGame::~IGame</a></div><div class="ttdeci">virtual ~IGame()=default</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_a92ccf921e939bcf8409ab9326e7571b4"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#a92ccf921e939bcf8409ab9326e7571b4">OSK::IGame::RegisterAssets</a></div><div class="ttdeci">virtual void RegisterAssets()</div><div class="ttdoc">Registra los assets y los loaders específicos del juego.</div><div class="ttdef"><b>Definition</b> Game.cpp:38</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_aa7dddcf3c3a2ab0c8b581b8ec48b1f3b"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#aa7dddcf3c3a2ab0c8b581b8ec48b1f3b">OSK::IGame::OnTick_Mouse</a></div><div class="ttdeci">virtual void OnTick_Mouse(const IO::IMouseInput &amp;mouse)</div><div class="ttdef"><b>Definition</b> Game.cpp:286</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_ab00e969b9d69316da10501747d0fdebe"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#ab00e969b9d69316da10501747d0fdebe">OSK::IGame::OnCreate</a></div><div class="ttdeci">virtual void OnCreate()</div><div class="ttdoc">Función ejecutada al cargar el juego.</div><div class="ttdef"><b>Definition</b> Game.cpp:54</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_ab57d0dcc6931b9f39bf9ed76e18560c7"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#ab57d0dcc6931b9f39bf9ed76e18560c7">OSK::IGame::OnTick_Keyboard</a></div><div class="ttdeci">virtual void OnTick_Keyboard(const IO::IKeyboardInput &amp;keyboard)</div><div class="ttdef"><b>Definition</b> Game.cpp:282</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_ab9acfea175e079da2c34b503873726a4"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#ab9acfea175e079da2c34b503873726a4">OSK::IGame::GetRenderGraph</a></div><div class="ttdeci">GRAPHICS::RenderGraph * GetRenderGraph()</div><div class="ttdef"><b>Definition</b> Game.cpp:381</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_acdfda3776c555db145edc9ca7c1f8c9c"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#acdfda3776c555db145edc9ca7c1f8c9c">OSK::IGame::IGame</a></div><div class="ttdeci">IGame(GAME::DefaultContentProfile defaultContentProfile)</div><div class="ttdef"><b>Definition</b> Game.cpp:34</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_ada3405ad0fa8ce05d683ceae975d46d8"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#ada3405ad0fa8ce05d683ceae975d46d8">OSK::IGame::RegisterConsoleCommands</a></div><div class="ttdeci">virtual void RegisterConsoleCommands()</div><div class="ttdoc">Registra los comandos de consola.</div><div class="ttdef"><b>Definition</b> Game.cpp:50</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_ae8194150599c2c8d05a49efe80fe1b47"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#ae8194150599c2c8d05a49efe80fe1b47">OSK::IGame::Exit</a></div><div class="ttdeci">void Exit()</div><div class="ttdoc">Fuerza el shutdown del juego.</div><div class="ttdef"><b>Definition</b> Game.cpp:329</div></div>
 <div class="ttc" id="aclass_o_s_k_1_1_i_game_html_af033542cc50642b5e1325ee4c7c93cf7"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#af033542cc50642b5e1325ee4c7c93cf7">OSK::IGame::CreateWindow</a></div><div class="ttdeci">virtual void CreateWindow()=0</div><div class="ttdoc">Debe crear la ventana del Engine.</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_u_i_1_1_i_container_html"><div class="ttname"><a href="class_o_s_k_1_1_u_i_1_1_i_container.html">OSK::UI::IContainer</a></div><div class="ttdoc">Interfaz común para los contenedores de UI. Un contenedor de UI puede contener distintos elementos UI...</div><div class="ttdef"><b>Definition:</b> IUiContainer.h:15</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_unique_ptr_html"><div class="ttname"><a href="class_o_s_k_1_1_unique_ptr.html">OSK::UniquePtr</a></div><div class="ttdoc">Estructura que es dueña de un objeto almacenado en heap. Al destruirse el UniquePtr,...</div><div class="ttdef"><b>Definition:</b> UniquePtr.hpp:26</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html">OSK::Vector2_t&lt; uint32_t &gt;</a></div></div>
-<div class="ttc" id="anamespace_o_s_k_1_1_g_a_m_e_html_a3a5605dbb9f51b73a09ffdecbee85d69"><div class="ttname"><a href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">OSK::GAME::DefaultContentProfile</a></div><div class="ttdeci">DefaultContentProfile</div><div class="ttdoc">Perfil que indica qué sistemas, componentes y assets por defecto se cargarán al iniciar el motor.</div><div class="ttdef"><b>Definition:</b> DefaultElementsProfiles.h:8</div></div>
-<div class="ttc" id="anamespace_o_s_k_1_1_g_a_m_e_html_a3a5605dbb9f51b73a09ffdecbee85d69a5fb1f955b45e38e31789286a1790398d"><div class="ttname"><a href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69a5fb1f955b45e38e31789286a1790398d">OSK::GAME::DefaultContentProfile::ALL</a></div><div class="ttdeci">@ ALL</div></div>
-<div class="ttc" id="anamespace_o_s_k_html"><div class="ttname"><a href="namespace_o_s_k.html">OSK</a></div><div class="ttdef"><b>Definition:</b> AabbAabbDetector.h:5</div></div>
-<div class="ttc" id="anamespace_o_s_k_html_a12b6cb7a6544b56835883aa592d5c532"><div class="ttname"><a href="namespace_o_s_k.html#a12b6cb7a6544b56835883aa592d5c532">OSK::USize32</a></div><div class="ttdeci">uint32_t USize32</div><div class="ttdoc">Tamaño, almacenado en un unsigned int de 32 bits.</div><div class="ttdef"><b>Definition:</b> NumericTypes.h:15</div></div>
-<div class="ttc" id="anamespace_o_s_k_html_ae6d305af5698a56db8c3ab3afc10fdd4"><div class="ttname"><a href="namespace_o_s_k.html#ae6d305af5698a56db8c3ab3afc10fdd4">OSK::TDeltaTime</a></div><div class="ttdeci">float TDeltaTime</div><div class="ttdoc">Delta de tiempo, medido en segundos.</div><div class="ttdef"><b>Definition:</b> NumericTypes.h:31</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_game_html_af8e323d17f81981e648453442a11f596"><div class="ttname"><a href="class_o_s_k_1_1_i_game.html#af8e323d17f81981e648453442a11f596">OSK::IGame::GetRootUiElement</a></div><div class="ttdeci">UI::IContainer &amp; GetRootUiElement()</div><div class="ttdef"><b>Definition</b> Game.cpp:360</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_o_1_1_i_gamepad_input_html"><div class="ttname"><a href="class_o_s_k_1_1_i_o_1_1_i_gamepad_input.html">OSK::IO::IGamepadInput</a></div><div class="ttdoc">Interfaz para leer la entrada del usuario a través de uno o varios mandos.</div><div class="ttdef"><b>Definition</b> IGamepadInput.h:12</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_o_1_1_i_keyboard_input_html"><div class="ttname"><a href="class_o_s_k_1_1_i_o_1_1_i_keyboard_input.html">OSK::IO::IKeyboardInput</a></div><div class="ttdoc">Interfaz para leer la entrada del usuario a través del teclado.</div><div class="ttdef"><b>Definition</b> IKeyboardInput.h:12</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_o_1_1_i_mouse_input_html"><div class="ttname"><a href="class_o_s_k_1_1_i_o_1_1_i_mouse_input.html">OSK::IO::IMouseInput</a></div><div class="ttdoc">Interfaz para leer la entrada del usuario a través del ratón.</div><div class="ttdef"><b>Definition</b> IMouseInput.h:13</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_o_1_1_i_touch_input_html"><div class="ttname"><a href="class_o_s_k_1_1_i_o_1_1_i_touch_input.html">OSK::IO::ITouchInput</a></div><div class="ttdoc">Interfaz paraa obtener toques en una pantalla tÃ¡ctil.</div><div class="ttdef"><b>Definition</b> ITouchInput.h:12</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_u_i_1_1_i_container_html"><div class="ttname"><a href="class_o_s_k_1_1_u_i_1_1_i_container.html">OSK::UI::IContainer</a></div><div class="ttdoc">Interfaz común para los contenedores de UI. Un contenedor de UI puede contener distintos elementos UI...</div><div class="ttdef"><b>Definition</b> IUiContainer.h:15</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_unique_ptr_html"><div class="ttname"><a href="class_o_s_k_1_1_unique_ptr.html">OSK::UniquePtr</a></div><div class="ttdoc">Estructura que es dueña de un objeto almacenado en heap. Al destruirse el UniquePtr,...</div><div class="ttdef"><b>Definition</b> UniquePtr.hpp:26</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_a_m_e_html_a3a5605dbb9f51b73a09ffdecbee85d69"><div class="ttname"><a href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">OSK::GAME::DefaultContentProfile</a></div><div class="ttdeci">DefaultContentProfile</div><div class="ttdoc">Perfil que indica qué sistemas, componentes y assets por defecto se cargarán al iniciar el motor.</div><div class="ttdef"><b>Definition</b> DefaultElementsProfiles.h:8</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_a_m_e_html_a3a5605dbb9f51b73a09ffdecbee85d69a5fb1f955b45e38e31789286a1790398d"><div class="ttname"><a href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69a5fb1f955b45e38e31789286a1790398d">OSK::GAME::DefaultContentProfile::ALL</a></div><div class="ttdeci">@ ALL</div><div class="ttdef"><b>Definition</b> DefaultElementsProfiles.h:85</div></div>
+<div class="ttc" id="anamespace_o_s_k_html"><div class="ttname"><a href="namespace_o_s_k.html">OSK</a></div><div class="ttdef"><b>Definition</b> AabbAabbDetector.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a6f5b4753cd85b4773d2880148fd031cf"><div class="ttname"><a href="namespace_o_s_k.html#a6f5b4753cd85b4773d2880148fd031cf">OSK::Vector2ui</a></div><div class="ttdeci">Vector2_t&lt; uint32_t &gt; Vector2ui</div><div class="ttdoc">Precisión = uint32.</div><div class="ttdef"><b>Definition</b> Vector2.hpp:270</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_acf682b0e024acc36806435295480d2ed"><div class="ttname"><a href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">OSK::USize32</a></div><div class="ttdeci">uint32_t USize32</div><div class="ttdoc">Tamaño, almacenado en un unsigned int de 32 bits.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:26</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_adfc76cbcf35e5506ee24168edfe15bb0"><div class="ttname"><a href="namespace_o_s_k.html#adfc76cbcf35e5506ee24168edfe15bb0">OSK::TDeltaTime</a></div><div class="ttdeci">float TDeltaTime</div><div class="ttdoc">Delta de tiempo, medido en segundos.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:42</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_version_html"><div class="ttname"><a href="struct_o_s_k_1_1_version.html">OSK::Version</a></div><div class="ttdoc">Representa una versión.</div><div class="ttdef"><b>Definition</b> Version.h:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>Game.h</b></li>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>Game.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

@@ -1,0 +1,147 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Full\+Minkowski\+Hull}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull}\index{OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}}
+
+
+{\ttfamily \#include $<$Full\+Minkowski\+Hull.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum class \textbf{ Volume} \{ \textbf{ A}
+, \textbf{ B}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Build\+Full\+Hull} (const \textbf{ Convex\+Volume} \&first, const \textbf{ Convex\+Volume} \&second)
+\item 
+bool \textbf{ Surpases\+Min\+Depth} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Mtv} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Normalized\+Mtv} () const
+\item 
+std\+::array$<$ \textbf{ UIndex64}, 3 $>$ \textbf{ Get\+First\+Face\+Vertices\+Ids} () const
+\item 
+std\+::array$<$ \textbf{ UIndex64}, 3 $>$ \textbf{ Get\+Second\+Face\+Vertices\+Ids} () const
+\item 
+\textbf{ Volume} \textbf{ Get\+Reference\+Id} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Full\+Minkowski\+Hull} \textbf{ Build\+From\+Volumes} (const \textbf{ Convex\+Volume} \&first, const \textbf{ Convex\+Volume} \&second)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Volumen 3D que ocupa toda la diferencia de Minkowski de dos colliders. 
+
+\label{doc-enum-members}
+\doxysubsection{Documentación de las enumeraciones miembro de la clase}
+\index{OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}!Volume@{Volume}}
+\index{Volume@{Volume}!OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}}
+\doxysubsubsection{Volume}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull_a845e6fcfd9447a3ad178d7acfe0804f3} 
+enum class \textbf{ OSK\+::\+COLLISION\+::\+Full\+Minkowski\+Hull\+::\+Volume}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A@{A}!OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}}\index{OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}!A@{A}}}\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull_a845e6fcfd9447a3ad178d7acfe0804f3a7fc56270e7a70fa81a5935b72eacbe29} 
+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B@{B}!OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}}\index{OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}!B@{B}}}\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull_a845e6fcfd9447a3ad178d7acfe0804f3a9d5ed678fe57bcca610140957afab571} 
+B&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}!BuildFromVolumes@{BuildFromVolumes}}
+\index{BuildFromVolumes@{BuildFromVolumes}!OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}}
+\doxysubsubsection{BuildFromVolumes()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull_a0a9afbe80c42136b182a02e0966f27af} 
+\textbf{ Full\+Minkowski\+Hull} Full\+Minkowski\+Hull\+::\+Build\+From\+Volumes (\begin{DoxyParamCaption}\item[{const \textbf{ Convex\+Volume} \&}]{first}{, }\item[{const \textbf{ Convex\+Volume} \&}]{second}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Construye el hull completo de la diferencia de Minkowksi, obteniendo el MTV. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first} & Primer collider. \\
+\hline
+{\em second} & Segundo collider. \\
+\hline
+\end{DoxyParams}
+\index{OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}!BuildFullHull@{BuildFullHull}}
+\index{BuildFullHull@{BuildFullHull}!OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}}
+\doxysubsubsection{BuildFullHull()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull_a2c8290168729654306e73f5bf944db93} 
+void Full\+Minkowski\+Hull\+::\+Build\+Full\+Hull (\begin{DoxyParamCaption}\item[{const \textbf{ Convex\+Volume} \&}]{first}{, }\item[{const \textbf{ Convex\+Volume} \&}]{second}{}\end{DoxyParamCaption})}
+
+
+
+Construye el hull completo de la diferencia de Minkowksi, obteniendo el MTV. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first} & Primer collider. \\
+\hline
+{\em second} & Segundo collider. \\
+\hline
+\end{DoxyParams}
+\index{OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}!GetFirstFaceVerticesIds@{GetFirstFaceVerticesIds}}
+\index{GetFirstFaceVerticesIds@{GetFirstFaceVerticesIds}!OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}}
+\doxysubsubsection{GetFirstFaceVerticesIds()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull_a9e96f9a6245a693c794649f6904da10c} 
+std\+::array$<$ \textbf{ UIndex64}, 3 $>$ Full\+Minkowski\+Hull\+::\+Get\+First\+Face\+Vertices\+Ids (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+IDs de los vértices del primer volumen que generó el simplex. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}!GetMtv@{GetMtv}}
+\index{GetMtv@{GetMtv}!OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}}
+\doxysubsubsection{GetMtv()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull_ac86bad17da27c6627ab913753fc21d09} 
+\textbf{ Vector3f} Full\+Minkowski\+Hull\+::\+Get\+Mtv (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Vector mínimo de translación. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}!GetNormalizedMtv@{GetNormalizedMtv}}
+\index{GetNormalizedMtv@{GetNormalizedMtv}!OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}}
+\doxysubsubsection{GetNormalizedMtv()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull_ad2081aa033b0e20f0c51b8862e57a173} 
+\textbf{ Vector3f} Full\+Minkowski\+Hull\+::\+Get\+Normalized\+Mtv (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+MTV normalizado. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}!GetReferenceId@{GetReferenceId}}
+\index{GetReferenceId@{GetReferenceId}!OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}}
+\doxysubsubsection{GetReferenceId()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull_a680e475e3d117244754134461ec127ba} 
+\textbf{ Full\+Minkowski\+Hull\+::\+Volume} Full\+Minkowski\+Hull\+::\+Get\+Reference\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}!GetSecondFaceVerticesIds@{GetSecondFaceVerticesIds}}
+\index{GetSecondFaceVerticesIds@{GetSecondFaceVerticesIds}!OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}}
+\doxysubsubsection{GetSecondFaceVerticesIds()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull_a0f553878cb69649376a792db1914a3c9} 
+std\+::array$<$ \textbf{ UIndex64}, 3 $>$ Full\+Minkowski\+Hull\+::\+Get\+Second\+Face\+Vertices\+Ids (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+IDs de los vértices del segundo volumen que generó el simplex. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}!SurpasesMinDepth@{SurpasesMinDepth}}
+\index{SurpasesMinDepth@{SurpasesMinDepth}!OSK::COLLISION::FullMinkowskiHull@{OSK::COLLISION::FullMinkowskiHull}}
+\doxysubsubsection{SurpasesMinDepth()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_full_minkowski_hull_a38a8429acdbfad9fcc294b17b4e549cd} 
+bool Full\+Minkowski\+Hull\+::\+Surpases\+Min\+Depth (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si la profundidad del MTV es lo suficientemente grande como para considerar que hay colisión. 
+\end{DoxyReturn}

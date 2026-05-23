@@ -1,0 +1,441 @@
+\doxysection{Referencia de la clase OSK\+::Editor\+::Editor}
+\label{class_o_s_k_1_1_editor_1_1_editor}\index{OSK::Editor::Editor@{OSK::Editor::Editor}}
+
+
+{\ttfamily \#include $<$Editor.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ Component\+Controller\+Factory\+Method} = std\+::function$<$\textbf{ Unique\+Ptr}$<$\textbf{ Controllers\+::\+IComponent\+Controller}$>$(\textbf{ ECS\+::\+Game\+Object\+Index}, void$\ast$, \textbf{ Views\+::\+IComponent\+View}$\ast$)$>$
+\item 
+using \textbf{ Component\+View\+Factory\+Method} = std\+::function$<$\textbf{ Unique\+Ptr}$<$\textbf{ Views\+::\+IComponent\+View}$>$(const \textbf{ Vector2f}\& size)$>$
+\item 
+using \textbf{ System\+Controller\+Factory\+Method} = std\+::function$<$\textbf{ Unique\+Ptr}$<$\textbf{ Controllers\+::\+ISystem\+Controller}$>$(\textbf{ ECS\+::\+ISystem}$\ast$, \textbf{ Views\+::\+ISystem\+View}$\ast$)$>$
+\item 
+using \textbf{ System\+View\+Factory\+Method} = std\+::function$<$\textbf{ Unique\+Ptr}$<$\textbf{ Views\+::\+ISystem\+View}$>$(const \textbf{ Vector2f}\& size)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Editor} (\textbf{ OSK\+::\+UI\+::\+IContainer} $\ast$root\+Ui\+Element, const \textbf{ Vector2f} \&window\+Size)
+\item 
+void \textbf{ Register\+Component\+Controller} (std\+::string\+\_\+view component\+Name, const \textbf{ Component\+Controller\+Factory\+Method} \&controller\+Factory\+Method)
+\item 
+{\footnotesize template$<$typename TComponent\+Controller$>$ \newline
+requires Controllers\+::\+Is\+Component\+Controller$<$TComponent\+Controller$>$}\\void \textbf{ Register\+Component\+Controller} ()
+\item 
+{\footnotesize template$<$typename TComponent\+Controller$>$ \newline
+requires Controllers\+::\+Is\+Component\+Controller$<$TComponent\+Controller$>$}\\void \textbf{ Register\+Component\+Controller} (const \textbf{ Component\+Controller\+Factory\+Method} \&factory\+Method)
+\item 
+void \textbf{ Register\+Component\+View} (std\+::string\+\_\+view component\+Name, const \textbf{ Component\+View\+Factory\+Method} \&view\+Factory\+Method)
+\item 
+{\footnotesize template$<$typename TComponent\+View$>$ \newline
+requires Views\+::\+Is\+Component\+View$<$TComponent\+View$>$}\\void \textbf{ Register\+Component\+View} ()
+\item 
+{\footnotesize template$<$typename TComponent\+View$>$ \newline
+requires Views\+::\+Is\+Component\+View$<$TComponent\+View$>$}\\void \textbf{ Register\+Component\+View} (const \textbf{ Component\+View\+Factory\+Method} \&factory\+Method)
+\item 
+void \textbf{ Register\+System\+Controller} (std\+::string\+\_\+view component\+Name, const \textbf{ System\+Controller\+Factory\+Method} \&controller\+Factory\+Method)
+\item 
+{\footnotesize template$<$typename TSystem\+Controller$>$ \newline
+requires Controllers\+::\+Is\+System\+Controller$<$TSystem\+Controller$>$}\\void \textbf{ Register\+System\+Controller} ()
+\item 
+{\footnotesize template$<$typename TSystem\+Controller$>$ \newline
+requires Controllers\+::\+Is\+System\+Controller$<$TSystem\+Controller$>$}\\void \textbf{ Register\+System\+Controller} (const \textbf{ System\+Controller\+Factory\+Method} \&factory\+Method)
+\item 
+void \textbf{ Register\+System\+View} (std\+::string\+\_\+view system\+Name, const \textbf{ System\+View\+Factory\+Method} \&view\+Factory\+Method)
+\item 
+{\footnotesize template$<$typename TSystem\+View$>$ \newline
+requires Views\+::\+Is\+System\+View$<$TSystem\+View$>$}\\void \textbf{ Register\+System\+View} ()
+\item 
+{\footnotesize template$<$typename TSystem\+View$>$ \newline
+requires Views\+::\+Is\+System\+View$<$TSystem\+View$>$}\\void \textbf{ Register\+System\+View} (const \textbf{ System\+View\+Factory\+Method} \&factory\+Method)
+\item 
+void \textbf{ Update} (\textbf{ ECS\+::\+Entity\+Component\+System} $\ast$ecs, \textbf{ TDelta\+Time} delta\+Time)
+\item 
+void \textbf{ Set\+Selected\+Object} (\textbf{ ECS\+::\+Game\+Object\+Index} game\+Object)
+\item 
+void \textbf{ Clear\+Selected\+Object} ()
+\item 
+void \textbf{ Set\+Selected\+System} (const std\+::string \&system\+Name)
+\item 
+void \textbf{ Clear\+Selected\+System} ()
+\item 
+\textbf{ UI\+::\+Editor\+Ui} $\ast$ \textbf{ Get\+Ui} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase principal del editor. Maneja la interfaz de usuario y su conexión con el juego. 
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de los «\+Typedef» miembros de la clase}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!ComponentControllerFactoryMethod@{ComponentControllerFactoryMethod}}
+\index{ComponentControllerFactoryMethod@{ComponentControllerFactoryMethod}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{ComponentControllerFactoryMethod}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a24343548d1bafce88a4a10eba3abb387} 
+using \textbf{ OSK\+::\+Editor\+::\+Editor\+::\+Component\+Controller\+Factory\+Method} = std\+::function$<$\textbf{ Unique\+Ptr}$<$\textbf{ Controllers\+::\+IComponent\+Controller}$>$(\textbf{ ECS\+::\+Game\+Object\+Index}, void$\ast$, \textbf{ Views\+::\+IComponent\+View}$\ast$)$>$}
+
+
+
+Función que permite crear. 
+
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!ComponentViewFactoryMethod@{ComponentViewFactoryMethod}}
+\index{ComponentViewFactoryMethod@{ComponentViewFactoryMethod}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{ComponentViewFactoryMethod}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_ab32cd77aa6120d25f881d8b924a5089f} 
+using \textbf{ OSK\+::\+Editor\+::\+Editor\+::\+Component\+View\+Factory\+Method} = std\+::function$<$\textbf{ Unique\+Ptr}$<$\textbf{ Views\+::\+IComponent\+View}$>$(const \textbf{ Vector2f}\& size)$>$}
+
+
+
+Función que permite crear. 
+
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!SystemControllerFactoryMethod@{SystemControllerFactoryMethod}}
+\index{SystemControllerFactoryMethod@{SystemControllerFactoryMethod}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{SystemControllerFactoryMethod}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a7a8ca0d3de9ff3fbcc2ccd7def956da8} 
+using \textbf{ OSK\+::\+Editor\+::\+Editor\+::\+System\+Controller\+Factory\+Method} = std\+::function$<$\textbf{ Unique\+Ptr}$<$\textbf{ Controllers\+::\+ISystem\+Controller}$>$(\textbf{ ECS\+::\+ISystem}$\ast$, \textbf{ Views\+::\+ISystem\+View}$\ast$)$>$}
+
+
+
+Función que permite crear. 
+
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!SystemViewFactoryMethod@{SystemViewFactoryMethod}}
+\index{SystemViewFactoryMethod@{SystemViewFactoryMethod}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{SystemViewFactoryMethod}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a3db8581a13274ed67ec294608a8658a3} 
+using \textbf{ OSK\+::\+Editor\+::\+Editor\+::\+System\+View\+Factory\+Method} = std\+::function$<$\textbf{ Unique\+Ptr}$<$\textbf{ Views\+::\+ISystem\+View}$>$(const \textbf{ Vector2f}\& size)$>$}
+
+
+
+Función que permite crear. 
+
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!Editor@{Editor}}
+\index{Editor@{Editor}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{Editor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_ab6aeb93cb39e6ad9390f351dc232ae7e} 
+OSK\+::\+Editor\+::\+Editor\+::\+Editor (\begin{DoxyParamCaption}\item[{\textbf{ OSK\+::\+UI\+::\+IContainer} $\ast$}]{root\+Ui\+Element}{, }\item[{const \textbf{ Vector2f} \&}]{window\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Crea el editor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em root\+Ui\+Element} & Elemento raíz de interfaz del juego. \\
+\hline
+{\em window\+Size} & Tamaño de la ventana. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+Añade la interfaz de usuario del editor al elemento raíz de interfaz. 
+\end{DoxyPostcond}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!ClearSelectedObject@{ClearSelectedObject}}
+\index{ClearSelectedObject@{ClearSelectedObject}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{ClearSelectedObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_ad70d6e98d6e963f50e92c1d2041d3337} 
+void OSK\+::\+Editor\+::\+Editor\+::\+Clear\+Selected\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Establece que no haya ningún objeto seleccionado. 
+
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!ClearSelectedSystem@{ClearSelectedSystem}}
+\index{ClearSelectedSystem@{ClearSelectedSystem}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{ClearSelectedSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_ac2f06e53409e10e6416feaf226a43f9a} 
+void OSK\+::\+Editor\+::\+Editor\+::\+Clear\+Selected\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Establece que no haya ningún sistema seleccionado. 
+
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!GetUi@{GetUi}}
+\index{GetUi@{GetUi}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{GetUi()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a6c6813bea462b41e9c03df027e8ae1fa} 
+\textbf{ OSK\+::\+Editor\+::\+UI\+::\+Editor\+Ui} $\ast$ OSK\+::\+Editor\+::\+Editor\+::\+Get\+Ui (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Interfaz de usuario del editor. No es nullptr. 
+\end{DoxyReturn}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!RegisterComponentController@{RegisterComponentController}}
+\index{RegisterComponentController@{RegisterComponentController}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{RegisterComponentController()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_aad9b48f7159d1e79aa39b24d3a1c1b29} 
+template$<$typename TComponent\+Controller$>$ \newline
+requires Controllers\+::\+Is\+Component\+Controller$<$TComponent\+Controller$>$\\
+void OSK\+::\+Editor\+::\+Editor\+::\+Register\+Component\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra el método de creación. de un tipo de controlador en concreto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent\+Controller} & Tipo del controlador. \\
+\hline
+\end{DoxyTemplParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!RegisterComponentController@{RegisterComponentController}}
+\index{RegisterComponentController@{RegisterComponentController}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{RegisterComponentController()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a3f0492e611223807de7c41bda12b9912} 
+template$<$typename TComponent\+Controller$>$ \newline
+requires Controllers\+::\+Is\+Component\+Controller$<$TComponent\+Controller$>$\\
+void OSK\+::\+Editor\+::\+Editor\+::\+Register\+Component\+Controller (\begin{DoxyParamCaption}\item[{const \textbf{ Component\+Controller\+Factory\+Method} \&}]{factory\+Method}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra el método de creación. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent\+Controller} & Tipo del controlador. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em factory\+Method} & Función de creación. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!RegisterComponentController@{RegisterComponentController}}
+\index{RegisterComponentController@{RegisterComponentController}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{RegisterComponentController()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a05a1c2a11d981e3d6ddad74aaba85516} 
+void OSK\+::\+Editor\+::\+Editor\+::\+Register\+Component\+Controller (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{component\+Name}{, }\item[{const \textbf{ Component\+Controller\+Factory\+Method} \&}]{controller\+Factory\+Method}{}\end{DoxyParamCaption})}
+
+
+
+Registra el método de creación de un tipo de controlador en concreto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em component\+Name} & Nombre del componente con el que está relacionado el controlador. \\
+\hline
+{\em controller\+Factory\+Method} & Método de creación. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!RegisterComponentView@{RegisterComponentView}}
+\index{RegisterComponentView@{RegisterComponentView}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{RegisterComponentView()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_aba6207dce60a8eabe6ba708bc8aa90bc} 
+template$<$typename TComponent\+View$>$ \newline
+requires Views\+::\+Is\+Component\+View$<$TComponent\+View$>$\\
+void OSK\+::\+Editor\+::\+Editor\+::\+Register\+Component\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra el método de creación de un tipo de vista en concreto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent\+View} & Tipo de la vista. \\
+\hline
+\end{DoxyTemplParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!RegisterComponentView@{RegisterComponentView}}
+\index{RegisterComponentView@{RegisterComponentView}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{RegisterComponentView()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_af097b7e7f99686fb89fbcbdcfe5db538} 
+template$<$typename TComponent\+View$>$ \newline
+requires Views\+::\+Is\+Component\+View$<$TComponent\+View$>$\\
+void OSK\+::\+Editor\+::\+Editor\+::\+Register\+Component\+View (\begin{DoxyParamCaption}\item[{const \textbf{ Component\+View\+Factory\+Method} \&}]{factory\+Method}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra el método de creación de un tipo de vista en concreto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent\+View} & Tipo de la vista. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em factory\+Method} & Método de creación. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!RegisterComponentView@{RegisterComponentView}}
+\index{RegisterComponentView@{RegisterComponentView}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{RegisterComponentView()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a84f03d9b556fb8ff988e22d29e4a203c} 
+void OSK\+::\+Editor\+::\+Editor\+::\+Register\+Component\+View (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{component\+Name}{, }\item[{const \textbf{ Component\+View\+Factory\+Method} \&}]{view\+Factory\+Method}{}\end{DoxyParamCaption})}
+
+
+
+Registra el método de creación de un tipo de vista en concreto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em component\+Name} & Nombre del componente con el que está relacionado la vista. \\
+\hline
+{\em view\+Factory\+Method} & Método de creación. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!RegisterSystemController@{RegisterSystemController}}
+\index{RegisterSystemController@{RegisterSystemController}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{RegisterSystemController()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a77888156d9ac3b45ef6b9c706404a81f} 
+template$<$typename TSystem\+Controller$>$ \newline
+requires Controllers\+::\+Is\+System\+Controller$<$TSystem\+Controller$>$\\
+void OSK\+::\+Editor\+::\+Editor\+::\+Register\+System\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra el método de creación. de un tipo de controlador en concreto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent\+Controller} & Tipo del controlador. \\
+\hline
+\end{DoxyTemplParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!RegisterSystemController@{RegisterSystemController}}
+\index{RegisterSystemController@{RegisterSystemController}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{RegisterSystemController()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a56f62cbd385eaafb33d63f7b51a6d873} 
+template$<$typename TSystem\+Controller$>$ \newline
+requires Controllers\+::\+Is\+System\+Controller$<$TSystem\+Controller$>$\\
+void OSK\+::\+Editor\+::\+Editor\+::\+Register\+System\+Controller (\begin{DoxyParamCaption}\item[{const \textbf{ System\+Controller\+Factory\+Method} \&}]{factory\+Method}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra el método de creación. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent\+Controller} & Tipo del controlador. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em factory\+Method} & Función de creación. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!RegisterSystemController@{RegisterSystemController}}
+\index{RegisterSystemController@{RegisterSystemController}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{RegisterSystemController()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a000785b4c09996e9ec5ba37a2e0246a1} 
+void OSK\+::\+Editor\+::\+Editor\+::\+Register\+System\+Controller (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{component\+Name}{, }\item[{const \textbf{ System\+Controller\+Factory\+Method} \&}]{controller\+Factory\+Method}{}\end{DoxyParamCaption})}
+
+
+
+Registra el método de creación de un tipo de controlador en concreto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em component\+Name} & Nombre del componente con el que está relacionado el controlador. \\
+\hline
+{\em controller\+Factory\+Method} & Método de creación. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!RegisterSystemView@{RegisterSystemView}}
+\index{RegisterSystemView@{RegisterSystemView}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{RegisterSystemView()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_ad33d5ce85661b0ac4d95045d76a2019b} 
+template$<$typename TSystem\+View$>$ \newline
+requires Views\+::\+Is\+System\+View$<$TSystem\+View$>$\\
+void OSK\+::\+Editor\+::\+Editor\+::\+Register\+System\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra el método de creación de un tipo de vista en concreto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent\+View} & Tipo de la vista. \\
+\hline
+\end{DoxyTemplParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!RegisterSystemView@{RegisterSystemView}}
+\index{RegisterSystemView@{RegisterSystemView}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{RegisterSystemView()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a1e36e6e6a878929ad520c96229dbec26} 
+template$<$typename TSystem\+View$>$ \newline
+requires Views\+::\+Is\+System\+View$<$TSystem\+View$>$\\
+void OSK\+::\+Editor\+::\+Editor\+::\+Register\+System\+View (\begin{DoxyParamCaption}\item[{const \textbf{ System\+View\+Factory\+Method} \&}]{factory\+Method}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra el método de creación de un tipo de vista en concreto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent\+View} & Tipo de la vista. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em factory\+Method} & Método de creación. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!RegisterSystemView@{RegisterSystemView}}
+\index{RegisterSystemView@{RegisterSystemView}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{RegisterSystemView()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_abffb6e605c4ba561f535d840dd145eeb} 
+void OSK\+::\+Editor\+::\+Editor\+::\+Register\+System\+View (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{system\+Name}{, }\item[{const \textbf{ System\+View\+Factory\+Method} \&}]{view\+Factory\+Method}{}\end{DoxyParamCaption})}
+
+
+
+Registra el método de creación de un tipo de vista en concreto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em component\+Name} & Nombre del componente con el que está relacionado la vista. \\
+\hline
+{\em view\+Factory\+Method} & Método de creación. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!SetSelectedObject@{SetSelectedObject}}
+\index{SetSelectedObject@{SetSelectedObject}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{SetSelectedObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a2a715948ae9d5c8e18e5f52f2ede4075} 
+void OSK\+::\+Editor\+::\+Editor\+::\+Set\+Selected\+Object (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{game\+Object}{}\end{DoxyParamCaption})}
+
+
+
+Establece el objeto seleccionado en el editor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em game\+Object} & ID del objeto seleccionado. Puede ser vacío para indicar que se ha deseleccionado. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!SetSelectedSystem@{SetSelectedSystem}}
+\index{SetSelectedSystem@{SetSelectedSystem}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{SetSelectedSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_a0675e30b7dc59488d3c355a8f92c0a11} 
+void OSK\+::\+Editor\+::\+Editor\+::\+Set\+Selected\+System (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{system\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Establece el sistema seleccionado en el editor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em system\+Name} & Nombre del sistema seleccionado. Si está vacío, se considera que se ha deseleccionado el sistema anterior. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Editor::Editor@{OSK::Editor::Editor}!Update@{Update}}
+\index{Update@{Update}!OSK::Editor::Editor@{OSK::Editor::Editor}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_editor_ab528ad32905f47ace40940a67cae188d} 
+void OSK\+::\+Editor\+::\+Editor\+::\+Update (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Entity\+Component\+System} $\ast$}]{ecs}{, }\item[{\textbf{ TDelta\+Time}}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza los controladores y las vistas activas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em ecs} & Clase \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} del motor. \\
+\hline
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización. \\
+\hline
+\end{DoxyParams}

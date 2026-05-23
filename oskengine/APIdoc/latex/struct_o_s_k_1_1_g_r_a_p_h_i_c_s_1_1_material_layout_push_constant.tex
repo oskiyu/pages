@@ -1,0 +1,91 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Material\+Layout\+Push\+Constant}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_push_constant}\index{OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}}
+
+
+{\ttfamily \#include $<$Material\+Layout\+Push\+Constant.\+h$>$}
+
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ name}
+\item 
+\textbf{ Shader\+Stage} \textbf{ stage} \{\}
+\item 
+\textbf{ USize32} \textbf{ size} = 0
+\item 
+\textbf{ USize32} \textbf{ offset} = 0
+\item 
+\textbf{ UIndex32} \textbf{ hlsl\+Index} = 0
+\item 
+\textbf{ UIndex32} \textbf{ hlsl\+Binding\+Index} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Un push constant permite enviar datos a la GPU directamente en la lista de comandos. 
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}!hlslBindingIndex@{hlslBindingIndex}}
+\index{hlslBindingIndex@{hlslBindingIndex}!OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}}
+\doxysubsubsection{hlslBindingIndex}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_push_constant_adfae617a2779165db72356c70094a400} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Push\+Constant\+::hlsl\+Binding\+Index = 0}
+
+
+
+Índice interno de DX12, a la hora de bindear. Interno. 
+
+\index{OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}!hlslIndex@{hlslIndex}}
+\index{hlslIndex@{hlslIndex}!OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}}
+\doxysubsubsection{hlslIndex}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_push_constant_ac2d4bf342e19b33ecbc55bd31a39125d} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Push\+Constant\+::hlsl\+Index = 0}
+
+
+
+Índice del buffer constante donde los shaders .hlsl recibirán la información. 
+
+\index{OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}!name@{name}}
+\index{name@{name}!OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}}
+\doxysubsubsection{name}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_push_constant_abd6712c9002b537a65f9568ae9fec32c} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Push\+Constant\+::name}
+
+
+
+Nombre del push constant. 
+
+\index{OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}!offset@{offset}}
+\index{offset@{offset}!OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}}
+\doxysubsubsection{offset}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_push_constant_a5b4511c1233f6224911df6de9a4fdbba} 
+\textbf{ USize32} OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Push\+Constant\+::offset = 0}
+
+
+
+Offset desde el primer push constant. 
+
+\begin{DoxyNote}{Nota}
+Cada push constant se colocará después del fin del anterior push constant. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}!size@{size}}
+\index{size@{size}!OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}}
+\doxysubsubsection{size}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_push_constant_aefe6c7cf04fdd5b954f519d026f81aa1} 
+\textbf{ USize32} OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Push\+Constant\+::size = 0}
+
+
+
+Tamaño de la estructura que se enviará a la GPU. 
+
+\index{OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}!stage@{stage}}
+\index{stage@{stage}!OSK::GRAPHICS::MaterialLayoutPushConstant@{OSK::GRAPHICS::MaterialLayoutPushConstant}}
+\doxysubsubsection{stage}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_push_constant_ac6f939387d72b666b8e1a565435cef2f} 
+\textbf{ Shader\+Stage} OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Push\+Constant\+::stage \{\}}
+
+
+
+Stage del shader desde el que se accede al slot (VERTEX/\+FRAGMENT). 
+

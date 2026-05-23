@@ -1,0 +1,1660 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::ICommand\+List}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list}\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+
+
+{\ttfamily \#include $<$ICommand\+List.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ $\sim$\+ICommand\+List} () override
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ ICommand\+List})
+\item 
+virtual void \textbf{ Reset} ()=0
+\item 
+virtual void \textbf{ Start} ()=0
+\item 
+virtual void \textbf{ Close} ()=0
+\item 
+virtual void \textbf{ Set\+Gpu\+Image\+Barrier} (\textbf{ Gpu\+Image} $\ast$image, \textbf{ Gpu\+Image\+Layout} previous\+Layout, \textbf{ Gpu\+Image\+Layout} next\+Layout, \textbf{ Gpu\+Barrier\+Info} previous, \textbf{ Gpu\+Barrier\+Info} next, const \textbf{ Gpu\+Image\+Range} \&range=\{\}, const \textbf{ Resource\+Queue\+Transfer\+Info} queue\+Tranfer=\textbf{ Resource\+Queue\+Transfer\+Info\+::\+Empty}())=0
+\item 
+void \textbf{ Set\+Gpu\+Image\+Barrier} (\textbf{ Gpu\+Image} $\ast$image, \textbf{ Gpu\+Image\+Layout} next\+Layout, \textbf{ Gpu\+Barrier\+Info} previous, \textbf{ Gpu\+Barrier\+Info} next, const \textbf{ Gpu\+Image\+Range} \&range=\{\}, const \textbf{ Resource\+Queue\+Transfer\+Info} queue\+Tranfer=\textbf{ Resource\+Queue\+Transfer\+Info\+::\+Empty}())
+\item 
+void \textbf{ Set\+Gpu\+Image\+Barrier} (\textbf{ Gpu\+Image} $\ast$image, \textbf{ Gpu\+Image\+Layout} next\+Layout, \textbf{ Gpu\+Barrier\+Info} next, const \textbf{ Gpu\+Image\+Range} \&range=\{\}, const \textbf{ Resource\+Queue\+Transfer\+Info} queue\+Tranfer=\textbf{ Resource\+Queue\+Transfer\+Info\+::\+Empty}())
+\item 
+virtual void \textbf{ Set\+Gpu\+Buffer\+Barrier} (\textbf{ Gpu\+Buffer} $\ast$buffer, const \textbf{ Gpu\+Buffer\+Range} \&range, \textbf{ Gpu\+Barrier\+Info} previous, \textbf{ Gpu\+Barrier\+Info} next, const \textbf{ Resource\+Queue\+Transfer\+Info} queue\+Tranfer=\textbf{ Resource\+Queue\+Transfer\+Info\+::\+Empty}())=0
+\item 
+void \textbf{ Set\+Gpu\+Buffer\+Barrier} (\textbf{ Gpu\+Buffer} $\ast$buffer, const \textbf{ Gpu\+Buffer\+Range} \&range, \textbf{ Gpu\+Barrier\+Info} next, const \textbf{ Resource\+Queue\+Transfer\+Info} queue\+Tranfer=\textbf{ Resource\+Queue\+Transfer\+Info\+::\+Empty}())
+\item 
+void \textbf{ Begin\+Graphics\+Renderpass} (\textbf{ Render\+Target} $\ast$render\+Target, const \textbf{ Color} \&color=\textbf{ Color\+::\+Black}, bool auto\+Sync=true)
+\item 
+virtual void \textbf{ Begin\+Graphics\+Renderpass} (\textbf{ Dynamic\+Array}$<$ \textbf{ Render\+Pass\+Image\+Info} $>$ color\+Images, std\+::optional$<$ \textbf{ Render\+Pass\+Image\+Info} $>$ depth\+Image, const \textbf{ Color} \&color=\textbf{ Color\+::\+Black}, bool auto\+Sync=true)=0
+\item 
+virtual void \textbf{ Clear\+Image} (\textbf{ Gpu\+Image} $\ast$image, const \textbf{ Gpu\+Image\+Range} \&range=\{\}, const \textbf{ Color} \&color=\textbf{ Color\+::\+Black})=0
+\item 
+virtual void \textbf{ End\+Graphics\+Renderpass} (bool auto\+Sync=true)=0
+\item 
+virtual void \textbf{ Set\+Viewport} (const \textbf{ Viewport} \&viewport)
+\item 
+const \textbf{ Viewport} \& \textbf{ Get\+Current\+Viewport} () const
+\item 
+virtual void \textbf{ Set\+Scissor} (const \textbf{ Vector4ui} \&scissor)=0
+\item 
+void \textbf{ Bind\+Material} (const \textbf{ Material} \&material)
+\item 
+virtual void \textbf{ Bind\+Vertex\+Buffer\+Range} (const \textbf{ Gpu\+Buffer} \&buffer, const \textbf{ Vertex\+Buffer\+View} \&view)=0
+\item 
+void \textbf{ Bind\+Vertex\+Buffer} (const \textbf{ Gpu\+Buffer} \&buffer)
+\item 
+virtual void \textbf{ Bind\+Index\+Buffer\+Range} (const \textbf{ Gpu\+Buffer} \&buffer, const \textbf{ Index\+Buffer\+View} \&view)=0
+\item 
+void \textbf{ Bind\+Index\+Buffer} (const \textbf{ Gpu\+Buffer} \&buffer)
+\item 
+virtual void \textbf{ Bind\+Material\+Instance} (const \textbf{ Material\+Instance} \&instance)
+\item 
+virtual void \textbf{ Bind\+Material\+Slot} (const \textbf{ IMaterial\+Slot} \&slot)=0
+\item 
+void \textbf{ Push\+Material\+Constants} (const std\+::string \&push\+Const\+Name, const void $\ast$data, \textbf{ USize32} size)
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \textbf{ Push\+Material\+Constants} (const std\+::string \&push\+Const\+Name, const T \&data)
+\item 
+virtual void \textbf{ Push\+Material\+Constants} (const std\+::string \&push\+Const\+Name, const void $\ast$data, \textbf{ USize32} size, \textbf{ USize32} offset)=0
+\item 
+virtual void \textbf{ Draw\+Single\+Instance} (\textbf{ USize32} num\+Indices)=0
+\item 
+virtual void \textbf{ Draw\+Single\+Mesh} (\textbf{ UIndex32} first\+Index, \textbf{ USize32} num\+Indices)=0
+\item 
+virtual void \textbf{ Draw\+Instances} (\textbf{ UIndex32} first\+Index, \textbf{ USize32} num\+Indices, \textbf{ UIndex32} first\+Instance, \textbf{ USize32} instance\+Count)=0
+\item 
+virtual void \textbf{ Draw\+Mesh\+Shader} (const \textbf{ Vector3ui} \&group\+Count)=0
+\item 
+virtual void \textbf{ Trace\+Rays} (\textbf{ UIndex32} raygen\+Entry, \textbf{ UIndex32} closest\+Hit\+Entry, \textbf{ UIndex32} miss\+Entry, const \textbf{ Vector2ui} \&resolution)=0
+\item 
+virtual void \textbf{ Dispatch\+Compute} (const \textbf{ Vector3ui} \&group\+Count)=0
+\item 
+virtual void \textbf{ Copy\+Buffer\+To\+Image} (const \textbf{ Gpu\+Buffer} \&source, \textbf{ Gpu\+Image} $\ast$dest, \textbf{ UIndex32} layer=0, \textbf{ USize64} offset=0)=0
+\item 
+virtual void \textbf{ Raw\+Copy\+Image\+To\+Image} (const \textbf{ Gpu\+Image} \&source, \textbf{ Gpu\+Image} $\ast$destination, const \textbf{ Copy\+Image\+Info} \&copy\+Info)=0
+\item 
+virtual void \textbf{ Copy\+Image\+To\+Image} (const \textbf{ Gpu\+Image} \&source, \textbf{ Gpu\+Image} $\ast$destination, const \textbf{ Copy\+Image\+Info} \&copy\+Info, \textbf{ Gpu\+Image\+Filtering\+Type} filter)=0
+\item 
+virtual void \textbf{ Copy\+Buffer\+To\+Buffer} (const \textbf{ Gpu\+Buffer} \&source, \textbf{ Gpu\+Buffer} $\ast$dest, \textbf{ USize64} size, \textbf{ USize64} source\+Offset, \textbf{ USize64} dest\+Offset)=0
+\item 
+void \textbf{ Register\+Staging\+Buffer} (\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \&\&staging\+Buffer)
+\item 
+void \textbf{ Delete\+All\+Staging\+Buffers} ()
+\item 
+void \textbf{ \+\_\+\+Set\+Single\+Time\+Use} ()
+\item 
+void \textbf{ Transfer\+To\+Queue} (\textbf{ Gpu\+Image} $\ast$image, const \textbf{ ICommand\+Queue} \&source\+Queue, const \textbf{ ICommand\+Queue} \&target\+Queue)
+\item 
+void \textbf{ Transfer\+To\+Queue} (\textbf{ Gpu\+Image} $\ast$image, const \textbf{ ICommand\+Queue} \&target\+Queue)
+\item 
+void \textbf{ Transfer\+To\+Queue} (\textbf{ Gpu\+Buffer} $\ast$buffer, const \textbf{ ICommand\+Queue} \&source\+Queue, const \textbf{ ICommand\+Queue} \&target\+Queue)
+\item 
+void \textbf{ Transfer\+To\+Queue} (\textbf{ Gpu\+Buffer} $\ast$buffer, const \textbf{ ICommand\+Queue} \&target\+Queue)
+\item 
+virtual void \textbf{ Add\+Debug\+Marker} (const std\+::string \&mark, const \textbf{ Color} \&color)=0
+\item 
+virtual void \textbf{ Start\+Debug\+Section} (const std\+::string \&mark, const \textbf{ Color} \&color)=0
+\item 
+virtual void \textbf{ End\+Debug\+Section} ()=0
+\item 
+\textbf{ ICommand\+Pool} $\ast$ \textbf{ Get\+Owner\+Pool} ()
+\item 
+const \textbf{ ICommand\+Pool} $\ast$ \textbf{ Get\+Owner\+Pool} () const
+\item 
+\textbf{ Gpu\+Queue\+Type} \textbf{ Get\+Compatible\+Queue\+Type} () const
+\item 
+\textbf{ UIndex32} \textbf{ \+\_\+\+Get\+Command\+List\+Index} () const
+\item 
+virtual void \textbf{ Clear\+Images\+Cache} ()
+\item 
+virtual void \textbf{ Set\+Debug\+Name} (const std\+::string \&name)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ ICommand\+List} (\textbf{ ICommand\+Pool} $\ast$command\+Pool)
+\item 
+void \textbf{ \+\_\+\+Set\+Single\+Time} ()
+\item 
+virtual void \textbf{ Bind\+Graphics\+Pipeline} (const \textbf{ IGraphics\+Pipeline} \&pipeline)=0
+\item 
+virtual void \textbf{ Bind\+Compute\+Pipeline} (const \textbf{ ICompute\+Pipeline} \&pipeline)=0
+\item 
+virtual void \textbf{ Bind\+Ray\+Tracing\+Pipeline} (const \textbf{ IRaytracing\+Pipeline} \&pipeline)=0
+\item 
+virtual void \textbf{ Bind\+Mesh\+Pipeline} (const \textbf{ IMesh\+Pipeline} \&pipeline)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>const \textbf{ IGraphicsPipeline} $\ast$ \textbf{ graphics} = nullptr\\
+\>const \textbf{ IRaytracingPipeline} $\ast$ \textbf{ raytracing}\\
+\>const \textbf{ IComputePipeline} $\ast$ \textbf{ compute}\\
+\>const \textbf{ IMeshPipeline} $\ast$ \textbf{ mesh}\\
+\} \textbf{ m\_currentPipeline}\\
+
+\end{tabbing}\item 
+const \textbf{ Material} $\ast$ \textbf{ m\+\_\+currently\+Bound\+Material} = nullptr
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Render\+Pass\+Image\+Info} $>$ \textbf{ m\+\_\+currently\+Bound\+Color\+Images}
+\item 
+\textbf{ Render\+Pass\+Image\+Info} \textbf{ m\+\_\+currently\+Bound\+Depth\+Image}
+\item 
+\textbf{ Renderpass\+Type} \textbf{ m\+\_\+currently\+Bound\+Render\+Target\+Type} = \textbf{ Renderpass\+Type\+::\+INTERMEDIATE}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Una lista de comandos contiene una serie de comandos que serán enviados a la GPU para su ejecución. La lista es creada por una pool de comandos, y se introduce en una cola de comandos para su ejecución. 
+
+\begin{DoxyNote}{Nota}
+Los comandos serán ejecutados una vez se envíe la lista a la GPU. 
+\end{DoxyNote}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!````~ICommandList@{$\sim$ICommandList}}
+\index{````~ICommandList@{$\sim$ICommandList}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{$\sim$ICommandList()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a516fa2688fd4392629964834d43c2593} 
+ICommand\+List\+::$\sim$\+ICommand\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!ICommandList@{ICommandList}}
+\index{ICommandList@{ICommandList}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{ICommandList()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_aaa694e41a1fd959a363ca99145d0aeaa} 
+ICommand\+List\+::\+ICommand\+List (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+Pool} $\ast$}]{command\+Pool}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!\_GetCommandListIndex@{\_GetCommandListIndex}}
+\index{\_GetCommandListIndex@{\_GetCommandListIndex}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{\_GetCommandListIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a2186b0a2cada5bf489678fc07dfe5c33} 
+\textbf{ UIndex32} ICommand\+List\+::\+\_\+\+Get\+Command\+List\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!\_SetSingleTime@{\_SetSingleTime}}
+\index{\_SetSingleTime@{\_SetSingleTime}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{\_SetSingleTime()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ac21035897625c382f656c8b55d48d444} 
+void ICommand\+List\+::\+\_\+\+Set\+Single\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!\_SetSingleTimeUse@{\_SetSingleTimeUse}}
+\index{\_SetSingleTimeUse@{\_SetSingleTimeUse}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{\_SetSingleTimeUse()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a91dd0015d5deefbbcbc1abacdb6be2c6} 
+void ICommand\+List\+::\+\_\+\+Set\+Single\+Time\+Use (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!AddDebugMarker@{AddDebugMarker}}
+\index{AddDebugMarker@{AddDebugMarker}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{AddDebugMarker()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a83ff9359ff5245120a3d5ed3b17f218e} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Add\+Debug\+Marker (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mark}{, }\item[{const \textbf{ Color} \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Añade un marcador en la lista de comandos que podrá ser vista en un software de debbuging. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mark} & Título del marcador. \\
+\hline
+{\em color} & \doxyref{Color}{pág.}{class_o_s_k_1_1_color} del marcador. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BeginGraphicsRenderpass@{BeginGraphicsRenderpass}}
+\index{BeginGraphicsRenderpass@{BeginGraphicsRenderpass}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BeginGraphicsRenderpass()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ad2b8c1ec2bab22b0408984b8259d6b94} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Begin\+Graphics\+Renderpass (\begin{DoxyParamCaption}\item[{\textbf{ Dynamic\+Array}$<$ \textbf{ Render\+Pass\+Image\+Info} $>$}]{color\+Images}{, }\item[{std\+::optional$<$ \textbf{ Render\+Pass\+Image\+Info} $>$}]{depth\+Image}{, }\item[{const \textbf{ Color} \&}]{color}{ = {\ttfamily \textbf{ Color\+::\+Black}}, }\item[{bool}]{auto\+Sync}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Comienza el renderizado a las imágenes dadas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em color\+Images} & Imágenes de color sobre las que se renderizará. \\
+\hline
+{\em depth\+Image} & Imagen de profundidad. \\
+\hline
+{\em color} & \doxyref{Color}{pág.}{class_o_s_k_1_1_color} con el que limpiará la imagen. \\
+\hline
+{\em auto\+Sync} & True para introducir barriers automáticamente, false en caso contrario.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Por defecto, se limpiará la imagen con color negro. 
+
+Se encarga de establecer el layout de las imágenes de color y de profundidad.
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+No debe haber ningún renderpass activo. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Las imágenes de color se encontrarán en \doxyref{Gpu\+Image\+Layout\+::\+COLOR\+\_\+\+ATTACHMENT}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9aa63816e658355cace69f46e9242fed85}. 
+
+La imagen de profundidad se encontrarán en \doxyref{Gpu\+Image\+Layout\+::\+DEPTH\+\_\+\+STENCIL\+\_\+\+TARGET}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9aad449a013a6d7a34d5ea38b6263ff6d8}.
+\end{DoxyPostcond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BeginGraphicsRenderpass@{BeginGraphicsRenderpass}}
+\index{BeginGraphicsRenderpass@{BeginGraphicsRenderpass}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BeginGraphicsRenderpass()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a114eb251413acea318d911c5659a0136} 
+void ICommand\+List\+::\+Begin\+Graphics\+Renderpass (\begin{DoxyParamCaption}\item[{\textbf{ Render\+Target} $\ast$}]{render\+Target}{, }\item[{const \textbf{ Color} \&}]{color}{ = {\ttfamily \textbf{ Color\+::\+Black}}, }\item[{bool}]{auto\+Sync}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Comienza el renderizado a un render target. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em render\+Target} & Render target sobre el que se renderizará. \\
+\hline
+{\em color} & \doxyref{Color}{pág.}{class_o_s_k_1_1_color} con el que limpiará la imagen. \\
+\hline
+{\em auto\+Sync} & True para introducir barriers automáticamente, false en caso contrario.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Por defecto, se limpiará la imagen con color negro. 
+
+Se encarga de establecer el layout de las imágenes de color y de profundidad.
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+No debe haber ningún renderpass activo. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Las imágenes de color se encontrarán en {\ttfamily \doxyref{Gpu\+Image\+Layout\+::\+COLOR\+\_\+\+ATTACHMENT}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9aa63816e658355cace69f46e9242fed85}}. 
+
+La imagen de profundidad se encontrarán en {\ttfamily \doxyref{Gpu\+Image\+Layout\+::\+DEPTH\+\_\+\+STENCIL\+\_\+\+TARGET}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9aad449a013a6d7a34d5ea38b6263ff6d8}}.
+\end{DoxyPostcond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BindComputePipeline@{BindComputePipeline}}
+\index{BindComputePipeline@{BindComputePipeline}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BindComputePipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_abed9708017ac7a7a63b0f5e41f738dd2} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Bind\+Compute\+Pipeline (\begin{DoxyParamCaption}\item[{const \textbf{ ICompute\+Pipeline} \&}]{pipeline}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BindGraphicsPipeline@{BindGraphicsPipeline}}
+\index{BindGraphicsPipeline@{BindGraphicsPipeline}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BindGraphicsPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a4efa5493db9efd537878ca745909a525} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Bind\+Graphics\+Pipeline (\begin{DoxyParamCaption}\item[{const \textbf{ IGraphics\+Pipeline} \&}]{pipeline}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BindIndexBuffer@{BindIndexBuffer}}
+\index{BindIndexBuffer@{BindIndexBuffer}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BindIndexBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a87f6db835f225fc12e6b1849ff42f7aa} 
+void ICommand\+List\+::\+Bind\+Index\+Buffer (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Buffer} \&}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+Establece el index buffer que se va a usar en los próximos renderizados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em buffer} & Buffer con los índices.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El buffer debe tener inicializado su view de índices. 
+
+Debe haber un renderpass activo. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Index\+Buffer\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_invalid_index_buffer_exception}} & Si el buffer no tiene inicializado su view de índices.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BindIndexBufferRange@{BindIndexBufferRange}}
+\index{BindIndexBufferRange@{BindIndexBufferRange}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BindIndexBufferRange()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ac5b2e326d47f14e598274abd56fa17a5} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Bind\+Index\+Buffer\+Range (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Buffer} \&}]{buffer}{, }\item[{const \textbf{ Index\+Buffer\+View} \&}]{view}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece el index buffer que se va a usar en los próximos renderizados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em buffer} & Buffer con los índices. \\
+\hline
+{\em view} & View que representa el rango a enlazar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un renderpass activo. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BindMaterial@{BindMaterial}}
+\index{BindMaterial@{BindMaterial}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BindMaterial()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a09c13f55f611baa6b54956612c2e4ce7} 
+void ICommand\+List\+::\+Bind\+Material (\begin{DoxyParamCaption}\item[{const \textbf{ Material} \&}]{material}{}\end{DoxyParamCaption})}
+
+
+
+Establece el material que se va a usar a la hora de renderizar los próximos comandos. 
+
+\begin{DoxyNote}{Nota}
+Los slots que se enlacen después de este comando deben ser compatibles con este material. 
+
+Los buffers de vértices que se enlacen después de este comando deben tener el tipo de vértice del material.
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un renderpass activo. 
+
+El material debe tener registrado el renderpass activo. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Atención}
+Para materiales de rasterizado, debe estar activo el renderpass con el que se vaya a renderizar usando este material.
+\end{DoxyWarning}
+\begin{DoxyPrecond}{Precondición}
+Si es un material gráfico, el pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+Si es un material gráfico, la cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}.
+
+Si es un material de computación, el pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+
+Si es un material de computación, la cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BindMaterialInstance@{BindMaterialInstance}}
+\index{BindMaterialInstance@{BindMaterialInstance}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BindMaterialInstance()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a87c3e8dead15eb8154e8580be40c4c62} 
+void ICommand\+List\+::\+Bind\+Material\+Instance (\begin{DoxyParamCaption}\item[{const \textbf{ Material\+Instance} \&}]{instance}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Establece todos los material slots de la instancia de material. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em instance} & Instancia del material.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un material enlazado. 
+
+El slot debe ser compatible con el material enlazado. 
+
+La lista de comandos debe estar abierta.
+
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}} o {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}} o {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BindMaterialSlot@{BindMaterialSlot}}
+\index{BindMaterialSlot@{BindMaterialSlot}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BindMaterialSlot()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_abffebf19b48d6d193c0d7a875c82a115} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Bind\+Material\+Slot (\begin{DoxyParamCaption}\item[{const \textbf{ IMaterial\+Slot} \&}]{slot}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece un material slot que estará asignado en los próximos comandos de renderizado. Pueden haber varios slots asignados en un mismo instante, siempre que no tengan el mismo id. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em slot} & Slot a establecer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un renderpass activo, en caso de que sea un material gráfico. 
+
+Debe haber un material enlazado. 
+
+El slot debe ser compatible con el material enlazado. 
+
+La lista de comandos debe estar abierta.
+
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}} o {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}} o {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BindMeshPipeline@{BindMeshPipeline}}
+\index{BindMeshPipeline@{BindMeshPipeline}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BindMeshPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a92313cdf1d5925426dc49c5277fd9a4c} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Bind\+Mesh\+Pipeline (\begin{DoxyParamCaption}\item[{const \textbf{ IMesh\+Pipeline} \&}]{pipeline}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BindRayTracingPipeline@{BindRayTracingPipeline}}
+\index{BindRayTracingPipeline@{BindRayTracingPipeline}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BindRayTracingPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_aa11a3600255f76ce30dea2e884217f9c} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Bind\+Ray\+Tracing\+Pipeline (\begin{DoxyParamCaption}\item[{const \textbf{ IRaytracing\+Pipeline} \&}]{pipeline}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BindVertexBuffer@{BindVertexBuffer}}
+\index{BindVertexBuffer@{BindVertexBuffer}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BindVertexBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a0e40eda73ff1f475140649d27a4306e7} 
+void ICommand\+List\+::\+Bind\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Buffer} \&}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+Establece el vertex buffer que se va a usar en los próximos renderizados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em buffer} & Buffer con los vértices.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un renderpass activo. 
+
+La lista de comandos debe estar abierta. 
+
+El buffer debe tener inicializado su view de vértices.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Los materiales que se usen después de este comando deben tener el mismo tipo de vértice.
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Vertex\+Buffer\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_invalid_vertex_buffer_exception}} & Si el buffer no tiene inicializado su view de vértices.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!BindVertexBufferRange@{BindVertexBufferRange}}
+\index{BindVertexBufferRange@{BindVertexBufferRange}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{BindVertexBufferRange()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a876d36bec645e2ac8b7f612d390b2171} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Bind\+Vertex\+Buffer\+Range (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Buffer} \&}]{buffer}{, }\item[{const \textbf{ Vertex\+Buffer\+View} \&}]{view}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece el vertex buffer que se va a usar en los próximos renderizados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em buffer} & Buffer con los vértices. \\
+\hline
+{\em view} & View que representa el rango a enlazar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un renderpass activo. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Los materiales que se usen después de este comando deben tener el mismo tipo de vértice.
+
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!ClearImage@{ClearImage}}
+\index{ClearImage@{ClearImage}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{ClearImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a4c5f87c5a714c5d8da05aaf6f0288038} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Clear\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{, }\item[{const \textbf{ Gpu\+Image\+Range} \&}]{range}{ = {\ttfamily \{\}}, }\item[{const \textbf{ Color} \&}]{color}{ = {\ttfamily \textbf{ Color\+::\+Black}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Limpia el contenido de una imagen fuera de un renderpass. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image} & Imagen a limpiar. \\
+\hline
+{\em range} & Rango de la imagen que será limpiada. \\
+\hline
+{\em color} & \doxyref{Color}{pág.}{class_o_s_k_1_1_color} con el que se limpiará (por defecto, negro).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La lista de comandos debe estar abierta. 
+
+La lista de comandos no debe tener ningún renderpass activo. 
+
+{\ttfamily range.\+channel} debe ser \doxyref{Sampled\+Channel\+::\+COLOR}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a02ed44392ae1f51786ead8911c3afe9da04bd834032febb3fda8c6936ee140949}.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El layout de la imagen después de limpiarse será TRANSFER\+\_\+\+DESTINATION.
+\end{DoxyPostcond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!ClearImagesCache@{ClearImagesCache}}
+\index{ClearImagesCache@{ClearImagesCache}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{ClearImagesCache()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ad2d4a2dc76baf975f9b740dfbbc7f793} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Clear\+Images\+Cache (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!Close@{Close}}
+\index{Close@{Close}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{Close()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_acbdde9b678e5db46d82b162c2a0f9730} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Cierra la lista de comandos, y la deja lista para ser enviada a la GPU. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe estar abierto.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Command\+List\+End\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_end_exception}} & Si hubo algún error en el API de bajo nivel. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!CopyBufferToBuffer@{CopyBufferToBuffer}}
+\index{CopyBufferToBuffer@{CopyBufferToBuffer}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{CopyBufferToBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_acb3fe68481057364e814889eebdbc173} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Copy\+Buffer\+To\+Buffer (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Buffer} \&}]{source}{, }\item[{\textbf{ Gpu\+Buffer} $\ast$}]{dest}{, }\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ USize64}}]{source\+Offset}{, }\item[{\textbf{ USize64}}]{dest\+Offset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Copia los contenidos del primer buffer al segundo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em source} & Buffer donde están el contenido que se quiere copiar. \\
+\hline
+{\em dest} & Buffer en el que se va a poner el contenido copiado. \\
+\hline
+{\em size} & Tamaño, en bytes, del área de memoria que se va a copiar. \\
+\hline
+{\em source\+Offset} & Offset del área de memoria en el origen. \\
+\hline
+{\em dest\+Offset} & Offset del área de memoria en el destino.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de TRANSFERENCIA. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+TRANSFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aeb5ddb3b6096fb90ff720d9c3e2a6628}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+TRANSFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aeb5ddb3b6096fb90ff720d9c3e2a6628}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!CopyBufferToImage@{CopyBufferToImage}}
+\index{CopyBufferToImage@{CopyBufferToImage}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{CopyBufferToImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_aaa60c9d021efa6beb0014ce8af75a10d} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Copy\+Buffer\+To\+Image (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Buffer} \&}]{source}{, }\item[{\textbf{ Gpu\+Image} $\ast$}]{dest}{, }\item[{\textbf{ UIndex32}}]{layer}{ = {\ttfamily 0}, }\item[{\textbf{ USize64}}]{offset}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Copia la imagen guardada en un buffer a una imagen en la GPU. Para poder subir una imagen a la GPU, primero debemos subir la imagen a un buffer intermedio, y después copiamos el contenido de ese buffer intermedio a la imagen final de la GPU. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em source} & Buffer con los contenidos de la textura. \\
+\hline
+{\em dest} & Imagen final. \\
+\hline
+{\em layer} & Capa a la que se copiará los contenidos. Por defecto\+: 0. \\
+\hline
+{\em offset} & Offset, en bytes, respecto al inicio del buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El buffer de origen debe haber sido creado con \doxyref{Gpu\+Buffer\+Usage\+::\+TRANSFER\+\_\+\+SOURCE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fafb3bb8503e5cd907a3a7b02a495c229e}. 
+
+La imagen de destino debe haber sido creada con \doxyref{Gpu\+Image\+Usage\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaac61dfc60317a58b2843ec29f8e3c2359}. 
+
+Si la imagen de destino tiene niveles de mip-\/map, entonces debe haber sido creada con \doxyref{Gpu\+Image\+Usage\+::\+TRANSFER\+\_\+\+SOURCE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaafb3bb8503e5cd907a3a7b02a495c229e}. 
+
+La imagen de destino debe tener el layout \doxyref{Gpu\+Image\+Layout\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9ac61dfc60317a58b2843ec29f8e3c2359}. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El layout de la imagen después de efectuarse la copia segirá siendo \doxyref{Gpu\+Image\+Layout\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9ac61dfc60317a58b2843ec29f8e3c2359}. 
+
+Si la imagen de destino tiene niveles de mip-\/map, estos estarán correctamente generados.
+\end{DoxyPostcond}
+\begin{DoxyNote}{Nota}
+Si el número de niveles de mip de {\ttfamily dest} es 1, el tipo de comando es de TRANSFERENCIA. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+Si el número de niveles de mip de {\ttfamily dest} es 1, el pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+TRANSFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aeb5ddb3b6096fb90ff720d9c3e2a6628}}. 
+
+Si el número de niveles de mip de {\ttfamily dest} es 1, la cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+TRANSFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aeb5ddb3b6096fb90ff720d9c3e2a6628}}.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si el número de niveles de mip de {\ttfamily dest} es mayor que 1, el tipo de comando es de TRANSFERENCIA y GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+Si el número de niveles de mip de {\ttfamily dest} es mayor que 1, el pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+TRANSFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aeb5ddb3b6096fb90ff720d9c3e2a6628}} y {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+Si el número de niveles de mip de {\ttfamily dest} es mayor que 1, la cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+TRANSFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aeb5ddb3b6096fb90ff720d9c3e2a6628}} y {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!CopyImageToImage@{CopyImageToImage}}
+\index{CopyImageToImage@{CopyImageToImage}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{CopyImageToImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a263d4d453985410b794f09a49c7941ea} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Copy\+Image\+To\+Image (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Image} \&}]{source}{, }\item[{\textbf{ Gpu\+Image} $\ast$}]{destination}{, }\item[{const \textbf{ Copy\+Image\+Info} \&}]{copy\+Info}{, }\item[{\textbf{ Gpu\+Image\+Filtering\+Type}}]{filter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Copia los contenidos de una imagen a otra, realizando operaciones de cambio de resolución y formato. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em source} & Imagen de origen. \\
+\hline
+{\em destination} & Imagen de destino. \\
+\hline
+{\em copy\+Info} & Información de la copia. \\
+\hline
+{\em filter} & Filtro que se usará en caso de realizar cambio de resolución.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La imagen de origen debe haber sido creado con \doxyref{Gpu\+Image\+Usage\+::\+TRANSFER\+\_\+\+SOURCE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaafb3bb8503e5cd907a3a7b02a495c229e}. 
+
+La imagen de origen debe tener el layout \doxyref{Gpu\+Image\+Layout\+::\+TRANSFER\+\_\+\+SOURCE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9afb3bb8503e5cd907a3a7b02a495c229e}. 
+
+La imagen de destino debe haber sido creada con \doxyref{Gpu\+Image\+Usage\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaac61dfc60317a58b2843ec29f8e3c2359}. 
+
+La imagen de destino debe tener el layout \doxyref{Gpu\+Image\+Layout\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9ac61dfc60317a58b2843ec29f8e3c2359}. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El layout de la imagen después de efectuarse la copia segirá siendo \doxyref{Gpu\+Image\+Layout\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9ac61dfc60317a58b2843ec29f8e3c2359}.
+\end{DoxyPostcond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de TRANSFERENCIA y GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+TRANSFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aeb5ddb3b6096fb90ff720d9c3e2a6628}} y {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+TRANSFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aeb5ddb3b6096fb90ff720d9c3e2a6628}} y {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!DeleteAllStagingBuffers@{DeleteAllStagingBuffers}}
+\index{DeleteAllStagingBuffers@{DeleteAllStagingBuffers}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{DeleteAllStagingBuffers()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ab7109911a37fcb344856f013eab554da} 
+void ICommand\+List\+::\+Delete\+All\+Staging\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Elimina todos los buffers intermedios que ya no son necesarios. 
+
+\begin{DoxyPrecond}{Precondición}
+La lista debe haberse ejecutado antes de llamar a esta función. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!DispatchCompute@{DispatchCompute}}
+\index{DispatchCompute@{DispatchCompute}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{DispatchCompute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_af7750153e20238f0ae1476c1c179c673} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Dispatch\+Compute (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3ui} \&}]{group\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Comienza la ejecución de un material de computación. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em group\+Count} & Número de grupos lanzados.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+NO debe haber un renderpass activo. 
+
+Debe haber un material de computación enlazado. 
+
+Deben estar enlazados los slots y los push constants necesarios para rellenar el material. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de COMPUTACIÓN. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!DrawInstances@{DrawInstances}}
+\index{DrawInstances@{DrawInstances}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{DrawInstances()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a34318fc8ff0e94459e7738075d41b85b} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Draw\+Instances (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{first\+Index}{, }\item[{\textbf{ USize32}}]{num\+Indices}{, }\item[{\textbf{ UIndex32}}]{first\+Instance}{, }\item[{\textbf{ USize32}}]{instance\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Renderiza varias veces la malla indicada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first\+Index} & Índice del primer índice. \\
+\hline
+{\em num\+Indices} & Número de vértices/índices de la malla. \\
+\hline
+{\em first\+Instance} & Índice de la primera instancia. \\
+\hline
+{\em instance\+Count} & Número de instancias. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!DrawMeshShader@{DrawMeshShader}}
+\index{DrawMeshShader@{DrawMeshShader}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{DrawMeshShader()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_abed8c73d349fc43d44e83b092c97d4e8} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Draw\+Mesh\+Shader (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3ui} \&}]{group\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Lanza el renderizado usando shader de meshes. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em group\+Count} & Número de grupos lanzados.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un renderpass activo. 
+
+Debe haber un material enlazado. 
+
+Debe estar establecido el viewport y el scissor. 
+
+Deben estar enlazados los slots y los push constants necesarios para rellenar el material. 
+
+La lista de comandos debe estar abierta.
+
+La gpu debe soportar shaders de meshes.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!DrawSingleInstance@{DrawSingleInstance}}
+\index{DrawSingleInstance@{DrawSingleInstance}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{DrawSingleInstance()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ae2d13eabf397e5dc203213a71aa8aad0} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Draw\+Single\+Instance (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{num\+Indices}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Renderiza los triángulos del vertex e index buffer, con el material enlazado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em num\+Indices} & Número de vértices/índices del vertex buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un renderpass activo. 
+
+Debe haber un material enlazado. 
+
+Debe haber un buffer de vértices enlazado. 
+
+Debe haber un buffer de índices enlazado. 
+
+Debe estar establecido el viewport y el scissor. 
+
+Deben estar enlazados los slots y los push constants necesarios para rellenar el material. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!DrawSingleMesh@{DrawSingleMesh}}
+\index{DrawSingleMesh@{DrawSingleMesh}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{DrawSingleMesh()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ad11552e4b7c251696eba4030e58e63a8} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Draw\+Single\+Mesh (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{first\+Index}{, }\item[{\textbf{ USize32}}]{num\+Indices}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Renderiza los triángulos del mesh, con el material enlazado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first\+Index} & Índice del primer vértice del mesh. \\
+\hline
+{\em num\+Indices} & Número de vértices/índices del mesh.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un renderpass activo. 
+
+Debe haber un material enlazado. 
+
+Debe haber un buffer de vértices enlazado. 
+
+Debe haber un buffer de índices enlazado. 
+
+Debe estar establecido el viewport y el scissor. 
+
+Deben estar enlazados los slots y los push constants necesarios para rellenar el material. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!EndDebugSection@{EndDebugSection}}
+\index{EndDebugSection@{EndDebugSection}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{EndDebugSection()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a5bfd5b5a7904e0643bb89e8d370f26eb} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+End\+Debug\+Section (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Finaliza la sección actualmente marcada. 
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!EndGraphicsRenderpass@{EndGraphicsRenderpass}}
+\index{EndGraphicsRenderpass@{EndGraphicsRenderpass}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{EndGraphicsRenderpass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a8ef318196d000c7000baaa1d0e5c5f2b} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+End\+Graphics\+Renderpass (\begin{DoxyParamCaption}\item[{bool}]{auto\+Sync}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Finaliza el renderizado a un render target. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em auto\+Sync} & True para introducir barriers automáticamente, false en caso contrario.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un renderpass activo. 
+
+La lista de comandos debe estar abierta. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Aplica a los color targets un Gpu\+Image\+Barrier con nuevo layout = SHADER\+\_\+\+READ\+\_\+\+ONLY para fragment shader.
+\end{DoxyPostcond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!GetCompatibleQueueType@{GetCompatibleQueueType}}
+\index{GetCompatibleQueueType@{GetCompatibleQueueType}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{GetCompatibleQueueType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a29ae3ff1b0b5dce40256b61c371fa333} 
+\textbf{ Gpu\+Queue\+Type} ICommand\+List\+::\+Get\+Compatible\+Queue\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Tipo de cola GPU en la que se puede insertar esta lista; 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!GetCurrentViewport@{GetCurrentViewport}}
+\index{GetCurrentViewport@{GetCurrentViewport}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{GetCurrentViewport()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a68872a5f18ed2ae3d345fd0af4103847} 
+const \textbf{ Viewport} \& ICommand\+List\+::\+Get\+Current\+Viewport (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Viewport}{pág.}{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_viewport} usado en un momento dado. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!GetOwnerPool@{GetOwnerPool}}
+\index{GetOwnerPool@{GetOwnerPool}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{GetOwnerPool()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_aeec69376469ec552ebd1638c3f0cdcef} 
+\textbf{ ICommand\+Pool} $\ast$ ICommand\+List\+::\+Get\+Owner\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!GetOwnerPool@{GetOwnerPool}}
+\index{GetOwnerPool@{GetOwnerPool}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{GetOwnerPool()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_aa6c0ab18bc14a1911becc7e4a8e81cb3} 
+const \textbf{ ICommand\+Pool} $\ast$ ICommand\+List\+::\+Get\+Owner\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a58b18da32a81e18a764ed60ec5b93972} 
+OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!PushMaterialConstants@{PushMaterialConstants}}
+\index{PushMaterialConstants@{PushMaterialConstants}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{PushMaterialConstants()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a0d46ca565299ba80f80ac603ffd4b88c} 
+template$<$typename T$>$ \\
+void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Push\+Material\+Constants (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{push\+Const\+Name}{, }\item[{const T \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Envía datos push constant al shader. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em push\+Const\+Name} & Nombre de los push const en el shader. \\
+\hline
+{\em data} & Datos a enviar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un renderpass activo. 
+
+Debe haber un material enlazado. 
+
+El push constant debe ser compatible con el material enlazado. 
+
+La lista de comandos debe estar abierta.
+
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}} o {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}} o {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!PushMaterialConstants@{PushMaterialConstants}}
+\index{PushMaterialConstants@{PushMaterialConstants}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{PushMaterialConstants()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a93f5f50e194242bf308e3ca06bde3f50} 
+void ICommand\+List\+::\+Push\+Material\+Constants (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{push\+Const\+Name}{, }\item[{const void $\ast$}]{data}{, }\item[{\textbf{ USize32}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Envía datos push constant al shader. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em push\+Const\+Name} & Nombre de los push const en el shader. \\
+\hline
+{\em data} & Información a enviar. \\
+\hline
+{\em size} & Número de bytes a enviar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily size} $>$ 0. 
+
+Debe haber un renderpass activo. 
+
+Debe haber un material enlazado. 
+
+El push constant debe ser compatible con el material enlazado. 
+
+La lista de comandos debe estar abierta.
+
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}} o {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}} o {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!PushMaterialConstants@{PushMaterialConstants}}
+\index{PushMaterialConstants@{PushMaterialConstants}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{PushMaterialConstants()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_af5717cd01934fc6cc0d82bdcaf6c413a} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Push\+Material\+Constants (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{push\+Const\+Name}{, }\item[{const void $\ast$}]{data}{, }\item[{\textbf{ USize32}}]{size}{, }\item[{\textbf{ USize32}}]{offset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Envía datos push constant al shader. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em push\+Const\+Name} & Nombre de los push const en el shader. \\
+\hline
+{\em data} & Información a enviar. \\
+\hline
+{\em size} & Número de bytes a enviar. \\
+\hline
+{\em offset} & Offset, dentro de este push constant, con el que se mandarán datos.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily size} $>$ 0. 
+
+Debe haber un renderpass activo. 
+
+Debe haber un material enlazado. 
+
+El push constant debe ser compatible con el material enlazado. 
+
+La lista de comandos debe estar abierta.
+
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}} o {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}} o {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!RawCopyImageToImage@{RawCopyImageToImage}}
+\index{RawCopyImageToImage@{RawCopyImageToImage}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{RawCopyImageToImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_aca0c637784618f914f2b24f9088061ad} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Raw\+Copy\+Image\+To\+Image (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Image} \&}]{source}{, }\item[{\textbf{ Gpu\+Image} $\ast$}]{destination}{, }\item[{const \textbf{ Copy\+Image\+Info} \&}]{copy\+Info}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Copia el contenido de una imagen a otra. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em source} & Imagen con los contenidos a copiar. \\
+\hline
+{\em destination} & Destino de la copia. \\
+\hline
+{\em copy\+Info} & Configuración de la copia.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Ambas imágenes deben tener el mismo formato. 
+
+Las áreas de origen y destino deben ser del mismo tamaño. 
+
+La imagen de origen debe haber sido creado con \doxyref{Gpu\+Image\+Usage\+::\+TRANSFER\+\_\+\+SOURCE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaafb3bb8503e5cd907a3a7b02a495c229e}. 
+
+La imagen de origen debe tener el layout \doxyref{Gpu\+Image\+Layout\+::\+TRANSFER\+\_\+\+SOURCE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9afb3bb8503e5cd907a3a7b02a495c229e}. 
+
+La imagen de destino debe haber sido creada con \doxyref{Gpu\+Image\+Usage\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaac61dfc60317a58b2843ec29f8e3c2359}. 
+
+La imagen de destino debe tener el layout \doxyref{Gpu\+Image\+Layout\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9ac61dfc60317a58b2843ec29f8e3c2359}. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El layout de la imagen después de efectuarse la copia segirá siendo \doxyref{Gpu\+Image\+Layout\+::\+TRANSFER\+\_\+\+DESTINATION}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9ac61dfc60317a58b2843ec29f8e3c2359}.
+\end{DoxyPostcond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de TRANSFERENCIA. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+TRANSFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aeb5ddb3b6096fb90ff720d9c3e2a6628}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+TRANSFER}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aeb5ddb3b6096fb90ff720d9c3e2a6628}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!RegisterStagingBuffer@{RegisterStagingBuffer}}
+\index{RegisterStagingBuffer@{RegisterStagingBuffer}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{RegisterStagingBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_aa33074db62ffb92ebf49099b770cd230} 
+void ICommand\+List\+::\+Register\+Staging\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \&\&}]{staging\+Buffer}{}\end{DoxyParamCaption})}
+
+
+
+Registra un buffer intermedio. Como la operación de copia de datos de un buffer intermedio a un buffer final no se realiza hasta que se ejecute la lista de comandos, no podemos eliminar el buffer intermedio hasta la próxima ejecución de la lista de comandos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em staging\+Buffer} & Staging buffer a enlazar a la lista de comandos.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El buffer debe haber sido creado con \doxyref{Gpu\+Buffer\+Usage\+::\+TRANSFER\+\_\+\+SOURCE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad8b871b506bab7c4021326a1a10bbc7fafb3bb8503e5cd907a3a7b02a495c229e}. 
+
+El buffer debe haber sido creado con \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+AND\+\_\+\+CPU}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea096f8c31942629a91cc086cbda5f5465}. 
+
+La lista de comandos debe estar abierta. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!Reset@{Reset}}
+\index{Reset@{Reset}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{Reset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a6791d0b0caa149ea0c2b33babf3f916d} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Vacía la lista de comandos. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe estar cerrado. 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Debe llamarse antes de comenzar a grabar comandos.
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Command\+List\+Reset\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_reset_exception}} & Si hubo algún error en el API de bajo nivel. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!SetDebugName@{SetDebugName}}
+\index{SetDebugName@{SetDebugName}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{SetDebugName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_object_a4ced0b9bf575c7801e54f046604eee10} 
+virtual void OSK\+::\+GRAPHICS\+::\+IGpu\+Object\+::\+Set\+Debug\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Establece un nombre que lo identifique. Para debug. 
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!SetGpuBufferBarrier@{SetGpuBufferBarrier}}
+\index{SetGpuBufferBarrier@{SetGpuBufferBarrier}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{SetGpuBufferBarrier()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a9375a58b90447aa24aabd2a14b1c46bc} 
+void ICommand\+List\+::\+Set\+Gpu\+Buffer\+Barrier (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Buffer} $\ast$}]{buffer}{, }\item[{const \textbf{ Gpu\+Buffer\+Range} \&}]{range}{, }\item[{\textbf{ Gpu\+Barrier\+Info}}]{next}{, }\item[{const \textbf{ Resource\+Queue\+Transfer\+Info}}]{queue\+Tranfer}{ = {\ttfamily \textbf{ Resource\+Queue\+Transfer\+Info\+::\+Empty}()}}\end{DoxyParamCaption})}
+
+
+
+Establece un barrier que sincroniza la ejecución de comandos que usan un buffer. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em buffer} & Buffer usado. \\
+\hline
+{\em range} & Rango del buffer usado. \\
+\hline
+{\em next} & Stage siguiente. \\
+\hline
+{\em queue\+Tranfer} & Información sobre la transferencia de la imagen de una cola a otra.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La lista de comandos debe estar abierta. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!SetGpuBufferBarrier@{SetGpuBufferBarrier}}
+\index{SetGpuBufferBarrier@{SetGpuBufferBarrier}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{SetGpuBufferBarrier()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a824374067a3421648e86912a2ff2bdb6} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Set\+Gpu\+Buffer\+Barrier (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Buffer} $\ast$}]{buffer}{, }\item[{const \textbf{ Gpu\+Buffer\+Range} \&}]{range}{, }\item[{\textbf{ Gpu\+Barrier\+Info}}]{previous}{, }\item[{\textbf{ Gpu\+Barrier\+Info}}]{next}{, }\item[{const \textbf{ Resource\+Queue\+Transfer\+Info}}]{queue\+Tranfer}{ = {\ttfamily \textbf{ Resource\+Queue\+Transfer\+Info\+::\+Empty}()}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece un barrier que sincroniza la ejecución de comandos que usan un buffer. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em buffer} & Buffer usado. \\
+\hline
+{\em range} & Rango del buffer usado. \\
+\hline
+{\em previous} & Stage previo. \\
+\hline
+{\em next} & Stage siguiente. \\
+\hline
+{\em queue\+Tranfer} & Información sobre la transferencia de la imagen de una cola a otra.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La lista de comandos debe estar abierta. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!SetGpuImageBarrier@{SetGpuImageBarrier}}
+\index{SetGpuImageBarrier@{SetGpuImageBarrier}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{SetGpuImageBarrier()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ad41d0460675e09a70a777d9b2fb44bd6} 
+void ICommand\+List\+::\+Set\+Gpu\+Image\+Barrier (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{, }\item[{\textbf{ Gpu\+Image\+Layout}}]{next\+Layout}{, }\item[{\textbf{ Gpu\+Barrier\+Info}}]{next}{, }\item[{const \textbf{ Gpu\+Image\+Range} \&}]{range}{ = {\ttfamily \{\}}, }\item[{const \textbf{ Resource\+Queue\+Transfer\+Info}}]{queue\+Tranfer}{ = {\ttfamily \textbf{ Resource\+Queue\+Transfer\+Info\+::\+Empty}()}}\end{DoxyParamCaption})}
+
+
+
+Establece un barrier que sincroniza la ejecución de comandos. Cambia el layout de la imagen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image} & Imagen a la que se le cambiará el layout. \\
+\hline
+{\em next\+Layout} & Nuevo layout. \\
+\hline
+{\em next} & Stage siguiente. \\
+\hline
+{\em range} & Información sobre que subrecursos de la imagen serán afectados. \\
+\hline
+{\em queue\+Tranfer} & Información sobre la transferencia de la imagen de una cola a otra.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Se debe cambiar el layout de la imagen antes de ejecutar un comando sobre ella, si su layout actual no coincide con el necesario.
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Los subrecursos especificados por image\+Info estarán en el nuevo layout. 
+\end{DoxyPostcond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!SetGpuImageBarrier@{SetGpuImageBarrier}}
+\index{SetGpuImageBarrier@{SetGpuImageBarrier}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{SetGpuImageBarrier()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_acdf880aeb06032f990f13e479ac7a6b1} 
+void ICommand\+List\+::\+Set\+Gpu\+Image\+Barrier (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{, }\item[{\textbf{ Gpu\+Image\+Layout}}]{next\+Layout}{, }\item[{\textbf{ Gpu\+Barrier\+Info}}]{previous}{, }\item[{\textbf{ Gpu\+Barrier\+Info}}]{next}{, }\item[{const \textbf{ Gpu\+Image\+Range} \&}]{range}{ = {\ttfamily \{\}}, }\item[{const \textbf{ Resource\+Queue\+Transfer\+Info}}]{queue\+Tranfer}{ = {\ttfamily \textbf{ Resource\+Queue\+Transfer\+Info\+::\+Empty}()}}\end{DoxyParamCaption})}
+
+
+
+Establece un barrier que sincroniza la ejecución de comandos. Cambia el layout de la imagen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image} & Imagen a la que se le cambiará el layout. \\
+\hline
+{\em next\+Layout} & Nuevo layout. \\
+\hline
+{\em previous} & Stage previo. \\
+\hline
+{\em next} & Stage siguiente. \\
+\hline
+{\em range} & Información sobre que subrecursos de la imagen serán afectados. \\
+\hline
+{\em queue\+Tranfer} & Información sobre la transferencia de la imagen de una cola a otra.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Se debe cambiar el layout de la imagen antes de ejecutar un comando sobre ella, si su layout actual no coincide con el necesario.
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Los subrecursos especificados por image\+Info estarán en el nuevo layout. 
+\end{DoxyPostcond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!SetGpuImageBarrier@{SetGpuImageBarrier}}
+\index{SetGpuImageBarrier@{SetGpuImageBarrier}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{SetGpuImageBarrier()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a7276600a265bd81a122e2d213a55baa8} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Set\+Gpu\+Image\+Barrier (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{, }\item[{\textbf{ Gpu\+Image\+Layout}}]{previous\+Layout}{, }\item[{\textbf{ Gpu\+Image\+Layout}}]{next\+Layout}{, }\item[{\textbf{ Gpu\+Barrier\+Info}}]{previous}{, }\item[{\textbf{ Gpu\+Barrier\+Info}}]{next}{, }\item[{const \textbf{ Gpu\+Image\+Range} \&}]{range}{ = {\ttfamily \{\}}, }\item[{const \textbf{ Resource\+Queue\+Transfer\+Info}}]{queue\+Tranfer}{ = {\ttfamily \textbf{ Resource\+Queue\+Transfer\+Info\+::\+Empty}()}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece un barrier que sincroniza la ejecución de comandos. También cambia el layout de la imagen. 
+
+\begin{DoxySeeAlso}{Ver también}
+Gpu\+Image\+Barrier\+Info.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parámetros}
+{\em image} & Imagen a la que se le cambiará el layout. \\
+\hline
+{\em previous\+Layout} & Layout anterior. \\
+\hline
+{\em next\+Layout} & Nuevo layout. \\
+\hline
+{\em previous} & Stage previo. \\
+\hline
+{\em next} & Stage siguiente. \\
+\hline
+{\em range} & Información sobre que subrecursos de la imagen serán afectados. \\
+\hline
+{\em queue\+Tranfer} & Información sobre la transferencia de la imagen de una cola a otra.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Se debe cambiar el layout de la imagen antes de ejecutar un comando sobre ella, si su layout actual no coincide con el necesario.
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+La lista de comandos debe estar abierta. 
+
+previous\+Layout debe ser el layout de la imagen antes de este comando.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Los subrecursos especificados por image\+Info estarán en el nuevo layout. 
+\end{DoxyPostcond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!SetScissor@{SetScissor}}
+\index{SetScissor@{SetScissor}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{SetScissor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ad7246c4be8141d70827ee91c1686144e} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Set\+Scissor (\begin{DoxyParamCaption}\item[{const \textbf{ Vector4ui} \&}]{scissor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece qué área del renderizado será visible en la textura final. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em scissor} & Área de renderizado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un renderpass activo. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!SetViewport@{SetViewport}}
+\index{SetViewport@{SetViewport}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{SetViewport()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ade7ffbc2a7481918f6862d60aea4d7c3} 
+void ICommand\+List\+::\+Set\+Viewport (\begin{DoxyParamCaption}\item[{const \textbf{ Viewport} \&}]{viewport}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Establece el viewport a renderizar. El viewport describe el área de la patnalla que se va a renderizar. Además, establece la profundida mínima y máxima. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em viewport} & Información del viewport.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un renderpass activo. 
+
+La lista de comandos debe estar abierta.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+El tipo de comando es de GRÁ\+FICOS. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6a6f49448c79d7d58c6e60cf7129b84d1c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!Start@{Start}}
+\index{Start@{Start}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{Start()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_aeac85c5825b4d9f34f7b285ddfcd4367} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Comienza a grabar comandos en la lista. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe estar cerrado.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Command\+List\+Start\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_start_exception}} & Si hubo algún error en el API de bajo nivel. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!StartDebugSection@{StartDebugSection}}
+\index{StartDebugSection@{StartDebugSection}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{StartDebugSection()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ae947cdafbd962f4e191c4f50f903eefe} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Start\+Debug\+Section (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mark}{, }\item[{const \textbf{ Color} \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Comienza una sección de la lista de comandos que quedará marcada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mark} & Título de la marca. \\
+\hline
+{\em color} & \doxyref{Color}{pág.}{class_o_s_k_1_1_color} de la marca. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!TraceRays@{TraceRays}}
+\index{TraceRays@{TraceRays}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{TraceRays()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a1def0619195af213c0d61f3b9ecc1901} 
+virtual void OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::\+Trace\+Rays (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{raygen\+Entry}{, }\item[{\textbf{ UIndex32}}]{closest\+Hit\+Entry}{, }\item[{\textbf{ UIndex32}}]{miss\+Entry}{, }\item[{const \textbf{ Vector2ui} \&}]{resolution}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Ejecuta un trazado de rayos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em raygen\+Entry} & Índice del shader de generación de rayos que se va a usar, según su posición en la tabla de shaders.\\
+\hline
+{\em closest\+Hit\+Entry} & Índice del shader de colisión de rayos que se va a usar, según su posición en la tabla de shaders.\\
+\hline
+{\em miss\+Entry} & Índice del shader de fallo de rayos que se va a usar, según su posición en la tabla de shaders.\\
+\hline
+{\em resolution} & Número de rayos generados en los ejes X e Y.\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyPrecond}{Precondición}
+NO debe haber un renderpass activo. 
+
+Debe haber un material de trazado de rayos enlazado. 
+
+Deben estar enlazados los slots y los push constants necesarios para rellenar el material. 
+
+La lista de comandos debe estar abierta. 
+
+Debe ejecutarse en un equipo compatible con trazado de rayos. 
+
+Debe haberse activado la opción de trazado de rayos de OSKengine.
+\end{DoxyPrecond}
+
+
+\begin{DoxyNote}{Nota}
+El tipo de comando es de COMPUTACIÓN. 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+El pool de comandos a partir del cual se ha creado la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+
+La cola de comandos sobre la que se envía la lista debe soportar, al menos, {\ttfamily \doxyref{Commands\+Support\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19534f214690bcfc89ac53cc89681ac6aac404d7ce6ca5862e9b8a2641fbafd90}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!TransferToQueue@{TransferToQueue}}
+\index{TransferToQueue@{TransferToQueue}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{TransferToQueue()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ae904139749b866cff4a753d0e844d1ea} 
+void ICommand\+List\+::\+Transfer\+To\+Queue (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Buffer} $\ast$}]{buffer}{, }\item[{const \textbf{ ICommand\+Queue} \&}]{source\+Queue}{, }\item[{const \textbf{ ICommand\+Queue} \&}]{target\+Queue}{}\end{DoxyParamCaption})}
+
+
+
+Transfiere la propiedad del buffer de una cola GPU a otra. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em buffer} & Buffer cuya propiedad será tranfserida. \\
+\hline
+{\em source\+Queue} & Cola que era propietaria antes de este comando. \\
+\hline
+{\em target\+Queue} & Cola que será propietaria después de este comando.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily target\+Queue} debe ser estable.
+
+{\ttfamily source\+Queue} debe ser la cola que posee el buffer antes de este comando.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+La transferencia de la propiedad no se completará hasta que no se complete la ejecución del comando en GPU. 
+
+Si {\ttfamily source\+Queue} y {\ttfamily target\+Queue} representan la misma cola, no ocurre nada. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!TransferToQueue@{TransferToQueue}}
+\index{TransferToQueue@{TransferToQueue}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{TransferToQueue()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a7bdbc89cb67113a27fb21dfc8b98d4f1} 
+void ICommand\+List\+::\+Transfer\+To\+Queue (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Buffer} $\ast$}]{buffer}{, }\item[{const \textbf{ ICommand\+Queue} \&}]{target\+Queue}{}\end{DoxyParamCaption})}
+
+
+
+Transfiere la propiedad del buffer de una cola GPU a otra. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em buffer} & Buffer cuya propiedad será tranfserida. \\
+\hline
+{\em target\+Queue} & Cola que será propietaria después de este comando.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily target\+Queue} debe ser estable.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si {\ttfamily target\+Queue} representan la cola que ya es propietaria del buffer, no ocurre nada. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!TransferToQueue@{TransferToQueue}}
+\index{TransferToQueue@{TransferToQueue}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{TransferToQueue()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a60576c40b59725d8c1aca2459596c14e} 
+void ICommand\+List\+::\+Transfer\+To\+Queue (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{, }\item[{const \textbf{ ICommand\+Queue} \&}]{source\+Queue}{, }\item[{const \textbf{ ICommand\+Queue} \&}]{target\+Queue}{}\end{DoxyParamCaption})}
+
+
+
+Transfiere la propiedad de la imagen de una cola GPU a otra. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image} & Imagen cuya propiedad será tranfserida. \\
+\hline
+{\em source\+Queue} & Cola que era propietaria antes de este comando. \\
+\hline
+{\em target\+Queue} & Cola que será propietaria después de este comando.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily target\+Queue} debe ser estable.
+
+{\ttfamily source\+Queue} debe ser la cola que posee la imagen antes de este comando.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+La transferencia de la propiedad no se completará hasta que no se complete la ejecución del comando en GPU. 
+
+Si {\ttfamily source\+Queue} y {\ttfamily target\+Queue} representan la misma cola, no ocurre nada. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!TransferToQueue@{TransferToQueue}}
+\index{TransferToQueue@{TransferToQueue}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{TransferToQueue()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a8521a33a89d78f7a98557c5ecf060c32} 
+void ICommand\+List\+::\+Transfer\+To\+Queue (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{, }\item[{const \textbf{ ICommand\+Queue} \&}]{target\+Queue}{}\end{DoxyParamCaption})}
+
+
+
+Transfiere la propiedad de la imagen a otra cola GPU. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image} & Imagen cuya propiedad será tranfserida. \\
+\hline
+{\em target\+Queue} & Cola que será propietaria después de este comando.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily target\+Queue} debe ser estable.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si {\ttfamily target\+Queue} representan la cola que ya es propietaria de la imagen, no ocurre nada. 
+\end{DoxyNote}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!compute@{compute}}
+\index{compute@{compute}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{compute}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a382ca275252b4bce5983fd3a3101d885} 
+const \textbf{ ICompute\+Pipeline}$\ast$ OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::compute}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!graphics@{graphics}}
+\index{graphics@{graphics}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{graphics}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a97c317674cf2dc1bcf5e0cd3a5b5d6e9} 
+const \textbf{ IGraphics\+Pipeline}$\ast$ OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::graphics = nullptr}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!m\_currentlyBoundColorImages@{m\_currentlyBoundColorImages}}
+\index{m\_currentlyBoundColorImages@{m\_currentlyBoundColorImages}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{m\_currentlyBoundColorImages}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a4795d250efc7fa04ddcf5875a480e19d} 
+\textbf{ Dynamic\+Array}$<$\textbf{ Render\+Pass\+Image\+Info}$>$ OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::m\+\_\+currently\+Bound\+Color\+Images\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!m\_currentlyBoundDepthImage@{m\_currentlyBoundDepthImage}}
+\index{m\_currentlyBoundDepthImage@{m\_currentlyBoundDepthImage}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{m\_currentlyBoundDepthImage}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a3ff7354c9753d96881d672b111043af6} 
+\textbf{ Render\+Pass\+Image\+Info} OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::m\+\_\+currently\+Bound\+Depth\+Image\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!m\_currentlyBoundMaterial@{m\_currentlyBoundMaterial}}
+\index{m\_currentlyBoundMaterial@{m\_currentlyBoundMaterial}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{m\_currentlyBoundMaterial}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a6f3819930d72de3a653aee8599e5f072} 
+const \textbf{ Material}$\ast$ OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::m\+\_\+currently\+Bound\+Material = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxyref{Material}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material} que está siendo usado en un instante determinado. 
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!m\_currentlyBoundRenderTargetType@{m\_currentlyBoundRenderTargetType}}
+\index{m\_currentlyBoundRenderTargetType@{m\_currentlyBoundRenderTargetType}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{m\_currentlyBoundRenderTargetType}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a87d534d7426c0dbb7a01f2b8d4ab5013} 
+\textbf{ Renderpass\+Type} OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::m\+\_\+currently\+Bound\+Render\+Target\+Type = \textbf{ Renderpass\+Type\+::\+INTERMEDIATE}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!m\_currentPipeline@{m\_currentPipeline}}
+\index{m\_currentPipeline@{m\_currentPipeline}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{[union]}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_a277e62ef58d147af00779977b194c079} 
+union  \{ ... \}  OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::m\+\_\+current\+Pipeline\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pipeline que está siendo grabado en un instante determinado. Sólamente puede estar uno activo. 
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!mesh@{mesh}}
+\index{mesh@{mesh}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{mesh}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_aa479a6d7a2f7ec525de66a4ab4a83c93} 
+const \textbf{ IMesh\+Pipeline}$\ast$ OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::mesh}
+
+\index{OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}!raytracing@{raytracing}}
+\index{raytracing@{raytracing}!OSK::GRAPHICS::ICommandList@{OSK::GRAPHICS::ICommandList}}
+\doxysubsubsection{raytracing}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_ad0c6fb52ec460cf8a90c91c661378712} 
+const \textbf{ IRaytracing\+Pipeline}$\ast$ OSK\+::\+GRAPHICS\+::\+ICommand\+List\+::raytracing}
+

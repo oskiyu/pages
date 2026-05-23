@@ -1,0 +1,187 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::Shared\+Ptr$<$ T $>$}
+\label{class_o_s_k_1_1_shared_ptr}\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Shared\+Ptr.\+hpp$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \textbf{ Shared\+Ptr} () noexcept
+\item 
+constexpr \textbf{ Shared\+Ptr} (T $\ast$data) noexcept
+\item 
+\textbf{ Shared\+Ptr} (const \textbf{ Shared\+Ptr} \&other)
+\item 
+\textbf{ $\sim$\+Shared\+Ptr} ()
+\item 
+\textbf{ Shared\+Ptr} \& \textbf{ operator=} (const \textbf{ Shared\+Ptr} \&other)
+\item 
+\textbf{ Shared\+Ptr} (\textbf{ Shared\+Ptr} \&\&other) noexcept
+\item 
+\textbf{ Shared\+Ptr} \& \textbf{ operator=} (\textbf{ Shared\+Ptr} \&\&other) noexcept
+\item 
+constexpr \textbf{ USize64} \textbf{ Get\+Instance\+Count} () const noexcept
+\item 
+T $\ast$ \textbf{ Get\+Pointer} ()
+\item 
+const T $\ast$ \textbf{ Get\+Pointer} () const
+\item 
+T \& \textbf{ Get} ()
+\item 
+const T \& \textbf{ Get} () const
+\item 
+T $\ast$ \textbf{ operator-\/$>$} ()
+\item 
+const T $\ast$ \textbf{ operator-\/$>$} () const
+\item 
+constexpr bool \textbf{ Has\+Value} () const
+\item 
+constexpr bool \textbf{ operator==} (const \textbf{ Shared\+Ptr} \&) const =default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename T$>$\newline
+class OSK\+::\+Shared\+Ptr$<$ T $>$}
+Contiene un puntero al que pueden hacer referencia varios \doxyref{Shared\+Ptr}{pág.}{class_o_s_k_1_1_shared_ptr}. Si el último \doxyref{Shared\+Ptr}{pág.}{class_o_s_k_1_1_shared_ptr} que hace referencia a un puntero es desstruido, el puntero será eliminado. 
+
+\begin{DoxyNote}{Nota}
+La propiedad del puntero está compartida.
+\end{DoxyNote}
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo del puntero almacenado.\\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!SharedPtr@{SharedPtr}}
+\index{SharedPtr@{SharedPtr}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{SharedPtr()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_afffc01e1ecd66241457091948f4f4bc8} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::\+Shared\+Ptr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!SharedPtr@{SharedPtr}}
+\index{SharedPtr@{SharedPtr}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{SharedPtr()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_a917648bbfbff015f0a844d4248cd4a5f} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::\+Shared\+Ptr (\begin{DoxyParamCaption}\item[{T $\ast$}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+El puntero debe haberse creado con new. 
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!SharedPtr@{SharedPtr}}
+\index{SharedPtr@{SharedPtr}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{SharedPtr()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_a2255bcc4b298c15fa775123f51e731a0} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::\+Shared\+Ptr (\begin{DoxyParamCaption}\item[{const \textbf{ Shared\+Ptr}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!````~SharedPtr@{$\sim$SharedPtr}}
+\index{````~SharedPtr@{$\sim$SharedPtr}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{$\sim$SharedPtr()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_a535ef4b6fbafb084c7f0fd8bb8da0540} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::$\sim$\textbf{ Shared\+Ptr} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!SharedPtr@{SharedPtr}}
+\index{SharedPtr@{SharedPtr}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{SharedPtr()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_a9be7ba34260ae366d7c7596b06640d11} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::\+Shared\+Ptr (\begin{DoxyParamCaption}\item[{\textbf{ Shared\+Ptr}$<$ T $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!Get@{Get}}
+\index{Get@{Get}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{Get()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_a6eb48dad5af19742ee3a959993169f80} 
+template$<$typename T$>$ \\
+T \& \textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::\+Get (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!Get@{Get}}
+\index{Get@{Get}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{Get()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_ace76d9c3a6419c4d1664991b2f7014f2} 
+template$<$typename T$>$ \\
+const T \& \textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::\+Get (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!GetInstanceCount@{GetInstanceCount}}
+\index{GetInstanceCount@{GetInstanceCount}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{GetInstanceCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_a19cd9d24955924825526265528639f66} 
+template$<$typename T$>$ \\
+\textbf{ USize64} \textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::\+Get\+Instance\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Devuelve el número de \doxyref{Shared\+Ptr}{pág.}{class_o_s_k_1_1_shared_ptr} que comparten el mismo puntero que este. 
+
+\begin{DoxyReturn}{Devuelve}
+Número de instancias.
+\end{DoxyReturn}
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!GetPointer@{GetPointer}}
+\index{GetPointer@{GetPointer}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{GetPointer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_afe257db774989aaef490abd0420262ed} 
+template$<$typename T$>$ \\
+T $\ast$ \textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::\+Get\+Pointer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!GetPointer@{GetPointer}}
+\index{GetPointer@{GetPointer}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{GetPointer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_a7467b8f24db30bd176a7935dc6d9e3ae} 
+template$<$typename T$>$ \\
+const T $\ast$ \textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::\+Get\+Pointer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!HasValue@{HasValue}}
+\index{HasValue@{HasValue}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{HasValue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_a67574cf0d186e275ce34fdc2fd670e20} 
+template$<$typename T$>$ \\
+bool \textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::\+Has\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{operator-\/$>$()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_a32a32d6fdbc715d0ea0490949a090e70} 
+template$<$typename T$>$ \\
+T $\ast$ \textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{operator-\/$>$()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_a5cb0c746d66b56c02ce314b5b2b5409a} 
+template$<$typename T$>$ \\
+const T $\ast$ \textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_a15407d47ef27c812318ea81ea313d136} 
+template$<$typename T$>$ \\
+\textbf{ Shared\+Ptr} \& \textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Shared\+Ptr}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_abdd61d8dc452de950baf370c2256893a} 
+template$<$typename T$>$ \\
+\textbf{ Shared\+Ptr} \& \textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\textbf{ Shared\+Ptr}$<$ T $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\index{OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!OSK::SharedPtr$<$ T $>$@{OSK::SharedPtr$<$ T $>$}}
+\doxysubsubsection{operator==()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_shared_ptr_a4df4901a88ae154b58aadd4b49c8d4b5} 
+template$<$typename T$>$ \\
+bool \textbf{ OSK\+::\+Shared\+Ptr}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Shared\+Ptr}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}}
+

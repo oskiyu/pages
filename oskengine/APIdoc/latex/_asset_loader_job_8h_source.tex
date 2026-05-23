@@ -1,0 +1,34 @@
+\doxysection{Asset\+Loader\+Job.\+h}
+\label{_asset_loader_job_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/AssetLoaderJob.h@{C:/Users/Oscar/source/repos/OSKengine/Source/AssetLoaderJob.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}IJob.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }IAssetLoader;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }AssetLoaderJob\ :\ \textcolor{keyword}{public}\ IJob\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ OSK\_JOB(\textcolor{stringliteral}{"{}OSK::AssetLoaderJob"{}});}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ AssetLoaderJob(}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ assetPath,\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ IAssetLoader*\ loader);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Execute()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::string\ m\_assetPath;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ IAssetLoader*\ m\_loader\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}

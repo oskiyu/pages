@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Fichero Fuente C:/Users/Oscar/source/repos/OSKengine/Source/OSKengine.h</title>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/OSKengine.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_o_s_kengine_8h_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('_o_s_kengine_8h_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,9 +78,16 @@ $(document).ready(function(){initNavTree('_o_s_kengine_8h_source.html',''); init
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
@@ -91,149 +97,186 @@ $(document).ready(function(){initNavTree('_o_s_kengine_8h_source.html',''); init
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;ApiCall.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;UniquePtr.hpp&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Version.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Logger.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;IDisplay.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;IRenderer.h&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;AssetManager.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;EntityComponentSystem.h&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;IAudioApi.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;IUserInput.h&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;InputManager.h&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;JobSystem.h&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;Uuid.h&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;ConsoleCommandExecutor.h&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;DefaultElementsProfiles.h&quot;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k.html">OSK</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">namespace </span><a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5f64f8e9fdfc352ed3026326a325b62a6f49448c79d7d58c6e60cf7129b84d1c">GRAPHICS</a> {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a3057691f190dabf7642cfde72cf2430f">RenderApiType</a>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_engine.html">   32</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_class" href="class_o_s_k_1_1_engine.html">Engine</a> {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_engine.html#a4cebbff4288a89796d09f5060dea8c27">   36</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a4cebbff4288a89796d09f5060dea8c27">Engine</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_engine.html#a14fa3ec009597e470a2c301108d57879">   37</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a14fa3ec009597e470a2c301108d57879">Engine</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_engine.html">Engine</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_engine.html#a523836b34f219549596cb5d402b560b8">   38</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a523836b34f219549596cb5d402b560b8">Engine</a>(<a class="code hl_class" href="class_o_s_k_1_1_engine.html">Engine</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_engine.html#a07a9fcf411c42f80ea0b7df1e065e5f6">   40</a></span>        <a class="code hl_class" href="class_o_s_k_1_1_engine.html">Engine</a>&amp; <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a07a9fcf411c42f80ea0b7df1e065e5f6">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_engine.html">Engine</a>&amp; e) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_engine.html#a0a72830e83c0f58c00b0c5f32b52abfe">   41</a></span>        <a class="code hl_class" href="class_o_s_k_1_1_engine.html">Engine</a>&amp; <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a0a72830e83c0f58c00b0c5f32b52abfe">operator=</a>(<a class="code hl_class" href="class_o_s_k_1_1_engine.html">Engine</a>&amp;&amp; e) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> Create(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a3057691f190dabf7642cfde72cf2430f">GRAPHICS::RenderApiType</a> type);</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Platforms.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;UniquePtr.hpp&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Version.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;Logger.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;IDisplay.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;IRenderer.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;AssetManager.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;EntityComponentSystem.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;IAudioApi.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;IUserInput.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;InputManager.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;JobSystem.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;Uuid.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;ConsoleCommandExecutor.h&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;DefaultElementsProfiles.h&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#ifdef OSK_ANDROID</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">struct </span>android_app;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k.html">OSK</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">GRAPHICS</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a3057691f190dabf7642cfde72cf2430f">RenderApiType</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_engine.html">   37</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a4cebbff4288a89796d09f5060dea8c27">Engine</a> {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_engine.html#a4cebbff4288a89796d09f5060dea8c27">   41</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a4cebbff4288a89796d09f5060dea8c27">Engine</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_engine.html#a14fa3ec009597e470a2c301108d57879">   42</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a14fa3ec009597e470a2c301108d57879">Engine</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a4cebbff4288a89796d09f5060dea8c27">Engine</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_engine.html#a523836b34f219549596cb5d402b560b8">   43</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a523836b34f219549596cb5d402b560b8">Engine</a>(<a class="code hl_function" href="class_o_s_k_1_1_engine.html#a4cebbff4288a89796d09f5060dea8c27">Engine</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_engine.html#a07a9fcf411c42f80ea0b7df1e065e5f6">   45</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a4cebbff4288a89796d09f5060dea8c27">Engine</a>&amp; <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a07a9fcf411c42f80ea0b7df1e065e5f6">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a4cebbff4288a89796d09f5060dea8c27">Engine</a>&amp; e) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_engine.html#a0a72830e83c0f58c00b0c5f32b52abfe">   46</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a4cebbff4288a89796d09f5060dea8c27">Engine</a>&amp; <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a0a72830e83c0f58c00b0c5f32b52abfe">operator=</a>(<a class="code hl_function" href="class_o_s_k_1_1_engine.html#a4cebbff4288a89796d09f5060dea8c27">Engine</a>&amp;&amp; e) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> Close();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keyword">static</span> <span class="keywordtype">float</span> GetCurrentTime();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_logger.html">IO::Logger</a>* GetLogger();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#ifdef OSK_ANDROID</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a88150153e8f935f46f0eb728740cb9b5">Create</a>(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a3057691f190dabf7642cfde72cf2430f">GRAPHICS::RenderApiType</a> type, ::android_app* app);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a88150153e8f935f46f0eb728740cb9b5">Create</a>(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a3057691f190dabf7642cfde72cf2430f">GRAPHICS::RenderApiType</a> type);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#ac7dc8c00262aee2a11183e4080fa5faf">Close</a>();</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_i_display.html">IO::IDisplay</a>* GetDisplay();</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html">GRAPHICS::IRenderer</a>* GetRenderer();</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager.html">ASSETS::AssetManager</a>* GetAssetManager();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_entity_component_system.html">ECS::EntityComponentSystem</a>* GetEcs();</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_i_user_input.html">IO::IUserInput</a>* GetInput();</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_input_manager.html">IO::InputManager</a>* GetInputManager();</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api.html">AUDIO::IAudioApi</a>* GetAudioApi();</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_job_system.html">JobSystem</a>* GetJobSystem();</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_uuid_provider.html">UuidProvider</a>* GetUuidProvider();</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_console_command_executor.html">ConsoleCommandExecutor</a>* GetCommandExecutor();</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keyword">static</span> <a class="code hl_struct" href="struct_o_s_k_1_1_version.html">Version</a> GetVersion();</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keyword">static</span> std::string_view GetBuild();</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> RegisterBuiltinAssets(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">GAME::DefaultContentProfile</a> profile);</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> RegisterBuiltinComponents(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">GAME::DefaultContentProfile</a> profile);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> RegisterBuiltinSystems(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">GAME::DefaultContentProfile</a> profile);</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> RegisterBuiltinEvents();</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> RegisterBuiltinVertices();</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> RegisterBuiltinJobs();</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> RegisterBuiltinShaderPasses(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">GAME::DefaultContentProfile</a> profile);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> RegisterBuiltinConsoleCommands();</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keyword">static</span> <a class="code hl_typedef" href="namespace_o_s_k.html#acc51e06327891d5bd017ffaea91559c5">UIndex64</a> GetCurrentGameFrameIndex();</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> Update();</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;IO::Logger&gt;</a> logger;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;IO::IDisplay&gt;</a> display;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;GRAPHICS::IRenderer&gt;</a> renderer;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;ASSETS::AssetManager&gt;</a> assetManager;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;ECS::EntityComponentSystem&gt;</a> entityComponentSystem;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;IO::IUserInput&gt;</a> input;</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;IO::InputManager&gt;</a> inputManager;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;AUDIO::IAudioApi&gt;</a> audioApi;</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;JobSystem&gt;</a> m_jobSystem;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;ConsoleCommandExecutor&gt;</a> commandExecutor;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;UuidProvider&gt;</a> uuidProvider;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keyword">static</span> <a class="code hl_typedef" href="namespace_o_s_k.html#acc51e06327891d5bd017ffaea91559c5">UIndex64</a> gameFrameIndex;</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    };</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment">// #define OSK_USE_FORWARD_RENDERER</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#define OSK_USE_DEFERRED_RENDERER</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">// #define OSK_USE_HYBRID_RENDERER</span></div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment">// #define OSK_NO_DEFAULT_RENDERER</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">// #define OSK_USE_GDR_RENDERER</span></div>
-<div class="ttc" id="aclass_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager_html"><div class="ttname"><a href="class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager.html">OSK::ASSETS::AssetManager</a></div><div class="ttdoc">El AssetManager se encarga de manejar los loaders de los assets y los lifetimes de los assets.</div><div class="ttdef"><b>Definition:</b> AssetManager.h:37</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_html"><div class="ttname"><a href="class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api.html">OSK::AUDIO::IAudioApi</a></div><div class="ttdef"><b>Definition:</b> IAudioApi.h:23</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_console_command_executor_html"><div class="ttname"><a href="class_o_s_k_1_1_console_command_executor.html">OSK::ConsoleCommandExecutor</a></div><div class="ttdoc">Clase que ejecuta comandos de consola.</div><div class="ttdef"><b>Definition:</b> ConsoleCommandExecutor.h:21</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_entity_component_system_html"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_entity_component_system.html">OSK::ECS::EntityComponentSystem</a></div><div class="ttdoc">Entity-Component-System es un paradigma de programación en el cual los objetos se dividen en 3 partes...</div><div class="ttdef"><b>Definition:</b> EntityComponentSystem.h:44</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_engine_html"><div class="ttname"><a href="class_o_s_k_1_1_engine.html">OSK::Engine</a></div><div class="ttdoc">Clase principal de OSKengine.</div><div class="ttdef"><b>Definition:</b> OSKengine.h:32</div></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a23b66a6d56164e64d289902ad16b625a">GetCurrentTime</a>();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_i_logger.html">IO::ILogger</a>* <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a3be85a8bfef6ad22512f144788c33680">GetLogger</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_i_display.html">IO::IDisplay</a>* <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a81e2e2c3d9ab78f3ff07281bd2b6aef8">GetDisplay</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html">GRAPHICS::IRenderer</a>* <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a019c5397d042224c134b7fd22c739d00">GetRenderer</a>();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager.html">ASSETS::AssetManager</a>* <a class="code hl_function" href="class_o_s_k_1_1_engine.html#ab092fdb69a9c816c93f177192477d97c">GetAssetManager</a>();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_entity_component_system.html">ECS::EntityComponentSystem</a>* <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a2e36571452395c924ab2211ad380298f">GetEcs</a>();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_i_user_input.html">IO::IUserInput</a>* <a class="code hl_function" href="class_o_s_k_1_1_engine.html#aee49ec521f32013bec544e37f9720410">GetInput</a>();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_i_o_1_1_input_manager.html">IO::InputManager</a>* <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a5893cf5817c0ab30ae0c0d9761ce71f2">GetInputManager</a>();</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api.html">AUDIO::IAudioApi</a>* <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a6bb693c9bcd8779b838541fe89ece2a1">GetAudioApi</a>();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_job_system.html">JobSystem</a>* <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a1e9c44d6c25c676ec8f41d5fbe83ed35">GetJobSystem</a>();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_uuid_provider.html">UuidProvider</a>* <a class="code hl_function" href="class_o_s_k_1_1_engine.html#ae51793e3f69c3a3af9f06935a83a74c6">GetUuidProvider</a>();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_console_command_executor.html">ConsoleCommandExecutor</a>* <a class="code hl_function" href="class_o_s_k_1_1_engine.html#afd8334294ca89391187dcab642752f9b">GetCommandExecutor</a>();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keyword">static</span> <a class="code hl_struct" href="struct_o_s_k_1_1_version.html">Version</a> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a223c2864123f7dba6e84ac0107aa61f0">GetVersion</a>();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keyword">static</span> std::string_view <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a69ab5a1c949be339208364f30d600697">GetBuild</a>();</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a901ece0b54632d182701de2e37d5476d">RegisterBuiltinAssets</a>(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">GAME::DefaultContentProfile</a> profile);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#afb9e596f36e6a9f88cc3ea19d3169506">RegisterBuiltinComponents</a>(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">GAME::DefaultContentProfile</a> profile);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a99a0747647a8669054273c14b2ffa3da">RegisterBuiltinSystems</a>(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">GAME::DefaultContentProfile</a> profile);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a0f56cbc8b9a749c16a3000ce5eb6ff78">RegisterBuiltinEvents</a>();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a68d1b1d787f29b6a6ba0a617f1919e67">RegisterBuiltinVertices</a>();</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a894b834555f737c9d3a6566a6091bb22">RegisterBuiltinJobs</a>();</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a6e18d8650c67d352a14e39fd56247724">RegisterBuiltinShaderPasses</a>(<a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">GAME::DefaultContentProfile</a> profile);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#aa97e0f82fdff284897952ac8d56ea814">RegisterBuiltinConsoleCommands</a>();</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keyword">static</span> <a class="code hl_typedef" href="namespace_o_s_k.html#ac0ea6d3df0641acb0fd4620c6f5ef68a">UIndex64</a> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#a8298cbab77cc3ea3abe5a46ea52b82fa">GetCurrentGameFrameIndex</a>();</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_engine.html#ac84eefe06226f430a2448306e6fd2579">Update</a>();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;IO::ILogger&gt;</a> logger;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;IO::IDisplay&gt;</a> display;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;GRAPHICS::IRenderer&gt;</a> renderer;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;ASSETS::AssetManager&gt;</a> assetManager;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;ECS::EntityComponentSystem&gt;</a> entityComponentSystem;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;IO::IUserInput&gt;</a> input;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;IO::InputManager&gt;</a> inputManager;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;AUDIO::IAudioApi&gt;</a> audioApi;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;JobSystem&gt;</a> m_jobSystem;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;ConsoleCommandExecutor&gt;</a> commandExecutor;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_o_s_k_1_1_unique_ptr.html">UniquePtr&lt;UuidProvider&gt;</a> uuidProvider;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keyword">static</span> <a class="code hl_typedef" href="namespace_o_s_k.html#ac0ea6d3df0641acb0fd4620c6f5ef68a">UIndex64</a> gameFrameIndex;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    };</div>
+</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>}</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">// #define OSK_USE_FORWARD_RENDERER</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#define OSK_USE_DEFERRED_RENDERER</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment">// #define OSK_USE_HYBRID_RENDERER</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">// #define OSK_NO_DEFAULT_RENDERER</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="comment">// #define OSK_USE_GDR_RENDERER</span></div>
+<div class="ttc" id="aclass_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager_html"><div class="ttname"><a href="class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager.html">OSK::ASSETS::AssetManager</a></div><div class="ttdoc">El AssetManager se encarga de manejar los loaders de los assets y los lifetimes de los assets.</div><div class="ttdef"><b>Definition</b> AssetManager.h:37</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_html"><div class="ttname"><a href="class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api.html">OSK::AUDIO::IAudioApi</a></div><div class="ttdef"><b>Definition</b> IAudioApi.h:23</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_console_command_executor_html"><div class="ttname"><a href="class_o_s_k_1_1_console_command_executor.html">OSK::ConsoleCommandExecutor</a></div><div class="ttdoc">Clase que ejecuta comandos de consola.</div><div class="ttdef"><b>Definition</b> ConsoleCommandExecutor.h:21</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_entity_component_system_html"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_entity_component_system.html">OSK::ECS::EntityComponentSystem</a></div><div class="ttdoc">Entity-Component-System es un paradigma de programación en el cual los objetos se dividen en 3 partes...</div><div class="ttdef"><b>Definition</b> EntityComponentSystem.h:47</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a019c5397d042224c134b7fd22c739d00"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a019c5397d042224c134b7fd22c739d00">OSK::Engine::GetRenderer</a></div><div class="ttdeci">static GRAPHICS::IRenderer * GetRenderer()</div><div class="ttdoc">Devuelve un puntero al renderizador del motor.</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:296</div></div>
 <div class="ttc" id="aclass_o_s_k_1_1_engine_html_a07a9fcf411c42f80ea0b7df1e065e5f6"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a07a9fcf411c42f80ea0b7df1e065e5f6">OSK::Engine::operator=</a></div><div class="ttdeci">Engine &amp; operator=(const Engine &amp;e)=delete</div></div>
 <div class="ttc" id="aclass_o_s_k_1_1_engine_html_a0a72830e83c0f58c00b0c5f32b52abfe"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a0a72830e83c0f58c00b0c5f32b52abfe">OSK::Engine::operator=</a></div><div class="ttdeci">Engine &amp; operator=(Engine &amp;&amp;e)=delete</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a0f56cbc8b9a749c16a3000ce5eb6ff78"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a0f56cbc8b9a749c16a3000ce5eb6ff78">OSK::Engine::RegisterBuiltinEvents</a></div><div class="ttdeci">static void RegisterBuiltinEvents()</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:254</div></div>
 <div class="ttc" id="aclass_o_s_k_1_1_engine_html_a14fa3ec009597e470a2c301108d57879"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a14fa3ec009597e470a2c301108d57879">OSK::Engine::Engine</a></div><div class="ttdeci">Engine(const Engine &amp;)=delete</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a1e9c44d6c25c676ec8f41d5fbe83ed35"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a1e9c44d6c25c676ec8f41d5fbe83ed35">OSK::Engine::GetJobSystem</a></div><div class="ttdeci">static JobSystem * GetJobSystem()</div><div class="ttdoc">Devuelve un puntero al sistema de trabajos multihilo.</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:320</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a223c2864123f7dba6e84ac0107aa61f0"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a223c2864123f7dba6e84ac0107aa61f0">OSK::Engine::GetVersion</a></div><div class="ttdeci">static Version GetVersion()</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:345</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a23b66a6d56164e64d289902ad16b625a"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a23b66a6d56164e64d289902ad16b625a">OSK::Engine::GetCurrentTime</a></div><div class="ttdeci">static float GetCurrentTime()</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:332</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a2e36571452395c924ab2211ad380298f"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a2e36571452395c924ab2211ad380298f">OSK::Engine::GetEcs</a></div><div class="ttdeci">static ECS::EntityComponentSystem * GetEcs()</div><div class="ttdoc">Devuelve un puntero al ECS del motor.</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:304</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a3be85a8bfef6ad22512f144788c33680"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a3be85a8bfef6ad22512f144788c33680">OSK::Engine::GetLogger</a></div><div class="ttdeci">static IO::ILogger * GetLogger()</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:288</div></div>
 <div class="ttc" id="aclass_o_s_k_1_1_engine_html_a4cebbff4288a89796d09f5060dea8c27"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a4cebbff4288a89796d09f5060dea8c27">OSK::Engine::Engine</a></div><div class="ttdeci">Engine()=delete</div></div>
 <div class="ttc" id="aclass_o_s_k_1_1_engine_html_a523836b34f219549596cb5d402b560b8"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a523836b34f219549596cb5d402b560b8">OSK::Engine::Engine</a></div><div class="ttdeci">Engine(Engine &amp;&amp;)=delete</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html">OSK::GRAPHICS::IRenderer</a></div><div class="ttdoc">Clase singleton de la arquitectura de renderizado.</div><div class="ttdef"><b>Definition:</b> IRenderer.h:64</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_i_o_1_1_i_display_html"><div class="ttname"><a href="class_o_s_k_1_1_i_o_1_1_i_display.html">OSK::IO::IDisplay</a></div><div class="ttdoc">Interfaz que representa un display: la pantalla sobre la que se renderiza.</div><div class="ttdef"><b>Definition:</b> IDisplay.h:21</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_i_o_1_1_i_user_input_html"><div class="ttname"><a href="class_o_s_k_1_1_i_o_1_1_i_user_input.html">OSK::IO::IUserInput</a></div><div class="ttdoc">Interfaz para clases que permiten recoger la entrada del usuario.</div><div class="ttdef"><b>Definition:</b> IUserInput.h:21</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_i_o_1_1_input_manager_html"><div class="ttname"><a href="class_o_s_k_1_1_i_o_1_1_input_manager.html">OSK::IO::InputManager</a></div><div class="ttdoc">Maneja los input listeners del juego, llamando a sus funciones cuando sea necesario.</div><div class="ttdef"><b>Definition:</b> InputManager.h:15</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_i_o_1_1_logger_html"><div class="ttname"><a href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></div><div class="ttdef"><b>Definition:</b> Logger.h:102</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_job_system_html"><div class="ttname"><a href="class_o_s_k_1_1_job_system.html">OSK::JobSystem</a></div><div class="ttdoc">Sistema de ejecución multihilo. Permite insertar trabajos que serán ejecutados de manera paralela.</div><div class="ttdef"><b>Definition:</b> JobSystem.h:17</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_unique_ptr_html"><div class="ttname"><a href="class_o_s_k_1_1_unique_ptr.html">OSK::UniquePtr</a></div><div class="ttdoc">Estructura que es dueña de un objeto almacenado en heap. Al destruirse el UniquePtr,...</div><div class="ttdef"><b>Definition:</b> UniquePtr.hpp:26</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_uuid_provider_html"><div class="ttname"><a href="class_o_s_k_1_1_uuid_provider.html">OSK::UuidProvider</a></div><div class="ttdoc">Clase que gestiona la asignación de UUIDs.</div><div class="ttdef"><b>Definition:</b> Uuid.h:66</div></div>
-<div class="ttc" id="anamespace_o_s_k_1_1_g_a_m_e_html_a3a5605dbb9f51b73a09ffdecbee85d69"><div class="ttname"><a href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">OSK::GAME::DefaultContentProfile</a></div><div class="ttdeci">DefaultContentProfile</div><div class="ttdoc">Perfil que indica qué sistemas, componentes y assets por defecto se cargarán al iniciar el motor.</div><div class="ttdef"><b>Definition:</b> DefaultElementsProfiles.h:8</div></div>
-<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a3057691f190dabf7642cfde72cf2430f"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a3057691f190dabf7642cfde72cf2430f">OSK::GRAPHICS::RenderApiType</a></div><div class="ttdeci">RenderApiType</div><div class="ttdef"><b>Definition:</b> RenderApiType.h:5</div></div>
-<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_ae5f64f8e9fdfc352ed3026326a325b62a6f49448c79d7d58c6e60cf7129b84d1c"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ae5f64f8e9fdfc352ed3026326a325b62a6f49448c79d7d58c6e60cf7129b84d1c">OSK::GRAPHICS::CommandQueueSupport::GRAPHICS</a></div><div class="ttdeci">@ GRAPHICS</div><div class="ttdoc">Comandos gráficos.</div></div>
-<div class="ttc" id="anamespace_o_s_k_html"><div class="ttname"><a href="namespace_o_s_k.html">OSK</a></div><div class="ttdef"><b>Definition:</b> AabbAabbDetector.h:5</div></div>
-<div class="ttc" id="anamespace_o_s_k_html_acc51e06327891d5bd017ffaea91559c5"><div class="ttname"><a href="namespace_o_s_k.html#acc51e06327891d5bd017ffaea91559c5">OSK::UIndex64</a></div><div class="ttdeci">uint64_t UIndex64</div><div class="ttdoc">Índice de un elemento, almacenado en un unsigned int de 64 bits.</div><div class="ttdef"><b>Definition:</b> NumericTypes.h:21</div></div>
-<div class="ttc" id="astruct_o_s_k_1_1_version_html"><div class="ttname"><a href="struct_o_s_k_1_1_version.html">OSK::Version</a></div><div class="ttdoc">Representa una versión.</div><div class="ttdef"><b>Definition:</b> Version.h:8</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a5893cf5817c0ab30ae0c0d9761ce71f2"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a5893cf5817c0ab30ae0c0d9761ce71f2">OSK::Engine::GetInputManager</a></div><div class="ttdeci">static IO::InputManager * GetInputManager()</div><div class="ttdoc">Devuelve un puntero al sistema de input del motor.</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:312</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a68d1b1d787f29b6a6ba0a617f1919e67"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a68d1b1d787f29b6a6ba0a617f1919e67">OSK::Engine::RegisterBuiltinVertices</a></div><div class="ttdeci">static void RegisterBuiltinVertices()</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:259</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a69ab5a1c949be339208364f30d600697"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a69ab5a1c949be339208364f30d600697">OSK::Engine::GetBuild</a></div><div class="ttdeci">static std::string_view GetBuild()</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:351</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a6bb693c9bcd8779b838541fe89ece2a1"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a6bb693c9bcd8779b838541fe89ece2a1">OSK::Engine::GetAudioApi</a></div><div class="ttdeci">static AUDIO::IAudioApi * GetAudioApi()</div><div class="ttdoc">Devuelve un puntero al sistema de input del motor.</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:316</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a6e18d8650c67d352a14e39fd56247724"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a6e18d8650c67d352a14e39fd56247724">OSK::Engine::RegisterBuiltinShaderPasses</a></div><div class="ttdeci">static void RegisterBuiltinShaderPasses(GAME::DefaultContentProfile profile)</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:273</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a81e2e2c3d9ab78f3ff07281bd2b6aef8"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a81e2e2c3d9ab78f3ff07281bd2b6aef8">OSK::Engine::GetDisplay</a></div><div class="ttdeci">static IO::IDisplay * GetDisplay()</div><div class="ttdoc">Devuelve un puntero al display del juego.</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:292</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a8298cbab77cc3ea3abe5a46ea52b82fa"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a8298cbab77cc3ea3abe5a46ea52b82fa">OSK::Engine::GetCurrentGameFrameIndex</a></div><div class="ttdeci">static UIndex64 GetCurrentGameFrameIndex()</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:355</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a88150153e8f935f46f0eb728740cb9b5"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a88150153e8f935f46f0eb728740cb9b5">OSK::Engine::Create</a></div><div class="ttdeci">static void Create(GRAPHICS::RenderApiType type)</div><div class="ttdoc">Inicializa la instancia global del motor.</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:104</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a894b834555f737c9d3a6566a6091bb22"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a894b834555f737c9d3a6566a6091bb22">OSK::Engine::RegisterBuiltinJobs</a></div><div class="ttdeci">static void RegisterBuiltinJobs()</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:269</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a901ece0b54632d182701de2e37d5476d"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a901ece0b54632d182701de2e37d5476d">OSK::Engine::RegisterBuiltinAssets</a></div><div class="ttdeci">static void RegisterBuiltinAssets(GAME::DefaultContentProfile profile)</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:180</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_a99a0747647a8669054273c14b2ffa3da"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#a99a0747647a8669054273c14b2ffa3da">OSK::Engine::RegisterBuiltinSystems</a></div><div class="ttdeci">static void RegisterBuiltinSystems(GAME::DefaultContentProfile profile)</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:221</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_aa97e0f82fdff284897952ac8d56ea814"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#aa97e0f82fdff284897952ac8d56ea814">OSK::Engine::RegisterBuiltinConsoleCommands</a></div><div class="ttdeci">static void RegisterBuiltinConsoleCommands()</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:283</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_ab092fdb69a9c816c93f177192477d97c"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#ab092fdb69a9c816c93f177192477d97c">OSK::Engine::GetAssetManager</a></div><div class="ttdeci">static ASSETS::AssetManager * GetAssetManager()</div><div class="ttdoc">Devuelve un puntero al sistema de assets del motor.</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:300</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_ac7dc8c00262aee2a11183e4080fa5faf"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#ac7dc8c00262aee2a11183e4080fa5faf">OSK::Engine::Close</a></div><div class="ttdeci">static void Close()</div><div class="ttdoc">Cierra la instancia del motor.</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:163</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_ac84eefe06226f430a2448306e6fd2579"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#ac84eefe06226f430a2448306e6fd2579">OSK::Engine::Update</a></div><div class="ttdeci">static void Update()</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:359</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_ae51793e3f69c3a3af9f06935a83a74c6"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#ae51793e3f69c3a3af9f06935a83a74c6">OSK::Engine::GetUuidProvider</a></div><div class="ttdeci">static UuidProvider * GetUuidProvider()</div><div class="ttdoc">Devuelve un puntero al sistema de asignación de UUIDs.</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:324</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_aee49ec521f32013bec544e37f9720410"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#aee49ec521f32013bec544e37f9720410">OSK::Engine::GetInput</a></div><div class="ttdeci">static IO::IUserInput * GetInput()</div><div class="ttdoc">Devuelve un puntero a los estados del input del motor.</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:308</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_afb9e596f36e6a9f88cc3ea19d3169506"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#afb9e596f36e6a9f88cc3ea19d3169506">OSK::Engine::RegisterBuiltinComponents</a></div><div class="ttdeci">static void RegisterBuiltinComponents(GAME::DefaultContentProfile profile)</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:199</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_engine_html_afd8334294ca89391187dcab642752f9b"><div class="ttname"><a href="class_o_s_k_1_1_engine.html#afd8334294ca89391187dcab642752f9b">OSK::Engine::GetCommandExecutor</a></div><div class="ttdeci">static ConsoleCommandExecutor * GetCommandExecutor()</div><div class="ttdef"><b>Definition</b> OSKengine.cpp:328</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html">OSK::GRAPHICS::IRenderer</a></div><div class="ttdoc">Clase singleton de la arquitectura de renderizado.</div><div class="ttdef"><b>Definition</b> IRenderer.h:64</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_o_1_1_i_display_html"><div class="ttname"><a href="class_o_s_k_1_1_i_o_1_1_i_display.html">OSK::IO::IDisplay</a></div><div class="ttdoc">Interfaz que representa un display: la pantalla sobre la que se renderiza.</div><div class="ttdef"><b>Definition</b> IDisplay.h:21</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_o_1_1_i_logger_html"><div class="ttname"><a href="class_o_s_k_1_1_i_o_1_1_i_logger.html">OSK::IO::ILogger</a></div><div class="ttdoc">Clase que permite enviar mensajes por consola, o por donde se defina su salida.</div><div class="ttdef"><b>Definition</b> Logger.h:42</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_o_1_1_i_user_input_html"><div class="ttname"><a href="class_o_s_k_1_1_i_o_1_1_i_user_input.html">OSK::IO::IUserInput</a></div><div class="ttdoc">Interfaz para clases que permiten recoger la entrada del usuario.</div><div class="ttdef"><b>Definition</b> IUserInput.h:23</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_i_o_1_1_input_manager_html"><div class="ttname"><a href="class_o_s_k_1_1_i_o_1_1_input_manager.html">OSK::IO::InputManager</a></div><div class="ttdoc">Maneja los input listeners del juego, llamando a sus funciones cuando sea necesario.</div><div class="ttdef"><b>Definition</b> InputManager.h:15</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_job_system_html"><div class="ttname"><a href="class_o_s_k_1_1_job_system.html">OSK::JobSystem</a></div><div class="ttdoc">Sistema de ejecución multihilo. Permite insertar trabajos que serán ejecutados de manera paralela.</div><div class="ttdef"><b>Definition</b> JobSystem.h:18</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_unique_ptr_html"><div class="ttname"><a href="class_o_s_k_1_1_unique_ptr.html">OSK::UniquePtr</a></div><div class="ttdoc">Estructura que es dueña de un objeto almacenado en heap. Al destruirse el UniquePtr,...</div><div class="ttdef"><b>Definition</b> UniquePtr.hpp:26</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_uuid_provider_html"><div class="ttname"><a href="class_o_s_k_1_1_uuid_provider.html">OSK::UuidProvider</a></div><div class="ttdoc">Clase que gestiona la asignación de UUIDs.</div><div class="ttdef"><b>Definition</b> Uuid.h:70</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_a_m_e_html_a3a5605dbb9f51b73a09ffdecbee85d69"><div class="ttname"><a href="namespace_o_s_k_1_1_g_a_m_e.html#a3a5605dbb9f51b73a09ffdecbee85d69">OSK::GAME::DefaultContentProfile</a></div><div class="ttdeci">DefaultContentProfile</div><div class="ttdoc">Perfil que indica qué sistemas, componentes y assets por defecto se cargarán al iniciar el motor.</div><div class="ttdef"><b>Definition</b> DefaultElementsProfiles.h:8</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></div><div class="ttdef"><b>Definition</b> AccelerationStructuresExceptions.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a3057691f190dabf7642cfde72cf2430f"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a3057691f190dabf7642cfde72cf2430f">OSK::GRAPHICS::RenderApiType</a></div><div class="ttdeci">RenderApiType</div><div class="ttdef"><b>Definition</b> RenderApiType.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_html"><div class="ttname"><a href="namespace_o_s_k.html">OSK</a></div><div class="ttdef"><b>Definition</b> AabbAabbDetector.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_ac0ea6d3df0641acb0fd4620c6f5ef68a"><div class="ttname"><a href="namespace_o_s_k.html#ac0ea6d3df0641acb0fd4620c6f5ef68a">OSK::UIndex64</a></div><div class="ttdeci">uint64_t UIndex64</div><div class="ttdoc">Índice de un elemento, almacenado en un unsigned int de 64 bits.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:32</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_version_html"><div class="ttname"><a href="struct_o_s_k_1_1_version.html">OSK::Version</a></div><div class="ttdoc">Representa una versión.</div><div class="ttdef"><b>Definition</b> Version.h:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>OSKengine.h</b></li>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>OSKengine.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

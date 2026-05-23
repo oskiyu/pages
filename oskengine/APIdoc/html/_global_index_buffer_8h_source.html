@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/GlobalIndexBuffer.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_global_index_buffer_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">GlobalIndexBuffer.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;ApiCall.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;NumericTypes.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;DynamicArray.hpp&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range.html">   12</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range.html">GlobalIndexBufferRange</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range.html#a52d8ecc84689d9840c7e6a145944281f">   13</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range.html#a52d8ecc84689d9840c7e6a145944281f">firstIndex</a> = 0;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range.html#a6b426cda121858b6657c779e1ea12110">   14</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range.html#a6b426cda121858b6657c779e1ea12110">indexCount</a> = 0;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    };</div>
+</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range.html">   20</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range.html">UnusedIndexBufferRange</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range.html#a87318f757c6c8cd608d0488f5d344a8c">   21</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range.html#a87318f757c6c8cd608d0488f5d344a8c">firstIndex</a> = 0;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range.html#adcdd8ee8029f5051c860e3f948c16b97">   22</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range.html#adcdd8ee8029f5051c860e3f948c16b97">indexCount</a> = 0;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    };</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager.html">   30</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager.html">GlobalIndexBufferManager</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager.html#a30d8d193fdae145b9535f09eb608d507">GetNextIndexesStart</a>(<a class="code hl_typedef" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> numIndexes) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range.html">GlobalIndexBufferRange</a> <a class="code hl_function" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager.html#a8538fa7961a10572cd09133666526cc2">RegisterGeometry</a>(<a class="code hl_typedef" href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">USize32</a> numIndices);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray&lt;GlobalIndexBufferRange&gt;</a> m_entries;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray&lt;UnusedIndexBufferRange&gt;</a> m_unusedEntries;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#ac0ea6d3df0641acb0fd4620c6f5ef68a">UIndex64</a> m_tail = 0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    };</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+<div class="ttc" id="aclass_o_s_k_1_1_dynamic_array_html"><div class="ttname"><a href="class_o_s_k_1_1_dynamic_array.html">OSK::DynamicArray</a></div><div class="ttdoc">Dynamic array: array que puede cambiar de tamaño.</div><div class="ttdef"><b>Definition</b> DynamicArray.hpp:66</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager.html">OSK::GRAPHICS::GlobalIndexBufferManager</a></div><div class="ttdoc">Maneja los rangos del buffer global de índices.</div><div class="ttdef"><b>Definition</b> GlobalIndexBuffer.h:30</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager_html_a30d8d193fdae145b9535f09eb608d507"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager.html#a30d8d193fdae145b9535f09eb608d507">OSK::GRAPHICS::GlobalIndexBufferManager::GetNextIndexesStart</a></div><div class="ttdeci">UIndex32 GetNextIndexesStart(USize32 numIndexes) const</div><div class="ttdoc">Devuelve la posición a partir de la que se puede obtener un rango del buffer con espacio suficiente p...</div><div class="ttdef"><b>Definition</b> GlobalIndexBuffer.cpp:6</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager_html_a8538fa7961a10572cd09133666526cc2"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager.html#a8538fa7961a10572cd09133666526cc2">OSK::GRAPHICS::GlobalIndexBufferManager::RegisterGeometry</a></div><div class="ttdeci">GlobalIndexBufferRange RegisterGeometry(USize32 numIndices)</div><div class="ttdoc">Reserva un rango del buffer para almacenar el número de índices indicado, y devuelve la información d...</div><div class="ttdef"><b>Definition</b> GlobalIndexBuffer.cpp:23</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></div><div class="ttdef"><b>Definition</b> AccelerationStructuresExceptions.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a382ed4c8a6994201cbad5d4e1335861b"><div class="ttname"><a href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">OSK::UIndex32</a></div><div class="ttdeci">uint32_t UIndex32</div><div class="ttdoc">Índice de un elemento, almacenado en un unsigned int de 32 bits.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:21</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_ac0ea6d3df0641acb0fd4620c6f5ef68a"><div class="ttname"><a href="namespace_o_s_k.html#ac0ea6d3df0641acb0fd4620c6f5ef68a">OSK::UIndex64</a></div><div class="ttdeci">uint64_t UIndex64</div><div class="ttdoc">Índice de un elemento, almacenado en un unsigned int de 64 bits.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:32</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_acf682b0e024acc36806435295480d2ed"><div class="ttname"><a href="namespace_o_s_k.html#acf682b0e024acc36806435295480d2ed">OSK::USize32</a></div><div class="ttdeci">uint32_t USize32</div><div class="ttdoc">Tamaño, almacenado en un unsigned int de 32 bits.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:26</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range.html">OSK::GRAPHICS::GlobalIndexBufferRange</a></div><div class="ttdoc">Referencia a una lista de índices almacenada en el buffer global de índices.</div><div class="ttdef"><b>Definition</b> GlobalIndexBuffer.h:12</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range_html_a52d8ecc84689d9840c7e6a145944281f"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range.html#a52d8ecc84689d9840c7e6a145944281f">OSK::GRAPHICS::GlobalIndexBufferRange::firstIndex</a></div><div class="ttdeci">UIndex32 firstIndex</div><div class="ttdef"><b>Definition</b> GlobalIndexBuffer.h:13</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range_html_a6b426cda121858b6657c779e1ea12110"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_range.html#a6b426cda121858b6657c779e1ea12110">OSK::GRAPHICS::GlobalIndexBufferRange::indexCount</a></div><div class="ttdeci">USize32 indexCount</div><div class="ttdef"><b>Definition</b> GlobalIndexBuffer.h:14</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range.html">OSK::GRAPHICS::UnusedIndexBufferRange</a></div><div class="ttdoc">Referencia a un rango del buffer de índices que se encuentra libre, y que puede ser reutilizado.</div><div class="ttdef"><b>Definition</b> GlobalIndexBuffer.h:20</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range_html_a87318f757c6c8cd608d0488f5d344a8c"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range.html#a87318f757c6c8cd608d0488f5d344a8c">OSK::GRAPHICS::UnusedIndexBufferRange::firstIndex</a></div><div class="ttdeci">UIndex32 firstIndex</div><div class="ttdef"><b>Definition</b> GlobalIndexBuffer.h:21</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range_html_adcdd8ee8029f5051c860e3f948c16b97"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_unused_index_buffer_range.html#adcdd8ee8029f5051c860e3f948c16b97">OSK::GRAPHICS::UnusedIndexBufferRange::indexCount</a></div><div class="ttdeci">USize32 indexCount</div><div class="ttdef"><b>Definition</b> GlobalIndexBuffer.h:22</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>GlobalIndexBuffer.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

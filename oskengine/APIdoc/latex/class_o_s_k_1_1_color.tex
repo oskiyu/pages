@@ -1,0 +1,373 @@
+\doxysection{Referencia de la clase OSK\+::Color}
+\label{class_o_s_k_1_1_color}\index{OSK::Color@{OSK::Color}}
+
+
+{\ttfamily \#include $<$Color.\+hpp$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SERIALIZABLE} ()
+\item 
+constexpr \textbf{ Color} ()=default
+\item 
+constexpr \textbf{ Color} (float r, float g, float b)
+\item 
+constexpr \textbf{ Color} (float r, float g, float b, float a)
+\item 
+constexpr \textbf{ Color} (float value)
+\item 
+constexpr \textbf{ Color} \textbf{ operator$\ast$} (float value) const
+\item 
+constexpr \textbf{ Color} \textbf{ operator+} (const \textbf{ Color} \&other) const
+\item 
+constexpr void \textbf{ operator+=} (const \textbf{ Color} \&other)
+\item 
+constexpr glm\+::vec4 \textbf{ To\+Glm} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \textbf{ Color} \textbf{ From\+Bytes} (\textbf{ TByte} r, \textbf{ TByte} g, \textbf{ TByte} b)
+\item 
+static constexpr \textbf{ Color} \textbf{ From\+Bytes} (\textbf{ TByte} r, \textbf{ TByte} g, \textbf{ TByte} b, \textbf{ TByte} a)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+float \textbf{ red} = 0.\+0f
+\item 
+float \textbf{ green} = 0.\+0f
+\item 
+float \textbf{ blue} = 0.\+0f
+\item 
+float \textbf{ alpha} = 0.\+0f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Color} const \textbf{ Empty} = \textbf{ Color}(0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f)
+\item 
+static \textbf{ Color} const \textbf{ Black} = \textbf{ Color}(0.\+0f, 0.\+0f, 0.\+0f)
+\item 
+static \textbf{ Color} const \textbf{ White} = \textbf{ Color}(1.\+0f, 1.\+0f, 1.\+0f)
+\item 
+static \textbf{ Color} const \textbf{ Blue} = \textbf{ Color}(0.\+0f, 0.\+0f, 1.\+0f)
+\item 
+static \textbf{ Color} const \textbf{ Purple} = \textbf{ Color}(1.\+0f, 0.\+0f, 1.\+0f)
+\item 
+static \textbf{ Color} const \textbf{ Red} = \textbf{ Color}(1.\+0f, 0.\+0f, 0.\+0f)
+\item 
+static \textbf{ Color} const \textbf{ Yellow} = \textbf{ Color}(1.\+0f, 1.\+0f, 0.\+0f)
+\item 
+static \textbf{ Color} const \textbf{ Green} = \textbf{ Color}(0.\+0f, 1.\+0f, 0.\+0f)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa un color en formato RGBA float. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::Color@{OSK::Color}!Color@{Color}}
+\index{Color@{Color}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{Color()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_aa2ab8744f09ab5041760bb95a2475c03} 
+OSK\+::\+Color\+::\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} vacío (negro y transparente). 
+
+\index{OSK::Color@{OSK::Color}!Color@{Color}}
+\index{Color@{Color}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{Color()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a03ff4b835e223ff2e721c1932c3d14a0} 
+OSK\+::\+Color\+::\+Color (\begin{DoxyParamCaption}\item[{float}]{r}{, }\item[{float}]{g}{, }\item[{float}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Crea una instancia del color con los siguiente parámetros\+: 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em r} & Intensidad del color rojo (rango 0.\+0-\/1.\+0). \\
+\hline
+{\em g} & Intensidad del color verde (rango 0.\+0-\/1.\+0). \\
+\hline
+{\em b} & Intensidad del color azul (rango 0.\+0-\/1.\+0). \\
+\hline
+\end{DoxyParams}
+\index{OSK::Color@{OSK::Color}!Color@{Color}}
+\index{Color@{Color}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{Color()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a16bcd07472ea1fdc53825b9f27990f9e} 
+OSK\+::\+Color\+::\+Color (\begin{DoxyParamCaption}\item[{float}]{r}{, }\item[{float}]{g}{, }\item[{float}]{b}{, }\item[{float}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Crea una instancia del color con los siguiente parámetros\+: 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em r} & Intensidad del color rojo (rango 0.\+0-\/1.\+0). \\
+\hline
+{\em g} & Intensidad del color verde (rango 0.\+0-\/1.\+0). \\
+\hline
+{\em b} & Intensidad del color azul (rango 0.\+0-\/1.\+0). \\
+\hline
+{\em a} & Opacidad (rango 0.\+0-\/1.\+0). \\
+\hline
+\end{DoxyParams}
+\index{OSK::Color@{OSK::Color}!Color@{Color}}
+\index{Color@{Color}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{Color()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a43c60fdbd5c6e2e3b5c4bf937baae4c1} 
+OSK\+::\+Color\+::\+Color (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}}
+
+
+
+Crea una instancia del color. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Intensidad del rojo verde y azul (rango 0.\+0-\/1.\+0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Alpha = 1.\+0f. 
+\end{DoxyNote}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::Color@{OSK::Color}!FromBytes@{FromBytes}}
+\index{FromBytes@{FromBytes}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{FromBytes()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a701abb7cdee003efa0a3f753aaa5d7db} 
+constexpr \textbf{ Color} OSK\+::\+Color\+::\+From\+Bytes (\begin{DoxyParamCaption}\item[{\textbf{ TByte}}]{r}{, }\item[{\textbf{ TByte}}]{g}{, }\item[{\textbf{ TByte}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Crea una instancia del color con los siguiente parámetros\+: 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em r} & Intensidad del color rojo (rango 0-\/255). \\
+\hline
+{\em g} & Intensidad del color verde (rango 0-\/255). \\
+\hline
+{\em b} & Intensidad del color azul (rango 0-\/255). \\
+\hline
+\end{DoxyParams}
+\index{OSK::Color@{OSK::Color}!FromBytes@{FromBytes}}
+\index{FromBytes@{FromBytes}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{FromBytes()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a9db25606119b2d814f48895d9bd54334} 
+constexpr \textbf{ Color} OSK\+::\+Color\+::\+From\+Bytes (\begin{DoxyParamCaption}\item[{\textbf{ TByte}}]{r}{, }\item[{\textbf{ TByte}}]{g}{, }\item[{\textbf{ TByte}}]{b}{, }\item[{\textbf{ TByte}}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Crea una instancia del color con los siguiente parámetros\+: 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em r} & Intensidad del color rojo (rango 0-\/255). \\
+\hline
+{\em g} & Intensidad del color verde (rango 0-\/255). \\
+\hline
+{\em b} & Intensidad del color azul (rango 0-\/255). \\
+\hline
+{\em a} & Opacidad (rango 0-\/255). \\
+\hline
+\end{DoxyParams}
+\index{OSK::Color@{OSK::Color}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{operator$\ast$()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a522b4d6569e8beaeb10c047c799f02ae} 
+\textbf{ Color} OSK\+::\+Color\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Multiplica el valor de opacidad por el valor dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Valor multiplicador.. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color}(red, green, blue, alpha $\ast$ {\ttfamily value}). 
+\end{DoxyReturn}
+\index{OSK::Color@{OSK::Color}!operator+@{operator+}}
+\index{operator+@{operator+}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{operator+()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a78478ec53f75bf0788f3a848e63abf3f} 
+\textbf{ Color} OSK\+::\+Color\+::operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ Color} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Suma aditiva del color. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Otro color. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} + \doxyref{Color}{pág.}{class_o_s_k_1_1_color}. 
+\end{DoxyReturn}
+\index{OSK::Color@{OSK::Color}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{operator+=()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a3e3fb3f40d333fd48c33a635827b3964} 
+void OSK\+::\+Color\+::operator+= (\begin{DoxyParamCaption}\item[{const \textbf{ Color} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Suma aditiva del color. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & Otro color. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Color@{OSK::Color}!OSK\_SERIALIZABLE@{OSK\_SERIALIZABLE}}
+\index{OSK\_SERIALIZABLE@{OSK\_SERIALIZABLE}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{OSK\_SERIALIZABLE()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a17ec66a008a17f75991161cdd2de2c19} 
+OSK\+::\+Color\+::\+OSK\+\_\+\+SERIALIZABLE (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::Color@{OSK::Color}!ToGlm@{ToGlm}}
+\index{ToGlm@{ToGlm}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{ToGlm()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a858a2f4d502e74328218fa4d0e733d95} 
+glm\+::vec4 OSK\+::\+Color\+::\+To\+Glm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve un glm\+::vec4 con los valores de este color. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::Color@{OSK::Color}!alpha@{alpha}}
+\index{alpha@{alpha}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{alpha}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a94853c8b197d396ab24c858dc56e6c1e} 
+float OSK\+::\+Color\+::alpha = 0.\+0f}
+
+
+
+Representa la opacidad del color. 
+
+\index{OSK::Color@{OSK::Color}!Black@{Black}}
+\index{Black@{Black}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{Black}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a5e672a6e5e09a84121a1bbf54f511412} 
+\textbf{ Color} const OSK\+::\+Color\+::\+Black = \textbf{ Color}(0.\+0f, 0.\+0f, 0.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} negro (0, 0, 0, 1). 
+
+\index{OSK::Color@{OSK::Color}!Blue@{Blue}}
+\index{Blue@{Blue}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{Blue}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_ace3faf2dffa24249c04701310085670f} 
+\textbf{ Color} const OSK\+::\+Color\+::\+Blue = \textbf{ Color}(0.\+0f, 0.\+0f, 1.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} azul (0, 0, 1, 1). 
+
+\index{OSK::Color@{OSK::Color}!blue@{blue}}
+\index{blue@{blue}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{blue}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a0cdfcd637d22304e889b6add7def8107} 
+float OSK\+::\+Color\+::blue = 0.\+0f}
+
+
+
+Representa la intensidad del color azul. 
+
+\index{OSK::Color@{OSK::Color}!Empty@{Empty}}
+\index{Empty@{Empty}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{Empty}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a8104cda6ccbe569dfbecadf99764823e} 
+\textbf{ Color} const OSK\+::\+Color\+::\+Empty = \textbf{ Color}(0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} vacío (0, 0, 0, 0). 
+
+\index{OSK::Color@{OSK::Color}!Green@{Green}}
+\index{Green@{Green}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{Green}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a18aa6a48bdefa68da97ee60195860135} 
+\textbf{ Color} const OSK\+::\+Color\+::\+Green = \textbf{ Color}(0.\+0f, 1.\+0f, 0.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} verde (0, 1, 0, 1). 
+
+\index{OSK::Color@{OSK::Color}!green@{green}}
+\index{green@{green}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{green}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a50289da8f1dc3268298697334748e820} 
+float OSK\+::\+Color\+::green = 0.\+0f}
+
+
+
+Representa la intensidad del color verde. 
+
+\index{OSK::Color@{OSK::Color}!Purple@{Purple}}
+\index{Purple@{Purple}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{Purple}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a7cca1aa03053915302405e3a80c5b009} 
+\textbf{ Color} const OSK\+::\+Color\+::\+Purple = \textbf{ Color}(1.\+0f, 0.\+0f, 1.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} morado (1, 0, 1, 1). 
+
+\index{OSK::Color@{OSK::Color}!Red@{Red}}
+\index{Red@{Red}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{Red}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a55e1c6edf02b9e4525415e45a7c854eb} 
+\textbf{ Color} const OSK\+::\+Color\+::\+Red = \textbf{ Color}(1.\+0f, 0.\+0f, 0.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} rojo (1, 0, 0, 1). 
+
+\index{OSK::Color@{OSK::Color}!red@{red}}
+\index{red@{red}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{red}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a44b6fb9124b1968d9506bc7122adb810} 
+float OSK\+::\+Color\+::red = 0.\+0f}
+
+
+
+Representa la intensidad del color rojo. 
+
+\index{OSK::Color@{OSK::Color}!White@{White}}
+\index{White@{White}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{White}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a9f64a8b667ea24151007f4c4edebdf46} 
+\textbf{ Color} const OSK\+::\+Color\+::\+White = \textbf{ Color}(1.\+0f, 1.\+0f, 1.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} blanco (1, 1, 1, 1). 
+
+\index{OSK::Color@{OSK::Color}!Yellow@{Yellow}}
+\index{Yellow@{Yellow}!OSK::Color@{OSK::Color}}
+\doxysubsubsection{Yellow}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_color_a00de5b03162ab3c58d599895581b68ff} 
+\textbf{ Color} const OSK\+::\+Color\+::\+Yellow = \textbf{ Color}(1.\+0f, 1.\+0f, 0.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} amarillo (1, 1, 0, 1). 
+

@@ -1,0 +1,694 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Hybrid\+Render\+System}
+\label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system}\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+
+
+{\ttfamily \#include $<$Hybrid\+Render\+System.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SYSTEM} ("{}OSK\+::\+Hybrid\+Render\+System"{})
+\item 
+\textbf{ Hybrid\+Render\+System} ()
+\item 
+void \textbf{ Initialize} (\textbf{ ECS\+::\+Game\+Object\+Index} camera\+Object, const \textbf{ ASSETS\+::\+Irradiance\+Map} \&irradiance\+Map, const \textbf{ ASSETS\+::\+Specular\+Map} \&specular\+Map)
+\item 
+void \textbf{ Create\+Target\+Image} (const \textbf{ Vector2ui} \&size) override
+\item 
+void \textbf{ Resize} (const \textbf{ Vector2ui} \&size) override
+\item 
+void \textbf{ Render} (\textbf{ GRAPHICS\+::\+ICommand\+List} $\ast$command\+List, std\+::span$<$ const \textbf{ ECS\+::\+Game\+Object\+Index} $>$ objects) override
+\item 
+void \textbf{ Add\+Blas} (\textbf{ GRAPHICS\+::\+IBottom\+Level\+Acceleration\+Structure} $\ast$blas)
+\item 
+const \textbf{ GRAPHICS\+::\+Gpu\+Buffer} $\ast$ \textbf{ Get\+Camera\+Buffer} (\textbf{ UIndex32} index) const
+\item 
+const \textbf{ GRAPHICS\+::\+Rt\+Render\+Target} \& \textbf{ Get\+Shadows\+Intermediate\+Image} () const
+\item 
+const \textbf{ GRAPHICS\+::\+Rt\+Render\+Target} \& \textbf{ Get\+Shadows\+Image} () const
+\item 
+nlohmann\+::json \textbf{ Save\+Configuration} () const override
+\item 
+\textbf{ PERSISTENCE\+::\+Binary\+Block} \textbf{ Save\+Binary\+Configuration} () const override
+\item 
+void \textbf{ Apply\+Configuration} (const nlohmann\+::json \&config, const \textbf{ Saved\+Game\+Object\+Translator} \&translator) override
+\item 
+void \textbf{ Apply\+Configuration} (\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$reader, const \textbf{ Saved\+Game\+Object\+Translator} \&translator) override
+\item 
+virtual void \textbf{ On\+Create} () override
+\item 
+virtual void \textbf{ On\+Render\+Start} (\textbf{ GRAPHICS\+::\+ICommand\+List} $\ast$command\+List)
+\item 
+virtual void \textbf{ Execute} (\textbf{ TDelta\+Time} delta\+Time, std\+::span$<$ const \textbf{ Game\+Object\+Index} $>$ objects) override
+\item 
+virtual void \textbf{ On\+Render\+End} (\textbf{ GRAPHICS\+::\+ICommand\+List} $\ast$command\+List)
+\item 
+\textbf{ GRAPHICS\+::\+Render\+Target} \& \textbf{ Get\+Render\+Target} ()
+\item 
+virtual void \textbf{ Add\+Shader\+Pass} (\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $>$ \&\&pass)
+\item 
+virtual void \textbf{ Add\+Shadows\+Pass} (\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $>$ \&\&pass)
+\item 
+\textbf{ GRAPHICS\+::\+IShader\+Pass} $\ast$ \textbf{ Get\+Shader\+Pass} (std\+::string\+\_\+view name)
+\item 
+const \textbf{ GRAPHICS\+::\+IShader\+Pass} $\ast$ \textbf{ Get\+Shader\+Pass} (std\+::string\+\_\+view name) const
+\item 
+virtual void \textbf{ Update\+Per\+Pass\+Object\+Lists} (std\+::span$<$ const \textbf{ ECS\+::\+Game\+Object\+Index} $>$ objects)
+\item 
+std\+::span$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $\ast$const $>$ \textbf{ Get\+All\+Shader\+Passes} () const
+\item 
+std\+::span$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $\ast$const $>$ \textbf{ Get\+All\+Shadows\+Passes} () const
+\item 
+virtual void \textbf{ On\+Object\+Added} (\textbf{ Game\+Object\+Index} obj)
+\item 
+virtual void \textbf{ On\+Object\+Removed} (\textbf{ Game\+Object\+Index} obj)
+\item 
+virtual void \textbf{ On\+Execution\+Start} ()
+\item 
+virtual void \textbf{ On\+Execution\+End} ()
+\item 
+const \textbf{ Signature} \& \textbf{ Get\+Signature} () const
+\item 
+void \textbf{ Set\+Compatible\+Objects} (std\+::span$<$ const \textbf{ ECS\+::\+Game\+Object\+Index} $>$ objects)
+\item 
+std\+::span$<$ const \textbf{ ECS\+::\+Game\+Object\+Index} $>$ \textbf{ Get\+All\+Compatible\+Objects} () const
+\item 
+virtual void \textbf{ On\+Remove} ()
+\item 
+void \textbf{ Activate} ()
+\item 
+void \textbf{ Deactivate} ()
+\item 
+void \textbf{ Set\+Activation\+Status} (bool is\+Active)
+\item 
+void \textbf{ Toggle\+Activation\+Status} ()
+\item 
+bool \textbf{ Is\+Active} () const
+\item 
+void \textbf{ \+\_\+\+Set\+Dependencies} (const \textbf{ System\+Dependencies} \&dependencies)
+\item 
+const \textbf{ System\+Dependencies} \& \textbf{ Get\+Dependencies} () const
+\item 
+virtual std\+::string\+\_\+view \textbf{ Get\+Name} () const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Update\+Passes\+Camera} (\textbf{ ECS\+::\+Game\+Object\+Index} camera\+Object)
+\item 
+void \textbf{ Setup\+Viewport} (\textbf{ GRAPHICS\+::\+ICommand\+List} $\ast$command\+List)
+\item 
+void \textbf{ \+\_\+\+Set\+Signature} (const \textbf{ Signature} \&signature)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ GRAPHICS\+::\+Shader\+Pass\+Table} \textbf{ m\+\_\+shader\+Passes} \{\}
+\item 
+\textbf{ GRAPHICS\+::\+Shader\+Pass\+Table} \textbf{ m\+\_\+shadows\+Passes} \{\}
+\item 
+\textbf{ GRAPHICS\+::\+Render\+Target} \textbf{ m\+\_\+render\+Target}
+\item 
+\textbf{ GRAPHICS\+::\+Global\+Mesh\+Mapping} \textbf{ m\+\_\+mesh\+Mapping} = \{\}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!HybridRenderSystem@{HybridRenderSystem}}
+\index{HybridRenderSystem@{HybridRenderSystem}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{HybridRenderSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_a0eccfff12a6ae3c858c325a1922301c1} 
+Hybrid\+Render\+System\+::\+Hybrid\+Render\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!\_SetDependencies@{\_SetDependencies}}
+\index{\_SetDependencies@{\_SetDependencies}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{\_SetDependencies()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a2239551fafeab2592dc35cddc17305d3} 
+void ISystem\+::\+\_\+\+Set\+Dependencies (\begin{DoxyParamCaption}\item[{const \textbf{ System\+Dependencies} \&}]{dependencies}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!\_SetSignature@{\_SetSignature}}
+\index{\_SetSignature@{\_SetSignature}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{\_SetSignature()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_iterator_system_a4fdd39a45a60a3921398d8fe68884a99} 
+void IIterator\+System\+::\+\_\+\+Set\+Signature (\begin{DoxyParamCaption}\item[{const \textbf{ Signature} \&}]{signature}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!Activate@{Activate}}
+\index{Activate@{Activate}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{Activate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_ad45cabb31dc788fbc37feaed82fd99d8} 
+void ISystem\+::\+Activate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Activa el sistema, con lo que se ejecutará cada frame. 
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!AddBlas@{AddBlas}}
+\index{AddBlas@{AddBlas}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{AddBlas()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_a3e9a6d4f0cbfb923549b8763ff3492ad} 
+void Hybrid\+Render\+System\+::\+Add\+Blas (\begin{DoxyParamCaption}\item[{\textbf{ GRAPHICS\+::\+IBottom\+Level\+Acceleration\+Structure} $\ast$}]{blas}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!AddShaderPass@{AddShaderPass}}
+\index{AddShaderPass@{AddShaderPass}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{AddShaderPass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_a5852de1deaf36c611dbbb6023db471f4} 
+void IRender\+System\+::\+Add\+Shader\+Pass (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $>$ \&\&}]{pass}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Añade un nuevo pase de renderizado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pass} & Pase de renderizado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+No debe existir un pase de renderizado previo con el mismo nombre que {\ttfamily pass}. 
+\end{DoxyPrecond}
+
+
+Reimplementado en \textbf{ OSK\+::\+ECS\+::\+Deferred\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_deferred_render_system_a63d3ce55829dbe028c7dd3b0fe97b829}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!AddShadowsPass@{AddShadowsPass}}
+\index{AddShadowsPass@{AddShadowsPass}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{AddShadowsPass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_a1baecd368e38d4544f8644638aa5d3ea} 
+void IRender\+System\+::\+Add\+Shadows\+Pass (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $>$ \&\&}]{pass}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Añade un nuevo pase de renderizado de sombras. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pass} & Pase de renderizado de sombras. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+No debe existir un pase de renderizado de sombras previo con el mismo nombre que {\ttfamily pass}. 
+\end{DoxyPrecond}
+
+
+Reimplementado en \textbf{ OSK\+::\+ECS\+::\+Deferred\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_deferred_render_system_ac1fcf1dcc8fcfe1d1a5b6f1fc94790d4}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!ApplyConfiguration@{ApplyConfiguration}}
+\index{ApplyConfiguration@{ApplyConfiguration}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{ApplyConfiguration()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_ac645ee3eefd1588d32a8fb97450a2445} 
+void Hybrid\+Render\+System\+::\+Apply\+Configuration (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{config}{, }\item[{const \textbf{ Saved\+Game\+Object\+Translator} \&}]{translator}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Aplica la configuración al sistema. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em config} & Configuración del sistema. \\
+\hline
+{\em translator} & Tabla que permite obtener los IDs generados. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ OSK\+::\+ECS\+::\+ISerializable\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_serializable_system_a8742003ea75a69c42ae89959c64bc333}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!ApplyConfiguration@{ApplyConfiguration}}
+\index{ApplyConfiguration@{ApplyConfiguration}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{ApplyConfiguration()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_a4f35b1e7bd35f1bb043c886297a2e7c1} 
+void Hybrid\+Render\+System\+::\+Apply\+Configuration (\begin{DoxyParamCaption}\item[{\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$}]{reader}{, }\item[{const \textbf{ Saved\+Game\+Object\+Translator} \&}]{translator}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Aplica la configuración al sistema. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em reader} & Lector del bloque binario que contiene los datos del sistema. \\
+\hline
+{\em translator} & Tabla que permite obtener los IDs generados. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ OSK\+::\+ECS\+::\+ISerializable\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_serializable_system_aad2c52e61393492a0d1af2eaa6804c03}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!CreateTargetImage@{CreateTargetImage}}
+\index{CreateTargetImage@{CreateTargetImage}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{CreateTargetImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_ab29df51ac7d88f614c907869e8a03407} 
+void Hybrid\+Render\+System\+::\+Create\+Target\+Image (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Crea la imagen de renderizado. 
+
+Si el render system va a usar más imágenes de renderizado, se deben inicializar sobreescribiendo esta función.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Resolución de la imagen de renderizado. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ OSK\+::\+ECS\+::\+IRender\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_render_system_af963cc4b47d5d60b0b33473e3c7f3c75}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!Deactivate@{Deactivate}}
+\index{Deactivate@{Deactivate}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{Deactivate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a2d6aa3dc12aa77cc9109b920ddca4225} 
+void ISystem\+::\+Deactivate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Desactiva el sistema, con lo que dejará de ejecutarse. 
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_a62367e16fdf1a70a85b1e7d176d08bb9} 
+void IRender\+System\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ TDelta\+Time}}]{delta\+Time}{, }\item[{std\+::span$<$ const \textbf{ Game\+Object\+Index} $>$}]{objects}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Ejecuta la lógica del sistema. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Número de segundos que han pasado desde la anterior ejecución. \\
+\hline
+{\em objects} & Objetos a procesar. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ OSK\+::\+ECS\+::\+IIterator\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_iterator_system_a55c21ec2596ed6c0aa3b100c9107fede}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!GetAllCompatibleObjects@{GetAllCompatibleObjects}}
+\index{GetAllCompatibleObjects@{GetAllCompatibleObjects}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{GetAllCompatibleObjects()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_iterator_system_a56313a26d4c01eab26fc1f07e189f97f} 
+std\+::span$<$ const \textbf{ ECS\+::\+Game\+Object\+Index} $>$ IIterator\+System\+::\+Get\+All\+Compatible\+Objects (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Objetos compatibles con el sistema. 
+\end{DoxyReturn}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!GetAllShaderPasses@{GetAllShaderPasses}}
+\index{GetAllShaderPasses@{GetAllShaderPasses}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{GetAllShaderPasses()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_aceff8562026d796ae5efd8fb1cb0e1bb} 
+std\+::span$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $\ast$const $>$ IRender\+System\+::\+Get\+All\+Shader\+Passes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Todos los pases de renderizado normal. 
+\end{DoxyReturn}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!GetAllShadowsPasses@{GetAllShadowsPasses}}
+\index{GetAllShadowsPasses@{GetAllShadowsPasses}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{GetAllShadowsPasses()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_a0ebf78a37ef6979e2de61622daf3cfc1} 
+std\+::span$<$ \textbf{ GRAPHICS\+::\+IShader\+Pass} $\ast$const $>$ IRender\+System\+::\+Get\+All\+Shadows\+Passes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Todos los pases de renderizado de sombras. 
+\end{DoxyReturn}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!GetCameraBuffer@{GetCameraBuffer}}
+\index{GetCameraBuffer@{GetCameraBuffer}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{GetCameraBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_a3a07b5ca99c2d00678b225915a83270a} 
+const \textbf{ GRAPHICS\+::\+Gpu\+Buffer} $\ast$ OSK\+::\+ECS\+::\+Hybrid\+Render\+System\+::\+Get\+Camera\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!GetDependencies@{GetDependencies}}
+\index{GetDependencies@{GetDependencies}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{GetDependencies()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a6f9009164fc90548c0979358232d2de4} 
+const \textbf{ System\+Dependencies} \& ISystem\+::\+Get\+Dependencies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a9ac4b0e11cb52d7222ef76e675cb9cc5} 
+virtual std\+::string\+\_\+view OSK\+::\+ECS\+::\+ISystem\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!GetRenderTarget@{GetRenderTarget}}
+\index{GetRenderTarget@{GetRenderTarget}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{GetRenderTarget()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_a7ead258d11d094f960bed0b7da407d85} 
+\textbf{ Render\+Target} \& IRender\+System\+::\+Get\+Render\+Target (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Render target principal sobre el que se renderiza el sistema. 
+\end{DoxyReturn}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!GetShaderPass@{GetShaderPass}}
+\index{GetShaderPass@{GetShaderPass}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{GetShaderPass()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_a239d52f9fe4207ab4067ce4ce6be1322} 
+\textbf{ IShader\+Pass} $\ast$ IRender\+System\+::\+Get\+Shader\+Pass (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!GetShaderPass@{GetShaderPass}}
+\index{GetShaderPass@{GetShaderPass}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{GetShaderPass()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_acc0b63d1f8e025f94e7732235d328c29} 
+const \textbf{ IShader\+Pass} $\ast$ IRender\+System\+::\+Get\+Shader\+Pass (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!GetShadowsImage@{GetShadowsImage}}
+\index{GetShadowsImage@{GetShadowsImage}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{GetShadowsImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_aeb942906f37e6d82ce04cee37791c43a} 
+const \textbf{ GRAPHICS\+::\+Rt\+Render\+Target} \& OSK\+::\+ECS\+::\+Hybrid\+Render\+System\+::\+Get\+Shadows\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!GetShadowsIntermediateImage@{GetShadowsIntermediateImage}}
+\index{GetShadowsIntermediateImage@{GetShadowsIntermediateImage}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{GetShadowsIntermediateImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_a00c041464f16c94049662bcb31262cb9} 
+const \textbf{ GRAPHICS\+::\+Rt\+Render\+Target} \& OSK\+::\+ECS\+::\+Hybrid\+Render\+System\+::\+Get\+Shadows\+Intermediate\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!GetSignature@{GetSignature}}
+\index{GetSignature@{GetSignature}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{GetSignature()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_iterator_system_ae112bd30755ef771c25dc2d620fb6295} 
+const \textbf{ Signature} \& IIterator\+System\+::\+Get\+Signature (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Devuelve el signature del sistema, indicando qué componentes necesita. 
+
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Signature}{pág.}{namespace_o_s_k_1_1_e_c_s_a9c0e00962e3504ffd2435edb417d2d42} del sistema. 
+\end{DoxyReturn}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{Initialize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_ae595a72003803e3490283026ce556cf7} 
+void Hybrid\+Render\+System\+::\+Initialize (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{camera\+Object}{, }\item[{const \textbf{ ASSETS\+::\+Irradiance\+Map} \&}]{irradiance\+Map}{, }\item[{const \textbf{ ASSETS\+::\+Specular\+Map} \&}]{specular\+Map}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!IsActive@{IsActive}}
+\index{IsActive@{IsActive}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{IsActive()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_acdd2816796e17bd727d7ee4d10e11aed} 
+bool ISystem\+::\+Is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Permite saber si un sistema está activo, es decir, si un sistema se ejcutará cada frame o no. 
+
+\begin{DoxyReturn}{Devuelve}
+True si está activo, false en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{OnCreate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_ab99fd447d1c640bcc003dc5713768b6c} 
+void IRender\+System\+::\+On\+Create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta al crearse el sistema. 
+
+
+
+Reimplementado de \textbf{ OSK\+::\+ECS\+::\+ISystem} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_system_a78d27d6a19bd0d3c9eadc3521c350001}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!OnExecutionEnd@{OnExecutionEnd}}
+\index{OnExecutionEnd@{OnExecutionEnd}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{OnExecutionEnd()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_iterator_system_ae4ff2c186d3241afddbb7d81264caf9d} 
+void IIterator\+System\+::\+On\+Execution\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta después de terminar la ejecución. 
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!OnExecutionStart@{OnExecutionStart}}
+\index{OnExecutionStart@{OnExecutionStart}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{OnExecutionStart()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_iterator_system_aff1bfd46d0ccbbf0efaee656f26a8290} 
+void IIterator\+System\+::\+On\+Execution\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta antes de comenzar la ejecución. 
+
+
+
+Reimplementado en \textbf{ OSK\+::\+ECS\+::\+Collision\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_collision_system_a329d8f2b7c5ec4052ea631a59c99075f}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!OnObjectAdded@{OnObjectAdded}}
+\index{OnObjectAdded@{OnObjectAdded}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{OnObjectAdded()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_iterator_system_af380b55facabf814ca48fef44cae116b} 
+void IIterator\+System\+::\+On\+Object\+Added (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta cuando un Game\+Object entra en la lista de objetos procesables por el sistema. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto añadido. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \textbf{ OSK\+::\+ECS\+::\+Collider\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_collider_render_system_ac08db4e636ce1989f2f034bd25851fae}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!OnObjectRemoved@{OnObjectRemoved}}
+\index{OnObjectRemoved@{OnObjectRemoved}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{OnObjectRemoved()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_iterator_system_a95c8a52cae15f1ea27c6bed80c8708c3} 
+void IIterator\+System\+::\+On\+Object\+Removed (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta cuando un Game\+Object sale de la lista de objetos procesables por el sistema. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto eliminado. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \textbf{ OSK\+::\+ECS\+::\+Collider\+Render\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_collider_render_system_a729841b2136b8b644e1c43fc17a10c2f}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!OnRemove@{OnRemove}}
+\index{OnRemove@{OnRemove}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{OnRemove()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a43e7608ce2a31c9c13b42cf4ce6eb0ef} 
+void ISystem\+::\+On\+Remove (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta al destruirse el sistema. 
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!OnRenderEnd@{OnRenderEnd}}
+\index{OnRenderEnd@{OnRenderEnd}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{OnRenderEnd()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_aaff54e4b3e1fae77c5aa8cd72e87c94e} 
+void IRender\+System\+::\+On\+Render\+End (\begin{DoxyParamCaption}\item[{\textbf{ GRAPHICS\+::\+ICommand\+List} $\ast$}]{command\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta después de finalizar el proceso de objetos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command\+List} & Lista de comandos. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!OnRenderStart@{OnRenderStart}}
+\index{OnRenderStart@{OnRenderStart}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{OnRenderStart()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_a69f59e0404de6bbc5e4c49a559cce65b} 
+void IRender\+System\+::\+On\+Render\+Start (\begin{DoxyParamCaption}\item[{\textbf{ GRAPHICS\+::\+ICommand\+List} $\ast$}]{command\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Función que se ejecuta antes de comenzar el proceso de objetos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command\+List} & Lista de comandos. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!OSK\_SYSTEM@{OSK\_SYSTEM}}
+\index{OSK\_SYSTEM@{OSK\_SYSTEM}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{OSK\_SYSTEM()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_a8292866814948e919dd8c1d40441ad5e} 
+OSK\+::\+ECS\+::\+Hybrid\+Render\+System\+::\+OSK\+\_\+\+SYSTEM (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Hybrid\+Render\+System"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!Render@{Render}}
+\index{Render@{Render}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{Render()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_af1d36b9b88257e6b3bba395f3879a8ac} 
+void Hybrid\+Render\+System\+::\+Render (\begin{DoxyParamCaption}\item[{\textbf{ GRAPHICS\+::\+ICommand\+List} $\ast$}]{command\+List}{, }\item[{std\+::span$<$ const \textbf{ ECS\+::\+Game\+Object\+Index} $>$}]{objects}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Comando específico del sistema, para ejecutar el renderizado. 
+
+\begin{DoxyPrecond}{Precondición}
+La lista de comandos debe estar abierta. 
+\end{DoxyPrecond}
+
+
+Implementa \textbf{ OSK\+::\+ECS\+::\+IRender\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_render_system_a7a7a8b3fb6aaa3eb06b86c56f4ed4e28}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!Resize@{Resize}}
+\index{Resize@{Resize}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{Resize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_a2eb6d660649865e576fb7f25fcffc8b0} 
+void Hybrid\+Render\+System\+::\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{resolution}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Cambia la resolución de la imagen de render target. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Nueva resolución de renderizado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Se llama cada vez que la ventana cambia de tamaño. 
+
+Se puede sobreescribir para cambiar de tamaño otras imágenes de renderizado. 
+\end{DoxyNote}
+
+
+Reimplementado de \textbf{ OSK\+::\+ECS\+::\+IRender\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_render_system_a73d2840e29adafef2ccface8fbd76303}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!SaveBinaryConfiguration@{SaveBinaryConfiguration}}
+\index{SaveBinaryConfiguration@{SaveBinaryConfiguration}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{SaveBinaryConfiguration()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_ad7fdd3a3d50ef050a59f2d9b2256654f} 
+\textbf{ PERSISTENCE\+::\+Binary\+Block} Hybrid\+Render\+System\+::\+Save\+Binary\+Configuration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estructura binaria con la información relevante de la configuración del sistema en un momento dado. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ OSK\+::\+ECS\+::\+ISerializable\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_serializable_system_a21cee6a91c122bb7ffe15185a161a26f}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!SaveConfiguration@{SaveConfiguration}}
+\index{SaveConfiguration@{SaveConfiguration}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{SaveConfiguration()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_hybrid_render_system_a5537a64cc76f767d0d1c0da582d4e2ed} 
+nlohmann\+::json Hybrid\+Render\+System\+::\+Save\+Configuration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estructura JSON con la información relevante de la configuración del sistema en un momento dado. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ OSK\+::\+ECS\+::\+ISerializable\+System} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_serializable_system_a727dd1c18ab112a3ef1e07e6b3402428}.
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!SetActivationStatus@{SetActivationStatus}}
+\index{SetActivationStatus@{SetActivationStatus}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{SetActivationStatus()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a97458cf11d6b977bad992387a2d67297} 
+void ISystem\+::\+Set\+Activation\+Status (\begin{DoxyParamCaption}\item[{bool}]{is\+Active}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Establece si el sistema debe ejecutarse o no. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em is\+Active} & True si debe ejecutarse, false en caso contrario. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!SetCompatibleObjects@{SetCompatibleObjects}}
+\index{SetCompatibleObjects@{SetCompatibleObjects}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{SetCompatibleObjects()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_iterator_system_ab81242d97f6424629a9362246838e772} 
+void IIterator\+System\+::\+Set\+Compatible\+Objects (\begin{DoxyParamCaption}\item[{std\+::span$<$ const \textbf{ ECS\+::\+Game\+Object\+Index} $>$}]{objects}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Establece la lista de objetos compatibles. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em objects} & Objetos compatibles. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!SetupViewport@{SetupViewport}}
+\index{SetupViewport@{SetupViewport}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{SetupViewport()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_ae3c3f809429c0eb238b4b5a58e4a756a} 
+void IRender\+System\+::\+Setup\+Viewport (\begin{DoxyParamCaption}\item[{\textbf{ GRAPHICS\+::\+ICommand\+List} $\ast$}]{command\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Configura el viewport que se usará en la lista de comandos para que incluya toda la imagen del render system. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command\+List} & Lista de comandos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+command\+List no debe ser null. 
+\end{DoxyPrecond}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!ToggleActivationStatus@{ToggleActivationStatus}}
+\index{ToggleActivationStatus@{ToggleActivationStatus}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{ToggleActivationStatus()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_system_a01bbb5166a33e4484f42fcc6f03494b4} 
+void ISystem\+::\+Toggle\+Activation\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Cambia entre activado/desactivado. 
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!UpdatePassesCamera@{UpdatePassesCamera}}
+\index{UpdatePassesCamera@{UpdatePassesCamera}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{UpdatePassesCamera()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_ad5f82c2ecaae3bc7f77ae4bb92e7a3dd} 
+void IRender\+System\+::\+Update\+Passes\+Camera (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{camera\+Object}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!UpdatePerPassObjectLists@{UpdatePerPassObjectLists}}
+\index{UpdatePerPassObjectLists@{UpdatePerPassObjectLists}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{UpdatePerPassObjectLists()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_a4b91799c0c70efc67aa652a20efd5bed} 
+void IRender\+System\+::\+Update\+Per\+Pass\+Object\+Lists (\begin{DoxyParamCaption}\item[{std\+::span$<$ const \textbf{ ECS\+::\+Game\+Object\+Index} $>$}]{objects}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Actualiza las listas de objetos asignados a cada pase. 
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!m\_meshMapping@{m\_meshMapping}}
+\index{m\_meshMapping@{m\_meshMapping}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{m\_meshMapping}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_a67e90b807fff390e78fb5e7c8678853f} 
+\textbf{ GRAPHICS\+::\+Global\+Mesh\+Mapping} OSK\+::\+ECS\+::\+IRender\+System\+::m\+\_\+mesh\+Mapping = \{\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!m\_renderTarget@{m\_renderTarget}}
+\index{m\_renderTarget@{m\_renderTarget}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{m\_renderTarget}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_aeaa0bf1f05132020a8eac8de0a8f0461} 
+\textbf{ GRAPHICS\+::\+Render\+Target} OSK\+::\+ECS\+::\+IRender\+System\+::m\+\_\+render\+Target\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!m\_shaderPasses@{m\_shaderPasses}}
+\index{m\_shaderPasses@{m\_shaderPasses}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{m\_shaderPasses}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_ac8f8859cd04b386d58abed9af589a4a5} 
+\textbf{ GRAPHICS\+::\+Shader\+Pass\+Table} OSK\+::\+ECS\+::\+IRender\+System\+::m\+\_\+shader\+Passes \{\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}!m\_shadowsPasses@{m\_shadowsPasses}}
+\index{m\_shadowsPasses@{m\_shadowsPasses}!OSK::ECS::HybridRenderSystem@{OSK::ECS::HybridRenderSystem}}
+\doxysubsubsection{m\_shadowsPasses}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_render_system_a1ed1422db22d1134fa331768a298fc05} 
+\textbf{ GRAPHICS\+::\+Shader\+Pass\+Table} OSK\+::\+ECS\+::\+IRender\+System\+::m\+\_\+shadows\+Passes \{\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+

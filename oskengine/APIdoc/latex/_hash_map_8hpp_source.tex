@@ -1,0 +1,434 @@
+\doxysection{Hash\+Map.\+hpp}
+\label{_hash_map_8hpp_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/HashMap.hpp@{C:/Users/Oscar/source/repos/OSKengine/Source/HashMap.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <concepts>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \#define\ OSK\_CUSTOM\_HASHMAP}}
+\DoxyCodeLine{00007\ \ \textcolor{comment}{//\#ifdef\ OSK\_CUSTOM\_HASHMAP}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Pair.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ConstexprBitSet.hpp"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00016\ \textcolor{comment}{namespace\ OSK\ \{}}
+\DoxyCodeLine{00017\ \textcolor{comment}{}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ template\ <typename\ T>\ size\_t\ Hash(const\ T\&\ elem)\ \{}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ \ \ \ \ \ \ static\ std::hash<T>\ hasher;}}
+\DoxyCodeLine{00020\ \textcolor{comment}{}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ hasher(elem);}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00035\ \ \ \ \ template\ <typename\ TKey,\ typename\ TValue,\ TSize\ numBuckets\ =\ 512>\ class\ HashMap\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ friend\ class\ Iterator;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ public:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ typedef\ Pair<TKey,\ TValue>\ TPair;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ typedef\ DynamicArray<Pair<TKey,\ TValue>>\ TBucket;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ class\ Iterator\ \{}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ friend\ class\ HashMap;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ public:}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ Iterator(const\ HashMap*\ map,\ const\ TBucket*\ bucket,\ TSize\ inBucketIndex,\ TSize\ bucketIndex)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ map(map),\ bucket(bucket),\ inBucketIndex(inBucketIndex),\ bucketIndex(bucketIndex)\ \{}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ Iterator\ operator++()\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inBucketIndex++;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Si\ ya\ no\ quedan\ más\ elementos\ en\ el\ cubo\ actual,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ pasamos\ al\ siguiente\ cubo.}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ while\ (inBucketIndex\ >=\ bucket-\/>GetSize())\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inBucketIndex\ =\ 0;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bucketIndex++;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bucketIndex\ =\ map-\/>occupiedBuckets.GetNextTrueIndex(bucketIndex);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (bucketIndex\ ==\ 0)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Si\ hemos\ vuelto\ al\ principio,\ hemos\ terminado\ de\ recorrer\ la\ colección.}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *this\ =\ map-\/>end();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bucket\ =\ map-\/>GetBucket(bucketIndex);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ Iterator\ operator-\/-\/()\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (inBucketIndex\ >\ 0)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inBucketIndex-\/-\/;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ while\ (bucket-\/>GetSize()\ ==\ 0)\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bucketIndex-\/-\/;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (bucketIndex\ >\ 0)}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bucket\ =\ map-\/>GetBucket(bucketIndex);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ map-\/>begin();}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bucketIndex\ =\ bucket-\/>GetSize()\ -\/\ 1;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ bool\ operator>\ (const\ Iterator\&\ other)\ const\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (bucketIndex\ ==\ other.bucketIndex)}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ inBucketIndex\ >\ other.inBucketIndex;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ bucketIndex\ >\ other.bucketIndex;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ bool\ operator<\ (const\ Iterator\&\ other)\ const\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (bucketIndex\ ==\ other.bucketIndex)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ inBucketIndex\ <\ other.inBucketIndex;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ bucketIndex\ <\ other.bucketIndex;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ bool\ operator>=\ (const\ Iterator\&\ other)\ const\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (bucketIndex\ ==\ other.bucketIndex)}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ inBucketIndex\ >=\ other.inBucketIndex;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ bucketIndex\ >=\ other.bucketIndex;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ bool\ operator<=\ (const\ Iterator\&\ other)\ const\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (bucketIndex\ ==\ other.bucketIndex)}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ inBucketIndex\ <=\ other.inBucketIndex;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ bucketIndex\ <=\ other.bucketIndex;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ bool\ operator==\ (const\ Iterator\&\ other)\ const\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ bucketIndex\ ==\ other.bucketIndex\ \&\&\ inBucketIndex\ ==\ other.inBucketIndex\ \&\&\ bucket\ ==\ other.bucket;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ bool\ operator!=\ (const\ Iterator\&\ other)\ const\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ bucketIndex\ !=\ other.bucketIndex\ ||\ (inBucketIndex\ !=\ other.inBucketIndex\ \&\&\ bucket\ !=\ other.bucket);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ TPair\&\ operator*()\ const\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ bucket-\/>At(inBucketIndex);}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ TPair\&\ GetValue()\ const\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ bucket-\/>At(inBucketIndex);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ bool\ IsEmpty()\ const\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ bucket\ ==\ nullptr;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ private:}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ const\ HashMap*\ map\ =\ nullptr;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ const\ TBucket*\ bucket\ =\ nullptr;}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ TSize\ inBucketIndex\ =\ 0;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ TSize\ bucketIndex\ =\ 0;}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ HashMap()\ \{}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \string~HashMap()\ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ for\ (TIndex\ i\ =\ 0;\ i\ <\ numBuckets;\ i++)}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buckets[i].Free();}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ void\ InsertCopy(const\ TKey\&\ key,\ const\ TValue\&\ value)\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ auto\ pair\ =\ FindPair(key);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (pair)\ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pair-\/>second\ =\ value;}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ else\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ TSize\ hash\ =\ ConvertHash(static\_cast<TSize>(Hash(key)));}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buckets[hash].Insert(TPair(key,\ value));}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ occupiedBuckets.SetTrue(hash);}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size++;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ void\ Insert(const\ TKey\&\ key,\ const\ TValue\&\ value)\ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ InsertCopy(key,\ value);}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ void\ InsertMove(const\ TKey\&\ key,\ TValue\&\&\ value)\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ TPair*\ pair\ =\ FindPair(key);}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (pair)\ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //pair-\/>second\ =\ std::move(value);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Remove(key);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InsertMove(key,\ std::move(value));}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ else\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auto\ hash\ =\ ConvertHash(static\_cast<TSize>(Hash(key)));}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buckets[hash].InsertMove(std::move(TPair(key,\ std::move(value))));}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ occupiedBuckets.SetTrue(hash);}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size++;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ void\ Insert(const\ TKey\&\ key,\ TValue\&\&\ value)\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ InsertMove(key,\ std::move(value));}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ void\ Remove(const\ TKey\&\ key)\ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ KeySearchResult\ result\ =\ \_FindKey(key);}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (result.found)\ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\_cast<TBucket*>(result.it.bucket)-\/>RemoveAt(result.it.inBucketIndex);}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (result.it.bucket-\/>GetSize()\ ==\ 0)}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ occupiedBuckets.SetFalse(result.it.bucketIndex);}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ const\ TBucket*\ GetBucket(TSize\ index)\ const\ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ return\ \&buckets[index];}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ TValue\&\ Get(const\ TKey\&\ key)\ const\ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ auto\ pair\ =\ FindPair(key);}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(pair\ !=\ nullptr,\ "{}No\ se\ encontró\ el\ valor."{});}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ return\ pair-\/>second;}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ TValue\ GetCopy(const\ TKey\&\ key)\ const\ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ auto\ pair\ =\ FindPair(key);}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(pair,\ "{}No\ se\ encontró\ el\ valor."{});}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ return\ pair-\/>second;}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ bool\ ContainsKey(const\ TKey\&\ key)\ const\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ return\ \_FindKey(key).found;}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ Iterator\ Find(const\ TKey\&\ key)\ const\ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ auto\ result\ =\ \_FindKey(key);}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (result.found)}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ result.it;}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ return\ end();}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ bool\ HasValue(const\ TKey\&\ key)\ const\ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ return\ \_FindKey(key).found;}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ TSize\ GetSize()\ const\ \{}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ return\ size;}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ TSize\ GetNumberOfBuckets()\ const\ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ return\ numBuckets;}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ Iterator\ begin()\ const\ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (occupiedBuckets.IsAllFalse())}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ end();}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ const\ TSize\ i\ =\ occupiedBuckets.GetNextTrueIndex();}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ return\ GetIterator(i,\ 0);}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ Iterator\ end()\ const\ \{}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Iterator(this,\ nullptr,\ 0,\ numBuckets);}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ Iterator\ GetIterator(TSize\ bucketId,\ TSize\ inbucketId)\ const\ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ auto\ it\ =\ Iterator(this,\ nullptr,\ inbucketId,\ bucketId);}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ it.bucket\ =\ (TBucket*)\&buckets[bucketId];}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ return\ it;}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \ \ \ \ private:}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ struct\ KeySearchResult\ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ bool\ found\ =\ false;}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ Iterator\ it;}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ KeySearchResult\ \_FindKey(const\ TKey\&\ key)\ const\ \{}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ auto\ hash\ =\ ConvertHash(static\_cast<TSize>(Hash(key)));}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ const\ TBucket*\ bucket\ =\ \&buckets[hash];}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ for\ (TSize\ i\ =\ 0;\ i\ <\ bucket-\/>GetSize();\ i++)}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (bucket-\/>At(i).first\ ==\ key)}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ \{\ true,\ GetIterator(hash,\ i)\ \};}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ return\ \{\ false,\ end()\ \};}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ TPair*\ FindPair(const\ TKey\&\ key)\ const\ \{}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ auto\ result\ =\ \_FindKey(key);}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (result.found)}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ \&(*result.it);}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ return\ nullptr;}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ TSize\ ConvertHash(TSize\ hash)\ const\ \{}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ return\ hash\ \%\ numBuckets;}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ TBucket\ buckets[numBuckets];}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ ConstexprBitSet<numBuckets>\ occupiedBuckets;}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ TSize\ size\ =\ 0;}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \ \ \ \ \};}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \}}
+\DoxyCodeLine{00448\ \#else\ */}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#include\ "{}Pair.hpp"{}}}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \textcolor{keyword}{namespace\ }OSK\ \{}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ }
+\DoxyCodeLine{00459\ \ \ \ \ \ \textcolor{comment}{/*\ template\ <typename\ T>\ size\_t\ Hash(const\ T\&\ elem)\ \{}}
+\DoxyCodeLine{00460\ \textcolor{comment}{\ \ \ \ \ \ \ \ static\ ::std::hash<T>\ hasher;}}
+\DoxyCodeLine{00461\ \textcolor{comment}{}}
+\DoxyCodeLine{00462\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ hasher(elem);}}
+\DoxyCodeLine{00463\ \textcolor{comment}{\ \ \ \ \}\ */}}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keyword}{struct\ }StringHasher\ \{}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }is\_transparent\ =\ void;}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{size\_t}\ operator()(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ txt)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ return\ ::std::hash<::std::string\_view>\{\}(txt);}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{size\_t}\ operator()(::std::string\_view\ txt)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ return\ ::std::hash<::std::string\_view>\{\}(txt);}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{size\_t}\ operator()(const\ ::std::string\&\ txt)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ return\ ::std::hash<::std::string>\{\}(txt);}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00477\ \ \ \ \ \};}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keyword}{using\ }StringHashMap\ =\ std::unordered\_map<std::string,\ T,\ StringHasher,\ std::equal\_to<>>;}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00493\ \ \ \ \ template\ <typename\ TKey,\ typename\ TValue,\ USize64\ numBuckets\ =\ 512u>\ class\ HashMap\ \{}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ \ \ \ \ public:}
+\DoxyCodeLine{00496\ }
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ HashMap()\ =\ default;}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ OSK\_DEFAULT\_COPY\_OPERATOR(HashMap);}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ OSK\_DEFAULT\_MOVE\_OPERATOR(HashMap);}
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ void\ InsertCopy(const\ TKey\&\ key,\ const\ TValue\&\ value)\ }
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ requires\ std::copyable<TValue>\ \{}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ stdmap[key]\ =\ value;}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00512\ }
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ void\ Insert(const\ TKey\&\ key,\ const\ TValue\&\ value)\ }
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ requires\ std::copyable<TValue>\ \{}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ stdmap[key]\ =\ value;}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00524\ }
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ void\ Insert(const\ TKey\&\ key,\ TValue\&\&\ value)\ }
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ requires\ std::movable<TValue>\ \{}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ stdmap[key]\ =\ std::move(value);}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ void\ InsertMove(const\ TKey\&\ key,\ TValue\&\&\ value)\ }
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ requires\ std::movable<TValue>\ \{}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ stdmap[key]\ =\ std::move(value);}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ void\ Remove(const\ TKey\&\ key)\ \{}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ stdmap.erase(key);}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ bool\ HasValue(const\ TKey\&\ key)\ const\ \{}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ return\ stdmap.contains(key);}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ TValue\&\ Get(const\ TKey\&\ key)\ const\ \{}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (TValue\&)(stdmap.at(key));}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00571\ }
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ TValue\ GetCopy(const\ TKey\&\ key)\ const\ \{}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ return\ stdmap.at(key);}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ bool\ ContainsKey(const\ TKey\&\ key)\ const\ \{}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ return\ stdmap.contains(key);}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00587\ }
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ USize64\ GetSize()\ const\ \{}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ return\ stdmap.size();}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00594\ }
+\DoxyCodeLine{00595\ }
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ std::unordered\_map<TKey,\ TValue>::const\_iterator\ begin()\ const\ \{}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ return\ stdmap.begin();}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00605\ }
+\DoxyCodeLine{00606\ }
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ std::unordered\_map<TKey,\ TValue>::const\_iterator\ end()\ const\ \{}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \ \ \ \ return\ stdmap.end();}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ std::unordered\_map<TKey,\ TValue>::iterator\ begin()\ \{}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \ \ \ \ return\ stdmap.begin();}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00621\ }
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ std::unordered\_map<TKey,\ TValue>::iterator\ end()\ \{}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ return\ stdmap.end();}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00628\ }
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ void\ Clear()\ \{}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \ \ \ \ stdmap.clear();}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00632\ }
+\DoxyCodeLine{00633\ \ \ \ \ private:}
+\DoxyCodeLine{00634\ }
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ std::unordered\_map<TKey,\ TValue>\ stdmap;}
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00637\ \ \ \ \ \};}
+\DoxyCodeLine{00638\ \ \ \ \ */}
+\DoxyCodeLine{00639\ \}}
+\DoxyCodeLine{00640\ \textcolor{comment}{//\ \#endif}}
+
+\end{DoxyCode}

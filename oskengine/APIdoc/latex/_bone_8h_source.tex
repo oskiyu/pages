@@ -1,0 +1,55 @@
+\doxysection{Bone.\+h}
+\label{_bone_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Bone.h@{C:/Users/Oscar/source/repos/OSKengine/Source/Bone.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Quaternion.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifdef\ max}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#undef\ max}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }Skeleton;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{struct\ }AnimationSkin;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{struct\ }AnimationBone\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateSkeletonTree(\textcolor{keyword}{const}\ glm::mat4\&\ prevMatrix,\ Skeleton*\ skeleton);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ Vector3f\ position\ =\ Vector3f::Zero;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ Quaternion\ rotation\{\};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ Vector3f\ scale\ =\ Vector3f::One;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ UIndex32\ thisIndex\ =\ 0;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::optional<UIndex32>\ parentIndex;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ DynamicArray<UIndex32>\ childIndices;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ std::optional<UIndex32>\ skinIndex;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ glm::mat4\ GetLocalMatrix()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::translate(glm::mat4(1.0f),\ position.ToGlm())\ *}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::mat4(rotation.ToGlm())\ *\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::scale(glm::mat4(1.0f),\ scale.ToGlm());}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ glm::mat4\ globalMatrix\ =\ glm::mat4(1.0f);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \}}
+
+\end{DoxyCode}

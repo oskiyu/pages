@@ -1,0 +1,133 @@
+\doxysection{Referencia de la clase OSK\+::Editor\+Hide\+Command}
+\label{class_o_s_k_1_1_editor_hide_command}\index{OSK::EditorHideCommand@{OSK::EditorHideCommand}}
+
+
+{\ttfamily \#include $<$Editor\+Commands.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Editor\+Hide\+Command} ()
+\item 
+void \textbf{ Execute} (\textbf{ UI\+::\+Console} $\ast$console, std\+::span$<$ const std\+::string $>$ params) const override
+\item 
+bool \textbf{ Is\+Compatible\+With} (std\+::span$<$ const std\+::string $>$ message\+Words) const
+\item 
+std\+::span$<$ const std\+::string $>$ \textbf{ Get\+Command\+Words} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Editor\+::\+UI\+::\+Editor\+Ui} $\ast$ \textbf{ editor} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Set\+Command\+Words} (const \textbf{ Dynamic\+Array}$<$ std\+::string $>$ \&words)
+\item 
+void \textbf{ Set\+Command\+Words} (\textbf{ Dynamic\+Array}$<$ std\+::string $>$ \&\&words)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::EditorHideCommand@{OSK::EditorHideCommand}!EditorHideCommand@{EditorHideCommand}}
+\index{EditorHideCommand@{EditorHideCommand}!OSK::EditorHideCommand@{OSK::EditorHideCommand}}
+\doxysubsubsection{EditorHideCommand()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_hide_command_aa32fd0dc68ac9bc15ddaff0a48b477f9} 
+Editor\+Hide\+Command\+::\+Editor\+Hide\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::EditorHideCommand@{OSK::EditorHideCommand}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::EditorHideCommand@{OSK::EditorHideCommand}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_hide_command_a4f5ff37f373e28979793acf7a4add0bf} 
+void Editor\+Hide\+Command\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ UI\+::\+Console} $\ast$}]{console}{, }\item[{std\+::span$<$ const std\+::string $>$}]{params}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ejecuta el comando. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em console} & Consola sobre la que se mandó el mensaje. \\
+\hline
+{\em params} & Parámetros del comando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Los parámetros ({\ttfamily params}) deben ser las palabras del mensaje una vez se han quitado las palabras obligatorias del comando. 
+\end{DoxyPrecond}
+
+
+Implementa \textbf{ OSK\+::\+IConsole\+Command} \doxyref{}{pág.}{class_o_s_k_1_1_i_console_command_af4d476bbca5a0923f5bdd1bcb8556eaf}.
+
+\index{OSK::EditorHideCommand@{OSK::EditorHideCommand}!GetCommandWords@{GetCommandWords}}
+\index{GetCommandWords@{GetCommandWords}!OSK::EditorHideCommand@{OSK::EditorHideCommand}}
+\doxysubsubsection{GetCommandWords()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_console_command_a406a3d0addd248e074612e77d0ceb867} 
+std\+::span$<$ const std\+::string $>$ IConsole\+Command\+::\+Get\+Command\+Words (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Palabras sueltas y ordenadas obligatorias del comando. 
+\end{DoxyReturn}
+\index{OSK::EditorHideCommand@{OSK::EditorHideCommand}!IsCompatibleWith@{IsCompatibleWith}}
+\index{IsCompatibleWith@{IsCompatibleWith}!OSK::EditorHideCommand@{OSK::EditorHideCommand}}
+\doxysubsubsection{IsCompatibleWith()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_console_command_ad9db57f37d2dc6c8199f67e46ce2e7d7} 
+bool IConsole\+Command\+::\+Is\+Compatible\+With (\begin{DoxyParamCaption}\item[{std\+::span$<$ const std\+::string $>$}]{message\+Words}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Comrpueba si las palabras de un mensaje son compatibles con este comando. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em message\+Words} & Palabras sueltas del mensaje, en orden. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si es compatible con este comando (por lo que se debe ejecutar este comando). 
+\end{DoxyReturn}
+\index{OSK::EditorHideCommand@{OSK::EditorHideCommand}!SetCommandWords@{SetCommandWords}}
+\index{SetCommandWords@{SetCommandWords}!OSK::EditorHideCommand@{OSK::EditorHideCommand}}
+\doxysubsubsection{SetCommandWords()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_console_command_abcce4ffc28474203372b430f2d2af978} 
+void IConsole\+Command\+::\+Set\+Command\+Words (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ std\+::string $>$ \&}]{words}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Establece el texto que debe tener el mensaje para ser considerado este comando. 
+
+Se insertan las palabras sueltas del comando, en orden. 
+\begin{DoxyParams}{Parámetros}
+{\em words} & Palabras que componen la parte obligatoria del comando.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily words.\+Get\+Size()} $>$ 0. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si {\ttfamily words.\+Get\+Size()} == 0. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::EditorHideCommand@{OSK::EditorHideCommand}!SetCommandWords@{SetCommandWords}}
+\index{SetCommandWords@{SetCommandWords}!OSK::EditorHideCommand@{OSK::EditorHideCommand}}
+\doxysubsubsection{SetCommandWords()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_console_command_afd78e72c790aca5d685e1585edfd63f0} 
+void IConsole\+Command\+::\+Set\+Command\+Words (\begin{DoxyParamCaption}\item[{\textbf{ Dynamic\+Array}$<$ std\+::string $>$ \&\&}]{words}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::EditorHideCommand@{OSK::EditorHideCommand}!editor@{editor}}
+\index{editor@{editor}!OSK::EditorHideCommand@{OSK::EditorHideCommand}}
+\doxysubsubsection{editor}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_hide_command_ab5c322692e25a42f9c5b0580c4ca01a1} 
+\textbf{ Editor\+::\+UI\+::\+Editor\+Ui}$\ast$ OSK\+::\+Editor\+Hide\+Command\+::editor = nullptr}
+

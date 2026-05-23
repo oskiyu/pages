@@ -1,0 +1,1207 @@
+\doxysection{Referencia del espacio de nombres OSK\+::IO}
+\label{namespace_o_s_k_1_1_i_o}\index{OSK::IO@{OSK::IO}}
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ File\+IO}
+\item 
+class \textbf{ File\+Not\+Found\+Exception}
+\item 
+class \textbf{ Gamepad\+State}
+\item 
+class \textbf{ IDisplay}
+\item 
+class \textbf{ IFullscreenable\+Display}
+\item 
+class \textbf{ IGamepad\+Input}
+\item 
+class \textbf{ IInput\+Listener}
+\item 
+class \textbf{ IKeyboard\+Input}
+\item 
+class \textbf{ ILogger}
+\item 
+class \textbf{ IMouse\+Input}
+\item 
+class \textbf{ Initialize\+Window\+Exception}
+\item 
+class \textbf{ Input\+Manager}
+\item 
+class \textbf{ ITouch\+Input}
+\item 
+class \textbf{ IUser\+Input}
+\item 
+class \textbf{ Keyboard\+State}
+\item 
+class \textbf{ Logger}
+\item 
+class \textbf{ Logger\+Not\+Initialized\+Exception}
+\item 
+class \textbf{ Mouse\+State}
+\item 
+struct \textbf{ Touch\+Input}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ Touch\+Input\+Uuid} = \textbf{ Base\+Uuid}$<$class Touch\+Input\+Uuid\+Tag$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum class \textbf{ Gamepad\+Axis} \{ \newline
+\textbf{ LEFT\+\_\+X}
+, \textbf{ LEFT\+\_\+Y}
+, \textbf{ RIGHT\+\_\+X}
+, \textbf{ RIGHT\+\_\+Y}
+, \newline
+\textbf{ L2}
+, \textbf{ R2}
+, \textbf{ \+\_\+\+\_\+\+END}
+ \}
+\item 
+enum class \textbf{ Gamepad\+Button} \{ \newline
+\textbf{ x}
+, \textbf{ y}
+, \textbf{ A}
+, \textbf{ B}
+, \newline
+\textbf{ START}
+, \textbf{ BACK}
+, \textbf{ L1}
+, \textbf{ R1}
+, \newline
+\textbf{ PAD\+\_\+\+TOP}
+, \textbf{ PAD\+\_\+\+DOWN}
+, \textbf{ PAD\+\_\+\+LEFT}
+, \textbf{ PAD\+\_\+\+RIGHT}
+ \}
+\item 
+enum class \textbf{ Gamepad\+Button\+State} \{ \textbf{ RELEASED}
+, \textbf{ PRESSED}
+ \}
+\item 
+enum class \textbf{ Key} \{ \newline
+\textbf{ SPACE}
+, \textbf{ APOSTROPHE}
+, \textbf{ COMMA}
+, \textbf{ MINUS}
+, \newline
+\textbf{ PERIOD}
+, \textbf{ SLASH}
+, \textbf{ KEY\+\_\+0}
+, \textbf{ KEY\+\_\+1}
+, \newline
+\textbf{ KEY\+\_\+2}
+, \textbf{ KEY\+\_\+3}
+, \textbf{ KEY\+\_\+4}
+, \textbf{ KEY\+\_\+5}
+, \newline
+\textbf{ KEY\+\_\+6}
+, \textbf{ KEY\+\_\+7}
+, \textbf{ KEY\+\_\+8}
+, \textbf{ KEY\+\_\+9}
+, \newline
+\textbf{ SEMICOLON}
+, \textbf{ EQUAL}
+, \textbf{ A}
+, \textbf{ B}
+, \newline
+\textbf{ C}
+, \textbf{ D}
+, \textbf{ E}
+, \textbf{ F}
+, \newline
+\textbf{ G}
+, \textbf{ H}
+, \textbf{ I}
+, \textbf{ J}
+, \newline
+\textbf{ K}
+, \textbf{ L}
+, \textbf{ M}
+, \textbf{ N}
+, \newline
+\textbf{ O}
+, \textbf{ P}
+, \textbf{ Q}
+, \textbf{ R}
+, \newline
+\textbf{ S}
+, \textbf{ T}
+, \textbf{ U}
+, \textbf{ V}
+, \newline
+\textbf{ W}
+, \textbf{ x}
+, \textbf{ y}
+, \textbf{ Z}
+, \newline
+\textbf{ LEFT\+\_\+\+BRACKET}
+, \textbf{ BACKSLASH}
+, \textbf{ RIGHT\+\_\+\+BRACKET}
+, \textbf{ GRAVE\+\_\+\+ACCENT}
+, \newline
+\textbf{ WORLD\+\_\+1}
+, \textbf{ WORLD\+\_\+2}
+, \textbf{ ESCAPE}
+, \textbf{ ENTER}
+, \newline
+\textbf{ TAB}
+, \textbf{ BACKSPACE}
+, \textbf{ INSERT}
+, \textbf{ DEL}
+, \newline
+\textbf{ RIGHT}
+, \textbf{ LEFT}
+, \textbf{ DOWN}
+, \textbf{ UP}
+, \newline
+\textbf{ PAGE\+\_\+\+UP}
+, \textbf{ PAGE\+\_\+\+DOWN}
+, \textbf{ HOME}
+, \textbf{ END}
+, \newline
+\textbf{ CAPS\+\_\+\+LOCK}
+, \textbf{ SCROLL\+\_\+\+LOCK}
+, \textbf{ NUM\+\_\+\+LOCK}
+, \textbf{ PRINT\+\_\+\+SCREEN}
+, \newline
+\textbf{ PAUSE}
+, \textbf{ F1}
+, \textbf{ F2}
+, \textbf{ F3}
+, \newline
+\textbf{ F4}
+, \textbf{ F5}
+, \textbf{ F6}
+, \textbf{ F7}
+, \newline
+\textbf{ F8}
+, \textbf{ F9}
+, \textbf{ F10}
+, \textbf{ F11}
+, \newline
+\textbf{ F12}
+, \textbf{ F13}
+, \textbf{ F14}
+, \textbf{ F15}
+, \newline
+\textbf{ F16}
+, \textbf{ F17}
+, \textbf{ F18}
+, \textbf{ F19}
+, \newline
+\textbf{ F20}
+, \textbf{ F21}
+, \textbf{ F22}
+, \textbf{ F23}
+, \newline
+\textbf{ F24}
+, \textbf{ F25}
+, \textbf{ KEYPAD\+\_\+0}
+, \textbf{ KEYPAD\+\_\+1}
+, \newline
+\textbf{ KEYPAD\+\_\+2}
+, \textbf{ KEYPAD\+\_\+3}
+, \textbf{ KEYPAD\+\_\+4}
+, \textbf{ KEYPAD\+\_\+5}
+, \newline
+\textbf{ KEYPAD\+\_\+6}
+, \textbf{ KEYPAD\+\_\+7}
+, \textbf{ KEYPAD\+\_\+8}
+, \textbf{ KEYPAD\+\_\+9}
+, \newline
+\textbf{ KEYPAD\+\_\+\+DECIMAL}
+, \textbf{ KEYPAD\+\_\+\+DIVIDE}
+, \textbf{ KEYPAD\+\_\+\+MULTIPLY}
+, \textbf{ KEYPAD\+\_\+\+SUBSTRACT}
+, \newline
+\textbf{ KEYPAD\+\_\+\+ADD}
+, \textbf{ KEYPAD\+\_\+\+ENTER}
+, \textbf{ KEYPAD\+\_\+\+EQUAL}
+, \textbf{ LEFT\+\_\+\+SHIFT}
+, \newline
+\textbf{ LEFT\+\_\+\+CONTROL}
+, \textbf{ LEFT\+\_\+\+ALT}
+, \textbf{ LEFT\+\_\+\+SUPER}
+, \textbf{ RIGHT\+\_\+\+SHIFT}
+, \newline
+\textbf{ RIGHT\+\_\+\+CONTROL}
+, \textbf{ RIGHT\+\_\+\+ALT}
+, \textbf{ RIGHT\+\_\+\+SUPER}
+, \textbf{ MENU}
+, \newline
+\textbf{ ANY\+\_\+\+SHIFT}
+, \textbf{ ANY\+\_\+\+ALT}
+, \textbf{ \+\_\+\+\_\+\+END}
+ \}
+\item 
+enum class \textbf{ Key\+State} \{ \textbf{ RELEASED}
+, \textbf{ PRESSED}
+ \}
+\item 
+enum class \textbf{ Log\+Level} \{ \newline
+\textbf{ NO}
+, \textbf{ INFO}
+, \textbf{ L\+\_\+\+DEBUG}
+, \textbf{ WARNING}
+, \newline
+\textbf{ L\+\_\+\+ERROR}
+ \}
+\item 
+enum class \textbf{ Mouse\+Return\+Mode} \{ \textbf{ FREE}
+, \textbf{ ALWAYS\+\_\+\+RETURN}
+ \}
+\item 
+enum class \textbf{ Mouse\+Motion\+Mode} \{ \textbf{ RAW}
+, \textbf{ ACCELERATED}
+ \}
+\item 
+enum class \textbf{ Mouse\+Button} \{ \newline
+\textbf{ BUTTON\+\_\+1}
+, \textbf{ BUTTON\+\_\+2}
+, \textbf{ BUTTON\+\_\+3}
+, \textbf{ BUTTON\+\_\+4}
+, \newline
+\textbf{ BUTTON\+\_\+5}
+, \textbf{ BUTTON\+\_\+6}
+, \textbf{ BUTTON\+\_\+7}
+, \textbf{ BUTTON\+\_\+\+LEFT}
+, \newline
+\textbf{ BUTTON\+\_\+\+RIGHT}
+, \textbf{ BUTTON\+\_\+\+MIDDLE}
+, \textbf{ \+\_\+\+\_\+\+END}
+ \}
+\item 
+enum class \textbf{ Button\+State} \{ \textbf{ RELEASED}
+, \textbf{ PRESSED}
+ \}
+\item 
+enum class \textbf{ Touch\+Input\+Type} \{ \textbf{ START}
+, \textbf{ END}
+, \textbf{ CONTINUING}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+constexpr char \textbf{ Get\+Printable\+Key\+Text} (const \textbf{ Key} \&key, bool is\+Mayus)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \textbf{ Keyboard\+Number\+Of\+Keys} = (int)\textbf{ Key\+::\+\_\+\+\_\+\+END}
+\item 
+constexpr int \textbf{ Mouse\+Number\+Of\+Buttons} = (int)\textbf{ Mouse\+Button\+::\+\_\+\+\_\+\+END}
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de «typedef»}
+\index{OSK::IO@{OSK::IO}!TouchInputUuid@{TouchInputUuid}}
+\index{TouchInputUuid@{TouchInputUuid}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{TouchInputUuid}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_abcee51b45cec4834b4038e62708c1013} 
+using \textbf{ OSK\+::\+IO\+::\+Touch\+Input\+Uuid} = \textbf{ Base\+Uuid}$<$class Touch\+Input\+Uuid\+Tag$>$}
+
+
+
+UIID para diferenciar un toque de pantalla de otro. 
+
+Importante para procesar arrastres. 
+
+\label{doc-enum-members}
+\doxysubsection{Documentación de enumeraciones}
+\index{OSK::IO@{OSK::IO}!ButtonState@{ButtonState}}
+\index{ButtonState@{ButtonState}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{ButtonState}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_a59bf216682b802b6dad7d81be5ea3f31} 
+enum class \textbf{ OSK\+::\+IO\+::\+Button\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Estados en el que puede estar un botón. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RELEASED@{RELEASED}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!RELEASED@{RELEASED}}}\label{namespace_o_s_k_1_1_i_o_a59bf216682b802b6dad7d81be5ea3f31a109d54efbb64d71f9a6ab18d0fb8add8} 
+RELEASED&No está siendo pulsado. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PRESSED@{PRESSED}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!PRESSED@{PRESSED}}}\label{namespace_o_s_k_1_1_i_o_a59bf216682b802b6dad7d81be5ea3f31a5381dc876ab002103a027265bc14ae52} 
+PRESSED&Está siendo pulsado. \\
+\hline
+
+\end{DoxyEnumFields}
+\index{OSK::IO@{OSK::IO}!GamepadAxis@{GamepadAxis}}
+\index{GamepadAxis@{GamepadAxis}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{GamepadAxis}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_a37e62c3e569002298eedcfd13bad4dd4} 
+enum class \textbf{ OSK\+::\+IO\+::\+Gamepad\+Axis}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Todos y cada uno de los ejes del gamepad, es decir, cada uno de los inputs que pueden tener un valor entre 0.\+0 y 1.\+0 ó -\/1.\+0 y 1.\+0. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT\_X@{LEFT\_X}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!LEFT\_X@{LEFT\_X}}}\label{namespace_o_s_k_1_1_i_o_a37e62c3e569002298eedcfd13bad4dd4ae5815a16e50afa87f9a36ab8a52545c7} 
+LEFT\+\_\+X&Eje horizontal del joystick izquierdo. \begin{DoxyNote}{Nota}
+Derecha\+: 1.\+0 
+
+Izquierda\+: -\/1.\+0 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT\_Y@{LEFT\_Y}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!LEFT\_Y@{LEFT\_Y}}}\label{namespace_o_s_k_1_1_i_o_a37e62c3e569002298eedcfd13bad4dd4adbc23e1293dc0846d28e1ea129344fcf} 
+LEFT\+\_\+Y&Eje vertical del joystick izquierdo. \begin{DoxyNote}{Nota}
+Arriba\+: -\/1.\+0 
+
+Abajo\+: 1.\+0 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT\_X@{RIGHT\_X}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!RIGHT\_X@{RIGHT\_X}}}\label{namespace_o_s_k_1_1_i_o_a37e62c3e569002298eedcfd13bad4dd4aea468ab59a115911fef1492a49e6bc59} 
+RIGHT\+\_\+X&Eje horizontal del joystick derecho. \begin{DoxyNote}{Nota}
+Derecha\+: 1.\+0 
+
+Izquierda\+: -\/1.\+0 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT\_Y@{RIGHT\_Y}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!RIGHT\_Y@{RIGHT\_Y}}}\label{namespace_o_s_k_1_1_i_o_a37e62c3e569002298eedcfd13bad4dd4a9dfcf221fddfd2f237b3fd736caa7809} 
+RIGHT\+\_\+Y&Eje horizontal del joystick derecho. \begin{DoxyNote}{Nota}
+Arriba\+: -\/1.\+0 
+
+Abajo\+: 1.\+0 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L2@{L2}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!L2@{L2}}}\label{namespace_o_s_k_1_1_i_o_a37e62c3e569002298eedcfd13bad4dd4a7e6aa2d53f6ee2b1a34b017fa403cb76} 
+L2&Gatillo izquierdo. \begin{DoxyNote}{Nota}
+Entre 0.\+0 y 1.\+0 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R2@{R2}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!R2@{R2}}}\label{namespace_o_s_k_1_1_i_o_a37e62c3e569002298eedcfd13bad4dd4a8c6d22ff6f63fc6711cfa315cb80b314} 
+R2&Gatillo derecho. \begin{DoxyNote}{Nota}
+Entre 0.\+0 y 1.\+0 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_\_END@{\_\_END}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!\_\_END@{\_\_END}}}\label{namespace_o_s_k_1_1_i_o_a37e62c3e569002298eedcfd13bad4dd4a72b49a7cbf0c0e3dff052d091d838252} 
+\+\_\+\+\_\+\+END&\\
+\hline
+
+\end{DoxyEnumFields}
+\index{OSK::IO@{OSK::IO}!GamepadButton@{GamepadButton}}
+\index{GamepadButton@{GamepadButton}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{GamepadButton}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345} 
+enum class \textbf{ OSK\+::\+IO\+::\+Gamepad\+Button}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Botones del gamepad. Pueden estar pulsados o no, no hay valores intermedios. 
+
+\begin{DoxyNote}{Nota}
+Sigue la notación de un mando de XBox, pero puede ser usado con cualquier mando compatible con la plataforma de destino. 
+\end{DoxyNote}
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{x@{x}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!x@{x}}}\label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345a9dd4e461268c8034f5c8564e155c67a6} 
+x&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{y@{y}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!y@{y}}}\label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345a415290769594460e2e485922904f345d} 
+y&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A@{A}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!A@{A}}}\label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345a7fc56270e7a70fa81a5935b72eacbe29} 
+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B@{B}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!B@{B}}}\label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345a9d5ed678fe57bcca610140957afab571} 
+B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{START@{START}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!START@{START}}}\label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345ab078ffd28db767c502ac367053f6e0ac} 
+START&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BACK@{BACK}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BACK@{BACK}}}\label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345a1dd26f1f1790f0b56d5752fb0fbecef0} 
+BACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1@{L1}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!L1@{L1}}}\label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345a9ec4c0afd450ceac7adb81c3bcfc9732} 
+L1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R1@{R1}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!R1@{R1}}}\label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345acda522d4353b166cc2dee84673307b4e} 
+R1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAD\_TOP@{PAD\_TOP}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!PAD\_TOP@{PAD\_TOP}}}\label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345a01658843618e6525f57490c077e42cfd} 
+PAD\+\_\+\+TOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAD\_DOWN@{PAD\_DOWN}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!PAD\_DOWN@{PAD\_DOWN}}}\label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345a0634239a328057c4cf72e09bef7c056b} 
+PAD\+\_\+\+DOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAD\_LEFT@{PAD\_LEFT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!PAD\_LEFT@{PAD\_LEFT}}}\label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345a383c253a0c1fb4693a76a140e27c32fb} 
+PAD\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAD\_RIGHT@{PAD\_RIGHT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!PAD\_RIGHT@{PAD\_RIGHT}}}\label{namespace_o_s_k_1_1_i_o_ad1d8e1f23e2f2515648a3ad1b93ff345a8086e04686895d3e8396649873703c58} 
+PAD\+\_\+\+RIGHT&\\
+\hline
+
+\end{DoxyEnumFields}
+\index{OSK::IO@{OSK::IO}!GamepadButtonState@{GamepadButtonState}}
+\index{GamepadButtonState@{GamepadButtonState}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{GamepadButtonState}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_aaddc5e8725ac9d930e313af0044eb968} 
+enum class \textbf{ OSK\+::\+IO\+::\+Gamepad\+Button\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Estados en el que puede estar un botón del gamepad. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RELEASED@{RELEASED}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!RELEASED@{RELEASED}}}\label{namespace_o_s_k_1_1_i_o_aaddc5e8725ac9d930e313af0044eb968a109d54efbb64d71f9a6ab18d0fb8add8} 
+RELEASED&No está siendo pulsado. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PRESSED@{PRESSED}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!PRESSED@{PRESSED}}}\label{namespace_o_s_k_1_1_i_o_aaddc5e8725ac9d930e313af0044eb968a5381dc876ab002103a027265bc14ae52} 
+PRESSED&Está siendo pulsado. \\
+\hline
+
+\end{DoxyEnumFields}
+\index{OSK::IO@{OSK::IO}!Key@{Key}}
+\index{Key@{Key}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{Key}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39e} 
+enum class \textbf{ OSK\+::\+IO\+::\+Key}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enum con todas las teclas del teclado disponibles. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPACE@{SPACE}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!SPACE@{SPACE}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea6506ae39fdca9845e3a6de3865183e57} 
+SPACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APOSTROPHE@{APOSTROPHE}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!APOSTROPHE@{APOSTROPHE}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea9df35983f4024e31955de0f1e545e888} 
+APOSTROPHE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMMA@{COMMA}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!COMMA@{COMMA}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea4d9b3e9fc12849d060371eb65154c751} 
+COMMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MINUS@{MINUS}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!MINUS@{MINUS}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaffc0d9b54a1fe677c4c9e6b050e67c81} 
+MINUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PERIOD@{PERIOD}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!PERIOD@{PERIOD}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eade58a28573783fe95304a260ccd90362} 
+PERIOD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SLASH@{SLASH}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!SLASH@{SLASH}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea646da671ca01bb5d84dbb5fb2238dc8e} 
+SLASH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_0@{KEY\_0}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEY\_0@{KEY\_0}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea8350baa5fded880538b27097753a9ce8} 
+KEY\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_1@{KEY\_1}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEY\_1@{KEY\_1}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea43f1c1b2bb217aa04013aa12fb9695a8} 
+KEY\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_2@{KEY\_2}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEY\_2@{KEY\_2}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea20032871e1dec9155433946ecbfbcf61} 
+KEY\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_3@{KEY\_3}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEY\_3@{KEY\_3}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eab53b75d7f6543b71273a9e4f58d54046} 
+KEY\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_4@{KEY\_4}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEY\_4@{KEY\_4}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea954e8b825fe85b083fbc2b64edad125e} 
+KEY\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_5@{KEY\_5}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEY\_5@{KEY\_5}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea5117a084c57c2ab875e0bfe86c4a638d} 
+KEY\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_6@{KEY\_6}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEY\_6@{KEY\_6}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea318bd217f20261f6eec3f4afbf965f9c} 
+KEY\+\_\+6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_7@{KEY\_7}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEY\_7@{KEY\_7}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea56ee05d27060b80811d25784a5cce206} 
+KEY\+\_\+7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_8@{KEY\_8}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEY\_8@{KEY\_8}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea85de2b5ecd586b46d5cea0015a15afac} 
+KEY\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_9@{KEY\_9}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEY\_9@{KEY\_9}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaa4a7bcce597644128fbeb7cdebbeb666} 
+KEY\+\_\+9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEMICOLON@{SEMICOLON}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!SEMICOLON@{SEMICOLON}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eabaaceccc27b1d4e0968c999583f97de5} 
+SEMICOLON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EQUAL@{EQUAL}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!EQUAL@{EQUAL}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea969f331a87d8c958473c32b4d0e61a44} 
+EQUAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A@{A}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!A@{A}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea7fc56270e7a70fa81a5935b72eacbe29} 
+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B@{B}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!B@{B}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea9d5ed678fe57bcca610140957afab571} 
+B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C@{C}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!C@{C}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea0d61f8370cad1d412f80b84d143e1257} 
+C&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D@{D}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!D@{D}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaf623e75af30e62bbd73d6df5b50bb7b5} 
+D&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E@{E}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!E@{E}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea3a3ea00cfc35332cedf6e5e9a32e94da} 
+E&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F@{F}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F@{F}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea800618943025315f869e4e1f09471012} 
+F&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G@{G}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!G@{G}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eadfcf28d0734569a6a693bc8194de62bf} 
+G&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H@{H}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!H@{H}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eac1d9f50f86825a1a2302ec2449c17196} 
+H&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I@{I}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!I@{I}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eadd7536794b63bf90eccfd37f9b147d7f} 
+I&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J@{J}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!J@{J}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaff44570aca8241914870afbc310cdb85} 
+J&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{K@{K}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!K@{K}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaa5f3c6a11b03839d46af9fb43c97c188} 
+K&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L@{L}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!L@{L}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ead20caec3b48a1eef164cb4ca81ba2587} 
+L&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M@{M}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!M@{M}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea69691c7bdcc3ce6d5d8a1361f22d04ac} 
+M&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N@{N}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!N@{N}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea8d9c307cb7f3c4a32822a51922d1ceaa} 
+N&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O@{O}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!O@{O}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaf186217753c37b9b9f958d906208506e} 
+O&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P@{P}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!P@{P}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea44c29edb103a2872f519ad0c9a0fdaaa} 
+P&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Q@{Q}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!Q@{Q}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaf09564c9ca56850d4cd6b3319e541aee} 
+Q&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R@{R}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!R@{R}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eae1e1d3d40573127e9ee0480caf1283d6} 
+R&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S@{S}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!S@{S}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea5dbc98dcc983a70728bd082d1a47546e} 
+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T@{T}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!T@{T}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eab9ece18c950afbfa6b0fdbfa4ff731d3} 
+T&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U@{U}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!U@{U}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea4c614360da93c0a041b22e537de151eb} 
+U&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{V@{V}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!V@{V}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea5206560a306a2e085a437fd258eb57ce} 
+V&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W@{W}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!W@{W}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea61e9c06ea9a85a5088a499df6458d276} 
+W&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{x@{x}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!x@{x}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea9dd4e461268c8034f5c8564e155c67a6} 
+x&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{y@{y}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!y@{y}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea415290769594460e2e485922904f345d} 
+y&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Z@{Z}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!Z@{Z}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea21c2e59531c8710156d34a3c30ac81d5} 
+Z&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT\_BRACKET@{LEFT\_BRACKET}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!LEFT\_BRACKET@{LEFT\_BRACKET}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea0c2629e56daed25c9df918961d0cc03f} 
+LEFT\+\_\+\+BRACKET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BACKSLASH@{BACKSLASH}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BACKSLASH@{BACKSLASH}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaecb4a6f3440c2ed0dff59f17375a27c0} 
+BACKSLASH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT\_BRACKET@{RIGHT\_BRACKET}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!RIGHT\_BRACKET@{RIGHT\_BRACKET}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea91d8d0b84f26c3e30fb064ea4fc1090f} 
+RIGHT\+\_\+\+BRACKET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRAVE\_ACCENT@{GRAVE\_ACCENT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!GRAVE\_ACCENT@{GRAVE\_ACCENT}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea1547ad05c44be2cc614be32159bf666b} 
+GRAVE\+\_\+\+ACCENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WORLD\_1@{WORLD\_1}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!WORLD\_1@{WORLD\_1}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea1ab6dcd85380f2d3e882fbd2f6fda566} 
+WORLD\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WORLD\_2@{WORLD\_2}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!WORLD\_2@{WORLD\_2}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eacb8104ace1979f9537c7f40de0622a22} 
+WORLD\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ESCAPE@{ESCAPE}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!ESCAPE@{ESCAPE}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eadaaedac409335b869929ea43fa44be5d} 
+ESCAPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENTER@{ENTER}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!ENTER@{ENTER}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea331b3100a485d8cacff1d3df8e9b0c13} 
+ENTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TAB@{TAB}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!TAB@{TAB}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaf684bf05fa3e81528c84d1d281d839f1} 
+TAB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BACKSPACE@{BACKSPACE}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BACKSPACE@{BACKSPACE}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea6f5d8e41084b4d3d47fa621c459eede1} 
+BACKSPACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INSERT@{INSERT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!INSERT@{INSERT}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea61ee777e7f71dc466c3b2c685d8d313b} 
+INSERT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEL@{DEL}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!DEL@{DEL}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea2bbe23c0e8b3f638f0f5aed4b6864513} 
+DEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!RIGHT@{RIGHT}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea21507b40c80068eda19865706fdc2403} 
+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!LEFT@{LEFT}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea684d325a7303f52e64011467ff5c5758} 
+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOWN@{DOWN}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!DOWN@{DOWN}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eac4e0e4e3118472beeb2ae75827450f1f} 
+DOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!UP@{UP}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eafbaedde498cdead4f2780217646e9ba1} 
+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAGE\_UP@{PAGE\_UP}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!PAGE\_UP@{PAGE\_UP}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eae791d936f894ce58dd18bf603edcb9b4} 
+PAGE\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAGE\_DOWN@{PAGE\_DOWN}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!PAGE\_DOWN@{PAGE\_DOWN}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eae9a23c5ce3d34b40123d65ca14b2e88f} 
+PAGE\+\_\+\+DOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HOME@{HOME}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!HOME@{HOME}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea710533dd879dd1202e5c73b27705bf02} 
+HOME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{END@{END}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!END@{END}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eab1a326c06d88bf042f73d70f50197905} 
+END&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAPS\_LOCK@{CAPS\_LOCK}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!CAPS\_LOCK@{CAPS\_LOCK}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eae40af1d5cc55c55ae0bb25953f7a7ee2} 
+CAPS\+\_\+\+LOCK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCROLL\_LOCK@{SCROLL\_LOCK}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!SCROLL\_LOCK@{SCROLL\_LOCK}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea324bf1f059b99e2882bc1d567080d8ed} 
+SCROLL\+\_\+\+LOCK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NUM\_LOCK@{NUM\_LOCK}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!NUM\_LOCK@{NUM\_LOCK}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eacb0d0bf9279e78f982deba761110e434} 
+NUM\+\_\+\+LOCK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PRINT\_SCREEN@{PRINT\_SCREEN}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!PRINT\_SCREEN@{PRINT\_SCREEN}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea853f8ded7a96b5a765704974e6a3ca96} 
+PRINT\+\_\+\+SCREEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAUSE@{PAUSE}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!PAUSE@{PAUSE}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea291554596c183e837f0a6bec3767c891} 
+PAUSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F1@{F1}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F1@{F1}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eae1dffc8709f31a4987c8a88334107e89} 
+F1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F2@{F2}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F2@{F2}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eafe5c3684dce76cdd9f7f42430868aa74} 
+F2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F3@{F3}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F3@{F3}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea4b6bf4b531770872d4328ce69bef5627} 
+F3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F4@{F4}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F4@{F4}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eae7e0e72401a9f2718ed0f39f2861d702} 
+F4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F5@{F5}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F5@{F5}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea37f438df6a6d5ba4c17ef8ca58562f00} 
+F5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F6@{F6}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F6@{F6}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea1faf42f2823f184eb2c9f0dffe5d73f2} 
+F6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F7@{F7}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F7@{F7}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea47489eb597b7db34caa24b1fc78fc839} 
+F7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F8@{F8}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F8@{F8}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea4787509ad9f9d747a81a30e9dde3d4a7} 
+F8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F9@{F9}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F9@{F9}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea892a245e287c163080b23db737d3c4c9} 
+F9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F10@{F10}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F10@{F10}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eab213ce22ca6ad4eda8db82966b9b6e5a} 
+F10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F11@{F11}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F11@{F11}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea643b0662422d1d0dffa3fca2e2bf28a8} 
+F11&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F12@{F12}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F12@{F12}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eae902674982fc99aa343cdd94da7476c3} 
+F12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F13@{F13}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F13@{F13}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea95dfde4807d4d6a9eec499203b3c24a0} 
+F13&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F14@{F14}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F14@{F14}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea2468649b6215c4cdd2aef5095b3f5932} 
+F14&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F15@{F15}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F15@{F15}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eae53b55851b9ff4979f2c3ff434a4a138} 
+F15&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F16@{F16}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F16@{F16}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea56d8353718e6fdc78b8d69078a2cdb94} 
+F16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F17@{F17}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F17@{F17}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaffa5882d1ddcf903bf0d0dbc30bfc604} 
+F17&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F18@{F18}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F18@{F18}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea810b30cdfc07fd7fff553a94b828ff78} 
+F18&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F19@{F19}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F19@{F19}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eacd7c2a221ef5d0a34acc0bcd679b2054} 
+F19&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F20@{F20}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F20@{F20}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eafc335adb3d69d3d8270769e1923ea4dc} 
+F20&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F21@{F21}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F21@{F21}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea77e9eee7c579eef5f3731ecf1053c02e} 
+F21&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F22@{F22}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F22@{F22}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea7fa06ead699fcbd63132370ffe13335a} 
+F22&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F23@{F23}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F23@{F23}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea889645d530078147e7dc69a9caadc31e} 
+F23&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F24@{F24}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F24@{F24}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaebd7820c520d05eca2d775c37d141273} 
+F24&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F25@{F25}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!F25@{F25}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaabf9846f265ae3dea4bf9d740f5cb1aa} 
+F25&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_0@{KEYPAD\_0}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_0@{KEYPAD\_0}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea957845bc887cf9c729098634ff707338} 
+KEYPAD\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_1@{KEYPAD\_1}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_1@{KEYPAD\_1}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea080b894b2cce98d65634089f043f7fd8} 
+KEYPAD\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_2@{KEYPAD\_2}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_2@{KEYPAD\_2}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea3a347a9bc01bf97c17deb8f102cd56c3} 
+KEYPAD\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_3@{KEYPAD\_3}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_3@{KEYPAD\_3}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea6e744526a6fe0b6e9d29a1c597ab4337} 
+KEYPAD\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_4@{KEYPAD\_4}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_4@{KEYPAD\_4}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea9d1ebfba4b03a426803811761d0b1116} 
+KEYPAD\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_5@{KEYPAD\_5}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_5@{KEYPAD\_5}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea3b6e8f8cda6bb4dd39644878da3c6cff} 
+KEYPAD\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_6@{KEYPAD\_6}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_6@{KEYPAD\_6}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea7f0f5820cf7aa6476e6af13282d6193d} 
+KEYPAD\+\_\+6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_7@{KEYPAD\_7}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_7@{KEYPAD\_7}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea320d23c4f248cfe92ae073ba17145818} 
+KEYPAD\+\_\+7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_8@{KEYPAD\_8}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_8@{KEYPAD\_8}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea2209d9677700e702d8cf41cef953ba1e} 
+KEYPAD\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_9@{KEYPAD\_9}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_9@{KEYPAD\_9}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea372163187a9a40d0c84d2b38a67d4ddb} 
+KEYPAD\+\_\+9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_DECIMAL@{KEYPAD\_DECIMAL}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_DECIMAL@{KEYPAD\_DECIMAL}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea7e0da1daa4958a22c87040632d308c91} 
+KEYPAD\+\_\+\+DECIMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_DIVIDE@{KEYPAD\_DIVIDE}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_DIVIDE@{KEYPAD\_DIVIDE}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea681823b13d0569ba6ed75efe05bf7563} 
+KEYPAD\+\_\+\+DIVIDE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_MULTIPLY@{KEYPAD\_MULTIPLY}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_MULTIPLY@{KEYPAD\_MULTIPLY}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea2e6edb38f454ce4d1903cb0353e2394c} 
+KEYPAD\+\_\+\+MULTIPLY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_SUBSTRACT@{KEYPAD\_SUBSTRACT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_SUBSTRACT@{KEYPAD\_SUBSTRACT}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ead3d53f7667b07f3bd9db31f4453240db} 
+KEYPAD\+\_\+\+SUBSTRACT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_ADD@{KEYPAD\_ADD}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_ADD@{KEYPAD\_ADD}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea1f752be177c2938ae9d60b98e40cf3ee} 
+KEYPAD\+\_\+\+ADD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_ENTER@{KEYPAD\_ENTER}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_ENTER@{KEYPAD\_ENTER}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea3bb97b2ea7b13cbba2e34ed4e63f4f1c} 
+KEYPAD\+\_\+\+ENTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYPAD\_EQUAL@{KEYPAD\_EQUAL}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!KEYPAD\_EQUAL@{KEYPAD\_EQUAL}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea480a19a2c02c47d566fb11471f091b6c} 
+KEYPAD\+\_\+\+EQUAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT\_SHIFT@{LEFT\_SHIFT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!LEFT\_SHIFT@{LEFT\_SHIFT}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eab6c7e6204e97690efd79d6f513ed5613} 
+LEFT\+\_\+\+SHIFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT\_CONTROL@{LEFT\_CONTROL}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!LEFT\_CONTROL@{LEFT\_CONTROL}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaddf133566f544b297f2f84874c283589} 
+LEFT\+\_\+\+CONTROL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT\_ALT@{LEFT\_ALT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!LEFT\_ALT@{LEFT\_ALT}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea3a92f3bbf26e4ea5ea7ce7db2f432c56} 
+LEFT\+\_\+\+ALT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT\_SUPER@{LEFT\_SUPER}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!LEFT\_SUPER@{LEFT\_SUPER}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eafd816cf0346d4939b4cf3bed78dd7fde} 
+LEFT\+\_\+\+SUPER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT\_SHIFT@{RIGHT\_SHIFT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!RIGHT\_SHIFT@{RIGHT\_SHIFT}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea63a707029860972efa1c44ac6016e098} 
+RIGHT\+\_\+\+SHIFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT\_CONTROL@{RIGHT\_CONTROL}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!RIGHT\_CONTROL@{RIGHT\_CONTROL}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea80cdb34a10d276950f8b20b6814c9194} 
+RIGHT\+\_\+\+CONTROL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT\_ALT@{RIGHT\_ALT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!RIGHT\_ALT@{RIGHT\_ALT}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea0123827c03dce5d07ebd43bd649a1073} 
+RIGHT\+\_\+\+ALT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT\_SUPER@{RIGHT\_SUPER}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!RIGHT\_SUPER@{RIGHT\_SUPER}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea8825bb5d58b44b72465799553acb964d} 
+RIGHT\+\_\+\+SUPER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU@{MENU}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!MENU@{MENU}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea3ed53fbeb1eab0443561b68ca0c0b5cf} 
+MENU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ANY\_SHIFT@{ANY\_SHIFT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!ANY\_SHIFT@{ANY\_SHIFT}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea5ac6da47cfa6f5e51b607378ad6927f4} 
+ANY\+\_\+\+SHIFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ANY\_ALT@{ANY\_ALT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!ANY\_ALT@{ANY\_ALT}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39eaf62243e85cb79aa6e7b5b4226e7eaf8e} 
+ANY\+\_\+\+ALT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_\_END@{\_\_END}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!\_\_END@{\_\_END}}}\label{namespace_o_s_k_1_1_i_o_a0b92714a4a778072d4824502589bd39ea72b49a7cbf0c0e3dff052d091d838252} 
+\+\_\+\+\_\+\+END&\\
+\hline
+
+\end{DoxyEnumFields}
+\index{OSK::IO@{OSK::IO}!KeyState@{KeyState}}
+\index{KeyState@{KeyState}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{KeyState}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_a78afb37a98c122d12c3a1a38aba9e56e} 
+enum class \textbf{ OSK\+::\+IO\+::\+Key\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Posibles estados de una tecla del teclado. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RELEASED@{RELEASED}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!RELEASED@{RELEASED}}}\label{namespace_o_s_k_1_1_i_o_a78afb37a98c122d12c3a1a38aba9e56ea109d54efbb64d71f9a6ab18d0fb8add8} 
+RELEASED&No está siendo pulsado. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PRESSED@{PRESSED}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!PRESSED@{PRESSED}}}\label{namespace_o_s_k_1_1_i_o_a78afb37a98c122d12c3a1a38aba9e56ea5381dc876ab002103a027265bc14ae52} 
+PRESSED&Está siendo pulsado. \\
+\hline
+
+\end{DoxyEnumFields}
+\index{OSK::IO@{OSK::IO}!LogLevel@{LogLevel}}
+\index{LogLevel@{LogLevel}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{LogLevel}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_ab5911b02468e4b2c4e4b31322f777b16} 
+enum class \textbf{ OSK\+::\+IO\+::\+Log\+Level}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Nivel de importancia del mensaje de un \doxyref{ILogger}{pág.}{class_o_s_k_1_1_i_o_1_1_i_logger}. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO@{NO}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!NO@{NO}}}\label{namespace_o_s_k_1_1_i_o_ab5911b02468e4b2c4e4b31322f777b16ac2f3f489a00553e7a01d369c103c7251} 
+NO&Sin ningún nivel establecido. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO@{INFO}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!INFO@{INFO}}}\label{namespace_o_s_k_1_1_i_o_ab5911b02468e4b2c4e4b31322f777b16a551b723eafd6a31d444fcb2f5920fbd3} 
+INFO&Mensaje informativo. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\_DEBUG@{L\_DEBUG}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!L\_DEBUG@{L\_DEBUG}}}\label{namespace_o_s_k_1_1_i_o_ab5911b02468e4b2c4e4b31322f777b16a08b4ea10e0b74d2525169e9a548ad289} 
+L\+\_\+\+DEBUG&Mensaje de depuración. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARNING@{WARNING}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!WARNING@{WARNING}}}\label{namespace_o_s_k_1_1_i_o_ab5911b02468e4b2c4e4b31322f777b16a059e9861e0400dfbe05c98a841f3f96b} 
+WARNING&Mensaje de advertencia importante. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\_ERROR@{L\_ERROR}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!L\_ERROR@{L\_ERROR}}}\label{namespace_o_s_k_1_1_i_o_ab5911b02468e4b2c4e4b31322f777b16a09a4958c62797939de4f305385bb41cb} 
+L\+\_\+\+ERROR&Mensaje de error irrecuperable. \\
+\hline
+
+\end{DoxyEnumFields}
+\index{OSK::IO@{OSK::IO}!MouseButton@{MouseButton}}
+\index{MouseButton@{MouseButton}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{MouseButton}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_ab1308b3812c6bb66739549adf2501e77} 
+enum class \textbf{ OSK\+::\+IO\+::\+Mouse\+Button}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Botones del ratón. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_1@{BUTTON\_1}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BUTTON\_1@{BUTTON\_1}}}\label{namespace_o_s_k_1_1_i_o_ab1308b3812c6bb66739549adf2501e77ac8dcbbd6eda649ff9bdb9873ae813ce4} 
+BUTTON\+\_\+1&Botón extra \#1. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_2@{BUTTON\_2}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BUTTON\_2@{BUTTON\_2}}}\label{namespace_o_s_k_1_1_i_o_ab1308b3812c6bb66739549adf2501e77aa1a723bed8032bec8965b277db1282fd} 
+BUTTON\+\_\+2&Botón extra \#2. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_3@{BUTTON\_3}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BUTTON\_3@{BUTTON\_3}}}\label{namespace_o_s_k_1_1_i_o_ab1308b3812c6bb66739549adf2501e77abed7db4dd815234cab9bc093ce7211ce} 
+BUTTON\+\_\+3&Botón extra \#3. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_4@{BUTTON\_4}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BUTTON\_4@{BUTTON\_4}}}\label{namespace_o_s_k_1_1_i_o_ab1308b3812c6bb66739549adf2501e77aced95fd58604044d16afa405cc000f15} 
+BUTTON\+\_\+4&Botón extra \#4. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_5@{BUTTON\_5}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BUTTON\_5@{BUTTON\_5}}}\label{namespace_o_s_k_1_1_i_o_ab1308b3812c6bb66739549adf2501e77a8ff4e0dd37cc18b1e5f58a03b587cc58} 
+BUTTON\+\_\+5&Botón extra \#5. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_6@{BUTTON\_6}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BUTTON\_6@{BUTTON\_6}}}\label{namespace_o_s_k_1_1_i_o_ab1308b3812c6bb66739549adf2501e77a34bb46927945c34d8fb1cd3cca06f777} 
+BUTTON\+\_\+6&Botón extra \#6. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_7@{BUTTON\_7}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BUTTON\_7@{BUTTON\_7}}}\label{namespace_o_s_k_1_1_i_o_ab1308b3812c6bb66739549adf2501e77a4f9e8a2c91b9d7fb9ed8db0caff8397a} 
+BUTTON\+\_\+7&Botón extra \#7. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_LEFT@{BUTTON\_LEFT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BUTTON\_LEFT@{BUTTON\_LEFT}}}\label{namespace_o_s_k_1_1_i_o_ab1308b3812c6bb66739549adf2501e77a36d9e3a4330b098458b81de2a861cbaa} 
+BUTTON\+\_\+\+LEFT&Botón izquierdo. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_RIGHT@{BUTTON\_RIGHT}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BUTTON\_RIGHT@{BUTTON\_RIGHT}}}\label{namespace_o_s_k_1_1_i_o_ab1308b3812c6bb66739549adf2501e77ae075c9b2c5940dd1aa3b1564a8353f27} 
+BUTTON\+\_\+\+RIGHT&Botón derecho. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_MIDDLE@{BUTTON\_MIDDLE}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!BUTTON\_MIDDLE@{BUTTON\_MIDDLE}}}\label{namespace_o_s_k_1_1_i_o_ab1308b3812c6bb66739549adf2501e77a02029eeec1878b3c58e83b74ce07d11c} 
+BUTTON\+\_\+\+MIDDLE&Botón de la rueda. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_\_END@{\_\_END}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!\_\_END@{\_\_END}}}\label{namespace_o_s_k_1_1_i_o_ab1308b3812c6bb66739549adf2501e77a72b49a7cbf0c0e3dff052d091d838252} 
+\+\_\+\+\_\+\+END&\\
+\hline
+
+\end{DoxyEnumFields}
+\index{OSK::IO@{OSK::IO}!MouseMotionMode@{MouseMotionMode}}
+\index{MouseMotionMode@{MouseMotionMode}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{MouseMotionMode}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_a5ba6ec63fc3ebf3e796c86246821b317} 
+enum class \textbf{ OSK\+::\+IO\+::\+Mouse\+Motion\+Mode}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Modos de aceleración por software que puede tener el ratón. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RAW@{RAW}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!RAW@{RAW}}}\label{namespace_o_s_k_1_1_i_o_a5ba6ec63fc3ebf3e796c86246821b317a633d6abff0a3fc22404347728d195059} 
+RAW&Aceleración desactivada. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACCELERATED@{ACCELERATED}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!ACCELERATED@{ACCELERATED}}}\label{namespace_o_s_k_1_1_i_o_a5ba6ec63fc3ebf3e796c86246821b317a8f1270de21fbcf7d1a5216d7761ee58c} 
+ACCELERATED&Aceleración activada. \\
+\hline
+
+\end{DoxyEnumFields}
+\index{OSK::IO@{OSK::IO}!MouseReturnMode@{MouseReturnMode}}
+\index{MouseReturnMode@{MouseReturnMode}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{MouseReturnMode}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_a2f854259da792bdb856dedf2a07ee49d} 
+enum class \textbf{ OSK\+::\+IO\+::\+Mouse\+Return\+Mode}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Comportamiento del ratón. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE@{FREE}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!FREE@{FREE}}}\label{namespace_o_s_k_1_1_i_o_a2f854259da792bdb856dedf2a07ee49da88c189a42c87aa49d667fc8ab76bc323} 
+FREE&El ratón se mueve libremente. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALWAYS\_RETURN@{ALWAYS\_RETURN}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!ALWAYS\_RETURN@{ALWAYS\_RETURN}}}\label{namespace_o_s_k_1_1_i_o_a2f854259da792bdb856dedf2a07ee49da42190ae7de8d84128ff7d1abcc9894a4} 
+ALWAYS\+\_\+\+RETURN&El ratón siempre está en el centro de la pantalla. \\
+\hline
+
+\end{DoxyEnumFields}
+\index{OSK::IO@{OSK::IO}!TouchInputType@{TouchInputType}}
+\index{TouchInputType@{TouchInputType}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{TouchInputType}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_affb2d4a923aea8df5a3f2ff8ae6fdf0d} 
+enum class \textbf{ OSK\+::\+IO\+::\+Touch\+Input\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+ClasificaciÃ³n de un toque en pantalla tÃ¡ctil, segÃºn acabe de empezar o represente un toque mantenido o de arrastre. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{START@{START}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!START@{START}}}\label{namespace_o_s_k_1_1_i_o_affb2d4a923aea8df5a3f2ff8ae6fdf0dab078ffd28db767c502ac367053f6e0ac} 
+START&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{END@{END}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!END@{END}}}\label{namespace_o_s_k_1_1_i_o_affb2d4a923aea8df5a3f2ff8ae6fdf0dab1a326c06d88bf042f73d70f50197905} 
+END&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTINUING@{CONTINUING}!OSK::IO@{OSK::IO}}\index{OSK::IO@{OSK::IO}!CONTINUING@{CONTINUING}}}\label{namespace_o_s_k_1_1_i_o_affb2d4a923aea8df5a3f2ff8ae6fdf0da5c5903989cbe2858aebf66170adf3b97} 
+CONTINUING&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones}
+\index{OSK::IO@{OSK::IO}!GetPrintableKeyText@{GetPrintableKeyText}}
+\index{GetPrintableKeyText@{GetPrintableKeyText}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{GetPrintableKeyText()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_a9536bbc94cea0a101e686d2b434f7403} 
+char OSK\+::\+IO\+::\+Get\+Printable\+Key\+Text (\begin{DoxyParamCaption}\item[{const \textbf{ Key} \&}]{key}{, }\item[{bool}]{is\+Mayus}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em key} & Tecla del teclado. \\
+\hline
+{\em is\+Mayus} & True si debe ser mayúsculas (pulsando SHIFT, por ejemplo). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Carácter que se corresponde con la tecla indicada.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily key} debe estar dentro de Printable\+Keys. 
+\end{DoxyPrecond}
+
+
+\label{doc-var-members}
+\doxysubsection{Documentación de variables}
+\index{OSK::IO@{OSK::IO}!KeyboardNumberOfKeys@{KeyboardNumberOfKeys}}
+\index{KeyboardNumberOfKeys@{KeyboardNumberOfKeys}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{KeyboardNumberOfKeys}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_ab6538119e8f374865c6ac58dab067993} 
+int OSK\+::\+IO\+::\+Keyboard\+Number\+Of\+Keys = (int)\textbf{ Key\+::\+\_\+\+\_\+\+END}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Número de teclas disponibles en el teclado. 
+
+\index{OSK::IO@{OSK::IO}!MouseNumberOfButtons@{MouseNumberOfButtons}}
+\index{MouseNumberOfButtons@{MouseNumberOfButtons}!OSK::IO@{OSK::IO}}
+\doxysubsubsection{MouseNumberOfButtons}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_i_o_a2126937723636a6160e7c746cc47b61c} 
+int OSK\+::\+IO\+::\+Mouse\+Number\+Of\+Buttons = (int)\textbf{ Mouse\+Button\+::\+\_\+\+\_\+\+END}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Número de teclas disponibles en el teclado. 
+

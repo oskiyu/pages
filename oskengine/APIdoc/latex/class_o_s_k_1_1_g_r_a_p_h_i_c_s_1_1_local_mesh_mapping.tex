@@ -1,0 +1,125 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Local\+Mesh\+Mapping}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_mesh_mapping}\index{OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}}
+
+
+{\ttfamily \#include $<$Mesh\+Mapping.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Local\+Mesh\+Mapping} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Local\+Mesh\+Mapping})
+\item 
+void \textbf{ Register\+Model} (\textbf{ Gpu\+Model\+Uuid} model\+Id)
+\item 
+void \textbf{ Unregister\+Model} (\textbf{ Gpu\+Model\+Uuid} model\+Id)
+\item 
+\textbf{ Local\+Per\+Model\+Data} \& \textbf{ Get\+Model\+Data} (\textbf{ Gpu\+Model\+Uuid} model\+Id)
+\item 
+const \textbf{ Local\+Per\+Model\+Data} \& \textbf{ Get\+Model\+Data} (\textbf{ Gpu\+Model\+Uuid} model\+Id) const
+\item 
+bool \textbf{ Has\+Model} (\textbf{ Gpu\+Model\+Uuid} model\+Id) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura de datos con la información relevante de cada modelo y cada mesh para un pase de renderizado. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}!LocalMeshMapping@{LocalMeshMapping}}
+\index{LocalMeshMapping@{LocalMeshMapping}!OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}}
+\doxysubsubsection{LocalMeshMapping()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_mesh_mapping_a9637014fd444af42cc3ba635514a9a7f} 
+OSK\+::\+GRAPHICS\+::\+Local\+Mesh\+Mapping\+::\+Local\+Mesh\+Mapping (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}!GetModelData@{GetModelData}}
+\index{GetModelData@{GetModelData}!OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}}
+\doxysubsubsection{GetModelData()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_mesh_mapping_ada7c109e66a0fc364eb1a098b25f97bf} 
+\textbf{ Local\+Per\+Model\+Data} \& Local\+Mesh\+Mapping\+::\+Get\+Model\+Data (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Model\+Uuid}}]{model\+Id}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em model\+Id} & ID del modelo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Datos del modelo.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe existir un modelo con identificador {\ttfamily model\+Id} registrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}!GetModelData@{GetModelData}}
+\index{GetModelData@{GetModelData}!OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}}
+\doxysubsubsection{GetModelData()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_mesh_mapping_aff84022c0ffd1304334c80fc641c5f82} 
+const \textbf{ Local\+Per\+Model\+Data} \& Local\+Mesh\+Mapping\+::\+Get\+Model\+Data (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Model\+Uuid}}]{model\+Id}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em model\+Id} & ID del modelo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Datos del modelo.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe existir un modelo con identificador {\ttfamily model\+Id} registrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}!HasModel@{HasModel}}
+\index{HasModel@{HasModel}!OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}}
+\doxysubsubsection{HasModel()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_mesh_mapping_a1128e8d47a01f1d06ded3d0a9685b1bd} 
+bool Local\+Mesh\+Mapping\+::\+Has\+Model (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Model\+Uuid}}]{model\+Id}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si tiene registrado un modelo con el ID {\ttfamily model\+Id}. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_mesh_mapping_a6e9345a2899a831b023e78191950d787} 
+OSK\+::\+GRAPHICS\+::\+Local\+Mesh\+Mapping\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Local\+Mesh\+Mapping}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}!RegisterModel@{RegisterModel}}
+\index{RegisterModel@{RegisterModel}!OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}}
+\doxysubsubsection{RegisterModel()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_mesh_mapping_a4620488177abab091a0d25c8f2568802} 
+void Local\+Mesh\+Mapping\+::\+Register\+Model (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Model\+Uuid}}]{model\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuevo modelo, añadiendo una entrada para él. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em model\+Id} & Identificador único del modelo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+No debe existir un modelo con identificador {\ttfamily model\+Id} registrado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}!UnregisterModel@{UnregisterModel}}
+\index{UnregisterModel@{UnregisterModel}!OSK::GRAPHICS::LocalMeshMapping@{OSK::GRAPHICS::LocalMeshMapping}}
+\doxysubsubsection{UnregisterModel()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_mesh_mapping_a3c9ea006009ea3db2ef8c575742af9b5} 
+void Local\+Mesh\+Mapping\+::\+Unregister\+Model (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Model\+Uuid}}]{model\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Elimina un modelo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em model\+Id} & Identificador único del modelo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe existir un modelo con identificador {\ttfamily model\+Id} registrado. 
+\end{DoxyPrecond}

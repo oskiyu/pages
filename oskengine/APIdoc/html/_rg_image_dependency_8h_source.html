@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/RgImageDependency.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_rg_image_dependency_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">RgImageDependency.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;RgDependencyType.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Format.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;GpuImageUsage.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;GpuBarrierInfo.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;GpuImageRange.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;GpuImageViewConfig.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;ImageUuid.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;RgDependencyShaderBinding.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency.html">   20</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency.html">PartialRgImageDependency</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency.html#ad0f9242d7fa1b1260fc8ae417f97bca2">   23</a></span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a48c1092c3802b0eb44159dd4dcd66c96">GdrImageUuid</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency.html#ad0f9242d7fa1b1260fc8ae417f97bca2">imageRefId</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency.html#a7c2100a65a15c67785b1c7301be0bad8">   26</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a8967e4a4559d07f1a0b815b37d6e26b8">GpuExclusiveImageUsage</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency.html#a7c2100a65a15c67785b1c7301be0bad8">usage</a> = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a8967e4a4559d07f1a0b815b37d6e26b8a696b031073e74bf2cb98e5ef201d4aa3">GpuExclusiveImageUsage::UNKNOWN</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    };</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html">   35</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html">RgImageDependency</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">static</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html">RgImageDependency</a> <a class="code hl_function" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#aa211269983f8e5a53e1a3403527534dc">ColorTarget</a>(<a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a48c1092c3802b0eb44159dd4dcd66c96">GdrImageUuid</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#adad35139e7ac4b264ba873dfda2dd873">imageRefId</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">static</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html">RgImageDependency</a> <a class="code hl_function" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a513e9a2d674882b319ea0437cbf90a13">ComputeTarget</a>(<a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a48c1092c3802b0eb44159dd4dcd66c96">GdrImageUuid</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#adad35139e7ac4b264ba873dfda2dd873">imageRefId</a>, <span class="keyword">const</span> std::string&amp; slot, <span class="keyword">const</span> std::string&amp; binding);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">static</span> <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html">RgImageDependency</a> <a class="code hl_function" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a2bbc90021c0487c47a06929d1eddd2d2">Sampled_Fragment_SingleMipLevel</a>(<a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a48c1092c3802b0eb44159dd4dcd66c96">GdrImageUuid</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#adad35139e7ac4b264ba873dfda2dd873">imageRefId</a>, <span class="keyword">const</span> std::string&amp; slot, <span class="keyword">const</span> std::string&amp; binding);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#adad35139e7ac4b264ba873dfda2dd873">   49</a></span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a48c1092c3802b0eb44159dd4dcd66c96">GdrImageUuid</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#adad35139e7ac4b264ba873dfda2dd873">imageRefId</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a2d949a8357fdf3567b8d139ac5a1797c">   52</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aa5f39fc7b67abfcf6262c5eaef275940">RgDependencyType</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a2d949a8357fdf3567b8d139ac5a1797c">type</a> = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aa5f39fc7b67abfcf6262c5eaef275940aa7b843fb734e3b3fea8e5f902d3f4144">RgDependencyType::READ_WRITE</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a96c849761574804f433569eea0338ff9">   55</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a8967e4a4559d07f1a0b815b37d6e26b8">GpuExclusiveImageUsage</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a96c849761574804f433569eea0338ff9">usage</a> = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a8967e4a4559d07f1a0b815b37d6e26b8a696b031073e74bf2cb98e5ef201d4aa3">GpuExclusiveImageUsage::UNKNOWN</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#af1c9fe53039fe2390ce0c012db028bc8">   58</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a87b8cca05623bca89396376156c6c641">GpuCommandStage</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#af1c9fe53039fe2390ce0c012db028bc8">stage</a> = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a87b8cca05623bca89396376156c6c641ab50339a10e1de285ac99d4c3990b8693">GpuCommandStage::NONE</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a53bf4c709a2e05b6ec91c394bdc7f1e8">   61</a></span>        <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_range.html">GpuImageRange</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a53bf4c709a2e05b6ec91c394bdc7f1e8">range</a>{};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a5b10576851442e5f95fd3b30e9d11767">   64</a></span>        <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config.html">GpuImageViewConfig</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a5b10576851442e5f95fd3b30e9d11767">viewConfig</a>{};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#aa052704a56c067fe7f24c91f20105549">   67</a></span>        <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc.html">GpuImageSamplerDesc</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#aa052704a56c067fe7f24c91f20105549">samplerDesc</a>{};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a56e8d92520e56ea3214d9a9d8b22f3c6">   70</a></span>        <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_dependency_shader_binding.html">RgDependencyShaderBinding</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a56e8d92520e56ea3214d9a9d8b22f3c6">shaderBinding</a>{};</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#ae2867cafcc876814870b822a13d54681">   73</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#ae2867cafcc876814870b822a13d54681">arrayIndex</a> = 0;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a0190ec24651bd859d74c9ffac29bdd75">   78</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a0190ec24651bd859d74c9ffac29bdd75">clearIfTargetImage</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a73da83674cea07ce4a971704535160a7">   82</a></span>        std::optional&lt;UIndex16&gt; <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a73da83674cea07ce4a971704535160a7">frameInFlight</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    };</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></div><div class="ttdef"><b>Definition</b> AccelerationStructuresExceptions.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a48c1092c3802b0eb44159dd4dcd66c96"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a48c1092c3802b0eb44159dd4dcd66c96">OSK::GRAPHICS::GdrImageUuid</a></div><div class="ttdeci">BaseUuid&lt; class GdrImage &gt; GdrImageUuid</div><div class="ttdoc">Identificador de una imagen usada en un render-graph.</div><div class="ttdef"><b>Definition</b> ImageUuid.h:9</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a87b8cca05623bca89396376156c6c641"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a87b8cca05623bca89396376156c6c641">OSK::GRAPHICS::GpuCommandStage</a></div><div class="ttdeci">GpuCommandStage</div><div class="ttdoc">Un command stage permite diferenciar los distintos tipos de comandos ejecutables por la GPU....</div><div class="ttdef"><b>Definition</b> GpuBarrierInfo.h:17</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a87b8cca05623bca89396376156c6c641ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a87b8cca05623bca89396376156c6c641ab50339a10e1de285ac99d4c3990b8693">OSK::GRAPHICS::GpuCommandStage::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdoc">Ningún comando será afectado.</div><div class="ttdef"><b>Definition</b> GpuBarrierInfo.h:57</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a8967e4a4559d07f1a0b815b37d6e26b8"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a8967e4a4559d07f1a0b815b37d6e26b8">OSK::GRAPHICS::GpuExclusiveImageUsage</a></div><div class="ttdeci">GpuExclusiveImageUsage</div><div class="ttdoc">Uso único de una imagen en un render-pass.</div><div class="ttdef"><b>Definition</b> GpuImageUsage.h:72</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a8967e4a4559d07f1a0b815b37d6e26b8a696b031073e74bf2cb98e5ef201d4aa3"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a8967e4a4559d07f1a0b815b37d6e26b8a696b031073e74bf2cb98e5ef201d4aa3">OSK::GRAPHICS::GpuExclusiveImageUsage::UNKNOWN</a></div><div class="ttdeci">@ UNKNOWN</div><div class="ttdef"><b>Definition</b> GpuImageUsage.h:73</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_aa5f39fc7b67abfcf6262c5eaef275940"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aa5f39fc7b67abfcf6262c5eaef275940">OSK::GRAPHICS::RgDependencyType</a></div><div class="ttdeci">RgDependencyType</div><div class="ttdef"><b>Definition</b> RgDependencyType.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_aa5f39fc7b67abfcf6262c5eaef275940aa7b843fb734e3b3fea8e5f902d3f4144"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aa5f39fc7b67abfcf6262c5eaef275940aa7b843fb734e3b3fea8e5f902d3f4144">OSK::GRAPHICS::RgDependencyType::READ_WRITE</a></div><div class="ttdeci">@ READ_WRITE</div><div class="ttdef"><b>Definition</b> RgDependencyType.h:6</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a382ed4c8a6994201cbad5d4e1335861b"><div class="ttname"><a href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">OSK::UIndex32</a></div><div class="ttdeci">uint32_t UIndex32</div><div class="ttdoc">Índice de un elemento, almacenado en un unsigned int de 32 bits.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:21</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_range_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_range.html">OSK::GRAPHICS::GpuImageRange</a></div><div class="ttdoc">Describe un rango de una imagen, incluyendo capas, niveles de mip y canales.</div><div class="ttdef"><b>Definition</b> GpuImageRange.h:12</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc.html">OSK::GRAPHICS::GpuImageSamplerDesc</a></div><div class="ttdoc">Establece propiedades básicas sobre el acceso a la imagen.</div><div class="ttdef"><b>Definition</b> GpuImageSamplerDesc.h:75</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_view_config.html">OSK::GRAPHICS::GpuImageViewConfig</a></div><div class="ttdoc">Configuración de un image view. Desribe las características de un image view.</div><div class="ttdef"><b>Definition</b> GpuImageViewConfig.h:53</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency.html">OSK::GRAPHICS::PartialRgImageDependency</a></div><div class="ttdoc">Dependencia mínima necesaria para poder crear una imagen.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:20</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency_html_a7c2100a65a15c67785b1c7301be0bad8"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency.html#a7c2100a65a15c67785b1c7301be0bad8">OSK::GRAPHICS::PartialRgImageDependency::usage</a></div><div class="ttdeci">GpuExclusiveImageUsage usage</div><div class="ttdoc">Uso que se le va a dar en el render-pass.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:26</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency_html_ad0f9242d7fa1b1260fc8ae417f97bca2"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_image_dependency.html#ad0f9242d7fa1b1260fc8ae417f97bca2">OSK::GRAPHICS::PartialRgImageDependency::imageRefId</a></div><div class="ttdeci">GdrImageUuid imageRefId</div><div class="ttdoc">ID único de la imagen.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:23</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_dependency_shader_binding_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_dependency_shader_binding.html">OSK::GRAPHICS::RgDependencyShaderBinding</a></div><div class="ttdoc">Caso especial de una dependencia que se lee en un shader, ya sea de buffer o de imagen.</div><div class="ttdef"><b>Definition</b> RgDependencyShaderBinding.h:10</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html">OSK::GRAPHICS::RgImageDependency</a></div><div class="ttdoc">Dependencia de una imagen dentro de un render-pass: Indica una imagen que se va a usar dentro de un r...</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:35</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_a0190ec24651bd859d74c9ffac29bdd75"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a0190ec24651bd859d74c9ffac29bdd75">OSK::GRAPHICS::RgImageDependency::clearIfTargetImage</a></div><div class="ttdeci">bool clearIfTargetImage</div><div class="ttdoc">En caso de que sea una imagen de renderizado (de color o de profundidad), si se debe limpiar o no.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:78</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_a2bbc90021c0487c47a06929d1eddd2d2"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a2bbc90021c0487c47a06929d1eddd2d2">OSK::GRAPHICS::RgImageDependency::Sampled_Fragment_SingleMipLevel</a></div><div class="ttdeci">static RgImageDependency Sampled_Fragment_SingleMipLevel(GdrImageUuid imageRefId, const std::string &amp;slot, const std::string &amp;binding)</div><div class="ttdef"><b>Definition</b> RgImageDependency.cpp:34</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_a2d949a8357fdf3567b8d139ac5a1797c"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a2d949a8357fdf3567b8d139ac5a1797c">OSK::GRAPHICS::RgImageDependency::type</a></div><div class="ttdeci">RgDependencyType type</div><div class="ttdoc">Tipo de dependencia.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:52</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_a513e9a2d674882b319ea0437cbf90a13"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a513e9a2d674882b319ea0437cbf90a13">OSK::GRAPHICS::RgImageDependency::ComputeTarget</a></div><div class="ttdeci">static RgImageDependency ComputeTarget(GdrImageUuid imageRefId, const std::string &amp;slot, const std::string &amp;binding)</div><div class="ttdef"><b>Definition</b> RgImageDependency.cpp:19</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_a53bf4c709a2e05b6ec91c394bdc7f1e8"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a53bf4c709a2e05b6ec91c394bdc7f1e8">OSK::GRAPHICS::RgImageDependency::range</a></div><div class="ttdeci">GpuImageRange range</div><div class="ttdoc">Rango de la imagen usada.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:61</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_a56e8d92520e56ea3214d9a9d8b22f3c6"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a56e8d92520e56ea3214d9a9d8b22f3c6">OSK::GRAPHICS::RgImageDependency::shaderBinding</a></div><div class="ttdeci">RgDependencyShaderBinding shaderBinding</div><div class="ttdoc">Slot y binding en el que se usará.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:70</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_a5b10576851442e5f95fd3b30e9d11767"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a5b10576851442e5f95fd3b30e9d11767">OSK::GRAPHICS::RgImageDependency::viewConfig</a></div><div class="ttdeci">GpuImageViewConfig viewConfig</div><div class="ttdoc">Vista de la imagen.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:64</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_a73da83674cea07ce4a971704535160a7"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a73da83674cea07ce4a971704535160a7">OSK::GRAPHICS::RgImageDependency::frameInFlight</a></div><div class="ttdeci">std::optional&lt; UIndex16 &gt; frameInFlight</div><div class="ttdoc">Si está presente, indica en qué frame in flight se usará.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:82</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_a96c849761574804f433569eea0338ff9"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a96c849761574804f433569eea0338ff9">OSK::GRAPHICS::RgImageDependency::usage</a></div><div class="ttdeci">GpuExclusiveImageUsage usage</div><div class="ttdoc">Uso que se le va a dar en el render-pass.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:55</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_aa052704a56c067fe7f24c91f20105549"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#aa052704a56c067fe7f24c91f20105549">OSK::GRAPHICS::RgImageDependency::samplerDesc</a></div><div class="ttdeci">GpuImageSamplerDesc samplerDesc</div><div class="ttdoc">Sampler de la imagen.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:67</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_aa211269983f8e5a53e1a3403527534dc"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#aa211269983f8e5a53e1a3403527534dc">OSK::GRAPHICS::RgImageDependency::ColorTarget</a></div><div class="ttdeci">static RgImageDependency ColorTarget(GdrImageUuid imageRefId)</div><div class="ttdef"><b>Definition</b> RgImageDependency.cpp:6</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_adad35139e7ac4b264ba873dfda2dd873"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#adad35139e7ac4b264ba873dfda2dd873">OSK::GRAPHICS::RgImageDependency::imageRefId</a></div><div class="ttdeci">GdrImageUuid imageRefId</div><div class="ttdoc">ID único de la imagen.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:49</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_ae2867cafcc876814870b822a13d54681"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#ae2867cafcc876814870b822a13d54681">OSK::GRAPHICS::RgImageDependency::arrayIndex</a></div><div class="ttdeci">UIndex32 arrayIndex</div><div class="ttdoc">Índice dentro del array.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:73</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency_html_af1c9fe53039fe2390ce0c012db028bc8"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#af1c9fe53039fe2390ce0c012db028bc8">OSK::GRAPHICS::RgImageDependency::stage</a></div><div class="ttdeci">GpuCommandStage stage</div><div class="ttdoc">Stage en el que se usará.</div><div class="ttdef"><b>Definition</b> RgImageDependency.h:58</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>RgImageDependency.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

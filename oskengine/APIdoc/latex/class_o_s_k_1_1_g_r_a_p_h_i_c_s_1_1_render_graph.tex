@@ -1,0 +1,338 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Render\+Graph}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph}\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+
+
+{\ttfamily \#include $<$Render\+Graph.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Render\+Graph} (\textbf{ IRenderer} $\ast$renderer)
+\item 
+\textbf{ Gdr\+Buffer\+Uuid} \textbf{ Register\+Buffer} (const \textbf{ Rg\+Buffer\+Register\+Info} \&info)
+\item 
+\textbf{ Gdr\+Image\+Uuid} \textbf{ Register\+Image} (const \textbf{ Rg\+Image\+Register\+Info} \&info, \textbf{ Rg\+Relative\+Size\+Image\+Register\+Args} size)
+\item 
+\textbf{ Gdr\+Image\+Uuid} \textbf{ Register\+Image} (const \textbf{ Rg\+Image\+Register\+Info} \&info, \textbf{ Rg\+Absolute\+Size\+Image\+Register\+Args} size)
+\item 
+\textbf{ Gdr\+Image\+Uuid} \textbf{ Register\+External\+Image} (\textbf{ Gpu\+Image} $\ast$image)
+\item 
+void \textbf{ Rebind\+External\+Image} (\textbf{ Gdr\+Image\+Uuid} uuid, \textbf{ Gpu\+Image} $\ast$new\+Image)
+\item 
+\textbf{ Render\+Pass\+Uuid} \textbf{ Register\+Renderpass} (\textbf{ Unique\+Ptr}$<$ \textbf{ IRender\+Pass} $>$ \&\&pass, const \textbf{ Render\+Pass\+Dependencies} \&pass\+Dependencies)
+\item 
+void \textbf{ Compile} ()
+\item 
+void \textbf{ Execute} (\textbf{ ICommand\+List} $\ast$cmd\+List)
+\item 
+void \textbf{ Register\+Vertex\+Attribute} (\textbf{ Vertex\+Attrib\+Uuid} uuid, std\+::string name, \textbf{ USize32} attribute\+Size)
+\item 
+\textbf{ Gpu\+Buffer} \& \textbf{ Get\+Buffer} (\textbf{ Gdr\+Buffer\+Uuid} uuid)
+\item 
+const \textbf{ Gpu\+Buffer} \& \textbf{ Get\+Buffer} (\textbf{ Gdr\+Buffer\+Uuid} uuid) const
+\item 
+\textbf{ Gpu\+Image} \& \textbf{ Get\+Image} (\textbf{ Gdr\+Image\+Uuid} uuid)
+\item 
+const \textbf{ Gpu\+Image} \& \textbf{ Get\+Image} (\textbf{ Gdr\+Image\+Uuid} uuid) const
+\item 
+\textbf{ Gpu\+Geometry\+Entry} \textbf{ Register\+Geometry} (const \textbf{ Gpu\+Geometry\+Desc} \&geometry)
+\item 
+std\+::span$<$ const \textbf{ Vertex\+Attribute\+Entry} $>$ \textbf{ Get\+Registered\+Attributes} () const
+\item 
+std\+::span$<$ const \textbf{ Gdr\+Buffer\+Uuid} $>$ \textbf{ Get\+Registered\+Attributes\+Buffer\+Uuids} () const
+\item 
+\textbf{ Rg\+Buffer\+Ref} \textbf{ Get\+Attribs\+Indexes} () const
+\item 
+\textbf{ Rg\+Buffer\+Ref} \textbf{ Get\+Indexes\+Buffer} () const
+\item 
+void \textbf{ Create\+Geometry\+Buffers} ()
+\item 
+void \textbf{ Set\+Framebuffer\+Resolution} (\textbf{ USize32} res)
+\item 
+void \textbf{ Set\+Framebuffer\+Resolution} (\textbf{ Vector2ui} res)
+\item 
+void \textbf{ Set\+Framebuffer\+Resolution} (\textbf{ Vector3ui} res)
+\item 
+void \textbf{ Recreate\+Relative\+Images} ()
+\item 
+\textbf{ IRender\+Pass} $\ast$ \textbf{ Get\+Render\+Pass} (\textbf{ Render\+Pass\+Uuid} uuid)
+\item 
+const \textbf{ IRender\+Pass} $\ast$ \textbf{ Get\+Render\+Pass} (\textbf{ Render\+Pass\+Uuid} uuid) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Grafo de renderizado, que contiene tanto los pases de renderizado como los recursos que estos necesitan. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!RenderGraph@{RenderGraph}}
+\index{RenderGraph@{RenderGraph}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{RenderGraph()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_aabdb0f5c7da2489088dedea803cd7b1a} 
+Render\+Graph\+::\+Render\+Graph (\begin{DoxyParamCaption}\item[{\textbf{ IRenderer} $\ast$}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!Compile@{Compile}}
+\index{Compile@{Compile}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{Compile()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a8802866a94d553621b9e0ca5054b8dda} 
+void Render\+Graph\+::\+Compile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Crea todos los recursos, y el render-\/graph pasa a estar en estado ejecutable. 
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!CreateGeometryBuffers@{CreateGeometryBuffers}}
+\index{CreateGeometryBuffers@{CreateGeometryBuffers}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{CreateGeometryBuffers()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a4f7d264104cef88584834910432dc48f} 
+void Render\+Graph\+::\+Create\+Geometry\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a503a1b8719215bbcb17186a8f9dbddf4} 
+void Render\+Graph\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{cmd\+List}{}\end{DoxyParamCaption})}
+
+
+
+Ejecuta el render-\/graph. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cmd\+List} & Lista de comados a usar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haberse llamado previamente a {\ttfamily \doxyref{Compile()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a8802866a94d553621b9e0ca5054b8dda}}. 
+
+La lista de comandos debe estar abierta. 
+
+La lista de comandos no debe estar dentro de un proceso de rasterizado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!GetAttribsIndexes@{GetAttribsIndexes}}
+\index{GetAttribsIndexes@{GetAttribsIndexes}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{GetAttribsIndexes()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_af432384785a296f7d8c5b8a027d1016b} 
+\textbf{ Rg\+Buffer\+Ref} Render\+Graph\+::\+Get\+Attribs\+Indexes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!GetBuffer@{GetBuffer}}
+\index{GetBuffer@{GetBuffer}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{GetBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a839cd287c78be8c50a618e42322aee41} 
+\textbf{ Gpu\+Buffer} \& Render\+Graph\+::\+Get\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Buffer\+Uuid}}]{uuid}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & UUID del buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Buffer indicado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe existir un buffer con el UUID indicado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!GetBuffer@{GetBuffer}}
+\index{GetBuffer@{GetBuffer}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{GetBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a0816b97fa6acd19cb53c459a202f68b7} 
+const \textbf{ Gpu\+Buffer} \& Render\+Graph\+::\+Get\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Buffer\+Uuid}}]{uuid}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!GetImage@{GetImage}}
+\index{GetImage@{GetImage}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{GetImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a3166c981118c03136de7ce11ec3740d7} 
+\textbf{ Gpu\+Image} \& Render\+Graph\+::\+Get\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Image\+Uuid}}]{uuid}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & UUID de la imagen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Imagen indicada. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe existir una imagen con el UUID indicado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!GetImage@{GetImage}}
+\index{GetImage@{GetImage}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{GetImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a7d69c4b0ed2442f4364833dbaf0b8d4e} 
+const \textbf{ Gpu\+Image} \& Render\+Graph\+::\+Get\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Image\+Uuid}}]{uuid}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!GetIndexesBuffer@{GetIndexesBuffer}}
+\index{GetIndexesBuffer@{GetIndexesBuffer}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{GetIndexesBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a7886d9eeee45bbd71916f521d78a24e3} 
+\textbf{ Rg\+Buffer\+Ref} Render\+Graph\+::\+Get\+Indexes\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!GetRegisteredAttributes@{GetRegisteredAttributes}}
+\index{GetRegisteredAttributes@{GetRegisteredAttributes}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{GetRegisteredAttributes()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a692714392a37f19793352103c3485283} 
+std\+::span$<$ const \textbf{ Vertex\+Attribute\+Entry} $>$ Render\+Graph\+::\+Get\+Registered\+Attributes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!GetRegisteredAttributesBufferUuids@{GetRegisteredAttributesBufferUuids}}
+\index{GetRegisteredAttributesBufferUuids@{GetRegisteredAttributesBufferUuids}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{GetRegisteredAttributesBufferUuids()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_acc060a2eb9508698be0069c0c3b96721} 
+std\+::span$<$ const \textbf{ Gdr\+Buffer\+Uuid} $>$ Render\+Graph\+::\+Get\+Registered\+Attributes\+Buffer\+Uuids (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!GetRenderPass@{GetRenderPass}}
+\index{GetRenderPass@{GetRenderPass}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{GetRenderPass()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a17a827fea371591652980d375eed9dee} 
+\textbf{ IRender\+Pass} $\ast$ Render\+Graph\+::\+Get\+Render\+Pass (\begin{DoxyParamCaption}\item[{\textbf{ Render\+Pass\+Uuid}}]{uuid}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!GetRenderPass@{GetRenderPass}}
+\index{GetRenderPass@{GetRenderPass}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{GetRenderPass()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_adcaed89526fd6e55922e3abc0366c7cd} 
+const \textbf{ IRender\+Pass} $\ast$ Render\+Graph\+::\+Get\+Render\+Pass (\begin{DoxyParamCaption}\item[{\textbf{ Render\+Pass\+Uuid}}]{uuid}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!RebindExternalImage@{RebindExternalImage}}
+\index{RebindExternalImage@{RebindExternalImage}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{RebindExternalImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_ae1c4c9f1d7010726774e1c4639268a62} 
+void Render\+Graph\+::\+Rebind\+External\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Gdr\+Image\+Uuid}}]{uuid}{, }\item[{\textbf{ Gpu\+Image} $\ast$}]{new\+Image}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!RecreateRelativeImages@{RecreateRelativeImages}}
+\index{RecreateRelativeImages@{RecreateRelativeImages}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{RecreateRelativeImages()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a8006f62e19c2c0612afc9edd596183ed} 
+void Render\+Graph\+::\+Recreate\+Relative\+Images (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!RegisterBuffer@{RegisterBuffer}}
+\index{RegisterBuffer@{RegisterBuffer}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{RegisterBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_acd7cdaea365fc7568a57aec7038a81da} 
+\textbf{ Gdr\+Buffer\+Uuid} Render\+Graph\+::\+Register\+Buffer (\begin{DoxyParamCaption}\item[{const \textbf{ Rg\+Buffer\+Register\+Info} \&}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuevo buffer, que será creado y gestionado por el render-\/graph. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em info} & Información del buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+UUID del buffer. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!RegisterExternalImage@{RegisterExternalImage}}
+\index{RegisterExternalImage@{RegisterExternalImage}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{RegisterExternalImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_aafd79f15d434c9b3900db62e1b39dc1b} 
+\textbf{ Gdr\+Image\+Uuid} Render\+Graph\+::\+Register\+External\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{image}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!RegisterGeometry@{RegisterGeometry}}
+\index{RegisterGeometry@{RegisterGeometry}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{RegisterGeometry()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_ab92e591b2513ecc20a67bc41f130c684} 
+\textbf{ Gpu\+Geometry\+Entry} Render\+Graph\+::\+Register\+Geometry (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Geometry\+Desc} \&}]{geometry}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!RegisterImage@{RegisterImage}}
+\index{RegisterImage@{RegisterImage}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{RegisterImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a5b338d3b2d088972f4ac04f917726071} 
+\textbf{ Gdr\+Image\+Uuid} Render\+Graph\+::\+Register\+Image (\begin{DoxyParamCaption}\item[{const \textbf{ Rg\+Image\+Register\+Info} \&}]{info}{, }\item[{\textbf{ Rg\+Absolute\+Size\+Image\+Register\+Args}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Registra una nueva imagen, que será creada y gestionada por el render-\/graph. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em info} & Información de la imagen. \\
+\hline
+{\em size} & Resolución de la imagen.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+UUID de la imagen. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!RegisterImage@{RegisterImage}}
+\index{RegisterImage@{RegisterImage}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{RegisterImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a61b3de0c2ea5d965630e2c2254359215} 
+\textbf{ Gdr\+Image\+Uuid} Render\+Graph\+::\+Register\+Image (\begin{DoxyParamCaption}\item[{const \textbf{ Rg\+Image\+Register\+Info} \&}]{info}{, }\item[{\textbf{ Rg\+Relative\+Size\+Image\+Register\+Args}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Registra una nueva imagen, que será creada y gestionada por el render-\/graph. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em info} & Información de la imagen. \\
+\hline
+{\em size} & Resolución de la imagen, relativa a la resolución del framebuffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+UUID de la imagen. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!RegisterRenderpass@{RegisterRenderpass}}
+\index{RegisterRenderpass@{RegisterRenderpass}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{RegisterRenderpass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a8ad798b43d2cf5319ab30463b412e834} 
+\textbf{ Render\+Pass\+Uuid} Render\+Graph\+::\+Register\+Renderpass (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ IRender\+Pass} $>$ \&\&}]{pass}{, }\item[{const \textbf{ Render\+Pass\+Dependencies} \&}]{pass\+Dependencies}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuevo render-\/pass. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pass} & Render-\/pass. \\
+\hline
+{\em pass\+Dependencies} & Dependencias del renderpass, respecto a otros renderpasses.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Si ya existe un renderpass con nombre (ID) {\ttfamily name}, entonces se sobreescribirá. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!RegisterVertexAttribute@{RegisterVertexAttribute}}
+\index{RegisterVertexAttribute@{RegisterVertexAttribute}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{RegisterVertexAttribute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a8b881be5ea3a725ff5047fcb1b7ce560} 
+void Render\+Graph\+::\+Register\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{\textbf{ Vertex\+Attrib\+Uuid}}]{uuid}{, }\item[{std\+::string}]{name}{, }\item[{\textbf{ USize32}}]{attribute\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuevo tipo de atributo de vértice. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & ID único del atributo. \\
+\hline
+{\em attribute\+Size} & Tamaño de cada atributo individual.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Si ya existe un atributo con nombre (ID) {\ttfamily name}, entonces se sobreescribirá. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!SetFramebufferResolution@{SetFramebufferResolution}}
+\index{SetFramebufferResolution@{SetFramebufferResolution}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{SetFramebufferResolution()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a91aa06eba2ba7840e73c0d4361438c89} 
+void Render\+Graph\+::\+Set\+Framebuffer\+Resolution (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{res}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!SetFramebufferResolution@{SetFramebufferResolution}}
+\index{SetFramebufferResolution@{SetFramebufferResolution}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{SetFramebufferResolution()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a8dbab97f8901d4317c4618fd0fdda100} 
+void Render\+Graph\+::\+Set\+Framebuffer\+Resolution (\begin{DoxyParamCaption}\item[{\textbf{ Vector2ui}}]{res}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}!SetFramebufferResolution@{SetFramebufferResolution}}
+\index{SetFramebufferResolution@{SetFramebufferResolution}!OSK::GRAPHICS::RenderGraph@{OSK::GRAPHICS::RenderGraph}}
+\doxysubsubsection{SetFramebufferResolution()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph_a57dcfcf5aa1e4eaea2b539fbfd3f45f6} 
+void Render\+Graph\+::\+Set\+Framebuffer\+Resolution (\begin{DoxyParamCaption}\item[{\textbf{ Vector3ui}}]{res}{}\end{DoxyParamCaption})}
+

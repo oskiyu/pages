@@ -1,0 +1,154 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::Base\+Uuid$<$ TTag $>$}
+\label{class_o_s_k_1_1_base_uuid}\index{OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}}
+
+
+{\ttfamily \#include $<$Uuid.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ TUnderlying\+Type} = \textbf{ UIndex64}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Base\+Uuid} ()=default
+\item 
+\textbf{ Base\+Uuid} (\textbf{ TUnderlying\+Type} value)
+\item 
+auto \textbf{ operator$<$=$>$} (const \textbf{ Base\+Uuid} \&) const =default
+\item 
+\textbf{ operator bool} () const
+\item 
+bool \textbf{ Is\+Empty} () const noexcept
+\item 
+void \textbf{ Set\+Value} (\textbf{ TUnderlying\+Type} value) noexcept
+\item 
+\textbf{ TUnderlying\+Type} \textbf{ Get} () const noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \textbf{ Base\+Uuid} \textbf{ Create\+Empty} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$class TTag$>$\newline
+class OSK\+::\+Base\+Uuid$<$ TTag $>$}
+Clase que representa un identificador único global. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TTag} & Tag, que debe ser distinto para cada tipo de UUID. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de los «\+Typedef» miembros de la clase}
+\index{OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}!TUnderlyingType@{TUnderlyingType}}
+\index{TUnderlyingType@{TUnderlyingType}!OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}}
+\doxysubsubsection{TUnderlyingType}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_base_uuid_aa42e94a2e6f7ffb2303082dac212a098} 
+template$<$class TTag$>$ \\
+using \textbf{ OSK\+::\+Base\+Uuid}$<$ TTag $>$\+::\+TUnderlying\+Type = \textbf{ UIndex64}}
+
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}!BaseUuid@{BaseUuid}}
+\index{BaseUuid@{BaseUuid}!OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}}
+\doxysubsubsection{BaseUuid()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_base_uuid_a4701ad433a7e829cfa20ff07cf08f7c1} 
+template$<$class TTag$>$ \\
+\textbf{ OSK\+::\+Base\+Uuid}$<$ TTag $>$\+::\+Base\+Uuid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Crea un UUID vacío. 
+
+\index{OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}!BaseUuid@{BaseUuid}}
+\index{BaseUuid@{BaseUuid}!OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}}
+\doxysubsubsection{BaseUuid()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_base_uuid_a228af5d75cd2fafaeb09ad8c5b089f8c} 
+template$<$class TTag$>$ \\
+\textbf{ OSK\+::\+Base\+Uuid}$<$ TTag $>$\+::\+Base\+Uuid (\begin{DoxyParamCaption}\item[{\textbf{ TUnderlying\+Type}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Crea un UUID con un valor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Valor del UUID. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}!CreateEmpty@{CreateEmpty}}
+\index{CreateEmpty@{CreateEmpty}!OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}}
+\doxysubsubsection{CreateEmpty()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_base_uuid_a53756a73f42ce2fa498419505069d6a1} 
+template$<$class TTag$>$ \\
+constexpr \textbf{ Base\+Uuid} \textbf{ OSK\+::\+Base\+Uuid}$<$ TTag $>$\+::\+Create\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\begin{DoxyReturn}{Devuelve}
+Crea un UUID vacío. 
+\end{DoxyReturn}
+\index{OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}!Get@{Get}}
+\index{Get@{Get}!OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}}
+\doxysubsubsection{Get()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_base_uuid_a4055c79acc340d3228db7801ec4953da} 
+template$<$class TTag$>$ \\
+\textbf{ TUnderlying\+Type} \textbf{ OSK\+::\+Base\+Uuid}$<$ TTag $>$\+::\+Get (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+Valor del UUID. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Is\+Empty debe devolver false. 
+\end{DoxyPrecond}
+\index{OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}!IsEmpty@{IsEmpty}}
+\index{IsEmpty@{IsEmpty}!OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}}
+\doxysubsubsection{IsEmpty()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_base_uuid_aedde3e8b7fd0c35cfa7ce30118aabbc0} 
+template$<$class TTag$>$ \\
+bool \textbf{ OSK\+::\+Base\+Uuid}$<$ TTag $>$\+::\+Is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si el identificador está vacío. 
+\end{DoxyReturn}
+\index{OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}}
+\doxysubsubsection{operator bool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_base_uuid_a4113954bf14800069f9f72ed30562e59} 
+template$<$class TTag$>$ \\
+\textbf{ OSK\+::\+Base\+Uuid}$<$ TTag $>$\+::operator bool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\index{OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}!operator$<$=$>$@{operator$<$=$>$}}
+\index{operator$<$=$>$@{operator$<$=$>$}!OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}}
+\doxysubsubsection{operator$<$=$>$()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_base_uuid_afb6b1bc2dab689660afeca84b74317b4} 
+template$<$class TTag$>$ \\
+auto \textbf{ OSK\+::\+Base\+Uuid}$<$ TTag $>$\+::operator$<$=$>$ (\begin{DoxyParamCaption}\item[{const \textbf{ Base\+Uuid}$<$ TTag $>$ \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}!SetValue@{SetValue}}
+\index{SetValue@{SetValue}!OSK::BaseUuid$<$ TTag $>$@{OSK::BaseUuid$<$ TTag $>$}}
+\doxysubsubsection{SetValue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_base_uuid_a907944300920c96854aa45b31295ede2} 
+template$<$class TTag$>$ \\
+void \textbf{ OSK\+::\+Base\+Uuid}$<$ TTag $>$\+::\+Set\+Value (\begin{DoxyParamCaption}\item[{\textbf{ TUnderlying\+Type}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Establece el valor del UUID. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Nuevo valor. \\
+\hline
+\end{DoxyParams}

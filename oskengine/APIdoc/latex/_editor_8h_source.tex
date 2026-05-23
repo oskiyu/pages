@@ -1,0 +1,207 @@
+\doxysection{Editor.\+h}
+\label{_editor_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Editor.h@{C:/Users/Oscar/source/repos/OSKengine/Source/Editor.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}IComponentController.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}IComponentView.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}ISystemController.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ISystemView.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Component.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }EntityComponentSystem;}
+\DoxyCodeLine{00024\ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }OSK::Editor\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{namespace\ }UI\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }EditorUi;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ Editor\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ un\ controlador\ para\ un\ tipo\ en\ concreto.}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }ComponentControllerFactoryMethod\ =\ std::function<UniquePtr<Controllers::IComponentController>(ECS::GameObjectIndex,\ \textcolor{keywordtype}{void}*,\ Views::IComponentView*)>;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ una\ vista\ para\ un\ tipo\ en\ concreto.}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }ComponentViewFactoryMethod\ =\ std::function<UniquePtr<Views::IComponentView>(\textcolor{keyword}{const}\ Vector2f\&\ size)>;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ un\ controlador\ para\ un\ sistema\ en\ concreto.}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }SystemControllerFactoryMethod\ =\ std::function<UniquePtr<Controllers::ISystemController>(ECS::ISystem*,\ Views::ISystemView*)>;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ una\ vista\ para\ un\ sistema\ en\ concreto.}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }SystemViewFactoryMethod\ =\ std::function<UniquePtr<Views::ISystemView>(\textcolor{keyword}{const}\ Vector2f\&\ size)>;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ Editor(}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ OSK::UI::IContainer*\ rootUiElement,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2f\&\ windowSize);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#pragma\ region\ Component\ controller\ factory}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterComponentController(}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ componentName,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ComponentControllerFactoryMethod\&\ controllerFactoryMethod);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponentController>}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ Controllers::IsComponentController<TComponentController>}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterComponentController()\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ RegisterComponentController(}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TComponentController::GetComponentTypeName(),}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](ECS::GameObjectIndex\ obj,\ \textcolor{keywordtype}{void}*\ componentData,\ Views::IComponentView*\ view)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MakeUnique<TComponentController>(obj,\ componentData,\ view);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponentController>}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ Controllers::IsComponentController<TComponentController>}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterComponentController(\textcolor{keyword}{const}\ ComponentControllerFactoryMethod\&\ factoryMethod)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ RegisterComponentController(TComponentController::GetComponentTypeName(),\ factoryMethod);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#pragma\ region\ Component\ view\ factory}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterComponentView(}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ componentName,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ComponentViewFactoryMethod\&\ viewFactoryMethod);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponentView>}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ Views::IsComponentView<TComponentView>}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterComponentView()\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ RegisterComponentView(TComponentView::GetComponentTypeName(),\ [](\textcolor{keyword}{const}\ Vector2f\&\ size)\ \{\ \textcolor{keywordflow}{return}\ MakeUnique<TComponentView>(size);\ \});}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TComponentView>}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ Views::IsComponentView<TComponentView>}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterComponentView(\textcolor{keyword}{const}\ ComponentViewFactoryMethod\&\ factoryMethod)\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ RegisterComponentView(TComponentView::GetComponentTypeName(),\ factoryMethod);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#pragma\ region\ System\ controller\ factory}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterSystemController(}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ componentName,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ SystemControllerFactoryMethod\&\ controllerFactoryMethod);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TSystemController>}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ Controllers::IsSystemController<TSystemController>}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterSystemController()\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ RegisterSystemController(}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TSystemController::GetSystemName(),}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](ECS::ISystem*\ system,\ Views::ISystemView*\ view)\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MakeUnique<TSystemController>(system,\ view);}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TSystemController>}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ Controllers::IsSystemController<TSystemController>}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterSystemController(\textcolor{keyword}{const}\ SystemControllerFactoryMethod\&\ factoryMethod)\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ RegisterSystemController(TSystemController::GetSystemName(),\ factoryMethod);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#pragma\ region\ Component\ view\ factory}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterSystemView(}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ systemName,}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ SystemViewFactoryMethod\&\ viewFactoryMethod);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TSystemView>}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ Views::IsSystemView<TSystemView>}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterSystemView()\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ RegisterSystemView(TSystemView::GetSystemName(),\ [](\textcolor{keyword}{const}\ Vector2f\&\ size)\ \{\ \textcolor{keywordflow}{return}\ MakeUnique<TSystemView>(size);\ \});}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TSystemView>}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ Views::IsSystemView<TSystemView>}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterSystemView(\textcolor{keyword}{const}\ SystemViewFactoryMethod\&\ factoryMethod)\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ RegisterSystemView(TSystemView::GetSystemName(),\ factoryMethod);}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::EntityComponentSystem*\ ecs,}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ TDeltaTime\ deltaTime);}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetSelectedObject(ECS::GameObjectIndex\ gameObject);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ClearSelectedObject();}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetSelectedSystem(\textcolor{keyword}{const}\ std::string\&\ systemName);}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ClearSelectedSystem();}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ UI::EditorUi*\ GetUi();}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }ControllerViewPair\ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ Controllers::IComponentController*\ controller;}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ Views::IComponentView*\ viewPtr;}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isNewInsertion\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ std::optional<UniquePtr<Views::IComponentView>>\ view;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateByObject(ECS::EntityComponentSystem*\ ecs);}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateBySystem();}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ std::optional<ControllerViewPair>\ GetOrCreateControllerViewPair(}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::EntityComponentSystem*\ ecs,}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::ComponentType\ type);}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ ComponentControllerFactoryMethod,\ StringHasher,\ std::equal\_to<>>\ m\_componentControllersFactoryMethods;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ ComponentViewFactoryMethod,\ StringHasher,\ std::equal\_to<>>\ m\_componentViewsFactoryMethods;}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ SystemControllerFactoryMethod,\ StringHasher,\ std::equal\_to<>>\ m\_systemControllerFactoryMethods;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ SystemViewFactoryMethod,\ StringHasher,\ std::equal\_to<>>\ m\_systemViewsFactoryMethods;}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ std::unordered\_map<ECS::ComponentType,\ UniquePtr<Controllers::IComponentController>>\ m\_controllers;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ std::unordered\_map<ECS::ComponentType,\ Views::IComponentView*>\ m\_views;}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ UniquePtr<Controllers::ISystemController>\ m\_currentSystemController;}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Estado.}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ ECS::EntityComponentSystem*\ m\_ecs\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ m\_selectedObject\ =\ ECS::GameObjectIndex::CreateEmpty();}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ std::string\ m\_selectedSystemName\{\};}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isSelectedObjectDirty\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ UI\ \&\ views.}}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ UI::EditorUi*\ m\_editorUi;}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ \};}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \}}
+
+\end{DoxyCode}

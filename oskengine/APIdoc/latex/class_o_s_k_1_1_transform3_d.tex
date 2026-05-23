@@ -1,0 +1,490 @@
+\doxysection{Referencia de la clase OSK\+::Transform3D}
+\label{class_o_s_k_1_1_transform3_d}\index{OSK::Transform3D@{OSK::Transform3D}}
+
+
+{\ttfamily \#include $<$Transform3\+D.\+h$>$}
+
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Inheritance\+Config}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Set\+Position} (const \textbf{ Vector3f} \&position)
+\item 
+void \textbf{ Set\+Scale} (const \textbf{ Vector3f} \&scale)
+\item 
+void \textbf{ Set\+Rotation} (const \textbf{ Quaternion} \&rotation)
+\item 
+void \textbf{ Add\+Position} (const \textbf{ Vector3f} \&position\+Delta)
+\item 
+void \textbf{ Add\+Position\+\_\+\+Thread\+Safe} (const \textbf{ Vector3f} \&position\+Delta)
+\item 
+void \textbf{ Add\+Scale} (const \textbf{ Vector3f} \&scale\+Delta)
+\item 
+void \textbf{ Add\+Scale\+\_\+\+Thread\+Safe} (const \textbf{ Vector3f} \&scale\+Delta)
+\item 
+void \textbf{ Apply\+Rotation} (const \textbf{ Quaternion} \&rotation\+Delta)
+\item 
+void \textbf{ Apply\+Rotation\+\_\+\+Thread\+Safe} (const \textbf{ Quaternion} \&rotation\+Delta)
+\item 
+void \textbf{ Rotate\+Local\+Space} (float angle, const \textbf{ Vector3f} \&axis)
+\item 
+void \textbf{ Rotate\+Local\+Space\+\_\+\+Thread\+Safe} (float angle, const \textbf{ Vector3f} \&axis)
+\item 
+void \textbf{ Rotate\+World\+Space} (float angle, const \textbf{ Vector3f} \&axis)
+\item 
+void \textbf{ Rotate\+World\+Space\+\_\+\+Thread\+Safe} (float angle, const \textbf{ Vector3f} \&axis)
+\item 
+\textbf{ Vector3f} \textbf{ Transform\+Point} (const \textbf{ Vector3f} \&point) const
+\item 
+void \textbf{ Override\+Matrix} (const glm\+::mat4 \&matrix)
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Position} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Scale} () const
+\item 
+\textbf{ Quaternion} \textbf{ Get\+Rotation} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Local\+Position} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Local\+Scale} () const
+\item 
+\textbf{ Quaternion} \textbf{ Get\+Local\+Rotation} () const
+\item 
+glm\+::mat4 \textbf{ Get\+As\+Matrix} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Forward\+Vector} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Right\+Vector} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Top\+Vector} () const
+\item 
+void \textbf{ \+\_\+\+Apply\+Changes} ()
+\item 
+void \textbf{ \+\_\+\+Apply\+Changes} (const \textbf{ Transform3D} $\ast$parent, const \textbf{ Inheritance\+Config} \&config)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::Transform3D@{OSK::Transform3D}!\_ApplyChanges@{\_ApplyChanges}}
+\index{\_ApplyChanges@{\_ApplyChanges}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{\_ApplyChanges()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a2882e05869defdc84f7556a943d906cb} 
+void OSK\+::\+Transform3\+D\+::\+\_\+\+Apply\+Changes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Aplica los cambios realizados sobre el transform cuando no tiene transform padre. 
+
+\index{OSK::Transform3D@{OSK::Transform3D}!\_ApplyChanges@{\_ApplyChanges}}
+\index{\_ApplyChanges@{\_ApplyChanges}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{\_ApplyChanges()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a60442b41f332b7587a64560ef4cb7bf0} 
+void OSK\+::\+Transform3\+D\+::\+\_\+\+Apply\+Changes (\begin{DoxyParamCaption}\item[{const \textbf{ Transform3D} $\ast$}]{parent}{, }\item[{const \textbf{ Inheritance\+Config} \&}]{config}{}\end{DoxyParamCaption})}
+
+
+
+Aplica los cambios realizados sobre el transform cuando sí tiene transform padre. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em parent} & Transform padre (no nulo). \\
+\hline
+{\em config} & Configuración. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Transform3D@{OSK::Transform3D}!AddPosition@{AddPosition}}
+\index{AddPosition@{AddPosition}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{AddPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a40b29b85b7ab9348b699f3b744156f44} 
+void OSK\+::\+Transform3\+D\+::\+Add\+Position (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{position\+Delta}{}\end{DoxyParamCaption})}
+
+
+
+Suma el vector 3D a la posición. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position\+Delta} & Cambio de posición. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Transform3D@{OSK::Transform3D}!AddPosition\_ThreadSafe@{AddPosition\_ThreadSafe}}
+\index{AddPosition\_ThreadSafe@{AddPosition\_ThreadSafe}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{AddPosition\_ThreadSafe()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_ad527b4573d3368e01022e75cc10af9d9} 
+void OSK\+::\+Transform3\+D\+::\+Add\+Position\+\_\+\+Thread\+Safe (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{position\+Delta}{}\end{DoxyParamCaption})}
+
+
+
+Suma el vector 3D a la posición. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position\+Delta} & Cambio de posición.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+No debe haber ningún otro hilo llamando a \doxyref{\+\_\+\+Apply\+Changes()}{pág.}{class_o_s_k_1_1_transform3_d_a2882e05869defdc84f7556a943d906cb}. 
+
+No debe haber ningún otro hilo lllamando a \doxyref{Add\+Position()}{pág.}{class_o_s_k_1_1_transform3_d_a40b29b85b7ab9348b699f3b744156f44}. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Esta función es thread-\/safe, siempre y cuando se cumplan las precondiciones.
+\end{DoxyParagraph}
+\begin{DoxyNote}{Nota}
+En condiciones normales, sólamente se llama a \doxyref{\+\_\+\+Apply\+Changes()}{pág.}{class_o_s_k_1_1_transform3_d_a2882e05869defdc84f7556a943d906cb} en el sistema Transform\+Applier\+System (que se ejecuta de manera exclusiva). 
+\end{DoxyNote}
+\index{OSK::Transform3D@{OSK::Transform3D}!AddScale@{AddScale}}
+\index{AddScale@{AddScale}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{AddScale()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a7d7f6a4c2b8c27ac97a4cfe5690ecae5} 
+void OSK\+::\+Transform3\+D\+::\+Add\+Scale (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{scale\+Delta}{}\end{DoxyParamCaption})}
+
+
+
+Suma un vector 3D a la escala. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em scale\+Delta} & Cambio de escala. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Transform3D@{OSK::Transform3D}!AddScale\_ThreadSafe@{AddScale\_ThreadSafe}}
+\index{AddScale\_ThreadSafe@{AddScale\_ThreadSafe}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{AddScale\_ThreadSafe()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a013c706095ec93de8feaffca178a4527} 
+void OSK\+::\+Transform3\+D\+::\+Add\+Scale\+\_\+\+Thread\+Safe (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{scale\+Delta}{}\end{DoxyParamCaption})}
+
+
+
+Suma un vector 3D a la escala. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em scale\+Delta} & Cambio de escala.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+No debe haber ningún otro hilo llamando a \doxyref{\+\_\+\+Apply\+Changes()}{pág.}{class_o_s_k_1_1_transform3_d_a2882e05869defdc84f7556a943d906cb}. 
+
+No debe haber ningún otro hilo lllamando a \doxyref{Add\+Position()}{pág.}{class_o_s_k_1_1_transform3_d_a40b29b85b7ab9348b699f3b744156f44}. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Esta función es thread-\/safe, siempre y cuando se cumplan las precondiciones.
+\end{DoxyParagraph}
+\begin{DoxyNote}{Nota}
+En condiciones normales, sólamente se llama a \doxyref{\+\_\+\+Apply\+Changes()}{pág.}{class_o_s_k_1_1_transform3_d_a2882e05869defdc84f7556a943d906cb} en el sistema Transform\+Applier\+System (que se ejecuta de manera exclusiva). 
+\end{DoxyNote}
+\index{OSK::Transform3D@{OSK::Transform3D}!ApplyRotation@{ApplyRotation}}
+\index{ApplyRotation@{ApplyRotation}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{ApplyRotation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a4f0814d3f3dfaf799c01bca556e5e8f7} 
+void OSK\+::\+Transform3\+D\+::\+Apply\+Rotation (\begin{DoxyParamCaption}\item[{const \textbf{ Quaternion} \&}]{rotation\+Delta}{}\end{DoxyParamCaption})}
+
+
+
+Aplica una rotación al transform. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em rotation\+Delta} & Cambio de rotación. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Transform3D@{OSK::Transform3D}!ApplyRotation\_ThreadSafe@{ApplyRotation\_ThreadSafe}}
+\index{ApplyRotation\_ThreadSafe@{ApplyRotation\_ThreadSafe}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{ApplyRotation\_ThreadSafe()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a8d5201bd1fbe6234d115ce9f72e554bf} 
+void OSK\+::\+Transform3\+D\+::\+Apply\+Rotation\+\_\+\+Thread\+Safe (\begin{DoxyParamCaption}\item[{const \textbf{ Quaternion} \&}]{rotation\+Delta}{}\end{DoxyParamCaption})}
+
+
+
+Aplica una rotación al transform. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em rotation\+Delta} & Cambio de rotación.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+No debe haber ningún otro hilo llamando a \doxyref{\+\_\+\+Apply\+Changes()}{pág.}{class_o_s_k_1_1_transform3_d_a2882e05869defdc84f7556a943d906cb}. 
+
+No debe haber ningún otro hilo lllamando a \doxyref{Add\+Position()}{pág.}{class_o_s_k_1_1_transform3_d_a40b29b85b7ab9348b699f3b744156f44}. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Esta función es thread-\/safe, siempre y cuando se cumplan las precondiciones.
+\end{DoxyParagraph}
+\begin{DoxyNote}{Nota}
+En condiciones normales, sólamente se llama a \doxyref{\+\_\+\+Apply\+Changes()}{pág.}{class_o_s_k_1_1_transform3_d_a2882e05869defdc84f7556a943d906cb} en el sistema Transform\+Applier\+System (que se ejecuta de manera exclusiva). 
+\end{DoxyNote}
+\index{OSK::Transform3D@{OSK::Transform3D}!GetAsMatrix@{GetAsMatrix}}
+\index{GetAsMatrix@{GetAsMatrix}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{GetAsMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a7c5be55b96cdb8684ff38d40842619b9} 
+glm\+::mat4 OSK\+::\+Transform3\+D\+::\+Get\+As\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Matriz modelo, para renderizado. 
+\end{DoxyReturn}
+\index{OSK::Transform3D@{OSK::Transform3D}!GetForwardVector@{GetForwardVector}}
+\index{GetForwardVector@{GetForwardVector}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{GetForwardVector()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_aeace9b251006890a55761618bcdabb2a} 
+\textbf{ OSK\+::\+Vector3f} OSK\+::\+Transform3\+D\+::\+Get\+Forward\+Vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Vector unitario 3D que apunta hacia el frente de la entidad. 
+\end{DoxyReturn}
+\index{OSK::Transform3D@{OSK::Transform3D}!GetLocalPosition@{GetLocalPosition}}
+\index{GetLocalPosition@{GetLocalPosition}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{GetLocalPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_ac43e9ea066d6194a1198a77c12b79d42} 
+\textbf{ OSK\+::\+Vector3f} OSK\+::\+Transform3\+D\+::\+Get\+Local\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Posición local. 
+\end{DoxyReturn}
+\index{OSK::Transform3D@{OSK::Transform3D}!GetLocalRotation@{GetLocalRotation}}
+\index{GetLocalRotation@{GetLocalRotation}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{GetLocalRotation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_aa4bc30e60e7a2f72d6169739b9c6956d} 
+\textbf{ OSK\+::\+Quaternion} OSK\+::\+Transform3\+D\+::\+Get\+Local\+Rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Orientación local. 
+\end{DoxyReturn}
+\index{OSK::Transform3D@{OSK::Transform3D}!GetLocalScale@{GetLocalScale}}
+\index{GetLocalScale@{GetLocalScale}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{GetLocalScale()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a20140691618ecc6803b34c5a5cdb6324} 
+\textbf{ OSK\+::\+Vector3f} OSK\+::\+Transform3\+D\+::\+Get\+Local\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Escala local. 
+\end{DoxyReturn}
+\index{OSK::Transform3D@{OSK::Transform3D}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{GetPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_aad8b136d427cf99a984d86c5d3a1d8c8} 
+\textbf{ OSK\+::\+Vector3f} OSK\+::\+Transform3\+D\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Posición en el mundo 3D. 
+\end{DoxyReturn}
+\index{OSK::Transform3D@{OSK::Transform3D}!GetRightVector@{GetRightVector}}
+\index{GetRightVector@{GetRightVector}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{GetRightVector()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a81526660a8469af2a39bfba8e1dfb64a} 
+\textbf{ OSK\+::\+Vector3f} OSK\+::\+Transform3\+D\+::\+Get\+Right\+Vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Vector unitario 3D que apunta hacia la derecha de la entidad. 
+\end{DoxyReturn}
+\index{OSK::Transform3D@{OSK::Transform3D}!GetRotation@{GetRotation}}
+\index{GetRotation@{GetRotation}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{GetRotation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a3a248c6dc2b837b0f88360b49c2e17bd} 
+\textbf{ OSK\+::\+Quaternion} OSK\+::\+Transform3\+D\+::\+Get\+Rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Orientación en el mundo 3D. 
+\end{DoxyReturn}
+\index{OSK::Transform3D@{OSK::Transform3D}!GetScale@{GetScale}}
+\index{GetScale@{GetScale}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{GetScale()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_ad58903d4c6c1a33adae5d999aa8b9a33} 
+\textbf{ OSK\+::\+Vector3f} OSK\+::\+Transform3\+D\+::\+Get\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Escala en el mundo 3D. 
+\end{DoxyReturn}
+\index{OSK::Transform3D@{OSK::Transform3D}!GetTopVector@{GetTopVector}}
+\index{GetTopVector@{GetTopVector}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{GetTopVector()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_afe249a981a5a2093afa7734b86ce21a5} 
+\textbf{ OSK\+::\+Vector3f} OSK\+::\+Transform3\+D\+::\+Get\+Top\+Vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Vector unitario 3D que apunta hacia arriba de la entidad. 
+\end{DoxyReturn}
+\index{OSK::Transform3D@{OSK::Transform3D}!OverrideMatrix@{OverrideMatrix}}
+\index{OverrideMatrix@{OverrideMatrix}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{OverrideMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_afa5b1e2c74b11e869d741b0933c93eaf} 
+void OSK\+::\+Transform3\+D\+::\+Override\+Matrix (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{matrix}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza manualmente el valor de la matriz modelo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em matrix} & Nueva matriz modelo. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Transform3D@{OSK::Transform3D}!RotateLocalSpace@{RotateLocalSpace}}
+\index{RotateLocalSpace@{RotateLocalSpace}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{RotateLocalSpace()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_aacb843c59207fdb8bb75ccd917ad7bbb} 
+void OSK\+::\+Transform3\+D\+::\+Rotate\+Local\+Space (\begin{DoxyParamCaption}\item[{float}]{angle}{, }\item[{const \textbf{ Vector3f} \&}]{axis}{}\end{DoxyParamCaption})}
+
+
+
+Rota el transform respecto a sí mismo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em angle} & Ángulo. \\
+\hline
+{\em axis} & Eje sobre el que se rota. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El ángulo debe estar en grados. 
+\end{DoxyPrecond}
+\index{OSK::Transform3D@{OSK::Transform3D}!RotateLocalSpace\_ThreadSafe@{RotateLocalSpace\_ThreadSafe}}
+\index{RotateLocalSpace\_ThreadSafe@{RotateLocalSpace\_ThreadSafe}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{RotateLocalSpace\_ThreadSafe()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a73489601764f007394a3cea8fbaed64f} 
+void OSK\+::\+Transform3\+D\+::\+Rotate\+Local\+Space\+\_\+\+Thread\+Safe (\begin{DoxyParamCaption}\item[{float}]{angle}{, }\item[{const \textbf{ Vector3f} \&}]{axis}{}\end{DoxyParamCaption})}
+
+
+
+Rota el transform respecto a sí mismo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em angle} & Ángulo. \\
+\hline
+{\em axis} & Eje sobre el que se rota. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El ángulo debe estar en grados.
+
+No debe haber ningún otro hilo llamando a \doxyref{\+\_\+\+Apply\+Changes()}{pág.}{class_o_s_k_1_1_transform3_d_a2882e05869defdc84f7556a943d906cb}. 
+
+No debe haber ningún otro hilo lllamando a \doxyref{Add\+Position()}{pág.}{class_o_s_k_1_1_transform3_d_a40b29b85b7ab9348b699f3b744156f44}. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Esta función es thread-\/safe, siempre y cuando se cumplan las precondiciones.
+\end{DoxyParagraph}
+\begin{DoxyNote}{Nota}
+En condiciones normales, sólamente se llama a \doxyref{\+\_\+\+Apply\+Changes()}{pág.}{class_o_s_k_1_1_transform3_d_a2882e05869defdc84f7556a943d906cb} en el sistema Transform\+Applier\+System (que se ejecuta de manera exclusiva). 
+\end{DoxyNote}
+\index{OSK::Transform3D@{OSK::Transform3D}!RotateWorldSpace@{RotateWorldSpace}}
+\index{RotateWorldSpace@{RotateWorldSpace}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{RotateWorldSpace()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_aff6145fb6a44717e85fbff95339c4d41} 
+void OSK\+::\+Transform3\+D\+::\+Rotate\+World\+Space (\begin{DoxyParamCaption}\item[{float}]{angle}{, }\item[{const \textbf{ Vector3f} \&}]{axis}{}\end{DoxyParamCaption})}
+
+
+
+Rota el transform respecto al mundo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em angle} & Ángulo. \\
+\hline
+{\em axis} & Eje sobre el que se rota. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El ángulo debe estar en grados. 
+\end{DoxyPrecond}
+\index{OSK::Transform3D@{OSK::Transform3D}!RotateWorldSpace\_ThreadSafe@{RotateWorldSpace\_ThreadSafe}}
+\index{RotateWorldSpace\_ThreadSafe@{RotateWorldSpace\_ThreadSafe}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{RotateWorldSpace\_ThreadSafe()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_ad73ece55c70fbf8e0abf2307b9980351} 
+void OSK\+::\+Transform3\+D\+::\+Rotate\+World\+Space\+\_\+\+Thread\+Safe (\begin{DoxyParamCaption}\item[{float}]{angle}{, }\item[{const \textbf{ Vector3f} \&}]{axis}{}\end{DoxyParamCaption})}
+
+
+
+Rota el transform respecto al mundo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em angle} & Ángulo. \\
+\hline
+{\em axis} & Eje sobre el que se rota. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El ángulo debe estar en grados.
+
+No debe haber ningún otro hilo llamando a \doxyref{\+\_\+\+Apply\+Changes()}{pág.}{class_o_s_k_1_1_transform3_d_a2882e05869defdc84f7556a943d906cb}. 
+
+No debe haber ningún otro hilo lllamando a \doxyref{Add\+Position()}{pág.}{class_o_s_k_1_1_transform3_d_a40b29b85b7ab9348b699f3b744156f44}. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Esta función es thread-\/safe, siempre y cuando se cumplan las precondiciones.
+\end{DoxyParagraph}
+\begin{DoxyNote}{Nota}
+En condiciones normales, sólamente se llama a \doxyref{\+\_\+\+Apply\+Changes()}{pág.}{class_o_s_k_1_1_transform3_d_a2882e05869defdc84f7556a943d906cb} en el sistema Transform\+Applier\+System (que se ejecuta de manera exclusiva). 
+\end{DoxyNote}
+\index{OSK::Transform3D@{OSK::Transform3D}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{SetPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_af6fe0b235bc1cd84806dbb3545f6ea5b} 
+void OSK\+::\+Transform3\+D\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Establece la posición local. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Nueva posición respecto al padre. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Transform3D@{OSK::Transform3D}!SetRotation@{SetRotation}}
+\index{SetRotation@{SetRotation}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{SetRotation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a638b5d1da0ad0bfd23f66bf68ecf3a6a} 
+void OSK\+::\+Transform3\+D\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{const \textbf{ Quaternion} \&}]{rotation}{}\end{DoxyParamCaption})}
+
+
+
+Establece la rotación local. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em rotation} & Nueva rotación respecto al padre. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Transform3D@{OSK::Transform3D}!SetScale@{SetScale}}
+\index{SetScale@{SetScale}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{SetScale()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a9242bc0f29417bef3bd727fb77168e84} 
+void OSK\+::\+Transform3\+D\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{scale}{}\end{DoxyParamCaption})}
+
+
+
+Establece la escala local. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em scale} & Nueva escala respecto al padre. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Transform3D@{OSK::Transform3D}!TransformPoint@{TransformPoint}}
+\index{TransformPoint@{TransformPoint}!OSK::Transform3D@{OSK::Transform3D}}
+\doxysubsubsection{TransformPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_transform3_d_a27de07c8ae4de34dd33d4abd5ddeb60f} 
+\textbf{ OSK\+::\+Vector3f} OSK\+::\+Transform3\+D\+::\+Transform\+Point (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{point}{}\end{DoxyParamCaption}) const}
+
+
+
+Transforma un punto respecto a este transform. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em point} & Punto antes de la transformación. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Punto transformado. 
+\end{DoxyReturn}

@@ -1,0 +1,82 @@
+\doxysection{Enum\+Flags.\+hpp}
+\label{_enum_flags_8hpp_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/EnumFlags.hpp@{C:/Users/Oscar/source/repos/OSKengine/Source/EnumFlags.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }OSK::EFTraits\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ IsEnumFlag()\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{concept\ }IsEnum\ =\ IsEnumFlag<T>();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TEnum>\ \textcolor{keyword}{constexpr}\ TEnum\ operator\&(TEnum\ left,\ TEnum\ right)\ \textcolor{keyword}{requires}\ OSK::EFTraits::IsEnum<TEnum>\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{using\ }TUType\ =\ std::underlying\_type\_t<TEnum>;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}TEnum\textcolor{keyword}{>}(}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}TUType\textcolor{keyword}{>}(left)\ \&}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}TUType\textcolor{keyword}{>}(right)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{constexpr}\ T\ operator\&=(T\&\ left,\ T\ right)\ \textcolor{keyword}{requires}\ OSK::EFTraits::IsEnum<T>\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ left\ =\ left\ \&\ right;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ left;}
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TEnum>\ \textcolor{keyword}{constexpr}\ TEnum\ operator|(TEnum\ left,\ TEnum\ right)\ \textcolor{keyword}{requires}\ OSK::EFTraits::IsEnum<TEnum>\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{using\ }TUType\ =\ std::underlying\_type\_t<TEnum>;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}TEnum\textcolor{keyword}{>}(}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}TUType\textcolor{keyword}{>}(left)\ |}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}TUType\textcolor{keyword}{>}(right)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00050\ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{constexpr}\ T\ operator|=(T\&\ left,\ T\ right)\ \textcolor{keyword}{requires}\ OSK::EFTraits::IsEnum<T>\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ left\ =\ left\ |\ right;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{return}\ left;}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TEnum>\ \textcolor{keyword}{constexpr}\ TEnum\ operator\string~(TEnum\ left)\ \textcolor{keyword}{requires}\ OSK::EFTraits::IsEnum<TEnum>\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{using\ }TUType\ =\ std::underlying\_type\_t<TEnum>;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}TEnum\textcolor{keyword}{>}(}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \string~static\_cast<TUType>(left)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00064\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ OSK\_FLAGS(T)\ template\ <>\ constexpr\ bool\ OSK::EFTraits::IsEnumFlag<T>()\ \{\ return\ true;\ \};}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{namespace\ }OSK::EFTraits\ \{}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TEnum>\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ HasFlag(TEnum\ value,\ TEnum\ flag)\ \textcolor{keyword}{requires}\ OSK::EFTraits::IsEnum<TEnum>\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }TUType\ =\ std::underlying\_type\_t<TEnum>;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}TUType\textcolor{keyword}{>}((TEnum)value\ \&\ (TEnum)flag)\ !=\ 0;}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TEnum>\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{void}\ AddFlag(TEnum*\ value,\ TEnum\ flag)\ \textcolor{keyword}{requires}\ OSK::EFTraits::IsEnum<TEnum>\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }TUType\ =\ std::underlying\_type\_t<TEnum>;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ *value\ |=\ flag;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TEnum>\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{void}\ RemoveFlag(TEnum*\ value,\ TEnum\ flag)\ \textcolor{keyword}{requires}\ OSK::EFTraits::IsEnum<TEnum>\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }TUType\ =\ std::underlying\_type\_t<TEnum>;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ *value\ \&=\ \string~flag;}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \}}
+
+\end{DoxyCode}

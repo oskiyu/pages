@@ -1,0 +1,129 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Render\+Target\+Attachment}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment}\index{OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}}
+
+
+{\ttfamily \#include $<$Render\+Target\+Attachment.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Render\+Target\+Attachment} ()=default
+\item 
+void \textbf{ Initialize} (const \textbf{ Render\+Target\+Attachment\+Info} \&info, const \textbf{ Vector2ui} \&resolution)
+\item 
+void \textbf{ Resize} (const \textbf{ Vector2ui} \&resolution)
+\item 
+const \textbf{ Render\+Target\+Attachment\+Info} \& \textbf{ Get\+Info} () const
+\item 
+\textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Image} ()
+\item 
+const \textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Image} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Render\+Target\+Attachment} \textbf{ Create} (const \textbf{ Render\+Target\+Attachment\+Info} \&info, const \textbf{ Vector2ui} \&resolution)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa una imagen individual que se escribirá en un proceso de renderizado. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}!RenderTargetAttachment@{RenderTargetAttachment}}
+\index{RenderTargetAttachment@{RenderTargetAttachment}!OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}}
+\doxysubsubsection{RenderTargetAttachment()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_a7e72d7e3ab468fb5c5744420cd49d4ae} 
+OSK\+::\+GRAPHICS\+::\+Render\+Target\+Attachment\+::\+Render\+Target\+Attachment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Attachment vacío, no usable. Crear con \doxyref{Render\+Target\+Attachment\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_a1105f0a738a389ace46c6c5fc517706d} o \doxyref{Render\+Target\+Attachment\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_aacd04b59cbc839a83af3251271d375d8}. 
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}!Create@{Create}}
+\index{Create@{Create}!OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_a1105f0a738a389ace46c6c5fc517706d} 
+\textbf{ Render\+Target\+Attachment} Render\+Target\+Attachment\+::\+Create (\begin{DoxyParamCaption}\item[{const \textbf{ Render\+Target\+Attachment\+Info} \&}]{info}{, }\item[{const \textbf{ Vector2ui} \&}]{resolution}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un attachment con la información dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em info} & Información de la imagen. \\
+\hline
+{\em resolution} & Resolución, en píxeles. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}!GetImage@{GetImage}}
+\index{GetImage@{GetImage}!OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}}
+\doxysubsubsection{GetImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_a0d9dbd13bac0373560125621a154b6bf} 
+\textbf{ Gpu\+Image} $\ast$ Render\+Target\+Attachment\+::\+Get\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Imagen (null si no se inicializó previamente). 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}!GetImage@{GetImage}}
+\index{GetImage@{GetImage}!OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}}
+\doxysubsubsection{GetImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_ae93d5d3a5519eaafa58a99ffe83d4312} 
+const \textbf{ Gpu\+Image} $\ast$ Render\+Target\+Attachment\+::\+Get\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Imagen (null si no se inicializó previamente). 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}!GetInfo@{GetInfo}}
+\index{GetInfo@{GetInfo}!OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}}
+\doxysubsubsection{GetInfo()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_a7a6d78da9b3aafb5a534f9e5fb48f375} 
+const \textbf{ Render\+Target\+Attachment\+Info} \& Render\+Target\+Attachment\+::\+Get\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Información con la que se creó la imagen. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}}
+\doxysubsubsection{Initialize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_aacd04b59cbc839a83af3251271d375d8} 
+void Render\+Target\+Attachment\+::\+Initialize (\begin{DoxyParamCaption}\item[{const \textbf{ Render\+Target\+Attachment\+Info} \&}]{info}{, }\item[{const \textbf{ Vector2ui} \&}]{resolution}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa el attachment para su uso. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em info} & Información de la imagen. \\
+\hline
+{\em resolution} & Resolución, en píxeles. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}!Resize@{Resize}}
+\index{Resize@{Resize}!OSK::GRAPHICS::RenderTargetAttachment@{OSK::GRAPHICS::RenderTargetAttachment}}
+\doxysubsubsection{Resize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_a412dad8bb214f72259ce8f9247f63bb4} 
+void Render\+Target\+Attachment\+::\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{resolution}{}\end{DoxyParamCaption})}
+
+
+
+Cambia de tamaño la imagen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Nueva resolución, en píxeles.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haberse inicializado con \doxyref{Render\+Target\+Attachment\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_a1105f0a738a389ace46c6c5fc517706d} / \doxyref{Render\+Target\+Attachment\+::\+Initialize}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment_aacd04b59cbc839a83af3251271d375d8}. 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si las imágenes del attachment se usaban en un material slot, este deberá actualizar sus recursos de esta imagen. 
+\end{DoxyNote}

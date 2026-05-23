@@ -1,0 +1,18 @@
+\doxysection{Referencia del concepto OSK\+::ECS\+::Is\+Iterator\+System}
+\label{concept_o_s_k_1_1_e_c_s_1_1_is_iterator_system}\index{OSK::ECS::IsIteratorSystem@{OSK::ECS::IsIteratorSystem}}
+
+
+{\ttfamily \#include $<$IIterator\+System.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TSystem>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::ECS::IsIteratorSystem\ =\ \ std::is\_base\_of\_v<IIteratorSystem,\ TSystem>}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \&\&\ IsEcsSystem<TSystem>}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}
+Concepto que permite saber si una clase corresponde a un sistema iterador. 

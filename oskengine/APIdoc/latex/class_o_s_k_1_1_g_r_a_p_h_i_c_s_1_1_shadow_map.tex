@@ -1,0 +1,239 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Shadow\+Map}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map}\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+
+
+{\ttfamily \#include $<$Shadow\+Map.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SERIALIZABLE} ()
+\item 
+void \textbf{ Create} (const \textbf{ Vector2ui} \&image\+Size)
+\item 
+void \textbf{ Set\+Directional\+Light} (const \textbf{ Directional\+Light} \&dir\+Light)
+\item 
+void \textbf{ Set\+Near\+Plane} (float near\+Plane)
+\item 
+void \textbf{ Set\+Far\+Plane} (float far\+Plane)
+\item 
+\textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Shadow\+Image} ()
+\item 
+\textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Color\+Image} ()
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Buffer} $\ast$ $>$ \textbf{ Get\+Dir\+Light\+Matrix\+Uniform\+Buffers} ()
+\item 
+void \textbf{ Set\+Scene\+Camera} (\textbf{ ECS\+::\+Game\+Object\+Index} camera\+Object)
+\item 
+\textbf{ USize32} \textbf{ Get\+Num\+Cascades} () const
+\item 
+void \textbf{ Set\+Splits} (const std\+::array$<$ float, 4 $>$ \&splits)
+\item 
+std\+::array$<$ const \textbf{ Gpu\+Buffer} $\ast$, MAX\+\_\+\+RESOURCES\+\_\+\+IN\+\_\+\+FLIGHT $>$ \textbf{ Get\+Gpu\+Buffers} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Renderiza un mapa de profundidad de la escena desde el punto de vista de una luz direccional. 
+
+Este mapa de profundidad puede usarse para proyectar las sombras de la luz direccional dentro de una escena.
+
+Para usar un \doxyref{Shadow\+Map}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map}, en el bucle de renderizado\+:
+\begin{DoxyItemize}
+\item Iniciar un renderpass con el render target Shadow\+Map\+::\+Get\+Shadows\+Render\+Target.
+\item Enlazar el material Shadow\+Map\+::\+Get\+Shadows\+Material.
+\item Enlazar la instancia de material Shadow\+Map\+::\+Get\+Shadows\+Material\+Instance.
+\item Renderizar todos los objetos que deban proyectar sombras.
+\item Finalizar el renderpass. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}!Create@{Create}}
+\index{Create@{Create}!OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_a0830a954dc3dfb5b404edc5e85ec6406} 
+void Shadow\+Map\+::\+Create (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{image\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa el shadow map. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image\+Size} & Resolución de la imagen del shadow map. Cuanto más alta, mayor calidad de sombras. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}!GetColorImage@{GetColorImage}}
+\index{GetColorImage@{GetColorImage}!OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+\doxysubsubsection{GetColorImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_aea7dacfbc899972c0a4266dde2a880b8} 
+\textbf{ Gpu\+Image} $\ast$ Shadow\+Map\+::\+Get\+Color\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve la imagen de color del mapa de sombras. Para su renderizado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em index} & Índice de la imagen en el swapchain. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Mapa de profundidad. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}!GetDirLightMatrixUniformBuffers@{GetDirLightMatrixUniformBuffers}}
+\index{GetDirLightMatrixUniformBuffers@{GetDirLightMatrixUniformBuffers}!OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+\doxysubsubsection{GetDirLightMatrixUniformBuffers()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_ae983515c8a55515cb5fd4a2e5f747c37} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Gpu\+Buffer} $\ast$ $>$ Shadow\+Map\+::\+Get\+Dir\+Light\+Matrix\+Uniform\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve el uniform buffer que contiene la matriz de proyección y vista de la luz que proyecta la sombra. 
+
+\begin{DoxyPrecond}{Precondición}
+Se ha llamado a \doxyref{Shadow\+Map\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_a0830a954dc3dfb5b404edc5e85ec6406}. 
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Atención}
+Devuelve nullptr si no se cumple las precondiciones. 
+\end{DoxyWarning}
+\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}!GetGpuBuffers@{GetGpuBuffers}}
+\index{GetGpuBuffers@{GetGpuBuffers}!OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+\doxysubsubsection{GetGpuBuffers()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_ab339d3c5ccac86c489c56af0fecdddd0} 
+std\+::array$<$ const \textbf{ Gpu\+Buffer} $\ast$, MAX\+\_\+\+RESOURCES\+\_\+\+IN\+\_\+\+FLIGHT $>$ Shadow\+Map\+::\+Get\+Gpu\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}!GetNumCascades@{GetNumCascades}}
+\index{GetNumCascades@{GetNumCascades}!OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+\doxysubsubsection{GetNumCascades()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_a4f5b7a15d3de491b3c1a5a7a0edfef6d} 
+\textbf{ UIndex32} Shadow\+Map\+::\+Get\+Num\+Cascades (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Número de mapas de sobras en cascada. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}!GetShadowImage@{GetShadowImage}}
+\index{GetShadowImage@{GetShadowImage}!OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+\doxysubsubsection{GetShadowImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_a4b36944fb7a89178ed9678bec1f80951} 
+\textbf{ Gpu\+Image} $\ast$ Shadow\+Map\+::\+Get\+Shadow\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve la imagen del mapa de sombras. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em index} & Índice de la imagen en el swapchain. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Mapa de profundidad.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se debe haber inicializado el \doxyref{Shadow\+Map}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map} con \doxyref{Shadow\+Map\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_a0830a954dc3dfb5b404edc5e85ec6406}. 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Devolverá nullptr si no se cumple la precondición. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}!OSK\_SERIALIZABLE@{OSK\_SERIALIZABLE}}
+\index{OSK\_SERIALIZABLE@{OSK\_SERIALIZABLE}!OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+\doxysubsubsection{OSK\_SERIALIZABLE()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_a3246ab0a2e57dbc36212df231cb987c0} 
+OSK\+::\+GRAPHICS\+::\+Shadow\+Map\+::\+OSK\+\_\+\+SERIALIZABLE (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}!SetDirectionalLight@{SetDirectionalLight}}
+\index{SetDirectionalLight@{SetDirectionalLight}!OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+\doxysubsubsection{SetDirectionalLight()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_ab750efcb37e8e0e58084096c18d1d0d6} 
+void Shadow\+Map\+::\+Set\+Directional\+Light (\begin{DoxyParamCaption}\item[{const \textbf{ Directional\+Light} \&}]{dir\+Light}{}\end{DoxyParamCaption})}
+
+
+
+Establece la luz direccional que proyectará las sobras sobre este mapa de sombras. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe llamarse después de inicializar el mapa de sombras (\doxyref{Shadow\+Map\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_a0830a954dc3dfb5b404edc5e85ec6406}).
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Object\+State\+Exception}{pág.}{class_o_s_k_1_1_invalid_object_state_exception}} & Si se incumple alguna rpecondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}!SetFarPlane@{SetFarPlane}}
+\index{SetFarPlane@{SetFarPlane}!OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+\doxysubsubsection{SetFarPlane()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_a442fb43c3f179fe4ff0fb45d25a9516c} 
+void Shadow\+Map\+::\+Set\+Far\+Plane (\begin{DoxyParamCaption}\item[{float}]{far\+Plane}{}\end{DoxyParamCaption})}
+
+
+
+Establece el far plane del frustum de renderizado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em far\+Plane} & Distancia máxima al origen de la luz para que sean renderizados.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Por defecto, 5.\+0f. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}!SetNearPlane@{SetNearPlane}}
+\index{SetNearPlane@{SetNearPlane}!OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+\doxysubsubsection{SetNearPlane()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_a9a93be174ec456f33bf027dff2dc7ef6} 
+void Shadow\+Map\+::\+Set\+Near\+Plane (\begin{DoxyParamCaption}\item[{float}]{near\+Plane}{}\end{DoxyParamCaption})}
+
+
+
+Establece el near plane del frustum de renderizado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em near\+Plane} & Distancia mínima al origen de la luz para que sean renderizados.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Por defecto, -\/5.\+0f. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}!SetSceneCamera@{SetSceneCamera}}
+\index{SetSceneCamera@{SetSceneCamera}!OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+\doxysubsubsection{SetSceneCamera()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_a2049f04835be03e41411a54457933d50} 
+void Shadow\+Map\+::\+Set\+Scene\+Camera (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Game\+Object\+Index}}]{camera\+Object}{}\end{DoxyParamCaption})}
+
+
+
+Establece la cámara de la escena, para poder configurar los mapas de profundidad de una manera más óptima. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em camera\+Object} & Objeto \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} que contiene la cámara.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+camera\+Object debe tener asociado un componente de tipo \doxyref{ECS\+::\+Camera\+Component3D}{pág.}{class_o_s_k_1_1_e_c_s_1_1_camera_component3_d}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}!SetSplits@{SetSplits}}
+\index{SetSplits@{SetSplits}!OSK::GRAPHICS::ShadowMap@{OSK::GRAPHICS::ShadowMap}}
+\doxysubsubsection{SetSplits()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map_af41313db419f1bf497d84573d8ca00d7} 
+void Shadow\+Map\+::\+Set\+Splits (\begin{DoxyParamCaption}\item[{const std\+::array$<$ float, 4 $>$ \&}]{splits}{}\end{DoxyParamCaption})}
+
+
+
+Establece las distancias en las que se cambia el nivel de sombras. 
+
+
+\begin{DoxyItemize}
+\item Nivel 0\+: de 0 a splits[0].
+\item Nivel 1\+: de splits[0] a splits[1].
+\item Nivel 2\+: de splits[1] a splits[2].
+\item Nivel 3\+: de splits[2] a splits[3]. 
+\begin{DoxyParams}{Parámetros}
+{\em splits} & Límites de los niveles. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}

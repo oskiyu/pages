@@ -1,0 +1,201 @@
+\doxysection{Deferred\+Render\+System.\+h}
+\label{_deferred_render_system_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/DeferredRenderSystem.h@{C:/Users/Oscar/source/repos/OSKengine/Source/DeferredRenderSystem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}ShadowMap.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}GBuffer.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}RtRenderTarget.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}TaaProvider.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}IShaderPass.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}IDeferredResolver.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}MaterialInstance.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}PbrIblConfig.h"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}AssetRef.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}IrradianceMap.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}SpecularMap.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}SavedGameObjectTranslator.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}ResourcesInFlight.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}ISystem.h"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}IRenderSystem.h"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}Lights.h"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}BinaryBlock.h"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <json.hpp>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}Vector4.hpp"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}glm/fwd.hpp"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{class\ }CameraComponent3D;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ DeferredRenderSystem\ :\ \textcolor{keyword}{public}\ IRenderSystem,\ \textcolor{keyword}{public}\ ISerializableSystem\ \{}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ OSK\_SYSTEM(\textcolor{stringliteral}{"{}OSK::DeferredRenderSystem"{}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ DeferredRenderSystem();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize(}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ cameraObject,\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::IrradianceMap>\ irradianceMap,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::SpecularMap>\ specularMap);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetIbl(}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::IrradianceMap>\ irradianceMap,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::SpecularMap>\ specularMap);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ CreateTargetImage(\textcolor{keyword}{const}\ Vector2ui\&\ size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Resize(\textcolor{keyword}{const}\ Vector2ui\&\ size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::GBuffer\&\ GetGbuffer()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ GRAPHICS::GBuffer\&\ GetGbuffer();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Execute(TDeltaTime\ deltaTime,\ std::span<const\ ECS::GameObjectIndex>\ objects)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Render(GRAPHICS::ICommandList*\ commandList,\ std::span<const\ ECS::GameObjectIndex>\ objects)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ToggleTaa();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddShaderPass(UniquePtr<GRAPHICS::IShaderPass>\&\&\ pass)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddShadowsPass(UniquePtr<GRAPHICS::IShaderPass>\&\&\ pass)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetResolver(UniquePtr<GRAPHICS::IDeferredResolver>\&\&\ resolver);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ GRAPHICS::DirectionalLight\&\ GetDirectionalLight();}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::DirectionalLight\&\ GetDirectionalLight()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ GRAPHICS::PbrIblConfig\&\ GetIblConfig();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::PbrIblConfig\&\ GetIblConfig()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ GRAPHICS::ShadowMap\&\ GetShadowMap();}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::ShadowMap\&\ GetShadowMap()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ASSETS::IrradianceMap*\ GetIrradianceMap()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ASSETS::SpecularMap*\ GetSpecularMap()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ GameObjectIndex\ GetCurrentCameraObject()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ std::string\_view\ GetResolverPassName()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ nlohmann::json\ SaveConfiguration()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ PERSISTENCE::BinaryBlock\ SaveBinaryConfiguration()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyConfiguration(\textcolor{keyword}{const}\ nlohmann::json\&\ config,\ \textcolor{keyword}{const}\ SavedGameObjectTranslator\&\ translator)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyConfiguration(PERSISTENCE::BinaryBlockReader*\ reader,\ \textcolor{keyword}{const}\ SavedGameObjectTranslator\&\ translator)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }CameraInfo\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ projectionMatrix;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ viewMatrix;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ projectionViewMatrix;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ Vector4f\ position;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ Vector2f\ nearFarPlanes;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }PreviousCameraInfo\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ projectionMatrix;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ viewMatrix;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ projectionViewMatrix;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ LoadMaterials();}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateBuffers();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupGBufferMaterial();}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupResolveMaterial();}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateResolveMaterial();}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ GenerateShadows(GRAPHICS::ICommandList*\ commandList);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RenderGBuffer(GRAPHICS::ICommandList*\ commandList);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ResolveGBuffer(GRAPHICS::ICommandList*\ commandList);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ExecuteTaa(GRAPHICS::ICommandList*\ commandList);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SharpenTaa(GRAPHICS::ICommandList*\ commandList);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CopyFinalImages(GRAPHICS::ICommandList*\ commandList);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetupGlobalMeshMapping();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ CameraGlobalSlotName\ =\ \textcolor{stringliteral}{"{}global"{}};}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ CameraBindingName\ =\ \textcolor{stringliteral}{"{}camera"{}};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ PreviousCameraBindingName\ =\ \textcolor{stringliteral}{"{}previousCamera"{}};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/\ RENDER\ TARGETS\ \&\ RESOLVE\ -\/-\/\ //}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ GRAPHICS::ComputeRenderTarget\ m\_resolveRenderTarget;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ GRAPHICS::GBuffer\ m\_gBuffer;}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::MaterialInstance>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_gBufferCameraInstances\{\};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::IDeferredResolver>\ m\_resolverPass;}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/\ CÁMARA\ -\/-\/\ //}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ m\_cameraObject\ =\ ECS::EMPTY\_GAME\_OBJECT;}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ glm::mat4\ m\_previousCameraProjection\ =\ glm::mat4(1.0f);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ glm::mat4\ m\_previousCameraView\ =\ glm::mat4(1.0f);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_cameraBuffers\ \{\};}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_previousFrameCameraBuffers\{\};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/\ LUCES\ Y\ SOMBRAS\ -\/-\/\ //}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ GRAPHICS::DirectionalLight\ m\_directionalLight\{\};}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ GRAPHICS::PbrIblConfig\ m\_iblConfig\{\};}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_directionalLightBuffers\{\};}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_iblConfigBuffers\{\};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::IrradianceMap>\ m\_irradianceMap;}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::SpecularMap>\ m\_specularMap;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ GRAPHICS::ShadowMap\ m\_shadowMap;}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/\ TAA\ -\/-\/\ //}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ GRAPHICS::TaaProvider\ m\_taaProvider\{\};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \};}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \}}
+
+\end{DoxyCode}

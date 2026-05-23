@@ -1,0 +1,125 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::IGjk\+Collider}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider}\index{OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}}
+
+
+{\ttfamily \#include $<$Gjk.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IGjk\+Collider} ()=default
+\item 
+virtual \textbf{ Gjk\+Support} \textbf{ Get\+Support} (const \textbf{ Vector3f} \&direction) const =0
+\item 
+virtual bool \textbf{ Contains\+Point} (const \textbf{ Vector3f} \&point) const
+\item 
+bool \textbf{ Is\+Behind\+Plane} (\textbf{ Plane} plane) const
+\item 
+bool \textbf{ Is\+Fully\+Behind\+Plane} (\textbf{ Plane} plane) const
+\item 
+bool \textbf{ Is\+Inside\+Frustum} (const \textbf{ Any\+Frustum} \&frustum) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para volúmenes 3D que soporten la detección de colisiones mediante GJK. 
+
+Clase base para todos los colisionadores del sistema. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}!````~IGjkCollider@{$\sim$IGjkCollider}}
+\index{````~IGjkCollider@{$\sim$IGjkCollider}!OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}}
+\doxysubsubsection{$\sim$IGjkCollider()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a276bd59a1ac4eeafd25688a162b68cdb} 
+virtual OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::$\sim$\+IGjk\+Collider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}!ContainsPoint@{ContainsPoint}}
+\index{ContainsPoint@{ContainsPoint}!OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}}
+\doxysubsubsection{ContainsPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a24f9964fb50bfbac36c335a096239486} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Contains\+Point (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{point}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Comrpueba si un punto está dentro del collider. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em point} & Punto a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si el punto está dentro del collider. 
+\end{DoxyReturn}
+
+
+Reimplementado en \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a0367c0e40c455bd81fc6fc54243f3051}.
+
+\index{OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}!GetSupport@{GetSupport}}
+\index{GetSupport@{GetSupport}!OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}}
+\doxysubsubsection{GetSupport()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a0db85d332a6ecdcc58f148c7041162b2} 
+virtual \textbf{ Gjk\+Support} OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Get\+Support (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{direction}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em direction} & Dirección en la que se busca el soporte. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Soporte (punto más alejado en la dirección {\ttfamily direction}). 
+\end{DoxyReturn}
+
+
+Implementado en \textbf{ \+\_\+\+Gjk\+Point\+Collider} \doxyref{}{pág.}{class___gjk_point_collider_a1e21961c4e8e4289cf8b8b41b4973810}, \textbf{ OSK\+::\+COLLISION\+::\+Axis\+Aligned\+Bounding\+Box} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_axis_aligned_bounding_box_aef86666ee6f8e6bde16e303a0b6b5de1}, \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a27717e8cb3cdc37f3c79e43d19922951} y \textbf{ OSK\+::\+COLLISION\+::\+Sphere\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_collider_a81675d5fe607abace40e997368c47fe8}.
+
+\index{OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}!IsBehindPlane@{IsBehindPlane}}
+\index{IsBehindPlane@{IsBehindPlane}!OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}}
+\doxysubsubsection{IsBehindPlane()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a6fbec8faa65f464438b307f231a540f1} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Is\+Behind\+Plane (\begin{DoxyParamCaption}\item[{\textbf{ Plane}}]{plane}{}\end{DoxyParamCaption}) const}
+
+
+
+Comprueba si parte del collider está por detrás del plano. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em plane} & Plano a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si está completamente por detrás. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}!IsFullyBehindPlane@{IsFullyBehindPlane}}
+\index{IsFullyBehindPlane@{IsFullyBehindPlane}!OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}}
+\doxysubsubsection{IsFullyBehindPlane()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a02c47053df332f6ec975ce26239a9948} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Is\+Fully\+Behind\+Plane (\begin{DoxyParamCaption}\item[{\textbf{ Plane}}]{plane}{}\end{DoxyParamCaption}) const}
+
+
+
+Comprueba si el collider está COMPLETMENTE por detrás del plano. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em plane} & Plano a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si está completamente por detrás. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}!IsInsideFrustum@{IsInsideFrustum}}
+\index{IsInsideFrustum@{IsInsideFrustum}!OSK::COLLISION::IGjkCollider@{OSK::COLLISION::IGjkCollider}}
+\doxysubsubsection{IsInsideFrustum()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a64c599fc78bd0160a9d6e5a8f1a20f74} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Is\+Inside\+Frustum (\begin{DoxyParamCaption}\item[{const \textbf{ Any\+Frustum} \&}]{frustum}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si el collider está dentro del frustum indicado. 
+\end{DoxyReturn}

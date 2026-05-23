@@ -1,0 +1,69 @@
+\doxysection{IConsumer\+System.\+h}
+\label{_i_consumer_system_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IConsumerSystem.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IConsumerSystem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ISystem.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Event.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}EventContainer.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IConsumerSystem\ :\ \textcolor{keyword}{public}\ ISystem\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \string~IConsumerSystem()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnExecutionStart();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Execute(TDeltaTime\ deltaTime,\ EventQueueSpan\ events);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnExecutionEnd();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\_view\ GetEventName()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ IConsumerSystem()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TEvent>}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ IsEcsEvent<TEvent>}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::span<const\ TEvent>\ BuildSpan(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ firstEvent,\ USize64\ numEvents)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::span<const\ TEvent>(\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }TEvent*\textcolor{keyword}{>}(firstEvent),\ numEvents);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TEvent>}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{requires}\ IsEcsEvent<TEvent>}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ ITypedConsumerSystem\ :\ \textcolor{keyword}{public}\ IConsumerSystem\ \{}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \string~ITypedConsumerSystem()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00062\ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Execute(TDeltaTime\ deltaTime,\ EventQueueSpan\ events)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ Execute(deltaTime,\ BuildSpan<TEvent>(events.data,\ events.numEntries));}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Execute(TDeltaTime\ deltaTime,\ std::span<const\ TEvent>\ events)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ (void)0;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::string\_view\ GetEventName()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TEvent::GetEventName();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TSystem>}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{concept\ }IsConsumerSystem\ =\ std::is\_base\_of\_v<IConsumerSystem,\ TSystem>}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \&\&\ IsEcsSystem<TSystem>;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,205 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Frame\+Combiner}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner}\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}
+
+
+{\ttfamily \#include $<$Frame\+Combiner.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum class \textbf{ Image\+Format} \{ \textbf{ RGBA8}
+, \textbf{ RGBA16}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Create} (const \textbf{ Vector2ui} \&resolution, \textbf{ Render\+Target\+Attachment\+Info} info)
+\item 
+void \textbf{ Resize} (const \textbf{ Vector2ui} \&resolution)
+\item 
+void \textbf{ Begin} (\textbf{ ICommand\+List} $\ast$command\+List, \textbf{ Image\+Format} format)
+\item 
+void \textbf{ Draw} (\textbf{ ICommand\+List} $\ast$command\+List, const \textbf{ IGpu\+Image\+View} \&image)
+\item 
+void \textbf{ End} (\textbf{ ICommand\+List} $\ast$command\+List)
+\item 
+\textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Target\+Image} ()
+\item 
+const \textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Target\+Image} () const
+\item 
+\textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Render\+Target} ()
+\item 
+const \textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Render\+Target} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Gpu\+Barrier\+Info} \textbf{ Get\+Image\+Barrier\+Info} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que permite combinar varias imágenes del mismo tamaño de una manera más eficiente. 
+
+\label{doc-enum-members}
+\doxysubsection{Documentación de las enumeraciones miembro de la clase}
+\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!ImageFormat@{ImageFormat}}
+\index{ImageFormat@{ImageFormat}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}
+\doxysubsubsection{ImageFormat}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_a3840e5f59586d37e6a3d2cc8d25b1873} 
+enum class \textbf{ OSK\+::\+GRAPHICS\+::\+Frame\+Combiner\+::\+Image\+Format}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Formatos soportados por el combiner. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGBA8@{RGBA8}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!RGBA8@{RGBA8}}}\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_a3840e5f59586d37e6a3d2cc8d25b1873ab4b279046a02077466fa26cabb00c642} 
+RGBA8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGBA16@{RGBA16}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!RGBA16@{RGBA16}}}\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_a3840e5f59586d37e6a3d2cc8d25b1873a50989efe15b375dce8ba3a5714fe2543} 
+RGBA16&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!Begin@{Begin}}
+\index{Begin@{Begin}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}
+\doxysubsubsection{Begin()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_a1de3ae7d1c465e2febf891276b49f7d1} 
+void Frame\+Combiner\+::\+Begin (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{command\+List}{, }\item[{\textbf{ Image\+Format}}]{format}{}\end{DoxyParamCaption})}
+
+
+
+Comienza el proceso de renderizado, sincronizando la imagen de destino. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command\+List} & Lista de comandos sobre la que se ejecutará. \\
+\hline
+{\em format} & Formato de la imagen de salida. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!Create@{Create}}
+\index{Create@{Create}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_a8a319b8b789816de7672a1f8ff4a0b91} 
+void Frame\+Combiner\+::\+Create (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{resolution}{, }\item[{\textbf{ Render\+Target\+Attachment\+Info}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa la clase. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Resolución de la imagen, en píxeles. \\
+\hline
+{\em info} & Información de la imagen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+{\ttfamily info.\+usage} tendrá al menos \doxyref{Gpu\+Image\+Usage\+::\+SAMPLED}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaa5d0791856a3081df75c6093017a61a36} $\vert$ \doxyref{Gpu\+Image\+Usage\+::\+COMPUTE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaaac404d7ce6ca5862e9b8a2641fbafd90}. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!Draw@{Draw}}
+\index{Draw@{Draw}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}
+\doxysubsubsection{Draw()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_aa2628e7d99ccf51ef08826a3b6c85e5a} 
+void Frame\+Combiner\+::\+Draw (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{command\+List}{, }\item[{const \textbf{ IGpu\+Image\+View} \&}]{image}{}\end{DoxyParamCaption})}
+
+
+
+Renderiza una imagen 2D sobre este frame. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image} & Imagen a añadir.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily debe} tener el layout \doxyref{Gpu\+Image\+Layout\+::\+SAMPLED}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9a5d0791856a3081df75c6093017a61a36}. 
+
+La resolución de {\ttfamily image} debe ser igual a la resolución de este frame. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!End@{End}}
+\index{End@{End}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}
+\doxysubsubsection{End()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_a826dcd968a818ee4c99df243a786770c} 
+void Frame\+Combiner\+::\+End (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{command\+List}{}\end{DoxyParamCaption})}
+
+
+
+Finaliza el renderizado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command\+List} & Lista de comandos sobre la que se ejecutará. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+El layout de Get\+Current\+Image() será \doxyref{Gpu\+Image\+Layout\+::\+SAMPLED}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a20f40e3d3e967090ee1884e0c77b9df9a5d0791856a3081df75c6093017a61a36}. 
+\end{DoxyPostcond}
+\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!GetImageBarrierInfo@{GetImageBarrierInfo}}
+\index{GetImageBarrierInfo@{GetImageBarrierInfo}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}
+\doxysubsubsection{GetImageBarrierInfo()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_a07e353db5594f949a398c735f083efb1} 
+\textbf{ Gpu\+Barrier\+Info} Frame\+Combiner\+::\+Get\+Image\+Barrier\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Devuelve}
+Barrier info que debe ser usado para la sincronización de las imágenes de entrada. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!GetRenderTarget@{GetRenderTarget}}
+\index{GetRenderTarget@{GetRenderTarget}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}
+\doxysubsubsection{GetRenderTarget()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_aaa2dbed2a17ef5dca24b4d812b13f888} 
+\textbf{ Compute\+Render\+Target} \& Frame\+Combiner\+::\+Get\+Render\+Target (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Render target sobre el que se construye la imagen final. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!GetRenderTarget@{GetRenderTarget}}
+\index{GetRenderTarget@{GetRenderTarget}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}
+\doxysubsubsection{GetRenderTarget()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_abc4d90abf1b8dc5e27b1fbb57a155ae6} 
+const \textbf{ Compute\+Render\+Target} \& Frame\+Combiner\+::\+Get\+Render\+Target (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Render target sobre el que se construye la imagen final. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!GetTargetImage@{GetTargetImage}}
+\index{GetTargetImage@{GetTargetImage}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}
+\doxysubsubsection{GetTargetImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_a9a90436a487f5ac2540544beaf9abc64} 
+\textbf{ Gpu\+Image} $\ast$ Frame\+Combiner\+::\+Get\+Target\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Imagen de renderizado del frame. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!GetTargetImage@{GetTargetImage}}
+\index{GetTargetImage@{GetTargetImage}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}
+\doxysubsubsection{GetTargetImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_a6fc1099f7375ffea6ec6aea6b5bb4259} 
+const \textbf{ Gpu\+Image} $\ast$ Frame\+Combiner\+::\+Get\+Target\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Imagen de renderizado del frame. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}!Resize@{Resize}}
+\index{Resize@{Resize}!OSK::GRAPHICS::FrameCombiner@{OSK::GRAPHICS::FrameCombiner}}
+\doxysubsubsection{Resize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner_aca437eeea30fa3330d066ab9974349e2} 
+void Frame\+Combiner\+::\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{resolution}{}\end{DoxyParamCaption})}
+
+
+
+Cambia la resolución de la imagen final. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Nueva resolución, en píxeles. \\
+\hline
+\end{DoxyParams}

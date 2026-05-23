@@ -1,0 +1,223 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Skeleton}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton}\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+
+
+{\ttfamily \#include $<$Skeleton.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Skeleton} (const \textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Bone} $>$ \&bones)
+\item 
+\textbf{ OSK\+\_\+\+DEFAULT\+\_\+\+COPY\+\_\+\+OPERATOR} (\textbf{ Skeleton})
+\item 
+\textbf{ OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR} (\textbf{ Skeleton})
+\item 
+void \textbf{ Update\+Matrices} (const \textbf{ Animation\+Skin} \&skin)
+\item 
+void \textbf{ Add\+Bone} (const \textbf{ Animation\+Bone} \&bone)
+\item 
+\textbf{ Animation\+Bone} \& \textbf{ Get\+Bone} (\textbf{ UIndex32} bone\+Index)
+\item 
+const \textbf{ Animation\+Bone} \& \textbf{ Get\+Bone} (\textbf{ UIndex32} bone\+Index) const
+\item 
+\textbf{ Animation\+Bone} \& \textbf{ Get\+Bone} (\textbf{ UIndex32} bone\+Index, const \textbf{ Animation\+Skin} \&skin)
+\item 
+const \textbf{ Animation\+Bone} \& \textbf{ Get\+Bone} (\textbf{ UIndex32} bone\+Index, const \textbf{ Animation\+Skin} \&skin) const
+\item 
+\textbf{ Animation\+Bone} \& \textbf{ Get\+Bone} (std\+::string\+\_\+view name)
+\item 
+const \textbf{ Animation\+Bone} \& \textbf{ Get\+Bone} (std\+::string\+\_\+view name) const
+\item 
+\textbf{ Animation\+Bone} \& \textbf{ Get\+Bone} (std\+::string\+\_\+view name, const \textbf{ Animation\+Skin} \&skin)
+\item 
+const \textbf{ Animation\+Bone} \& \textbf{ Get\+Bone} (std\+::string\+\_\+view name, const \textbf{ Animation\+Skin} \&skin) const
+\item 
+\textbf{ UIndex32} \textbf{ Get\+Root\+Node\+Index} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Bone\+Count} () const
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!Skeleton@{Skeleton}}
+\index{Skeleton@{Skeleton}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{Skeleton()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_ab21a245956f24f9566a8aa41a7dd74b1} 
+Skeleton\+::\+Skeleton (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Bone} $>$ \&}]{bones}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!AddBone@{AddBone}}
+\index{AddBone@{AddBone}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{AddBone()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_a3a80d2bf4e5f133ac9a3b6a638bd5c5e} 
+void Skeleton\+::\+Add\+Bone (\begin{DoxyParamCaption}\item[{const \textbf{ Animation\+Bone} \&}]{bone}{}\end{DoxyParamCaption})}
+
+
+
+Añade un nuevo hueso al esqueleto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em bone} & Nuevo hueso.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+No debe existir previamente un hueso con el mismo nombre. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!GetBone@{GetBone}}
+\index{GetBone@{GetBone}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{GetBone()\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_ae5476e5ce9ae5bd7d7060c4f78eeb3f0} 
+\textbf{ Animation\+Bone} \& Skeleton\+::\+Get\+Bone (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del hueso. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Hueso con el nombre dado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe existir un hueso con el nombre dado. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Bone\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bone_not_found_exception}} & si no existe un hueso con el nombre dado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!GetBone@{GetBone}}
+\index{GetBone@{GetBone}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{GetBone()\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_a534359c3ee63de497e7dbe3c244ccb64} 
+const \textbf{ Animation\+Bone} \& Skeleton\+::\+Get\+Bone (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!GetBone@{GetBone}}
+\index{GetBone@{GetBone}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{GetBone()\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_a977ca3b56b7add3bb3bdf21e7d3c2cd5} 
+\textbf{ Animation\+Bone} \& Skeleton\+::\+Get\+Bone (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{, }\item[{const \textbf{ Animation\+Skin} \&}]{skin}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del hueso. \\
+\hline
+{\em skin} & Skin. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Hueso con el nombre dado, según la skin indicada.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe existir un hueso con el índice dado en la animación activa. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Bone\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bone_not_found_exception}} & si no existe un hueso con el nombre dado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!GetBone@{GetBone}}
+\index{GetBone@{GetBone}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{GetBone()\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_ad00310a3a149c68641bb86d493793e44} 
+const \textbf{ Animation\+Bone} \& Skeleton\+::\+Get\+Bone (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{, }\item[{const \textbf{ Animation\+Skin} \&}]{skin}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!GetBone@{GetBone}}
+\index{GetBone@{GetBone}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{GetBone()\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_ae9b6911271d126bbd5cfea864a5fc336} 
+\textbf{ Animation\+Bone} \& Skeleton\+::\+Get\+Bone (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{bone\+Index}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em bone\+Index} & Índice del nodo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo con el índice dado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe existir un nodo con el índice dado. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Bone\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bone_not_found_exception}} & si no existe un hueso con el índice dado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!GetBone@{GetBone}}
+\index{GetBone@{GetBone}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{GetBone()\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_a1aa14e33f053252966709496bbbfeb2c} 
+const \textbf{ Animation\+Bone} \& Skeleton\+::\+Get\+Bone (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{bone\+Index}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!GetBone@{GetBone}}
+\index{GetBone@{GetBone}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{GetBone()\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_ab4bf0f0a9b308e5f7b4ab1073747fdfd} 
+\textbf{ Animation\+Bone} \& Skeleton\+::\+Get\+Bone (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{bone\+Index}{, }\item[{const \textbf{ Animation\+Skin} \&}]{skin}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em bone\+Index} & Índice del hueso (en la skin). \\
+\hline
+{\em skin} & Skin con el identificador del hueso. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Hueso con el índice dado (según la skin indicada).
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe existir un hueso con el índice dado en la animación activa. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Bone\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bone_not_found_exception}} & si no existe un hueso con el índice dado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!GetBone@{GetBone}}
+\index{GetBone@{GetBone}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{GetBone()\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_ae906678561c608cf3babcdae49abfa15} 
+const \textbf{ Animation\+Bone} \& Skeleton\+::\+Get\+Bone (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{bone\+Index}{, }\item[{const \textbf{ Animation\+Skin} \&}]{skin}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!GetBoneCount@{GetBoneCount}}
+\index{GetBoneCount@{GetBoneCount}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{GetBoneCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_a4b846fd2e09c64d408ba32ccdb9d1af7} 
+\textbf{ USize64} Skeleton\+::\+Get\+Bone\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Número de huesos. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!GetRootNodeIndex@{GetRootNodeIndex}}
+\index{GetRootNodeIndex@{GetRootNodeIndex}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{GetRootNodeIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_a6be528c7493e17df99e515cccf3e6945} 
+\textbf{ UIndex32} Skeleton\+::\+Get\+Root\+Node\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Índice del hueso del esqueleto que no tiene padre. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!OSK\_DEFAULT\_COPY\_OPERATOR@{OSK\_DEFAULT\_COPY\_OPERATOR}}
+\index{OSK\_DEFAULT\_COPY\_OPERATOR@{OSK\_DEFAULT\_COPY\_OPERATOR}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{OSK\_DEFAULT\_COPY\_OPERATOR()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_a21a2506b4ddbc58cd5d0f08e7055cc3c} 
+OSK\+::\+GRAPHICS\+::\+Skeleton\+::\+OSK\+\_\+\+DEFAULT\+\_\+\+COPY\+\_\+\+OPERATOR (\begin{DoxyParamCaption}\item[{\textbf{ Skeleton}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}}
+\index{OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{OSK\_DEFAULT\_MOVE\_OPERATOR()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_ad0dc8565d5918f99a3debd4624ecc2e9} 
+OSK\+::\+GRAPHICS\+::\+Skeleton\+::\+OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR (\begin{DoxyParamCaption}\item[{\textbf{ Skeleton}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}!UpdateMatrices@{UpdateMatrices}}
+\index{UpdateMatrices@{UpdateMatrices}!OSK::GRAPHICS::Skeleton@{OSK::GRAPHICS::Skeleton}}
+\doxysubsubsection{UpdateMatrices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_skeleton_a7fcbd5c0d758730273d004d33e7cd667} 
+void Skeleton\+::\+Update\+Matrices (\begin{DoxyParamCaption}\item[{const \textbf{ Animation\+Skin} \&}]{skin}{}\end{DoxyParamCaption})}
+

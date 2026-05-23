@@ -1,0 +1,83 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Narrow\+Collider\+Holder}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_narrow_collider_holder}\index{OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}}
+
+
+{\ttfamily \#include $<$Narrow\+Collider\+Holder.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Narrow\+Collider\+Holder} (\textbf{ Unique\+Ptr}$<$ \textbf{ INarrow\+Collider} $>$ \&\&collider)
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Narrow\+Collider\+Holder} $>$ \textbf{ Create\+Copy} () const
+\item 
+\textbf{ INarrow\+Collider} $\ast$ \textbf{ Get\+Collider} ()
+\item 
+const \textbf{ INarrow\+Collider} $\ast$ \textbf{ Get\+Collider} () const
+\item 
+void \textbf{ Transform} (const \textbf{ Transform3D} \&transform)
+\item 
+const \textbf{ Transform3D} \& \textbf{ Get\+Transform} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Contiene un collider de alto nivel. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}!NarrowColliderHolder@{NarrowColliderHolder}}
+\index{NarrowColliderHolder@{NarrowColliderHolder}!OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}}
+\doxysubsubsection{NarrowColliderHolder()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_narrow_collider_holder_aacbf000b1e7a545f24f494d7acf2538b} 
+OSK\+::\+COLLISION\+::\+Narrow\+Collider\+Holder\+::\+Narrow\+Collider\+Holder (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ INarrow\+Collider} $>$ \&\&}]{collider}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}!CreateCopy@{CreateCopy}}
+\index{CreateCopy@{CreateCopy}!OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}}
+\doxysubsubsection{CreateCopy()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_narrow_collider_holder_aafc49940926837cc35fdd2635c27f378} 
+\textbf{ OSK\+::\+Unique\+Ptr}$<$ \textbf{ OSK\+::\+COLLISION\+::\+Narrow\+Collider\+Holder} $>$ OSK\+::\+COLLISION\+::\+Narrow\+Collider\+Holder\+::\+Create\+Copy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Copia de este collider. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}!GetCollider@{GetCollider}}
+\index{GetCollider@{GetCollider}!OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}}
+\doxysubsubsection{GetCollider()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_narrow_collider_holder_a59173377690b23e3f91c8cb35c0b85ec} 
+\textbf{ OSK\+::\+COLLISION\+::\+INarrow\+Collider} $\ast$ OSK\+::\+COLLISION\+::\+Narrow\+Collider\+Holder\+::\+Get\+Collider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}!GetCollider@{GetCollider}}
+\index{GetCollider@{GetCollider}!OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}}
+\doxysubsubsection{GetCollider()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_narrow_collider_holder_a57e5b62e74f9d284e7f8e57bacb75004} 
+const \textbf{ OSK\+::\+COLLISION\+::\+INarrow\+Collider} $\ast$ OSK\+::\+COLLISION\+::\+Narrow\+Collider\+Holder\+::\+Get\+Collider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}!GetTransform@{GetTransform}}
+\index{GetTransform@{GetTransform}!OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}}
+\doxysubsubsection{GetTransform()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_narrow_collider_holder_a49f237b5b49bd8573adfdac9fc40e6f4} 
+const \textbf{ OSK\+::\+Transform3D} \& OSK\+::\+COLLISION\+::\+Narrow\+Collider\+Holder\+::\+Get\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Transform del collider. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}!Transform@{Transform}}
+\index{Transform@{Transform}!OSK::COLLISION::NarrowColliderHolder@{OSK::COLLISION::NarrowColliderHolder}}
+\doxysubsubsection{Transform()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_narrow_collider_holder_a5a374c1cd0f8c0b74d7c2315dda168b0} 
+void OSK\+::\+COLLISION\+::\+Narrow\+Collider\+Holder\+::\+Transform (\begin{DoxyParamCaption}\item[{const \textbf{ Transform3D} \&}]{transform}{}\end{DoxyParamCaption})}
+
+
+
+Transforma el collider. Debe llamarse una vez por frame. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em transform} & Transform de la entidad. \\
+\hline
+\end{DoxyParams}

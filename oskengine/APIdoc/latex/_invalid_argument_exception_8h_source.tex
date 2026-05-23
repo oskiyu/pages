@@ -1,0 +1,27 @@
+\doxysection{Invalid\+Argument\+Exception.\+h}
+\label{_invalid_argument_exception_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/InvalidArgumentException.h@{C:/Users/Oscar/source/repos/OSKengine/Source/InvalidArgumentException.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}EngineException.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }InvalidArgumentException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ InvalidArgumentException(}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ msg,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}InvalidArgumentException:\ \{\}."{}},\ msg),}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}

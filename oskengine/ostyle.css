@@ -54,6 +54,14 @@
     margin-left: 1em;
     margin-top: 0.5em;
 }
+.bold2 {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: aliceblue;
+    margin-left: 2em;
+    margin-top: 1.0em;
+    margin-bottom: 0.5em;
+}
 
 .subbold {
     font-size: 1.5em;
@@ -66,5 +74,10 @@
 .content {
     margin-left: 8em;
     margin-right: 8em;
-    margin-bottom: 15em;
+    margin-bottom: 11em;
+}
+
+.content_secondary {
+    margin-top: 3em;
+    margin-right: 8em;
 }

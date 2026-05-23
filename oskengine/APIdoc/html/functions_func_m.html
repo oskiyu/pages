@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Miembros de las clases - Funciones</title>
+<title>OSKengine: Miembros de clases - Funciones</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('functions_func_m.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('functions_func_m.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,17 +78,27 @@ $(document).ready(function(){initNavTree('functions_func_m.html',''); initResiza
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="contents">
-&#160;
+<div class="textblock">Lista de todas las funciones con enlaces a las clases a las que pertenecen:</div>
 
-<h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<h3 class="doxsection"><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>m_deleter()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_unique_ptr.html#a08530f0f4f041978657c151a637ba3f3">OSK::UniquePtr&lt; T, TDeleter &gt;</a></li>
-<li>MapMemory()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html#a55b91833fc67c0e9368f3bc7139da248">OSK::GRAPHICS::GpuBuffer</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html#a29f38899723247f6e8c3e2e910f35e70">OSK::GRAPHICS::IGpuMemorySubblock</a></li>
+<li>MapAll()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#ae7eee828cbd73e8407393b9493badbbd">OSK::GRAPHICS::IGpuMemoryBlock</a></li>
+<li>MapMemory()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer.html#a55b91833fc67c0e9368f3bc7139da248">OSK::GRAPHICS::GpuBuffer</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock.html#ad5ae101951c703cf692c306072c506c4">OSK::GRAPHICS::IGpuMemorySubblock</a></li>
+<li>MapRange()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#aa23ce91b510678a4bed503525846a1b7">OSK::GRAPHICS::IGpuMemoryBlock</a></li>
+<li>MapRange_Impl()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_block.html#a55d19c14fe9a62dd3c8bcea78cb226d3">OSK::GRAPHICS::IGpuMemoryBlock</a></li>
 <li>Material()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material.html#ac767a7adcea67ab292b949b4757118ec">OSK::GRAPHICS::Material</a></li>
 <li>MaterialInstance()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_instance.html#a0f82bba6d8404b11a5a594af377f50d4">OSK::GRAPHICS::MaterialInstance</a></li>
 <li>MaterialLayout()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout.html#a2786d1e3fb77800bcd7edae572901ef4">OSK::GRAPHICS::MaterialLayout</a></li>
@@ -109,10 +118,11 @@ $(document).ready(function(){initNavTree('functions_func_m.html',''); initResiza
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

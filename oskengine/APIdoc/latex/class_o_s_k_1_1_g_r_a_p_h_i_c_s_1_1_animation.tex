@@ -1,0 +1,101 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Animation}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation}\index{OSK::GRAPHICS::Animation@{OSK::GRAPHICS::Animation}}
+
+
+{\ttfamily \#include $<$Animation.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Animation} (const std\+::string \&name, const \textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Sampler} $>$ \&samplers, const \textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Channel} $>$ \&channels, const \textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Bone} $>$ \&bones)
+\item 
+void \textbf{ Update} (\textbf{ TDelta\+Time} delta\+Time, const \textbf{ Animation\+Skin} \&skin)
+\item 
+void \textbf{ Set\+Looping} (bool is\+Looping)
+\item 
+std\+::string\+\_\+view \textbf{ Get\+Name} () const
+\item 
+const \textbf{ Skeleton} \& \textbf{ Get\+Skeleton} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Animación para un modelo 3D. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::Animation@{OSK::GRAPHICS::Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!OSK::GRAPHICS::Animation@{OSK::GRAPHICS::Animation}}
+\doxysubsubsection{Animation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_a048d6f9c009652b17adcfaf70d33c03d} 
+Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Sampler} $>$ \&}]{samplers}{, }\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Channel} $>$ \&}]{channels}{, }\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Bone} $>$ \&}]{bones}{}\end{DoxyParamCaption})}
+
+
+
+Crea una animación. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre de la animación. \\
+\hline
+{\em samplers} & Samplers de la animación. \\
+\hline
+{\em channels} & Canales de la animación. \\
+\hline
+{\em bones} & Huesos afectados por la animación. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::Animation@{OSK::GRAPHICS::Animation}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::GRAPHICS::Animation@{OSK::GRAPHICS::Animation}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_a1195563fd37cfb496632be9c70651a6a} 
+std\+::string\+\_\+view Animation\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Nombre de la animación. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::Animation@{OSK::GRAPHICS::Animation}!GetSkeleton@{GetSkeleton}}
+\index{GetSkeleton@{GetSkeleton}!OSK::GRAPHICS::Animation@{OSK::GRAPHICS::Animation}}
+\doxysubsubsection{GetSkeleton()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_a1dbc0ebde96aba6f96faa186bd52bb21} 
+const \textbf{ Skeleton} \& Animation\+::\+Get\+Skeleton (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Esqueleto afectado por la animación. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::Animation@{OSK::GRAPHICS::Animation}!SetLooping@{SetLooping}}
+\index{SetLooping@{SetLooping}!OSK::GRAPHICS::Animation@{OSK::GRAPHICS::Animation}}
+\doxysubsubsection{SetLooping()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_af3c1b6a8a068f29ea9a82d335de3b6a4} 
+void Animation\+::\+Set\+Looping (\begin{DoxyParamCaption}\item[{bool}]{is\+Looping}{}\end{DoxyParamCaption})}
+
+
+
+Establece si la animación debe repetirse después de finalizar. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em is\+Looping} & True si debe repetirse en bucle. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::Animation@{OSK::GRAPHICS::Animation}!Update@{Update}}
+\index{Update@{Update}!OSK::GRAPHICS::Animation@{OSK::GRAPHICS::Animation}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_a46bc42619e5c82c2ba16ab51e23c3019} 
+void Animation\+::\+Update (\begin{DoxyParamCaption}\item[{\textbf{ TDelta\+Time}}]{delta\+Time}{, }\item[{const \textbf{ Animation\+Skin} \&}]{skin}{}\end{DoxyParamCaption})}
+
+
+
+Ejecuta la animación. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización. \\
+\hline
+{\em skin} & Skin de la animación. \\
+\hline
+\end{DoxyParams}

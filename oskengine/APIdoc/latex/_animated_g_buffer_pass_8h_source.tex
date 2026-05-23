@@ -1,0 +1,35 @@
+\doxysection{Animated\+GBuffer\+Pass.\+h}
+\label{_animated_g_buffer_pass_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/AnimatedGBufferPass.h@{C:/Users/Oscar/source/repos/OSKengine/Source/AnimatedGBufferPass.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}IShaderPass.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ AnimatedGBufferPass\ :\ \textcolor{keyword}{public}\ IShaderPass\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ Name\ =\ \textcolor{stringliteral}{"{}animated\_pass"{}};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ MaterialPath\ =\ \textcolor{stringliteral}{"{}Resources/Materials/PBR/Deferred/deferred\_gbuffer\_anim.json"{}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ OSK\_RENDERPASS(AnimatedGBufferPass,\ Name);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ AnimatedGBufferPass()\ :\ IShaderPass(Name)\ \{\}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Load()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RenderLoop(}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ ICommandList*\ commandList,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<ECS::GameObjectIndex>\&\ objectsToRender,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ GlobalMeshMapping*\ meshMapping,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ jitterIndex,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2ui\ resolution)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}

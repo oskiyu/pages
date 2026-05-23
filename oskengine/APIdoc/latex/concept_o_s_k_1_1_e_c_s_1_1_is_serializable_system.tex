@@ -1,0 +1,17 @@
+\doxysection{Referencia del concepto OSK\+::ECS\+::Is\+Serializable\+System}
+\label{concept_o_s_k_1_1_e_c_s_1_1_is_serializable_system}\index{OSK::ECS::IsSerializableSystem@{OSK::ECS::IsSerializableSystem}}
+
+
+{\ttfamily \#include $<$ISystem.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TSystem>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::ECS::IsSerializableSystem\ =\ \ IsEcsSystem<TSystem>\ \&\&\ std::is\_base\_of\_v<ISerializableSystem,\ TSystem>}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}
+Concepto para saber si un sistema es serializable. 

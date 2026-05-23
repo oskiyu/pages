@@ -1,0 +1,129 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IBottom\+Level\+Acceleration\+Structure}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure}\index{OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}}
+
+
+{\ttfamily \#include $<$IBottom\+Level\+Acceleration\+Structure.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IBottom\+Level\+Acceleration\+Structure} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IBottom\+Level\+Acceleration\+Structure})
+\item 
+virtual void \textbf{ Setup} (const \textbf{ Gpu\+Buffer} \&vertex\+Buffer, const \textbf{ Vertex\+Buffer\+View} \&vertex\+View, const \textbf{ Gpu\+Buffer} \&index\+Buffer, const \textbf{ Index\+Buffer\+View} \&index\+View, \textbf{ Rt\+Acceleration\+Structure\+Flags} flags)=0
+\item 
+virtual void \textbf{ Update} (\textbf{ ICommand\+List} $\ast$cmd\+List)=0
+\item 
+void \textbf{ Set\+Matrix} (const glm\+::mat4 \&matrix)
+\item 
+bool \textbf{ Is\+Dirty} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \textbf{ matrix\+Buffer}
+\item 
+bool \textbf{ is\+Dirty} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura de aceleración de nivel bajo\+: contiene la geometría de un modelo 3D. 
+
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}!````~IBottomLevelAccelerationStructure@{$\sim$IBottomLevelAccelerationStructure}}
+\index{````~IBottomLevelAccelerationStructure@{$\sim$IBottomLevelAccelerationStructure}!OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}}
+\doxysubsubsection{$\sim$IBottomLevelAccelerationStructure()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure_a235c30e88c4c21bb0aba5f70ce564f82} 
+virtual OSK\+::\+GRAPHICS\+::\+IBottom\+Level\+Acceleration\+Structure\+::$\sim$\+IBottom\+Level\+Acceleration\+Structure (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}!IsDirty@{IsDirty}}
+\index{IsDirty@{IsDirty}!OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}}
+\doxysubsubsection{IsDirty()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure_a8bd71e18b2ab2c44a9b1435fd138e7e9} 
+bool OSK\+::\+GRAPHICS\+::\+IBottom\+Level\+Acceleration\+Structure\+::\+Is\+Dirty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+True si se ha establecido la matriz pero no se ha llamado a Update. 
+
+\index{OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure_a56556b538d58fb56a885e00b7d5ecc99} 
+OSK\+::\+GRAPHICS\+::\+IBottom\+Level\+Acceleration\+Structure\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IBottom\+Level\+Acceleration\+Structure}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}!SetMatrix@{SetMatrix}}
+\index{SetMatrix@{SetMatrix}!OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}}
+\doxysubsubsection{SetMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure_af06b0819469bb85bc5ccccb69429ae11} 
+void OSK\+::\+GRAPHICS\+::\+IBottom\+Level\+Acceleration\+Structure\+::\+Set\+Matrix (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{matrix}{}\end{DoxyParamCaption})}
+
+
+
+Establece la matriz de modelo de la geometría contenida dentro de la estructura. 
+
+\begin{DoxyNote}{Nota}
+Para poder aplicarse, se debe llamar después a \doxyref{IBottom\+Level\+Acceleration\+Structure\+::\+Update}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure_a2bf592b2915032b29482dfbf57a9b54e}.
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Matrix\+Buffer\+Not\+Created\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_matrix_buffer_not_created_exception}} & Si no se creó correctamente el buffer de matriz. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}!Setup@{Setup}}
+\index{Setup@{Setup}!OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}}
+\doxysubsubsection{Setup()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure_a1b56a5b558c0ebe5bd2c729002c8fe52} 
+virtual void OSK\+::\+GRAPHICS\+::\+IBottom\+Level\+Acceleration\+Structure\+::\+Setup (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Buffer} \&}]{vertex\+Buffer}{, }\item[{const \textbf{ Vertex\+Buffer\+View} \&}]{vertex\+View}{, }\item[{const \textbf{ Gpu\+Buffer} \&}]{index\+Buffer}{, }\item[{const \textbf{ Index\+Buffer\+View} \&}]{index\+View}{, }\item[{\textbf{ Rt\+Acceleration\+Structure\+Flags}}]{flags}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Crea la estructura de aceleración con los triangulos definidos por los vértices y los índices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vertex\+Buffer} & \\
+\hline
+{\em index\+Buffer} & \\
+\hline
+{\em flags} & Configuración extra.\\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}!Update@{Update}}
+\index{Update@{Update}!OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure_a2bf592b2915032b29482dfbf57a9b54e} 
+virtual void OSK\+::\+GRAPHICS\+::\+IBottom\+Level\+Acceleration\+Structure\+::\+Update (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{cmd\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Actualiza la estructura de aceleración, para reflejar los cambios realizados en la matriz de modelo. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber creado la estructura, llamando a \doxyref{IBottom\+Level\+Acceleration\+Structure\+::\+Setup}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure_a1b56a5b558c0ebe5bd2c729002c8fe52}.
+\end{DoxyPrecond}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}!isDirty@{isDirty}}
+\index{isDirty@{isDirty}!OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}}
+\doxysubsubsection{isDirty}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure_aebde73345ad718c32c4a070095f62dbc} 
+bool OSK\+::\+GRAPHICS\+::\+IBottom\+Level\+Acceleration\+Structure\+::is\+Dirty = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}!matrixBuffer@{matrixBuffer}}
+\index{matrixBuffer@{matrixBuffer}!OSK::GRAPHICS::IBottomLevelAccelerationStructure@{OSK::GRAPHICS::IBottomLevelAccelerationStructure}}
+\doxysubsubsection{matrixBuffer}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_bottom_level_acceleration_structure_a09d1190f0d6e6a01f2cf992d7256a5cf} 
+\textbf{ Unique\+Ptr}$<$\textbf{ Gpu\+Buffer}$>$ OSK\+::\+GRAPHICS\+::\+IBottom\+Level\+Acceleration\+Structure\+::matrix\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+

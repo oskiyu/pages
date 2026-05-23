@@ -1,0 +1,180 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Material\+System}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_system}\index{OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}}
+
+
+{\ttfamily \#include $<$Material\+System.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Material\+System} ()=default
+\item 
+\textbf{ $\sim$\+Material\+System} ()
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Material\+System})
+\item 
+\textbf{ Material} $\ast$ \textbf{ Load\+Material} (const std\+::string \&path)
+\item 
+\textbf{ Material} $\ast$ \textbf{ Get\+Material\+By\+Name} (const std\+::string \&name) const
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \textbf{ Register\+Vertex\+Type} ()
+\item 
+void \textbf{ Reload\+Material\+By\+Path} (const std\+::string \&path)
+\item 
+void \textbf{ Reload\+Material\+By\+Name} (const std\+::string \&name)
+\item 
+void \textbf{ Reload\+All\+Materials} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que se encarga de cargar y manejar los materiales. Un material define el comportamiento del renderizador con un objeto en concreto. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}!MaterialSystem@{MaterialSystem}}
+\index{MaterialSystem@{MaterialSystem}!OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}}
+\doxysubsubsection{MaterialSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_system_ac82d346e346d1aa4b3c150a0931c7365} 
+OSK\+::\+GRAPHICS\+::\+Material\+System\+::\+Material\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}!````~MaterialSystem@{$\sim$MaterialSystem}}
+\index{````~MaterialSystem@{$\sim$MaterialSystem}!OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}}
+\doxysubsubsection{$\sim$MaterialSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_system_ae77b69200e4337042f7da24bc4d93c71} 
+Material\+System\+::$\sim$\+Material\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}!GetMaterialByName@{GetMaterialByName}}
+\index{GetMaterialByName@{GetMaterialByName}!OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}}
+\doxysubsubsection{GetMaterialByName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_system_a7e418f4052d6b5ab98de40f76d75eced} 
+\textbf{ Material} $\ast$ Material\+System\+::\+Get\+Material\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el material cargado con el nombre dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del material. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Material}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material}.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El material debe haber sido previamente cargado con Load\+Material. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Material\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_not_found_exception}} & si el material no ha sido previamente cargado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}!LoadMaterial@{LoadMaterial}}
+\index{LoadMaterial@{LoadMaterial}!OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}}
+\doxysubsubsection{LoadMaterial()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_system_ad39c519e3a5f58cc2a7622ba9b39687a} 
+\textbf{ Material} $\ast$ Material\+System\+::\+Load\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Carga un material. 
+
+Los materiales son cacheados\+: sólo se cargan una vez. 
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta al archivo del material (.json). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Material}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material} definido por el archivo.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{ASSETS\+::\+Invalid\+Description\+File\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_invalid_description_file_exception}} & Si el archivo del material tiene información faltante o incorrecta. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_system_af5640593b25bd269cc075fed52f55797} 
+OSK\+::\+GRAPHICS\+::\+Material\+System\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Material\+System}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}!RegisterVertexType@{RegisterVertexType}}
+\index{RegisterVertexType@{RegisterVertexType}!OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}}
+\doxysubsubsection{RegisterVertexType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_system_a0309d0dd9882446fb273f11528a277d6} 
+template$<$typename T$>$ \\
+void OSK\+::\+GRAPHICS\+::\+Material\+System\+::\+Register\+Vertex\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un nuevo tipo de vértice, para que puedan crearse materiales para él. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Clase del tipo de vértice.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyPrecond}{Precondición}
+La clase \textquotesingle{}T\textquotesingle{} debe tener implementado OSK\+\_\+\+REG\+\_\+\+VERTEX\+\_\+\+TYPE de manera correcta. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}!ReloadAllMaterials@{ReloadAllMaterials}}
+\index{ReloadAllMaterials@{ReloadAllMaterials}!OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}}
+\doxysubsubsection{ReloadAllMaterials()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_system_ab10195c7b144fcd1e139179dc8f5a137} 
+void Material\+System\+::\+Reload\+All\+Materials (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Recarga todos los materiales. 
+
+\index{OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}!ReloadMaterialByName@{ReloadMaterialByName}}
+\index{ReloadMaterialByName@{ReloadMaterialByName}!OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}}
+\doxysubsubsection{ReloadMaterialByName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_system_a516e25c2defbd08da791906e9219617c} 
+void Material\+System\+::\+Reload\+Material\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Recarga el material indicado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del material.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El material indicado debe haber sido previamente cargado. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Material\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_not_found_exception}} & si el material no ha sido previamente cargado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}!ReloadMaterialByPath@{ReloadMaterialByPath}}
+\index{ReloadMaterialByPath@{ReloadMaterialByPath}!OSK::GRAPHICS::MaterialSystem@{OSK::GRAPHICS::MaterialSystem}}
+\doxysubsubsection{ReloadMaterialByPath()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_system_adad258d15364bc494da82d0baacbf937} 
+void Material\+System\+::\+Reload\+Material\+By\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Recarga el material indicado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta del material.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El material indicado debe haber sido previamente cargado. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Material\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_not_found_exception}} & si el material no ha sido previamente cargado. \\
+\hline
+\end{DoxyExceptions}

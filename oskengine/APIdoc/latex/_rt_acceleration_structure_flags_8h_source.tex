@@ -1,0 +1,32 @@
+\doxysection{Rt\+Acceleration\+Structure\+Flags.\+h}
+\label{_rt_acceleration_structure_flags_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/RtAccelerationStructureFlags.h@{C:/Users/Oscar/source/repos/OSKengine/Source/RtAccelerationStructureFlags.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}EnumFlags.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{enum\ class}\ ModelMobilityType;}
+\DoxyCodeLine{00007\ \}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{enum\ class}\ RtAccelerationStructureFlags\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ FAST\_TRACE,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ FAST\_BUILD,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ ALLOW\_UPDATE}
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{enum\ class}\ RtAccelerationStructureUpdateType\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ UPDATE,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ REBUILD}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ RtAccelerationStructureFlags\ GetAsBuildFlags(ASSETS::ModelMobilityType);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ OSK\_FLAGS(OSK::GRAPHICS::RtAccelerationStructureFlags);}
+
+\end{DoxyCode}

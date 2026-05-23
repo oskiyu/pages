@@ -1,0 +1,112 @@
+\doxysection{Command\+List\+Vk.\+h}
+\label{_command_list_vk_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/CommandListVk.h@{C:/Users/Oscar/source/repos/OSKengine/Source/CommandListVk.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_VULKAN\_BACKEND}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ICommandList.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}VulkanTypedefs.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ResourcesInFlight.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}GpuInfoVkAny.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}RenderpassVkMap.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ OSK\_VULKAN\_TYPEDEF(VkCommandBuffer);}
+\DoxyCodeLine{00016\ OSK\_VULKAN\_TYPEDEF(VkDevice);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }GpuBuffer;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }GpuVk;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }CommandPoolVk;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }GraphicsPipelineVk;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ CommandListVk\ final\ :\ \textcolor{keyword}{public}\ ICommandList\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ CommandListVk(}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuVk\&\ gpu,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ CommandPoolVk*\ commandPool);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::span<const\ VkCommandBuffer>\ GetCommandBuffers()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Reset()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Start()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Close()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ClearImage(}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ image,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImageRange\&\ range,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\&\ color)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BeginGraphicsRenderpass(}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ DynamicArray<RenderPassImageInfo>\ colorImages,\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ std::optional<RenderPassImageInfo>\ depthImage,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\&\ color,\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ autoSync)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ EndGraphicsRenderpass(\textcolor{keywordtype}{bool}\ autoSync)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindVertexBufferRange(\textcolor{keyword}{const}\ GpuBuffer\&\ buffer,\ \textcolor{keyword}{const}\ VertexBufferView\&\ view)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindIndexBufferRange(\textcolor{keyword}{const}\ GpuBuffer\&\ buffer,\ \textcolor{keyword}{const}\ IndexBufferView\&\ view)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindMaterialSlot(\textcolor{keyword}{const}\ IMaterialSlot\&\ slot)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ PushMaterialConstants(\textcolor{keyword}{const}\ std::string\&\ pushConstName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ USize32\ size,\ USize32\ offset)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawSingleInstance(USize32\ numIndices)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawSingleMesh(UIndex32\ firstIndex,\ USize32\ numIndices)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawInstances(UIndex32\ firstIndex,\ USize32\ numIndices,\ UIndex32\ firstInstance,\ USize32\ instanceCount)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ TraceRays(UIndex32\ raygenEntry,\ UIndex32\ closestHitEntry,\ UIndex32\ missEntry,\ \textcolor{keyword}{const}\ Vector2ui\&\ resolution)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawMeshShader(\textcolor{keyword}{const}\ Vector3ui\&\ groupCount)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DispatchCompute(\textcolor{keyword}{const}\ Vector3ui\&\ groupCount)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetGpuImageBarrier(GpuImage*\ image,\ GpuImageLayout\ previousLayout,\ GpuImageLayout\ nextLayout,\ GpuBarrierInfo\ previous,\ GpuBarrierInfo\ next,\ \textcolor{keyword}{const}\ GpuImageRange\&\ range,\ \textcolor{keyword}{const}\ ResourceQueueTransferInfo\ queueTranfer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetGpuBufferBarrier(}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBuffer*\ buffer,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBufferRange\&\ range,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo\ previous,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBarrierInfo\ next,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ResourceQueueTransferInfo\ queueTranfer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CopyBufferToImage(\textcolor{keyword}{const}\ GpuBuffer\&\ source,\ GpuImage*\ dest,\ UIndex32\ layer,\ USize64\ offset)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RawCopyImageToImage(\textcolor{keyword}{const}\ GpuImage\&\ source,\ GpuImage*\ destination,\ \textcolor{keyword}{const}\ CopyImageInfo\&\ copyInfo)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CopyImageToImage(\textcolor{keyword}{const}\ GpuImage\&\ source,\ GpuImage*\ destination,\ \textcolor{keyword}{const}\ CopyImageInfo\&\ copyInfo,\ GpuImageFilteringType\ filter)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CopyBufferToBuffer(\textcolor{keyword}{const}\ GpuBuffer\&\ source,\ GpuBuffer*\ dest,\ USize64\ size,\ USize64\ sourceOffset,\ USize64\ destOffset)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetViewport(\textcolor{keyword}{const}\ Viewport\&\ viewport)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetScissor(\textcolor{keyword}{const}\ Vector4ui\&\ scissor)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetDebugName(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddDebugMarker(\textcolor{keyword}{const}\ std::string\&\ mark,\ \textcolor{keyword}{const}\ Color\&\ color)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ StartDebugSection(\textcolor{keyword}{const}\ std::string\&\ mark,\ \textcolor{keyword}{const}\ Color\&\ color)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ EndDebugSection()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ClearImagesCache()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindGraphicsPipeline(\textcolor{keyword}{const}\ IGraphicsPipeline\&\ computePipeline)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindComputePipeline(\textcolor{keyword}{const}\ IComputePipeline\&\ computePipeline)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindRayTracingPipeline(\textcolor{keyword}{const}\ IRaytracingPipeline\&\ computePipeline)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BindMeshPipeline(\textcolor{keyword}{const}\ IMeshPipeline\&\ computePipeline)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ std::array<VkCommandBuffer,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_commandBuffers;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ RenderpassVkMap\ m\_renderpasses;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ VkDevice\ m\_logicalDevice\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuVk*\ m\_gpu\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OSK\_USE\_VULKAN\_BAKCEND}}
+
+\end{DoxyCode}

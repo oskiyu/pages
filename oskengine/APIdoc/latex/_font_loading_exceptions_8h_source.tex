@@ -1,0 +1,56 @@
+\doxysection{Font\+Loading\+Exceptions.\+h}
+\label{_font_loading_exceptions_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/FontLoadingExceptions.h@{C:/Users/Oscar/source/repos/OSKengine/Source/FontLoadingExceptions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}EngineException.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }FontLibraryInitializationException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ FontLibraryInitializationException(}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ code,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}FontLibraryInitializationException:\ No\ se\ ha\ podido\ cargar\ FreeType.\ Code:\ \{\}."{}},\ code),}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }FontLodaingException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ FontLodaingException(}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ code,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}FontLodaingException:\ No\ se\ ha\ podido\ cargar\ la\ fuente.\ Code:\ \{\}."{}},\ code),}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{class\ }FontCharacterLodaingException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ FontCharacterLodaingException(}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ character,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ code,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}FontCharacterLodaingException:\ No\ se\ ha\ podido\ cargar\ el\ carácter\ \{\}.\ Code:\ \{\}."{}},\ character,\ code),}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \}}
+
+\end{DoxyCode}

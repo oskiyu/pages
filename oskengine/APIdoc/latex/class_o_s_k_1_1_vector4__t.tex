@@ -1,0 +1,628 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::Vector4\+\_\+t$<$ T $>$}
+\label{class_o_s_k_1_1_vector4__t}\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Vector4.\+hpp$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ TNumeric\+Type} = T
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vector4\+\_\+t} ()
+\item 
+\textbf{ Vector4\+\_\+t} (const T \&\textbf{ x}, const T \&\textbf{ y}, const T \&\textbf{ z}, const T \&\textbf{ w})
+\item 
+\textbf{ Vector4\+\_\+t} (const T \&value)
+\item 
+\textbf{ Vector4\+\_\+t} (const glm\+::vec4 \&vec)
+\item 
+\textbf{ Vector4\+\_\+t} \textbf{ operator+} (const \textbf{ Vector4\+\_\+t} \&vec) const
+\item 
+\textbf{ Vector4\+\_\+t} \& \textbf{ operator+=} (const \textbf{ Vector4\+\_\+t} \&vec)
+\item 
+\textbf{ Vector4\+\_\+t} \textbf{ operator-\/} () const
+\item 
+\textbf{ Vector4\+\_\+t} \textbf{ operator-\/} (const \textbf{ Vector4\+\_\+t} \&vec) const
+\item 
+\textbf{ Vector4\+\_\+t} \& \textbf{ operator-\/=} (const \textbf{ Vector4\+\_\+t} \&vec)
+\item 
+\textbf{ Vector4\+\_\+t} \textbf{ operator$\ast$} (const \textbf{ Vector4\+\_\+t} \&vec) const
+\item 
+\textbf{ Vector4\+\_\+t} \& \textbf{ operator$\ast$=} (const \textbf{ Vector4\+\_\+t} \&vec)
+\item 
+\textbf{ Vector4\+\_\+t} \textbf{ operator$\ast$} (const T \&value) const
+\item 
+\textbf{ Vector4\+\_\+t} \& \textbf{ operator$\ast$=} (const T \&value)
+\item 
+\textbf{ Vector4\+\_\+t} \textbf{ operator/} (const \textbf{ Vector4\+\_\+t} \&vec) const
+\item 
+\textbf{ Vector4\+\_\+t} \& \textbf{ operator/=} (const \textbf{ Vector4\+\_\+t} \&vec)
+\item 
+\textbf{ Vector4\+\_\+t} \textbf{ operator/} (const T \&value) const
+\item 
+\textbf{ Vector4\+\_\+t} \& \textbf{ operator/=} (const T \&value)
+\item 
+bool \textbf{ operator==} (const \textbf{ Vector4\+\_\+t} \&vec) const
+\item 
+bool \textbf{ operator!=} (const \textbf{ Vector4\+\_\+t} \&vec) const
+\item 
+\textbf{ Vector2\+\_\+t}$<$ T $>$ \textbf{ Get\+Rectangle\+Position} () const
+\item 
+\textbf{ Vector2\+\_\+t}$<$ T $>$ \textbf{ Get\+Rectangle\+Size} () const
+\item 
+T \textbf{ Get\+Rectangle\+Width} () const
+\item 
+T \textbf{ Get\+Rectangle\+Height} () const
+\item 
+T \textbf{ Get\+Rectangle\+Top} () const
+\item 
+T \textbf{ Get\+Rectangle\+Right} () const
+\item 
+\textbf{ Vector2\+\_\+t}$<$ T $>$ \textbf{ Get\+Rectangle\+Middle\+Point} () const
+\item 
+bool \textbf{ Intersects} (const \textbf{ Vector4\+\_\+t} \&vec) const
+\item 
+constexpr bool \textbf{ Contains\+Point} (const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&point) const
+\item 
+glm\+::vec4 \textbf{ To\+GLM} () const
+\item 
+glm\+::vec$<$ 4, T $>$ \textbf{ To\+GLM\+\_\+T} () const
+\item 
+{\footnotesize template$<$typename P$>$ }\\\textbf{ Vector4\+\_\+t}$<$ P $>$ \textbf{ To\+Vec4} () const
+\item 
+\textbf{ Vector4\+\_\+t}$<$ float\+\_\+t $>$ \textbf{ To\+Vector4f} () const
+\item 
+\textbf{ Vector4\+\_\+t}$<$ double\+\_\+t $>$ \textbf{ To\+Vector4d} () const
+\item 
+\textbf{ Vector4\+\_\+t}$<$ int32\+\_\+t $>$ \textbf{ To\+Vector4i} () const
+\item 
+\textbf{ Vector4\+\_\+t}$<$ uint32\+\_\+t $>$ \textbf{ To\+Vector4ui} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+T \textbf{ x}
+\item 
+T \textbf{ y}
+\item 
+T \textbf{ z}
+\item 
+T \textbf{ w}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename T$>$\newline
+class OSK\+::\+Vector4\+\_\+t$<$ T $>$}
+Representa un vector con 4 coordenadas (Rectangle). 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Precisión.\\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de los «\+Typedef» miembros de la clase}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!TNumericType@{TNumericType}}
+\index{TNumericType@{TNumericType}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{TNumericType}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a8427b977ab2d7edfcb54ce3e7ab2fc90} 
+template$<$typename T$>$ \\
+using \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+TNumeric\+Type = T}
+
+
+
+Tipo de dato numérico usado para almacenar los números. 
+
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!Vector4\_t@{Vector4\_t}}
+\index{Vector4\_t@{Vector4\_t}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{Vector4\_t()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a10dcc6d572d4c1d8e529077a9642f393} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Vector4\+\_\+t (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea un vector 4D nulo \{ 0, 0, 0, 0 \}. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!Vector4\_t@{Vector4\_t}}
+\index{Vector4\_t@{Vector4\_t}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{Vector4\_t()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_aeacff0a55efc77ab75381cb58ec861e7} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Vector4\+\_\+t (\begin{DoxyParamCaption}\item[{const T \&}]{x}{, }\item[{const T \&}]{y}{, }\item[{const T \&}]{z}{, }\item[{const T \&}]{w}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea un vector 4D. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!Vector4\_t@{Vector4\_t}}
+\index{Vector4\_t@{Vector4\_t}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{Vector4\_t()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a6916687265d6e5f732597c1422860bb6} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Vector4\+\_\+t (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea una instancia del Vector2 en la que X, Y, Z y W tienen en mismo valor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & Valor para X, Y, Z y W.\\
+\hline
+\end{DoxyParams}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!Vector4\_t@{Vector4\_t}}
+\index{Vector4\_t@{Vector4\_t}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{Vector4\_t()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a5096d6445ae5db0b3df90135e5ff5cb4} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Vector4\+\_\+t (\begin{DoxyParamCaption}\item[{const glm\+::vec4 \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea un vector 4D con los parámetros de vec. 
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!ContainsPoint@{ContainsPoint}}
+\index{ContainsPoint@{ContainsPoint}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{ContainsPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a2422496eea386266ee39dd8eece1c4f4} 
+template$<$typename T$>$ \\
+bool \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Contains\+Point (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2\+\_\+t}$<$ T $>$ \&}]{point}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Comrpueba si un punto está dentro del rectángulo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em point} & Posición del punto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si está contenido dentro del rectángulo. 
+\end{DoxyReturn}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!GetRectangleHeight@{GetRectangleHeight}}
+\index{GetRectangleHeight@{GetRectangleHeight}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{GetRectangleHeight()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_ac802760f8b8a303a4a84c63bbf8eee3b} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Get\+Rectangle\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la altura del rectángulo (W). 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!GetRectangleMiddlePoint@{GetRectangleMiddlePoint}}
+\index{GetRectangleMiddlePoint@{GetRectangleMiddlePoint}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{GetRectangleMiddlePoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a279df19d07b7e7d9ae246ad4f008248b} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t}$<$ T $>$ \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Get\+Rectangle\+Middle\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Punto central del rectángulo. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!GetRectanglePosition@{GetRectanglePosition}}
+\index{GetRectanglePosition@{GetRectanglePosition}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{GetRectanglePosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a5e636ce8403b0b63545ffcb296381890} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t}$<$ T $>$ \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Get\+Rectangle\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la posición del rectángulo (X, Y). 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!GetRectangleRight@{GetRectangleRight}}
+\index{GetRectangleRight@{GetRectangleRight}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{GetRectangleRight()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a72b23701240543277bbc929e043fa6c5} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Get\+Rectangle\+Right (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el lateral derecho del tectángulo (X + Z). 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!GetRectangleSize@{GetRectangleSize}}
+\index{GetRectangleSize@{GetRectangleSize}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{GetRectangleSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a96bdc916373a99e5b58ad770fa9b271e} 
+template$<$typename T$>$ \\
+\textbf{ Vector2\+\_\+t}$<$ T $>$ \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Get\+Rectangle\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el tamaño del rectángulo (Z, W). 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!GetRectangleTop@{GetRectangleTop}}
+\index{GetRectangleTop@{GetRectangleTop}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{GetRectangleTop()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a703807b039c9dbc785338632ac88cbe9} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Get\+Rectangle\+Top (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el tope del rectángulo (Y + W). 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!GetRectangleWidth@{GetRectangleWidth}}
+\index{GetRectangleWidth@{GetRectangleWidth}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{GetRectangleWidth()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_aa5df4ea455763b5d10c98687c9449c45} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Get\+Rectangle\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la anchura del rectángulo (Z). 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!Intersects@{Intersects}}
+\index{Intersects@{Intersects}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{Intersects()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_aae8fc9f851a40a8e9b04dc4d4aa716fc} 
+template$<$typename T$>$ \\
+bool \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+Intersects (\begin{DoxyParamCaption}\item[{const \textbf{ Vector4\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna \textquotesingle{}true\textquotesingle{} si los dos rectángulos se tocan. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator"!=()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a165b99250ef40edcfc4f6815c2807397} 
+template$<$typename T$>$ \\
+bool \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \textbf{ Vector4\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comparación. True si no todos los componentes son iguales. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator$\ast$()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_ac59576774d8691e12a16e95aaf9cb466} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operación \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} $\ast$ float. 
+
+\begin{DoxyNote}{Nota}
+X $\ast$ value; Y $\ast$ value; Z $\ast$ value; W $\ast$ value. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator$\ast$()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a3feced544d4501758d0b350c06c23505} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \textbf{ Vector4\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operación \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} $\ast$ \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9}. 
+
+\begin{DoxyNote}{Nota}
+X1 $\ast$ X2; Y1 $\ast$ Y2; Z1 $\ast$ Z2; W1 $\ast$ W2. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator$\ast$=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_ade8ce25cc287012c9546b3c173963b8c} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \& \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operación \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} $\ast$= T. 
+
+\begin{DoxyNote}{Nota}
+X1 $\ast$ value; Y1 $\ast$ value; Z1 $\ast$ value, W1 $\ast$ value. 
+
+Modifica el vector. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator$\ast$=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a35f76a79cbb76dd3a0f0765eb069f981} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \& \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \textbf{ Vector4\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operación \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} $\ast$= \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9}. 
+
+\begin{DoxyNote}{Nota}
+X1 $\ast$ X2; Y1 $\ast$ Y2; Z1 $\ast$ Z2, W1 $\ast$ W2. 
+
+Modifica el vector. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator+()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a349872b8289e0256f7237c1d60fbee4b} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ Vector4\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operación \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} + \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9}. 
+
+\begin{DoxyNote}{Nota}
+X1 + X2; Y1 + Y2, Z1 + Z2, W1 + W2. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator+=()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a4e029c1b6bd1fd4e8c59ee76538730b1} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \& \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \textbf{ Vector4\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operación \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} += \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9}. 
+
+\begin{DoxyNote}{Nota}
+X1 + X2; Y1 + Y2, Z1 + Z2, W1 + W2. 
+
+Modifica el vector. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator-\/()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_aa3e51237b1a2378aaee42fe902f74aa4} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Negación del \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9}. 
+
+\begin{DoxyNote}{Nota}
+-\/X; -\/Y; -\/Z; -\/W. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator-\/()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a67c25b0b363ec20443ab4192d046d511} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \textbf{ Vector4\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operación \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} -\/ \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9}. 
+
+\begin{DoxyNote}{Nota}
+X1 -\/ X2; Y1 -\/ Y2; Z1 -\/ Z2, W1 -\/ W2. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator-\/=()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_ae76f68a0016a34a19eaa2d55a23c65f7} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \& \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \textbf{ Vector4\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operación \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} -\/= \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9}. 
+
+\begin{DoxyNote}{Nota}
+X1 -\/ X2; Y1 -\/ Y2; Z1 -\/ Z2, W1 -\/ W2. 
+
+Modifica el vector. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator/()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_ac7753d5e3c9ed9a102eb9a9b62362d77} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operación \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} / float\+\_\+t. 
+
+\begin{DoxyNote}{Nota}
+X / value; Y / value; Z / value; W / value. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator/()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a733c15c598360967d122ac08b5f8adbd} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const \textbf{ Vector4\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operación \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} / \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9}. 
+
+\begin{DoxyNote}{Nota}
+X / vec.\+X; Y / vec.\+Y, Z / vec.\+Z, W / vec.\+W. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator/=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a195c99bc039e344109f6538ff9682138} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \& \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operación \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} /= T. 
+
+\begin{DoxyNote}{Nota}
+X1 / value; Y1 / value; Z1 / value, W1 / value. 
+
+Modifica el vector. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator/=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a31c9d9f87ea2345e0641d71f2d453a8f} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t} \& \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const \textbf{ Vector4\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operación \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} /= \doxyref{Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9}. 
+
+\begin{DoxyNote}{Nota}
+X1 / X2; Y1 / Y2; Z1 / Z2, W1 / W2. 
+
+Modifica el vector. 
+\end{DoxyNote}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{operator==()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_af6d6d79a2af793ce3d85c8c2c893849a} 
+template$<$typename T$>$ \\
+bool \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Vector4\+\_\+t}$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comparación. True si todos los componentes son iguales. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!ToGLM@{ToGLM}}
+\index{ToGLM@{ToGLM}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{ToGLM()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a112f4b73019853c6fb2c672ffdd58a58} 
+template$<$typename T$>$ \\
+glm\+::vec4 \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+To\+GLM (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxyref{OSK\+::\+Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} a glm\+::vec4. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!ToGLM\_T@{ToGLM\_T}}
+\index{ToGLM\_T@{ToGLM\_T}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{ToGLM\_T()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_ac3153a72cbc0e891f630aa4f376ff381} 
+template$<$typename T$>$ \\
+glm\+::vec$<$ 4, T $>$ \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+To\+GLM\+\_\+T (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxyref{OSK\+::\+Vector4}{pág.}{namespace_o_s_k_a85873d5e416480a8f3086acb0a15dde9} a glm\+::vec. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!ToVec4@{ToVec4}}
+\index{ToVec4@{ToVec4}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{ToVec4()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_aa4a6225e5a9eb1012640cdcdc26353aa} 
+template$<$typename T$>$ \\
+template$<$typename P$>$ \\
+\textbf{ Vector4\+\_\+t}$<$ P $>$ \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+To\+Vec4 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve un vector con variables de distinto tipo. P = nuevo tipo de las variables. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!ToVector4d@{ToVector4d}}
+\index{ToVector4d@{ToVector4d}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{ToVector4d()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a8ccf6d560e5962e8f4159549cfcaef83} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t}$<$ double\+\_\+t $>$ \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+To\+Vector4d (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve un \doxyref{Vector4d}{pág.}{namespace_o_s_k_a981145547bf46772b84e01915910c9f1} a partir de este. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!ToVector4f@{ToVector4f}}
+\index{ToVector4f@{ToVector4f}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{ToVector4f()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_ae04fb43d5fdc6fe55b67c233f3b78875} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t}$<$ float\+\_\+t $>$ \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+To\+Vector4f (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve un \doxyref{Vector4f}{pág.}{namespace_o_s_k_a98c42bf0a7665f299a3a66c8d4cdcdc2} a partir de este. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!ToVector4i@{ToVector4i}}
+\index{ToVector4i@{ToVector4i}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{ToVector4i()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a196f41fded5e9ce0c7e3e646a63e379e} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t}$<$ int32\+\_\+t $>$ \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+To\+Vector4i (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve un \doxyref{Vector4i}{pág.}{namespace_o_s_k_a42dabbf4f34b56544b7d1f1df8996c2c} a partir de este. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!ToVector4ui@{ToVector4ui}}
+\index{ToVector4ui@{ToVector4ui}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{ToVector4ui()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a5ea1015dbd131ea807e71a3e09101f02} 
+template$<$typename T$>$ \\
+\textbf{ Vector4\+\_\+t}$<$ uint32\+\_\+t $>$ \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::\+To\+Vector4ui (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve un \doxyref{Vector4ui}{pág.}{namespace_o_s_k_a388745491b9a70d4760a7b979ef3fe19} a partir de este. 
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!w@{w}}
+\index{w@{w}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{w}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a7541212002d5700f01b0df3d236730a1} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::w}
+
+
+
+Cuarta coordenada. Alto del rectángulo. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!x@{x}}
+\index{x@{x}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{x}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a0593b906f5d047bd9ddbda62463ba1bc} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::x}
+
+
+
+Primera coordenada. Posición X del rectángulo. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!y@{y}}
+\index{y@{y}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{y}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a6b7176a7eb65f006dc0bc8ca35efba37} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::y}
+
+
+
+Segunda coordenada. Posición Y del rectángulo. 
+
+\index{OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}!z@{z}}
+\index{z@{z}!OSK::Vector4\_t$<$ T $>$@{OSK::Vector4\_t$<$ T $>$}}
+\doxysubsubsection{z}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_vector4__t_a054e2ad85350edd28d515abe46431ca2} 
+template$<$typename T$>$ \\
+T \textbf{ OSK\+::\+Vector4\+\_\+t}$<$ T $>$\+::z}
+
+
+
+Tercera coordenada. Ancho del rectángulo. 
+

@@ -1,0 +1,35 @@
+\doxysection{Archivo de descripción de volumen de colisión 3D. }
+\label{_pre_built_collider3_d_file}\index{Archivo de descripción de volumen de colisión 3D.@{Archivo de descripción de volumen de colisión 3D.}}
+Indica los metadatos de un volumen de colisión 3D almacenado en un fichero externo.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+\_\+type} & ({\ttfamily string}) Tipo de archivo de descripción. \\
+\hline
+{\em spec\+\_\+ver} & ({\ttfamily string}) Versión de la especificación del archivo. \\
+\hline
+{\em asset\+\_\+type} & ({\ttfamily string}) Tipo de recurso. \\
+\hline
+{\em name} & ({\ttfamily string}) Nombre del volumen de colisión. \\
+\hline
+{\em raw\+\_\+asset\+\_\+path} & ({\ttfamily string}) Ruta al fichero que almacena el volumen de colisión 3D. \\
+\hline
+{\em scale} & ({\ttfamily Vector3f}) Multiplicador de escala de carga del volumen de colisión 3D. Por defecto\+: {\ttfamily (1, 1, 1)} . \\
+\hline
+{\em rotation\+\_\+offset} & ({\ttfamily Vector3f}) [{\itshape opcional}] Ruta al fichero que almacena el volumen de colisión 3D. Por defecto\+: {\ttfamily (0, 0, 0)}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily file\+\_\+type} debe ser {\ttfamily ASSET}. 
+
+{\ttfamily spec\+\_\+ver} debe ser 0. 
+
+{\ttfamily asset\+\_\+type} debe ser {\ttfamily OSK\+::\+Pre\+Built\+Collider}. 
+
+{\ttfamily name} debe ser un identificador único para este volumen de colisión.
+
+{\ttfamily raw\+\_\+asset\+\_\+path} debe apuntar a un archivo con extensión {\ttfamily .glb}.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+{\ttfamily rotation\+\_\+offset} se indica en grados. 
+\end{DoxyNote}

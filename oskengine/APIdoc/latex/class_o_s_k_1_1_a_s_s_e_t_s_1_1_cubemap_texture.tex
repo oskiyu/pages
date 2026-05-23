@@ -1,0 +1,110 @@
+\doxysection{Referencia de la clase OSK\+::ASSETS\+::Cubemap\+Texture}
+\label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_cubemap_texture}\index{OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}}
+
+
+{\ttfamily \#include $<$Cubemap\+Texture.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Cubemap\+Texture} (const std\+::string \&asset\+File)
+\item 
+\textbf{ OSK\+\_\+\+ASSET\+\_\+\+TYPE\+\_\+\+REG} ("{}OSK\+::\+Cubemap\+Texture"{})
+\item 
+const \textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ \textbf{ Get\+Gpu\+Image} () const
+\item 
+void \textbf{ \+\_\+\+Set\+Image} (\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Image} $>$ \&\&image)
+\item 
+void \textbf{ Set\+Name} (const std\+::string \&name)
+\item 
+std\+::string \textbf{ Get\+Name} () const
+\item 
+std\+::string \textbf{ Get\+Asset\+Filename} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa una textura para un cubemap. Se puede usar para renderizar un skybox. 
+
+\begin{DoxyNote}{Nota}
+Representa un array de imágenes con 6 elementos.
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+Únicamente para usarse como lectura, no se puede renderizar sobre un cubemap representado por esta clase. 
+\end{DoxyWarning}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}!CubemapTexture@{CubemapTexture}}
+\index{CubemapTexture@{CubemapTexture}!OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}}
+\doxysubsubsection{CubemapTexture()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_cubemap_texture_a66d792bc75d3c6b7a556503db6f0e65e} 
+Cubemap\+Texture\+::\+Cubemap\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}!\_SetImage@{\_SetImage}}
+\index{\_SetImage@{\_SetImage}!OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}}
+\doxysubsubsection{\_SetImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_cubemap_texture_a9864c44a7586d97be0b581f0f8c0f1ba} 
+void Cubemap\+Texture\+::\+\_\+\+Set\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Image} $>$ \&\&}]{image}{}\end{DoxyParamCaption})}
+
+
+
+Establece la imagen que contiene el cubemap. 
+
+\begin{DoxyWarning}{Atención}
+Función interna\+: no llamar. 
+\end{DoxyWarning}
+\index{OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}!GetAssetFilename@{GetAssetFilename}}
+\index{GetAssetFilename@{GetAssetFilename}!OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}}
+\doxysubsubsection{GetAssetFilename()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_acf0bac3849facb6afb0499907186840b} 
+std\+::string IAsset\+::\+Get\+Asset\+Filename (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Obtiene la ruta del archivo JSON que describe esta instancia del asset. 
+
+\index{OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}!GetGpuImage@{GetGpuImage}}
+\index{GetGpuImage@{GetGpuImage}!OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}}
+\doxysubsubsection{GetGpuImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_cubemap_texture_a6af2a4764de0652d67db5b71e93d8c55} 
+const \textbf{ Gpu\+Image} $\ast$ Cubemap\+Texture\+::\+Get\+Gpu\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Imagen guardada en la GPU. Para renderizado. 
+
+\index{OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_aa0e593888f6bcd143de4f9eb5a912f44} 
+std\+::string IAsset\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Nombre de la instancia del asset. 
+
+\index{OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}!OSK\_ASSET\_TYPE\_REG@{OSK\_ASSET\_TYPE\_REG}}
+\index{OSK\_ASSET\_TYPE\_REG@{OSK\_ASSET\_TYPE\_REG}!OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}}
+\doxysubsubsection{OSK\_ASSET\_TYPE\_REG()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_cubemap_texture_af9f57e3aa1112b8c5aa9ab40ebdac7a7} 
+OSK\+::\+ASSETS\+::\+Cubemap\+Texture\+::\+OSK\+\_\+\+ASSET\+\_\+\+TYPE\+\_\+\+REG (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Cubemap\+Texture"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}!SetName@{SetName}}
+\index{SetName@{SetName}!OSK::ASSETS::CubemapTexture@{OSK::ASSETS::CubemapTexture}}
+\doxysubsubsection{SetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_af0bbd1c59b2cd81667b63cb6d015c11c} 
+void IAsset\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Establece el nombre de la instancia de este asset. 
+
+\begin{DoxyWarning}{Atención}
+Es un identificador único. 
+\end{DoxyWarning}

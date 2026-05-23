@@ -1,0 +1,146 @@
+\chapter{style }
+\label{md_style}\index{style@{style}}
+﻿ \doxysection{Estilo de código C++.}\label{md_style_autotoc_md288}
+\doxysubsection{General}\label{md_style_autotoc_md289}
+
+\begin{DoxyItemize}
+\item Usar tabulaciones en vez de espacios.
+\begin{DoxyItemize}
+\item Tamaño de tabulación equivalente a 4 espacios.
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysubsection{Archivos de encabezado}\label{md_style_autotoc_md290}
+
+\begin{DoxyItemize}
+\item Todos los archivos de encabezado deben tener {\itshape header guard} {\ttfamily \#pragma once}.
+\item Los archivos de encabezado que necesiten proporcionar el cuerpo de funciones deben tener extensión {\ttfamily .hpp}.
+\item El resto de archivos debe tener extensión {\ttfamily .h}.
+\item Cada archivo de código C++ ({\ttfamily .cpp}) debe tener asociado un archivo de encabezado.
+\item Si en el archivo de encabezado se hace referencia a algún tipo de dato no básico, debe contener una declaración o definición de dicho tipo de dato ({\itshape include what you use})\+:
+\begin{DoxyItemize}
+\item Si el tipo de dato no necesita estar definido (como con punteros o referencias), se debe incluir una declaración ({\itshape forward declaration}).
+\item Si esto no es posible, se debe incluir explícitamente el archivo de inclusión donde se define el tipo de dato.
+\end{DoxyItemize}
+\item Los archivos de encabezado que se incluyan en cualquier archivo deben seguir el siguiente orden\+:
+\begin{DoxyEnumerate}
+\item Archivo de encabezado enlazado (para archivos de código C++ ({\ttfamily .cpp})).
+\item Archivos de librería del motor ({\ttfamily \doxyref{Numeric\+Types.\+h}{pág.}{_numeric_types_8h_source}}, {\ttfamily \doxyref{Assert.\+h}{pág.}{_assert_8h_source}}, {\ttfamily \doxyref{Define\+As.\+h}{pág.}{_define_as_8h_source}}, etc.).
+\item Archivos de memoria del motor ({\ttfamily \doxyref{Unique\+Ptr.\+hpp}{pág.}{_unique_ptr_8hpp_source}}, etc.).
+\item Archivos generales del motor ({\ttfamily \doxyref{Numeric\+Types.\+h}{pág.}{_numeric_types_8h_source}}, {\ttfamily \doxyref{Assert.\+h}{pág.}{_assert_8h_source}}, {\ttfamily Engine.\+h}, {\ttfamily \doxyref{Logger.\+h}{pág.}{_logger_8h_source}}, etc.).
+\item Otros archivos del motor.
+\item Archivos de la librería estándar ({\ttfamily std}).
+\end{DoxyEnumerate}
+\end{DoxyItemize}\doxysubsection{Namespaces}\label{md_style_autotoc_md291}
+
+\begin{DoxyItemize}
+\item Todo el código debe estar introducido dentro de un namespace.
+\item Los namespaces deben tener su nombre en mayúsculas, usando snake-\/case si fuese necesario.
+\item El namespace elegido debe ser\+:
+\begin{DoxyItemize}
+\item {\ttfamily \doxyref{OSK}{pág.}{namespace_o_s_k}}\+: espacio de nombres por defecto para\+:
+\begin{DoxyItemize}
+\item Tipos de datos numéricos y vectoriales.
+\item Excepciones generales.
+\item Cualquier código relacionado con la ejecución multihilo.
+\item Cualquier código relacionado con el manejo de UUIDs.
+\item Clases de punteros.
+\item Clases generales del motor ({\ttfamily Engine}, {\ttfamily IGame}).
+\item Utilidades generales (menos enum flags).
+\end{DoxyItemize}
+\item {\ttfamily \doxyref{OSK\+::\+GRAPHICS}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s}}\+: cualquier código relacionado con el manejo de las APIs de bajo nivel, así como la capa de abstracción. No incluye componentes o sistemas ECS.
+\item {\ttfamily \doxyref{OSK\+::\+ECS}{pág.}{namespace_o_s_k_1_1_e_c_s}}\+: cualquier código relacionado con la arquitectura ECS, así como todos los componentes, sistemas y eventos por defecto.
+\item {\ttfamily \doxyref{OSK\+::\+ASSETS}{pág.}{namespace_o_s_k_1_1_a_s_s_e_t_s}}\+: cualquier código relacionado con la arquitectura de manejo de assets, así como todos los assets y loaders por defecto.
+\item {\ttfamily \doxyref{OSK\+::\+AUDIO}{pág.}{namespace_o_s_k_1_1_a_u_d_i_o}}\+: cualquier código relacionado con el manejo de las APIs de bajo nivel, así como la capa de abstracción. No incluye componentes o sistemas ECS.
+\item {\ttfamily \doxyref{OSK\+::\+COLLISION}{pág.}{namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n}}\+: cualquier código relacionado con la detección de colisiones, representación de volúmenes y ray-\/casting. No incluye componentes o sistemas ECS.
+\item {\ttfamily \doxyref{OSK\+::\+IO}{pág.}{namespace_o_s_k_1_1_i_o}}\+: cualquier código relacionado con el manejo de entrada y salida mediante monitor, mando, teclado, ratón, logs y archivos.
+\item {\ttfamily \doxyref{OSK\+::\+MEMORY}{pág.}{namespace_o_s_k_1_1_m_e_m_o_r_y}}\+: cualquier código relacionado con el manejo de memoria, excepto por clases de punteros.
+\item {\ttfamily \doxyref{OSK\+::\+NET}{pág.}{namespace_o_s_k_1_1_n_e_t}}\+: cualquier código relacionado con el manejo de redes y la transmisión de datos mediante éstas.
+\item {\ttfamily \doxyref{OSK\+::\+PERSISTENCE}{pág.}{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e}}\+: cualquier código relacionado con la serialización y desserialización de datos, independientemente de su formato.
+\item {\ttfamily \doxyref{OSK\+::\+UI}{pág.}{namespace_o_s_k_1_1_u_i}}\+: cualquier código relacionado con la interfaz de usuario, incluyendo los elementos por defecto.
+\item {\ttfamily \doxyref{OSK\+::\+MATH}{pág.}{namespace_o_s_k_1_1_m_a_t_h}}\+: cualquier código relacionado con operaciones matemáticas. No incluye tipos de datos numéricos o vectoriales.
+\item {\ttfamily \doxyref{OSK\+::\+EFTraits}{pág.}{namespace_o_s_k_1_1_e_f_traits}}\+: cualquier código relacionado con el manejo de enumeraciones como enum flags.
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysubsection{Variables}\label{md_style_autotoc_md292}
+
+\begin{DoxyItemize}
+\item Tanto las variables como los atributos deben tener estilo {\itshape lower\+Camel\+Case}.
+\item Los atributos de una clase deben tener el prefijo {\ttfamily m\+\_\+}, independientemente de su tipo o propiedades.
+\item Las variables\+:
+\begin{DoxyItemize}
+\item Deben ser declaradas lo más cerca posible de su primer uso.
+\item Deben ser declaradas en el scope más restrictivo posible.
+\item Deben ser inmutables ({\ttfamily const}) siempre que sea posible.
+\item Deben tener un valor inicial siempre que sea posible.
+\item Deben ser declaradas fuera de los paréntesis de los bucles y sentencias if.
+\item No se deben declarar varias variables en una misma línea.
+\item Se debe crear un scope para aquellas variables cuyo ciclo de vida no coincida al 100\% con el scope en el que se usan.
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysubsection{Clases y estructuras}\label{md_style_autotoc_md293}
+
+\begin{DoxyItemize}
+\item Los nombres de las clases y estructuras deben tener estilo {\itshape Upper\+Camel\+Case}.
+\item Los constructores vacíos deben ser implícitos.
+\item Los constructores con un único parámetro deben ser explícitos.
+\item Los atributos deben ser privados siempre que sea posible.
+\begin{DoxyItemize}
+\item Es posible tener atributos protegidos si es necesario.
+\end{DoxyItemize}
+\item En el espacio público de la clase únicamente deben haber funciones.
+\item Todos los elementos públicos deben estar juntos, en el siguiente orden\+:
+\begin{DoxyItemize}
+\item Constructores.
+\item Destructor.
+\item Operadores de copia y movimiento.
+\item Resto de funciones.
+\end{DoxyItemize}
+\item Todos los elementos protegidos deben estar juntos, en el siguiente orden\+:
+\begin{DoxyItemize}
+\item Constructores.
+\item Resto de funciones.
+\item Atributos protegidos.
+\end{DoxyItemize}
+\item Todos los elementos privados deben estar juntos, en el siguiente orden\+:
+\begin{DoxyItemize}
+\item Funciones.
+\item Atributos privados.
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysubsubsection{Struct vs class}\label{md_style_autotoc_md294}
+
+\begin{DoxyItemize}
+\item Los objetos que únicamente almacenan información deben ser {\ttfamily struct}.
+\item Los objetos que almacenan tanto información como funciones deben ser {\ttfamily class}.
+\end{DoxyItemize}\doxysubsubsection{Structs}\label{md_style_autotoc_md295}
+
+\begin{DoxyItemize}
+\item Preferir el uso de estructuras en vez de parejas o tuplas.
+\item Los atributos de una estructura no deben usar el prefijo {\ttfamily m\+\_\+}.
+\end{DoxyItemize}\doxysubsubsection{Herencia}\label{md_style_autotoc_md296}
+
+\begin{DoxyItemize}
+\item Se permite la herencia múltiple.
+\item Si una clase está diseñada como interfaz o como clase abstracta (clase que no está completa, y que tiene funciones virtuales que deben ser desarrolladas en clases hijas) deben tener el prefijo {\ttfamily I}.
+\item Si una clase está diseñada para no ser heredada, marcar como {\ttfamily final}.
+\item Toda herencia debe ser pública.
+\item Toda función que pueda ser sobreescrita debe ser marcada como {\ttfamily virtual}.
+\item Toda función sobreescrita debe ser marcada como {\ttfamily override}.
+\end{DoxyItemize}\doxysubsection{Punteros}\label{md_style_autotoc_md297}
+\doxysubsection{Funciones}\label{md_style_autotoc_md298}
+
+\begin{DoxyItemize}
+\item Preferir funciones no mutables ({\ttfamily const}) siempre que sea posible.
+\item Preferir funciones pequeñas.
+\item Preferir argumentos por defecto a overloading.
+\end{DoxyItemize}\doxysubsubsection{Parámetros}\label{md_style_autotoc_md299}
+
+\begin{DoxyItemize}
+\item No usar parámetros de salida\+: en caso de devolver varios elementos, usar un {\ttfamily struct}.
+\item Los parámetros de entrada de tipos numéricos y booleanos deben ser pasados por valor.
+\begin{DoxyItemize}
+\item En caso de ser opcionales\+: usar {\ttfamily std\+::optional}.
+\end{DoxyItemize}
+\item Los parámetros de entrada de tipos complejos, clases y estructuras deben ser pasados por referencia constante.
+\item Los parámetros de entrada que puedan ser modificados deben ser pasados como puntero.
+\end{DoxyItemize}\doxysubsection{Casting}\label{md_style_autotoc_md300}
+
+\begin{DoxyItemize}
+\item No usar casting tipo C, preferir métodos de casting tipo C++ ({\ttfamily static\+\_\+cast}, {\ttfamily const\+\_\+cast}, {\ttfamily reinterpret\+\_\+cast}, {\ttfamily std\+::bit\+\_\+cast}). 
+\end{DoxyItemize}

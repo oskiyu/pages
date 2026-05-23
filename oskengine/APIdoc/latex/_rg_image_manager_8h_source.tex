@@ -1,0 +1,85 @@
+\doxysection{Rg\+Image\+Manager.\+h}
+\label{_rg_image_manager_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/RgImageManager.h@{C:/Users/Oscar/source/repos/OSKengine/Source/RgImageManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}IGpuImage.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}ImageUuid.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}RenderGraphArgs.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}RgEntry.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }IRenderer;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ RgImageManager\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ RgImageManager(IRenderer*\ renderer);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ GdrImageUuid\ RegisterImage(}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ RgImageRegisterInfo\&\ info,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ RgRelativeSizeImageRegisterArgs\ size);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ GdrImageUuid\ RegisterImage(}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ RgImageRegisterInfo\&\ info,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ RgAbsoluteSizeImageRegisterArgs\ size);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ GdrImageUuid\ RegisterExternalImage(GpuImage*\ image);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RebindExternalImage(GdrImageUuid\ uuid,\ GpuImage*\ newImage);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateImages(std::span<const\ RenderPassEntry>\ renderpasses);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ GpuImage\&\ GetImage(GdrImageUuid\ uuid);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImage\&\ GetImage(GdrImageUuid\ uuid)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetFramebufferResolution(USize32\ \ \ res);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetFramebufferResolution(Vector2ui\ res);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetFramebufferResolution(Vector3ui\ res);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RecreateRelativeImages(std::span<const\ RenderPassEntry>\ renderpasses);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ Vector3ui\ GetResolution(\textcolor{keyword}{const}\ RgImageSizeInfo\&\ size)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ GdrImageUuid\ RegisterImage(}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ RgImageRegisterInfo\&\ info,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ RgImageSizeInfo\ size);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ IRenderer*\ m\_renderer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ Vector3ui\ m\_framebufferResolution\ =\ Vector3ui::Zero;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }Entry\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ UniquePtr<GpuImage>\ imgContainer;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ img;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ RgImageSizeInfo\ size;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ RgImageRegisterInfo\ info;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isExternal\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ std::unordered\_map<GdrImageUuid,\ Entry>\ m\_images;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*std::unordered\_map<GdrImageUuid,\ GpuImage*>\ \ m\_imagesMap;}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ \ \ \ \ \ \ \ DynamicArray<UniquePtr<GpuImage>>\ m\_images;}}
+\DoxyCodeLine{00105\ \textcolor{comment}{}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ \ \ \ \ \ \ \ std::unordered\_map<GdrImageUuid,\ RgImageSizeInfo>\ m\_imageSizes;}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ \ \ \ \ \ \ \ std::unordered\_map<GdrImageUuid,\ RgImageRegisterInfo>\ m\_imageInfos;*/}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \}}
+
+\end{DoxyCode}

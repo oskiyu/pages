@@ -63,6 +63,7 @@ var class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer =
     [ "RegisterGraphicsCommputeCommandPool", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a8173ba6c7ac761507718ad5ccdaed393", null ],
     [ "RegisterTransferOnlyCommandPool", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a55ba02129fe29749703ad1ae1aea0a40", null ],
     [ "RegisterUnifiedCommandPool", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a892cf300bd41e1c8f454ddd8137bf198", null ],
+    [ "ResetDisplay", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a717e564c8f7addfb48fdbc0ffa2929b8", null ],
     [ "SetPresentMode", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a74a80540f1ee270f3bc0e1aae6d4b854", null ],
     [ "SubmitSingleUseCommandList", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a2072fcffe154c60e680224d3e4edd35f", null ],
     [ "SupportsRaytracing", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#af6c2b503a6e4f7757e58062fcdf60ebc", null ],

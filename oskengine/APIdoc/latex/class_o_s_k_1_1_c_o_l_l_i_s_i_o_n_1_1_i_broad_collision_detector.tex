@@ -1,0 +1,52 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::IBroad\+Collision\+Detector}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_broad_collision_detector}\index{OSK::COLLISION::IBroadCollisionDetector@{OSK::COLLISION::IBroadCollisionDetector}}
+
+
+{\ttfamily \#include $<$IBroad\+Collision\+Detector.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IBroad\+Collision\+Detector} ()=default
+\item 
+virtual std\+::optional$<$ bool $>$ \textbf{ Get\+Collision} (const \textbf{ Broad\+Collider\+Holder} \&first, const \textbf{ Broad\+Collider\+Holder} \&second) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para un objeto que permite detectar una colisión entre dos colliders. 
+
+Permite configurar distintos algoritmos dependiendo del tipo de los colliders. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::COLLISION::IBroadCollisionDetector@{OSK::COLLISION::IBroadCollisionDetector}!````~IBroadCollisionDetector@{$\sim$IBroadCollisionDetector}}
+\index{````~IBroadCollisionDetector@{$\sim$IBroadCollisionDetector}!OSK::COLLISION::IBroadCollisionDetector@{OSK::COLLISION::IBroadCollisionDetector}}
+\doxysubsubsection{$\sim$IBroadCollisionDetector()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_broad_collision_detector_a113e4bcecc28fd9e1420cf012c299cc2} 
+virtual OSK\+::\+COLLISION\+::\+IBroad\+Collision\+Detector\+::$\sim$\+IBroad\+Collision\+Detector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::IBroadCollisionDetector@{OSK::COLLISION::IBroadCollisionDetector}!GetCollision@{GetCollision}}
+\index{GetCollision@{GetCollision}!OSK::COLLISION::IBroadCollisionDetector@{OSK::COLLISION::IBroadCollisionDetector}}
+\doxysubsubsection{GetCollision()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_broad_collision_detector_a887b50dcf45b4090d174a6155857662b} 
+virtual std\+::optional$<$ bool $>$ OSK\+::\+COLLISION\+::\+IBroad\+Collision\+Detector\+::\+Get\+Collision (\begin{DoxyParamCaption}\item[{const \textbf{ Broad\+Collider\+Holder} \&}]{first}{, }\item[{const \textbf{ Broad\+Collider\+Holder} \&}]{second}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first} & Primer collider. \\
+\hline
+{\em second} & Segundo collider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la detección de colisión.
+\end{DoxyReturn}
+Si este detector no puede detectar la colisión para los tipos de los colliders, devuelve vacío. 
+
+Implementado en \textbf{ OSK\+::\+COLLISION\+::\+Aabb\+Aabb\+Collision\+Detector} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_aabb_aabb_collision_detector_a31c85a912361291eadae84dcb5c96e50}, \textbf{ OSK\+::\+COLLISION\+::\+Broad\+Gjk\+Collision\+Detector} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_gjk_collision_detector_ae4a4a983f5c19d99f1f7b34baec6fa86}, \textbf{ OSK\+::\+COLLISION\+::\+Sphere\+Aabb\+Collision\+Detector} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_aabb_collision_detector_a54652e536790e9e789aa7411584b9586} y \textbf{ OSK\+::\+COLLISION\+::\+Sphere\+Sphere\+Broad\+Collision\+Detector} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_sphere_broad_collision_detector_a4278dab3df146c35bf984513bfa09a79}.
+

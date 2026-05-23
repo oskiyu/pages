@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Miembros de las clases - Funciones</title>
+<title>OSKengine: Miembros de clases - Funciones</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('functions_func.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('functions_func.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,15 +78,22 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="contents">
-&#160;
+<div class="textblock">Lista de todas las funciones con enlaces a las clases a las que pertenecen:</div>
 
-<h3><a id="index__5F" name="index__5F"></a>- _ -</h3><ul>
+<h3 class="doxsection"><a id="index__5F" name="index__5F"></a>- _ -</h3><ul>
 <li>_ApplyChanges()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_transform_component3_d.html#aa172263bc1539e0329bfe8186ae4f699">OSK::ECS::TransformComponent3D</a>, <a class="el" href="class_o_s_k_1_1_transform3_d.html#a2882e05869defdc84f7556a943d906cb">OSK::Transform3D</a></li>
 <li>_ClearEventQueues()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_entity_component_system.html#a25da30b9eed66da4eef4a1bc233679d3">OSK::ECS::EntityComponentSystem</a></li>
 <li>_ClearQueue()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_event_container.html#a136c484e396525fbfe5e28135a7aa3a7">OSK::ECS::EventContainer&lt; TEvent &gt;</a>, <a class="el" href="class_o_s_k_1_1_e_c_s_1_1_i_event_container.html#a58d492e50c45ed25fae8e9ce5afbfe69">OSK::ECS::IEventContainer</a></li>
@@ -99,9 +105,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>_CreateMeshPipeline()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#af42581d8d2fe63ab092acaad955b0220">OSK::GRAPHICS::IRenderer</a></li>
 <li>_CreateRaytracingPipeline()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a6a9a7594c324815096090efe76bebc28">OSK::GRAPHICS::IRenderer</a></li>
 <li>_CreateTopAccelerationStructure()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a7f5e347a1ad04a7c6bb0403dbbe04426">OSK::GRAPHICS::IGpuMemoryAllocator</a></li>
+<li>_Execute()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_render_pass.html#a6a11b4829e79e6cf9caf66fc91458e78">OSK::GRAPHICS::IRenderPass</a></li>
 <li>_Get()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_a_s_s_e_t_s_1_1_pre_built_spline3_d.html#ae7520baae464faef06e07170338d5e7e">OSK::ASSETS::PreBuiltSpline3D</a></li>
 <li>_GetCommandListIndex()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a2186b0a2cada5bf489678fc07dfe5c33">OSK::GRAPHICS::ICommandList</a></li>
-<li>_GetGlfw()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_i_o_1_1_window.html#ac0d47ca30b964f8d26341964075dbf5f">OSK::IO::Window</a></li>
 <li>_GetLayout()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a59319dfcb8e3faef4a097b96df72f5d9">OSK::GRAPHICS::GpuImage</a></li>
 <li>_GetModel()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_a_s_s_e_t_s_1_1_model3_d.html#abe1f674474e91e7c8240202c33b97233">OSK::ASSETS::Model3D</a></li>
 <li>_GetSwapchain()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a8b5d4b872ac4135d04471b140fffa4d6">OSK::GRAPHICS::IRenderer</a></li>
@@ -109,6 +115,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>_GjkPointCollider()&#160;:&#160;<a class="el" href="class___gjk_point_collider.html#a6641fe5a1714fccfd153ad98fcbcdfc7">_GjkPointCollider</a></li>
 <li>_HasImplicitResizeHandling()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a307921e2de08c4749fa4d55c34a9b53f">OSK::GRAPHICS::IRenderer</a></li>
 <li>_InitDefaultLayout()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image.html#a7f8931d8dd3223f782626038f4f7de48">OSK::GRAPHICS::GpuImage</a></li>
+<li>_Log()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_i_o_1_1_i_logger.html#ac20a3c33957904358aef36e1fc0cbe67">OSK::IO::ILogger</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#a1ed1d0f971eb85f3f43843e8e91e4937">OSK::IO::Logger</a></li>
 <li>_Reload()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material.html#ac4210d67d6c1f61a3a8b11d56777f714">OSK::GRAPHICS::Material</a></li>
 <li>_ResetCurrentFrameDeltas()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_component.html#a9ea91a98968eb5ccac348c1523a0d987">OSK::ECS::PhysicsComponent</a></li>
 <li>_ResetForces()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_component.html#abffd20a6e941da3f80e25893c551270f">OSK::ECS::PhysicsComponent</a></li>
@@ -160,10 +167,11 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

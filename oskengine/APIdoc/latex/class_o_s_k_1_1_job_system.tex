@@ -1,0 +1,158 @@
+\doxysection{Referencia de la clase OSK\+::Job\+System}
+\label{class_o_s_k_1_1_job_system}\index{OSK::JobSystem@{OSK::JobSystem}}
+
+
+{\ttfamily \#include $<$Job\+System.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Job\+System} ()
+\item 
+\textbf{ $\sim$\+Job\+System} ()
+\item 
+void \textbf{ Schedule\+Job} (\textbf{ Unique\+Ptr}$<$ \textbf{ IJob} $>$ \&\&job)
+\item 
+bool \textbf{ Is\+Busy} () const
+\item 
+void \textbf{ Wait\+For\+All} () const
+\item 
+void \textbf{ Wait\+For\+Jobs} (std\+::string\+\_\+view job\+Type\+Name)
+\item 
+{\footnotesize template$<$typename TJob$>$ \newline
+requires Is\+Job$<$TJob$>$}\\void \textbf{ Wait\+For\+Jobs} ()
+\item 
+void \textbf{ Wait\+For\+Tag} (std\+::string\+\_\+view tag)
+\item 
+\textbf{ USize32} \textbf{ Get\+Num\+Threads} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Sistema de ejecución multihilo. Permite insertar trabajos que serán ejecutados de manera paralela. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::JobSystem@{OSK::JobSystem}!JobSystem@{JobSystem}}
+\index{JobSystem@{JobSystem}!OSK::JobSystem@{OSK::JobSystem}}
+\doxysubsubsection{JobSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_system_a1cdd6b1a4e9607e4585e78c187dddb52} 
+Job\+System\+::\+Job\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Crea un \doxyref{Job\+System}{pág.}{class_o_s_k_1_1_job_system} vacío. Crea todos los hilos. 
+
+\index{OSK::JobSystem@{OSK::JobSystem}!````~JobSystem@{$\sim$JobSystem}}
+\index{````~JobSystem@{$\sim$JobSystem}!OSK::JobSystem@{OSK::JobSystem}}
+\doxysubsubsection{$\sim$JobSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_system_a14c63dba93b8b104c71b68122e90851f} 
+Job\+System\+::$\sim$\+Job\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::JobSystem@{OSK::JobSystem}!GetNumThreads@{GetNumThreads}}
+\index{GetNumThreads@{GetNumThreads}!OSK::JobSystem@{OSK::JobSystem}}
+\doxysubsubsection{GetNumThreads()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_system_a82b1c9ab88ca2fa16206936ec34cf8b8} 
+\textbf{ USize32} Job\+System\+::\+Get\+Num\+Threads (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Número de hilos totales. = número de hilos del sistema de trabajos + 1 (hilo principal). 
+\end{DoxyReturn}
+\index{OSK::JobSystem@{OSK::JobSystem}!IsBusy@{IsBusy}}
+\index{IsBusy@{IsBusy}!OSK::JobSystem@{OSK::JobSystem}}
+\doxysubsubsection{IsBusy()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_system_a5394bf5473b3bba1b896987d85e69875} 
+bool Job\+System\+::\+Is\+Busy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si hay algún trabajo siendo ejecutado, false si todos los hilos están libres. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::JobSystem@{OSK::JobSystem}!ScheduleJob@{ScheduleJob}}
+\index{ScheduleJob@{ScheduleJob}!OSK::JobSystem@{OSK::JobSystem}}
+\doxysubsubsection{ScheduleJob()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_system_ad4e019fd230bda3ad2a3a4cad1d1b3a0} 
+void Job\+System\+::\+Schedule\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ IJob} $>$ \&\&}]{job}{}\end{DoxyParamCaption})}
+
+
+
+Añade un trabajo que será ejecutado por el sistema. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em job} & Trabajo a ejecutar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::JobSystem@{OSK::JobSystem}!WaitForAll@{WaitForAll}}
+\index{WaitForAll@{WaitForAll}!OSK::JobSystem@{OSK::JobSystem}}
+\doxysubsubsection{WaitForAll()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_system_aa042bb12fc81f2622771da0e4f6af9d7} 
+void Job\+System\+::\+Wait\+For\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Bloquea el hilo hasta que todos los trabajos encolados hayan terminado. 
+
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::JobSystem@{OSK::JobSystem}!WaitForJobs@{WaitForJobs}}
+\index{WaitForJobs@{WaitForJobs}!OSK::JobSystem@{OSK::JobSystem}}
+\doxysubsubsection{WaitForJobs()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_system_a20ea06ebe5c56bb4da9c8d19cc6d03ac} 
+template$<$typename TJob$>$ \newline
+requires Is\+Job$<$TJob$>$\\
+void OSK\+::\+Job\+System\+::\+Wait\+For\+Jobs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Bloquea el hilo hasta que todos los trabajos del tipo dado encolados hayan terminado. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TJob} & Tipo de trabajo. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::JobSystem@{OSK::JobSystem}!WaitForJobs@{WaitForJobs}}
+\index{WaitForJobs@{WaitForJobs}!OSK::JobSystem@{OSK::JobSystem}}
+\doxysubsubsection{WaitForJobs()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_system_a9b253aaa5e2e62c7e6801aa8e36a70fb} 
+void Job\+System\+::\+Wait\+For\+Jobs (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{job\+Type\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Bloquea el hilo hasta que todos los trabajos del tipo dado encolados hayan terminado. 
+
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::JobSystem@{OSK::JobSystem}!WaitForTag@{WaitForTag}}
+\index{WaitForTag@{WaitForTag}!OSK::JobSystem@{OSK::JobSystem}}
+\doxysubsubsection{WaitForTag()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_system_a96ff556cf8c40e66a6872ff09886de46} 
+void Job\+System\+::\+Wait\+For\+Tag (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{tag}{}\end{DoxyParamCaption})}
+
+
+
+Bloquea el hilo hasta que todos los trabajos con el tag dado encolados hayan terminado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tag} & Tag del trabajo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}

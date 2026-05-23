@@ -1,0 +1,436 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Gpu\+Buffer}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer}\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+
+
+{\ttfamily \#include $<$Gpu\+Buffer.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Gpu\+Buffer} (\textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Subblock} $>$ \&\&buffer, \textbf{ USize64} size, \textbf{ USize64} alignment, const \textbf{ ICommand\+Queue} $\ast$owner\+Queue)
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Gpu\+Buffer})
+\item 
+void \textbf{ Set\+Vertex\+View} (const \textbf{ Vertex\+Buffer\+View} \&view)
+\item 
+void \textbf{ Set\+Index\+View} (const \textbf{ Index\+Buffer\+View} \&view)
+\item 
+const \textbf{ Vertex\+Buffer\+View} \& \textbf{ Get\+Vertex\+View} () const
+\item 
+const \textbf{ Index\+Buffer\+View} \& \textbf{ Get\+Index\+View} () const
+\item 
+bool \textbf{ Has\+Vertex\+View} () const
+\item 
+bool \textbf{ Has\+Index\+View} () const
+\item 
+void \textbf{ Map\+Memory} ()
+\item 
+void \textbf{ Write} (const void $\ast$data, \textbf{ USize64} size)
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \textbf{ Write} (const T \&data)
+\item 
+void \textbf{ Write\+Offset} (const void $\ast$data, \textbf{ USize64} size, \textbf{ USize64} offset)
+\item 
+void \textbf{ Unmap} ()
+\item 
+void \textbf{ Set\+Cursor} (\textbf{ UIndex64} position)
+\item 
+void \textbf{ Reset\+Cursor} ()
+\item 
+\textbf{ UIndex64} \textbf{ Get\+Cursor} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Size} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Alignment} () const
+\item 
+\textbf{ Gpu\+Buffer\+Range} \textbf{ Get\+Whole\+Buffer\+Range} () const
+\item 
+\textbf{ IGpu\+Memory\+Subblock} $\ast$ \textbf{ Get\+Memory\+Subblock} ()
+\item 
+const \textbf{ IGpu\+Memory\+Subblock} $\ast$ \textbf{ Get\+Memory\+Subblock} () const
+\item 
+\textbf{ IGpu\+Memory\+Block} $\ast$ \textbf{ Get\+Memory\+Block} ()
+\item 
+const \textbf{ IGpu\+Memory\+Block} $\ast$ \textbf{ Get\+Memory\+Block} () const
+\item 
+void \textbf{ \+\_\+\+Update\+Current\+Barrier} (const \textbf{ Gpu\+Barrier\+Info} \&barrier)
+\item 
+const \textbf{ Gpu\+Barrier\+Info} \& \textbf{ Get\+Current\+Barrier} () const
+\item 
+const \textbf{ ICommand\+Queue} $\ast$ \textbf{ Get\+Owner\+Queue} () const
+\item 
+void \textbf{ \+\_\+\+Update\+Owner\+Queue} (const \textbf{ ICommand\+Queue} $\ast$owner\+Queue)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Subblock} $>$ \textbf{ m\+\_\+buffer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa un buffer que contiene información accesible desde la GPU. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GpuBuffer@{GpuBuffer}}
+\index{GpuBuffer@{GpuBuffer}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GpuBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a5324ecd1645d312400f61d30b33c6e93} 
+Gpu\+Buffer\+::\+Gpu\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Memory\+Subblock} $>$ \&\&}]{buffer}{, }\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ USize64}}]{alignment}{, }\item[{const \textbf{ ICommand\+Queue} $\ast$}]{owner\+Queue}{}\end{DoxyParamCaption})}
+
+
+
+Establece los parámetros del buffer. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em buffer} & Subbloque de memoria que tiene este buffer. \\
+\hline
+{\em size} & Tamaño del buffer. En bytes. \\
+\hline
+{\em alignment} & Alineamiento del contenido del buffer. \\
+\hline
+{\em owner\+Queue} & Cola que posee el recurso.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+No crea el buffer, el buffer es creado por \doxyref{IGpu\+Memory\+Allocator}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator}. 
+\end{DoxyNote}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!\_UpdateCurrentBarrier@{\_UpdateCurrentBarrier}}
+\index{\_UpdateCurrentBarrier@{\_UpdateCurrentBarrier}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{\_UpdateCurrentBarrier()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_af9b6d503ea086b7f261b4682740de528} 
+void Gpu\+Buffer\+::\+\_\+\+Update\+Current\+Barrier (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Barrier\+Info} \&}]{barrier}{}\end{DoxyParamCaption})}
+
+
+
+Establece el barrier actualmente aplicado, para facilitar la sincronización en futuras llamadas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em barrier} & Barrier aplicado. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!\_UpdateOwnerQueue@{\_UpdateOwnerQueue}}
+\index{\_UpdateOwnerQueue@{\_UpdateOwnerQueue}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{\_UpdateOwnerQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_ae7f24c9b151e22b92af56005947c619e} 
+void Gpu\+Buffer\+::\+\_\+\+Update\+Owner\+Queue (\begin{DoxyParamCaption}\item[{const \textbf{ ICommand\+Queue} $\ast$}]{owner\+Queue}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza la variable de la clase que representa la cola de comandos que la posee. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em owner\+Queue} & Nueva cola que posee el buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily owner\+Queue} debe ser estable. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GetAlignment@{GetAlignment}}
+\index{GetAlignment@{GetAlignment}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GetAlignment()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a13ea6beea5d2dfa4020403c7e0852888} 
+\textbf{ USize64} Gpu\+Buffer\+::\+Get\+Alignment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve la alineación del buffer, en bytes. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GetCurrentBarrier@{GetCurrentBarrier}}
+\index{GetCurrentBarrier@{GetCurrentBarrier}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GetCurrentBarrier()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_adb39e756793dfa440803b707284349b0} 
+const \textbf{ Gpu\+Barrier\+Info} \& Gpu\+Buffer\+::\+Get\+Current\+Barrier (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Barrier actualmente aplicado. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GetCursor@{GetCursor}}
+\index{GetCursor@{GetCursor}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GetCursor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_ab548bcf16ab51c3a24dfb6380005f2e7} 
+\textbf{ UIndex64} Gpu\+Buffer\+::\+Get\+Cursor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Posición actual del cursor. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GetIndexView@{GetIndexView}}
+\index{GetIndexView@{GetIndexView}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GetIndexView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a061caf0bd132fd81c125da631eb87562} 
+const \textbf{ Index\+Buffer\+View} \& Gpu\+Buffer\+::\+Get\+Index\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el index view por defecto. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se debe haber establecido el index view por defecto. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GetMemoryBlock@{GetMemoryBlock}}
+\index{GetMemoryBlock@{GetMemoryBlock}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GetMemoryBlock()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a565e1c8885c95d6a3d38adf8a3f72678} 
+\textbf{ IGpu\+Memory\+Block} $\ast$ Gpu\+Buffer\+::\+Get\+Memory\+Block (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GetMemoryBlock@{GetMemoryBlock}}
+\index{GetMemoryBlock@{GetMemoryBlock}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GetMemoryBlock()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_ab6ace78d165c0a16054c2b463bc44e70} 
+const \textbf{ IGpu\+Memory\+Block} $\ast$ Gpu\+Buffer\+::\+Get\+Memory\+Block (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GetMemorySubblock@{GetMemorySubblock}}
+\index{GetMemorySubblock@{GetMemorySubblock}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GetMemorySubblock()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_ae4e6ed417b206578df2284d9eb134c9f} 
+\textbf{ IGpu\+Memory\+Subblock} $\ast$ Gpu\+Buffer\+::\+Get\+Memory\+Subblock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GetMemorySubblock@{GetMemorySubblock}}
+\index{GetMemorySubblock@{GetMemorySubblock}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GetMemorySubblock()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_ae6372308bc8aaa6ada4288cb39abc21f} 
+const \textbf{ IGpu\+Memory\+Subblock} $\ast$ Gpu\+Buffer\+::\+Get\+Memory\+Subblock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GetOwnerQueue@{GetOwnerQueue}}
+\index{GetOwnerQueue@{GetOwnerQueue}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GetOwnerQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a422343c8d62337a36bb5dcd1a17ba780} 
+const \textbf{ ICommand\+Queue} $\ast$ Gpu\+Buffer\+::\+Get\+Owner\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Cola de comandos que posee el recurso. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GetSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a881391e1c0c6ac30447c0584b45e7615} 
+\textbf{ USize64} Gpu\+Buffer\+::\+Get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el tamaño del buffer, en bytes. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GetVertexView@{GetVertexView}}
+\index{GetVertexView@{GetVertexView}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GetVertexView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a01984af465e942ab28531ac485c5e9a7} 
+const \textbf{ Vertex\+Buffer\+View} \& Gpu\+Buffer\+::\+Get\+Vertex\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el vertex view por defecto. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se debe haber establecido el vertex view por defecto. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!GetWholeBufferRange@{GetWholeBufferRange}}
+\index{GetWholeBufferRange@{GetWholeBufferRange}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{GetWholeBufferRange()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a4dbe0db6acb6ab54db1681fbc70023c9} 
+\textbf{ Gpu\+Buffer\+Range} Gpu\+Buffer\+::\+Get\+Whole\+Buffer\+Range (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!HasIndexView@{HasIndexView}}
+\index{HasIndexView@{HasIndexView}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{HasIndexView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_ae1adf2938560e79cc1df7a9f3298839a} 
+bool Gpu\+Buffer\+::\+Has\+Index\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si se ha establecido el index view por defecto. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!HasVertexView@{HasVertexView}}
+\index{HasVertexView@{HasVertexView}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{HasVertexView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a80619cc105656458bde094ba12007f0e} 
+bool Gpu\+Buffer\+::\+Has\+Vertex\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si se ha establecido el vertex view por defecto. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!MapMemory@{MapMemory}}
+\index{MapMemory@{MapMemory}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{MapMemory()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a55b91833fc67c0e9368f3bc7139da248} 
+void Gpu\+Buffer\+::\+Map\+Memory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Mapea toda la región de memoria del buffer, para poder escribirla desde la CPU. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe haber sido creado con \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+AND\+\_\+\+CPU}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea096f8c31942629a91cc086cbda5f5465}. 
+
+No debe haber ninguna región de memoria del buffer previamente mapeada. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a3ee235c702d0d842c50430ac8d842e6b} 
+OSK\+::\+GRAPHICS\+::\+Gpu\+Buffer\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Buffer}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!ResetCursor@{ResetCursor}}
+\index{ResetCursor@{ResetCursor}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{ResetCursor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a4baec2a5da7d6c8cf698c33f0ac19cf2} 
+void Gpu\+Buffer\+::\+Reset\+Cursor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Establece la posición del cursor a 0. 
+
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!SetCursor@{SetCursor}}
+\index{SetCursor@{SetCursor}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{SetCursor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_ac85cb36d9b1a3c0ecb87c378888e566e} 
+void Gpu\+Buffer\+::\+Set\+Cursor (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Establece la posición del cursor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Posición, en bytes, respecto al inicio del buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La posición debe estar dentro de los límites del buffer. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!SetIndexView@{SetIndexView}}
+\index{SetIndexView@{SetIndexView}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{SetIndexView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_acae8ea22e3a19cbd8be4a374e63797ab} 
+void Gpu\+Buffer\+::\+Set\+Index\+View (\begin{DoxyParamCaption}\item[{const \textbf{ Index\+Buffer\+View} \&}]{view}{}\end{DoxyParamCaption})}
+
+
+
+Establece el index view por defecto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em view} & View por defecto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Se recomienda que sea un view para todo el buffer. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!SetVertexView@{SetVertexView}}
+\index{SetVertexView@{SetVertexView}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{SetVertexView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_aaf39e8557091c2f4e0a9cc67f01c352c} 
+void Gpu\+Buffer\+::\+Set\+Vertex\+View (\begin{DoxyParamCaption}\item[{const \textbf{ Vertex\+Buffer\+View} \&}]{view}{}\end{DoxyParamCaption})}
+
+
+
+Establece el vertex view por defecto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em view} & View por defecto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Se recomienda que sea un view para todo el buffer. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!Unmap@{Unmap}}
+\index{Unmap@{Unmap}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{Unmap()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a9cf20e60ee984141a4faed8e2d29a6fe} 
+void Gpu\+Buffer\+::\+Unmap (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Desmapea la memoria. 
+
+\begin{DoxyPrecond}{Precondición}
+La memoria debe estar mapeada. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!Write@{Write}}
+\index{Write@{Write}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{Write()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a3ca13b3c120651139ba36468cd11a8db} 
+template$<$typename T$>$ \\
+void OSK\+::\+GRAPHICS\+::\+Gpu\+Buffer\+::\+Write (\begin{DoxyParamCaption}\item[{const T \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Escribe la información del elemento dado en el buffer, usando el cursor. También hace avanzar el cursor. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de la estructura a escribir. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Información a escribir.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La memoria debe estar mapeada. 
+
+{\ttfamily size} $<$= \doxyref{Get\+Size()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a881391e1c0c6ac30447c0584b45e7615} -\/ cursor. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!Write@{Write}}
+\index{Write@{Write}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{Write()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_abfa416bc763b13175e9c8710070d25ff} 
+void Gpu\+Buffer\+::\+Write (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data}{, }\item[{\textbf{ USize64}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Escribe la información en el buffer, a partir de la posición actual del cursor. También hace avanzar el cursor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Información a escribir. \\
+\hline
+{\em size} & Tamaño de la información a escribir.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La memoria debe estar mapeada. 
+
+{\ttfamily size} $<$= \doxyref{Get\+Size()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a881391e1c0c6ac30447c0584b45e7615} -\/ cursor. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!WriteOffset@{WriteOffset}}
+\index{WriteOffset@{WriteOffset}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{WriteOffset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_afdc8a9c002f270d52068cefd23efacfa} 
+void Gpu\+Buffer\+::\+Write\+Offset (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data}{, }\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ USize64}}]{offset}{}\end{DoxyParamCaption})}
+
+
+
+Escribe la información en el buffer, sin usar el cursor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Información a escribir. \\
+\hline
+{\em size} & Número de bytes a escribir. \\
+\hline
+{\em offset} & Offset (en bytes) respecto al inicio del buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La memoria debe estar mapeada. 
+
+La información a escribir debe estar contenida dentro de la zona de memoria mapeada. 
+\end{DoxyPrecond}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}!m\_buffer@{m\_buffer}}
+\index{m\_buffer@{m\_buffer}!OSK::GRAPHICS::GpuBuffer@{OSK::GRAPHICS::GpuBuffer}}
+\doxysubsubsection{m\_buffer}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_a95f0858f1020658007656da41e85578d} 
+\textbf{ Unique\+Ptr}$<$\textbf{ IGpu\+Memory\+Subblock}$>$ OSK\+::\+GRAPHICS\+::\+Gpu\+Buffer\+::m\+\_\+buffer\hspace{0.3cm}{\ttfamily [protected]}}
+

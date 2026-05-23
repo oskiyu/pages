@@ -1,0 +1,51 @@
+\doxysection{Material\+Loader\+V1.\+h}
+\label{_material_loader_v1_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/MaterialLoaderV1.h@{C:/Users/Oscar/source/repos/OSKengine/Source/MaterialLoaderV1.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <json.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}MaterialLayout.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}LoadedMaterialInfo.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{struct\ }PipelineCreateInfo;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{enum\ class}\ MaterialType;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00024\ \ \ \ \ UniquePtr<MaterialLayout>\ LoadMaterialLayoutV1(}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ LoadedMaterialInfoV1\&\ materialInfo,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ PipelineCreateInfo*\ info,\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ MaterialType\ type);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Lee\ el\ JSON\ con\ la\ información\ del\ material.}}
+\DoxyCodeLine{00031\ \ \ \ \ LoadedMaterialInfoV1\ GetMaterialInfoV1(\textcolor{keyword}{const}\ nlohmann::json\&\ materialInfo);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ UniquePtr<MaterialLayout>\ LoadGraphicsMaterialLayoutV1(}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ LoadedMaterialInfoV1\&\ materialInfo,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ PipelineCreateInfo*\ info);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ UniquePtr<MaterialLayout>\ LoadComputeMaterialLayoutV1(}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ LoadedMaterialInfoV1\&\ materialInfo,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ PipelineCreateInfo*\ info);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{static}\ UniquePtr<MaterialLayout>\ LoadMeshMaterialLayoutV1(}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ LoadedMaterialInfoV1\&\ materialInfo,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ PipelineCreateInfo*\ info);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{static}\ UniquePtr<MaterialLayout>\ LoadRayTracingMaterialLayoutV1(}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ LoadedMaterialInfoV1\&\ materialInfo,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ PipelineCreateInfo*\ info);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map<UIndex32,\ std::string>\ GetSlotsNames(\textcolor{keyword}{const}\ nlohmann::json\&\ materialInfo);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \}}
+
+\end{DoxyCode}

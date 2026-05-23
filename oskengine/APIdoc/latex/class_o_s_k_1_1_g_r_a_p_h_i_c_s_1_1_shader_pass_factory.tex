@@ -1,0 +1,125 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Shader\+Pass\+Factory}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_factory}\index{OSK::GRAPHICS::ShaderPassFactory@{OSK::GRAPHICS::ShaderPassFactory}}
+
+
+{\ttfamily \#include $<$Shader\+Pass\+Factory.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ Factory\+Method} = \textbf{ Unique\+Ptr}$<$\textbf{ IShader\+Pass}$>$($\ast$)()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename TShader\+Pass$>$ }\\void \textbf{ Register\+Shader\+Pass} ()
+\item 
+void \textbf{ Register\+Shader\+Pass} (const std\+::string \&name, \textbf{ Factory\+Method} method)
+\item 
+bool \textbf{ Contains\+Shader\+Pass} (std\+::string\+\_\+view name) const
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IShader\+Pass} $>$ \textbf{ Create\+Pass} (std\+::string\+\_\+view name) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que es capaz de generar pases de renderizado a partir de sus nombres. 
+
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de los «\+Typedef» miembros de la clase}
+\index{OSK::GRAPHICS::ShaderPassFactory@{OSK::GRAPHICS::ShaderPassFactory}!FactoryMethod@{FactoryMethod}}
+\index{FactoryMethod@{FactoryMethod}!OSK::GRAPHICS::ShaderPassFactory@{OSK::GRAPHICS::ShaderPassFactory}}
+\doxysubsubsection{FactoryMethod}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_factory_a0af9630b018506fc6c10294a4c27588f} 
+using \textbf{ OSK\+::\+GRAPHICS\+::\+Shader\+Pass\+Factory\+::\+Factory\+Method} = \textbf{ Unique\+Ptr}$<$\textbf{ IShader\+Pass}$>$($\ast$)()}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::ShaderPassFactory@{OSK::GRAPHICS::ShaderPassFactory}!ContainsShaderPass@{ContainsShaderPass}}
+\index{ContainsShaderPass@{ContainsShaderPass}!OSK::GRAPHICS::ShaderPassFactory@{OSK::GRAPHICS::ShaderPassFactory}}
+\doxysubsubsection{ContainsShaderPass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_factory_a2556c04de28ce126684542b211c4d914} 
+bool Shader\+Pass\+Factory\+::\+Contains\+Shader\+Pass (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del pase. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si el pase ha sido registrado. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::ShaderPassFactory@{OSK::GRAPHICS::ShaderPassFactory}!CreatePass@{CreatePass}}
+\index{CreatePass@{CreatePass}!OSK::GRAPHICS::ShaderPassFactory@{OSK::GRAPHICS::ShaderPassFactory}}
+\doxysubsubsection{CreatePass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_factory_a514af1facd06eef77bd3c58b2a403274} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IShader\+Pass} $>$ Shader\+Pass\+Factory\+::\+Create\+Pass (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del pase. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Pase creado. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo.
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El pase debe haber sido previamente registrado (comprobable mediante Contains\+Shader\+Pass). 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::ShaderPassFactory@{OSK::GRAPHICS::ShaderPassFactory}!RegisterShaderPass@{RegisterShaderPass}}
+\index{RegisterShaderPass@{RegisterShaderPass}!OSK::GRAPHICS::ShaderPassFactory@{OSK::GRAPHICS::ShaderPassFactory}}
+\doxysubsubsection{RegisterShaderPass()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_factory_ae65f9d91c8caa41ab209a79f2e0b9c58} 
+template$<$typename TShader\+Pass$>$ \\
+void OSK\+::\+GRAPHICS\+::\+Shader\+Pass\+Factory\+::\+Register\+Shader\+Pass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tegistra un pase para poder ser creado posteriormente. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TShader\+Pass} & Tipo de pase. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::GRAPHICS::ShaderPassFactory@{OSK::GRAPHICS::ShaderPassFactory}!RegisterShaderPass@{RegisterShaderPass}}
+\index{RegisterShaderPass@{RegisterShaderPass}!OSK::GRAPHICS::ShaderPassFactory@{OSK::GRAPHICS::ShaderPassFactory}}
+\doxysubsubsection{RegisterShaderPass()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_pass_factory_a5f8e29e88de0e4f26ae2d44c80b93313} 
+void Shader\+Pass\+Factory\+::\+Register\+Shader\+Pass (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{\textbf{ Factory\+Method}}]{method}{}\end{DoxyParamCaption})}
+
+
+
+Tegistra un pase para poder ser creado posteriormente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del pase. \\
+\hline
+{\em method} & Método de generación del pase. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}

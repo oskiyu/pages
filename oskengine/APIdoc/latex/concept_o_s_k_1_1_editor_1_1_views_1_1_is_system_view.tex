@@ -1,0 +1,17 @@
+\doxysection{Referencia del concepto OSK\+::Editor\+::Views\+::Is\+System\+View}
+\label{concept_o_s_k_1_1_editor_1_1_views_1_1_is_system_view}\index{OSK::Editor::Views::IsSystemView@{OSK::Editor::Views::IsSystemView}}
+
+
+{\ttfamily \#include $<$ISystem\+View.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_TSystemView>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::Editor::Views::IsSystemView\ =\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::is\_base\_of\_v<ISystemView,\ \_TSystemView>\&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (\_TSystemView)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ \_TSystemView::GetSystemName()\ \};}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}

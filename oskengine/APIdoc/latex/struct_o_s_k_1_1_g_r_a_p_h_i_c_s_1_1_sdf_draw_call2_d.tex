@@ -1,0 +1,189 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Sdf\+Draw\+Call2D}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d}\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+
+
+{\ttfamily \#include $<$Sdf\+Draw\+Call2\+D.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Sdf\+Draw\+Call2D} \textbf{ Texture} (const \textbf{ IGpu\+Image\+View} \&view)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+::\+ECS\+::\+Transform2D} \textbf{ transform} = \textbf{ OSK\+::\+ECS\+::\+Transform2D}(\textbf{ ECS\+::\+Game\+Object\+Index\+::\+Create\+Empty}())
+\item 
+\textbf{ Sdf\+Shape2D} \textbf{ shape} = \textbf{ Sdf\+Shape2\+D\+::\+RECTANGLE}
+\item 
+\textbf{ Sdf\+Draw\+Call\+Content\+Type2D} \textbf{ content\+Type} = \textbf{ Sdf\+Draw\+Call\+Content\+Type2\+D\+::\+TEXTURE}
+\item 
+bool \textbf{ fill} = true
+\item 
+float \textbf{ border\+Size} = 1.\+0f
+\item 
+const \textbf{ IGpu\+Image\+View} $\ast$ \textbf{ texture} = nullptr
+\item 
+\textbf{ Texture\+Coordinates2D} \textbf{ texture\+Coordinates} = \textbf{ Texture\+Coordinates2\+D\+::\+Normalized}(\{ 0, 0, 1, 1 \})
+\item 
+\textbf{ Color} \textbf{ main\+Color} = \textbf{ Color\+::\+White}
+\item 
+\textbf{ Color} \textbf{ gradient\+Second\+Color} = \textbf{ Color\+::\+White}
+\item 
+\textbf{ Gpu\+Image\+Sampler\+Desc} \textbf{ sampler\+Desc} \{\}
+\item 
+const \textbf{ IGpu\+Image\+Sampler} $\ast$ \textbf{ sampler} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Información necesaria para renderizar un sprite 2D usando signed-\/distance-\/fields. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}!Texture@{Texture}}
+\index{Texture@{Texture}!OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+\doxysubsubsection{Texture()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d_a2a4874f7326695d8b5b612a592d7833b} 
+\textbf{ Sdf\+Draw\+Call2D} Sdf\+Draw\+Call2\+D\+::\+Texture (\begin{DoxyParamCaption}\item[{const \textbf{ IGpu\+Image\+View} \&}]{view}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em view} & Vista de la imagen a renderizar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Draw call rectangular para una imagen. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}!borderSize@{borderSize}}
+\index{borderSize@{borderSize}!OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+\doxysubsubsection{borderSize}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d_aed4728b1ce5f998382e53f535c86ff5e} 
+float OSK\+::\+GRAPHICS\+::\+Sdf\+Draw\+Call2\+D\+::border\+Size = 1.\+0f}
+
+
+
+Para formas huecas, grosor del contorno. Para formas rellenas, no hace nada. 
+
+\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}!contentType@{contentType}}
+\index{contentType@{contentType}!OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+\doxysubsubsection{contentType}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d_aeb3035c501aa54d901d37bb0f225529e} 
+\textbf{ Sdf\+Draw\+Call\+Content\+Type2D} OSK\+::\+GRAPHICS\+::\+Sdf\+Draw\+Call2\+D\+::content\+Type = \textbf{ Sdf\+Draw\+Call\+Content\+Type2\+D\+::\+TEXTURE}}
+
+
+
+Tipo de relleno de la forma. 
+
+\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}!fill@{fill}}
+\index{fill@{fill}!OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+\doxysubsubsection{fill}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d_ac75cfc42b91940cf084768126bf00fc7} 
+bool OSK\+::\+GRAPHICS\+::\+Sdf\+Draw\+Call2\+D\+::fill = true}
+
+
+
+True si la forma está rellena. False si está hueca por dentro (sólamente contorno). 
+
+\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}!gradientSecondColor@{gradientSecondColor}}
+\index{gradientSecondColor@{gradientSecondColor}!OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+\doxysubsubsection{gradientSecondColor}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d_a21d44c84fedfebee518cc759b39c11c2} 
+\textbf{ Color} OSK\+::\+GRAPHICS\+::\+Sdf\+Draw\+Call2\+D\+::gradient\+Second\+Color = \textbf{ Color\+::\+White}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} secundario. 
+
+
+\begin{DoxyItemize}
+\item Para {\ttfamily content\+Type} = {\ttfamily \doxyref{Sdf\+Draw\+Call\+Content\+Type2\+D\+::\+TEXTURE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_af95fe1d618a9a58a41ce9c4f743bf3f8a3f92f542bd9ec48f912b9350e22736ac}}\+: nada.
+\item Para {\ttfamily content\+Type} = {\ttfamily \doxyref{Sdf\+Draw\+Call\+Content\+Type2\+D\+::\+COLOR\+\_\+\+FLAT}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_af95fe1d618a9a58a41ce9c4f743bf3f8a3f133e2fffa7f34c03df01ab5ae5cd65}}\+: nada.
+\item Para {\ttfamily content\+Type} = {\ttfamily \doxyref{Sdf\+Draw\+Call\+Content\+Type2\+D\+::\+COLOR\+\_\+\+SIMPLE\+\_\+\+GRADIENT}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_af95fe1d618a9a58a41ce9c4f743bf3f8a531bb3c947136f4520e8f65ca1e190cc}}\+: segundo color del degradado. 
+\end{DoxyItemize}\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}!mainColor@{mainColor}}
+\index{mainColor@{mainColor}!OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+\doxysubsubsection{mainColor}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d_a29d24a74e03ba62e08ef76325b6b637d} 
+\textbf{ Color} OSK\+::\+GRAPHICS\+::\+Sdf\+Draw\+Call2\+D\+::main\+Color = \textbf{ Color\+::\+White}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} principal. 
+
+
+\begin{DoxyItemize}
+\item Para {\ttfamily content\+Type} = {\ttfamily \doxyref{Sdf\+Draw\+Call\+Content\+Type2\+D\+::\+TEXTURE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_af95fe1d618a9a58a41ce9c4f743bf3f8a3f92f542bd9ec48f912b9350e22736ac}}\+: color con el que se multiplicará.
+\item Para {\ttfamily content\+Type} = {\ttfamily \doxyref{Sdf\+Draw\+Call\+Content\+Type2\+D\+::\+COLOR\+\_\+\+FLAT}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_af95fe1d618a9a58a41ce9c4f743bf3f8a3f133e2fffa7f34c03df01ab5ae5cd65}}\+: color.
+\item Para {\ttfamily content\+Type} = {\ttfamily \doxyref{Sdf\+Draw\+Call\+Content\+Type2\+D\+::\+COLOR\+\_\+\+SIMPLE\+\_\+\+GRADIENT}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_af95fe1d618a9a58a41ce9c4f743bf3f8a531bb3c947136f4520e8f65ca1e190cc}}\+: primer color del degradado. 
+\end{DoxyItemize}\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}!sampler@{sampler}}
+\index{sampler@{sampler}!OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+\doxysubsubsection{sampler}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d_a1c145f367e75555e3a15e27c3c8600f5} 
+const \textbf{ IGpu\+Image\+Sampler}$\ast$ OSK\+::\+GRAPHICS\+::\+Sdf\+Draw\+Call2\+D\+::sampler = nullptr}
+
+
+
+Sampler que se usará para la imagen.. 
+
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily content\+Type} = {\ttfamily \doxyref{Sdf\+Draw\+Call\+Content\+Type2\+D\+::\+TEXTURE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_af95fe1d618a9a58a41ce9c4f743bf3f8a3f92f542bd9ec48f912b9350e22736ac}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}!samplerDesc@{samplerDesc}}
+\index{samplerDesc@{samplerDesc}!OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+\doxysubsubsection{samplerDesc}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d_aadf8eb7caa53ec19832394f8203ffd95} 
+\textbf{ Gpu\+Image\+Sampler\+Desc} OSK\+::\+GRAPHICS\+::\+Sdf\+Draw\+Call2\+D\+::sampler\+Desc \{\}}
+
+
+
+Propiedades del sampler que se usará para la imagen. 
+
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily content\+Type} = {\ttfamily \doxyref{Sdf\+Draw\+Call\+Content\+Type2\+D\+::\+TEXTURE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_af95fe1d618a9a58a41ce9c4f743bf3f8a3f92f542bd9ec48f912b9350e22736ac}}. 
+
+{\ttfamily sampler} = {\ttfamily nullptr}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}!shape@{shape}}
+\index{shape@{shape}!OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+\doxysubsubsection{shape}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d_abd498b55c1eb0d33ea7e18c0641a47fe} 
+\textbf{ Sdf\+Shape2D} OSK\+::\+GRAPHICS\+::\+Sdf\+Draw\+Call2\+D\+::shape = \textbf{ Sdf\+Shape2\+D\+::\+RECTANGLE}}
+
+
+
+Tipo de forma. 
+
+\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}!texture@{texture}}
+\index{texture@{texture}!OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+\doxysubsubsection{texture}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d_ac032ee4fd8a9c5eeb6c9436fe1aa0752} 
+const \textbf{ IGpu\+Image\+View}$\ast$ OSK\+::\+GRAPHICS\+::\+Sdf\+Draw\+Call2\+D\+::texture = nullptr}
+
+
+
+Textura a usar (si shape == {\ttfamily \doxyref{Sdf\+Shape2\+D\+::\+RECTANGLE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_abc04b41aaed4955a6a7f2d5d5ad29714a8e8e58fe94ab307a826e087028a7c01a}}). 
+
+\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}!textureCoordinates@{textureCoordinates}}
+\index{textureCoordinates@{textureCoordinates}!OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+\doxysubsubsection{textureCoordinates}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d_ae5023225339c1c6fe26c4b296e458820} 
+\textbf{ Texture\+Coordinates2D} OSK\+::\+GRAPHICS\+::\+Sdf\+Draw\+Call2\+D\+::texture\+Coordinates = \textbf{ Texture\+Coordinates2\+D\+::\+Normalized}(\{ 0, 0, 1, 1 \})}
+
+
+
+Coordenadas de la textura (si shape == {\ttfamily \doxyref{Sdf\+Shape2\+D\+::\+RECTANGLE}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_abc04b41aaed4955a6a7f2d5d5ad29714a8e8e58fe94ab307a826e087028a7c01a}}). 
+
+\index{OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}!transform@{transform}}
+\index{transform@{transform}!OSK::GRAPHICS::SdfDrawCall2D@{OSK::GRAPHICS::SdfDrawCall2D}}
+\doxysubsubsection{transform}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_draw_call2_d_ae9b6c797d1d0913fd5bce86b1a2083b0} 
+\textbf{ OSK\+::\+ECS\+::\+Transform2D} OSK\+::\+GRAPHICS\+::\+Sdf\+Draw\+Call2\+D\+::transform = \textbf{ OSK\+::\+ECS\+::\+Transform2D}(\textbf{ ECS\+::\+Game\+Object\+Index\+::\+Create\+Empty}())}
+
+
+
+Transform del elemento 2D. 
+

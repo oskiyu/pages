@@ -12,13 +12,14 @@ var namespace_o_s_k_1_1_i_o =
     [ "IMouseInput", "class_o_s_k_1_1_i_o_1_1_i_mouse_input.html", "class_o_s_k_1_1_i_o_1_1_i_mouse_input" ],
     [ "InitializeWindowException", "class_o_s_k_1_1_i_o_1_1_initialize_window_exception.html", "class_o_s_k_1_1_i_o_1_1_initialize_window_exception" ],
     [ "InputManager", "class_o_s_k_1_1_i_o_1_1_input_manager.html", "class_o_s_k_1_1_i_o_1_1_input_manager" ],
+    [ "ITouchInput", "class_o_s_k_1_1_i_o_1_1_i_touch_input.html", "class_o_s_k_1_1_i_o_1_1_i_touch_input" ],
     [ "IUserInput", "class_o_s_k_1_1_i_o_1_1_i_user_input.html", "class_o_s_k_1_1_i_o_1_1_i_user_input" ],
     [ "KeyboardState", "class_o_s_k_1_1_i_o_1_1_keyboard_state.html", "class_o_s_k_1_1_i_o_1_1_keyboard_state" ],
     [ "Logger", "class_o_s_k_1_1_i_o_1_1_logger.html", "class_o_s_k_1_1_i_o_1_1_logger" ],
     [ "LoggerNotInitializedException", "class_o_s_k_1_1_i_o_1_1_logger_not_initialized_exception.html", "class_o_s_k_1_1_i_o_1_1_logger_not_initialized_exception" ],
     [ "MouseState", "class_o_s_k_1_1_i_o_1_1_mouse_state.html", "class_o_s_k_1_1_i_o_1_1_mouse_state" ],
-    [ "PcUserInput", "class_o_s_k_1_1_i_o_1_1_pc_user_input.html", "class_o_s_k_1_1_i_o_1_1_pc_user_input" ],
-    [ "Window", "class_o_s_k_1_1_i_o_1_1_window.html", "class_o_s_k_1_1_i_o_1_1_window" ],
+    [ "TouchInput", "struct_o_s_k_1_1_i_o_1_1_touch_input.html", "struct_o_s_k_1_1_i_o_1_1_touch_input" ],
+    [ "TouchInputUuid", "namespace_o_s_k_1_1_i_o.html#abcee51b45cec4834b4038e62708c1013", null ],
     [ "ButtonState", "namespace_o_s_k_1_1_i_o.html#a59bf216682b802b6dad7d81be5ea3f31", [
       [ "RELEASED", "namespace_o_s_k_1_1_i_o.html#a59bf216682b802b6dad7d81be5ea3f31a109d54efbb64d71f9a6ab18d0fb8add8", null ],
       [ "PRESSED", "namespace_o_s_k_1_1_i_o.html#a59bf216682b802b6dad7d81be5ea3f31a5381dc876ab002103a027265bc14ae52", null ]
@@ -206,6 +207,11 @@ var namespace_o_s_k_1_1_i_o =
     [ "MouseReturnMode", "namespace_o_s_k_1_1_i_o.html#a2f854259da792bdb856dedf2a07ee49d", [
       [ "FREE", "namespace_o_s_k_1_1_i_o.html#a2f854259da792bdb856dedf2a07ee49da88c189a42c87aa49d667fc8ab76bc323", null ],
       [ "ALWAYS_RETURN", "namespace_o_s_k_1_1_i_o.html#a2f854259da792bdb856dedf2a07ee49da42190ae7de8d84128ff7d1abcc9894a4", null ]
+    ] ],
+    [ "TouchInputType", "namespace_o_s_k_1_1_i_o.html#affb2d4a923aea8df5a3f2ff8ae6fdf0d", [
+      [ "START", "namespace_o_s_k_1_1_i_o.html#affb2d4a923aea8df5a3f2ff8ae6fdf0dab078ffd28db767c502ac367053f6e0ac", null ],
+      [ "END", "namespace_o_s_k_1_1_i_o.html#affb2d4a923aea8df5a3f2ff8ae6fdf0dab1a326c06d88bf042f73d70f50197905", null ],
+      [ "CONTINUING", "namespace_o_s_k_1_1_i_o.html#affb2d4a923aea8df5a3f2ff8ae6fdf0da5c5903989cbe2858aebf66170adf3b97", null ]
     ] ],
     [ "GetPrintableKeyText", "namespace_o_s_k_1_1_i_o.html#a9536bbc94cea0a101e686d2b434f7403", null ],
     [ "KeyboardNumberOfKeys", "namespace_o_s_k_1_1_i_o.html#ab6538119e8f374865c6ac58dab067993", null ],

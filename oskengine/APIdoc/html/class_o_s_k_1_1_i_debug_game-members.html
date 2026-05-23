@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>OSKengine: Lista de los miembros</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_o_s_k_1_1_i_debug_game.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('class_o_s_k_1_1_i_debug_game.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,9 +78,16 @@ $(document).ready(function(){initNavTree('class_o_s_k_1_1_i_debug_game.html','')
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
@@ -92,32 +98,42 @@ $(document).ready(function(){initNavTree('class_o_s_k_1_1_i_debug_game.html','')
 <p>Lista completa de los miembros de <a class="el" href="class_o_s_k_1_1_i_debug_game.html">OSK::IDebugGame</a>, incluyendo todos los heredados:</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a89e60fc451a486d268ac823807487b37">_Run</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a1fd5e113ad6425b6a8fdc99c87c49167">BuildFrame</a>()=0</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a4988ddabd30b3b3f442d3b9ae6763087">BuildFrame</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#af033542cc50642b5e1325ee4c7c93cf7">CreateWindow</a>()=0</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#ae8194150599c2c8d05a49efe80fe1b47">Exit</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a0784dba46a0bf58bff2ab1aa174ebd35">GetFps</a>() const</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a3562899f16a90c4a48a9613eb76e392e">GetGamepad</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a6c1eaaa28364add7d280a4437fe541a5">GetKeyboard</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a6ddb5c43a607fef4a0a4f25289838dce">GetMouse</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#ab9acfea175e079da2c34b503873726a4">GetRenderGraph</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#af8e323d17f81981e648453442a11f596">GetRootUiElement</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a85cc313dfa625efa8909ea719196ed33">GetRootUiElement</a>() const</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html#ac0848824b96a961ef0560016d2d8f171">IDebugGame</a>(GAME::DefaultContentProfile defaultContentProfile)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html">OSK::IDebugGame</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#acdfda3776c555db145edc9ca7c1f8c9c">IGame</a>(GAME::DefaultContentProfile defaultContentProfile)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">explicit</span><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html#a27ba6edcee9cfed91ef7127a60082631">IsInConsole</a>() const</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html">OSK::IDebugGame</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html#a19618e1e05f5a3a679be2308ded8bc5f">OnCreate</a>() override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html">OSK::IDebugGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a02044212501aee6fc59d1a75c0129892">OnExit</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a048a3bb0ab1c54e14c42e614abacb3da">OnTick_AfterEcs</a>(TDeltaTime deltaTime)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html#a7a267d8358ed12f6bba9b8a1da9fee09">OnTick_BeforeEcs</a>(TDeltaTime deltaTime) override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html">OSK::IDebugGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a49a11ed87fecf78d0ac7297b34382e5f">OnWindowResize</a>(const Vector2ui &amp;size)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a80ddba904923fefed3a18c1781590e4d">GetTouchs</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html#ac0848824b96a961ef0560016d2d8f171">IDebugGame</a>(GAME::DefaultContentProfile defaultContentProfile)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html">OSK::IDebugGame</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#acdfda3776c555db145edc9ca7c1f8c9c">IGame</a>(GAME::DefaultContentProfile defaultContentProfile)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">explicit</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html#a27ba6edcee9cfed91ef7127a60082631">IsInConsole</a>() const</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html">OSK::IDebugGame</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html#a19618e1e05f5a3a679be2308ded8bc5f">OnCreate</a>() override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html">OSK::IDebugGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a02044212501aee6fc59d1a75c0129892">OnExit</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a048a3bb0ab1c54e14c42e614abacb3da">OnTick_AfterEcs</a>(TDeltaTime deltaTime)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html#a7a267d8358ed12f6bba9b8a1da9fee09">OnTick_BeforeEcs</a>(TDeltaTime deltaTime) override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html">OSK::IDebugGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#ab57d0dcc6931b9f39bf9ed76e18560c7">OnTick_Keyboard</a>(const IO::IKeyboardInput &amp;keyboard)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#aa7dddcf3c3a2ab0c8b581b8ec48b1f3b">OnTick_Mouse</a>(const IO::IMouseInput &amp;mouse)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a49a11ed87fecf78d0ac7297b34382e5f">OnWindowResize</a>(const Vector2ui &amp;size)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a7df04d20dd1c7a2f6d36b7c18ece8788">RecreateWindow</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a92ccf921e939bcf8409ab9326e7571b4">RegisterAssets</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a6c43af37f9365f6490d1a0a2c9250f0e">RegisterComponents</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html#ae667cc7cc055668ffa6590c8f518e633">RegisterConsoleCommands</a>() override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_debug_game.html">OSK::IDebugGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a6595c60375b1f2f14e6e96e1f8ca404e">RegisterSystems</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a3fff81bfbca1fc25efa8a10f2318d46b">SetupEngine</a>()=0</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a8bbe8755f305ca2c169f547b9eaec5a7">~IGame</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a3287b1a8e1ce748ac134e0f75ce54b99">SetRenderGraph</a>(UniquePtr&lt; GRAPHICS::RenderGraph &gt; &amp;&amp;renderGraph)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a3fff81bfbca1fc25efa8a10f2318d46b">SetupEngine</a>()=0</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html#a8bbe8755f305ca2c169f547b9eaec5a7">~IGame</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_game.html">OSK::IGame</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

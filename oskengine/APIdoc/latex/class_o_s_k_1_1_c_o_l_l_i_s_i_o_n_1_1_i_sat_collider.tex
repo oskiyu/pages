@@ -1,0 +1,58 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::ISat\+Collider}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_sat_collider}\index{OSK::COLLISION::ISatCollider@{OSK::COLLISION::ISatCollider}}
+
+
+{\ttfamily \#include $<$Sat.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+ISat\+Collider} ()=default
+\item 
+virtual const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \& \textbf{ Get\+Axes} () const =0
+\item 
+virtual const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \& \textbf{ Get\+Vertices} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para volúmenes 3D que soporten la detección de colisiones mediante SAT. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::COLLISION::ISatCollider@{OSK::COLLISION::ISatCollider}!````~ISatCollider@{$\sim$ISatCollider}}
+\index{````~ISatCollider@{$\sim$ISatCollider}!OSK::COLLISION::ISatCollider@{OSK::COLLISION::ISatCollider}}
+\doxysubsubsection{$\sim$ISatCollider()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_sat_collider_a33d7ed786572e5ec5a0bfb3a200f5852} 
+virtual OSK\+::\+COLLISION\+::\+ISat\+Collider\+::$\sim$\+ISat\+Collider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::ISatCollider@{OSK::COLLISION::ISatCollider}!GetAxes@{GetAxes}}
+\index{GetAxes@{GetAxes}!OSK::COLLISION::ISatCollider@{OSK::COLLISION::ISatCollider}}
+\doxysubsubsection{GetAxes()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_sat_collider_a60dd6a6a2fd9dbdf198b8259ca7a2573} 
+virtual const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \& OSK\+::\+COLLISION\+::\+ISat\+Collider\+::\+Get\+Axes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Ejes que se deben comprobar. 
+\end{DoxyReturn}
+
+
+Implementado en \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_aead85c67542a4ff4eda67f7900455567}.
+
+\index{OSK::COLLISION::ISatCollider@{OSK::COLLISION::ISatCollider}!GetVertices@{GetVertices}}
+\index{GetVertices@{GetVertices}!OSK::COLLISION::ISatCollider@{OSK::COLLISION::ISatCollider}}
+\doxysubsubsection{GetVertices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_sat_collider_a319d59f37beaffcdb05485cef800f75a} 
+virtual const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \& OSK\+::\+COLLISION\+::\+ISat\+Collider\+::\+Get\+Vertices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Vértices del collider, en espacio del mundo. 
+\end{DoxyReturn}
+
+
+Implementado en \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a9eb963d3e9eb20e7c857dc3e6347ee9c}.
+

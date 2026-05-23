@@ -1,0 +1,37 @@
+\doxysection{Model\+Component\+Controller3\+D.\+h}
+\label{_model_component_controller3_d_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/ModelComponentController3D.h@{C:/Users/Oscar/source/repos/OSKengine/Source/ModelComponentController3D.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}IComponentController.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ModelComponent3D.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }OSK::Editor::Controllers\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ ModelComponentController3D\ :\ \textcolor{keyword}{public}\ TComponentController<ECS::ModelComponent3D>\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ OSK\_LINK\_COMPONENT\_EDITOR\_CONTROLLER(ECS::ModelComponent3D);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ ModelComponentController3D(}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ \textcolor{keywordtype}{object},}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ componentData,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ Views::IComponentView*\ view);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Poll()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isFirstUpdate\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::string\ m\_previousAssetPath\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_castedShadows\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_wasAnimated\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}

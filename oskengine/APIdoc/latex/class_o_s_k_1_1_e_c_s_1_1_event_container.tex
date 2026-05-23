@@ -1,0 +1,96 @@
+\doxysection{Referencia de la plantilla de la clase OSK\+::ECS\+::Event\+Container$<$ TEvent $>$}
+\label{class_o_s_k_1_1_e_c_s_1_1_event_container}\index{OSK::ECS::EventContainer$<$ TEvent $>$@{OSK::ECS::EventContainer$<$ TEvent $>$}}
+
+
+{\ttfamily \#include $<$Event\+Container.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ \+\_\+\+Clear\+Queue} () override
+\item 
+\textbf{ Event\+Queue\+Span} \textbf{ Get\+Event\+Queue\+Span} () const override
+\item 
+void \textbf{ Publish\+Event} (const TEvent \&event)
+\item 
+const \textbf{ Dynamic\+Array}$<$ TEvent $>$ \& \textbf{ Get\+Event\+Queue} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename TEvent$>$\newline
+requires Is\+Ecs\+Event$<$TEvent$>$\newline
+class OSK\+::\+ECS\+::\+Event\+Container$<$ TEvent $>$}
+Contiene la cola de eventos de un tipo en específico. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TEvent} & Tipo de evento.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyPrecond}{Precondición}
+TEvent debe cumplir Is\+Ecs\+Event$<$\+TEvent$>$. 
+\end{DoxyPrecond}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::EventContainer$<$ TEvent $>$@{OSK::ECS::EventContainer$<$ TEvent $>$}!\_ClearQueue@{\_ClearQueue}}
+\index{\_ClearQueue@{\_ClearQueue}!OSK::ECS::EventContainer$<$ TEvent $>$@{OSK::ECS::EventContainer$<$ TEvent $>$}}
+\doxysubsubsection{\_ClearQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_container_a136c484e396525fbfe5e28135a7aa3a7} 
+template$<$typename TEvent$>$ \\
+void \textbf{ OSK\+::\+ECS\+::\+Event\+Container}$<$ TEvent $>$\+::\+\_\+\+Clear\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Elimina todos los eventos de la cola. Debe ser llamado al final de cada frame. 
+
+
+
+Implementa \textbf{ OSK\+::\+ECS\+::\+IEvent\+Container} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_event_container_a58d492e50c45ed25fae8e9ce5afbfe69}.
+
+\index{OSK::ECS::EventContainer$<$ TEvent $>$@{OSK::ECS::EventContainer$<$ TEvent $>$}!GetEventQueue@{GetEventQueue}}
+\index{GetEventQueue@{GetEventQueue}!OSK::ECS::EventContainer$<$ TEvent $>$@{OSK::ECS::EventContainer$<$ TEvent $>$}}
+\doxysubsubsection{GetEventQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_container_a97fb98096ec369d465adc9a6f1b24639} 
+template$<$typename TEvent$>$ \\
+const \textbf{ Dynamic\+Array}$<$ TEvent $>$ \& \textbf{ OSK\+::\+ECS\+::\+Event\+Container}$<$ TEvent $>$\+::\+Get\+Event\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la cola con todos los eventos del frame actual. 
+
+\begin{DoxyReturn}{Devuelve}
+Cola con los eventos del frame actual. 
+\end{DoxyReturn}
+\index{OSK::ECS::EventContainer$<$ TEvent $>$@{OSK::ECS::EventContainer$<$ TEvent $>$}!GetEventQueueSpan@{GetEventQueueSpan}}
+\index{GetEventQueueSpan@{GetEventQueueSpan}!OSK::ECS::EventContainer$<$ TEvent $>$@{OSK::ECS::EventContainer$<$ TEvent $>$}}
+\doxysubsubsection{GetEventQueueSpan()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_container_addf9c2f70aafeab5cff380fa4e634e54} 
+template$<$typename TEvent$>$ \\
+\textbf{ Event\+Queue\+Span} \textbf{ OSK\+::\+ECS\+::\+Event\+Container}$<$ TEvent $>$\+::\+Get\+Event\+Queue\+Span (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Event\+Queue\+Span}{pág.}{struct_o_s_k_1_1_e_c_s_1_1_event_queue_span} con todos los eventos de esta cola. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ OSK\+::\+ECS\+::\+IEvent\+Container} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_i_event_container_afaee008d7e9a70cd6794cef4ab657b64}.
+
+\index{OSK::ECS::EventContainer$<$ TEvent $>$@{OSK::ECS::EventContainer$<$ TEvent $>$}!PublishEvent@{PublishEvent}}
+\index{PublishEvent@{PublishEvent}!OSK::ECS::EventContainer$<$ TEvent $>$@{OSK::ECS::EventContainer$<$ TEvent $>$}}
+\doxysubsubsection{PublishEvent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_container_a3a0ca5d6e4dc9d498975dce3264392f8} 
+template$<$typename TEvent$>$ \\
+void \textbf{ OSK\+::\+ECS\+::\+Event\+Container}$<$ TEvent $>$\+::\+Publish\+Event (\begin{DoxyParamCaption}\item[{const TEvent \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un evento en la cola. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em event} & Nuevo evento. \\
+\hline
+\end{DoxyParams}

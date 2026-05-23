@@ -1,0 +1,67 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Sdf\+String\+Info}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_string_info}\index{OSK::GRAPHICS::SdfStringInfo@{OSK::GRAPHICS::SdfStringInfo}}
+
+
+{\ttfamily \#include $<$Sdf\+String\+Info.\+h$>$}
+
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string\+\_\+view \textbf{ text}
+\item 
+const \textbf{ ASSETS\+::\+Font\+Instance} $\ast$ \textbf{ font} = nullptr
+\item 
+\textbf{ ECS\+::\+Transform2D} \textbf{ transform} = \textbf{ ECS\+::\+Transform2D}(\textbf{ ECS\+::\+Game\+Object\+Index\+::\+Create\+Empty}())
+\item 
+\textbf{ Color} \textbf{ color} = \textbf{ Color\+::\+White}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Información para el renderizado de texto 2D. 
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::SdfStringInfo@{OSK::GRAPHICS::SdfStringInfo}!color@{color}}
+\index{color@{color}!OSK::GRAPHICS::SdfStringInfo@{OSK::GRAPHICS::SdfStringInfo}}
+\doxysubsubsection{color}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_string_info_a8afcda5eb6bc417ede1fd5bea2338527} 
+\textbf{ Color} OSK\+::\+GRAPHICS\+::\+Sdf\+String\+Info\+::color = \textbf{ Color\+::\+White}}
+
+
+
+\doxyref{Color}{pág.}{class_o_s_k_1_1_color} del texto. 
+
+\index{OSK::GRAPHICS::SdfStringInfo@{OSK::GRAPHICS::SdfStringInfo}!font@{font}}
+\index{font@{font}!OSK::GRAPHICS::SdfStringInfo@{OSK::GRAPHICS::SdfStringInfo}}
+\doxysubsubsection{font}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_string_info_ab10371bc9d58f49effd07135731cf8ef} 
+const \textbf{ ASSETS\+::\+Font\+Instance}$\ast$ OSK\+::\+GRAPHICS\+::\+Sdf\+String\+Info\+::font = nullptr}
+
+
+
+Instancia de la fuente a usar para el renderizado. 
+
+\begin{DoxyPrecond}{Precondición}
+No debe ser null. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::SdfStringInfo@{OSK::GRAPHICS::SdfStringInfo}!text@{text}}
+\index{text@{text}!OSK::GRAPHICS::SdfStringInfo@{OSK::GRAPHICS::SdfStringInfo}}
+\doxysubsubsection{text}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_string_info_a9b337c5aaf07df4686a15518402e72d1} 
+std\+::string\+\_\+view OSK\+::\+GRAPHICS\+::\+Sdf\+String\+Info\+::text}
+
+
+
+Texto a renderizar. 
+
+\index{OSK::GRAPHICS::SdfStringInfo@{OSK::GRAPHICS::SdfStringInfo}!transform@{transform}}
+\index{transform@{transform}!OSK::GRAPHICS::SdfStringInfo@{OSK::GRAPHICS::SdfStringInfo}}
+\doxysubsubsection{transform}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_string_info_a0a508aa12025870361da31b725c0e4bc} 
+\textbf{ ECS\+::\+Transform2D} OSK\+::\+GRAPHICS\+::\+Sdf\+String\+Info\+::transform = \textbf{ ECS\+::\+Transform2D}(\textbf{ ECS\+::\+Game\+Object\+Index\+::\+Create\+Empty}())}
+
+
+
+Transform inicial del texto. Será el transform de la primera letra del texto. 
+

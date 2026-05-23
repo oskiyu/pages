@@ -1,0 +1,35 @@
+\doxysection{Material\+Layout\+Binding.\+h}
+\label{_material_layout_binding_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/MaterialLayoutBinding.h@{C:/Users/Oscar/source/repos/OSKengine/Source/MaterialLayoutBinding.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ShaderBindingType.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{struct\ }MaterialLayoutBinding\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ ShaderBindingType\ type\{\};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ UIndex32\ glslIndex\ =\ 0;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ UIndex32\ hlslIndex\ =\ 0;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ UIndex32\ hlslDescriptorIndex\ =\ 0;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isUnsizedArray\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ USize32\ numArrayLayers\ =\ 1;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{template}\ <>\ std::string\ OSK::ToString<OSK::GRAPHICS::MaterialLayoutBinding>(\textcolor{keyword}{const}\ OSK::GRAPHICS::MaterialLayoutBinding\&\ binding);}
+
+\end{DoxyCode}

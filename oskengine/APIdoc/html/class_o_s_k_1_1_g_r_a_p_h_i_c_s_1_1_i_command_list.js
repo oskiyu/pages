@@ -6,7 +6,7 @@ var class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list =
     [ "_SetSingleTime", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#ac21035897625c382f656c8b55d48d444", null ],
     [ "_SetSingleTimeUse", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a91dd0015d5deefbbcbc1abacdb6be2c6", null ],
     [ "AddDebugMarker", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a83ff9359ff5245120a3d5ed3b17f218e", null ],
-    [ "BeginGraphicsRenderpass", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#ad15b24d6d38225c3cd6d9879512da72d", null ],
+    [ "BeginGraphicsRenderpass", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#ad2b8c1ec2bab22b0408984b8259d6b94", null ],
     [ "BeginGraphicsRenderpass", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a114eb251413acea318d911c5659a0136", null ],
     [ "BindComputePipeline", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#abed9708017ac7a7a63b0f5e41f738dd2", null ],
     [ "BindGraphicsPipeline", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a4efa5493db9efd537878ca745909a525", null ],
@@ -20,6 +20,7 @@ var class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list =
     [ "BindVertexBuffer", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a0e40eda73ff1f475140649d27a4306e7", null ],
     [ "BindVertexBufferRange", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a876d36bec645e2ac8b7f612d390b2171", null ],
     [ "ClearImage", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a4c5f87c5a714c5d8da05aaf6f0288038", null ],
+    [ "ClearImagesCache", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#ad2d4a2dc76baf975f9b740dfbbc7f793", null ],
     [ "Close", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#acbdde9b678e5db46d82b162c2a0f9730", null ],
     [ "CopyBufferToBuffer", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#acb3fe68481057364e814889eebdbc173", null ],
     [ "CopyBufferToImage", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#aaa60c9d021efa6beb0014ce8af75a10d", null ],
@@ -64,7 +65,7 @@ var class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list =
     [ "m_currentlyBoundDepthImage", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a3ff7354c9753d96881d672b111043af6", null ],
     [ "m_currentlyBoundMaterial", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a6f3819930d72de3a653aee8599e5f072", null ],
     [ "m_currentlyBoundRenderTargetType", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a87d534d7426c0dbb7a01f2b8d4ab5013", null ],
-    [ "m_currentPipeline", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a10a28f981f3e58ed0fb7da2419713674", null ],
+    [ "m_currentPipeline", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a277e62ef58d147af00779977b194c079", null ],
     [ "mesh", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#aa479a6d7a2f7ec525de66a4ab4a83c93", null ],
     [ "raytracing", "class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#ad0c6fb52ec460cf8a90c91c661378712", null ]
 ];

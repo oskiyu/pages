@@ -1,0 +1,153 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Animation\+Bone}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone}\index{OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}}
+
+
+{\ttfamily \#include $<$Bone.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Update\+Skeleton\+Tree} (const glm\+::mat4 \&prev\+Matrix, \textbf{ Skeleton} $\ast$skeleton)
+\item 
+glm\+::mat4 \textbf{ Get\+Local\+Matrix} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ name}
+\item 
+\textbf{ Vector3f} \textbf{ position} = \textbf{ Vector3f\+::\+Zero}
+\item 
+\textbf{ Quaternion} \textbf{ rotation} \{\}
+\item 
+\textbf{ Vector3f} \textbf{ scale} = \textbf{ Vector3f\+::\+One}
+\item 
+\textbf{ UIndex32} \textbf{ this\+Index} = 0
+\item 
+std\+::optional$<$ \textbf{ UIndex32} $>$ \textbf{ parent\+Index}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ UIndex32} $>$ \textbf{ child\+Indices}
+\item 
+std\+::optional$<$ \textbf{ UIndex32} $>$ \textbf{ skin\+Index}
+\item 
+glm\+::mat4 \textbf{ global\+Matrix} = glm\+::mat4(1.\+0f)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Hueso de la animación. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}!GetLocalMatrix@{GetLocalMatrix}}
+\index{GetLocalMatrix@{GetLocalMatrix}!OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}}
+\doxysubsubsection{GetLocalMatrix()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone_a1dbcb4ec839cd81cf218f524372ea7c5} 
+glm\+::mat4 OSK\+::\+GRAPHICS\+::\+Animation\+Bone\+::\+Get\+Local\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Matriz de modelo del hueso. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}!UpdateSkeletonTree@{UpdateSkeletonTree}}
+\index{UpdateSkeletonTree@{UpdateSkeletonTree}!OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}}
+\doxysubsubsection{UpdateSkeletonTree()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone_adba5f14025a29cbe4fc8e5e64dc3365f} 
+void Animation\+Bone\+::\+Update\+Skeleton\+Tree (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{prev\+Matrix}{, }\item[{\textbf{ Skeleton} $\ast$}]{skeleton}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza la matriz propia y la de los huesos hijos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em prev\+Matrix} & Matriz del hueso padre. \\
+\hline
+{\em skeleton} & \doxyref{Animator}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animator} que contiene los huesos hijos. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}!childIndices@{childIndices}}
+\index{childIndices@{childIndices}!OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}}
+\doxysubsubsection{childIndices}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone_ab5c3e38538bdd5e9f72df548078a803c} 
+\textbf{ Dynamic\+Array}$<$\textbf{ UIndex32}$>$ OSK\+::\+GRAPHICS\+::\+Animation\+Bone\+::child\+Indices}
+
+
+
+Índices de los nodos hijos. 
+
+\index{OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}!globalMatrix@{globalMatrix}}
+\index{globalMatrix@{globalMatrix}!OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}}
+\doxysubsubsection{globalMatrix}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone_aac4afc23e5ba01cad66f31b44d06aa4c} 
+glm\+::mat4 OSK\+::\+GRAPHICS\+::\+Animation\+Bone\+::global\+Matrix = glm\+::mat4(1.\+0f)}
+
+\index{OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}!name@{name}}
+\index{name@{name}!OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}}
+\doxysubsubsection{name}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone_a150ce87fe6f0565e7dee674b6defd4d4} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Animation\+Bone\+::name}
+
+
+
+Nombre nativo. 
+
+\index{OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}!parentIndex@{parentIndex}}
+\index{parentIndex@{parentIndex}!OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}}
+\doxysubsubsection{parentIndex}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone_afd237dab44387fec7db26cc0664d3d4d} 
+std\+::optional$<$\textbf{ UIndex32}$>$ OSK\+::\+GRAPHICS\+::\+Animation\+Bone\+::parent\+Index}
+
+
+
+Índice del nodo padre. 
+
+\index{OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}!position@{position}}
+\index{position@{position}!OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}}
+\doxysubsubsection{position}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone_a26785083d0bcb19dc7c22b0b8e945459} 
+\textbf{ Vector3f} OSK\+::\+GRAPHICS\+::\+Animation\+Bone\+::position = \textbf{ Vector3f\+::\+Zero}}
+
+
+
+Posición actual. 
+
+\index{OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}!rotation@{rotation}}
+\index{rotation@{rotation}!OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}}
+\doxysubsubsection{rotation}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone_a1f1517de376bf04f49903e17920d7c71} 
+\textbf{ Quaternion} OSK\+::\+GRAPHICS\+::\+Animation\+Bone\+::rotation \{\}}
+
+
+
+Orientación actual. 
+
+\index{OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}!scale@{scale}}
+\index{scale@{scale}!OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}}
+\doxysubsubsection{scale}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone_abac08dea525778a0ebeda8173dce2458} 
+\textbf{ Vector3f} OSK\+::\+GRAPHICS\+::\+Animation\+Bone\+::scale = \textbf{ Vector3f\+::\+One}}
+
+
+
+Escala actual. 
+
+\index{OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}!skinIndex@{skinIndex}}
+\index{skinIndex@{skinIndex}!OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}}
+\doxysubsubsection{skinIndex}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone_a96eb5361f40781aca3dbad47fa7a0b6d} 
+std\+::optional$<$\textbf{ UIndex32}$>$ OSK\+::\+GRAPHICS\+::\+Animation\+Bone\+::skin\+Index}
+
+\index{OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}!thisIndex@{thisIndex}}
+\index{thisIndex@{thisIndex}!OSK::GRAPHICS::AnimationBone@{OSK::GRAPHICS::AnimationBone}}
+\doxysubsubsection{thisIndex}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone_a126e64a3ab8e9e0f0f5f9e59ef061224} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Animation\+Bone\+::this\+Index = 0}
+
+
+
+Índice del hueso. 
+

@@ -1,0 +1,46 @@
+\doxysection{Material\+Layout\+Builder.\+h}
+\label{_material_layout_builder_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/MaterialLayoutBuilder.h@{C:/Users/Oscar/source/repos/OSKengine/Source/MaterialLayoutBuilder.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}MaterialLayout.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }MaterialLayout;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }SpirvReflectionData;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ MaterialLayoutBuilder\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ MaterialLayoutBuilder(}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<UIndex32,\ std::string>\&\ slotNames,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ materialName);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Apply(\textcolor{keyword}{const}\ SpirvReflectionData\&\ shaderData);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ [[nodiscard]]\ UniquePtr<MaterialLayout>\ Build();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ UniquePtr<MaterialLayout>\ m\_target\{\};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::unordered\_map<UIndex32,\ std::string>\ m\_slotNames;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ USize32\ pushConstantsOffset\ =\ 0;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ USize32\ numHlslBuffers\ =\ 0;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ USize32\ numHlslImages\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ USize32\ numHlslBindings\ =\ 0;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}

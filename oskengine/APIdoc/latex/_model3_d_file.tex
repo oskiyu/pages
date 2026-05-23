@@ -1,0 +1,41 @@
+\doxysection{Archivo de descripción de modelos 3D. }
+\label{_model3_d_file}\index{Archivo de descripción de modelos 3D.@{Archivo de descripción de modelos 3D.}}
+Indica los metadatos de un modelo 3D almacenado en un fichero externo.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+\_\+type} & ({\ttfamily string}) Tipo de archivo de descripción. \\
+\hline
+{\em spec\+\_\+ver} & ({\ttfamily string}) Versión de la especificación del archivo. \\
+\hline
+{\em asset\+\_\+type} & ({\ttfamily string}) Tipo de recurso. \\
+\hline
+{\em name} & ({\ttfamily string}) Nombre del modelo. \\
+\hline
+{\em raw\+\_\+asset\+\_\+path} & ({\ttfamily string}) Ruta al fichero que almacena el modelo 3D. \\
+\hline
+{\em renderpass\+\_\+type} & ({\ttfamily string}) Nombre del pase de renderizado que renderizará el modelo. \\
+\hline
+{\em animated} & ({\ttfamily bool}) [{\itshape opcional}] Indica si el modelo conteine animaciones. Por defecto\+: {\ttfamily false}. \\
+\hline
+{\em scale} & ({\ttfamily Vector3f}) Multiplicador de escala de carga del modelo 3D. Por defecto\+: {\ttfamily (1, 1, 1)} . \\
+\hline
+{\em rotation\+\_\+offset} & ({\ttfamily Vector3f}) [{\itshape opcional}] Ruta al fichero que almacena el modelo 3D. Por defecto\+: {\ttfamily (0, 0, 0)}.\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily file\+\_\+type} debe ser {\ttfamily ASSET}. 
+
+{\ttfamily spec\+\_\+ver} debe ser 0. 
+
+{\ttfamily asset\+\_\+type} debe ser {\ttfamily OSK\+::\+Model3D}. 
+
+{\ttfamily name} debe ser un identificador único para este modelo.
+
+{\ttfamily raw\+\_\+asset\+\_\+path} debe apuntar a un archivo con extensión {\ttfamily .glb}.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+{\ttfamily rotation\+\_\+offset} se indica en grados. 
+\end{DoxyNote}

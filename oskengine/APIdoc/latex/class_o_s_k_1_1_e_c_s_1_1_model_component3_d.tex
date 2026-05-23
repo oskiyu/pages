@@ -1,0 +1,160 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Model\+Component3D}
+\label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d}\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+
+
+{\ttfamily \#include $<$Model\+Component3\+D.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT} ()
+\item 
+\textbf{ OSK\+\_\+\+COMPONENT} ("{}OSK\+::\+Model\+Component3\+D"{})
+\item 
+void \textbf{ Set\+Model} (\textbf{ ASSETS\+::\+Asset\+Ref}$<$ \textbf{ ASSETS\+::\+Model3D} $>$ model)
+\item 
+\textbf{ ASSETS\+::\+Model3D} $\ast$ \textbf{ Get\+Model\+Asset} ()
+\item 
+const \textbf{ ASSETS\+::\+Model3D} $\ast$ \textbf{ Get\+Model\+Asset} () const
+\item 
+\textbf{ GRAPHICS\+::\+Gpu\+Model3D} $\ast$ \textbf{ Get\+Model} ()
+\item 
+const \textbf{ GRAPHICS\+::\+Gpu\+Model3D} $\ast$ \textbf{ Get\+Model} () const
+\item 
+void \textbf{ Set\+Cast\+Shadows} (bool cast\+Shadows)
+\item 
+bool \textbf{ Casts\+Shadows} () const
+\item 
+\textbf{ GRAPHICS\+::\+Animator} \& \textbf{ Get\+Animator} ()
+\item 
+const \textbf{ GRAPHICS\+::\+Animator} \& \textbf{ Get\+Animator} () const
+\item 
+bool \textbf{ Is\+Animated} () const
+\item 
+void \textbf{ Add\+Shader\+Pass\+Name} (const std\+::string \&name)
+\item 
+void \textbf{ Remove\+Shader\+Pass\+Name} (const std\+::string \&name)
+\item 
+const std\+::unordered\+\_\+set$<$ std\+::string, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$ $>$ \& \textbf{ Get\+Shader\+Pass\+Names} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Componente para el renderizado 3D de un objeto. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!AddShaderPassName@{AddShaderPassName}}
+\index{AddShaderPassName@{AddShaderPassName}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{AddShaderPassName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_a054f5669e20957454976ff737fbcf754} 
+void Model\+Component3\+D\+::\+Add\+Shader\+Pass\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!CastsShadows@{CastsShadows}}
+\index{CastsShadows@{CastsShadows}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{CastsShadows()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_a7f7ca47e05391f710ecd78b5ab7e1185} 
+bool OSK\+::\+ECS\+::\+Model\+Component3\+D\+::\+Casts\+Shadows (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si generará sombras. 
+\end{DoxyReturn}
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!GetAnimator@{GetAnimator}}
+\index{GetAnimator@{GetAnimator}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{GetAnimator()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_af78a55cb377d8b055d4357187240c3ba} 
+\textbf{ GRAPHICS\+::\+Animator} \& Model\+Component3\+D\+::\+Get\+Animator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!GetAnimator@{GetAnimator}}
+\index{GetAnimator@{GetAnimator}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{GetAnimator()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_a092397ba899c75c4f5ccaa91d15b03b6} 
+const \textbf{ GRAPHICS\+::\+Animator} \& Model\+Component3\+D\+::\+Get\+Animator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!GetModel@{GetModel}}
+\index{GetModel@{GetModel}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{GetModel()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_adee5ff754c7633596b9ecf29a7cde82c} 
+\textbf{ GRAPHICS\+::\+Gpu\+Model3D} $\ast$ Model\+Component3\+D\+::\+Get\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!GetModel@{GetModel}}
+\index{GetModel@{GetModel}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{GetModel()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_af0edebf8d6ecccd623447e357f1340a0} 
+const \textbf{ GRAPHICS\+::\+Gpu\+Model3D} $\ast$ Model\+Component3\+D\+::\+Get\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!GetModelAsset@{GetModelAsset}}
+\index{GetModelAsset@{GetModelAsset}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{GetModelAsset()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_a208553770dbc3a8f0dd4890facce9fc7} 
+\textbf{ ASSETS\+::\+Model3D} $\ast$ Model\+Component3\+D\+::\+Get\+Model\+Asset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!GetModelAsset@{GetModelAsset}}
+\index{GetModelAsset@{GetModelAsset}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{GetModelAsset()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_a636141f3aaedfbb52a94cc99e1d9b366} 
+const \textbf{ ASSETS\+::\+Model3D} $\ast$ Model\+Component3\+D\+::\+Get\+Model\+Asset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!GetShaderPassNames@{GetShaderPassNames}}
+\index{GetShaderPassNames@{GetShaderPassNames}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{GetShaderPassNames()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_ab6fe00afdc47725c1e99fec084f8734a} 
+const std\+::unordered\+\_\+set$<$ std\+::string, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$ $>$ \& Model\+Component3\+D\+::\+Get\+Shader\+Pass\+Names (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!IsAnimated@{IsAnimated}}
+\index{IsAnimated@{IsAnimated}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{IsAnimated()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_a3ab6b8a7b7ea5a7aa4dec9412d43fabc} 
+bool Model\+Component3\+D\+::\+Is\+Animated (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!OSK\_COMPONENT@{OSK\_COMPONENT}}
+\index{OSK\_COMPONENT@{OSK\_COMPONENT}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{OSK\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_a8fd566d9156bf9241240e50629ec459f} 
+OSK\+::\+ECS\+::\+Model\+Component3\+D\+::\+OSK\+\_\+\+COMPONENT (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Model\+Component3\+D"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}}
+\index{OSK\_SERIALIZABLE\_COMPONENT@{OSK\_SERIALIZABLE\_COMPONENT}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{OSK\_SERIALIZABLE\_COMPONENT()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_ab32d508fd8296fd0c15fe9fee82332af} 
+OSK\+::\+ECS\+::\+Model\+Component3\+D\+::\+OSK\+\_\+\+SERIALIZABLE\+\_\+\+COMPONENT (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!RemoveShaderPassName@{RemoveShaderPassName}}
+\index{RemoveShaderPassName@{RemoveShaderPassName}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{RemoveShaderPassName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_a507d12d8e72926406731377b6b72165e} 
+void Model\+Component3\+D\+::\+Remove\+Shader\+Pass\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!SetCastShadows@{SetCastShadows}}
+\index{SetCastShadows@{SetCastShadows}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{SetCastShadows()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_a3893882b5381892a4cebaa483bef4e7b} 
+void OSK\+::\+ECS\+::\+Model\+Component3\+D\+::\+Set\+Cast\+Shadows (\begin{DoxyParamCaption}\item[{bool}]{cast\+Shadows}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece si el modelo generará sombras. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cast\+Shadows} & True si generará sombras. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}!SetModel@{SetModel}}
+\index{SetModel@{SetModel}!OSK::ECS::ModelComponent3D@{OSK::ECS::ModelComponent3D}}
+\doxysubsubsection{SetModel()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_model_component3_d_a85bd0a087d45aa02e97c0e77f57dff8e} 
+void Model\+Component3\+D\+::\+Set\+Model (\begin{DoxyParamCaption}\item[{\textbf{ ASSETS\+::\+Asset\+Ref}$<$ \textbf{ ASSETS\+::\+Model3D} $>$}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Establece el modelo 3D que se renderizará. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em model} & Modelo 3D cargado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily model} no debe ser null. 
+\end{DoxyPrecond}

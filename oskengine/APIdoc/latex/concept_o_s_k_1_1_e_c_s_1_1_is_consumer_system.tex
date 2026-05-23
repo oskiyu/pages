@@ -1,0 +1,18 @@
+\doxysection{Referencia del concepto OSK\+::ECS\+::Is\+Consumer\+System}
+\label{concept_o_s_k_1_1_e_c_s_1_1_is_consumer_system}\index{OSK::ECS::IsConsumerSystem@{OSK::ECS::IsConsumerSystem}}
+
+
+{\ttfamily \#include $<$IConsumer\+System.\+h$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TSystem>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::ECS::IsConsumerSystem\ =\ \ std::is\_base\_of\_v<IConsumerSystem,\ TSystem>}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \&\&\ IsEcsSystem<TSystem>}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}
+Concepto para saber si un sistema es un sistema consumidor. 

@@ -1,0 +1,118 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Gpu\+Image\+Sampler\+Desc}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc}\index{OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}}
+
+
+{\ttfamily \#include $<$Gpu\+Image\+Sampler\+Desc.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ operator==} (const \textbf{ Gpu\+Image\+Sampler\+Desc} \&other) const =default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Gpu\+Image\+Sampler\+Desc} \textbf{ Create\+Default\+\_\+\+No\+Mip\+Map} ()
+\item 
+static \textbf{ Gpu\+Image\+Sampler\+Desc} \textbf{ Create\+Default\+\_\+\+With\+Mip\+Map} (const \textbf{ Gpu\+Image} \&image)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Gpu\+Image\+Filtering\+Type} \textbf{ filtering\+Type} = \textbf{ Gpu\+Image\+Filtering\+Type\+::\+LINEAR}
+\item 
+\textbf{ Gpu\+Image\+Address\+Mode} \textbf{ address\+Mode} = \textbf{ Gpu\+Image\+Address\+Mode\+::\+REPEAT}
+\item 
+\textbf{ Gpu\+Image\+Mipmap\+Mode} \textbf{ mip\+Map\+Mode} = \textbf{ Gpu\+Image\+Mipmap\+Mode\+::\+AUTO}
+\item 
+\textbf{ UIndex32} \textbf{ min\+Mip\+Level} = 0
+\item 
+\textbf{ UIndex32} \textbf{ max\+Mip\+Level} = 0
+\item 
+float \textbf{ mip\+Bias} = 0.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Establece propiedades básicas sobre el acceso a la imagen. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}!CreateDefault\_NoMipMap@{CreateDefault\_NoMipMap}}
+\index{CreateDefault\_NoMipMap@{CreateDefault\_NoMipMap}!OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}}
+\doxysubsubsection{CreateDefault\_NoMipMap()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc_ae6e67351c6e8ca0214815899eaf35d9e} 
+\textbf{ OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Sampler\+Desc} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Sampler\+Desc\+::\+Create\+Default\+\_\+\+No\+Mip\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}!CreateDefault\_WithMipMap@{CreateDefault\_WithMipMap}}
+\index{CreateDefault\_WithMipMap@{CreateDefault\_WithMipMap}!OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}}
+\doxysubsubsection{CreateDefault\_WithMipMap()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc_a8e137270b760d671d5f287501ecf1a80} 
+\textbf{ OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Sampler\+Desc} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Sampler\+Desc\+::\+Create\+Default\+\_\+\+With\+Mip\+Map (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Image} \&}]{image}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}!operator==@{operator==}}
+\index{operator==@{operator==}!OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}}
+\doxysubsubsection{operator==()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc_adfb62f783aa6f97f2f13d8eb6579937f} 
+bool OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Sampler\+Desc\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Image\+Sampler\+Desc} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}!addressMode@{addressMode}}
+\index{addressMode@{addressMode}!OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}}
+\doxysubsubsection{addressMode}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc_a5a47105ae69b63f01f5aea2ce71ac1ef} 
+\textbf{ Gpu\+Image\+Address\+Mode} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Sampler\+Desc\+::address\+Mode = \textbf{ Gpu\+Image\+Address\+Mode\+::\+REPEAT}}
+
+\index{OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}!filteringType@{filteringType}}
+\index{filteringType@{filteringType}!OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}}
+\doxysubsubsection{filteringType}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc_a7e95181a05295e608cbd46d2ba40e86f} 
+\textbf{ Gpu\+Image\+Filtering\+Type} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Sampler\+Desc\+::filtering\+Type = \textbf{ Gpu\+Image\+Filtering\+Type\+::\+LINEAR}}
+
+\index{OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}!maxMipLevel@{maxMipLevel}}
+\index{maxMipLevel@{maxMipLevel}!OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}}
+\doxysubsubsection{maxMipLevel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc_ae877312ab61990ed0671d9215cb21dfe} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Sampler\+Desc\+::max\+Mip\+Level = 0}
+
+
+
+Divel de mipmap más alto. 
+
+\begin{DoxyNote}{Nota}
+El valor 0 identifica a la imagen original. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+Únicamente se usa este valor si mip\+Map\+Mode == \doxyref{Gpu\+Image\+Mipmap\+Mode\+::\+CUSTOM}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a7b3d3107477f334f9d9d85a64c930c8aa72baef04098f035e8a320b03ad197818}. 
+\end{DoxyWarning}
+\index{OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}!minMipLevel@{minMipLevel}}
+\index{minMipLevel@{minMipLevel}!OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}}
+\doxysubsubsection{minMipLevel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc_a259dd640e318aa180fc6f1bea6263beb} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Sampler\+Desc\+::min\+Mip\+Level = 0}
+
+
+
+Nivel de mipmap más bajo. 
+
+\begin{DoxyNote}{Nota}
+El valor 0 identifica a la imagen original. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+Únicamente se usa este valor si {\ttfamily mip\+Map\+Mode == \doxyref{Gpu\+Image\+Mipmap\+Mode\+::\+CUSTOM}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a7b3d3107477f334f9d9d85a64c930c8aa72baef04098f035e8a320b03ad197818}}. 
+\end{DoxyWarning}
+\index{OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}!mipBias@{mipBias}}
+\index{mipBias@{mipBias}!OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}}
+\doxysubsubsection{mipBias}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc_aadead6d589f7636e944b31f150a886e3} 
+float OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Sampler\+Desc\+::mip\+Bias = 0.\+0f}
+
+\index{OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}!mipMapMode@{mipMapMode}}
+\index{mipMapMode@{mipMapMode}!OSK::GRAPHICS::GpuImageSamplerDesc@{OSK::GRAPHICS::GpuImageSamplerDesc}}
+\doxysubsubsection{mipMapMode}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_sampler_desc_a741e70e94808535310cd680c4c4fcded} 
+\textbf{ Gpu\+Image\+Mipmap\+Mode} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Sampler\+Desc\+::mip\+Map\+Mode = \textbf{ Gpu\+Image\+Mipmap\+Mode\+::\+AUTO}}
+

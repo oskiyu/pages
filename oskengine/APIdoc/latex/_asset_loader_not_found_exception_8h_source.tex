@@ -1,0 +1,41 @@
+\doxysection{Asset\+Loader\+Not\+Found\+Exception.\+h}
+\label{_asset_loader_not_found_exception_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/AssetLoaderNotFoundException.h@{C:/Users/Oscar/source/repos/OSKengine/Source/AssetLoaderNotFoundException.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}EngineException.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }AssetLoaderNotFoundException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ AssetLoaderNotFoundException(}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ assetType,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}AssetLoaderNotFoundException:\ El\ loader\ para\ el\ recurso\ del\ tipo\ \{\}\ no\ ha\ sido\ registrado."{}},\ assetType),}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{class\ }AssetLoaderAlreadyRegisteredException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ AssetLoaderAlreadyRegisteredException(}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ assetType,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::format(\textcolor{stringliteral}{"{}AssetLoaderAlreadyRegisteredException:\ El\ loader\ para\ el\ recurso\ del\ tipo\ \{\}\ ya\ ha\ sido\ registrado."{}},\ assetType),}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location)\ \{\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,32 @@
+\doxysection{Pbr\+Resolve\+Pass.\+h}
+\label{_pbr_resolve_pass_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/PbrResolvePass.h@{C:/Users/Oscar/source/repos/OSKengine/Source/PbrResolvePass.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}IDeferredResolver.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ PbrResolverPass\ :\ \textcolor{keyword}{public}\ IDeferredResolver\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ OSK\_RENDERPASS(PbrResolverPass,\ \textcolor{stringliteral}{"{}pbr\_compute\_resolver\_pass"{}});}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ PbrResolverPass()\ :\ IDeferredResolver(\textcolor{stringliteral}{"{}pbr\_compute\_resolver\_pass"{}})\ \{\}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Load()\ override\ final;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RenderLoop(}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ ICommandList*\ commandList,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ const\ DynamicArray<ECS::GameObjectIndex>\&\ objectsToRender,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ GlobalMeshMapping*\ meshMapping,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ jitterIndex,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2ui\ resolution)\ override\ final;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}

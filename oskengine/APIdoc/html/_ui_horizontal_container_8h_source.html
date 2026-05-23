@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Fichero Fuente C:/Users/Oscar/source/repos/OSKengine/Source/UiHorizontalContainer.h</title>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/UiHorizontalContainer.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_ui_horizontal_container_8h_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('_ui_horizontal_container_8h_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,9 +78,16 @@ $(document).ready(function(){initNavTree('_ui_horizontal_container_8h_source.htm
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
@@ -93,37 +99,42 @@ $(document).ready(function(){initNavTree('_ui_horizontal_container_8h_source.htm
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;IUiContainer.h&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_u_i.html">OSK::UI</a> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_u_i_1_1_horizontal_container.html">    8</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_class" href="class_o_s_k_1_1_u_i_1_1_horizontal_container.html">HorizontalContainer</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_o_s_k_1_1_u_i_1_1_i_container.html">IContainer</a> {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_u_i_1_1_horizontal_container.html">    8</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_function" href="class_o_s_k_1_1_u_i_1_1_horizontal_container.html#a9270d7f8a939709259597e8b24d5fae9">HorizontalContainer</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_o_s_k_1_1_u_i_1_1_i_container.html#aad670433ca1c4cb2ce8f41ca69f049d3">IContainer</a> {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_class" href="class_o_s_k_1_1_u_i_1_1_horizontal_container.html">HorizontalContainer</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_vector2__t.html">Vector2f</a>&amp; size);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_function" href="class_o_s_k_1_1_u_i_1_1_horizontal_container.html#a9270d7f8a939709259597e8b24d5fae9">HorizontalContainer</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespace_o_s_k.html#a31a299dbb3a3a60d90d16d1a4eca9651">Vector2f</a>&amp; size);</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">void</span> ResetLayout() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">void</span> EmplaceChild(<a class="code hl_class" href="class_o_s_k_1_1_u_i_1_1_i_element.html">IElement</a>* child) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_u_i_1_1_horizontal_container.html#a7917059e16bca60de395c16c2847954f">ResetLayout</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_u_i_1_1_horizontal_container.html#ad67eabcdd1854c5889710ef200235faa">EmplaceChild</a>(<a class="code hl_class" href="class_o_s_k_1_1_u_i_1_1_i_element.html">IElement</a>* child) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">float</span> m_relativeNextPosition = 0.0f;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    };</div>
+</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
-<div class="ttc" id="aclass_o_s_k_1_1_u_i_1_1_horizontal_container_html"><div class="ttname"><a href="class_o_s_k_1_1_u_i_1_1_horizontal_container.html">OSK::UI::HorizontalContainer</a></div><div class="ttdoc">Contenedor que coloca los elementos de manera horizontal y contígua.</div><div class="ttdef"><b>Definition:</b> UiHorizontalContainer.h:8</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_u_i_1_1_i_container_html"><div class="ttname"><a href="class_o_s_k_1_1_u_i_1_1_i_container.html">OSK::UI::IContainer</a></div><div class="ttdoc">Interfaz común para los contenedores de UI. Un contenedor de UI puede contener distintos elementos UI...</div><div class="ttdef"><b>Definition:</b> IUiContainer.h:15</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_u_i_1_1_i_element_html"><div class="ttname"><a href="class_o_s_k_1_1_u_i_1_1_i_element.html">OSK::UI::IElement</a></div><div class="ttdoc">Clase base para todos los elementos de interfaz de usuario.</div><div class="ttdef"><b>Definition:</b> UiElement.h:33</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_vector2__t_html"><div class="ttname"><a href="class_o_s_k_1_1_vector2__t.html">OSK::Vector2_t&lt; float_t &gt;</a></div></div>
-<div class="ttc" id="anamespace_o_s_k_1_1_u_i_html"><div class="ttname"><a href="namespace_o_s_k_1_1_u_i.html">OSK::UI</a></div><div class="ttdef"><b>Definition:</b> CameraComponentView.h:6</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_u_i_1_1_horizontal_container_html_a7917059e16bca60de395c16c2847954f"><div class="ttname"><a href="class_o_s_k_1_1_u_i_1_1_horizontal_container.html#a7917059e16bca60de395c16c2847954f">OSK::UI::HorizontalContainer::ResetLayout</a></div><div class="ttdeci">void ResetLayout() override</div><div class="ttdoc">Resetea el layout, de tal manera que los siguientes elementos colocados se coloquen en el inicio del ...</div><div class="ttdef"><b>Definition</b> UiHorizontalContainer.cpp:41</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_u_i_1_1_horizontal_container_html_a9270d7f8a939709259597e8b24d5fae9"><div class="ttname"><a href="class_o_s_k_1_1_u_i_1_1_horizontal_container.html#a9270d7f8a939709259597e8b24d5fae9">OSK::UI::HorizontalContainer::HorizontalContainer</a></div><div class="ttdeci">HorizontalContainer(const Vector2f &amp;size)</div><div class="ttdef"><b>Definition</b> UiHorizontalContainer.cpp:7</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_u_i_1_1_horizontal_container_html_ad67eabcdd1854c5889710ef200235faa"><div class="ttname"><a href="class_o_s_k_1_1_u_i_1_1_horizontal_container.html#ad67eabcdd1854c5889710ef200235faa">OSK::UI::HorizontalContainer::EmplaceChild</a></div><div class="ttdeci">void EmplaceChild(IElement *child) override</div><div class="ttdoc">Coloca un hijo en la posición deseada, según el layout.</div><div class="ttdef"><b>Definition</b> UiHorizontalContainer.cpp:11</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_u_i_1_1_i_container_html_aad670433ca1c4cb2ce8f41ca69f049d3"><div class="ttname"><a href="class_o_s_k_1_1_u_i_1_1_i_container.html#aad670433ca1c4cb2ce8f41ca69f049d3">OSK::UI::IContainer::IContainer</a></div><div class="ttdeci">IContainer(const Vector2f &amp;size)</div><div class="ttdef"><b>Definition</b> IUiContainer.h:19</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_u_i_1_1_i_element_html"><div class="ttname"><a href="class_o_s_k_1_1_u_i_1_1_i_element.html">OSK::UI::IElement</a></div><div class="ttdoc">Clase base para todos los elementos de interfaz de usuario.</div><div class="ttdef"><b>Definition</b> UiElement.h:33</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_u_i_html"><div class="ttname"><a href="namespace_o_s_k_1_1_u_i.html">OSK::UI</a></div><div class="ttdef"><b>Definition</b> CameraComponentView.h:6</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a31a299dbb3a3a60d90d16d1a4eca9651"><div class="ttname"><a href="namespace_o_s_k.html#a31a299dbb3a3a60d90d16d1a4eca9651">OSK::Vector2f</a></div><div class="ttdeci">Vector2_t&lt; float_t &gt; Vector2f</div><div class="ttdoc">Precisión = float.</div><div class="ttdef"><b>Definition</b> Vector2.hpp:261</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>UiHorizontalContainer.h</b></li>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>UiHorizontalContainer.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

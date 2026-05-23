@@ -1,0 +1,597 @@
+\doxysection{Referencia de la clase OSK\+::ASSETS\+::Gltf\+Loader}
+\label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader}\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+
+
+{\ttfamily \#include $<$IGltf\+Loader.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Cpu\+Model3D} \textbf{ Load} (std\+::string\+\_\+view path, const glm\+::mat4 \&transform)
+\item 
+static void \textbf{ Load\+Materials} (std\+::string\+\_\+view path, \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Model3\+D\+::\+Material} $>$ $\ast$materials, \textbf{ GRAPHICS\+::\+Gpu\+Model3\+D\+::\+Texture\+Table} $\ast$textures)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation} $>$ \textbf{ Load\+Animations} (const tinygltf\+::\+Model \&model, const glm\+::mat4 \&base\+Transform)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation\+Sampler} $>$ \textbf{ Load\+Animation\+Samplers} (const tinygltf\+::\+Model \&model, const tinygltf\+::\+Animation \&gltf\+Animation)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation\+Channel} $>$ \textbf{ Load\+Animation\+Channels} (const tinygltf\+::\+Animation \&gltf\+Animation)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation\+Skin} $>$ \textbf{ Load\+Animation\+Skins} (const tinygltf\+::\+Model \&model)
+\item 
+static \textbf{ Dynamic\+Array}$<$ std\+::string $>$ \textbf{ Get\+Tags\+From\+Name} (const tinygltf\+::\+Scene \&scene)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Model3\+D\+::\+Material} $>$ \textbf{ Load\+Materials} (const tinygltf\+::\+Model \&model)
+\item 
+static glm\+::mat4 \textbf{ Get\+Node\+Matrix} (const tinygltf\+::\+Node \&node)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Mesh3D} $>$ \textbf{ Process\+Node} (const tinygltf\+::\+Model \&model, const tinygltf\+::\+Node \&node, const glm\+::mat4 \&transform)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation\+Bone} $>$ \textbf{ Load\+Bones} (const tinygltf\+::\+Model \&model, const tinygltf\+::\+Node \&node, \textbf{ UIndex64} node\+Index, std\+::optional$<$ \textbf{ UIndex64} $>$ parent\+Index)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation\+Bone} $>$ \textbf{ Load\+All\+Bones} (const tinygltf\+::\+Model \&model, const glm\+::mat4 \&base\+Transform)
+\item 
+static bool \textbf{ Has\+Attribute} (const tinygltf\+::\+Primitive \&primitive, const std\+::string \&name)
+\item 
+static bool \textbf{ Has\+Positions} (const tinygltf\+::\+Primitive \&primitive)
+\item 
+static bool \textbf{ Has\+Normals} (const tinygltf\+::\+Primitive \&primitive)
+\item 
+static bool \textbf{ Has\+Tangets} (const tinygltf\+::\+Primitive \&primitive)
+\item 
+static bool \textbf{ Has\+Texture\+Coords} (const tinygltf\+::\+Primitive \&primitive)
+\item 
+static bool \textbf{ Has\+Colors} (const tinygltf\+::\+Primitive \&primitive)
+\item 
+static bool \textbf{ Has\+Joints} (const tinygltf\+::\+Primitive \&primitive)
+\item 
+static bool \textbf{ Has\+Bone\+Weights} (const tinygltf\+::\+Primitive \&primitive)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \textbf{ Get\+Vertex\+Positions} (const tinygltf\+::\+Primitive \&primitive, const glm\+::mat4 \&node\+Matrix, const tinygltf\+::\+Model \&model)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \textbf{ Get\+Vertex\+Normals} (const tinygltf\+::\+Primitive \&primitive, const tinygltf\+::\+Model \&model)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ Vector2f} $>$ \textbf{ Get\+Texture\+Coords} (const tinygltf\+::\+Primitive \&primitive, const tinygltf\+::\+Model \&model)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ Color} $>$ \textbf{ Get\+Vertex\+Colors} (const tinygltf\+::\+Primitive \&primitive, const tinygltf\+::\+Model \&model)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ Vector4f} $>$ \textbf{ Get\+Joints} (const tinygltf\+::\+Primitive \&primitive, const tinygltf\+::\+Model \&model)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ Vector4f} $>$ \textbf{ Get\+Bone\+Weights} (const tinygltf\+::\+Primitive \&primitive, const tinygltf\+::\+Model \&model)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+TIndex\+Size} $>$ \textbf{ Get\+Indices} (const tinygltf\+::\+Primitive \&primitive, \textbf{ GRAPHICS\+::\+TIndex\+Size} start\+Offset, const tinygltf\+::\+Model \&model)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \textbf{ Get\+Tangent\+Vectors} (const tinygltf\+::\+Primitive \&primitive, const tinygltf\+::\+Model \&model)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \textbf{ Generate\+Tanget\+Vectors} (const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector2f} $>$ \&tex\+Coords, const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \&positions, const \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+TIndex\+Size} $>$ \&indices, \textbf{ UIndex32} indices\+Start\+Offset)
+\item 
+static std\+::unordered\+\_\+map$<$ std\+::string, std\+::string, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$ $>$ \textbf{ Get\+Custom\+Properties} (const tinygltf\+::\+Mesh \&mesh)
+\item 
+static \textbf{ Dynamic\+Array}$<$ \textbf{ ASSETS\+::\+Asset\+Ref}$<$ \textbf{ ASSETS\+::\+Texture} $>$ $>$ \textbf{ Load\+Images} (const tinygltf\+::\+Model \&model)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase base para poder importar un modelo GLTF. 
+
+Incluye métodos para importar información relevante del modelo GLTF. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!GenerateTangetVectors@{GenerateTangetVectors}}
+\index{GenerateTangetVectors@{GenerateTangetVectors}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{GenerateTangetVectors()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_ab27e2a625b21a1a60037bb9101e0b7b1} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ Gltf\+Loader\+::\+Generate\+Tanget\+Vectors (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector2f} $>$ \&}]{tex\+Coords}{, }\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \&}]{positions}{, }\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+TIndex\+Size} $>$ \&}]{indices}{, }\item[{\textbf{ UIndex32}}]{indices\+Start\+Offset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Genera vectores tangentes para los vértices indicados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tex\+Coords} & Coordenadas de texturas UV de los vértices. \\
+\hline
+{\em positions} & Posiciones de los vértices. \\
+\hline
+{\em indices} & Índices de los vértices. \\
+\hline
+{\em indices\+Start\+Offset} & Primer índice de los vértices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Vectores tangentes.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily tex\+Coords.\+Get\+Size()} == {\ttfamily positions.\+Get\+Size()} 
+
+{\ttfamily indices.\+Get\+Size()} debe ser múltiplo de 3. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parámetros}
+{\em indices\+Start\+Offset} & debe ser múltiplo de 3. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!GetBoneWeights@{GetBoneWeights}}
+\index{GetBoneWeights@{GetBoneWeights}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{GetBoneWeights()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a0c8954261f19ca9a618590c52b975fc0} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Vector4f} $>$ Gltf\+Loader\+::\+Get\+Bone\+Weights (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{, }\item[{const tinygltf\+::\+Model \&}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Obtiene los pesos de animación esqueletal de todos los vértices de la primitiva, si tienen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista con los pesos de los vértices de la primitiva (puede estar vacía).
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Si \doxyref{Has\+Bone\+Weights()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a8f4f301025422970e9f0fc2f2194bde5} para la primitiva dada por {\ttfamily primitive} es false, entonces devuelve una lista vacía. 
+
+Si la lista no está vacía, hay exactamente un peso (\doxyref{Vector4f}{pág.}{namespace_o_s_k_a98c42bf0a7665f299a3a66c8d4cdcdc2}) por cada vértice de la primitiva. 
+
+Si la lista no está vacía, cada peso se asocia con cada vértice con el mismo índice dentro de la lista (vertices[0].weights = \doxyref{Get\+Joints()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a5cdfd67965dcdc51653ffe09ae4a9a05}[0], etc.). 
+\end{DoxyNote}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!GetCustomProperties@{GetCustomProperties}}
+\index{GetCustomProperties@{GetCustomProperties}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{GetCustomProperties()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a076e5de9b22fe4925bb50cecb941023b} 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$ $>$ Gltf\+Loader\+::\+Get\+Custom\+Properties (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Mesh \&}]{mesh}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mesh} & Mesh. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Propiedades extra del mesh. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!GetIndices@{GetIndices}}
+\index{GetIndices@{GetIndices}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{GetIndices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_ae78bf4156f2ee27687659aeca3a241ea} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ TIndex\+Size} $>$ Gltf\+Loader\+::\+Get\+Indices (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{, }\item[{\textbf{ GRAPHICS\+::\+TIndex\+Size}}]{start\+Offset}{, }\item[{const tinygltf\+::\+Model \&}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Mesh. \\
+\hline
+{\em start\+Offset} & Índice del primer índice. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista con los índices de {\ttfamily primitive}. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!GetJoints@{GetJoints}}
+\index{GetJoints@{GetJoints}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{GetJoints()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a5cdfd67965dcdc51653ffe09ae4a9a05} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Vector4f} $>$ Gltf\+Loader\+::\+Get\+Joints (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{, }\item[{const tinygltf\+::\+Model \&}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Obtiene los joints de animación esqueletal de todos los vértices de la primitiva, si tienen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista con los joints de los vértices de la primitiva (puede estar vacía).
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Si \doxyref{Has\+Joints()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a8731956c3cce385df200d55c1508b055} para la primitiva dada por {\ttfamily primitive} es false, entonces devuelve una lista vacía. 
+
+Si la lista no está vacía, hay exactamente un joint (\doxyref{Vector4f}{pág.}{namespace_o_s_k_a98c42bf0a7665f299a3a66c8d4cdcdc2}) por cada vértice de la primitiva. 
+
+Si la lista no está vacía, cada joint se asocia con cada vértice con el mismo índice dentro de la lista (vertices[0].joints = \doxyref{Get\+Joints()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a5cdfd67965dcdc51653ffe09ae4a9a05}[0], etc.). 
+\end{DoxyNote}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!GetNodeMatrix@{GetNodeMatrix}}
+\index{GetNodeMatrix@{GetNodeMatrix}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{GetNodeMatrix()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_ae53b0e0b44cb9eec54cafa1d044294ad} 
+glm\+::mat4 Gltf\+Loader\+::\+Get\+Node\+Matrix (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Node \&}]{node}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Devuelve una matriz en formato GLM con el transform del nodo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Matriz con su transform. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!GetTagsFromName@{GetTagsFromName}}
+\index{GetTagsFromName@{GetTagsFromName}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{GetTagsFromName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_aa57fa32b5842ca713de03950045b6e4a} 
+\textbf{ Dynamic\+Array}$<$ std\+::string $>$ Gltf\+Loader\+::\+Get\+Tags\+From\+Name (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Scene \&}]{scene}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!GetTangentVectors@{GetTangentVectors}}
+\index{GetTangentVectors@{GetTangentVectors}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{GetTangentVectors()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a1bc0fd537564fd41aba980d3483d76f4} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ Gltf\+Loader\+::\+Get\+Tangent\+Vectors (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{, }\item[{const tinygltf\+::\+Model \&}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Mesh. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Vectores tangentes de los vértices del mesh. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El mesh debe tener vectores tangentes preprocesados. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{No\+Vertex\+Tangents\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_no_vertex_tangents_found_exception}} & si no se cumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!GetTextureCoords@{GetTextureCoords}}
+\index{GetTextureCoords@{GetTextureCoords}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{GetTextureCoords()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a4a63f075d184d5838ebb8e138e5f028d} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Vector2f} $>$ Gltf\+Loader\+::\+Get\+Texture\+Coords (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{, }\item[{const tinygltf\+::\+Model \&}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Obtiene las coordenadas de texturas de todos los vértices de la primitiva. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista con todas las coordenadas de texturas de la primitiva.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+\doxyref{Has\+Texture\+Coords()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_ae3c8f5d2a8c72751de5ee9384a79f0d4} debe ser true para la primitiva dada por {\ttfamily primitive}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+error} & si se incumple la precondición.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Nota}
+Hay exactamente una coordenada por cada vértice de la primitiva. 
+
+Cada normal se asocia con cada vértice con el mismo índice dentro de la lista (vertices[0].tex\+Coords = \doxyref{Get\+Texture\+Coords()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a4a63f075d184d5838ebb8e138e5f028d}[0], etc.). 
+\end{DoxyNote}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!GetVertexColors@{GetVertexColors}}
+\index{GetVertexColors@{GetVertexColors}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{GetVertexColors()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a7ddc561d157e1dea1a8a5f5d6633d64b} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Color} $>$ Gltf\+Loader\+::\+Get\+Vertex\+Colors (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{, }\item[{const tinygltf\+::\+Model \&}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Obtiene los colores de todos los vértices de la primitiva, si tienen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista con los colores de los vértices de la primitiva (puede estar vacía).
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Si \doxyref{Has\+Colors()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a6423773bfb8c987db0fae741691585ce} para la primitiva dada por {\ttfamily primitive} es false, entonces devuelve una lista vacía. 
+
+Si la lista no está vacía, hay exactamente un color por cada vértice de la primitiva. 
+
+Si la lista no está vacía, cada color se asocia con cada vértice con el mismo índice dentro de la lista (vertices[0].color = \doxyref{Get\+Vertex\+Colors()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a7ddc561d157e1dea1a8a5f5d6633d64b}[0], etc.). 
+\end{DoxyNote}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!GetVertexNormals@{GetVertexNormals}}
+\index{GetVertexNormals@{GetVertexNormals}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{GetVertexNormals()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_ad2d543b06a3c807ae539dabb3e59d2f9} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ Gltf\+Loader\+::\+Get\+Vertex\+Normals (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{, }\item[{const tinygltf\+::\+Model \&}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Obtiene las normales de todos los vértices de la primitiva. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista con todas las normales de la primitiva.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+\doxyref{Has\+Normals()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a05778bbf9f412f1aaa3aa1ed51fbe772} debe ser true para la primitiva dada por {\ttfamily primitive}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+error} & si se incumple la precondición.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Nota}
+Hay exactamente una normal por cada vértice de la primitiva. 
+
+Cada normal se asocia con cada vértice con el mismo índice dentro de la lista (vertices[0].normal = \doxyref{Get\+Vertex\+Normals()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_ad2d543b06a3c807ae539dabb3e59d2f9}[0], etc.). 
+\end{DoxyNote}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!GetVertexPositions@{GetVertexPositions}}
+\index{GetVertexPositions@{GetVertexPositions}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{GetVertexPositions()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_abeddda54f9a70583fc39935348968e0e} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ Gltf\+Loader\+::\+Get\+Vertex\+Positions (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{, }\item[{const glm\+::mat4 \&}]{node\+Matrix}{, }\item[{const tinygltf\+::\+Model \&}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Obtiene las posiciones de todos los vértices de la primitiva. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+{\em node\+Matrix} & Transform local del nodo que está siendo procesado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista con todas las posiciones 3D.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+\doxyref{Has\+Positions()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_afec81df7879faf0a02b97a15eea7d4ab} debe ser true para la primitiva dada por {\ttfamily primitive}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+error} & si se incumple la precondición.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Nota}
+Hay exactamente una posición por cada vértice de la primitiva. 
+
+Cada posición se asocia con cada vértice con el mismo índice dentro de la lista (vertices[0].pos = \doxyref{Get\+Vertex\+Positions()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_abeddda54f9a70583fc39935348968e0e}[0], etc.). 
+\end{DoxyNote}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!HasAttribute@{HasAttribute}}
+\index{HasAttribute@{HasAttribute}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{HasAttribute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_adf20fe556f766a1a55af8906f728392d} 
+bool Gltf\+Loader\+::\+Has\+Attribute (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{, }\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Comprueba si la primitiva GLTF dada contiene un atributo en específico. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+{\em name} & Nombre del atributo, según la especificación. Por ejempl, "{}\+POSITION"{} o "{}\+COLOR\+\_\+0"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si lo tiene, false en caso contrario.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily name} debe referirse a un atributo válido GLTF.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si el atributo dado por {\ttfamily name} no se corresponde con ninguno de los atributos posibles, devuelve false. 
+\end{DoxyNote}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!HasBoneWeights@{HasBoneWeights}}
+\index{HasBoneWeights@{HasBoneWeights}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{HasBoneWeights()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a8f4f301025422970e9f0fc2f2194bde5} 
+bool Gltf\+Loader\+::\+Has\+Bone\+Weights (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Comrpueba si la primitiva contiene los pesos de animación esqueletal de sus vértices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si tiene pesos, false en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!HasColors@{HasColors}}
+\index{HasColors@{HasColors}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{HasColors()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a6423773bfb8c987db0fae741691585ce} 
+bool Gltf\+Loader\+::\+Has\+Colors (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Comrpueba si la primitiva contiene los colores de sus vértices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si tiene colores, false en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!HasJoints@{HasJoints}}
+\index{HasJoints@{HasJoints}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{HasJoints()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a8731956c3cce385df200d55c1508b055} 
+bool Gltf\+Loader\+::\+Has\+Joints (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Comrpueba si la primitiva contiene los joints (para animación esqueletal) de sus vértices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si tiene joints, false en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!HasNormals@{HasNormals}}
+\index{HasNormals@{HasNormals}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{HasNormals()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a05778bbf9f412f1aaa3aa1ed51fbe772} 
+bool Gltf\+Loader\+::\+Has\+Normals (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Comrpueba si la primitiva contiene los vectores normales de sus vértices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si tiene normales, false en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!HasPositions@{HasPositions}}
+\index{HasPositions@{HasPositions}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{HasPositions()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_afec81df7879faf0a02b97a15eea7d4ab} 
+bool Gltf\+Loader\+::\+Has\+Positions (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Comrpueba si la primitiva contiene la posición de sus vértices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si tiene posiciones, false en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!HasTangets@{HasTangets}}
+\index{HasTangets@{HasTangets}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{HasTangets()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_aca6b1819b6f868c1dbb7bb2806ef78a3} 
+bool Gltf\+Loader\+::\+Has\+Tangets (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Comrpueba si la primitiva contiene los vectores tangenciales de sus vértices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si tiene tangentes, false en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!HasTextureCoords@{HasTextureCoords}}
+\index{HasTextureCoords@{HasTextureCoords}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{HasTextureCoords()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_ae3c8f5d2a8c72751de5ee9384a79f0d4} 
+bool Gltf\+Loader\+::\+Has\+Texture\+Coords (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Primitive \&}]{primitive}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Comrpueba si la primitiva contiene las coordenadas de texturas de sus vértices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em primitive} & Primitiva GLTF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si tiene coordenadas de texturas, false en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!Load@{Load}}
+\index{Load@{Load}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{Load()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_aa02160526ac46b573619ad3adbab901a} 
+\textbf{ Cpu\+Model3D} Gltf\+Loader\+::\+Load (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{path}{, }\item[{const glm\+::mat4 \&}]{transform}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!LoadAllBones@{LoadAllBones}}
+\index{LoadAllBones@{LoadAllBones}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{LoadAllBones()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a55d12b2dcdd6d5763f802bfae50c2db5} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Bone} $>$ Gltf\+Loader\+::\+Load\+All\+Bones (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Model \&}]{model}{, }\item[{const glm\+::mat4 \&}]{base\+Transform}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!LoadAnimationChannels@{LoadAnimationChannels}}
+\index{LoadAnimationChannels@{LoadAnimationChannels}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{LoadAnimationChannels()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a342ec61531816f7b0df7b54a048b7b94} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Channel} $>$ Gltf\+Loader\+::\+Load\+Animation\+Channels (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Animation \&}]{gltf\+Animation}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!LoadAnimations@{LoadAnimations}}
+\index{LoadAnimations@{LoadAnimations}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{LoadAnimations()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a34e416d38e27afb6096787e662a80921} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Animation} $>$ Gltf\+Loader\+::\+Load\+Animations (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Model \&}]{model}{, }\item[{const glm\+::mat4 \&}]{base\+Transform}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!LoadAnimationSamplers@{LoadAnimationSamplers}}
+\index{LoadAnimationSamplers@{LoadAnimationSamplers}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{LoadAnimationSamplers()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a2f7aa4a53040e422d701fd0d9db2ad71} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Sampler} $>$ Gltf\+Loader\+::\+Load\+Animation\+Samplers (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Model \&}]{model}{, }\item[{const tinygltf\+::\+Animation \&}]{gltf\+Animation}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!LoadAnimationSkins@{LoadAnimationSkins}}
+\index{LoadAnimationSkins@{LoadAnimationSkins}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{LoadAnimationSkins()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_aef4a0ac309d6962315eeab6249a17488} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Skin} $>$ Gltf\+Loader\+::\+Load\+Animation\+Skins (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Model \&}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!LoadBones@{LoadBones}}
+\index{LoadBones@{LoadBones}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{LoadBones()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_af505e2f042216a1462fdee6e268a26a8} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Animation\+Bone} $>$ Gltf\+Loader\+::\+Load\+Bones (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Model \&}]{model}{, }\item[{const tinygltf\+::\+Node \&}]{node}{, }\item[{\textbf{ UIndex64}}]{node\+Index}{, }\item[{std\+::optional$<$ \textbf{ UIndex64} $>$}]{parent\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!LoadImages@{LoadImages}}
+\index{LoadImages@{LoadImages}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{LoadImages()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_aed385c1369ceb15b1a332a4da85c8703} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Asset\+Ref}$<$ \textbf{ Texture} $>$ $>$ Gltf\+Loader\+::\+Load\+Images (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Model \&}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\begin{DoxyReturn}{Devuelve}
+Todas las texturas usadas en el modelo 3D. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!LoadMaterials@{LoadMaterials}}
+\index{LoadMaterials@{LoadMaterials}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{LoadMaterials()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_ac10d46f2dcdafc9686122d1ca2ce6d3a} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Gpu\+Model3\+D\+::\+Material} $>$ Gltf\+Loader\+::\+Load\+Materials (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Model \&}]{model}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!LoadMaterials@{LoadMaterials}}
+\index{LoadMaterials@{LoadMaterials}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{LoadMaterials()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a706a5f8499c686f1a9e3db2f00f3cd5a} 
+void Gltf\+Loader\+::\+Load\+Materials (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{path}{, }\item[{\textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Model3\+D\+::\+Material} $>$ $\ast$}]{materials}{, }\item[{\textbf{ GRAPHICS\+::\+Gpu\+Model3\+D\+::\+Texture\+Table} $\ast$}]{textures}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}!ProcessNode@{ProcessNode}}
+\index{ProcessNode@{ProcessNode}!OSK::ASSETS::GltfLoader@{OSK::ASSETS::GltfLoader}}
+\doxysubsubsection{ProcessNode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_gltf_loader_a8faf5d7aeabd9ce5c8600ae674cb207d} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Mesh3D} $>$ Gltf\+Loader\+::\+Process\+Node (\begin{DoxyParamCaption}\item[{const tinygltf\+::\+Model \&}]{model}{, }\item[{const tinygltf\+::\+Node \&}]{node}{, }\item[{const glm\+::mat4 \&}]{transform}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Procesa un nodo de un modelo GLTF. Este nodo puede contener o no geometría 3D en forma de meshes. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo GLTF. \\
+\hline
+{\em node\+Id} & ID del nodo procesado. \\
+\hline
+{\em parent\+Id} & ID del nodo padre (TSize\+::max si no tiene padre). \\
+\hline
+\end{DoxyParams}

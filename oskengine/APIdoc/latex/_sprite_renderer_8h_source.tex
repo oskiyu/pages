@@ -1,0 +1,164 @@
+\doxysection{Sprite\+Renderer.\+h}
+\label{_sprite_renderer_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/SpriteRenderer.h@{C:/Users/Oscar/source/repos/OSKengine/Source/SpriteRenderer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}MaterialInstance.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Color.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}TextureCoordinates.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }Texture;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }Font;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{struct\ }FontInstance;}
+\DoxyCodeLine{00018\ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }Transform2D;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }CameraComponent2D;}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{class\ }ICommandList;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{class\ }GpuImage;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{class\ }Material;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{class\ }Sprite;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{class\ }IGpuMemoryAllocator;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ SpriteRenderer\ \{}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ SpriteRenderer(}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ IGpuMemoryAllocator*\ allocator,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ Material*\ defaultMaterial);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetCommandList(ICommandList*\ commandList)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetMaterial(\textcolor{keyword}{const}\ Material\&\ material);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetMaterialSlot(\textcolor{keyword}{const}\ IMaterialSlot\&\ materialSlot);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetCamera(\textcolor{keyword}{const}\ ECS::CameraComponent2D\&\ camera,\ \textcolor{keyword}{const}\ ECS::Transform2D\&\ cameraTransform);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetCamera(ECS::GameObjectIndex\ gameObject);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Begin();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Draw(}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Sprite\&\ sprite,\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ECS::Transform2D\&\ transform,\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\&\ color);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Draw(}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Sprite\&\ sprite,\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TextureCoordinates2D\&\ texCoords,\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ECS::Transform2D\&\ transform,\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\&\ color);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Draw(}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Sprite\&\ sprite,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TextureCoordinates2D\&\ texCoords,\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2f\ position,\ \ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2f\ size,\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rotation,\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\&\ color);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Draw(}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Sprite\&\ sprite,\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ECS::Transform2D\&\ transform);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Draw(}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Sprite\&\ sprite,\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TextureCoordinates2D\&\ texCoords,\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ECS::Transform2D\&\ transform);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Draw(}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Sprite\&\ sprite,\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TextureCoordinates2D\&\ texCoords,\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2f\ position,\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2f\ size,\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rotation);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawString(}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ ASSETS::Font\&\ font,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ fontSize,}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ text,}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ECS::Transform2D\&\ transform,}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\&\ color);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawString(}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ ASSETS::Font\&\ font,}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ fontSize,}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ text,}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2f\ position,}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2f\ size,}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rotation,\ \textcolor{keyword}{const}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ Color\&\ color);}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawString(}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ASSETS::Font\&\ font,}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ fontSize,}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ text,}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ECS::Transform2D\&\ transform,}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\&\ color);}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawString(}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ASSETS::Font\&\ font,}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ fontSize,}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ text,}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2f\ position,}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2f\ size,}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rotation,\ \textcolor{keyword}{const}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ Color\&\ color);}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ End()\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ IMaterialSlot*\ GetGlobalInformationSlot();}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawString(}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ASSETS::FontInstance\&\ font,}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ fontSize,}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ text,}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ECS::Transform2D\&\ transform,}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\&\ color);}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ ICommandList*\ targetCommandList\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isStarted\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ glm::mat4\ currentCameraMatrix\ =\ glm::mat4(1.0f);}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ m\_globalInformationBuffer;}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ UniquePtr<MaterialInstance>\ m\_globalInformationInstance;}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ IGpuMemoryAllocator*\ m\_memoryAllocator\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IGpuImageView*\ previousImage\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Material*\ currentlyBoundMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \};}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \}}
+
+\end{DoxyCode}

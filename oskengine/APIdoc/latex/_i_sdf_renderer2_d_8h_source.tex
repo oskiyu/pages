@@ -1,0 +1,79 @@
+\doxysection{ISdf\+Renderer2\+D.\+h}
+\label{_i_sdf_renderer2_d_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/ISdfRenderer2D.h@{C:/Users/Oscar/source/repos/OSKengine/Source/ISdfRenderer2D.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}SdfDrawCall2D.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }CameraComponent2D;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }EntityComponentSystem;}
+\DoxyCodeLine{00011\ \}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }ICommandList;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{struct\ }SdfDrawCall2D;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{struct\ }SdfStringInfo;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }Material;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ ISdfRenderer2D\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~ISdfRenderer2D()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#pragma\ region\ Inicializadores}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetMaterial(Material*\ material);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetCamera(\textcolor{keyword}{const}\ ECS::CameraComponent2D\&\ camera,\ \textcolor{keyword}{const}\ ECS::Transform2D\&\ cameraTransform);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetCamera(ECS::GameObjectIndex\ gameObject);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetCamera(Vector2f\ position,\ Vector2f\ size);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#pragma\ region\ Drawing}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Begin(ICommandList*\ commandList);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Draw(\textcolor{keyword}{const}\ SdfDrawCall2D\&\ drawCall)\ =\ 0;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Draw(\textcolor{keyword}{const}\ SdfStringInfo\&\ stringCall)\ =\ 0;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ End();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ DynamicArray<SdfDrawCall2D>\ GetTextDrawCalls(\textcolor{keyword}{const}\ SdfStringInfo\&\ text);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ ISdfRenderer2D(ECS::EntityComponentSystem*\ ecs);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ glm::mat4\ GetCurrentCameraMatrix()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ ICommandList*\ GetCurrentCommandList();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ Material*\ GetCurrentMaterial();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ glm::mat4\ m\_currentCameraMatrix\ =\ glm::mat4(1.0f);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ ICommandList*\ m\_targetCommandList\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ Material*\ m\_material\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ ECS::EntityComponentSystem*\ m\_ecs;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \}}
+
+\end{DoxyCode}

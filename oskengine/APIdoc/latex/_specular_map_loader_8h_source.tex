@@ -1,0 +1,77 @@
+\doxysection{Specular\+Map\+Loader.\+h}
+\label{_specular_map_loader_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/SpecularMapLoader.h@{C:/Users/Oscar/source/repos/OSKengine/Source/SpecularMapLoader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ OSKengine\ by\ oskiyu}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Copyright\ (c)\ 2019-\/2022\ oskiyu.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}IAssetLoader.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Material.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}MaterialInstance.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}RtRenderTarget.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}RenderTarget.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}AssetRef.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}SpecularMap.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }ICommandList;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }GpuImage;}
+\DoxyCodeLine{00020\ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }Model3D;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ SpecularMapLoader\ :\ \textcolor{keyword}{public}\ IAssetLoader,\ \textcolor{keyword}{public}\ TAssetLoader<SpecularMap>\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ SpecularMapLoader();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ OSK\_ASSET\_TYPE\_REG(\textcolor{stringliteral}{"{}OSK::SpecularMap"{}});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ OSK\_DEFAULT\_LOADER\_IMPL(SpecularMap);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Load(\textcolor{keyword}{const}\ std::string\&\ assetFilePath,\ SpecularMap*\ asset)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UploadImage(GRAPHICS::GpuImage*\ img,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ pixels,\ \textcolor{keyword}{const}\ Vector3ui\&\ size)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawOriginal(GRAPHICS::GpuImage*\ cubemap,\ GRAPHICS::ICommandList*\ cmdList);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawPreFilter(GRAPHICS::GpuImage*\ cubemap,\ GRAPHICS::ICommandList*\ cmdList,\ UIndex32\ mipLevel,\ \textcolor{keywordtype}{float}\ roughness);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ GenerateLut(GRAPHICS::ICommandList*\ cmdList);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::Model3D>\ cubemapModel;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Resolución\ del\ nivel\ de\ detalle\ más\ alto\ del\ specular\ map.}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2ui\ maxResolution\ =\ Vector2ui(1024u);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Material\ para\ renderizar\ cubemap\ a\ partir\ de\ una\ imagen\ 2D}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2D\ -\/>\ cubemap}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ generationMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::MaterialInstance>\ generationMaterialInstance;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ GRAPHICS::RenderTarget\ cubemapRenderTarget;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generación\ de\ los\ mapas\ especulares}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ prefilterMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::MaterialInstance>\ prefilterMaterialInstance;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generación\ de\ LUT}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ lutGenerationMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::MaterialInstance>\ lutGenerationMaterialInstance;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ GRAPHICS::ComputeRenderTarget\ lookUpTable;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ glm::mat4\ cameraProjection;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ glm::mat4\ cameraViews[6];}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \}}
+
+\end{DoxyCode}

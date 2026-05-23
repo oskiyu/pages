@@ -1,0 +1,181 @@
+\doxysection{Vertex\+Attributes.\+h}
+\label{_vertex_attributes_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/VertexAttributes.h@{C:/Users/Oscar/source/repos/OSKengine/Source/VertexAttributes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Vector4.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Color.hpp"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}InvalidArgumentException.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <any>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Uuid.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{using\ }VertexAttribUuid\ =\ BaseUuid<class\ VertexAttributes>;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ OSK\_DEFINE\_UUID\_HASH(OSK::GRAPHICS::VertexAttribUuid);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ OSK\_VERTEX\_ATTRIB(uniqueName)\ \(\backslash\)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{static\ constexpr\ std::string\_view\ GetAttribName()\ \{\ return\ uniqueName;\ \}\ \(\backslash\)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{static\ VertexAttribUuid\ GetUuid()\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ const\ static\ VertexAttribUuid\ uuid\ =\ StaticUuidProvider::New<VertexAttribUuid>();\ \(\backslash\)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \ \ \ return\ uuid;\ \(\backslash\)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{struct\ }IVertexAttribute\ \{\};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TAttrib>}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{concept\ }IsVertexAttribute\ =\ \textcolor{keyword}{requires}\ (TAttrib)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \{\ TAttrib::GetAttribName()\ \};}
+\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{struct\ }VertexPositionAttribute3D\ :\ \textcolor{keyword}{public}\ IVertexAttribute\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ OSK\_VERTEX\_ATTRIB(\textcolor{stringliteral}{"{}OSK::VertexPositionAttribute3D"{}});}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}(\textcolor{keyword}{false})\ VertexPositionAttribute3D(Vector3f\ position)\ :\ position(position.x,\ position.y,\ position.z,\ 1)\ \{\}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ Vector4f\ position;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{struct\ }VertexAttributes3D\ :\ \textcolor{keyword}{public}\ IVertexAttribute\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ OSK\_VERTEX\_ATTRIB(\textcolor{stringliteral}{"{}OSK::VertexAttributes3D"{}});}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}(\textcolor{keyword}{false})\ VertexAttributes3D(}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3f\ normal,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ color,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2f\ texCoords,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ Vector3f\ tangent}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ )\ :}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ normal(normal.x,\ normal.y,\ normal.z,\ 1),}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ color(color),}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ texCoords(texCoords),}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ tangent(tangent.x,\ tangent.y,\ tangent.z,\ 1.0)\{\ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ Vector4f\ normal;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ Color\ color;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ Vector2f\ texCoords;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ Vector4f\ tangent;}
+\DoxyCodeLine{00086\ \ \ \ \ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{struct\ }VertexAnimationAttributes3D\ :\ \textcolor{keyword}{public}\ IVertexAttribute\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ OSK\_VERTEX\_ATTRIB(\textcolor{stringliteral}{"{}OSK::VertexAnimationAttributes3D"{}});}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}(\textcolor{keyword}{false})\ VertexAnimationAttributes3D(}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ Vector4f\ boneIndices,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ Vector4f\ boneWeights}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ )\ :}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ boneIndices(boneIndices),\ boneWeights(boneWeights)\ \{\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ Vector4f\ boneIndices;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ Vector4f\ boneWeights;}
+\DoxyCodeLine{00102\ \ \ \ \ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{struct\ }VerticesAttributesMap\ \{}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}(\textcolor{keyword}{false})\ VerticesAttributesMap()\ \{\}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}(\textcolor{keyword}{false})\ VerticesAttributesMap(}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ structSize,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ std::any\ list}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ )\ noexcept\ :}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ structSize(structSize),\ list(MakeUnique<std::any>(std::move(list)))}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ USize32\ vertexCount\ =\ 0;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ USize32\ structSize\ =\ 0;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ UniquePtr<std::any>\ list;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ listStart\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ OSK\_DISABLE\_COPY(VerticesAttributesMap);}
+\DoxyCodeLine{00125\ \ \ \ \ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{struct\ }VerticesAttributesMaps\ \{}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ std::unordered\_map<VertexAttribUuid,\ VerticesAttributesMap>\ attributes;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ HasAttribute(VertexAttribUuid\ uuid)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ attributes.contains(uuid);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TAttrib>\ \textcolor{keyword}{requires}\ IsVertexAttribute<TAttrib>}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddVertexAttribute(\textcolor{keyword}{const}\ TAttrib\&\ attribute)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ uuid\ =\ TAttrib::GetUuid();}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!HasAttribute(uuid))\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attributes.try\_emplace(}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uuid,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{sizeof}(TAttrib),\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ .structSize}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DynamicArray<TAttrib>\{\});\ \textcolor{comment}{//\ .list}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VerticesAttributesMap\&\ attrib\ =\ attributes[uuid];}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attrib.listStart\ =\ std::any\_cast<const\ DynamicArray<TAttrib>\&>(attrib.list.GetValue()).GetData();}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ VerticesAttributesMap\&\ attributeList\ =\ attributes[uuid];}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ castedList\ =\ std::any\_cast<DynamicArray<TAttrib>\&>(attributeList.list.GetValue());}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ castedList.Insert(attribute);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ attributeList.vertexCount++;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ attributeList.listStart\ =\ castedList.GetData();}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TAttrib>\ \textcolor{keyword}{requires}\ IsVertexAttribute<TAttrib>}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<TAttrib>\&\ GetVerticesAttributesList()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HasAttribute(TAttrib::GetUuid()),\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InvalidArgumentException(std::format(\textcolor{stringliteral}{"{}No\ existe\ el\ atributo\ \{\}"{}},\ TAttrib::GetAttribName())));}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<const\ DynamicArray<TAttrib>\&>(attributes.find(TAttrib::GetUuid())-\/>second.list.GetValue());}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ VerticesAttributesMap\&\ GetVerticesAttributes(VertexAttribUuid\ uuid)\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ attributes.find(uuid)-\/>second;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VerticesAttributesMap\&\ GetVerticesAttributes(VertexAttribUuid\ uuid)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ attributes.find(uuid)-\/>second;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TAttrib>\ \textcolor{keyword}{requires}\ IsVertexAttribute<TAttrib>}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<TAttrib>\&\ TGetVerticesAttributes()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ OSK\_ASSERT(}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HasAttribute(TAttrib::GetUuid()),}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InvalidArgumentException(std::format(\textcolor{stringliteral}{"{}No\ existe\ el\ atributo\ \{\}"{}},\ TAttrib::GetAttribName())));}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ attribs\ =\ GetVerticesAttributes(TAttrib::GetUuid());}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ list\ =\ attribs.list.GetValue();}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ casted\ =\ std::any\_cast<const\ DynamicArray<TAttrib>\&>(list);\ \textcolor{comment}{//\ TODO:\ ref?}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ casted;}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \ \ \};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,85 @@
+\doxysection{Referencia de la clase OSK\+::Job\+Count\+Map}
+\label{class_o_s_k_1_1_job_count_map}\index{OSK::JobCountMap@{OSK::JobCountMap}}
+
+
+{\ttfamily \#include $<$Job\+Count\+Map.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Increment} (std\+::string\+\_\+view tag)
+\item 
+void \textbf{ Decrement} (std\+::string\+\_\+view tag)
+\item 
+\textbf{ USize32} \textbf{ Get\+Count} (std\+::string\+\_\+view tag) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que mantiene un conteo del número de trabajos de un tipo o tag dado que están siendo ejecutados en un momento dado. 
+
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::JobCountMap@{OSK::JobCountMap}!Decrement@{Decrement}}
+\index{Decrement@{Decrement}!OSK::JobCountMap@{OSK::JobCountMap}}
+\doxysubsubsection{Decrement()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_count_map_af0e433931cf5461cf505427c921e6e6e} 
+void Job\+Count\+Map\+::\+Decrement (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{tag}{}\end{DoxyParamCaption})}
+
+
+
+Decrementa en 1 el contador para el tipo o tag dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tag} & Tag a decrementar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El tag {\ttfamily tag} debe haber sido previamente registrado. 
+
+El valor para {\ttfamily tag} debe ser mayor que 0.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::JobCountMap@{OSK::JobCountMap}!GetCount@{GetCount}}
+\index{GetCount@{GetCount}!OSK::JobCountMap@{OSK::JobCountMap}}
+\doxysubsubsection{GetCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_count_map_ae1f628a66541836570fe78238a50ae6c} 
+\textbf{ USize32} Job\+Count\+Map\+::\+Get\+Count (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{tag}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tag} & Tag a obtener. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor del contador del tag.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::JobCountMap@{OSK::JobCountMap}!Increment@{Increment}}
+\index{Increment@{Increment}!OSK::JobCountMap@{OSK::JobCountMap}}
+\doxysubsubsection{Increment()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_job_count_map_a38e729ec60b7e5913cc5f81e861d5d85} 
+void Job\+Count\+Map\+::\+Increment (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{tag}{}\end{DoxyParamCaption})}
+
+
+
+Incrementa en 1 el contador para el tipo o tag dado. 
+
+Si el tipo o tag no estaba previamente registrado, lo registra. 
+\begin{DoxyParams}{Parámetros}
+{\em tag} & Tag a incrementar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}

@@ -1,0 +1,194 @@
+\doxysection{Referencia de la clase OSK\+::ASSETS\+::Font\+Loader}
+\label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_loader}\index{OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}}
+
+
+{\ttfamily \#include $<$Font\+Loader.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+ASSET\+\_\+\+TYPE\+\_\+\+REG} ("{}OSK\+::\+Font"{})
+\item 
+\textbf{ OSK\+\_\+\+DEFAULT\+\_\+\+LOADER\+\_\+\+IMPL} (\textbf{ Font})
+\item 
+void \textbf{ Load} (const std\+::string \&asset\+File\+Path, \textbf{ Font} $\ast$asset) override
+\item 
+virtual void \textbf{ Load} (const std\+::string \&asset\+File\+Path)=0
+\item 
+virtual void \textbf{ Fully\+Load} (const std\+::string \&asset\+File\+Path, void $\ast$asset\+Ref)=0
+\item 
+virtual void \textbf{ Register\+Without\+Loading} (const std\+::string \&asset\+File\+Path, void $\ast$asset\+Ref)=0
+\item 
+virtual void \textbf{ Set\+As\+Loaded} (std\+::string\+\_\+view asset\+File\+Path)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+nlohmann\+::json \textbf{ Validate\+Description\+File} (std\+::string\+\_\+view file\+Path) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Assets\+Map}$<$ \textbf{ Font} $>$ \textbf{ m\+\_\+assets\+Table}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}!FullyLoad@{FullyLoad}}
+\index{FullyLoad@{FullyLoad}!OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}}
+\doxysubsubsection{FullyLoad()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_aaa7cca8f691333ae0d86b1ea430f2540} 
+virtual void OSK\+::\+ASSETS\+::\+IAsset\+Loader\+::\+Fully\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File\+Path}{, }\item[{void $\ast$}]{asset\+Ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Realiza el proceso completo de registro de asset y carga del asset. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción que describe el asset. \\
+\hline
+{\em asset\+Ref} & Puntero a la referencia del asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily $\ast$asset\+Ref} debe apuntar a una referencia ya creada.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Asset\+Description\+File\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_description_file_not_found_exception}} & Si el archivo de descripción \textquotesingle{}.json\textquotesingle{} no existe. \\
+\hline
+{\em \doxyref{Invalid\+Description\+File\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_invalid_description_file_exception}} & Si el archivo de descripción es inválido. \\
+\hline
+{\em \doxyref{Raw\+Asset\+File\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_raw_asset_file_not_found_exception}} & Si el archivo del asset original no se encuentra. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}!Load@{Load}}
+\index{Load@{Load}!OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}}
+\doxysubsubsection{Load()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_loader_a65fa3f11175b7c5d908b65df3e90268e} 
+void Font\+Loader\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File\+Path}{, }\item[{\textbf{ Font} $\ast$}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementa \textbf{ OSK\+::\+ASSETS\+::\+TAsset\+Loader$<$ Font $>$} \doxyref{}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_t_asset_loader_af4a8a23aff72e5a46fc845b83e6b5691}.
+
+\index{OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}!Load@{Load}}
+\index{Load@{Load}!OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}}
+\doxysubsubsection{Load()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_af8f5c778c23ddc0259cf1c224d2762ab} 
+virtual void OSK\+::\+ASSETS\+::\+IAsset\+Loader\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Realiza el proceso de carga el asset. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción que describe el asset. \\
+\hline
+{\em asset} & Puntero al asset a cargar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El asset debe haber sido previamente registrado mediante \doxyref{Register\+Without\+Loading()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_a6feda54f90416be58ae8dcd4a469b726}. 
+
+El asset no debe haber sido previamente cargado, ya sea mediante \doxyref{Load()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_loader_a65fa3f11175b7c5d908b65df3e90268e} o mediante \doxyref{Fully\+Load()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_aaa7cca8f691333ae0d86b1ea430f2540}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Asset\+Description\+File\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_description_file_not_found_exception}} & Si el archivo de descripción \textquotesingle{}.json\textquotesingle{} no existe. \\
+\hline
+{\em \doxyref{Invalid\+Description\+File\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_invalid_description_file_exception}} & Si el archivo de descripción es inválido. \\
+\hline
+{\em \doxyref{Raw\+Asset\+File\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_raw_asset_file_not_found_exception}} & Si el archivo del asset original no se encuentra. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}!OSK\_ASSET\_TYPE\_REG@{OSK\_ASSET\_TYPE\_REG}}
+\index{OSK\_ASSET\_TYPE\_REG@{OSK\_ASSET\_TYPE\_REG}!OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}}
+\doxysubsubsection{OSK\_ASSET\_TYPE\_REG()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_loader_ac7cb26bf756f271e61ae09ee8cc08594} 
+OSK\+::\+ASSETS\+::\+Font\+Loader\+::\+OSK\+\_\+\+ASSET\+\_\+\+TYPE\+\_\+\+REG (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Font"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}!OSK\_DEFAULT\_LOADER\_IMPL@{OSK\_DEFAULT\_LOADER\_IMPL}}
+\index{OSK\_DEFAULT\_LOADER\_IMPL@{OSK\_DEFAULT\_LOADER\_IMPL}!OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}}
+\doxysubsubsection{OSK\_DEFAULT\_LOADER\_IMPL()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_loader_a1be6f634487db50c05332a33b458a838} 
+OSK\+::\+ASSETS\+::\+Font\+Loader\+::\+OSK\+\_\+\+DEFAULT\+\_\+\+LOADER\+\_\+\+IMPL (\begin{DoxyParamCaption}\item[{\textbf{ Font}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}!RegisterWithoutLoading@{RegisterWithoutLoading}}
+\index{RegisterWithoutLoading@{RegisterWithoutLoading}!OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}}
+\doxysubsubsection{RegisterWithoutLoading()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_a6feda54f90416be58ae8dcd4a469b726} 
+virtual void OSK\+::\+ASSETS\+::\+IAsset\+Loader\+::\+Register\+Without\+Loading (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File\+Path}{, }\item[{void $\ast$}]{asset\+Ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Registra el asset en la tabla de assets, creando la \doxyref{Asset\+Owning\+Ref}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción que describe el asset. \\
+\hline
+{\em asset\+Ref} & Puntero a la referencia del asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily $\ast$asset\+Ref} debe apuntar a una referencia ya creada. 
+\end{DoxyPrecond}
+\index{OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}!SetAsLoaded@{SetAsLoaded}}
+\index{SetAsLoaded@{SetAsLoaded}!OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}}
+\doxysubsubsection{SetAsLoaded()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_a8a343e713e71b03372d2a7d6f8ba7850} 
+virtual void OSK\+::\+ASSETS\+::\+IAsset\+Loader\+::\+Set\+As\+Loaded (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{asset\+File\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Establece el flag indicando que el asset ha sido comletamente cargado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción que describe el asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El asset debe haber sido previamente registrado (ya sea mediante \doxyref{Fully\+Load()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_aaa7cca8f691333ae0d86b1ea430f2540} o mediante \doxyref{Register\+Without\+Loading()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_a6feda54f90416be58ae8dcd4a469b726}). 
+\end{DoxyPrecond}
+\index{OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}!ValidateDescriptionFile@{ValidateDescriptionFile}}
+\index{ValidateDescriptionFile@{ValidateDescriptionFile}!OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}}
+\doxysubsubsection{ValidateDescriptionFile()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_a502866f35d2aaa0f412021ab855b8cbe} 
+nlohmann\+::json OSK\+::\+ASSETS\+::\+IAsset\+Loader\+::\+Validate\+Description\+File (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Valida el contenido del archivo de descripción. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+Path} & Ruta al archivo completo de descripción. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Archivo de desscripción, si fue validado.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Asset\+Description\+File\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_description_file_not_found_exception}} & Si el archivo de descripción \textquotesingle{}.json\textquotesingle{} no existe. \\
+\hline
+{\em \doxyref{Invalid\+Description\+File\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_invalid_description_file_exception}} & Si el archivo de descripción es inválido. \\
+\hline
+{\em \doxyref{Raw\+Asset\+File\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_raw_asset_file_not_found_exception}} & Si el archivo del asset original no se encuentra. \\
+\hline
+\end{DoxyExceptions}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}!m\_assetsTable@{m\_assetsTable}}
+\index{m\_assetsTable@{m\_assetsTable}!OSK::ASSETS::FontLoader@{OSK::ASSETS::FontLoader}}
+\doxysubsubsection{m\_assetsTable}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_t_asset_loader_a256bb81ffc382f22acb802cd1c827b1c} 
+\textbf{ Assets\+Map}$<$\textbf{ Font}$>$ \textbf{ OSK\+::\+ASSETS\+::\+TAsset\+Loader}$<$ \textbf{ Font} $>$\+::m\+\_\+assets\+Table\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+

@@ -1,0 +1,105 @@
+\doxysection{Referencia de la clase OSK\+::ASSETS\+::Asset\+Loader\+Job}
+\label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_loader_job}\index{OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}}
+
+
+{\ttfamily \#include $<$Asset\+Loader\+Job.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+JOB} ("{}OSK\+::\+Asset\+Loader\+Job"{})
+\item 
+\textbf{ Asset\+Loader\+Job} (const std\+::string \&asset\+Path, \textbf{ IAsset\+Loader} $\ast$loader)
+\item 
+void \textbf{ Execute} () override
+\item 
+virtual std\+::string\+\_\+view \textbf{ Get\+Name} () const =0
+\item 
+void \textbf{ Add\+Tag} (const std\+::string \&tag)
+\item 
+const std\+::set$<$ std\+::string, std\+::less$<$$>$ $>$ \& \textbf{ Get\+Tags} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Trabajo que se encarga de cargar un asset de manera diferida. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}!AssetLoaderJob@{AssetLoaderJob}}
+\index{AssetLoaderJob@{AssetLoaderJob}!OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}}
+\doxysubsubsection{AssetLoaderJob()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_loader_job_a0f22ff6ccb537e6ffa116b30e18246fb} 
+Asset\+Loader\+Job\+::\+Asset\+Loader\+Job (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+Path}{, }\item[{\textbf{ IAsset\+Loader} $\ast$}]{loader}{}\end{DoxyParamCaption})}
+
+
+
+Establece los parámetros del trabajo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+Path} & Ruta del archivo de descripción. \\
+\hline
+{\em loader} & Loader que debe cargar el asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily loader} debe ser un puntero estable. 
+\end{DoxyPrecond}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}!AddTag@{AddTag}}
+\index{AddTag@{AddTag}!OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}}
+\doxysubsubsection{AddTag()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_job_af308d2cae1aa5d8e989108dc1d90c397} 
+void IJob\+::\+Add\+Tag (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Añade un tag al trabajo, para poder identificarlo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tag} & Tag. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_loader_job_a65d6e22e3a03a1eb77b47c95d8337a50} 
+void Asset\+Loader\+Job\+::\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ejecuta la función del trabajo. 
+
+
+
+Implementa \textbf{ OSK\+::\+IJob} \doxyref{}{pág.}{class_o_s_k_1_1_i_job_ab85f5a37fd68f649a8e03ace299edff0}.
+
+\index{OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_job_a5753b049ae5efe00bb929e675aadcc03} 
+virtual std\+::string\+\_\+view OSK\+::\+IJob\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Nombre del trabajo. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}!GetTags@{GetTags}}
+\index{GetTags@{GetTags}!OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}}
+\doxysubsubsection{GetTags()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_job_ac96971e8dee85c75fd3913aafac31e36} 
+const std\+::set$<$ std\+::string, std\+::less$<$$>$ $>$ \& IJob\+::\+Get\+Tags (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Lista con todos los tags. Puede estar vacía. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}!OSK\_JOB@{OSK\_JOB}}
+\index{OSK\_JOB@{OSK\_JOB}!OSK::ASSETS::AssetLoaderJob@{OSK::ASSETS::AssetLoaderJob}}
+\doxysubsubsection{OSK\_JOB()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_loader_job_ab4ef96b974f96442076fa2e29505e17b} 
+OSK\+::\+ASSETS\+::\+Asset\+Loader\+Job\+::\+OSK\+\_\+\+JOB (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Asset\+Loader\+Job"{}}]{}{}\end{DoxyParamCaption})}
+

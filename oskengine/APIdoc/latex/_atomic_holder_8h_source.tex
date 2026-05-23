@@ -1,0 +1,28 @@
+\doxysection{Atomic\+Holder.\+h}
+\label{_atomic_holder_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/AtomicHolder.h@{C:/Users/Oscar/source/repos/OSKengine/Source/AtomicHolder.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }OSK\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{struct\ }AtomicHolder\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::atomic<T>\ atomic\{\};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ AtomicHolder()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ AtomicHolder(\textcolor{keyword}{const}\ T\&\ value)\ :\ atomic(value)\ \{\}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \string~AtomicHolder()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ AtomicHolder(\textcolor{keyword}{const}\ AtomicHolder\&\ other)\ :\ atomic(other.atomic.load())\ \{\};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ AtomicHolder\&\ operator=(\textcolor{keyword}{const}\ AtomicHolder\&\ other)\ \{\ atomic\ =\ other.atomic.load();\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}

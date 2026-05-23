@@ -1,0 +1,167 @@
+\doxysubsection{Archivo de descripción de material (revisión 0). }
+\label{_material_file_v0}\index{Archivo de descripción de material (revisión 0).@{Archivo de descripción de material (revisión 0).}}
+En esta versión de la especificación, la información del material se divide entre el archivo de material y el archivo de shader.
+
+\begin{DoxyWarning}{Atención}
+Esta versión de la especificación únicamente permite usar bindings del tipo SAMPLER, CUBEMAP o UNIFORM BUFFER. No soporta STORAGE IMAGES, STORAGE BUFFERS o arrays de samplers.
+\end{DoxyWarning}
+
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+\_\+type} & Tipo de archivo JSON. Dependiendo del tipo de material, será uno u otro. \doxysectref{Tipos de material.}{pág.}{_material_file_v0_materialtypeV0}{3} \\
+\hline
+{\em spec\+\_\+ver} & Versión de la especificación del material. \\
+\hline
+{\em name} & Nombre del material (único). \\
+\hline
+{\em shader\+\_\+file} & Ruta de acceso al archivo JSON de shader usado por el material. \\
+\hline
+{\em layout} & Estructura de datos que define el layout del material, indicando sus bindings (buffers, texturas, etc...) y los push contsants. \doxysectref{Layout}{pág.}{_material_file_v0_layoutv0}{3} \\
+\hline
+{\em vertex\+\_\+type} & [{\itshape condicional}] Nombre del tipo de vértice que se va a usar en este material (para materiales gráficos). \\
+\hline
+{\em config} & [{\itshape opcional}] Estructura de datos con configuración adicional. \\
+\hline
+{\em polygon\+\_\+mode} & [{\itshape opcional}] Tipo de polígono usado, en caso de tratarse de un material gráfico. \doxysectref{Modo de renderizado de polígonos.}{pág.}{_material_file_v0_polygonmodeV0}{3}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily file\+\_\+type} debe coincidir con uno de los tipos presentados en \doxysectref{Tipos de material.}{pág.}{_material_file_v0_materialtypeV0}{3}. 
+
+{\ttfamily polygon\+\_\+mode} debe coincidir con uno de los tipos presentados en \doxysectref{Modo de renderizado de polígonos.}{pág.}{_material_file_v0_polygonmodeV0}{3}.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+{\ttfamily spec\+\_\+ver} debe ser 0 para que se aplique esta especificación. 
+
+{\ttfamily name} debe ser único entre todos los materiales cargados en el motor en un momento dado. 
+
+El shader indicado por {\ttfamily shader\+\_\+file} debe ser compatible con el layout definido en este archivo.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+Si {\ttfamily vertex\+\_\+type} está presente, entonces {\ttfamily file\+\_\+type} debe ser "{}\+MATERIAL"{}. 
+
+{\ttfamily vertex\+\_\+type} debe coincidir con el nombre del tipo de vértices en el código C++.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+Si {\ttfamily polygon\+\_\+mode} está presente, entonces {\ttfamily file\+\_\+type} debe ser "{}\+MATERIAL"{}.
+\end{DoxyPrecond}
+\doxysubsubsubsubsection{Layout}\label{_material_file_v0_layoutv0}
+
+\begin{DoxyParams}{Parámetros}
+{\em push\+\_\+constants} & Información sobre los push constants del material. Contiene un array de \doxysectref{Push Constant}{pág.}{_material_file_v0_pushconstv0}{3}. \\
+\hline
+{\em slots} & Información sobre los slots del material. Contiene un array de \doxysectref{Slot}{pág.}{_material_file_v0_slotv0}{3}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Incluso si se dispone de un único push constant, este debe estar introducido dentro de un array de JSON. 
+
+Si no se dispone de ningún push constant, debe existir un array vacío en el archivo JSON. 
+
+Incluso si se dispone de un único slot, este debe estar introducido dentro de un array de JSON. 
+
+Si no se dispone de ningún slot, debe existir un array vacío en el archivo JSON.
+\end{DoxyNote}
+\doxysubsubsubsubsection{Push Constant}\label{_material_file_v0_pushconstv0}
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del push constant. \\
+\hline
+{\em size} & Tamaño del push constant, en bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily name} debe ser único entre todos los push constants de este material. 
+
+{\ttfamily size} debe ser mayor que 0. 
+
+{\ttfamily size} debe cumplir con los límites de tamaño de push constant de la plataforma de destino.
+\end{DoxyPrecond}
+\doxysubsubsubsubsection{Slot}\label{_material_file_v0_slotv0}
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del slot. \\
+\hline
+{\em bindings} & Array de \doxysectref{Binding}{pág.}{_material_file_v0_bindingv0}{3}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily name} debe ser único entre todos los slots de este material.
+\end{DoxyPrecond}
+\doxysubsubsubsubsection{Binding}\label{_material_file_v0_bindingv0}
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del binding. \\
+\hline
+{\em type} & Tipo del binding.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily name} debe ser único entre todos los bindings del slot al que pertenece. 
+
+El tipo de binding debe ser SAMPLER, CUBEMAP o UNIFORM BUFFER. 
+
+Si el tipo de binding es SAMPLER, {\ttfamily type} debe ser "{}\+IMAGE"{}. 
+
+Si el tipo de binding es CUBEMAP, {\ttfamily type} debe ser "{}\+CUBEMAP"{}. 
+
+Si el tipo de binding es UNIFORM BUFFER, {\ttfamily type} debe ser "{}\+UNIFORM"{}.
+\end{DoxyPrecond}
+\doxysubsubsubsubsection{Configuración adicional}\label{_material_file_v0_configv0}
+
+\begin{DoxyParams}{Parámetros}
+{\em depth\+\_\+testing} & [{\itshape opcional}] Establece el tipo de depth stencil a usar. \doxysectref{Modo de depth testing.}{pág.}{_material_file_v0_depthtestingV0}{3} \\
+\hline
+{\em cull\+\_\+mode} & [{\itshape opcional}] Establece el tipo de culling aplicado. \doxysectref{Modo de culling.}{pág.}{_material_file_v0_cullingV0}{3} \\
+\hline
+{\em disable\+\_\+alpha\+\_\+blending} & [{\itshape opcinonal}] Flag que, si está presente, desactiva el alpha blending.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Si {\ttfamily depth\+\_\+testing} está presente, entonces el tipo de material debe ser "{}\+MATERIAL"{}. 
+
+Si {\ttfamily depth\+\_\+testing} está presente, debe coincidir con uno de los valores descritos en \doxysectref{Modo de depth testing.}{pág.}{_material_file_v0_depthtestingV0}{3}.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+Si {\ttfamily cull\+\_\+mode} está presente, entonces el tipo de material debe ser "{}\+MATERIAL"{}. 
+
+Si {\ttfamily cull\+\_\+mode} está presente, debe coincidir con uno de los valores descritos en \doxysectref{Modo de culling.}{pág.}{_material_file_v0_cullingV0}{3}.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+Si {\ttfamily disable\+\_\+alpha\+\_\+blending} está presente, entonces el tipo de material debe ser "{}\+MATERIAL"{}.
+\end{DoxyPrecond}
+\doxysubsubsubsubsection{Tipos de material.}\label{_material_file_v0_materialtypeV0}
+Existen tres tipos de material, dependiendo del tipo de pipeline y shaders que aceptan\+:
+\begin{DoxyItemize}
+\item {\bfseries{Material de rasterizado}}, representado por "{}\+MATERIAL"{}.
+\item {\bfseries{Material de trazado de rayos}}, representado por "{}\+MATERIAL\+\_\+\+RT"{}.
+\item {\bfseries{Material de computación}}, representado por "{}\+MATERIAL\+\_\+\+COMPUTE"{}.
+\end{DoxyItemize}\doxysubsubsubsubsection{Modo de renderizado de polígonos.}\label{_material_file_v0_polygonmodeV0}
+Existen tres maneras de renderizar geometría\+:
+\begin{DoxyItemize}
+\item {\bfseries{Renderizado tradicional de triángulos}}, representado por "{}\+FILL"{}.
+\item {\bfseries{Renderizado de triángulos en wideframe}}, representado por "{}\+TRIANGLE\+\_\+\+WIDEFRAME"{}.
+\item {\bfseries{Renderizado de líneas (no triángulos)}}, representado por "{}\+LINE"{}.
+\end{DoxyItemize}\doxysubsubsubsubsection{Modo de depth testing.}\label{_material_file_v0_depthtestingV0}
+Existen tres maneras de configurar el depth testing\+:
+\begin{DoxyItemize}
+\item {\bfseries{Desactivado}}, representado por "{}none"{}.
+\item {\bfseries{Sólo lectura}}\+: se comprueba la geometría, pero no se sobreescribe la imagen de profundidad. Representado por "{}read"{}.
+\item {\bfseries{Comportamiento normal}}\+: se comprueba la geometría, y se sobreescribe la imagen de profundidad si es necesario. Representado por "{}read/write"{}.
+\end{DoxyItemize}
+
+Por defecto, está activado en modo read / write.\doxysubsubsubsubsection{Modo de culling.}\label{_material_file_v0_cullingV0}
+Existen tres maneras de configurar el depth testing\+:
+\begin{DoxyItemize}
+\item {\bfseries{Desactivado}}, representado por "{}none"{}.
+\item {\bfseries{Front-\/face culling}}, representado por "{}front"{}.
+\item {\bfseries{Back-\/face culling}}, representado por "{}back"{}.
+\end{DoxyItemize}
+
+Por defecto, está activado en modo back. 

@@ -1,0 +1,13 @@
+\doxysection{Referencia del concepto OSK\+::\+\_\+\+DArr\+::Is\+Movable}
+\label{concept_o_s_k_1_1___d_arr_1_1_is_movable}\index{OSK::\_DArr::IsMovable@{OSK::\_DArr::IsMovable}}
+
+
+{\ttfamily \#include $<$Dynamic\+Array.\+hpp$>$}
+
+\doxysubsection{Definición de concepto}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T\_>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }OSK::\_DArr::IsMovable\ =\ \ std::movable<T\_>\ ||\ std::is\_move\_assignable\_v<T\_>}
+
+\end{DoxyCode}

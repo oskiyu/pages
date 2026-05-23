@@ -1,0 +1,337 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::Window}
+\label{class_o_s_k_1_1_i_o_1_1_window}\index{OSK::IO::Window@{OSK::IO::Window}}
+
+
+{\ttfamily \#include $<$Window.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Window} ()
+\item 
+\textbf{ $\sim$\+Window} ()
+\item 
+void \textbf{ Query\+Interface} (\textbf{ TInterface\+Uuid} uuid, void $\ast$$\ast$ptr) const override
+\item 
+void \textbf{ Query\+Const\+Interface} (\textbf{ TInterface\+Uuid} uuid, const void $\ast$$\ast$ptr) const override
+\item 
+void \textbf{ Create} (\textbf{ Vector2ui} size, const std\+::string \&title) override
+\item 
+void \textbf{ Update} () override
+\item 
+void \textbf{ Set\+Fullscreen} (bool fullscreen) override
+\item 
+void \textbf{ Close} () override
+\item 
+GLFWwindow $\ast$ \textbf{ \+\_\+\+Get\+Glfw} ()
+\item 
+bool \textbf{ Is\+Open} () const
+\item 
+\textbf{ Vector2ui} \textbf{ Get\+Resolution} () const
+\item 
+float \textbf{ Get\+Screen\+Ratio} () const
+\item 
+\textbf{ USize32} \textbf{ Get\+Refresh\+Rate} () const
+\item 
+void \textbf{ Query\+Interface} (\textbf{ IUUID} uuid, void $\ast$$\ast$ptr) const
+\item 
+void \textbf{ Query\+Const\+Interface} (\textbf{ IUUID} uuid, const void $\ast$$\ast$ptr) const
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+IUUID} ((\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+IFullscreenable\+Display})
+\item 
+bool \textbf{ Is\+Fullscreen} () const
+\item 
+void \textbf{ Toggle\+Fullscreen} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ Show\+Message\+Box} (std\+::string\+\_\+view message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vector2ui} \textbf{ resolution} = \textbf{ Vector2ui\+::\+Zero}
+\item 
+\textbf{ USize32} \textbf{ refresh\+Rate} = 60
+\item 
+bool \textbf{ is\+Open} = false
+\item 
+struct \textbf{ OSK\+::\+IO\+::\+IFullscreenable\+Display\+::\+Previous\+Display\+State} \textbf{ previous}
+\item 
+bool \textbf{ is\+Fullscreen} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que representa una ventana. En esta ventana se renderizará el juego. También se encarga del input mediante teclado, ratón, mando, etc... 
+
+\begin{DoxyNote}{Nota}
+Esta clase debe usarse de manera estática, accediendo a ella mediante la función Get\+Window(). 
+\end{DoxyNote}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IO::Window@{OSK::IO::Window}!Window@{Window}}
+\index{Window@{Window}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{Window()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_window_a74e6087da23d3c24e9fac0245e5ec92c} 
+Window\+::\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inicia GLFW. 
+
+\begin{DoxyWarning}{Atención}
+No se crea la ventana directamente, hay que llamar a \doxyref{Window\+::\+Create()}{pág.}{class_o_s_k_1_1_i_o_1_1_window_a153283c8f690e611a57668b914032eb2}. 
+\end{DoxyWarning}
+\index{OSK::IO::Window@{OSK::IO::Window}!````~Window@{$\sim$Window}}
+\index{````~Window@{$\sim$Window}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{$\sim$Window()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_window_a245d821e6016fa1f6970ccbbedd635f6} 
+Window\+::$\sim$\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destruye la ventana. 
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::Window@{OSK::IO::Window}!\_GetGlfw@{\_GetGlfw}}
+\index{\_GetGlfw@{\_GetGlfw}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{\_GetGlfw()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_window_ac0d47ca30b964f8d26341964075dbf5f} 
+GLFWwindow $\ast$ Window\+::\+\_\+\+Get\+Glfw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+GLFW 
+\end{DoxyReturn}
+\index{OSK::IO::Window@{OSK::IO::Window}!Close@{Close}}
+\index{Close@{Close}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{Close()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_window_a66e688fe71fb638b5d836aca39fab2f0} 
+void Window\+::\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Cierra la ventana. 
+
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+IDisplay} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_display_a018f65daf04add6768c23f76ecf6ace1}.
+
+\index{OSK::IO::Window@{OSK::IO::Window}!Create@{Create}}
+\index{Create@{Create}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_window_a153283c8f690e611a57668b914032eb2} 
+void Window\+::\+Create (\begin{DoxyParamCaption}\item[{\textbf{ Vector2ui}}]{resolution}{, }\item[{const std\+::string \&}]{title}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Crea el display con los argumentos dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Resolución inicial, en píxeles. \\
+\hline
+{\em title} & Título del display, si se aplica. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+IDisplay} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_display_a02d15a8a04e8173df7436a15f094f444}.
+
+\index{OSK::IO::Window@{OSK::IO::Window}!GetRefreshRate@{GetRefreshRate}}
+\index{GetRefreshRate@{GetRefreshRate}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{GetRefreshRate()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_ab57e139f809dc42d6646c152cd7c3173} 
+\textbf{ USize32} IDisplay\+::\+Get\+Refresh\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Tasa de fotogramas por segundo soportado por el display. 
+\end{DoxyReturn}
+\index{OSK::IO::Window@{OSK::IO::Window}!GetResolution@{GetResolution}}
+\index{GetResolution@{GetResolution}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{GetResolution()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_af9f0406d0262f33b1384cfa01ea852f0} 
+\textbf{ Vector2ui} IDisplay\+::\+Get\+Resolution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Resolución actual, en píxeles. 
+\end{DoxyReturn}
+\index{OSK::IO::Window@{OSK::IO::Window}!GetScreenRatio@{GetScreenRatio}}
+\index{GetScreenRatio@{GetScreenRatio}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{GetScreenRatio()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_ad4696de06b0701f11dfe45ca874d056d} 
+float IDisplay\+::\+Get\+Screen\+Ratio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Resolución.\+X / Resolución.\+Y. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Si Resolución.\+Y es 0, devuelve 1. 
+\end{DoxyNote}
+\index{OSK::IO::Window@{OSK::IO::Window}!IsFullscreen@{IsFullscreen}}
+\index{IsFullscreen@{IsFullscreen}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{IsFullscreen()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_ada51621a8390a2a03f5e615c748be2ae} 
+bool IFullscreenable\+Display\+::\+Is\+Fullscreen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si el display se encuentra actualmente en pantalla completa. 
+\end{DoxyReturn}
+\index{OSK::IO::Window@{OSK::IO::Window}!IsOpen@{IsOpen}}
+\index{IsOpen@{IsOpen}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{IsOpen()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_ada449806c6ae56f875feba2d89d6c49a} 
+bool IDisplay\+::\+Is\+Open (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si el display está activo. 
+\end{DoxyReturn}
+\index{OSK::IO::Window@{OSK::IO::Window}!OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}}
+\index{OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{OSK\_DEFINE\_IUUID()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_a4ac604a2cb5bcd7910da9284d593f5a9} 
+OSK\+::\+IO\+::\+IFullscreenable\+Display\+::\+OSK\+\_\+\+DEFINE\+\_\+\+IUUID (\begin{DoxyParamCaption}\item[{(\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+IFullscreenable\+Display}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::IO::Window@{OSK::IO::Window}!QueryConstInterface@{QueryConstInterface}}
+\index{QueryConstInterface@{QueryConstInterface}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{QueryConstInterface()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_window_a9ba775b62b74a7a39c6e91acf6446c6a} 
+void Window\+::\+Query\+Const\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ TInterface\+Uuid}}]{uuid}{, }\item[{const void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementa \textbf{ OSK\+::\+IQuery\+Interface} \doxyref{}{pág.}{class_o_s_k_1_1_i_query_interface_a589dec31a1efd4e4f69b9513a7086825}.
+
+\index{OSK::IO::Window@{OSK::IO::Window}!QueryConstInterface@{QueryConstInterface}}
+\index{QueryConstInterface@{QueryConstInterface}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{QueryConstInterface()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a04792bb58288a5a2e890c506a8ad1a8c} 
+void OSK\+::\+IQuery\+Interface\+::\+Query\+Const\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ IUUID}}]{uuid}{, }\item[{const void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\index{OSK::IO::Window@{OSK::IO::Window}!QueryInterface@{QueryInterface}}
+\index{QueryInterface@{QueryInterface}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{QueryInterface()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_window_a57a3c9c0e6f2e028cb551d9b2df5c49b} 
+void Window\+::\+Query\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ TInterface\+Uuid}}]{interface\+Uuid}{, }\item[{void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Permite obtener un puntero para la interfaz dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em interface\+Uuid} & UUID de la interfaz. \\
+\hline
+{\em ptr} & Puntero a sobreescribir. Será nullptr si la clase no implementa la interfad indicada. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ OSK\+::\+IQuery\+Interface} \doxyref{}{pág.}{class_o_s_k_1_1_i_query_interface_abf1b865ec9b11ced8c2d35660aab9346}.
+
+\index{OSK::IO::Window@{OSK::IO::Window}!QueryInterface@{QueryInterface}}
+\index{QueryInterface@{QueryInterface}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{QueryInterface()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a96e28be0f3cec3a83c161d417162288f} 
+void OSK\+::\+IQuery\+Interface\+::\+Query\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ IUUID}}]{uuid}{, }\item[{void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Permite obtener un puntero para la interfaz dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & UUID de la interfaz. \\
+\hline
+{\em ptr} & Puntero a sobreescribir. Será nullptr si la clase no implementa la interfad indicada. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::Window@{OSK::IO::Window}!SetFullscreen@{SetFullscreen}}
+\index{SetFullscreen@{SetFullscreen}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{SetFullscreen()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_window_af82341a7639b1e19f98e65ed7e7abdc0} 
+void Window\+::\+Set\+Fullscreen (\begin{DoxyParamCaption}\item[{bool}]{fullscreen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Establece modo pantalla completa o modo ventana. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fullscreen} & True\+: modo pantalla completa. False\+: modo ventana. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+IFullscreenable\+Display} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_a05051ecf6608ff89a251dee52ef96eeb}.
+
+\index{OSK::IO::Window@{OSK::IO::Window}!ShowMessageBox@{ShowMessageBox}}
+\index{ShowMessageBox@{ShowMessageBox}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{ShowMessageBox()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_window_ae06818ca16cf79111dd6d4f6a4815d41} 
+void Window\+::\+Show\+Message\+Box (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::IO::Window@{OSK::IO::Window}!ToggleFullscreen@{ToggleFullscreen}}
+\index{ToggleFullscreen@{ToggleFullscreen}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{ToggleFullscreen()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_ada2ca7e7ef05f2d60ca7b3bbf5f5ce0a} 
+void IFullscreenable\+Display\+::\+Toggle\+Fullscreen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Cambia de modo pantalla completa a modo ventana o viceversa. 
+
+\index{OSK::IO::Window@{OSK::IO::Window}!Update@{Update}}
+\index{Update@{Update}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_window_ac89b66b9ffd6d4c92b2fab823ffb90b2} 
+void Window\+::\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza la ventana, procesando todos los eventos relacionados. 
+
+
+
+Implementa \textbf{ OSK\+::\+IO\+::\+IDisplay} \doxyref{}{pág.}{class_o_s_k_1_1_i_o_1_1_i_display_a8a36d884b6cab3904331d910507cf2cc}.
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::IO::Window@{OSK::IO::Window}!isFullscreen@{isFullscreen}}
+\index{isFullscreen@{isFullscreen}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{isFullscreen}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_a9d29a1fe70da7747c1de3ec7d06dac21} 
+bool OSK\+::\+IO\+::\+IFullscreenable\+Display\+::is\+Fullscreen = false\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::IO::Window@{OSK::IO::Window}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{isOpen}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_a3d363c853d51d6ecfc884caf33379fd4} 
+bool OSK\+::\+IO\+::\+IDisplay\+::is\+Open = false\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::IO::Window@{OSK::IO::Window}!previous@{previous}}
+\index{previous@{previous}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{previous}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_fullscreenable_display_a8c879fdecd1468bf2e31e1ed7cbe97cd} 
+struct \textbf{ OSK\+::\+IO\+::\+IFullscreenable\+Display\+::\+Previous\+Display\+State} OSK\+::\+IO\+::\+IFullscreenable\+Display\+::previous\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::IO::Window@{OSK::IO::Window}!refreshRate@{refreshRate}}
+\index{refreshRate@{refreshRate}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{refreshRate}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_a2c5c73709c23d7536821b2f68c324c86} 
+\textbf{ USize32} OSK\+::\+IO\+::\+IDisplay\+::refresh\+Rate = 60\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::IO::Window@{OSK::IO::Window}!resolution@{resolution}}
+\index{resolution@{resolution}!OSK::IO::Window@{OSK::IO::Window}}
+\doxysubsubsection{resolution}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_display_a0087d89a72a5d4faa930924ac33d68f7} 
+\textbf{ Vector2ui} OSK\+::\+IO\+::\+IDisplay\+::resolution = \textbf{ Vector2ui\+::\+Zero}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+

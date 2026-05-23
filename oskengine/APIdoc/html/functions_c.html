@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Miembros de las clases</title>
+<title>OSKengine: Miembros de clases</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('functions_c.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('functions_c.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,15 +78,22 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="contents">
-<div class="textblock">Lista de todos los campos de clases con enlaces a las classes a que pertenecen:</div>
+<div class="textblock">Lista de todos los campos de clases con enlaces a las clases a las que pertenecen:</div>
 
-<h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>CallbackFnc&#160;:&#160;<a class="el" href="class_o_s_k_1_1_u_i_1_1_button.html#a11115ea0979f9ebb993ac2b3844b0c84">OSK::UI::Button</a>, <a class="el" href="class_o_s_k_1_1_u_i_1_1_dropdown.html#a604f0cf303ccf623e925afe05cddd63b">OSK::UI::Dropdown</a></li>
 <li>CameraBindingName&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_deferred_render_system.html#a361a19dcd0b4179799032d2c10bf8aa6">OSK::ECS::DeferredRenderSystem</a></li>
 <li>CameraComponent2D()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_camera_component2_d.html#a64066d153575cc59daa7af38447f529d">OSK::ECS::CameraComponent2D</a></li>
@@ -104,11 +110,13 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>characters&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_instance.html#a2a6dde25a2509bf53d11a876d6ea9338">OSK::ASSETS::FontInstance</a></li>
 <li>CheckAndExecute()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_console_command_executor.html#a4f1d4f63ce3dfa39a4e55ce1d78beb43">OSK::ConsoleCommandExecutor</a></li>
 <li>childIndices&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_bone.html#ab5c3e38538bdd5e9f72df548078a803c">OSK::GRAPHICS::AnimationBone</a></li>
-<li>clear&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_pass_image_info.html#ac70d9977efa9dc4797044d76b06437d5">OSK::GRAPHICS::RenderPassImageInfo</a></li>
-<li>Clear()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_i_o_1_1_i_logger.html#a697f67f5294d334990106e8fd17dd112">OSK::IO::ILogger</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#a1191038d1044a1121e03cc267e9c681c">OSK::IO::Logger</a></li>
+<li>Clear()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map.html#a48040872efcc76d99928dfb695281874">OSK::GRAPHICS::RenderpassVkMap</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_i_logger.html#a697f67f5294d334990106e8fd17dd112">OSK::IO::ILogger</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#a156424fd3b6afe7e3a75b6a5c630cad2">OSK::IO::Logger</a></li>
+<li>clear&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_pass_image_info.html#ac70d9977efa9dc4797044d76b06437d5">OSK::GRAPHICS::RenderPassImageInfo</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map_entry_per_attachment.html#a78fd1e4f28c6253feef83925a8741ebc">OSK::GRAPHICS::RenderpassVkMapEntryPerAttachment</a></li>
 <li>ClearAllComponentViews()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_editor_1_1_u_i_1_1_editor_ui.html#a0bc9e3a60fba75516a031ddd55abd99e">OSK::Editor::UI::EditorUi</a>, <a class="el" href="class_o_s_k_1_1_editor_1_1_u_i_1_1_object_list.html#a638efd69da90f8f310cb395426dea5cc">OSK::Editor::UI::ObjectList</a>, <a class="el" href="class_o_s_k_1_1_editor_1_1_u_i_1_1_object_properties_panel.html#a6f4850c1282bd40a52dc57d8bf013304">OSK::Editor::UI::ObjectPropertiesPanel</a></li>
 <li>ClearContent()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_editor_1_1_u_i_1_1_object_properties_panel.html#a34f000a84f1f3e97590c88d7cbff7a57">OSK::Editor::UI::ObjectPropertiesPanel</a>, <a class="el" href="class_o_s_k_1_1_editor_1_1_u_i_1_1_properties_panel.html#a4e5d8a815f3f5291d8874fe196d786e6">OSK::Editor::UI::PropertiesPanel</a>, <a class="el" href="class_o_s_k_1_1_editor_1_1_u_i_1_1_system_properties_panel.html#a2a7de288e877c4b7351412ef88f6d356">OSK::Editor::UI::SystemPropertiesPanel</a></li>
+<li>clearIfTargetImage&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a0190ec24651bd859d74c9ffac29bdd75">OSK::GRAPHICS::RgImageDependency</a></li>
 <li>ClearImage()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a4c5f87c5a714c5d8da05aaf6f0288038">OSK::GRAPHICS::ICommandList</a></li>
+<li>ClearImagesCache()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#ad2d4a2dc76baf975f9b740dfbbc7f793">OSK::GRAPHICS::ICommandList</a></li>
 <li>ClearObjects()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_editor_1_1_u_i_1_1_object_list.html#a8bd61169bd3bfd9d98970ae5e91d4bdd">OSK::Editor::UI::ObjectList</a></li>
 <li>ClearSelectedObject()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_editor_1_1_editor.html#ad70d6e98d6e963f50e92c1d2041d3337">OSK::Editor::Editor</a></li>
 <li>ClearSelectedSystem()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_editor_1_1_editor.html#ac2f06e53409e10e6416feaf226a43f9a">OSK::Editor::Editor</a></li>
@@ -118,7 +126,7 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>ClearSystems()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_editor_1_1_u_i_1_1_system_list.html#a21b0298b9cc882c1f70f00a0bcfa2ade">OSK::Editor::UI::SystemList</a></li>
 <li>ClearView()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_editor_1_1_u_i_1_1_system_properties_panel.html#a3b5c26bb06f2185d78518ab9ad102ec2">OSK::Editor::UI::SystemPropertiesPanel</a></li>
 <li>Click()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_u_i_1_1_button.html#a67258126e72dd44e60fcc5ae3e2a94e0">OSK::UI::Button</a></li>
-<li>Close()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_engine.html#ac7dc8c00262aee2a11183e4080fa5faf">OSK::Engine</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#acbdde9b678e5db46d82b162c2a0f9730">OSK::GRAPHICS::ICommandList</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#ab505de7218654c86ee2d63eed1915b71">OSK::GRAPHICS::IGpu</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#ace147aba8abf236698e2c46238aa7561">OSK::GRAPHICS::IRenderer</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_i_display.html#a018f65daf04add6768c23f76ecf6ace1">OSK::IO::IDisplay</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_i_logger.html#ae629914da0f9943d9530e7e031b1adbf">OSK::IO::ILogger</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#ab13114d60ca5f1f69f2ba0f2f1a5bd19">OSK::IO::Logger</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_window.html#a66e688fe71fb638b5d836aca39fab2f0">OSK::IO::Window</a></li>
+<li>Close()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_engine.html#ac7dc8c00262aee2a11183e4080fa5faf">OSK::Engine</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#acbdde9b678e5db46d82b162c2a0f9730">OSK::GRAPHICS::ICommandList</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#ab505de7218654c86ee2d63eed1915b71">OSK::GRAPHICS::IGpu</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#ace147aba8abf236698e2c46238aa7561">OSK::GRAPHICS::IRenderer</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_i_display.html#a018f65daf04add6768c23f76ecf6ace1">OSK::IO::IDisplay</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_i_logger.html#ae629914da0f9943d9530e7e031b1adbf">OSK::IO::ILogger</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#ab9dc2748087a7452049b69cf1eb5aefe">OSK::IO::Logger</a></li>
 <li>CloseGpu()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#ab0643654da3931e0c1809ee5ddfd7be0">OSK::GRAPHICS::IRenderer</a></li>
 <li>CloseSingletonInstances()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a98e94c806d1aeb97748c9b1c33e93d4b">OSK::GRAPHICS::IRenderer</a></li>
 <li>coefficientOfRestitution&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_physics_component.html#afbc57ad27cbbf0fdf1e8b03aabf0ba6a">OSK::ECS::PhysicsComponent</a></li>
@@ -134,6 +142,9 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>Color()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_color.html#aa2ab8744f09ab5041760bb95a2475c03">OSK::Color</a></li>
 <li>color&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_cpu_vertex3_d.html#a6b9b9a6c55c56d2fa8b8bd6197477e94">OSK::CpuVertex3D</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_directional_light.html#a4c590d24d32a6ef8cffd96c9a6a35826">OSK::GRAPHICS::DirectionalLight</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_point_light.html#aaaca6ca85d15ec46c0f7779e3c98d29b">OSK::GRAPHICS::PointLight</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_push_const2_d.html#a3b53e9db4becde588f1bf7e3ac32d614">OSK::GRAPHICS::PushConst2D</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sdf_string_info.html#a8afcda5eb6bc417ede1fd5bea2338527">OSK::GRAPHICS::SdfStringInfo</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_sprite.html#a11c7a9da5dbf7fc9881ab094ce0140ee">OSK::GRAPHICS::Sprite</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex3_d.html#ac15c7ea27326de13111b1933755eed08">OSK::GRAPHICS::Vertex3D</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_anim3_d.html#ab0900616fc7762f5b2d593d82f767a46">OSK::GRAPHICS::VertexAnim3D</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_vertex_attributes3_d.html#a749f52ed0ae15d944a46913e92cf8f9d">OSK::GRAPHICS::VertexAttributes3D</a></li>
 <li>colorFormats&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_key.html#a616b607cd6b25db1a7374d444b3aa802">OSK::GRAPHICS::PipelineKey</a></li>
+<li>colorImageUuid&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_e_c_s_1_1_gdr_textured_component.html#a5e3a95292f011b12482ae17395bb069b">OSK::ECS::GdrTexturedComponent</a></li>
+<li>colors&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map_entry.html#aa503560efe378e9eee6c42a88f24b834">OSK::GRAPHICS::RenderpassVkMapEntry</a></li>
+<li>ColorTarget()&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#aa211269983f8e5a53e1a3403527534dc">OSK::GRAPHICS::RgImageDependency</a></li>
 <li>ColorTargetTypes&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_g_buffer.html#aed5c2c895187fd424cba237734d64b51">OSK::GRAPHICS::GBuffer</a></li>
 <li>colorTextureIndex&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_material.html#ae2265e931b834be58a6f9737df079dfa">OSK::GRAPHICS::GpuModel3D::Material</a></li>
 <li>CommandListCreationException()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_creation_exception.html#a4abd81885893ac45d517d5f6c9e20865">OSK::GRAPHICS::CommandListCreationException</a></li>
@@ -143,6 +154,7 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>CommandListSubmitException()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_list_submit_exception.html#a129f17ae80419b477b47048e540fb390">OSK::GRAPHICS::CommandListSubmitException</a></li>
 <li>CommandPoolCreationException()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_pool_creation_exception.html#ade6a41bc14e602b02d0c24bd7901dea4">OSK::GRAPHICS::CommandPoolCreationException</a></li>
 <li>CommandQueueSubmitException()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_queue_submit_exception.html#afd3b3b3a23cb7e672f129ffce975abe1">OSK::GRAPHICS::CommandQueueSubmitException</a></li>
+<li>Compile()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html#a8802866a94d553621b9e0ca5054b8dda">OSK::GRAPHICS::RenderGraph</a></li>
 <li>ComponentAlreadyRegisteredException()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_component_already_registered_exception.html#a29ed5efabfc5d18052a2f1b86d47ce29">OSK::ECS::ComponentAlreadyRegisteredException</a></li>
 <li>ComponentControllerFactoryMethod&#160;:&#160;<a class="el" href="class_o_s_k_1_1_editor_1_1_editor.html#a24343548d1bafce88a4a10eba3abb387">OSK::Editor::Editor</a></li>
 <li>ComponentHasBeenRegistered()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_component_manager.html#a083ca33598156793dd64af188a176d00">OSK::ECS::ComponentManager</a></li>
@@ -151,7 +163,9 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>ComponentNotRegisteredException()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_component_not_registered_exception.html#a2b2e27a104f8d597d34d0a3615b8e428">OSK::ECS::ComponentNotRegisteredException</a></li>
 <li>ComponentViewFactoryMethod&#160;:&#160;<a class="el" href="class_o_s_k_1_1_editor_1_1_editor.html#ab32cd77aa6120d25f881d8b924a5089f">OSK::Editor::Editor</a></li>
 <li>compute&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a382ca275252b4bce5983fd3a3101d885">OSK::GRAPHICS::ICommandList</a></li>
-<li>computeShaderPath&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info.html#a755653872913052be0e019b57076eb71">OSK::GRAPHICS::PipelineCreateInfo</a></li>
+<li>computeShaderPath&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_loaded_material_info_v1.html#a0300a0c2c37bd7f49e0c7c99c24ec870">OSK::GRAPHICS::LoadedMaterialInfoV1</a>, <a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info.html#a755653872913052be0e019b57076eb71">OSK::GRAPHICS::PipelineCreateInfo</a></li>
+<li>ComputeTarget()&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_dependency.html#a513e9a2d674882b319ea0437cbf90a13">OSK::GRAPHICS::RgImageDependency</a></li>
+<li>config&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_loaded_material_info_v1.html#ad92ed816e43d03f23c5f6d9b659ee63d">OSK::GRAPHICS::LoadedMaterialInfoV1</a></li>
 <li>Console()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_u_i_1_1_console.html#a69e982bd29749507362c8871d7fccfe1">OSK::UI::Console</a></li>
 <li>ConstAt()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_dynamic_array.html#a14866dce26e5f935f8b0bdbab8fefabd">OSK::DynamicArray&lt; T &gt;</a></li>
 <li>ConstexprBitSet()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_constexpr_bit_set.html#a0aac2f4ae767f20718fb4c283952c8c3">OSK::ConstexprBitSet&lt; size &gt;</a></li>
@@ -171,12 +185,12 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>CopyFrom()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider.html#afc5934c2a5d91206509381167da7a231">OSK::COLLISION::Collider</a></li>
 <li>CopyImageToImage()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html#a263d4d453985410b794f09a49c7941ea">OSK::GRAPHICS::ICommandList</a></li>
 <li>copySize&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_copy_image_info.html#a8f57dd71e3947db4dc5e96a804cdf62b">OSK::GRAPHICS::CopyImageInfo</a></li>
-<li>Create()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_engine.html#a88150153e8f935f46f0eb728740cb9b5">OSK::Engine</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass.html#ab781f1bb2f373dc907b406a4182b9768">OSK::GRAPHICS::BloomPass</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner.html#a8a319b8b789816de7672a1f8ff4a0b91">OSK::GRAPHICS::FrameCombiner</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_fxaa_pass.html#a73cbe34a14cf42fdf6f4c708f8983872">OSK::GRAPHICS::FxaaPass</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_g_buffer.html#ad2b862c32558d9412c51a5ea5b43f07e">OSK::GRAPHICS::GBuffer</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass.html#a72bc7a71c9552e6eafcedb01cc6482d2">OSK::GRAPHICS::HbaoPass</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_graphics_pipeline.html#a43ee1272c3b640192395ed9d02d0ea29">OSK::GRAPHICS::IGraphicsPipeline</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_mesh_pipeline.html#a51243acf01ebed11bf83da149fe962df">OSK::GRAPHICS::IMeshPipeline</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass.html#a92aa17faa014d558ac7cc79eb982c03c">OSK::GRAPHICS::IPostProcessPass</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target.html#a007f8e24640c79100c7df4414ba39380">OSK::GRAPHICS::RenderTarget</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment.html#a1105f0a738a389ace46c6c5fc517706d">OSK::GRAPHICS::RenderTargetAttachment</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target.html#a8d063702a876073400d65376ad29757b">OSK::GRAPHICS::RtRenderTarget</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map.html#a0830a954dc3dfb5b404edc5e85ec6406">OSK::GRAPHICS::ShadowMap</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_smaa_pass.html#af0268b9a1c0ef370089c45f813acde9b">OSK::GRAPHICS::SmaaPass</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass.html#ae4b800abcdc909dee3da88a751498a5d">OSK::GRAPHICS::ToneMappingPass</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_i_display.html#a02d15a8a04e8173df7436a15f094f444">OSK::IO::IDisplay</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_window.html#a153283c8f690e611a57668b914032eb2">OSK::IO::Window</a></li>
+<li>Create()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_engine.html#a88150153e8f935f46f0eb728740cb9b5">OSK::Engine</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass.html#ab781f1bb2f373dc907b406a4182b9768">OSK::GRAPHICS::BloomPass</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_frame_combiner.html#a8a319b8b789816de7672a1f8ff4a0b91">OSK::GRAPHICS::FrameCombiner</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_fxaa_pass.html#a73cbe34a14cf42fdf6f4c708f8983872">OSK::GRAPHICS::FxaaPass</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_g_buffer.html#ad2b862c32558d9412c51a5ea5b43f07e">OSK::GRAPHICS::GBuffer</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass.html#a72bc7a71c9552e6eafcedb01cc6482d2">OSK::GRAPHICS::HbaoPass</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_graphics_pipeline.html#a43ee1272c3b640192395ed9d02d0ea29">OSK::GRAPHICS::IGraphicsPipeline</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_mesh_pipeline.html#a51243acf01ebed11bf83da149fe962df">OSK::GRAPHICS::IMeshPipeline</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass.html#a92aa17faa014d558ac7cc79eb982c03c">OSK::GRAPHICS::IPostProcessPass</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target.html#a007f8e24640c79100c7df4414ba39380">OSK::GRAPHICS::RenderTarget</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_attachment.html#a1105f0a738a389ace46c6c5fc517706d">OSK::GRAPHICS::RenderTargetAttachment</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rt_render_target.html#a8d063702a876073400d65376ad29757b">OSK::GRAPHICS::RtRenderTarget</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shadow_map.html#a0830a954dc3dfb5b404edc5e85ec6406">OSK::GRAPHICS::ShadowMap</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_smaa_pass.html#af0268b9a1c0ef370089c45f813acde9b">OSK::GRAPHICS::SmaaPass</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass.html#ae4b800abcdc909dee3da88a751498a5d">OSK::GRAPHICS::ToneMappingPass</a>, <a class="el" href="class_o_s_k_1_1_i_o_1_1_i_display.html#a02d15a8a04e8173df7436a15f094f444">OSK::IO::IDisplay</a></li>
 <li>CreateAsFinal()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target.html#a5035d069a723b632b751f07dbe0a5d64">OSK::GRAPHICS::RenderTarget</a></li>
 <li>CreateBottomAccelerationStructure()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a7d2ef0db66de433acd03db324f4e9c9d">OSK::GRAPHICS::IGpuMemoryAllocator</a></li>
 <li>CreateBroadCopy()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_axis_aligned_bounding_box.html#ab398934a6bfcb891aba132491f7fc0cc">OSK::COLLISION::AxisAlignedBoundingBox</a>, <a class="el" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_broad_collider.html#acdc2eb2800b3fe165fcc44bbe9c32158">OSK::COLLISION::IBroadCollider</a>, <a class="el" href="class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_collider.html#a361680e8d9617448e8f9867fe8d84022">OSK::COLLISION::SphereCollider</a></li>
 <li>CreateBuffer()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#aead4b69eb7b65e52698ff933259664be">OSK::GRAPHICS::IGpuMemoryAllocator</a></li>
-<li>CreateBuffers()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_deferred_render_system.html#ac45e8e39a86e3d1a51ca68d7a6a1163a">OSK::ECS::DeferredRenderSystem</a></li>
+<li>CreateBuffers()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_deferred_render_system.html#ac45e8e39a86e3d1a51ca68d7a6a1163a">OSK::ECS::DeferredRenderSystem</a>, <a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_manager.html#ae27dfd9c3208bff57be4d171a9a99764">OSK::GRAPHICS::RgBufferManager</a></li>
 <li>CreateCommandList()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_pool.html#a60b801ba0e3e9ba392850e4ed1d749e5">OSK::GRAPHICS::ICommandPool</a></li>
 <li>CreateCommandPool()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a50f75ea569defbb30fbb0cfffa41cc32">OSK::GRAPHICS::IRenderer</a></li>
 <li>CreateCommandQueues()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a68c35e96c0520bb5121761b79bb5bf61">OSK::GRAPHICS::IRenderer</a></li>
@@ -192,9 +206,11 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>CreateFromEulerAngles()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_quaternion.html#add8e5106b98ff75f9d02db8955885307">OSK::Quaternion</a></li>
 <li>CreateFullRange()&#160;:&#160;<a class="el" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_range.html#ae66f16d35c6908f25462b47d1f861d57">OSK::GRAPHICS::GpuBufferRange</a></li>
 <li>CreateGameObject()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_e_c_s_1_1_game_object_manager.html#a2548c491a8cc69f20c5bb70f123902cc">OSK::ECS::GameObjectManager</a></li>
+<li>CreateGeometryBuffers()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_graph.html#a4f7d264104cef88584834910432dc48f">OSK::GRAPHICS::RenderGraph</a></li>
 <li>CreateGpuMemoryAllocator()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#aeddc71ea58f84ac13bf7017133a8d2b0">OSK::GRAPHICS::IRenderer</a></li>
 <li>CreateGraphicsCommandPool()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu.html#afd622e137b329e0e32f549903a5741bb">OSK::GRAPHICS::IGpu</a></li>
 <li>CreateImage()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a0e6e793c72e2660b611c379a05a6793e">OSK::GRAPHICS::IGpuMemoryAllocator</a></li>
+<li>CreateImages()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_manager.html#a60c9a4878fe0b0ed51e38c95588019a4">OSK::GRAPHICS::RgImageManager</a></li>
 <li>CreateIndexBuffer()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_allocator.html#a1fd62d1cb0889a9e62c497da7b271229">OSK::GRAPHICS::IGpuMemoryAllocator</a></li>
 <li>CreateInstance()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material.html#a9084b1749232aa0d05c1ca5d05635bc8">OSK::GRAPHICS::Material</a></li>
 <li>CreateMainRenderpass()&#160;:&#160;<a class="el" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer.html#a71ad70cf2d9210887d1b6f67fc0b7a84">OSK::GRAPHICS::IRenderer</a></li>
@@ -241,10 +257,11 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

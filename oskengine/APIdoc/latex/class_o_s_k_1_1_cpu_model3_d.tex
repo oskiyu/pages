@@ -1,0 +1,139 @@
+\doxysection{Referencia de la clase OSK\+::Cpu\+Model3D}
+\label{class_o_s_k_1_1_cpu_model3_d}\index{OSK::CpuModel3D@{OSK::CpuModel3D}}
+
+
+{\ttfamily \#include $<$Cpu\+Model3\+D.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Mesh3D} $>$ \& \textbf{ Get\+Meshes} () const
+\item 
+void \textbf{ Add\+Meshes} (const \textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Mesh3D} $>$ \&meshes)
+\item 
+void \textbf{ Add\+Animations} (const \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation} $>$ \&animations)
+\item 
+void \textbf{ Add\+Animation\+Skins} (const \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation\+Skin} $>$ \&skins)
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation} $>$ \& \textbf{ Get\+Animations} () const
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation\+Skin} $>$ \& \textbf{ Get\+Animation\+Skins} () const
+\item 
+void \textbf{ Set\+Initial\+Transform} (const glm\+::mat4 \&initial\+Transform)
+\item 
+const glm\+::mat4 \& \textbf{ Get\+Initial\+Transform} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Total\+Vertex\+Count} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Modelo almacenado en memoria RAM. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::CpuModel3D@{OSK::CpuModel3D}!AddAnimations@{AddAnimations}}
+\index{AddAnimations@{AddAnimations}!OSK::CpuModel3D@{OSK::CpuModel3D}}
+\doxysubsubsection{AddAnimations()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_model3_d_a00de939f71f7fe40fbf1e20f478b477c} 
+void Cpu\+Model3\+D\+::\+Add\+Animations (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation} $>$ \&}]{animations}{}\end{DoxyParamCaption})}
+
+
+
+Añade una lista de animaciones al modelo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em animations} & lista de animaciones a añadir. \\
+\hline
+\end{DoxyParams}
+\index{OSK::CpuModel3D@{OSK::CpuModel3D}!AddAnimationSkins@{AddAnimationSkins}}
+\index{AddAnimationSkins@{AddAnimationSkins}!OSK::CpuModel3D@{OSK::CpuModel3D}}
+\doxysubsubsection{AddAnimationSkins()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_model3_d_aef3c62d67ed3f58ed244e69b4624d84c} 
+void Cpu\+Model3\+D\+::\+Add\+Animation\+Skins (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation\+Skin} $>$ \&}]{skins}{}\end{DoxyParamCaption})}
+
+
+
+Añade una lista de skins de animaciones al modelo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em animations} & lista de skins de animaciones a añadir. \\
+\hline
+\end{DoxyParams}
+\index{OSK::CpuModel3D@{OSK::CpuModel3D}!AddMeshes@{AddMeshes}}
+\index{AddMeshes@{AddMeshes}!OSK::CpuModel3D@{OSK::CpuModel3D}}
+\doxysubsubsection{AddMeshes()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_model3_d_a0f3f9d6e2c7951d7e3ad0a0ad54e93e0} 
+void Cpu\+Model3\+D\+::\+Add\+Meshes (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Mesh3D} $>$ \&}]{meshes}{}\end{DoxyParamCaption})}
+
+
+
+Añade una lista de mallas al modelo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em meshes} & Lista de mallas a añadir. \\
+\hline
+\end{DoxyParams}
+\index{OSK::CpuModel3D@{OSK::CpuModel3D}!GetAnimations@{GetAnimations}}
+\index{GetAnimations@{GetAnimations}!OSK::CpuModel3D@{OSK::CpuModel3D}}
+\doxysubsubsection{GetAnimations()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_model3_d_a735f148d529d2ba2ce095b3b8811f4a9} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation} $>$ \& Cpu\+Model3\+D\+::\+Get\+Animations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Lista con todas las animaciones del modelo. 
+\end{DoxyReturn}
+\index{OSK::CpuModel3D@{OSK::CpuModel3D}!GetAnimationSkins@{GetAnimationSkins}}
+\index{GetAnimationSkins@{GetAnimationSkins}!OSK::CpuModel3D@{OSK::CpuModel3D}}
+\doxysubsubsection{GetAnimationSkins()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_model3_d_a806c0cc99a6251d08c5d43a36f90e7ec} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ GRAPHICS\+::\+Animation\+Skin} $>$ \& Cpu\+Model3\+D\+::\+Get\+Animation\+Skins (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Lista con todas las skins de animaciones del modelo. 
+\end{DoxyReturn}
+\index{OSK::CpuModel3D@{OSK::CpuModel3D}!GetInitialTransform@{GetInitialTransform}}
+\index{GetInitialTransform@{GetInitialTransform}!OSK::CpuModel3D@{OSK::CpuModel3D}}
+\doxysubsubsection{GetInitialTransform()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_model3_d_aeb4439527505c8363074eb5069bb5930} 
+const glm\+::mat4 \& Cpu\+Model3\+D\+::\+Get\+Initial\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Transform aplicado al cargarse. 
+\end{DoxyReturn}
+\index{OSK::CpuModel3D@{OSK::CpuModel3D}!GetMeshes@{GetMeshes}}
+\index{GetMeshes@{GetMeshes}!OSK::CpuModel3D@{OSK::CpuModel3D}}
+\doxysubsubsection{GetMeshes()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_model3_d_a58bf6740b41c3721e52393dea1e61531} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Cpu\+Mesh3D} $>$ \& Cpu\+Model3\+D\+::\+Get\+Meshes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Lista con todas las mallas del modelo. 
+\end{DoxyReturn}
+\index{OSK::CpuModel3D@{OSK::CpuModel3D}!GetTotalVertexCount@{GetTotalVertexCount}}
+\index{GetTotalVertexCount@{GetTotalVertexCount}!OSK::CpuModel3D@{OSK::CpuModel3D}}
+\doxysubsubsection{GetTotalVertexCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_model3_d_a9eea884937cc5a6c9807997b3ddda105} 
+\textbf{ USize64} Cpu\+Model3\+D\+::\+Get\+Total\+Vertex\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Número de vértices totales de todos los meshes del modelo. 
+\end{DoxyReturn}
+\index{OSK::CpuModel3D@{OSK::CpuModel3D}!SetInitialTransform@{SetInitialTransform}}
+\index{SetInitialTransform@{SetInitialTransform}!OSK::CpuModel3D@{OSK::CpuModel3D}}
+\doxysubsubsection{SetInitialTransform()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_cpu_model3_d_aa792ace5f0a1a1b98c322ec00d42affc} 
+void Cpu\+Model3\+D\+::\+Set\+Initial\+Transform (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{initial\+Transform}{}\end{DoxyParamCaption})}
+
+
+
+Establece el transform inicial. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em initial\+Transform} & Transform aplicado al cargarse. \\
+\hline
+\end{DoxyParams}

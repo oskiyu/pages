@@ -19,24 +19,67 @@
 
     <div class="link">
         <a href="https://github.com/oskiyu/OSKengine" class="link">Repositorio de OSKengine.</a>
-        <a href="./DocumentationProject/site/docs/2024.01.10/index.html" class="link">Documentación de OSKengine.</a>
+        <a href="./DocumentationProject/latest/index.html" class="link">Documentación de OSKengine.</a>
         <a href="./APIdoc/html/index.html" class="link">Documentación de la API de OSKengine.</a>
     </div>
 
     <div class="bluebar__top"></div>
     <div class="content">
-    <p class="bold">Modern & performant graphics stack</p>
+    <p class="bold">Cross-platform game engine</p>
       <ul>
-        <li><p class="subbold">Built from the ground-up using the latest technologies on the industry</p></li>
-        <li><p class="subbold">No technical debt</p></li>
-        <li><p class="subbold">Using high-performance graphics APIs only</p></li>
-        <li><p class="subbold">Support for ray-tracing & mesh shaders</p></li>
+        <li><p class="subbold">Support for Windows, Linux and Android</p></li>
+        <li><p class="subbold">Written using modern C++ 23</p></li>
+        <li><p class="subbold">Support for both 2D and 3D</p></li>
       </ul>
     </div>
     
     <div class="bluebar__top"></div>
     <div class="content">
-    <p class="bold">Pure ECS architecture</p>
+      <p class="bold">Modern & performant graphics stack</p>
+      <ul>
+        <li><p class="subbold">Using high-performance graphics APIs only</p></li>
+        <li><p class="subbold">No technical debt</p></li>
+        <li><p class="subbold">Support for ray-tracing & mesh shaders</p></li>
+      </ul>
+      
+      <div class="content_secondary">
+        <p class="bold2">API agnostic, low level rendering abstraction</p>
+          <ul>
+            <li><p class="subbold">Allows for fine-graining rendering algorithms</p></li>
+            <li><p class="subbold">Focus on algorithms, not on platform-specific API details</p></li>
+            <li><p class="subbold">Provides low-level access to GPU manipulation</p></li>
+          </ul>
+      </div>
+      <div class="content_secondary">
+        <p class="bold2">High-level abstractions via render graph</p>
+          <ul>
+            <li><p class="subbold">Easy to implement renderpasses</p></li>
+            <li><p class="subbold">Automatic resource allocation and synchronization</p></li>
+            <li><p class="subbold">Automatic renderpasses ordering by delcaring dependencies</p></li>
+          </ul>
+      </div>
+      <div class="content_secondary">
+        <p class="bold2">Modern rendering technologies</p>
+          <ul>
+            <li><p class="subbold">Ray-tracing support</p></li>
+            <li><p class="subbold">Mesh shaders support</p></li>
+            <li><p class="subbold">Compute-based post-processing</p></li>
+          </ul>
+      </div>
+      <div class="content_secondary">
+        <p class="bold2">Deferred PBR rendering</p>
+          <ul>
+            <li><p class="subbold">Customizable cascaded shadow mapping (CSM)</p></li>
+            <li><p class="subbold">Fast convergence temporal anti-aliasing (TAA)</p></li>
+            <li><p class="subbold">Modern, compute-based post-processing chain (HBAO, bloom)</p></li>
+            <li><p class="subbold">Support for skeletal animation</p></li>
+          </ul>
+      </div>
+    </div>
+    
+    <div class="bluebar__top"></div>
+    <div class="content">
+    <p class="bold">ECS architecture</p>
       <ul>
         <li><p class="subbold">Cache-friendly architecture</p></li>
         <li><p class="subbold">Modular and extensible</p></li>
@@ -44,24 +87,13 @@
         <li><p class="subbold">Includes event system</p></li>
       </ul>
     </div>
-    
-    <div class="bluebar__top"></div>
-    <div class="content">
-    <p class="bold">High-performance, deferred PBR rendering</p>
-      <ul>
-        <li><p class="subbold">Customizable cascaded shadow mapping (CSM)</p></li>
-        <li><p class="subbold">Fast convergence temporal anti-aliasing (TAA)</p></li>
-        <li><p class="subbold">Modern, compute-based post-processing chain (HBAO, bloom)</p></li>
-        <li><p class="subbold">Support for skeletal animation</p></li>
-      </ul>
-    </div>
-    
+        
     <div class="bluebar__top"></div>
     <div class="content">
     <p class="bold">Rigid body physics engine</p>
       <ul>
         <li><p class="subbold">Impuslse and force based engine</p></li>
-        <li><p class="subbold">Physically realistic simulatrion & collision response</p></li>
+        <li><p class="subbold">Physically realistic simulation & collision response</p></li>
         <li><p class="subbold">Two-level BVH collision detection & ray casting</p></li>
       </ul>
     </div>

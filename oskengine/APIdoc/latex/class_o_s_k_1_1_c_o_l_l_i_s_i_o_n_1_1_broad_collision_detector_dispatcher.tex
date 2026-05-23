@@ -1,0 +1,55 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Broad\+Collision\+Detector\+Dispatcher}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_collision_detector_dispatcher}\index{OSK::COLLISION::BroadCollisionDetectorDispatcher@{OSK::COLLISION::BroadCollisionDetectorDispatcher}}
+
+
+{\ttfamily \#include $<$Broad\+Collision\+Detector\+Dispatcher.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Add\+Detector} (\textbf{ Unique\+Ptr}$<$ \textbf{ IBroad\+Collision\+Detector} $>$ \&\&detector)
+\item 
+bool \textbf{ Get\+Collision} (const \textbf{ Broad\+Collider\+Holder} \&first, const \textbf{ Broad\+Collider\+Holder} \&second) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Contiene una lista de detectors y, cuando se quiere comprobar una colisión, ejecuta el detector conveniente. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::BroadCollisionDetectorDispatcher@{OSK::COLLISION::BroadCollisionDetectorDispatcher}!AddDetector@{AddDetector}}
+\index{AddDetector@{AddDetector}!OSK::COLLISION::BroadCollisionDetectorDispatcher@{OSK::COLLISION::BroadCollisionDetectorDispatcher}}
+\doxysubsubsection{AddDetector()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_collision_detector_dispatcher_a0c1b175dc1bed80b25976e169d2cd5de} 
+void OSK\+::\+COLLISION\+::\+Broad\+Collision\+Detector\+Dispatcher\+::\+Add\+Detector (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ IBroad\+Collision\+Detector} $>$ \&\&}]{detector}{}\end{DoxyParamCaption})}
+
+
+
+Añade un nuevo detector, que tendrá prioridad sobre los detectores anteriores. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em detector} & Detector a añadir. \\
+\hline
+\end{DoxyParams}
+\index{OSK::COLLISION::BroadCollisionDetectorDispatcher@{OSK::COLLISION::BroadCollisionDetectorDispatcher}!GetCollision@{GetCollision}}
+\index{GetCollision@{GetCollision}!OSK::COLLISION::BroadCollisionDetectorDispatcher@{OSK::COLLISION::BroadCollisionDetectorDispatcher}}
+\doxysubsubsection{GetCollision()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_broad_collision_detector_dispatcher_a8dd50935b1a874848e9a7fee9f59eb64} 
+bool OSK\+::\+COLLISION\+::\+Broad\+Collision\+Detector\+Dispatcher\+::\+Get\+Collision (\begin{DoxyParamCaption}\item[{const \textbf{ Broad\+Collider\+Holder} \&}]{first}{, }\item[{const \textbf{ Broad\+Collider\+Holder} \&}]{second}{}\end{DoxyParamCaption}) const}
+
+
+
+Comprueba si hay alguna colisión entre dos colliders. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first} & Primer collider. \\
+\hline
+{\em second} & Segundo collider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la comprobación. 
+\end{DoxyReturn}

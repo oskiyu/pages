@@ -1,0 +1,23 @@
+\doxysection{Game\+Object.\+h}
+\label{_game_object_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GameObject.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GameObject.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Uuid.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{using\ }GameObjectIndex\ =\ BaseUuid<class\ GameObjectIndexTag>;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{constexpr}\ GameObjectIndex\ EMPTY\_GAME\_OBJECT\ =\ GameObjectIndex::CreateEmpty();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ OSK\_DEFINE\_UUID\_HASH(OSK::ECS::GameObjectIndex);}
+
+\end{DoxyCode}

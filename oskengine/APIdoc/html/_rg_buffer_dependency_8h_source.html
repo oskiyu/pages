@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/RgBufferDependency.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_rg_buffer_dependency_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">RgBufferDependency.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;RgDependencyType.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;GpuBufferRange.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;GpuBarrierInfo.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;RgDependencyShaderBinding.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;ImageUuid.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7d">   15</a></span>    <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7d">RgBufferUsage</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7dab50339a10e1de285ac99d4c3990b8693">   16</a></span>        <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a87b8cca05623bca89396376156c6c641ab50339a10e1de285ac99d4c3990b8693">NONE</a>,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7da8d0be820da8f4fe5aa49e0ef3065ca29">   17</a></span>        <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa8d0be820da8f4fe5aa49e0ef3065ca29">UNIFORM_BUFFER</a>,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7daa486db75420308f63af20d85e2b6489d">   18</a></span>        <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa486db75420308f63af20d85e2b6489d">STORAGE_BUFFER</a>,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7daa77fcc0c8db7e3e4c3ca370997298c34">   19</a></span>        <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">VERTEX_BUFFER</a>,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7da24ba47a6b7ca772e4185e7a7b54d4c90">   20</a></span>        <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90">INDEX_BUFFER</a>,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7da816eb338929983b8742f9395bea0a1de">   21</a></span>        <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7da816eb338929983b8742f9395bea0a1de">TRANSFER_SRC</a>,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7daa2cee11490659fde799da7092ac289cf">   22</a></span>        <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7daa2cee11490659fde799da7092ac289cf">TRANSFER_DST</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    };</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency.html">   30</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency.html">PartialRgBufferDependency</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency.html#a873a8374336abd0aa7b400f5f3702e4b">   33</a></span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a29fabf2ed2f1692c68cdced51f520d74">GdrBufferUuid</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency.html#a873a8374336abd0aa7b400f5f3702e4b">bufferRefId</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency.html#a96e4c13cf6a6ea3d3c8dbaac9c866359">   36</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7d">RgBufferUsage</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency.html#a96e4c13cf6a6ea3d3c8dbaac9c866359">usage</a>{};</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    };</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html">   44</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html">RgBufferDependency</a> {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a794f12eb60e3019f25e6878a45d7c698">   47</a></span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a29fabf2ed2f1692c68cdced51f520d74">GdrBufferUuid</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a794f12eb60e3019f25e6878a45d7c698">bufferRefId</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a9a5a56d820ca97c5a0982c539c1e9d72">   50</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7d">RgBufferUsage</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a9a5a56d820ca97c5a0982c539c1e9d72">usage</a>{};</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a50326f2e27636a31e40cbdb0244d7f63">   53</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aa5f39fc7b67abfcf6262c5eaef275940">RgDependencyType</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a50326f2e27636a31e40cbdb0244d7f63">type</a> = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aa5f39fc7b67abfcf6262c5eaef275940aa7b843fb734e3b3fea8e5f902d3f4144">RgDependencyType::READ_WRITE</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#aca00a0099b3fe6a31e30f1b14da03d7f">   56</a></span>        <a class="code hl_enumeration" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a87b8cca05623bca89396376156c6c641">GpuCommandStage</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#aca00a0099b3fe6a31e30f1b14da03d7f">stage</a> = <a class="code hl_enumvalue" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a87b8cca05623bca89396376156c6c641ab50339a10e1de285ac99d4c3990b8693">GpuCommandStage::NONE</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a013fe90e6e01f6221e6ab676ea9aae4b">   59</a></span>        <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_range.html">GpuBufferRange</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a013fe90e6e01f6221e6ab676ea9aae4b">range</a>{};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#ab8b9b86ec88cdfd85bf88da5f31ae1fd">   62</a></span>        <a class="code hl_struct" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_dependency_shader_binding.html">RgDependencyShaderBinding</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#ab8b9b86ec88cdfd85bf88da5f31ae1fd">shaderBinding</a>{};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a57488498e534b3f5b6402c13926cd120">   65</a></span>        <a class="code hl_typedef" href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">UIndex32</a> <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a57488498e534b3f5b6402c13926cd120">arrayIndex</a> = 0;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a5f09223aee1695924de7c0afb650f257">   69</a></span>        std::optional&lt;UIndex16&gt; <a class="code hl_variable" href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a5f09223aee1695924de7c0afb650f257">frameInFlight</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    };</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></div><div class="ttdef"><b>Definition</b> AccelerationStructuresExceptions.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a29fabf2ed2f1692c68cdced51f520d74"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a29fabf2ed2f1692c68cdced51f520d74">OSK::GRAPHICS::GdrBufferUuid</a></div><div class="ttdeci">BaseUuid&lt; class GdrBuffer &gt; GdrBufferUuid</div><div class="ttdoc">Identificador de un buffer usado en un render-graph.</div><div class="ttdef"><b>Definition</b> ImageUuid.h:13</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a87b8cca05623bca89396376156c6c641"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a87b8cca05623bca89396376156c6c641">OSK::GRAPHICS::GpuCommandStage</a></div><div class="ttdeci">GpuCommandStage</div><div class="ttdoc">Un command stage permite diferenciar los distintos tipos de comandos ejecutables por la GPU....</div><div class="ttdef"><b>Definition</b> GpuBarrierInfo.h:17</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_a87b8cca05623bca89396376156c6c641ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#a87b8cca05623bca89396376156c6c641ab50339a10e1de285ac99d4c3990b8693">OSK::GRAPHICS::GpuCommandStage::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdoc">Ningún comando será afectado.</div><div class="ttdef"><b>Definition</b> GpuBarrierInfo.h:57</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_aa5f39fc7b67abfcf6262c5eaef275940"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aa5f39fc7b67abfcf6262c5eaef275940">OSK::GRAPHICS::RgDependencyType</a></div><div class="ttdeci">RgDependencyType</div><div class="ttdef"><b>Definition</b> RgDependencyType.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_aa5f39fc7b67abfcf6262c5eaef275940aa7b843fb734e3b3fea8e5f902d3f4144"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#aa5f39fc7b67abfcf6262c5eaef275940aa7b843fb734e3b3fea8e5f902d3f4144">OSK::GRAPHICS::RgDependencyType::READ_WRITE</a></div><div class="ttdeci">@ READ_WRITE</div><div class="ttdef"><b>Definition</b> RgDependencyType.h:6</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_acddb5bea4cfd89def51a0df824127a7d"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7d">OSK::GRAPHICS::RgBufferUsage</a></div><div class="ttdeci">RgBufferUsage</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:15</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_acddb5bea4cfd89def51a0df824127a7da816eb338929983b8742f9395bea0a1de"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7da816eb338929983b8742f9395bea0a1de">OSK::GRAPHICS::RgBufferUsage::TRANSFER_SRC</a></div><div class="ttdeci">@ TRANSFER_SRC</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:21</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_acddb5bea4cfd89def51a0df824127a7daa2cee11490659fde799da7092ac289cf"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#acddb5bea4cfd89def51a0df824127a7daa2cee11490659fde799da7092ac289cf">OSK::GRAPHICS::RgBufferUsage::TRANSFER_DST</a></div><div class="ttdeci">@ TRANSFER_DST</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:22</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa24ba47a6b7ca772e4185e7a7b54d4c90">OSK::GRAPHICS::GpuBufferUsage::INDEX_BUFFER</a></div><div class="ttdeci">@ INDEX_BUFFER</div><div class="ttdoc">Buffer que contendrá los índices de modelos 3D.</div><div class="ttdef"><b>Definition</b> GpuMemoryTypes.h:66</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_ad8b871b506bab7c4021326a1a10bbc7fa8d0be820da8f4fe5aa49e0ef3065ca29"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7fa8d0be820da8f4fe5aa49e0ef3065ca29">OSK::GRAPHICS::GpuBufferUsage::UNIFORM_BUFFER</a></div><div class="ttdeci">@ UNIFORM_BUFFER</div><div class="ttdoc">Buffer que será leído desde los shaders.</div><div class="ttdef"><b>Definition</b> GpuMemoryTypes.h:56</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_ad8b871b506bab7c4021326a1a10bbc7faa486db75420308f63af20d85e2b6489d"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa486db75420308f63af20d85e2b6489d">OSK::GRAPHICS::GpuBufferUsage::STORAGE_BUFFER</a></div><div class="ttdeci">@ STORAGE_BUFFER</div><div class="ttdoc">Se usara como buffer de lectura y escritura en shaders.</div><div class="ttdef"><b>Definition</b> GpuMemoryTypes.h:102</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html_ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html#ad8b871b506bab7c4021326a1a10bbc7faa77fcc0c8db7e3e4c3ca370997298c34">OSK::GRAPHICS::GpuBufferUsage::VERTEX_BUFFER</a></div><div class="ttdeci">@ VERTEX_BUFFER</div><div class="ttdoc">Buffer que contendrá los vértices de modelos 3D.</div><div class="ttdef"><b>Definition</b> GpuMemoryTypes.h:61</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a382ed4c8a6994201cbad5d4e1335861b"><div class="ttname"><a href="namespace_o_s_k.html#a382ed4c8a6994201cbad5d4e1335861b">OSK::UIndex32</a></div><div class="ttdeci">uint32_t UIndex32</div><div class="ttdoc">Índice de un elemento, almacenado en un unsigned int de 32 bits.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:21</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_range_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_buffer_range.html">OSK::GRAPHICS::GpuBufferRange</a></div><div class="ttdoc">Rango de información de un buffer.</div><div class="ttdef"><b>Definition</b> GpuBufferRange.h:9</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency.html">OSK::GRAPHICS::PartialRgBufferDependency</a></div><div class="ttdoc">Declaración mínima de dependencia de un buffer necesaria para poder crear dicho buffer.</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:30</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency_html_a873a8374336abd0aa7b400f5f3702e4b"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency.html#a873a8374336abd0aa7b400f5f3702e4b">OSK::GRAPHICS::PartialRgBufferDependency::bufferRefId</a></div><div class="ttdeci">GdrBufferUuid bufferRefId</div><div class="ttdoc">ID único del buffer.</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:33</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency_html_a96e4c13cf6a6ea3d3c8dbaac9c866359"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_partial_rg_buffer_dependency.html#a96e4c13cf6a6ea3d3c8dbaac9c866359">OSK::GRAPHICS::PartialRgBufferDependency::usage</a></div><div class="ttdeci">RgBufferUsage usage</div><div class="ttdoc">Uso que se le va a dar.</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:36</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html">OSK::GRAPHICS::RgBufferDependency</a></div><div class="ttdoc">Dependencia de un buffer dentro de un render-pass: Indica un buffer que se va a usar dentro de un ren...</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:44</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_html_a013fe90e6e01f6221e6ab676ea9aae4b"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a013fe90e6e01f6221e6ab676ea9aae4b">OSK::GRAPHICS::RgBufferDependency::range</a></div><div class="ttdeci">GpuBufferRange range</div><div class="ttdoc">Rango usado.</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:59</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_html_a50326f2e27636a31e40cbdb0244d7f63"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a50326f2e27636a31e40cbdb0244d7f63">OSK::GRAPHICS::RgBufferDependency::type</a></div><div class="ttdeci">RgDependencyType type</div><div class="ttdoc">Tipo de dependencia.</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:53</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_html_a57488498e534b3f5b6402c13926cd120"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a57488498e534b3f5b6402c13926cd120">OSK::GRAPHICS::RgBufferDependency::arrayIndex</a></div><div class="ttdeci">UIndex32 arrayIndex</div><div class="ttdoc">Índice dentro del array.</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:65</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_html_a5f09223aee1695924de7c0afb650f257"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a5f09223aee1695924de7c0afb650f257">OSK::GRAPHICS::RgBufferDependency::frameInFlight</a></div><div class="ttdeci">std::optional&lt; UIndex16 &gt; frameInFlight</div><div class="ttdoc">Si está presente, indica en qué frame in flight se usará.</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:69</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_html_a794f12eb60e3019f25e6878a45d7c698"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a794f12eb60e3019f25e6878a45d7c698">OSK::GRAPHICS::RgBufferDependency::bufferRefId</a></div><div class="ttdeci">GdrBufferUuid bufferRefId</div><div class="ttdoc">ID único del buffer.</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:47</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_html_a9a5a56d820ca97c5a0982c539c1e9d72"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#a9a5a56d820ca97c5a0982c539c1e9d72">OSK::GRAPHICS::RgBufferDependency::usage</a></div><div class="ttdeci">RgBufferUsage usage</div><div class="ttdoc">Uso que se le va a dar.</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:50</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_html_ab8b9b86ec88cdfd85bf88da5f31ae1fd"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#ab8b9b86ec88cdfd85bf88da5f31ae1fd">OSK::GRAPHICS::RgBufferDependency::shaderBinding</a></div><div class="ttdeci">RgDependencyShaderBinding shaderBinding</div><div class="ttdoc">Slot y binding en el que se usará.</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:62</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_html_aca00a0099b3fe6a31e30f1b14da03d7f"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency.html#aca00a0099b3fe6a31e30f1b14da03d7f">OSK::GRAPHICS::RgBufferDependency::stage</a></div><div class="ttdeci">GpuCommandStage stage</div><div class="ttdoc">Stage en el que se usará.</div><div class="ttdef"><b>Definition</b> RgBufferDependency.h:56</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_dependency_shader_binding_html"><div class="ttname"><a href="struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_dependency_shader_binding.html">OSK::GRAPHICS::RgDependencyShaderBinding</a></div><div class="ttdoc">Caso especial de una dependencia que se lee en un shader, ya sea de buffer o de imagen.</div><div class="ttdef"><b>Definition</b> RgDependencyShaderBinding.h:10</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>RgBufferDependency.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

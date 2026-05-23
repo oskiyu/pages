@@ -1,0 +1,133 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IPost\+Process\+Pass}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass}\index{OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}}
+
+
+{\ttfamily \#include $<$IPost\+Process\+Pass.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IPost\+Process\+Pass} ()=default
+\item 
+virtual void \textbf{ Create} (const \textbf{ Vector2ui} \&size)
+\item 
+virtual void \textbf{ Resize} (const \textbf{ Vector2ui} \&size)
+\item 
+virtual void \textbf{ Execute} (\textbf{ ICommand\+List} $\ast$compute\+Cmd\+List)=0
+\item 
+\textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Output} ()
+\item 
+const \textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Output} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase base que permite ejecutar pases de efectos de postprocesamiento. 
+
+Su instancia de material contiene un slot "{}texture"{} con dos entradas\+:
+\begin{DoxyItemize}
+\item "{}scene\+Image"{}\+: imágen de entrada.
+\item "{}final\+Image"{}\+: imágen de salida. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}!````~IPostProcessPass@{$\sim$IPostProcessPass}}
+\index{````~IPostProcessPass@{$\sim$IPostProcessPass}!OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}}
+\doxysubsubsection{$\sim$IPostProcessPass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_ad1af3975afcfe11f4694062b32fda889} 
+virtual OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass\+::$\sim$\+IPost\+Process\+Pass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}!Create@{Create}}
+\index{Create@{Create}!OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a92aa17faa014d558ac7cc79eb982c03c} 
+void IPost\+Process\+Pass\+::\+Create (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Crea el render target de salida. Se puede sobreescribir por efectos de post-\/procesado específicos para crear recursos intermedios. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Resolución (tanto de entrada como de salida). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \textbf{ OSK\+::\+GRAPHICS\+::\+Bloom\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass_ab781f1bb2f373dc907b406a4182b9768}, \textbf{ OSK\+::\+GRAPHICS\+::\+Fxaa\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_fxaa_pass_a73cbe34a14cf42fdf6f4c708f8983872}, \textbf{ OSK\+::\+GRAPHICS\+::\+Hbao\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_a72bc7a71c9552e6eafcedb01cc6482d2}, \textbf{ OSK\+::\+GRAPHICS\+::\+Smaa\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_smaa_pass_af0268b9a1c0ef370089c45f813acde9b} y \textbf{ OSK\+::\+GRAPHICS\+::\+Tone\+Mapping\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_ae4b800abcdc909dee3da88a751498a5d}.
+
+\index{OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a05388cf0f2e8bc5e1b94cdc76cd58c8e} 
+virtual void OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{compute\+Cmd\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Genera la imagen final. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em compute\+Cmd\+List} & Lista de comandos sobre la que se ejecutará.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Se deben haber establecido las imágenes de entrada con {\ttfamily IPost\+Process\+Pass\+::\+Set\+Input}. 
+
+Las imágenes de entrada establecidas con {\ttfamily IPost\+Process\+Pass\+::\+Set\+Input} deben estar en un estado válido. 
+
+{\ttfamily compute\+Cmd\+List} debe soportar, al menos .
+
+Se deben haber establecido las entradas necesarias para el pase. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Post\+Process\+Input\+Not\+Set\+Exception}{pág.}{class_o_s_k_1_1_post_process_input_not_set_exception}} & si no se han establecido las entradas necesarias. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementado en \textbf{ OSK\+::\+GRAPHICS\+::\+Bloom\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass_a2391f9f93653168b0bfc3a84cdcff0a2}, \textbf{ OSK\+::\+GRAPHICS\+::\+Fxaa\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_fxaa_pass_a9599733163dc27f59768d246b5deb3ee}, \textbf{ OSK\+::\+GRAPHICS\+::\+Hbao\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_a869e7920ed892a2c4c4576fa57fff723}, \textbf{ OSK\+::\+GRAPHICS\+::\+Smaa\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_smaa_pass_a8edd8cf69bbd12c0bcd76fccad1f2df8} y \textbf{ OSK\+::\+GRAPHICS\+::\+Tone\+Mapping\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_a2122a40b89ffe02dd1475eb994eb6a10}.
+
+\index{OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}}
+\doxysubsubsection{GetOutput()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_ae65dc5bc46fb7657d6f18b148e7ea5cd} 
+\textbf{ Compute\+Render\+Target} \& IPost\+Process\+Pass\+::\+Get\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Render target con la imagen final en las imágenes de color. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}}
+\doxysubsubsection{GetOutput()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a4b49581bc321be779142519f48d7b263} 
+const \textbf{ Compute\+Render\+Target} \& IPost\+Process\+Pass\+::\+Get\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Render target con la imagen final en las imágenes de color. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}!Resize@{Resize}}
+\index{Resize@{Resize}!OSK::GRAPHICS::IPostProcessPass@{OSK::GRAPHICS::IPostProcessPass}}
+\doxysubsubsection{Resize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a5755b9283180f003c9d77fbebebfb322} 
+void IPost\+Process\+Pass\+::\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Cambia de tamaño el render target de salida. Se puede sobreescribir para crear recursos intermedios. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño de la imagen final. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \textbf{ OSK\+::\+GRAPHICS\+::\+Bloom\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass_a5545a4f6b434519d5fb2873ed72b2b25}, \textbf{ OSK\+::\+GRAPHICS\+::\+Hbao\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_hbao_pass_a13edc6194b3b9e4d62137181893f9080}, \textbf{ OSK\+::\+GRAPHICS\+::\+Smaa\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_smaa_pass_a2a479e329ad2604b9f51f935d830d436} y \textbf{ OSK\+::\+GRAPHICS\+::\+Tone\+Mapping\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_tone_mapping_pass_ad3fd26d75d4546281505e00a37f6c332}.
+

@@ -1,0 +1,76 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Epa\+Minkowski\+Hull}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_epa_minkowski_hull}\index{OSK::COLLISION::EpaMinkowskiHull@{OSK::COLLISION::EpaMinkowskiHull}}
+
+
+{\ttfamily \#include $<$Epa\+Minkowski\+Hull.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ Surpases\+Min\+Depth} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Mtv} () const
+\item 
+\textbf{ Vector3f} \textbf{ Get\+Contact\+Point} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Epa\+Minkowski\+Hull} \textbf{ From} (const \textbf{ Simplex} \&starting\+Simplex, const \textbf{ IGjk\+Collider} \&first, const \textbf{ IGjk\+Collider} \&second)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Hull de Minkowski parcial, que parte del símplex obtenido mediante GJK y lo expande iterativamente hasta encontrar el MTV y el punto de contacto. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::EpaMinkowskiHull@{OSK::COLLISION::EpaMinkowskiHull}!From@{From}}
+\index{From@{From}!OSK::COLLISION::EpaMinkowskiHull@{OSK::COLLISION::EpaMinkowskiHull}}
+\doxysubsubsection{From()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_epa_minkowski_hull_a485dad84d616d3fa54bcef6defef4257} 
+\textbf{ OSK\+::\+COLLISION\+::\+Epa\+Minkowski\+Hull} OSK\+::\+COLLISION\+::\+Epa\+Minkowski\+Hull\+::\+From (\begin{DoxyParamCaption}\item[{const \textbf{ Simplex} \&}]{starting\+Simplex}{, }\item[{const \textbf{ IGjk\+Collider} \&}]{first}{, }\item[{const \textbf{ IGjk\+Collider} \&}]{second}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Genera el Minkowski hull parcial a partir del símplex y de los colliders indicados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em starting\+Simplex} & Símplex obtenido de GJK a partir de los colliders {\ttfamily first} y {\ttfamily second}. \\
+\hline
+{\em first} & Primer collider. \\
+\hline
+{\em second} & Segundo collider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Minkowski hull parcial. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::EpaMinkowskiHull@{OSK::COLLISION::EpaMinkowskiHull}!GetContactPoint@{GetContactPoint}}
+\index{GetContactPoint@{GetContactPoint}!OSK::COLLISION::EpaMinkowskiHull@{OSK::COLLISION::EpaMinkowskiHull}}
+\doxysubsubsection{GetContactPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_epa_minkowski_hull_ac0a9b9c90a0d4c7c5d0fadede118f45f} 
+\textbf{ OSK\+::\+Vector3f} OSK\+::\+COLLISION\+::\+Epa\+Minkowski\+Hull\+::\+Get\+Contact\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Punto de contacto en espacio del mundo. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::EpaMinkowskiHull@{OSK::COLLISION::EpaMinkowskiHull}!GetMtv@{GetMtv}}
+\index{GetMtv@{GetMtv}!OSK::COLLISION::EpaMinkowskiHull@{OSK::COLLISION::EpaMinkowskiHull}}
+\doxysubsubsection{GetMtv()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_epa_minkowski_hull_af4adc91f854678f6b0cd2e081044f543} 
+\textbf{ OSK\+::\+Vector3f} OSK\+::\+COLLISION\+::\+Epa\+Minkowski\+Hull\+::\+Get\+Mtv (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Minimum translation vector. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::EpaMinkowskiHull@{OSK::COLLISION::EpaMinkowskiHull}!SurpasesMinDepth@{SurpasesMinDepth}}
+\index{SurpasesMinDepth@{SurpasesMinDepth}!OSK::COLLISION::EpaMinkowskiHull@{OSK::COLLISION::EpaMinkowskiHull}}
+\doxysubsubsection{SurpasesMinDepth()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_epa_minkowski_hull_a0f9471e793d91ddcad879529634e2904} 
+bool OSK\+::\+COLLISION\+::\+Epa\+Minkowski\+Hull\+::\+Surpases\+Min\+Depth (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si el MTV supera la distancia mínima para poder considerarse como colisión válida. 
+\end{DoxyReturn}

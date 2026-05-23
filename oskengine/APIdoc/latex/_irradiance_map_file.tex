@@ -1,0 +1,28 @@
+\doxysection{Archivo de descripción de un mapa de irradiancia. }
+\label{_irradiance_map_file}\index{Archivo de descripción de un mapa de irradiancia.@{Archivo de descripción de un mapa de irradiancia.}}
+Indica los metadatos de un mapa de irradiancia almacenado en un fichero externo.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+\_\+type} & ({\ttfamily string}) Tipo de archivo de descripción. \\
+\hline
+{\em spec\+\_\+ver} & ({\ttfamily string}) Versión de la especificación del archivo. \\
+\hline
+{\em asset\+\_\+type} & ({\ttfamily string}) Tipo de recurso. \\
+\hline
+{\em name} & ({\ttfamily string}) Nombre del mapa de irradiancia. \\
+\hline
+{\em raw\+\_\+asset\+\_\+path} & ({\ttfamily string}) Ruta al fichero que almacena el mapa de irradiancia.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily file\+\_\+type} debe ser {\ttfamily ASSET}. 
+
+{\ttfamily spec\+\_\+ver} debe ser 0. 
+
+{\ttfamily asset\+\_\+type} debe ser {\ttfamily OSK\+::\+Irradiance\+Map}. 
+
+{\ttfamily name} debe ser un identificador único para este mapa de irradiancia.
+
+El archivo indicado por {\ttfamily raw\+\_\+asset\+\_\+path} debe tener extensión {\ttfamily .hdr}. 
+\end{DoxyPrecond}

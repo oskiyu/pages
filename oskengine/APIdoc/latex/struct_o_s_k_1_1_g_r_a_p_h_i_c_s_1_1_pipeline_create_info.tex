@@ -1,0 +1,240 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Pipeline\+Create\+Info}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info}\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+
+
+{\ttfamily \#include $<$Pipeline\+Create\+Info.\+h$>$}
+
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ vertex\+Path}
+\item 
+std\+::string \textbf{ fragment\+Path}
+\item 
+std\+::string \textbf{ tesselation\+Control\+Path} = "{}"{}
+\item 
+std\+::string \textbf{ tesselation\+Evaluation\+Path} = "{}"{}
+\item 
+std\+::string \textbf{ rt\+Raygen\+Shader\+Path} = "{}"{}
+\item 
+std\+::string \textbf{ rt\+Closest\+Hit\+Shader\+Path} = "{}"{}
+\item 
+std\+::string \textbf{ rt\+Miss\+Shader\+Path} = "{}"{}
+\item 
+std\+::string \textbf{ mesh\+Amplification\+Shader\+Path} = "{}"{}
+\item 
+std\+::string \textbf{ mesh\+Shader\+Path} = "{}"{}
+\item 
+std\+::string \textbf{ compute\+Shader\+Path} = "{}"{}
+\item 
+\textbf{ USize32} \textbf{ tesselation\+Patch\+Control\+Points} = 3
+\item 
+\textbf{ Polygon\+Mode} \textbf{ polygon\+Mode}
+\item 
+\textbf{ Polygon\+Cull\+Mode} \textbf{ cull\+Mode} = \textbf{ Polygon\+Cull\+Mode\+::\+FRONT}
+\item 
+\textbf{ Polygon\+Front\+Face\+Type} \textbf{ front\+Face\+Type}
+\item 
+\textbf{ Depth\+Testing\+Type} \textbf{ depth\+Testing\+Type} = \textbf{ Depth\+Testing\+Type\+::\+READ\+\_\+\+WRITE}
+\item 
+bool \textbf{ precompiled\+Hlsl\+Shaders} = true
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Format} $>$ \textbf{ formats}
+\item 
+\textbf{ Format} \textbf{ depth\+Format}
+\item 
+bool \textbf{ use\+Alpha\+Blending} = true
+\item 
+bool \textbf{ uses\+Unspecified\+Sized\+Arrays} = false
+\item 
+\textbf{ USize32} \textbf{ max\+Unspecified\+Sized\+Arrays\+Size} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Contiene la información necesaria para configurar un nuevo pipeline. 
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!computeShaderPath@{computeShaderPath}}
+\index{computeShaderPath@{computeShaderPath}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{computeShaderPath}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a755653872913052be0e019b57076eb71} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::compute\+Shader\+Path = "{}"{}}
+
+
+
+Dirección en la que se encuentra el shader de computación. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!cullMode@{cullMode}}
+\index{cullMode@{cullMode}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{cullMode}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_acfe51d79edebcbe9e45e8f9586d05c10} 
+\textbf{ Polygon\+Cull\+Mode} OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::cull\+Mode = \textbf{ Polygon\+Cull\+Mode\+::\+FRONT}}
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!depthFormat@{depthFormat}}
+\index{depthFormat@{depthFormat}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{depthFormat}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a531f86d873e70d6f465922546397f4b0} 
+\textbf{ Format} OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::depth\+Format}
+
+
+
+Formato de la imagen de profundidad. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!depthTestingType@{depthTestingType}}
+\index{depthTestingType@{depthTestingType}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{depthTestingType}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a944b54b561e76f4ca2efb71b03395ac4} 
+\textbf{ Depth\+Testing\+Type} OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::depth\+Testing\+Type = \textbf{ Depth\+Testing\+Type\+::\+READ\+\_\+\+WRITE}}
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!formats@{formats}}
+\index{formats@{formats}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{formats}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a031c05fb2778c508449834a5281e84fd} 
+\textbf{ Dynamic\+Array}$<$\textbf{ Format}$>$ OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::formats}
+
+
+
+Formato de la imagen sobre la que se renderizará. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!fragmentPath@{fragmentPath}}
+\index{fragmentPath@{fragmentPath}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{fragmentPath}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a4c3aff625b37077df47c3b631db00301} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::fragment\+Path}
+
+
+
+Dirección en la que se encuentra el shader de fragmentos o píxeles. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!frontFaceType@{frontFaceType}}
+\index{frontFaceType@{frontFaceType}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{frontFaceType}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a735bb08e92ec77c4f39f8a80ebf1c149} 
+\textbf{ Polygon\+Front\+Face\+Type} OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::front\+Face\+Type}
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!maxUnspecifiedSizedArraysSize@{maxUnspecifiedSizedArraysSize}}
+\index{maxUnspecifiedSizedArraysSize@{maxUnspecifiedSizedArraysSize}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{maxUnspecifiedSizedArraysSize}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a505ee79ad3d962e2a8192c4151bf8207} 
+\textbf{ USize32} OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::max\+Unspecified\+Sized\+Arrays\+Size = 0}
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!meshAmplificationShaderPath@{meshAmplificationShaderPath}}
+\index{meshAmplificationShaderPath@{meshAmplificationShaderPath}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{meshAmplificationShaderPath}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_aa49ed969c1805d7ea4c4104b9a1a8940} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::mesh\+Amplification\+Shader\+Path = "{}"{}}
+
+
+
+Dirección en la que se encuentra el shader de ampliación de meshes. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!meshShaderPath@{meshShaderPath}}
+\index{meshShaderPath@{meshShaderPath}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{meshShaderPath}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_afb2bd7b8f6762a63a0fd3745f1834967} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::mesh\+Shader\+Path = "{}"{}}
+
+
+
+Dirección en la que se encuentra el shader de meshes. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!polygonMode@{polygonMode}}
+\index{polygonMode@{polygonMode}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{polygonMode}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a374bbb3534c447ec42cf7edb5380ae84} 
+\textbf{ Polygon\+Mode} OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::polygon\+Mode}
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!precompiledHlslShaders@{precompiledHlslShaders}}
+\index{precompiledHlslShaders@{precompiledHlslShaders}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{precompiledHlslShaders}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_aefde218953366f55118fc7d07cf3cbd4} 
+bool OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::precompiled\+Hlsl\+Shaders = true}
+
+
+
+True si los shaders hlsl están precompilados. False si se deben compilar en tiempo de creación del pipeline. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!rtClosestHitShaderPath@{rtClosestHitShaderPath}}
+\index{rtClosestHitShaderPath@{rtClosestHitShaderPath}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{rtClosestHitShaderPath}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a09c9b9c025bb3dbc32b69dff04ff980d} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::rt\+Closest\+Hit\+Shader\+Path = "{}"{}}
+
+
+
+Dirección en la que se encuentra el shader de hit de rayos. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!rtMissShaderPath@{rtMissShaderPath}}
+\index{rtMissShaderPath@{rtMissShaderPath}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{rtMissShaderPath}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a757c6a25f8fa8ec656d053decf470524} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::rt\+Miss\+Shader\+Path = "{}"{}}
+
+
+
+Dirección en la que se encuentra el shader de miss de rayos. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!rtRaygenShaderPath@{rtRaygenShaderPath}}
+\index{rtRaygenShaderPath@{rtRaygenShaderPath}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{rtRaygenShaderPath}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a0bfe9ca2ed2bf52a85df106765ed64e9} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::rt\+Raygen\+Shader\+Path = "{}"{}}
+
+
+
+Dirección en la que se encuentra el shader de generación de rayos. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!tesselationControlPath@{tesselationControlPath}}
+\index{tesselationControlPath@{tesselationControlPath}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{tesselationControlPath}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a848c4a29ab5c3469851cc714aaba9621} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::tesselation\+Control\+Path = "{}"{}}
+
+
+
+Dirección en la que se encuentra el shader de control de la teselación. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!tesselationEvaluationPath@{tesselationEvaluationPath}}
+\index{tesselationEvaluationPath@{tesselationEvaluationPath}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{tesselationEvaluationPath}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_ad6aaaaa5814f2a26e3937cb128f6843e} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::tesselation\+Evaluation\+Path = "{}"{}}
+
+
+
+Dirección en la que se encuentra el shader de evaluación de la teselación. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!tesselationPatchControlPoints@{tesselationPatchControlPoints}}
+\index{tesselationPatchControlPoints@{tesselationPatchControlPoints}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{tesselationPatchControlPoints}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_ae303c024e599fb4c39d13cee17401a7c} 
+\textbf{ USize32} OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::tesselation\+Patch\+Control\+Points = 3}
+
+
+
+Número de vértices que tendrá cada patch del teselado. 
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!useAlphaBlending@{useAlphaBlending}}
+\index{useAlphaBlending@{useAlphaBlending}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{useAlphaBlending}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a15c6dab63bc5eea84af6aee414d0eb61} 
+bool OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::use\+Alpha\+Blending = true}
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!usesUnspecifiedSizedArrays@{usesUnspecifiedSizedArrays}}
+\index{usesUnspecifiedSizedArrays@{usesUnspecifiedSizedArrays}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{usesUnspecifiedSizedArrays}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_af72af092a7450a36397eea3df173dbc2} 
+bool OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::uses\+Unspecified\+Sized\+Arrays = false}
+
+\index{OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}!vertexPath@{vertexPath}}
+\index{vertexPath@{vertexPath}!OSK::GRAPHICS::PipelineCreateInfo@{OSK::GRAPHICS::PipelineCreateInfo}}
+\doxysubsubsection{vertexPath}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_pipeline_create_info_a3fac189838e4f2c919f229eadf5bdb62} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Pipeline\+Create\+Info\+::vertex\+Path}
+
+
+
+Dirección en la que se encuentra el shader de vértices. 
+

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Render-Graphs :: OSKengine additional documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">OSKengine additional documentation</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="latest">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">OSKengine Additional Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">General</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="instalacion.html">Instalación y compilación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gráficos</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="render_backends.html">Backends de renderizado</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="pipelines.html">Materiales</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="rendergraph.html">Render-Graphs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="renderpass_sdf.html">ISdfRenderPass</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="renderpass_swapchain.html">RenderToSwapchainPass</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="rendertarget.html">Render targets</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recursos_gpu.html">Recursos (GPU)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="animacion_3d.html">Animación de modelos 3D</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Físicas</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="colliders.html">Colisionadores 3D</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Jugabilidad</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ecs.html">Arquitectura ECS</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="modelo_multihilo.html">Modelo multihilo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ecs_profiles.html">Perfiles de contenido</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OSKengine Additional Documentation</span>
+    <span class="version">latest</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="index.html">OSKengine Additional Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">latest</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OSKengine Additional Documentation</a></li>
+    <li>Gráficos</li>
+    <li><a href="rendergraph.html">Render-Graphs</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///C:/Users/Oscar/Documents/Antora/Test/docs/./modules/ROOT/pages/rendergraph.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Render-Graphs</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Un render-graph es una estructura en forma de grafo que indica qué pases de renderizado realizar, en qué orden y con qué recursos.</p>
+</div>
+<div class="paragraph">
+<p>Es similar al grafo de ejecución de sistemas de la arquitectura <code>ECS</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Existen algunos pases de renderizado ya desarrollados que pueden ser útiles.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creación_de_nuevos_pases_de_renderizado"><a class="anchor" href="#_creación_de_nuevos_pases_de_renderizado"></a>Creación de nuevos pases de renderizado</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para implementar lógica de renderizado, se deben crear nuevos pases de renderizado y después añadirlos al render graph.</p>
+</div>
+<div class="paragraph">
+<p>Estos pases deben heredar de la clase <code>IRenderPass</code> (o de otros pases de renderizado).</p>
+</div>
+<div class="paragraph">
+<p>Para poder decidir el orden de ejecución de los pases, se deben indicar las dependencias a la hora de registrarlo. Estas dependencias indican qué pases deben ejecutarse antes del que vamos a añadir. Estas dependencias son transitivas: si <code>A</code> debe ejecutarse antes que <code>B</code>, y <code>B</code> debe ejecutarse antes que <code>C</code>, entonces <code>A</code> debe ejecutarse antes de <code>C</code>.</p>
+</div>
+<div class="paragraph">
+<p>Si es el primer pase que queremos ejecutar, no será necesario indicar ninguna dependencia.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Para un manejo más sencillo, indicar únicamente como dependencia el pase inmediatamente anterior.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>El pase de renderizado necesitará usar recursos GPU, como buffers o imágenes. Estos recursos deben indicarse como dependencias de buffer o de imagen del pase de renderizado.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Usar recursos que no han sido declarados como dependencias del pase puede llevar a errores en el renderizado.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_manejo_de_recursos"><a class="anchor" href="#_manejo_de_recursos"></a>Manejo de recursos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La estructura del render-graph está diesñada para automatizar la gestión de los recursos de renderizado. Esta estructura es dueña de las imágenes de renderizado y de los buffers usados.</p>
+</div>
+<div class="paragraph">
+<p>También gestiona automáticamente la sincronización de recursos.</p>
+</div>
+<div class="paragraph">
+<p>Los recursos se almacenan de tal manera que sea fácil implementar un diseño de renderizado bindless.</p>
+</div>
+<div class="sect2">
+<h3 id="_imágenes"><a class="anchor" href="#_imágenes"></a>Imágenes</h3>
+<div class="paragraph">
+<p>Las imágenes de renderizado (render targets) son creadas, gestionadas y destruidas por el render-graph.</p>
+</div>
+<div class="paragraph">
+<p>Otras imágenes que se usen (como texturas de modelos 3D) se almacenan fuera del Render-Graph, pero aun así es necesario registrarlas.</p>
+</div>
+<div class="paragraph">
+<p>Todas las imágenes se exponen a los shaders como un array de imágenes, facilitando la implementación de un renderizado bindless.</p>
+</div>
+<div class="paragraph">
+<p>NOTA: También se pueden registar <em>imágenes externas</em> cuyo ciclo de vida no está gestionado por el render-graph. Un ejemplo podrían ser texturas de modelos, cuyo ciclo de vida es manejado por el sistema de assets.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_buffers_de_geometría"><a class="anchor" href="#_buffers_de_geometría"></a>Buffers de geometría</h3>
+<div class="paragraph">
+<p>El render-graph implementado por OSKengine almacena la información de la geometría (vértices e índices) en varios buffers globales:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Un buffer por cada grupo de atributos de vértices, donde se guardarán todos los vértices de todos los modelos. Por defecto:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Buffer con las posiciones de los vértices.</p>
+</li>
+<li>
+<p>Buffer con:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Vector normal.</p>
+</li>
+<li>
+<p>Vector tangente.</p>
+</li>
+<li>
+<p>Coordenadas de texturas (UV).</p>
+</li>
+<li>
+<p>Color.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Buffer de animación con:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Índices de los huesos.</p>
+</li>
+<li>
+<p>Pesos de los huesos.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Un buffer de índices de atributos, que indica qué índices usar para acceder a los atributos previamente mencionados.</p>
+</li>
+<li>
+<p>Un único buffer global de índices, donde se guardarán todos los índices de todos los modelos.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/attributes_map.drawio.png" alt="attributes map.drawio">
+</div>
+</div>
+<div class="paragraph">
+<p>Este diseño permite implementar fácilmente un modelo de renderizado bindless, aunque también se puede usar para implementar un pipeline de renderizado tradicional.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_otros_buffers"><a class="anchor" href="#_otros_buffers"></a>Otros buffers</h3>
+<div class="paragraph">
+<p>El resto de buffers usados también son creados, manejados y destruidos por el propio Render-Graph, por lo que será necesario registrarlos antes de compilar el Render-Graph.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_registro_de_recursos"><a class="anchor" href="#_registro_de_recursos"></a>Registro de recursos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Los recursos manejados por el render-graph deben ser registrados antes de su compilación.</p>
+</div>
+<div class="sect2">
+<h3 id="_imágenes_2"><a class="anchor" href="#_imágenes_2"></a>Imágenes</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">RgImageDependency imageDependency{};
+imageDependency.imageRefId = "image_id";
+imageDependency.range = GpuImageRange{};
+imageDependency.stage = GpuCommandStage::COMPUTE_SHADER;
+imageDependency.type = RgDependencyType::READ;
+imageDependency.usage = GpuExclusiveImageUsage::SAMPLED;
+imageDependency.shaderBinding.slotName = "image";
+imageDependency.shaderBinding.bindingName = "finalImage";
+imageDependency.viewConfig = GpuImageViewConfig::CreateSampled_Default();
+
+/* * * * */
+
+renderPass-&gt;AddImageDependency(imageDependency);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ciclo_de_vida"><a class="anchor" href="#_ciclo_de_vida"></a>Ciclo de vida</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Al crear un Render-Graph, se encuentra en un estado de <strong>construcción</strong>.</p>
+</div>
+<div class="paragraph">
+<p>En este estado, se puede:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Registrar buffers e imágenes.</p>
+</li>
+<li>
+<p>Añadir pases de renderizado.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Una vez se haya configurado el Render-Graph, se puede compilar para pasar a estado <strong>usable</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">renderGraph-&gt;Compile();</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Desde el punto de vista del registro de recursos:</div>
+<ol class="arabic">
+<li>
+<p>Registro de imágenes de renderizado.</p>
+</li>
+<li>
+<p>Registro de atributos de vértices.</p>
+</li>
+<li>
+<p>Registro de recursos propios de los pases de renderizado.</p>
+</li>
+<li>
+<p>Registro parcial de dependencias de recursos de los pases de renderizado.</p>
+</li>
+<li>
+<p>Compilación del grafo de renderizado.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Registro de buffers de geometría.</p>
+</li>
+<li>
+<p>Creación de buffers e imágenes.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Registro completo de dependencias de recursos.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pases_de_renderizado"><a class="anchor" href="#_pases_de_renderizado"></a>Pases de renderizado</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cada pase de renderizado ejecuta la lógica de renderizado de un pase.
+A la hora de registrar el pase de renderizado, es necesario</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Una o ninguna imagen de profundidad.</p>
+</li>
+<li>
+<p>Una, ninguna o varias imágenes de color.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

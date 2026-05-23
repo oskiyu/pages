@@ -1,0 +1,133 @@
+\doxysection{Gamepad\+State.\+h}
+\label{_gamepad_state_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GamepadState.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GamepadState.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifdef\ OSK\_PC\_ANY}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }OSK::IO\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GamepadAxis\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifdef\ OSK\_PC\_ANY}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ LEFT\_X\ =\ GLFW\_GAMEPAD\_AXIS\_LEFT\_X,}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ LEFT\_Y\ =\ GLFW\_GAMEPAD\_AXIS\_LEFT\_Y,}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ RIGHT\_X\ =\ GLFW\_GAMEPAD\_AXIS\_RIGHT\_X,}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ RIGHT\_Y\ =\ GLFW\_GAMEPAD\_AXIS\_RIGHT\_Y,}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ L2\ =\ GLFW\_GAMEPAD\_AXIS\_LEFT\_TRIGGER,}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ R2\ =\ GLFW\_GAMEPAD\_AXIS\_RIGHT\_TRIGGER,}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ LEFT\_X,}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ LEFT\_Y,}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ RIGHT\_X,}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ RIGHT\_Y,}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ L2,}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ R2,}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \_\_END}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GamepadButton\ \{}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#ifdef\ OSK\_PC\_ANY}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ x\ =\ GLFW\_GAMEPAD\_BUTTON\_X,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ y\ =\ GLFW\_GAMEPAD\_BUTTON\_Y,}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ A\ =\ GLFW\_GAMEPAD\_BUTTON\_A,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ B\ =\ GLFW\_GAMEPAD\_BUTTON\_B,}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ START\ =\ GLFW\_GAMEPAD\_BUTTON\_START,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ BACK\ =\ GLFW\_GAMEPAD\_BUTTON\_BACK,}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ L1\ =\ GLFW\_GAMEPAD\_BUTTON\_LEFT\_THUMB,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ R1\ =\ GLFW\_GAMEPAD\_BUTTON\_RIGHT\_THUMB,}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ PAD\_TOP\ =\ GLFW\_GAMEPAD\_BUTTON\_DPAD\_UP,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ PAD\_DOWN\ =\ GLFW\_GAMEPAD\_BUTTON\_DPAD\_DOWN,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ PAD\_LEFT\ =\ GLFW\_GAMEPAD\_BUTTON\_DPAD\_LEFT,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ PAD\_RIGHT\ =\ GLFW\_GAMEPAD\_BUTTON\_DPAD\_RIGHT}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ x,}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ y,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ A,}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ B,}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ START,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ BACK,}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ L1,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ R1,}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ PAD\_TOP,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ PAD\_DOWN,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ PAD\_LEFT,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ PAD\_RIGHT}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GamepadButtonState\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ RELEASED,}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ PRESSED}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ GamepadState\ \{}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ GamepadState()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ GamepadState(UIndex32\ identifier);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ GamepadButtonState\ GetButtonState(GamepadButton\ button)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsButtonDown(GamepadButton\ button)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsButtonUp(GamepadButton\ button)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ GetAxisState(GamepadAxis\ axis)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ UIndex32\ GetIdentifier()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsConnected()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_SetButtonState(GamepadButton\ button,\ GamepadButtonState\ state);}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_SetAxisState(GamepadAxis\ axis,\ \textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_SetConnectionState(\textcolor{keywordtype}{bool}\ isConnected);}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ std::array<GamepadButtonState,\ 4>\ buttonState\{\};}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ axesStates[6]\{\};}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ UIndex32\ identifier\ =\ 0;}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isConnected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \}}
+
+\end{DoxyCode}

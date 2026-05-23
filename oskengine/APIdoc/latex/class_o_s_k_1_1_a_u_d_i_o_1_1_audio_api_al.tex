@@ -1,0 +1,282 @@
+\doxysection{Referencia de la clase OSK\+::AUDIO\+::Audio\+Api\+Al}
+\label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_api_al}\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+
+
+{\ttfamily \#include $<$Audio\+Api\+Al.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Audio\+Api\+Al} ()=default
+\item 
+void \textbf{ Initialize} () override
+\item 
+void \textbf{ Set\+Listener\+Position} (const \textbf{ Vector3f} \&position) override
+\item 
+void \textbf{ Set\+Listener\+Orientation} (const \textbf{ Vector3f} \&forward, const \textbf{ Vector3f} \&up) override
+\item 
+void \textbf{ Set\+Listener\+Velocity} (const \textbf{ Vector3f} \&velocity) override
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IAudio\+Source} $>$ \textbf{ Create\+New\+Source} () const override
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IAudio\+Api})
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ IAudio\+Api})
+\item 
+void \textbf{ Set\+Listener} (const \textbf{ Transform3D} \&listener\+Transform)
+\item 
+const \textbf{ IAudio\+Device} \& \textbf{ Get\+Current\+Device} () const
+\item 
+const \textbf{ IAudio\+Device} \& \textbf{ Get\+Device} (std\+::string\+\_\+view name) const
+\item 
+void \textbf{ Set\+Current\+Device} (std\+::string\+\_\+view name)
+\item 
+const std\+::unordered\+\_\+map$<$ std\+::string, \textbf{ Unique\+Ptr}$<$ \textbf{ IAudio\+Device} $>$, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$ $>$ \& \textbf{ Get\+All\+Devices} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Register\+All\+Devices} () override
+\item 
+void \textbf{ Register\+Device} (\textbf{ Unique\+Ptr}$<$ \textbf{ IAudio\+Device} $>$ \&\&device)
+\item 
+void \textbf{ Set\+Default\+Device\+Name} (const std\+::string \&name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase del sistema que permite la reproducción de audio 3D. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!AudioApiAl@{AudioApiAl}}
+\index{AudioApiAl@{AudioApiAl}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{AudioApiAl()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_api_al_a6e801334b11e2b7ad874b33a5a0fd26f} 
+OSK\+::\+AUDIO\+::\+Audio\+Api\+Al\+::\+Audio\+Api\+Al (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!CreateNewSource@{CreateNewSource}}
+\index{CreateNewSource@{CreateNewSource}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{CreateNewSource()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_api_al_a34167d5c78166b5bfbccdc27a888ef96} 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IAudio\+Source} $>$ Audio\+Api\+Al\+::\+Create\+New\+Source (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Nueva fuente de audio. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ OSK\+::\+AUDIO\+::\+IAudio\+Api} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a9b4048af0ad66c532fa525d29a49573d}.
+
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!GetAllDevices@{GetAllDevices}}
+\index{GetAllDevices@{GetAllDevices}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{GetAllDevices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_af2babc538fe103b1e5ceb6fa24e502bc} 
+const std\+::unordered\+\_\+map$<$ std\+::string, \textbf{ Unique\+Ptr}$<$ \textbf{ IAudio\+Device} $>$, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$ $>$ \& IAudio\+Api\+::\+Get\+All\+Devices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Todos los dispositivos disponibles. 
+\end{DoxyReturn}
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!GetCurrentDevice@{GetCurrentDevice}}
+\index{GetCurrentDevice@{GetCurrentDevice}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{GetCurrentDevice()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a88aaed38c71613447a3c7768fd4bc49b} 
+const \textbf{ IAudio\+Device} \& IAudio\+Api\+::\+Get\+Current\+Device (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve una referencia al dispositivo de salida que se está usando en un momento dado. 
+\end{DoxyReturn}
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!GetDevice@{GetDevice}}
+\index{GetDevice@{GetDevice}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{GetDevice()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a3f3c1d64ef8ff92ff05707a388d7ce8a} 
+const \textbf{ IAudio\+Device} \& IAudio\+Api\+::\+Get\+Device (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del dispositivo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Dispositivo de salida con el nombre {\ttfamily name}. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un dispositivo cuyo nombre sea {\ttfamily name}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si la precondición no se cumple. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{Initialize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_api_al_ad6276e7f26a9269233e6ff00d598d128} 
+void Audio\+Api\+Al\+::\+Initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Inicializa la API de bajo nivel y realiza una búsqueda de los dispositivos de salida disponibles. 
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Audio\+Device\+Creation\+Exception}{pág.}{class_o_s_k_1_1_audio_device_creation_exception}} & Si ocurre algún error al crear un device. \\
+\hline
+{\em \doxyref{Audio\+Device\+Creation\+Exception}{pág.}{class_o_s_k_1_1_audio_device_creation_exception}} & Si ocurre algún error al establecer el device por defecto. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ OSK\+::\+AUDIO\+::\+IAudio\+Api} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a0fc179b079e2fd5d92e04faa97279755}.
+
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a5c6de1b519a733da095469430962c13b} 
+OSK\+::\+AUDIO\+::\+IAudio\+Api\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IAudio\+Api}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a247e8e5c57a94a5f155d442a85dc4239} 
+OSK\+::\+AUDIO\+::\+IAudio\+Api\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ IAudio\+Api}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!RegisterAllDevices@{RegisterAllDevices}}
+\index{RegisterAllDevices@{RegisterAllDevices}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{RegisterAllDevices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_api_al_a88a8d40b0628c65221a4f73ee021a201} 
+void Audio\+Api\+Al\+::\+Register\+All\+Devices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Busca todos los dispositivos de salida disponibles, y los almacena en la variable {\ttfamily devices}. 
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Audio\+Device\+Creation\+Exception}{pág.}{class_o_s_k_1_1_audio_device_creation_exception}} & Si ocurre algún error al crear un device. \\
+\hline
+{\em \doxyref{Audio\+Device\+Creation\+Exception}{pág.}{class_o_s_k_1_1_audio_device_creation_exception}} & Si ocurre algún error al establecer el device por defecto. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ OSK\+::\+AUDIO\+::\+IAudio\+Api} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a18642211a0c2fc4544a17020ce747a03}.
+
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!RegisterDevice@{RegisterDevice}}
+\index{RegisterDevice@{RegisterDevice}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{RegisterDevice()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a66f27b2d09c40cbe4134aa141b7f8b80} 
+void IAudio\+Api\+::\+Register\+Device (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ IAudio\+Device} $>$ \&\&}]{device}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!SetCurrentDevice@{SetCurrentDevice}}
+\index{SetCurrentDevice@{SetCurrentDevice}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{SetCurrentDevice()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a6ef8177ad2d1b01e64557637616fe863} 
+void IAudio\+Api\+::\+Set\+Current\+Device (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Establece el dispositivo de salida a usar. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del dispositivo deseado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber un dispositivo cuyo nombre sea {\ttfamily name}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si la precondición no se cumple. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!SetDefaultDeviceName@{SetDefaultDeviceName}}
+\index{SetDefaultDeviceName@{SetDefaultDeviceName}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{SetDefaultDeviceName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a3fbeee58d71da79fd67a86f777dcd475} 
+void IAudio\+Api\+::\+Set\+Default\+Device\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!SetListener@{SetListener}}
+\index{SetListener@{SetListener}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{SetListener()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a18553058ef913a45530ec562c7f28039} 
+void IAudio\+Api\+::\+Set\+Listener (\begin{DoxyParamCaption}\item[{const \textbf{ Transform3D} \&}]{listener\+Transform}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Establece la posición y orientación del jugador (listener). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em listener\+Transform} & Transform del jugador. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Ver también}
+\doxyref{Set\+Listener\+Position}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_api_al_a2b91b9db9afcb81021c039e3923bead0}. 
+
+\doxyref{Set\+Listener\+Orientation}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_api_al_afcddc8ea51173620f73056c74270c391}. 
+\end{DoxySeeAlso}
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!SetListenerOrientation@{SetListenerOrientation}}
+\index{SetListenerOrientation@{SetListenerOrientation}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{SetListenerOrientation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_api_al_afcddc8ea51173620f73056c74270c391} 
+void Audio\+Api\+Al\+::\+Set\+Listener\+Orientation (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{forward}{, }\item[{const \textbf{ Vector3f} \&}]{up}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Establece la orientación del jugador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em forward} & Vector hacia delante del jugador. \\
+\hline
+{\em up} & Vector hacia arriba del jugador. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ OSK\+::\+AUDIO\+::\+IAudio\+Api} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a1aff6b0fb0f2758fcb90247d038ce47c}.
+
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!SetListenerPosition@{SetListenerPosition}}
+\index{SetListenerPosition@{SetListenerPosition}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{SetListenerPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_api_al_a2b91b9db9afcb81021c039e3923bead0} 
+void Audio\+Api\+Al\+::\+Set\+Listener\+Position (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Establece la posición del jugador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Posición del jugador en el mundo 3D. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ OSK\+::\+AUDIO\+::\+IAudio\+Api} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a649298060136c7a7db9ba89159d3f19b}.
+
+\index{OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}!SetListenerVelocity@{SetListenerVelocity}}
+\index{SetListenerVelocity@{SetListenerVelocity}!OSK::AUDIO::AudioApiAl@{OSK::AUDIO::AudioApiAl}}
+\doxysubsubsection{SetListenerVelocity()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_api_al_a21498d0b9bde5e69456d69dafe53d141} 
+void Audio\+Api\+Al\+::\+Set\+Listener\+Velocity (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{velocity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Establece la velocidad a la que se mueve el jugador en el mundo 3D. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em velocity} & Velocidad del jugador. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ OSK\+::\+AUDIO\+::\+IAudio\+Api} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_api_a6baa6d8aa213ec008bdd57f153ae43ae}.
+

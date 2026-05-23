@@ -1,0 +1,59 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Gpu\+Barrier\+Info}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info}\index{OSK::GRAPHICS::GpuBarrierInfo@{OSK::GRAPHICS::GpuBarrierInfo}}
+
+
+{\ttfamily \#include $<$Gpu\+Barrier\+Info.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Gpu\+Barrier\+Info} ()=default
+\item 
+\textbf{ Gpu\+Barrier\+Info} (\textbf{ Gpu\+Command\+Stage} \textbf{ stage}, \textbf{ Gpu\+Access\+Stage} \textbf{ access\+Stage})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Gpu\+Command\+Stage} \textbf{ stage} = \textbf{ Gpu\+Command\+Stage\+::\+NONE}
+\item 
+\textbf{ Gpu\+Access\+Stage} \textbf{ access\+Stage} = \textbf{ Gpu\+Access\+Stage\+::\+NONE}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Al establecer un gpu barrier, dividimos todos los comandos en la lista de comandos en dos grupos. 
+
+Al establecer el barrier, la GPU esperará hasta que se hayan completado todos los comandos en el stage source\+Stage.
+
+Todos los comandos enviados después del gpu barrier deben esperar a que finalicen todos los comandos en el stage destination\+Stage. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::GpuBarrierInfo@{OSK::GRAPHICS::GpuBarrierInfo}!GpuBarrierInfo@{GpuBarrierInfo}}
+\index{GpuBarrierInfo@{GpuBarrierInfo}!OSK::GRAPHICS::GpuBarrierInfo@{OSK::GRAPHICS::GpuBarrierInfo}}
+\doxysubsubsection{GpuBarrierInfo()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info_a94fc97ef8394232ff3c9d4d801992c02} 
+OSK\+::\+GRAPHICS\+::\+Gpu\+Barrier\+Info\+::\+Gpu\+Barrier\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\index{OSK::GRAPHICS::GpuBarrierInfo@{OSK::GRAPHICS::GpuBarrierInfo}!GpuBarrierInfo@{GpuBarrierInfo}}
+\index{GpuBarrierInfo@{GpuBarrierInfo}!OSK::GRAPHICS::GpuBarrierInfo@{OSK::GRAPHICS::GpuBarrierInfo}}
+\doxysubsubsection{GpuBarrierInfo()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info_ad46d85f99d46a4cb7034558c0d7866b9} 
+OSK\+::\+GRAPHICS\+::\+Gpu\+Barrier\+Info\+::\+Gpu\+Barrier\+Info (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Command\+Stage}}]{stage}{, }\item[{\textbf{ Gpu\+Access\+Stage}}]{access\+Stage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::GpuBarrierInfo@{OSK::GRAPHICS::GpuBarrierInfo}!accessStage@{accessStage}}
+\index{accessStage@{accessStage}!OSK::GRAPHICS::GpuBarrierInfo@{OSK::GRAPHICS::GpuBarrierInfo}}
+\doxysubsubsection{accessStage}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info_a374aaac98268f58fd22a0ff844ac2f17} 
+\textbf{ Gpu\+Access\+Stage} OSK\+::\+GRAPHICS\+::\+Gpu\+Barrier\+Info\+::access\+Stage = \textbf{ Gpu\+Access\+Stage\+::\+NONE}}
+
+\index{OSK::GRAPHICS::GpuBarrierInfo@{OSK::GRAPHICS::GpuBarrierInfo}!stage@{stage}}
+\index{stage@{stage}!OSK::GRAPHICS::GpuBarrierInfo@{OSK::GRAPHICS::GpuBarrierInfo}}
+\doxysubsubsection{stage}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_barrier_info_a78af9064ad4ec208ec43e72f967d63b5} 
+\textbf{ Gpu\+Command\+Stage} OSK\+::\+GRAPHICS\+::\+Gpu\+Barrier\+Info\+::stage = \textbf{ Gpu\+Command\+Stage\+::\+NONE}}
+

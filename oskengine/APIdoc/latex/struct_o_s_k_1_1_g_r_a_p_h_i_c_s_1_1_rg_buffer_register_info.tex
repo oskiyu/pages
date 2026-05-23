@@ -1,0 +1,75 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Rg\+Buffer\+Register\+Info}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info}\index{OSK::GRAPHICS::RgBufferRegisterInfo@{OSK::GRAPHICS::RgBufferRegisterInfo}}
+
+
+{\ttfamily \#include $<$Render\+Graph\+Args.\+h$>$}
+
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ USize64} \textbf{ size} = 0
+\item 
+\textbf{ USize64} \textbf{ alignment} = 0
+\item 
+\textbf{ Gpu\+Shared\+Memory\+Type} \textbf{ shared\+Type} = \textbf{ Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}
+\item 
+\textbf{ Gpu\+Queue\+Type} \textbf{ queue} = \textbf{ Gpu\+Queue\+Type\+::\+MAIN}
+\item 
+std\+::optional$<$ std\+::string $>$ \textbf{ name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Información sobre un buffer. 
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::RgBufferRegisterInfo@{OSK::GRAPHICS::RgBufferRegisterInfo}!alignment@{alignment}}
+\index{alignment@{alignment}!OSK::GRAPHICS::RgBufferRegisterInfo@{OSK::GRAPHICS::RgBufferRegisterInfo}}
+\doxysubsubsection{alignment}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info_a777497d471bac927741d27726150a86c} 
+\textbf{ USize64} OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Register\+Info\+::alignment = 0}
+
+
+
+Alineación de memoria. 
+
+\index{OSK::GRAPHICS::RgBufferRegisterInfo@{OSK::GRAPHICS::RgBufferRegisterInfo}!name@{name}}
+\index{name@{name}!OSK::GRAPHICS::RgBufferRegisterInfo@{OSK::GRAPHICS::RgBufferRegisterInfo}}
+\doxysubsubsection{name}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info_abe2aae2db42fb67b3800aa6b5b50c66e} 
+std\+::optional$<$std\+::string$>$ OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Register\+Info\+::name}
+
+
+
+Nombre debug. 
+
+\index{OSK::GRAPHICS::RgBufferRegisterInfo@{OSK::GRAPHICS::RgBufferRegisterInfo}!queue@{queue}}
+\index{queue@{queue}!OSK::GRAPHICS::RgBufferRegisterInfo@{OSK::GRAPHICS::RgBufferRegisterInfo}}
+\doxysubsubsection{queue}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info_a283c79569d31ccbfb5a94eb79db67d22} 
+\textbf{ Gpu\+Queue\+Type} OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Register\+Info\+::queue = \textbf{ Gpu\+Queue\+Type\+::\+MAIN}}
+
+\index{OSK::GRAPHICS::RgBufferRegisterInfo@{OSK::GRAPHICS::RgBufferRegisterInfo}!sharedType@{sharedType}}
+\index{sharedType@{sharedType}!OSK::GRAPHICS::RgBufferRegisterInfo@{OSK::GRAPHICS::RgBufferRegisterInfo}}
+\doxysubsubsection{sharedType}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info_aa083c1f8a946d5f89dd112b901017e41} 
+\textbf{ Gpu\+Shared\+Memory\+Type} OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Register\+Info\+::shared\+Type = \textbf{ Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}}
+
+
+
+Tipo de memoria. 
+
+\index{OSK::GRAPHICS::RgBufferRegisterInfo@{OSK::GRAPHICS::RgBufferRegisterInfo}!size@{size}}
+\index{size@{size}!OSK::GRAPHICS::RgBufferRegisterInfo@{OSK::GRAPHICS::RgBufferRegisterInfo}}
+\doxysubsubsection{size}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_register_info_add6c33196696ae3aa9516bbcd3b9ed33} 
+\textbf{ USize64} OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Register\+Info\+::size = 0}
+
+
+
+Tamaño del buffer, en bytes. 
+
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily size} $>$ 0. 
+\end{DoxyPrecond}

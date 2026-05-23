@@ -1,0 +1,235 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IGpu}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu}\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+
+
+{\ttfamily \#include $<$IGpu.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IGpu} ()=default
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ class \textbf{ ICommand\+Pool} $>$ \textbf{ Create\+Graphics\+Command\+Pool} ()=0
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Pool} $>$ \textbf{ Create\+Compute\+Command\+Pool} ()=0
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Image\+Sampler} $>$ \textbf{ Create\+Sampler} (const \textbf{ Gpu\+Image\+Sampler\+Desc} \&info) const =0
+\item 
+virtual std\+::optional$<$ \textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Pool} $>$ $>$ \textbf{ Create\+Transfer\+Only\+Command\+Pool} ()=0
+\item 
+virtual \textbf{ Gpu\+Memory\+Usage\+Info} \textbf{ Get\+Memory\+Usage\+Info} () const =0
+\item 
+const \textbf{ Gpu\+Memory\+Alignments} \& \textbf{ Get\+Memory\+Alignments} () const
+\item 
+virtual void \textbf{ Close} ()=0
+\item 
+std\+::string\+\_\+view \textbf{ Get\+Name} () const
+\item 
+bool \textbf{ Supports\+Ray\+Tracing} () const
+\item 
+bool \textbf{ Supports\+Bindless\+Resources} () const
+\item 
+bool \textbf{ Supports\+Mesh\+Shaders} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ \+\_\+\+Set\+Name} (const std\+::string \&name)
+\item 
+void \textbf{ Set\+Min\+Alignments} (const \textbf{ Gpu\+Memory\+Alignments} \&alignments)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ m\+\_\+supports\+Ray\+Tracing} = false
+\item 
+bool \textbf{ m\+\_\+supports\+Bindless} = false
+\item 
+bool \textbf{ m\+\_\+supports\+Mesh} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa una conexión con la GPU. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!````~IGpu@{$\sim$IGpu}}
+\index{````~IGpu@{$\sim$IGpu}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{$\sim$IGpu()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_af7315d7e7c10327c6d06ad5b7c66e125} 
+virtual OSK\+::\+GRAPHICS\+::\+IGpu\+::$\sim$\+IGpu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!\_SetName@{\_SetName}}
+\index{\_SetName@{\_SetName}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{\_SetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_a3de6e3cf9fa36ae214663c3552686ac0} 
+void IGpu\+::\+\_\+\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!Close@{Close}}
+\index{Close@{Close}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{Close()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_ab505de7218654c86ee2d63eed1915b71} 
+virtual void OSK\+::\+GRAPHICS\+::\+IGpu\+::\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Cierra la conexión con la GPU. 
+
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!CreateComputeCommandPool@{CreateComputeCommandPool}}
+\index{CreateComputeCommandPool@{CreateComputeCommandPool}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{CreateComputeCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_a7533de9a69b9bdfd16c75f22f4f6a527} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Pool} $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+::\+Create\+Compute\+Command\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Crea una pool de comandos, para poder crear listas de comandos de computación. 
+
+\begin{DoxyReturn}{Devuelve}
+Command pool para comandos de computación. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Command\+Pool\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_pool_creation_exception}} & Si ocurre algún error. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!CreateGraphicsCommandPool@{CreateGraphicsCommandPool}}
+\index{CreateGraphicsCommandPool@{CreateGraphicsCommandPool}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{CreateGraphicsCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_afd622e137b329e0e32f549903a5741bb} 
+virtual \textbf{ Unique\+Ptr}$<$ class \textbf{ ICommand\+Pool} $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+::\+Create\+Graphics\+Command\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Crea una pool de comandos, para poder crear listas de comandos gráficos y de presentación. 
+
+\begin{DoxyReturn}{Devuelve}
+Command pool para comandos gráficos y de presentación. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Command\+Pool\+Creation\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_command_pool_creation_exception}} & Si ocurre algún error. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!CreateSampler@{CreateSampler}}
+\index{CreateSampler@{CreateSampler}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{CreateSampler()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_a23efead76bff64ca602a8d7eb063335a} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ IGpu\+Image\+Sampler} $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+::\+Create\+Sampler (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Image\+Sampler\+Desc} \&}]{info}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Crea un sampler con las propiedades indicadas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em info} & Propiedades del sampler. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Sampler con las propiedades indicadas. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!CreateTransferOnlyCommandPool@{CreateTransferOnlyCommandPool}}
+\index{CreateTransferOnlyCommandPool@{CreateTransferOnlyCommandPool}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{CreateTransferOnlyCommandPool()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_a9579108f9adf85e66e313ff5ceb3ccac} 
+virtual std\+::optional$<$ \textbf{ Unique\+Ptr}$<$ \textbf{ ICommand\+Pool} $>$ $>$ OSK\+::\+GRAPHICS\+::\+IGpu\+::\+Create\+Transfer\+Only\+Command\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Intenta crear un pool de comandos que soporte únicamente operaciones de transferencia. 
+
+\begin{DoxyReturn}{Devuelve}
+Command pool para comandos excusivamente de transferencia. Si no hay, retorna vacío. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!GetMemoryAlignments@{GetMemoryAlignments}}
+\index{GetMemoryAlignments@{GetMemoryAlignments}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{GetMemoryAlignments()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_a5f790efbc8fd7f0c1fae464a6fa9f9d5} 
+const \textbf{ Gpu\+Memory\+Alignments} \& IGpu\+::\+Get\+Memory\+Alignments (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Información sobre el alineamiento que deben seguir los distintos tipos de recursos. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!GetMemoryUsageInfo@{GetMemoryUsageInfo}}
+\index{GetMemoryUsageInfo@{GetMemoryUsageInfo}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{GetMemoryUsageInfo()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_ac8b780cbb64fb4ed7bc8e4a295a7e806} 
+virtual \textbf{ Gpu\+Memory\+Usage\+Info} OSK\+::\+GRAPHICS\+::\+IGpu\+::\+Get\+Memory\+Usage\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Obtiene la información sobre el uso de memoria de esta GPU, incluyendo espacio usado y espacio disponible. 
+
+\begin{DoxyReturn}{Devuelve}
+Información sobre el uso de memoria de esta GPU. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_a8e6eb0f055388a6446158120146a0d66} 
+std\+::string\+\_\+view IGpu\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Nombre de la GPU. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!SetMinAlignments@{SetMinAlignments}}
+\index{SetMinAlignments@{SetMinAlignments}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{SetMinAlignments()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_a8af65f888f2cb4eed2cfbd6f35c727c5} 
+void IGpu\+::\+Set\+Min\+Alignments (\begin{DoxyParamCaption}\item[{const \textbf{ Gpu\+Memory\+Alignments} \&}]{alignments}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!SupportsBindlessResources@{SupportsBindlessResources}}
+\index{SupportsBindlessResources@{SupportsBindlessResources}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{SupportsBindlessResources()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_acc18feef42c257547c6f31dc540d8084} 
+bool IGpu\+::\+Supports\+Bindless\+Resources (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si soporta renderizado bind-\/less. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!SupportsMeshShaders@{SupportsMeshShaders}}
+\index{SupportsMeshShaders@{SupportsMeshShaders}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{SupportsMeshShaders()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_a126b6cc9e7cf6178f085bbc51fe36e7a} 
+bool IGpu\+::\+Supports\+Mesh\+Shaders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si soporta renderizado de meshes. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!SupportsRayTracing@{SupportsRayTracing}}
+\index{SupportsRayTracing@{SupportsRayTracing}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{SupportsRayTracing()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_aa8ab85cfe9393d02ece9419181e443ec} 
+bool IGpu\+::\+Supports\+Ray\+Tracing (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si soporta ray-\/tracing. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!m\_supportsBindless@{m\_supportsBindless}}
+\index{m\_supportsBindless@{m\_supportsBindless}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{m\_supportsBindless}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_a39d260e67d910a75e3867a748c8797eb} 
+bool OSK\+::\+GRAPHICS\+::\+IGpu\+::m\+\_\+supports\+Bindless = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!m\_supportsMesh@{m\_supportsMesh}}
+\index{m\_supportsMesh@{m\_supportsMesh}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{m\_supportsMesh}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_a35b2bc3da1dfc145676dbc18dd913a4f} 
+bool OSK\+::\+GRAPHICS\+::\+IGpu\+::m\+\_\+supports\+Mesh = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}!m\_supportsRayTracing@{m\_supportsRayTracing}}
+\index{m\_supportsRayTracing@{m\_supportsRayTracing}!OSK::GRAPHICS::IGpu@{OSK::GRAPHICS::IGpu}}
+\doxysubsubsection{m\_supportsRayTracing}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_a2f769d60db49e1ee7b27dc1476d10206} 
+bool OSK\+::\+GRAPHICS\+::\+IGpu\+::m\+\_\+supports\+Ray\+Tracing = false\hspace{0.3cm}{\ttfamily [protected]}}
+

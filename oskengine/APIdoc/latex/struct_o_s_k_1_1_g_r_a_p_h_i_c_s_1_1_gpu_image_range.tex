@@ -1,0 +1,79 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Gpu\+Image\+Range}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_range}\index{OSK::GRAPHICS::GpuImageRange@{OSK::GRAPHICS::GpuImageRange}}
+
+
+{\ttfamily \#include $<$Gpu\+Image\+Range.\+h$>$}
+
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ UIndex32} \textbf{ base\+Layer} = 0
+\item 
+\textbf{ USize32} \textbf{ num\+Layers} = \textbf{ ALL\+\_\+\+IMAGE\+\_\+\+LAYERS}
+\item 
+\textbf{ UIndex32} \textbf{ base\+Mip\+Level} = 0
+\item 
+\textbf{ USize32} \textbf{ num\+Mip\+Levels} = \textbf{ ALL\+\_\+\+MIP\+\_\+\+LEVELS}
+\item 
+\textbf{ Sampled\+Channel} \textbf{ channel} = \textbf{ Sampled\+Channel\+::\+COLOR}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Describe un rango de una imagen, incluyendo capas, niveles de mip y canales. 
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::GpuImageRange@{OSK::GRAPHICS::GpuImageRange}!baseLayer@{baseLayer}}
+\index{baseLayer@{baseLayer}!OSK::GRAPHICS::GpuImageRange@{OSK::GRAPHICS::GpuImageRange}}
+\doxysubsubsection{baseLayer}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_range_a44c19bed81a923bf1dc5a1f2851ef06b} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Range\+::base\+Layer = 0}
+
+
+
+Índice de la primera capa que será afectada por el barrier. 
+
+\begin{DoxyPrecond}{Precondición}
+Si la imagen NO es array, debe ser 0. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuImageRange@{OSK::GRAPHICS::GpuImageRange}!baseMipLevel@{baseMipLevel}}
+\index{baseMipLevel@{baseMipLevel}!OSK::GRAPHICS::GpuImageRange@{OSK::GRAPHICS::GpuImageRange}}
+\doxysubsubsection{baseMipLevel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_range_a436c76e7a9d847ccdcb0855c34158299} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Range\+::base\+Mip\+Level = 0}
+
+
+
+Nivel más bajo de mip que será afectado por el barrier. 
+
+\index{OSK::GRAPHICS::GpuImageRange@{OSK::GRAPHICS::GpuImageRange}!channel@{channel}}
+\index{channel@{channel}!OSK::GRAPHICS::GpuImageRange@{OSK::GRAPHICS::GpuImageRange}}
+\doxysubsubsection{channel}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_range_a80ab2b4bf1d2a9bbfd4dd3381a4199d6} 
+\textbf{ Sampled\+Channel} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Range\+::channel = \textbf{ Sampled\+Channel\+::\+COLOR}}
+
+
+
+Canal(es) afectados por el barrier. 
+
+\index{OSK::GRAPHICS::GpuImageRange@{OSK::GRAPHICS::GpuImageRange}!numLayers@{numLayers}}
+\index{numLayers@{numLayers}!OSK::GRAPHICS::GpuImageRange@{OSK::GRAPHICS::GpuImageRange}}
+\doxysubsubsection{numLayers}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_range_aa2ce394e34d269f98f5d6c9669c059d8} 
+\textbf{ USize32} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Range\+::num\+Layers = \textbf{ ALL\+\_\+\+IMAGE\+\_\+\+LAYERS}}
+
+
+
+Número de capas del array afectadas por el barrier. 
+
+\index{OSK::GRAPHICS::GpuImageRange@{OSK::GRAPHICS::GpuImageRange}!numMipLevels@{numMipLevels}}
+\index{numMipLevels@{numMipLevels}!OSK::GRAPHICS::GpuImageRange@{OSK::GRAPHICS::GpuImageRange}}
+\doxysubsubsection{numMipLevels}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_range_a86e5a8a479aaa4017b41990bb585ab85} 
+\textbf{ USize32} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Range\+::num\+Mip\+Levels = \textbf{ ALL\+\_\+\+MIP\+\_\+\+LEVELS}}
+
+
+
+Número de niveles de mip que serán afectados por el barrier. 
+

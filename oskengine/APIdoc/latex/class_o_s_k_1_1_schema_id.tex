@@ -1,0 +1,72 @@
+\doxysection{Referencia de la clase OSK\+::Schema\+Id}
+\label{class_o_s_k_1_1_schema_id}\index{OSK::SchemaId@{OSK::SchemaId}}
+
+
+{\ttfamily \#include $<$Schema\+Id.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Schema\+Id} (const std\+::string \&name, \textbf{ UIndex32} version)
+\item 
+std\+::string\+\_\+view \textbf{ Get\+Name} () const
+\item 
+\textbf{ UIndex32} \textbf{ Get\+Version} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Hash\+Code} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Identifica un schema en concreto. No contiene información sobre el schema. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::SchemaId@{OSK::SchemaId}!SchemaId@{SchemaId}}
+\index{SchemaId@{SchemaId}!OSK::SchemaId@{OSK::SchemaId}}
+\doxysubsubsection{SchemaId()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_schema_id_a63ffc1579ac6e2eb10a6deda2ea40817} 
+OSK\+::\+Schema\+Id\+::\+Schema\+Id (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{\textbf{ UIndex32}}]{version}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea el schema id. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del schema. \\
+\hline
+{\em version} & Versión del schema. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::SchemaId@{OSK::SchemaId}!GetHashCode@{GetHashCode}}
+\index{GetHashCode@{GetHashCode}!OSK::SchemaId@{OSK::SchemaId}}
+\doxysubsubsection{GetHashCode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_schema_id_a0c63dfbb839695f6b6186ea97b99ccae} 
+\textbf{ USize64} OSK\+::\+Schema\+Id\+::\+Get\+Hash\+Code (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Código único del schema. 
+\end{DoxyReturn}
+\index{OSK::SchemaId@{OSK::SchemaId}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::SchemaId@{OSK::SchemaId}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_schema_id_a5b0ab13dfdaaa91ade887efe3052bb37} 
+std\+::string\+\_\+view OSK\+::\+Schema\+Id\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Nombre del schema. 
+\end{DoxyReturn}
+\index{OSK::SchemaId@{OSK::SchemaId}!GetVersion@{GetVersion}}
+\index{GetVersion@{GetVersion}!OSK::SchemaId@{OSK::SchemaId}}
+\doxysubsubsection{GetVersion()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_schema_id_a2f461d4f8940002478a8af80a8718ed1} 
+\textbf{ UIndex32} OSK\+::\+Schema\+Id\+::\+Get\+Version (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Versión del schema. 
+\end{DoxyReturn}

@@ -1,0 +1,69 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::ICommand\+Queue}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue}\index{OSK::GRAPHICS::ICommandQueue@{OSK::GRAPHICS::ICommandQueue}}
+
+
+{\ttfamily \#include $<$ICommand\+Queue.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+ICommand\+Queue} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ ICommand\+Queue})
+\item 
+virtual \textbf{ Commands\+Support} \textbf{ Get\+Supported\+Commands} () const
+\item 
+\textbf{ Gpu\+Queue\+Type} \textbf{ Get\+Queue\+Type} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ ICommand\+Queue} (\textbf{ Gpu\+Queue\+Type} queue\+Type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa un puerto de entrada para los comandos de la GPU. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::ICommandQueue@{OSK::GRAPHICS::ICommandQueue}!````~ICommandQueue@{$\sim$ICommandQueue}}
+\index{````~ICommandQueue@{$\sim$ICommandQueue}!OSK::GRAPHICS::ICommandQueue@{OSK::GRAPHICS::ICommandQueue}}
+\doxysubsubsection{$\sim$ICommandQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue_a1bcde153e4720be26fdd7c580eee3220} 
+virtual OSK\+::\+GRAPHICS\+::\+ICommand\+Queue\+::$\sim$\+ICommand\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\index{OSK::GRAPHICS::ICommandQueue@{OSK::GRAPHICS::ICommandQueue}!ICommandQueue@{ICommandQueue}}
+\index{ICommandQueue@{ICommandQueue}!OSK::GRAPHICS::ICommandQueue@{OSK::GRAPHICS::ICommandQueue}}
+\doxysubsubsection{ICommandQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue_ada024f3f51c9b7a92d88e349282daeaf} 
+ICommand\+Queue\+::\+ICommand\+Queue (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Queue\+Type}}]{queue\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::ICommandQueue@{OSK::GRAPHICS::ICommandQueue}!GetQueueType@{GetQueueType}}
+\index{GetQueueType@{GetQueueType}!OSK::GRAPHICS::ICommandQueue@{OSK::GRAPHICS::ICommandQueue}}
+\doxysubsubsection{GetQueueType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue_ab71c9b114c751200e9c751201d7b71e8} 
+\textbf{ Gpu\+Queue\+Type} ICommand\+Queue\+::\+Get\+Queue\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Tipo de cola. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ICommandQueue@{OSK::GRAPHICS::ICommandQueue}!GetSupportedCommands@{GetSupportedCommands}}
+\index{GetSupportedCommands@{GetSupportedCommands}!OSK::GRAPHICS::ICommandQueue@{OSK::GRAPHICS::ICommandQueue}}
+\doxysubsubsection{GetSupportedCommands()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue_abbfaf73e1c2bcebf4f00342e6ad9daad} 
+\textbf{ Commands\+Support} ICommand\+Queue\+::\+Get\+Supported\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Tipos de comandos soportados 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ICommandQueue@{OSK::GRAPHICS::ICommandQueue}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::ICommandQueue@{OSK::GRAPHICS::ICommandQueue}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_queue_a5a75184dc1d263230a97dd1f8358047a} 
+OSK\+::\+GRAPHICS\+::\+ICommand\+Queue\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+Queue}}]{}{}\end{DoxyParamCaption})}
+

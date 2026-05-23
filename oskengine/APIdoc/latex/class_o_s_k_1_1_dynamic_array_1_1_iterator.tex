@@ -1,0 +1,139 @@
+\doxysection{Referencia de la clase OSK\+::Dynamic\+Array$<$ T $>$\+::Iterator}
+\label{class_o_s_k_1_1_dynamic_array_1_1_iterator}\index{OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}}
+
+
+{\ttfamily \#include $<$Dynamic\+Array.\+hpp$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \textbf{ Iterator} (T $\ast$ptr) noexcept
+\item 
+constexpr \textbf{ Iterator} \textbf{ operator++} () noexcept
+\item 
+constexpr \textbf{ Iterator} \textbf{ operator-\/-\/} () noexcept
+\item 
+constexpr auto \textbf{ operator$<$=$>$} (const \textbf{ Iterator} \&) const noexcept=default
+\item 
+T \& \textbf{ operator$\ast$} ()
+\item 
+T $\ast$ \textbf{ Get\+Ptr} ()
+\item 
+constexpr bool \textbf{ Is\+Empty} () const noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Dynamic\+Array}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename T$>$\newline
+class OSK\+::\+Dynamic\+Array$<$ T $>$\+::\+Iterator}
+Clase que representa un elemento de un \doxyref{Dynamic\+Array}{pág.}{class_o_s_k_1_1_dynamic_array}. 
+
+\begin{DoxyPrecond}{Precondición}
+La colección generadora debe tener estabilidad de puntero mientras el iterador siga vivo. 
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Atención}
+Si se modifica el dynamic array original, queda en un estado inválido. 
+
+Si se modifica la localización en memoria del dynamic array original, queda en un estado inválido. 
+\end{DoxyWarning}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}}
+\doxysubsubsection{Iterator()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_1_1_iterator_adbcbd18bf4d18b2c9b31e403f8d1239d} 
+template$<$typename T$>$ \\
+\textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Iterator\+::\+Iterator (\begin{DoxyParamCaption}\item[{T $\ast$}]{ptr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Crea el iterador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & Índice del elemento. \\
+\hline
+{\em arr} & Puntero al array. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}!GetPtr@{GetPtr}}
+\index{GetPtr@{GetPtr}!OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}}
+\doxysubsubsection{GetPtr()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_1_1_iterator_a37f85f3e20a0bf42623cefb52d1d5936} 
+template$<$typename T$>$ \\
+T $\ast$ \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Iterator\+::\+Get\+Ptr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}!IsEmpty@{IsEmpty}}
+\index{IsEmpty@{IsEmpty}!OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}}
+\doxysubsubsection{IsEmpty()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_1_1_iterator_a4d000d586c286020d39466a579b686ec} 
+template$<$typename T$>$ \\
+bool \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Iterator\+::\+Is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si el iterator es vacío\+: no apunta a un elemento válido. 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}}
+\doxysubsubsection{operator$\ast$()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_1_1_iterator_a5f29abfe2fe5d14f99cf14589e174859} 
+template$<$typename T$>$ \\
+T \& \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Iterator\+::operator$\ast$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}}
+\doxysubsubsection{operator++()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_1_1_iterator_aa64796c8d6d052482c94b3a2ea943298} 
+template$<$typename T$>$ \\
+\textbf{ Iterator} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Iterator\+::operator++ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Hace que el iterador apunte al elemento siguiente. 
+
+\begin{DoxyReturn}{Devuelve}
+Self (apuntando al elemento anterior). 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}}
+\doxysubsubsection{operator-\/-\/()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_1_1_iterator_ae55846c4c3a3dc7b5c2a8ff27fa29c54} 
+template$<$typename T$>$ \\
+\textbf{ Iterator} \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Iterator\+::operator-\/-\/ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Hace que el iterador apunte al elemento anterior. 
+
+\begin{DoxyReturn}{Devuelve}
+Self (apuntando al elemento anterior). 
+\end{DoxyReturn}
+\index{OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}!operator$<$=$>$@{operator$<$=$>$}}
+\index{operator$<$=$>$@{operator$<$=$>$}!OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}}
+\doxysubsubsection{operator$<$=$>$()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_1_1_iterator_a65c8dae40432f712321c2988d5748659} 
+template$<$typename T$>$ \\
+auto \textbf{ OSK\+::\+Dynamic\+Array}$<$ T $>$\+::\+Iterator\+::operator$<$=$>$ (\begin{DoxyParamCaption}\item[{const \textbf{ Iterator} \&}]{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+\label{doc-related-members}
+\doxysubsection{Documentación de símbolos amigos y relacionados}
+\index{OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}!DynamicArray@{DynamicArray}}
+\index{DynamicArray@{DynamicArray}!OSK::DynamicArray$<$ T $>$::Iterator@{OSK::DynamicArray$<$ T $>$::Iterator}}
+\doxysubsubsection{DynamicArray}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_dynamic_array_1_1_iterator_a845f49ed7330a208136c47af630fe8d3} 
+template$<$typename T$>$ \\
+friend class \textbf{ Dynamic\+Array}\hspace{0.3cm}{\ttfamily [friend]}}
+

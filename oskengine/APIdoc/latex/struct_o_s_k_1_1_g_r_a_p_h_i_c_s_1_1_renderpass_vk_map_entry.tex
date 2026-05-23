@@ -1,0 +1,55 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Renderpass\+Vk\+Map\+Entry}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map_entry}\index{OSK::GRAPHICS::RenderpassVkMapEntry@{OSK::GRAPHICS::RenderpassVkMapEntry}}
+
+
+{\ttfamily \#include $<$Renderpass\+Vk\+Map.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ operator==} (const \textbf{ Renderpass\+Vk\+Map\+Entry} \&other) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Renderpass\+Vk\+Map\+Entry\+Per\+Attachment} $>$ \textbf{ colors}
+\item 
+std\+::optional$<$ \textbf{ Renderpass\+Vk\+Map\+Entry\+Per\+Attachment} $>$ \textbf{ depth}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Entrada para un renderpass. Depende de los formatos de las imÃ¡genes. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::RenderpassVkMapEntry@{OSK::GRAPHICS::RenderpassVkMapEntry}!operator==@{operator==}}
+\index{operator==@{operator==}!OSK::GRAPHICS::RenderpassVkMapEntry@{OSK::GRAPHICS::RenderpassVkMapEntry}}
+\doxysubsubsection{operator==()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map_entry_ac10e8160dd57b534a4b0615b97f06d31} 
+bool Renderpass\+Vk\+Map\+Entry\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Renderpass\+Vk\+Map\+Entry} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::RenderpassVkMapEntry@{OSK::GRAPHICS::RenderpassVkMapEntry}!colors@{colors}}
+\index{colors@{colors}!OSK::GRAPHICS::RenderpassVkMapEntry@{OSK::GRAPHICS::RenderpassVkMapEntry}}
+\doxysubsubsection{colors}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map_entry_aa503560efe378e9eee6c42a88f24b834} 
+\textbf{ Dynamic\+Array}$<$\textbf{ Renderpass\+Vk\+Map\+Entry\+Per\+Attachment}$>$ OSK\+::\+GRAPHICS\+::\+Renderpass\+Vk\+Map\+Entry\+::colors}
+
+
+
+Entradas para los targets de color. 
+
+\index{OSK::GRAPHICS::RenderpassVkMapEntry@{OSK::GRAPHICS::RenderpassVkMapEntry}!depth@{depth}}
+\index{depth@{depth}!OSK::GRAPHICS::RenderpassVkMapEntry@{OSK::GRAPHICS::RenderpassVkMapEntry}}
+\doxysubsubsection{depth}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_renderpass_vk_map_entry_adbe109d2073e1c30a7a4e059de2b4bfc} 
+std\+::optional$<$\textbf{ Renderpass\+Vk\+Map\+Entry\+Per\+Attachment}$>$ OSK\+::\+GRAPHICS\+::\+Renderpass\+Vk\+Map\+Entry\+::depth}
+
+
+
+Entrada para el tarjet de profundidad si existe. 
+

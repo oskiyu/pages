@@ -1,0 +1,203 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IPipeline\+Vk}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk}\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+
+
+{\ttfamily \#include $<$IPipeline\+Vk.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IPipeline\+Vk} ()
+\item 
+Vk\+Pipeline \textbf{ Get\+Pipeline} () const
+\item 
+Vk\+Shader\+Module \textbf{ Create\+Shader\+Module} (std\+::span$<$ const char $>$ code, std\+::string\+\_\+view name, Vk\+Device logical\+Device)
+\item 
+Vk\+Vertex\+Input\+Binding\+Description \textbf{ Get\+Binding\+Description} (const \textbf{ Vertex\+Info} \&info) const
+\item 
+Vk\+Format \textbf{ Get\+Vertex\+Attrib\+Format} (const \textbf{ Vertex\+Info\+::\+Entry} \&entry) const
+\item 
+\textbf{ Dynamic\+Array}$<$ Vk\+Vertex\+Input\+Attribute\+Description $>$ \textbf{ Get\+Attribute\+Description} (const \textbf{ Vertex\+Info} \&info) const
+\item 
+Vk\+Pipeline\+Color\+Blend\+Attachment\+State \textbf{ Get\+Color\+Blend\+Info} (const \textbf{ Pipeline\+Create\+Info} \&info) const
+\item 
+Vk\+Polygon\+Mode \textbf{ Get\+Polygon\+Mode} (\textbf{ Polygon\+Mode} mode) const
+\item 
+Vk\+Cull\+Mode\+Flag\+Bits \textbf{ Get\+Cull\+Mode} (\textbf{ Polygon\+Cull\+Mode} mode) const
+\item 
+Vk\+Front\+Face \textbf{ Get\+Front\+Face\+Mode} (\textbf{ Polygon\+Front\+Face\+Type} type) const
+\item 
+Vk\+Shader\+Stage\+Flag\+Bits \textbf{ Get\+Shader\+Stage\+Vk} (\textbf{ Shader\+Stage} stage) const
+\item 
+Vk\+Pipeline\+Rasterization\+State\+Create\+Info \textbf{ Get\+Resterizer\+Info} (const \textbf{ Pipeline\+Create\+Info} \&info) const
+\item 
+Vk\+Pipeline\+Depth\+Stencil\+State\+Create\+Info \textbf{ Get\+Depth\+Info} (const \textbf{ Pipeline\+Create\+Info} \&info) const
+\item 
+Vk\+Pipeline\+Multisample\+State\+Create\+Info \textbf{ Get\+Msaa\+Info} (const \textbf{ Pipeline\+Create\+Info} \&info, const Gpu\+Vk \&gpu) const
+\item 
+Vk\+Pipeline\+Tessellation\+State\+Create\+Info \textbf{ Get\+Tesselation\+Info} (const \textbf{ Pipeline\+Create\+Info} \&info) const
+\item 
+\textbf{ Shader\+Stage\+Vk} \textbf{ Load\+Shader} (const std\+::string \&path, \textbf{ Shader\+Stage} stage)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dynamic\+Array}$<$ Vk\+Pipeline\+Shader\+Stage\+Create\+Info $>$ \textbf{ shader\+Stages\+Info}
+\item 
+\textbf{ Dynamic\+Array}$<$ Vk\+Shader\+Module $>$ \textbf{ shader\+Modules\+To\+Delete}
+\item 
+Vk\+Pipeline \textbf{ pipeline} = VK\+\_\+\+NULL\+\_\+\+HANDLE
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase base para todos los pipelines de Vulkan. Contiene funciones auxiliares. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!````~IPipelineVk@{$\sim$IPipelineVk}}
+\index{````~IPipelineVk@{$\sim$IPipelineVk}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{$\sim$IPipelineVk()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a442ad4ca6a697d734dad909bdfc6660f} 
+virtual OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::$\sim$\+IPipeline\+Vk (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!CreateShaderModule@{CreateShaderModule}}
+\index{CreateShaderModule@{CreateShaderModule}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{CreateShaderModule()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a7374d8982e0536947949b3f77b078580} 
+Vk\+Shader\+Module OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Create\+Shader\+Module (\begin{DoxyParamCaption}\item[{std\+::span$<$ const char $>$}]{code}{, }\item[{std\+::string\+\_\+view}]{name}{, }\item[{Vk\+Device}]{logical\+Device}{}\end{DoxyParamCaption})}
+
+
+
+Crea un módulo de un shader en concreto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em code} & Código SPIR-\/V del shader. \\
+\hline
+{\em name} & Nombre debug del shader. \\
+\hline
+{\em logical\+Device} & Logical device sobre el que se creará. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Módulo compilado del shader.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Shader\+Loading\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_shader_loading_exception}} & si ocurre algún error. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetAttributeDescription@{GetAttributeDescription}}
+\index{GetAttributeDescription@{GetAttributeDescription}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetAttributeDescription()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a450acd06a1bab459cd18b718bd1da3a3} 
+\textbf{ Dynamic\+Array}$<$ Vk\+Vertex\+Input\+Attribute\+Description $>$ OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Attribute\+Description (\begin{DoxyParamCaption}\item[{const \textbf{ Vertex\+Info} \&}]{info}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetBindingDescription@{GetBindingDescription}}
+\index{GetBindingDescription@{GetBindingDescription}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetBindingDescription()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a01b4a402c8bd198921517ec06ad12740} 
+Vk\+Vertex\+Input\+Binding\+Description OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Binding\+Description (\begin{DoxyParamCaption}\item[{const \textbf{ Vertex\+Info} \&}]{info}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetColorBlendInfo@{GetColorBlendInfo}}
+\index{GetColorBlendInfo@{GetColorBlendInfo}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetColorBlendInfo()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a85f8a090e6b1417bb0786ad22fb200ec} 
+Vk\+Pipeline\+Color\+Blend\+Attachment\+State OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Color\+Blend\+Info (\begin{DoxyParamCaption}\item[{const \textbf{ Pipeline\+Create\+Info} \&}]{info}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetCullMode@{GetCullMode}}
+\index{GetCullMode@{GetCullMode}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetCullMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a0692348f8993cd2560664876c3689ba2} 
+Vk\+Cull\+Mode\+Flag\+Bits OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Cull\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ Polygon\+Cull\+Mode}}]{mode}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetDepthInfo@{GetDepthInfo}}
+\index{GetDepthInfo@{GetDepthInfo}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetDepthInfo()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a0b4f2ee02326540ae15ba6ffdb4d0ddc} 
+Vk\+Pipeline\+Depth\+Stencil\+State\+Create\+Info OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Depth\+Info (\begin{DoxyParamCaption}\item[{const \textbf{ Pipeline\+Create\+Info} \&}]{info}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetFrontFaceMode@{GetFrontFaceMode}}
+\index{GetFrontFaceMode@{GetFrontFaceMode}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetFrontFaceMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_ad1d83afbf74c81fbc9152154977b03d7} 
+Vk\+Front\+Face OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Front\+Face\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ Polygon\+Front\+Face\+Type}}]{type}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetMsaaInfo@{GetMsaaInfo}}
+\index{GetMsaaInfo@{GetMsaaInfo}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetMsaaInfo()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a639f67c2fc4eabfdd536a174b1090a36} 
+Vk\+Pipeline\+Multisample\+State\+Create\+Info OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Msaa\+Info (\begin{DoxyParamCaption}\item[{const \textbf{ Pipeline\+Create\+Info} \&}]{info}{, }\item[{const Gpu\+Vk \&}]{gpu}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetPipeline@{GetPipeline}}
+\index{GetPipeline@{GetPipeline}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a7c8d1b27fded576b2281d62f5d50552c} 
+Vk\+Pipeline OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Pipeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Pipeline nativo. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetPolygonMode@{GetPolygonMode}}
+\index{GetPolygonMode@{GetPolygonMode}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetPolygonMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a6ccb425e0aff6ddd5b184ddcfd5a8784} 
+Vk\+Polygon\+Mode OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Polygon\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ Polygon\+Mode}}]{mode}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetResterizerInfo@{GetResterizerInfo}}
+\index{GetResterizerInfo@{GetResterizerInfo}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetResterizerInfo()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_ace3e22ef03b477baa08015c5f971139b} 
+Vk\+Pipeline\+Rasterization\+State\+Create\+Info OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Resterizer\+Info (\begin{DoxyParamCaption}\item[{const \textbf{ Pipeline\+Create\+Info} \&}]{info}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetShaderStageVk@{GetShaderStageVk}}
+\index{GetShaderStageVk@{GetShaderStageVk}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetShaderStageVk()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_aa172461510ef7c977da4fe91dd1c2e74} 
+Vk\+Shader\+Stage\+Flag\+Bits OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Shader\+Stage\+Vk (\begin{DoxyParamCaption}\item[{\textbf{ Shader\+Stage}}]{stage}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetTesselationInfo@{GetTesselationInfo}}
+\index{GetTesselationInfo@{GetTesselationInfo}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetTesselationInfo()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a969cb90fea9697eea3f00cca7cf59f15} 
+Vk\+Pipeline\+Tessellation\+State\+Create\+Info OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Tesselation\+Info (\begin{DoxyParamCaption}\item[{const \textbf{ Pipeline\+Create\+Info} \&}]{info}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!GetVertexAttribFormat@{GetVertexAttribFormat}}
+\index{GetVertexAttribFormat@{GetVertexAttribFormat}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{GetVertexAttribFormat()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a2a0db15830b6648211ba319442b40d6d} 
+Vk\+Format OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Get\+Vertex\+Attrib\+Format (\begin{DoxyParamCaption}\item[{const \textbf{ Vertex\+Info\+::\+Entry} \&}]{entry}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!LoadShader@{LoadShader}}
+\index{LoadShader@{LoadShader}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{LoadShader()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_ab5062d1a8ac22490a7cb6ee5eab726e9} 
+\textbf{ Shader\+Stage\+Vk} OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::\+Load\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{, }\item[{\textbf{ Shader\+Stage}}]{stage}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!pipeline@{pipeline}}
+\index{pipeline@{pipeline}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{pipeline}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a09125b6e0ee2c05e3e6dfae14eb896e1} 
+Vk\+Pipeline OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::pipeline = VK\+\_\+\+NULL\+\_\+\+HANDLE}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!shaderModulesToDelete@{shaderModulesToDelete}}
+\index{shaderModulesToDelete@{shaderModulesToDelete}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{shaderModulesToDelete}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a6d817a6655f65e7e6cc650ac38052077} 
+\textbf{ Dynamic\+Array}$<$Vk\+Shader\+Module$>$ OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::shader\+Modules\+To\+Delete}
+
+\index{OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}!shaderStagesInfo@{shaderStagesInfo}}
+\index{shaderStagesInfo@{shaderStagesInfo}!OSK::GRAPHICS::IPipelineVk@{OSK::GRAPHICS::IPipelineVk}}
+\doxysubsubsection{shaderStagesInfo}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_pipeline_vk_a5a115681757531b3af3c44533ceb5053} 
+\textbf{ Dynamic\+Array}$<$Vk\+Pipeline\+Shader\+Stage\+Create\+Info$>$ OSK\+::\+GRAPHICS\+::\+IPipeline\+Vk\+::shader\+Stages\+Info}
+

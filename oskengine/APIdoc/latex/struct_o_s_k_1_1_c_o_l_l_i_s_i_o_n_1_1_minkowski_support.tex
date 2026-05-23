@@ -1,0 +1,84 @@
+\doxysection{Referencia de la estructura OSK\+::COLLISION\+::Minkowski\+Support}
+\label{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support}\index{OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}}
+
+
+{\ttfamily \#include $<$Gjk.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ operator==} (const \textbf{ Minkowski\+Support} \&other) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vector3f} \textbf{ point} = \textbf{ Vector3f\+::\+Zero}
+\item 
+std\+::optional$<$ \textbf{ UIndex64} $>$ \textbf{ original\+Vertex\+IdA}
+\item 
+std\+::optional$<$ \textbf{ UIndex64} $>$ \textbf{ original\+Vertex\+IdB}
+\item 
+std\+::optional$<$ \textbf{ Vector3f} $>$ \textbf{ world\+Space\+PointA}
+\item 
+std\+::optional$<$ \textbf{ Vector3f} $>$ \textbf{ world\+Space\+PointB}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Soporte de la diferencia de Minkowski. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}!operator==@{operator==}}
+\index{operator==@{operator==}!OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}}
+\doxysubsubsection{operator==()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_afd8c70373e52e8ab53fd2cc0c10f9540} 
+bool OSK\+::\+COLLISION\+::\+Minkowski\+Support\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Minkowski\+Support} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}!originalVertexIdA@{originalVertexIdA}}
+\index{originalVertexIdA@{originalVertexIdA}!OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}}
+\doxysubsubsection{originalVertexIdA}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_a8f8353ac64f6f8b62783c9cc480819a3} 
+std\+::optional$<$\textbf{ UIndex64}$>$ OSK\+::\+COLLISION\+::\+Minkowski\+Support\+::original\+Vertex\+IdA}
+
+
+
+Índice del vértice del primer volumen que produjo el soporte. 
+
+\index{OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}!originalVertexIdB@{originalVertexIdB}}
+\index{originalVertexIdB@{originalVertexIdB}!OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}}
+\doxysubsubsection{originalVertexIdB}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_a94cae8e66045e7cf06cb1ade25ef1c2a} 
+std\+::optional$<$\textbf{ UIndex64}$>$ OSK\+::\+COLLISION\+::\+Minkowski\+Support\+::original\+Vertex\+IdB}
+
+
+
+Índice del vértice del segundo volumen que produjo el soporte. 
+
+\index{OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}!point@{point}}
+\index{point@{point}!OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}}
+\doxysubsubsection{point}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_a386074041c8203f78bf168ce7dfdd98c} 
+\textbf{ Vector3f} OSK\+::\+COLLISION\+::\+Minkowski\+Support\+::point = \textbf{ Vector3f\+::\+Zero}}
+
+
+
+Punto en el hull de la diferencia de Minkowski. 
+
+\index{OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}!worldSpacePointA@{worldSpacePointA}}
+\index{worldSpacePointA@{worldSpacePointA}!OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}}
+\doxysubsubsection{worldSpacePointA}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_af046b03a7a27ac7c2aa526c8eb3fdc3a} 
+std\+::optional$<$\textbf{ Vector3f}$>$ OSK\+::\+COLLISION\+::\+Minkowski\+Support\+::world\+Space\+PointA}
+
+Vértice del primer volumen que produjo el soporte. \index{OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}!worldSpacePointB@{worldSpacePointB}}
+\index{worldSpacePointB@{worldSpacePointB}!OSK::COLLISION::MinkowskiSupport@{OSK::COLLISION::MinkowskiSupport}}
+\doxysubsubsection{worldSpacePointB}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_minkowski_support_a1fb2639b4f9ff12b2ec343a4d6b767bb} 
+std\+::optional$<$\textbf{ Vector3f}$>$ OSK\+::\+COLLISION\+::\+Minkowski\+Support\+::world\+Space\+PointB}
+
+Vértice del segundo volumen que produjo el soporte. 

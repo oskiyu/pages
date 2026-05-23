@@ -1,0 +1,137 @@
+\doxysection{Hybrid\+Render\+System.\+h}
+\label{_hybrid_render_system_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/HybridRenderSystem.h@{C:/Users/Oscar/source/repos/OSKengine/Source/HybridRenderSystem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}IRenderSystem.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Lights.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ITopLevelAccelerationStructure.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Model3D.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Texture.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}GBuffer.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}RtRenderTarget.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}AssetRef.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ResourcesInFlight.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }IBottomLevelAccelerationStructure;}
+\DoxyCodeLine{00016\ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }IrradianceMap;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }SpecularMap;}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ HybridRenderSystem\ :\ \textcolor{keyword}{public}\ IRenderSystem,\ \textcolor{keyword}{public}\ ISerializableSystem\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ OSK\_SYSTEM(\textcolor{stringliteral}{"{}OSK::HybridRenderSystem"{}});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ HybridRenderSystem();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize(}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ cameraObject,\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ASSETS::IrradianceMap\&\ irradianceMap,\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ASSETS::SpecularMap\&\ specularMap);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateTargetImage(\textcolor{keyword}{const}\ Vector2ui\&\ size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Resize(\textcolor{keyword}{const}\ Vector2ui\&\ size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Render(GRAPHICS::ICommandList*\ commandList,\ std::span<const\ ECS::GameObjectIndex>\ objects)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddBlas(GRAPHICS::IBottomLevelAccelerationStructure*\ blas);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::GpuBuffer*\ GetCameraBuffer(UIndex32\ index)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cameraUbos[index].GetPointer();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::RtRenderTarget\&\ GetShadowsIntermediateImage()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ raytracedShadowsTarget;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::RtRenderTarget\&\ GetShadowsImage()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ finalShadowsTarget;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ nlohmann::json\ SaveConfiguration()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ PERSISTENCE::BinaryBlock\ SaveBinaryConfiguration()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyConfiguration(\textcolor{keyword}{const}\ nlohmann::json\&\ config,\ \textcolor{keyword}{const}\ SavedGameObjectTranslator\&\ translator)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyConfiguration(PERSISTENCE::BinaryBlockReader*\ reader,\ \textcolor{keyword}{const}\ SavedGameObjectTranslator\&\ translator)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Setups}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupRtResources();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupGBufferResources();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupShadowsInstance();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupGBufferInstance();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetupResolveInstance();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Velocity\ buffer}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ glm::mat4\ previousView\ =\ glm::mat4(1.0f);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ glm::mat4\ previousProjection\ =\ glm::mat4(1.0f);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ std::unordered\_map<GameObjectIndex,\ glm::mat4>\ previousModelMatrices;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Renders}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RenderGBuffer(GRAPHICS::ICommandList*\ cmdList);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RenderShadows(GRAPHICS::ICommandList*\ cmdList);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Resolve(GRAPHICS::ICommandList*\ cmdList);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ cameraObject\ =\ ECS::EMPTY\_GAME\_OBJECT;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ GRAPHICS::GBuffer\ gBuffer;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ GRAPHICS::GBuffer\ historicalGBuffer;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ GRAPHICS::DirectionalLight\ dirLight\{\};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Noises}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::Texture>\ noise;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::Texture>\ noiseX;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ RayTracing}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::ITopLevelAccelerationStructure>\ topLevelAccelerationStructures[3]\{\};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Shadows}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ shadowsMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::MaterialInstance>\ shadowsMaterialInstance;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ shadowsReprojectionMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::MaterialInstance>\ shadowsReprojectionMaterialInstance;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ shadowsAtrousMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::MaterialInstance>\ shadowsAtrousMaterialInstance;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ GRAPHICS::RtRenderTarget\ raytracedShadowsTarget;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ GRAPHICS::ComputeRenderTarget\ reprojectedShadowsTarget;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ GRAPHICS::ComputeRenderTarget\ finalShadowsTarget;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ GRAPHICS::ComputeRenderTarget\ historicalShadowsTarget;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Resolve}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ resolveMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::MaterialInstance>\ resolveMaterialInstance;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Resources}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::GpuBuffer>\ cameraUbos[GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT]\{\};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::GpuBuffer>\ previousCameraUbos[GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT]\{\};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::GpuBuffer>\ dirLightUbos[GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT]\{\};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Materiales}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ gbufferMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ animatedGbufferMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::MaterialInstance>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_globalGbufferMaterialInstances;}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \}}
+
+\end{DoxyCode}

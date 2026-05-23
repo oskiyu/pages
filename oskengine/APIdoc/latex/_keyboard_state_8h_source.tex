@@ -1,0 +1,174 @@
+\doxysection{Keyboard\+State.\+h}
+\label{_keyboard_state_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/KeyboardState.h@{C:/Users/Oscar/source/repos/OSKengine/Source/KeyboardState.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::IO\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Key\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ SPACE,}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ APOSTROPHE,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ COMMA,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ MINUS,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ PERIOD,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ SLASH,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ KEY\_0,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ KEY\_1,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ KEY\_2,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ KEY\_3,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ KEY\_4,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ KEY\_5,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ KEY\_6,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ KEY\_7,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ KEY\_8,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ KEY\_9,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ SEMICOLON,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ EQUAL,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ A,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ B,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ C,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ D,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ E,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ F,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ G,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ H,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ I,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ J,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ K,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ L,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ M,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ N,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ O,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ P,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Q,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ R,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ S,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ T,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ U,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ V,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ W,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ x,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ y,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ Z,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ LEFT\_BRACKET,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ BACKSLASH,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ RIGHT\_BRACKET,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ GRAVE\_ACCENT,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ WORLD\_1,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ WORLD\_2,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ ESCAPE,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ ENTER,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ TAB,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ BACKSPACE,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ INSERT,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ DEL,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ RIGHT,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ LEFT,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ DOWN,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ UP,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ PAGE\_UP,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ PAGE\_DOWN,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ HOME,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ END,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ CAPS\_LOCK,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ SCROLL\_LOCK,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ NUM\_LOCK,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ PRINT\_SCREEN,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ PAUSE,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ F1,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ F2,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ F3,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ F4,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ F5,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ F6,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ F7,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ F8,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ F9,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ F10,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ F11,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ F12,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ F13,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ F14,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ F15,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ F16,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ F17,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ F18,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ F19,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ F20,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ F21,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ F22,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ F23,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ F24,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ F25,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ KEYPAD\_0,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ KEYPAD\_1,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ KEYPAD\_2,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ KEYPAD\_3,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ KEYPAD\_4,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ KEYPAD\_5,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ KEYPAD\_6,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ KEYPAD\_7,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ KEYPAD\_8,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ KEYPAD\_9,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ KEYPAD\_DECIMAL,}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ KEYPAD\_DIVIDE,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ KEYPAD\_MULTIPLY,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ KEYPAD\_SUBSTRACT,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ KEYPAD\_ADD,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ KEYPAD\_ENTER,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ KEYPAD\_EQUAL,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ LEFT\_SHIFT,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ LEFT\_CONTROL,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ LEFT\_ALT,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ LEFT\_SUPER,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ RIGHT\_SHIFT,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ RIGHT\_CONTROL,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ RIGHT\_ALT,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ RIGHT\_SUPER,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ MENU,}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ ANY\_SHIFT,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ ANY\_ALT,}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \_\_END}
+\DoxyCodeLine{00136\ \ \ \ \ \};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{enum\ class}\ KeyState\ \{}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ RELEASED,}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ PRESSED}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ KeyboardNumberOfKeys\ =\ (int)Key::\_\_END;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ KeyboardState\ \{}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ KeyboardState();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ KeyState\ GetKeyState(Key\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsKeyDown(Key\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsKeyUp(Key\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_SetKeyState(Key\ key,\ KeyState\ state);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\textcolor{keyword}{const}\ KeyboardState\&\ other);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ keyStates[KeyboardNumberOfKeys];}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \};}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \}}
+
+\end{DoxyCode}

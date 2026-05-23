@@ -1,0 +1,98 @@
+\doxysection{IMaterial\+Slot.\+h}
+\label{_i_material_slot_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IMaterialSlot.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IMaterialSlot.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}DefineAs.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}IGpuObject.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}GpuBufferRange.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}IGpuImageSampler.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }Texture;}
+\DoxyCodeLine{00016\ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }GpuImage;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }MaterialLayout;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }ITopLevelAccelerationStructure;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }GpuBuffer;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }IGpuImageView;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IMaterialSlot\ :\ \textcolor{keyword}{public}\ IGpuObject\ \{}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ IMaterialSlot(\textcolor{keyword}{const}\ MaterialLayout*\ layout,\ \textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IMaterialSlot()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ OSK\_DEFINE\_AS(IMaterialSlot);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetGpuImage(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ binding,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IGpuImageView\&\ image,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IGpuImageSampler\&\ sampler,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ arrayIndex\ =\ 0)\ =\ 0;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetGpuImage(}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ binding,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IGpuImageView\&\ image,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImageSamplerDesc\&\ samplerInfo,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ arrayIndex\ =\ 0);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetStorageImage(}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ binding,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IGpuImageView\&\ image,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ arrayIndex\ =\ 0)\ =\ 0;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetUniformBuffer(}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ binding,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ buffer,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBufferRange\&\ range\ =\ GpuBufferRange::CreateFullRange(),}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ arrayIndex\ =\ 0)\ =\ 0;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetStorageBuffer(}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ binding,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ buffer,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBufferRange\&\ range\ =\ GpuBufferRange::CreateFullRange(),}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ arrayIndex\ =\ 0)\ =\ 0;}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetAccelerationStructure(}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ binding,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ITopLevelAccelerationStructure\&\ accelerationStructure,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ arrayIndex\ =\ 0)\ =\ 0;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ FlushUpdate()\ =\ 0;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ std::string\_view\ GetName()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ MaterialLayout*\ GetLayout()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ MaterialLayout*\ m\_layout\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ std::string\ m\_name;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \}}
+
+\end{DoxyCode}

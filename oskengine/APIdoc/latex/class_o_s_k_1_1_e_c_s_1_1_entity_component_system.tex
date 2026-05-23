@@ -1,0 +1,922 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Entity\+Component\+System}
+\label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system}\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+
+
+{\ttfamily \#include $<$Entity\+Component\+System.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Entity\+Component\+System} (\textbf{ IO\+::\+ILogger} $\ast$logger)
+\item 
+void \textbf{ On\+Tick} (\textbf{ TDelta\+Time} delta\+Time)
+\item 
+void \textbf{ On\+Render} (\textbf{ GRAPHICS\+::\+ICommand\+List} $\ast$command\+List)
+\item 
+void \textbf{ Save} (std\+::string\+\_\+view path) const
+\item 
+void \textbf{ Save\+Binary} (std\+::string\+\_\+view path) const
+\item 
+\textbf{ Saved\+Game\+Object\+Translator} \textbf{ Load\+Scene} (std\+::string\+\_\+view path)
+\item 
+\textbf{ Saved\+Game\+Object\+Translator} \textbf{ Load\+Binary\+Scene} (std\+::string\+\_\+view path)
+\item 
+{\footnotesize template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$}\\void \textbf{ Register\+Component} ()
+\item 
+{\footnotesize template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$}\\TComponent \& \textbf{ Add\+Component} (\textbf{ Game\+Object\+Index} obj, const TComponent \&component)
+\item 
+{\footnotesize template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$}\\TComponent \& \textbf{ Add\+Component} (\textbf{ Game\+Object\+Index} obj, TComponent \&\&component)
+\item 
+{\footnotesize template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$}\\bool \textbf{ Object\+Has\+Component} (\textbf{ Game\+Object\+Index} obj) const
+\item 
+bool \textbf{ Object\+Has\+Component} (\textbf{ Game\+Object\+Index} obj, \textbf{ Component\+Type} component\+Type) const
+\item 
+{\footnotesize template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$}\\void \textbf{ Remove\+Component} (\textbf{ Game\+Object\+Index} obj)
+\item 
+{\footnotesize template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$}\\TComponent \& \textbf{ Get\+Component} (\textbf{ Game\+Object\+Index} obj)
+\item 
+{\footnotesize template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$}\\const TComponent \& \textbf{ Get\+Component} (\textbf{ Game\+Object\+Index} obj) const
+\item 
+void $\ast$ \textbf{ Get\+Component\+Address} (\textbf{ Game\+Object\+Index} obj, \textbf{ Component\+Type} type)
+\item 
+const void $\ast$ \textbf{ Get\+Component\+Address} (\textbf{ Game\+Object\+Index} obj, \textbf{ Component\+Type} type) const
+\item 
+{\footnotesize template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$}\\\textbf{ Component\+Type} \textbf{ Get\+Component\+Type} () const
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Component\+Type} $>$ \textbf{ Get\+Object\+Components\+Types} (\textbf{ Game\+Object\+Index} obj) const
+\item 
+std\+::string \textbf{ Get\+Component\+Type\+Name} (\textbf{ Component\+Type} type) const
+\item 
+{\footnotesize template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$}\\TSystem $\ast$ \textbf{ Register\+System} (const \textbf{ System\+Dependencies} \&dependencies)
+\item 
+{\footnotesize template$<$typename TSystem$>$ }\\void \textbf{ Remove\+System} ()
+\item 
+{\footnotesize template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$}\\TSystem $\ast$ \textbf{ Get\+System} ()
+\item 
+{\footnotesize template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$}\\const TSystem $\ast$ \textbf{ Get\+System} () const
+\item 
+\textbf{ ISystem} $\ast$ \textbf{ Get\+System\+By\+Name} (std\+::string\+\_\+view name)
+\item 
+{\footnotesize template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$}\\bool \textbf{ Has\+System} () const
+\item 
+{\footnotesize template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$}\\void \textbf{ Register\+Event\+Type} ()
+\item 
+{\footnotesize template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$}\\void \textbf{ Publish\+Event} (const TEvent \&event)
+\item 
+{\footnotesize template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$}\\const \textbf{ Dynamic\+Array}$<$ TEvent $>$ \& \textbf{ Get\+Event\+Queue} () const
+\item 
+{\footnotesize template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$}\\bool \textbf{ Event\+Has\+Been\+Registered} () const
+\item 
+void \textbf{ \+\_\+\+Clear\+Event\+Queues} ()
+\item 
+\textbf{ External\+Ecs\+List\+Uuid} \textbf{ Register\+External\+List} (const \textbf{ Signature} \&signature)
+\item 
+std\+::unordered\+\_\+set$<$ \textbf{ Game\+Object\+Index} $>$ \textbf{ Get\+Compatible\+Objects} (\textbf{ External\+Ecs\+List\+Uuid} uuid)
+\item 
+\textbf{ Game\+Object\+Index} OSKAPI\+\_\+\+CALL \textbf{ Spawn\+Object} ()
+\item 
+void OSKAPI\+\_\+\+CALL \textbf{ Destroy\+Object} (\textbf{ Game\+Object\+Index} $\ast$obj)
+\item 
+std\+::span$<$ const \textbf{ Game\+Object\+Index} $>$ \textbf{ Get\+Living\+Objects} () const
+\item 
+\textbf{ Dynamic\+Array}$<$ const \textbf{ ISystem} $\ast$ $>$ \textbf{ Get\+All\+Systems} () const
+\item 
+void OSKAPI\+\_\+\+CALL \textbf{ End\+Frame} ()
+\item 
+bool OSKAPI\+\_\+\+CALL \textbf{ Is\+Game\+Object\+Alive} (\textbf{ Game\+Object\+Index} obj) const
+\item 
+const OSKAPI\+\_\+\+CALL \textbf{ Dynamic\+Array}$<$ \textbf{ IRender\+System} $\ast$ $>$ \& \textbf{ Get\+Render\+Systems} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Entity-\/\+Component-\/\+System es un paradigma de programación en el cual los objetos se dividen en 3 partes diferenciables\+: 
+
+
+\begin{DoxyItemize}
+\item Game\+Object\+:
+\begin{DoxyItemize}
+\item Representa un objeto en concreto.
+\item Es simplemente un identificador único.
+\end{DoxyItemize}
+\item Componente\+:
+\begin{DoxyItemize}
+\item Estructura que almacena datos específicos de un tipo dado de un Game\+Object.
+\item Los componentes no ejecutan lógica alguna, y sólo son contenedores de información relacionada con un Game\+Object.
+\end{DoxyItemize}
+\item Sistemas\+:
+\begin{DoxyItemize}
+\item Sencarga de ejecutar lógica con los datos de los componentes.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Esta clase es la encargada de manejar este sistema, proporcionando una capa de abstracción sobre la implementación del sistema.
+
+\begin{DoxyNote}{Nota}
+Toda operación que el juego quiera hacer sobre el \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} debe hacerse a través de esta clase. 
+
+Esta clase es dueña de los sistemas. 
+\end{DoxyNote}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!EntityComponentSystem@{EntityComponentSystem}}
+\index{EntityComponentSystem@{EntityComponentSystem}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{EntityComponentSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a2c9d0196a69197e8a81d80a359e22f96} 
+Entity\+Component\+System\+::\+Entity\+Component\+System (\begin{DoxyParamCaption}\item[{\textbf{ IO\+::\+ILogger} $\ast$}]{logger}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Inicializa todos los managers. 
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!\_ClearEventQueues@{\_ClearEventQueues}}
+\index{\_ClearEventQueues@{\_ClearEventQueues}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{\_ClearEventQueues()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a25da30b9eed66da4eef4a1bc233679d3} 
+void Entity\+Component\+System\+::\+\_\+\+Clear\+Event\+Queues (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Vacía todas las colas de eventos. Debe llamarse al terminar el frame. 
+
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{AddComponent()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a3e461b045fbb69f6ed6362f9c3e3cb98} 
+template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$\\
+TComponent \& OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Add\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{const TComponent \&}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Añade el componente dado al objeto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo del componente. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & ID del objeto al que se va a añadir. \\
+\hline
+{\em component} & Componente a añadir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia no estable al componente recién añadido.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+TComponent debe validar \doxyref{Is\+Ecs\+Component}{pág.}{concept_o_s_k_1_1_e_c_s_1_1_is_ecs_component}. 
+
+El objeto no debe tener previamente un componente del tipo dado.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Object\+Already\+Has\+Component\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_object_already_has_component_exception}} & si el objeto ya tiene un componente del tipo. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{AddComponent()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a00d016bdbec0284078bb0bdf0c2d7419} 
+template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$\\
+TComponent \& OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Add\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{TComponent \&\&}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Añade el componente dado al objeto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo del componente. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & ID del objeto al que se va a añadir. \\
+\hline
+{\em component} & Componente a añadir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia no estable al componente recién añadido.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El objeto no debe tener previamente un componente del tipo dado.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Object\+Already\+Has\+Component\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_object_already_has_component_exception}} & si el objeto ya tiene un componente del tipo. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!DestroyObject@{DestroyObject}}
+\index{DestroyObject@{DestroyObject}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{DestroyObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_ae529c5094ca66a4eacc5da0a028eaa52} 
+void Entity\+Component\+System\+::\+Destroy\+Object (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index} $\ast$}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Elimina un objeto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Referencia al ID.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Su ID cambia a 0 para indicar que ya no es una ID válida. 
+\end{DoxyNote}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!EndFrame@{EndFrame}}
+\index{EndFrame@{EndFrame}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{EndFrame()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_ad830c20ac2f44ce2cefffda62814c4a2} 
+void Entity\+Component\+System\+::\+End\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Finaliza el frame. Debe llamarse una vez al finalizar el frame. 
+
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!EventHasBeenRegistered@{EventHasBeenRegistered}}
+\index{EventHasBeenRegistered@{EventHasBeenRegistered}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{EventHasBeenRegistered()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a7f8cf1f07252dbaf0b4ac5a5d64cc4a3} 
+template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$\\
+bool OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Event\+Has\+Been\+Registered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TEvent} & Tipo del evento. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+True si el evento fue registrado. 
+\end{DoxyReturn}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetAllSystems@{GetAllSystems}}
+\index{GetAllSystems@{GetAllSystems}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetAllSystems()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_afef04b1114a8db965db76a55896ad335} 
+\textbf{ Dynamic\+Array}$<$ const \textbf{ ISystem} $\ast$ $>$ Entity\+Component\+System\+::\+Get\+All\+Systems (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Todos los sistemas registrados. 
+\end{DoxyReturn}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetCompatibleObjects@{GetCompatibleObjects}}
+\index{GetCompatibleObjects@{GetCompatibleObjects}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetCompatibleObjects()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_acf370d31f43494501447f5d547031167} 
+std\+::unordered\+\_\+set$<$ \textbf{ Game\+Object\+Index} $>$ Entity\+Component\+System\+::\+Get\+Compatible\+Objects (\begin{DoxyParamCaption}\item[{\textbf{ External\+Ecs\+List\+Uuid}}]{uuid}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & Identificador único de la lista. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista asociada. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+La lista debe haber sido previamente registrada mediante Set\+External\+Signature. 
+\end{DoxyPrecond}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetComponent()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a8dc250aca83c3815d992e16e17dd398e} 
+template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$\\
+TComponent \& OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Get\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve una referencia no estable al componente del tipo dado del objeto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo del componente. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto poseedor del componente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia no estable al componente del tipo dado del objeto.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+TComponent debe validar \doxyref{Is\+Ecs\+Component}{pág.}{concept_o_s_k_1_1_e_c_s_1_1_is_ecs_component}. 
+
+El objeto debe tener previamente un componente del tipo dado.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Component\+Not\+Registered\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_not_registered_exception}} & Si el tipo de componente no ha sido registrado. \\
+\hline
+{\em \doxyref{Component\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_not_found_exception}} & Si el objeto no tiene el componente del tipo dado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetComponent()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_ab9f057f67dda6c2c83be1f4f511767cb} 
+template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$\\
+const TComponent \& OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Get\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetComponentAddress@{GetComponentAddress}}
+\index{GetComponentAddress@{GetComponentAddress}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetComponentAddress()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a8fe8c02aab221886e441af639fde6d50} 
+void $\ast$ Entity\+Component\+System\+::\+Get\+Component\+Address (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{\textbf{ Component\+Type}}]{type}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto que contiene el componente buscado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero al componente. 
+\end{DoxyReturn}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetComponentAddress@{GetComponentAddress}}
+\index{GetComponentAddress@{GetComponentAddress}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetComponentAddress()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a8afa5caf4aef8d0aa57b001dc9502f02} 
+const void $\ast$ Entity\+Component\+System\+::\+Get\+Component\+Address (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{\textbf{ Component\+Type}}]{type}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetComponentType@{GetComponentType}}
+\index{GetComponentType@{GetComponentType}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetComponentType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a7e895326464a97f912518435b01b6fe4} 
+template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$\\
+\textbf{ Component\+Type} OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Get\+Component\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo del componente. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+Código identificativo del componente dado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+TComponent debe validar \doxyref{Is\+Ecs\+Component}{pág.}{concept_o_s_k_1_1_e_c_s_1_1_is_ecs_component}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Component\+Not\+Registered\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_not_registered_exception}} & Si el tipo de componente no ha sido previamente registrado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetComponentTypeName@{GetComponentTypeName}}
+\index{GetComponentTypeName@{GetComponentTypeName}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetComponentTypeName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a2cafcdf7929e053197edce957d9d150b} 
+std\+::string Entity\+Component\+System\+::\+Get\+Component\+Type\+Name (\begin{DoxyParamCaption}\item[{\textbf{ Component\+Type}}]{type}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em type} & Tipo de componente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nombre del tipo de componente. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily type} debe identificar un tipo de componente que haya sido previamente registrado. 
+\end{DoxyPrecond}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetEventQueue@{GetEventQueue}}
+\index{GetEventQueue@{GetEventQueue}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetEventQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_ae45654ecdc519b6dcc4e63af3945a2b5} 
+template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$\\
+const \textbf{ Dynamic\+Array}$<$ TEvent $>$ \& OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Get\+Event\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la cola con todos los eventos de un tipo que se han producido en un frame. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TEvent} & Tipo de evento. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+Cola con todos los eventos. Puede ser una cola vacía si no se ha producido ningún evento en el frame.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+TEvent debe cumplir Is\+Ecs\+Event$<$\+TEvent$>$. 
+
+TEvent debe haber sido registrado con Register\+Event\+Type.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Event\+Not\+Registered\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_event_not_registered_exception}} & Si el evento no ha sido previamente registrado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetLivingObjects@{GetLivingObjects}}
+\index{GetLivingObjects@{GetLivingObjects}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetLivingObjects()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a7b1944f573c799790cb7288567333a8a} 
+std\+::span$<$ const \textbf{ Game\+Object\+Index} $>$ Entity\+Component\+System\+::\+Get\+Living\+Objects (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+IDs de todos los objetos vivos. 
+\end{DoxyReturn}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetObjectComponentsTypes@{GetObjectComponentsTypes}}
+\index{GetObjectComponentsTypes@{GetObjectComponentsTypes}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetObjectComponentsTypes()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_acf8662be7e6bd4cd0d572a3104f44b58} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Component\+Type} $>$ Entity\+Component\+System\+::\+Get\+Object\+Components\+Types (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+IDs de los objetos que contiene el objeto. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily obj} debe corresponderse con un objeto válido. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetRenderSystems@{GetRenderSystems}}
+\index{GetRenderSystems@{GetRenderSystems}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetRenderSystems()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a15609b984e64143136dcca658f7c1f1a} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ IRender\+System} $\ast$ $>$ \& Entity\+Component\+System\+::\+Get\+Render\+Systems (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve los render systems registrados. 
+
+\begin{DoxyReturn}{Devuelve}
+Render systems registrados. 
+\end{DoxyReturn}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetSystem@{GetSystem}}
+\index{GetSystem@{GetSystem}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetSystem()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a9d45a4e455ab26a909123a47bf479c7b} 
+template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$\\
+TSystem $\ast$ OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Get\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la instancia almacenada del sistema del tipo dado. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TSystem} & Tipo de sistema. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+Sistema.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El sistema debe haber sido previamente registrado con Register\+System. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{System\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_system_not_found_exception}} & Si el sistema no está registrado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetSystem@{GetSystem}}
+\index{GetSystem@{GetSystem}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetSystem()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a4bf5db094cf03f3e49879a3ce8218516} 
+template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$\\
+const TSystem $\ast$ OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Get\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!GetSystemByName@{GetSystemByName}}
+\index{GetSystemByName@{GetSystemByName}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{GetSystemByName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a67f41d469a11767d61b155462e54a790} 
+\textbf{ ISystem} $\ast$ Entity\+Component\+System\+::\+Get\+System\+By\+Name (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!HasSystem@{HasSystem}}
+\index{HasSystem@{HasSystem}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{HasSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_af99b27ec5c4a675906a93b473d07ba18} 
+template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$\\
+bool OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Has\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TSystem} & Tipo del sistema. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+True si el sistema está registrado y se está ejecutando. False en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!IsGameObjectAlive@{IsGameObjectAlive}}
+\index{IsGameObjectAlive@{IsGameObjectAlive}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{IsGameObjectAlive()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_aab8512a19f26e2beefe570ab3ea04207} 
+bool Entity\+Component\+System\+::\+Is\+Game\+Object\+Alive (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption}) const}
+
+
+
+Comprueba si un objeto está activo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & ID del objeto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si está activo, false si se eliminó. 
+\end{DoxyReturn}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!LoadBinaryScene@{LoadBinaryScene}}
+\index{LoadBinaryScene@{LoadBinaryScene}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{LoadBinaryScene()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_aa1c0cdb2a732319093ac00fbde9cd1ea} 
+\textbf{ Saved\+Game\+Object\+Translator} Entity\+Component\+System\+::\+Load\+Binary\+Scene (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Carga una escena almacenada en disco. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta del archivo donde se guarda el estado del juego.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El archivo {\ttfamily path} debe existir, y debe seguir el formato {\ttfamily .bsf} con versión 0.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si el archivo no existe. \\
+\hline
+{\em \doxyref{Invalid\+Binary\+Deserialization\+Exception}{pág.}{class_o_s_k_1_1_invalid_binary_deserialization_exception}} & si el archivo no tiene el formato {\ttfamily .bsf}, o si tiene una especificación distinta de 0. \\
+\hline
+{\em \doxyref{Invalid\+Binary\+Deserialization\+Exception}{pág.}{class_o_s_k_1_1_invalid_binary_deserialization_exception}} & si el archivo está corrompido de alguna manera. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!LoadScene@{LoadScene}}
+\index{LoadScene@{LoadScene}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{LoadScene()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a40e3337a38b5db867a173ce01e4837ad} 
+\textbf{ Saved\+Game\+Object\+Translator} Entity\+Component\+System\+::\+Load\+Scene (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Carga una escena almacenada en disco. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta del archivo donde se guarda el estado del juego.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El archivo {\ttfamily path} debe existir. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si el archivo no existe. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!ObjectHasComponent@{ObjectHasComponent}}
+\index{ObjectHasComponent@{ObjectHasComponent}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{ObjectHasComponent()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a433fc2a7434470f4fbc01d62c32f535c} 
+template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$\\
+bool OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Object\+Has\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprueba si el objeto dado tiene añadido un componente del tipo dado. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo del componente. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Entidad comprobada.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+TComponent debe validar \doxyref{Is\+Ecs\+Component}{pág.}{concept_o_s_k_1_1_e_c_s_1_1_is_ecs_component}. 
+\end{DoxyPrecond}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!ObjectHasComponent@{ObjectHasComponent}}
+\index{ObjectHasComponent@{ObjectHasComponent}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{ObjectHasComponent()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a4e2e1c100adf819faaa333661a2db6cf} 
+bool Entity\+Component\+System\+::\+Object\+Has\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{\textbf{ Component\+Type}}]{component\+Type}{}\end{DoxyParamCaption}) const}
+
+
+
+Comprueba si el objeto dado tiene añadido un componente del tipo dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Entidad comprobada. \\
+\hline
+{\em component\+Type} & Tipo del componente. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!OnRender@{OnRender}}
+\index{OnRender@{OnRender}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{OnRender()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a9fe514873725525079db5a80a2333c98} 
+void Entity\+Component\+System\+::\+On\+Render (\begin{DoxyParamCaption}\item[{\textbf{ GRAPHICS\+::\+ICommand\+List} $\ast$}]{command\+List}{}\end{DoxyParamCaption})}
+
+
+
+Ejecuta el renderizado de los sistemas de renderizado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command\+List} & Lista de comandos. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{OnTick()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a5a836db0967b2e872e8d66b379bb0728} 
+void Entity\+Component\+System\+::\+On\+Tick (\begin{DoxyParamCaption}\item[{\textbf{ TDelta\+Time}}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Ejecuta la lógica On\+Tick de todos los sistemas registrados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo, en segundos, que ha pasado desde la última ejecución de esta función. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!PublishEvent@{PublishEvent}}
+\index{PublishEvent@{PublishEvent}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{PublishEvent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a2772cc0a8ea3a3ace7aa0e933101d1f5} 
+template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$\\
+void OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Publish\+Event (\begin{DoxyParamCaption}\item[{const TEvent \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Publica un evento, de tal manera que puede ser procesado por los sistemas consumidores. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TEvent} & Tipo de evento. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em event} & Evento.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+TEvent debe cumplir Is\+Ecs\+Event$<$\+TEvent$>$. 
+
+TEvent debe haber sido registrado con Register\+Event\+Type.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Event\+Not\+Registered\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_event_not_registered_exception}} & Si el evento no ha sido previamente registrado.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyParagraph}{Multihilo}
+Es thread-\/safe siempre y cuando no haya ningún otro hilo obteniendo la cola. 
+\end{DoxyParagraph}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!RegisterComponent@{RegisterComponent}}
+\index{RegisterComponent@{RegisterComponent}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{RegisterComponent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_adaedf90c82706a70eba2fbee61d28cd3} 
+template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$\\
+void OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Register\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un tipo de componente. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo del componente.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyPrecond}{Precondición}
+TComponent debe validar \doxyref{Is\+Ecs\+Component}{pág.}{concept_o_s_k_1_1_e_c_s_1_1_is_ecs_component}. 
+
+El componente no debe haber sido previamente registrado.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Component\+Already\+Registered\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_already_registered_exception}} & si el componente ya fue previamente registrado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!RegisterEventType@{RegisterEventType}}
+\index{RegisterEventType@{RegisterEventType}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{RegisterEventType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_aea919328b2cc80dc457f4160b2e89eb3} 
+template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$\\
+void OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Register\+Event\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un tipo de evento. Los venetos deben registrarse así para poder ser manejados por \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s}. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TEvent} & Tipo de evento.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyPrecond}{Precondición}
+TEvent debe cumplir Is\+Ecs\+Event$<$\+TEvent$>$. 
+\end{DoxyPrecond}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!RegisterExternalList@{RegisterExternalList}}
+\index{RegisterExternalList@{RegisterExternalList}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{RegisterExternalList()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a4f46aeb8868a6da79288c733945bbb89} 
+\textbf{ External\+Ecs\+List\+Uuid} Entity\+Component\+System\+::\+Register\+External\+List (\begin{DoxyParamCaption}\item[{const \textbf{ Signature} \&}]{signature}{}\end{DoxyParamCaption})}
+
+
+
+Registra una nueva lista de objetos compatibles para el signature indicado. 
+
+En caso de que la lista ya haya sido registrada, se sobreescribe su signature con el signature indicado.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & Identificador único de la lista. \\
+\hline
+{\em signature} & \doxyref{Signature}{pág.}{namespace_o_s_k_1_1_e_c_s_a9c0e00962e3504ffd2435edb417d2d42} de la lista. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!RegisterSystem@{RegisterSystem}}
+\index{RegisterSystem@{RegisterSystem}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{RegisterSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_aa2570d5d96c1f4704b52c835294f7aa5} 
+template$<$typename TSystem$>$ \newline
+requires Is\+Ecs\+System$<$TSystem$>$\\
+TSystem $\ast$ OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Register\+System (\begin{DoxyParamCaption}\item[{const \textbf{ System\+Dependencies} \&}]{dependencies}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra y almacena un nuevo sistema del tipo dado. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TSystem} & Tipo de sistema. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em dependencies} & dependencias del sistema. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Sistema creado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily TSystem} debe cumplir con Is\+Ecs\+System$<$\+TSystem$>$. 
+
+El sistema no debe haber sido previamente registrado. 
+
+No debe haber ninguna dependencia cíclica al incluir el sistema {\ttfamily system}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em System\+Cyclic\+Dependency} & si hay una dependencia cíclica. \\
+\hline
+{\em \doxyref{System\+Already\+Registered\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_system_already_registered_exception}} & si el sistema ya habia sido previamente registrado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!RemoveComponent@{RemoveComponent}}
+\index{RemoveComponent@{RemoveComponent}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{RemoveComponent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a951795223a1dbef1b648f2dbe1b29b2d} 
+template$<$typename TComponent$>$ \newline
+requires Is\+Ecs\+Component$<$TComponent$>$\\
+void OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Remove\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina el componente del objeto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo del componente. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto al que se va a quitar el componente.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+TComponent debe validar \doxyref{Is\+Ecs\+Component}{pág.}{concept_o_s_k_1_1_e_c_s_1_1_is_ecs_component}. 
+
+El objeto debe tener previamente un componente del tipo dado.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Component\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_not_found_exception}} & Si el objeto no tiene el componente del tipo dado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!RemoveSystem@{RemoveSystem}}
+\index{RemoveSystem@{RemoveSystem}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{RemoveSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a798a0e00bae8eecdee1ff9d4cdcb8ebd} 
+template$<$typename TSystem$>$ \\
+void OSK\+::\+ECS\+::\+Entity\+Component\+System\+::\+Remove\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina un sistema, si está registrado. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TSystem} & Tipo de sistema.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{System\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_system_not_found_exception}} & Si el sistema no está registrado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!Save@{Save}}
+\index{Save@{Save}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{Save()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a24b569adf8c10830c158361d8041ad04} 
+void Entity\+Component\+System\+::\+Save (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Guarda el estado del juego en el fichero indicado, en formato JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta del archivo donde se guardará el estado del juego. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!SaveBinary@{SaveBinary}}
+\index{SaveBinary@{SaveBinary}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{SaveBinary()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_af3a4593c908f810a37b9a3e4a01bd499} 
+void Entity\+Component\+System\+::\+Save\+Binary (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Guarda el estado del juego en el fichero indicado, en formato {\ttfamily .bsf}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta del archivo donde se guardará el estado del juego. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}!SpawnObject@{SpawnObject}}
+\index{SpawnObject@{SpawnObject}!OSK::ECS::EntityComponentSystem@{OSK::ECS::EntityComponentSystem}}
+\doxysubsubsection{SpawnObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_a8fdd1a158a10e388946a2c3e0ddf1eb5} 
+\textbf{ Game\+Object\+Index} Entity\+Component\+System\+::\+Spawn\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Crea un nuevo objeto vacío y devuelve su ID. 
+
+\begin{DoxyReturn}{Devuelve}
+ID del nuevo objeto.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Atención}
+\doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} NO ES DUEÑO DEL OBJETO, el juego es el encargado de eliminarlo mediante \doxyref{Destroy\+Object()}{pág.}{class_o_s_k_1_1_e_c_s_1_1_entity_component_system_ae529c5094ca66a4eacc5da0a028eaa52}. 
+\end{DoxyWarning}

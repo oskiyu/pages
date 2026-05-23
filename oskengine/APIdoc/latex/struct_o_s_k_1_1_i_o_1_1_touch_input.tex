@@ -1,0 +1,60 @@
+\doxysection{Referencia de la estructura OSK\+::IO\+::Touch\+Input}
+\label{struct_o_s_k_1_1_i_o_1_1_touch_input}\index{OSK::IO::TouchInput@{OSK::IO::TouchInput}}
+
+
+{\ttfamily \#include $<$Touch\+Input.\+h$>$}
+
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vector2f} \textbf{ position} = \textbf{ Vector2f\+::\+Zero}
+\item 
+\textbf{ Touch\+Input\+Type} \textbf{ type} = \textbf{ Touch\+Input\+Type\+::\+START}
+\item 
+\textbf{ TDelta\+Time} \textbf{ time\+Since\+Input\+Start} = 0.\+0f
+\item 
+\textbf{ Touch\+Input\+Uuid} \textbf{ input\+Id} = \textbf{ Touch\+Input\+Uuid\+::\+Create\+Empty}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Evento de entrada de pantalla tÃ¡ctil. 
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::IO::TouchInput@{OSK::IO::TouchInput}!inputId@{inputId}}
+\index{inputId@{inputId}!OSK::IO::TouchInput@{OSK::IO::TouchInput}}
+\doxysubsubsection{inputId}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_i_o_1_1_touch_input_a28fd214beabf9c1cc8dd9a3cd50072d6} 
+\textbf{ Touch\+Input\+Uuid} OSK\+::\+IO\+::\+Touch\+Input\+::input\+Id = \textbf{ Touch\+Input\+Uuid\+::\+Create\+Empty}()}
+
+
+
+ID del evento, para relacionarlos con eventos de entrada anteriores. 
+
+\index{OSK::IO::TouchInput@{OSK::IO::TouchInput}!position@{position}}
+\index{position@{position}!OSK::IO::TouchInput@{OSK::IO::TouchInput}}
+\doxysubsubsection{position}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_i_o_1_1_touch_input_a2c56db3e34ce4a218572aadb3d00660b} 
+\textbf{ Vector2f} OSK\+::\+IO\+::\+Touch\+Input\+::position = \textbf{ Vector2f\+::\+Zero}}
+
+
+
+En pÃ­xeles de pantalla. 
+
+\index{OSK::IO::TouchInput@{OSK::IO::TouchInput}!timeSinceInputStart@{timeSinceInputStart}}
+\index{timeSinceInputStart@{timeSinceInputStart}!OSK::IO::TouchInput@{OSK::IO::TouchInput}}
+\doxysubsubsection{timeSinceInputStart}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_i_o_1_1_touch_input_a174171f825db737cc0260de21c567031} 
+\textbf{ TDelta\+Time} OSK\+::\+IO\+::\+Touch\+Input\+::time\+Since\+Input\+Start = 0.\+0f}
+
+
+
+Tiempo, en segundos, desde que se comenzÃ³ a pulsar (para eventos \doxyref{Touch\+Input\+Type\+::\+END}{pág.}{namespace_o_s_k_1_1_i_o_affb2d4a923aea8df5a3f2ff8ae6fdf0dab1a326c06d88bf042f73d70f50197905} y \doxyref{Touch\+Input\+Type\+::\+CONTINUING}{pág.}{namespace_o_s_k_1_1_i_o_affb2d4a923aea8df5a3f2ff8ae6fdf0da5c5903989cbe2858aebf66170adf3b97}). 
+
+\index{OSK::IO::TouchInput@{OSK::IO::TouchInput}!type@{type}}
+\index{type@{type}!OSK::IO::TouchInput@{OSK::IO::TouchInput}}
+\doxysubsubsection{type}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_i_o_1_1_touch_input_a37ae175b632d4e7d91955d6502062329} 
+\textbf{ Touch\+Input\+Type} OSK\+::\+IO\+::\+Touch\+Input\+::type = \textbf{ Touch\+Input\+Type\+::\+START}}
+

@@ -1,0 +1,32 @@
+\doxysection{Billboard\+GBuffer\+Pass.\+h}
+\label{_billboard_g_buffer_pass_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/BillboardGBufferPass.h@{C:/Users/Oscar/source/repos/OSKengine/Source/BillboardGBufferPass.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}IShaderPass.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ BillboardGBufferPass\ :\ \textcolor{keyword}{public}\ IShaderPass\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ OSK\_RENDERPASS(BillboardGBufferPass,\ \textcolor{stringliteral}{"{}billboard\_pass"{}});}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ BillboardGBufferPass()\ :\ IShaderPass(\textcolor{stringliteral}{"{}billboard\_pass"{}})\ \{\}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Load()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RenderLoop(}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ ICommandList*\ commandList,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<ECS::GameObjectIndex>\&\ objectsToRender,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ GlobalMeshMapping*\ meshMapping,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ jitterIndex,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2ui\ resolution)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}

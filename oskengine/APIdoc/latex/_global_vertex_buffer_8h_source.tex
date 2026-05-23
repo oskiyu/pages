@@ -1,0 +1,40 @@
+\doxysection{Global\+Vertex\+Buffer.\+h}
+\label{_global_vertex_buffer_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GlobalVertexBuffer.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GlobalVertexBuffer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{struct\ }GlobalVertexBufferRange\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ UIndex32\ firstVertex\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ USize32\ vertexCount\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{struct\ }UnusedVertexBufferRange\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ UIndex32\ firstVertex\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ USize32\ vertexCount\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ GlobalVertexBufferManager\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ GlobalVertexBufferRange\ RegisterGeometry(USize32\ vertexCount);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ DynamicArray<GlobalVertexBufferRange>\ m\_entries;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ DynamicArray<UnusedVertexBufferRange>\ m\_unusedEntries;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ UIndex32\ m\_tail\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}

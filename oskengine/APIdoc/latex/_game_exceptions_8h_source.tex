@@ -1,0 +1,33 @@
+\doxysection{Game\+Exceptions.\+h}
+\label{_game_exceptions_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GameExceptions.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GameExceptions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}EngineException.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ WindowNotCreatedException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ WindowNotCreatedException(\textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(\textcolor{stringliteral}{"{}WindowNotCreatedException:\ No\ se\ ha\ creado\ correctamente\ la\ ventana\ en\ CreateWindow()."{}})\ \{\ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ RenderedNotCreatedException\ :\ \textcolor{keyword}{public}\ EngineException\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ RenderedNotCreatedException(\textcolor{keyword}{const}\ std::source\_location\&\ location\ =\ std::source\_location::current())}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ EngineException(\textcolor{stringliteral}{"{}RenderedNotCreatedException:\ No\ se\ ha\ inicializado\ correctamente\ el\ renderizador\ en\ SetupEngine()."{}})\ \{\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}

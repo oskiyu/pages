@@ -1,0 +1,53 @@
+\doxysection{Format.\+h}
+\label{_format_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Format.h@{C:/Users/Oscar/source/repos/OSKengine/Source/Format.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ToString.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Format\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ UNKNOWN\ =\ 0,}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ COLOR}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ RGBA8\_UNORM,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ RGBA8\_SRGB,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ RGBA8\_UINT,}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ RGB10A2\_UNORM,}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ RGBA16\_SFLOAT,}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ RGBA32\_SFLOAT,}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ BGRA8\_SRGB,}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ R16\_SFLOAT,}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ RG16\_SFLOAT,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ RG32\_SFLOAT,}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ DEPTH-\/STENCIL}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ D32S8\_SFLOAT\_SUINT,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ D24S8\_SFLOAT\_SUINT,}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ DEPTH}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ D32\_SFLOAT,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ D16\_UNORM}
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ GetFormatNumberOfBytes(Format\ format);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ Format\ GetColorFormat(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numChannels);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00062\ \ \ \ \ Format\ GetFormatFromString(\textcolor{keyword}{const}\ std::string\&\ formatStr);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ FormatSupportsStencil(Format\ format);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{template}\ <>\ std::string\ OSK::ToString<OSK::GRAPHICS::Format>(\textcolor{keyword}{const}\ OSK::GRAPHICS::Format\&\ format);}
+
+\end{DoxyCode}

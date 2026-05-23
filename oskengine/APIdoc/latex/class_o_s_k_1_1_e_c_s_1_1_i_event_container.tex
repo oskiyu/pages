@@ -1,0 +1,59 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::IEvent\+Container}
+\label{class_o_s_k_1_1_e_c_s_1_1_i_event_container}\index{OSK::ECS::IEventContainer@{OSK::ECS::IEventContainer}}
+
+
+{\ttfamily \#include $<$IEvent\+Container.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IEvent\+Container} ()=default
+\item 
+virtual void \textbf{ \+\_\+\+Clear\+Queue} ()=0
+\item 
+virtual \textbf{ Event\+Queue\+Span} \textbf{ Get\+Event\+Queue\+Span} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz común para todos los contenedores de eventos. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::IEventContainer@{OSK::ECS::IEventContainer}!````~IEventContainer@{$\sim$IEventContainer}}
+\index{````~IEventContainer@{$\sim$IEventContainer}!OSK::ECS::IEventContainer@{OSK::ECS::IEventContainer}}
+\doxysubsubsection{$\sim$IEventContainer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_event_container_ab89db2477d5a12e96aaae0b10e360b6f} 
+virtual OSK\+::\+ECS\+::\+IEvent\+Container\+::$\sim$\+IEvent\+Container (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::IEventContainer@{OSK::ECS::IEventContainer}!\_ClearQueue@{\_ClearQueue}}
+\index{\_ClearQueue@{\_ClearQueue}!OSK::ECS::IEventContainer@{OSK::ECS::IEventContainer}}
+\doxysubsubsection{\_ClearQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_event_container_a58d492e50c45ed25fae8e9ce5afbfe69} 
+virtual void OSK\+::\+ECS\+::\+IEvent\+Container\+::\+\_\+\+Clear\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Elimina todos los eventos de la cola. Debe ser llamado al final de cada frame. 
+
+
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Event\+Container$<$ TEvent $>$} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_event_container_a136c484e396525fbfe5e28135a7aa3a7}.
+
+\index{OSK::ECS::IEventContainer@{OSK::ECS::IEventContainer}!GetEventQueueSpan@{GetEventQueueSpan}}
+\index{GetEventQueueSpan@{GetEventQueueSpan}!OSK::ECS::IEventContainer@{OSK::ECS::IEventContainer}}
+\doxysubsubsection{GetEventQueueSpan()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_i_event_container_afaee008d7e9a70cd6794cef4ab657b64} 
+virtual \textbf{ Event\+Queue\+Span} OSK\+::\+ECS\+::\+IEvent\+Container\+::\+Get\+Event\+Queue\+Span (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Event\+Queue\+Span}{pág.}{struct_o_s_k_1_1_e_c_s_1_1_event_queue_span} con todos los eventos de esta cola. 
+\end{DoxyReturn}
+
+
+Implementado en \textbf{ OSK\+::\+ECS\+::\+Event\+Container$<$ TEvent $>$} \doxyref{}{pág.}{class_o_s_k_1_1_e_c_s_1_1_event_container_addf9c2f70aafeab5cff380fa4e634e54}.
+

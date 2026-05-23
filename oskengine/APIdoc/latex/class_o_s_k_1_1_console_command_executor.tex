@@ -1,0 +1,80 @@
+\doxysection{Referencia de la clase OSK\+::Console\+Command\+Executor}
+\label{class_o_s_k_1_1_console_command_executor}\index{OSK::ConsoleCommandExecutor@{OSK::ConsoleCommandExecutor}}
+
+
+{\ttfamily \#include $<$Console\+Command\+Executor.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename TCommand$>$ \newline
+requires Is\+Console\+Command$<$TCommand$>$}\\void \textbf{ Register\+Command} ()
+\item 
+void \textbf{ Register\+Command} (\textbf{ Unique\+Ptr}$<$ \textbf{ IConsole\+Command} $>$ \&\&command)
+\item 
+void \textbf{ Check\+And\+Execute} (\textbf{ UI\+::\+Console} $\ast$console, std\+::string\+\_\+view text) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que ejecuta comandos de consola. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ConsoleCommandExecutor@{OSK::ConsoleCommandExecutor}!CheckAndExecute@{CheckAndExecute}}
+\index{CheckAndExecute@{CheckAndExecute}!OSK::ConsoleCommandExecutor@{OSK::ConsoleCommandExecutor}}
+\doxysubsubsection{CheckAndExecute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_console_command_executor_a4f1d4f63ce3dfa39a4e55ce1d78beb43} 
+void Console\+Command\+Executor\+::\+Check\+And\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ UI\+::\+Console} $\ast$}]{console}{, }\item[{std\+::string\+\_\+view}]{text}{}\end{DoxyParamCaption}) const}
+
+
+
+Comprueba si el texto se corresponde con algún comando, en cuyo caso lo ejecuta. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em console} & Consola sobre la que se mandó el mensaje. \\
+\hline
+{\em text} & Texto del mensaje. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ConsoleCommandExecutor@{OSK::ConsoleCommandExecutor}!RegisterCommand@{RegisterCommand}}
+\index{RegisterCommand@{RegisterCommand}!OSK::ConsoleCommandExecutor@{OSK::ConsoleCommandExecutor}}
+\doxysubsubsection{RegisterCommand()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_console_command_executor_ab1b502d9043c8d455d3e7a89b6048be4} 
+template$<$typename TCommand$>$ \newline
+requires Is\+Console\+Command$<$TCommand$>$\\
+void OSK\+::\+Console\+Command\+Executor\+::\+Register\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un comando para poder ser ejecutado. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TCommand} & Tipo de comando.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily TCommand} debe ser un tipo de comando (heredando de \doxyref{IConsole\+Command}{pág.}{class_o_s_k_1_1_i_console_command}). 
+
+El comando {\ttfamily TCommand} no debe haber sido previamente registrado. 
+\end{DoxyPrecond}
+\index{OSK::ConsoleCommandExecutor@{OSK::ConsoleCommandExecutor}!RegisterCommand@{RegisterCommand}}
+\index{RegisterCommand@{RegisterCommand}!OSK::ConsoleCommandExecutor@{OSK::ConsoleCommandExecutor}}
+\doxysubsubsection{RegisterCommand()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_console_command_executor_ac8f208e994a8a5948ba81d15f2c8497f} 
+void Console\+Command\+Executor\+::\+Register\+Command (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ IConsole\+Command} $>$ \&\&}]{command}{}\end{DoxyParamCaption})}
+
+
+
+Registra un comando para poder ser ejecutado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em command} & Comando a registrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El comando {\ttfamily command} no debe haber sido previamente registrado. 
+\end{DoxyPrecond}

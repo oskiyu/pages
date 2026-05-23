@@ -1,0 +1,432 @@
+\doxysection{Referencia del espacio de nombres OSK\+::PERSISTENCE}
+\label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e}\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Binary\+Block}
+\item 
+class \textbf{ Binary\+Block\+Reader}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+template$<$$>$ nlohmann\+::json \textbf{ Serialize\+Data$<$ glm\+::mat3 $>$} (const glm\+::mat3 \&data)
+\item 
+template$<$$>$ glm\+::mat3 \textbf{ Deserialize\+Data$<$ glm\+::mat3 $>$} (const nlohmann\+::json \&json)
+\item 
+template$<$$>$ \textbf{ PERSISTENCE\+::\+Binary\+Block} \textbf{ Binary\+Serialize\+Data$<$ glm\+::mat3 $>$} (const glm\+::mat3 \&data)
+\item 
+template$<$$>$ glm\+::mat3 \textbf{ Binary\+Deserialize\+Data$<$ glm\+::mat3 $>$} (\textbf{ Binary\+Block\+Reader} $\ast$data)
+\item 
+template$<$$>$ nlohmann\+::json \textbf{ Serialize\+Data$<$ glm\+::mat4 $>$} (const glm\+::mat4 \&data)
+\item 
+template$<$$>$ glm\+::mat4 \textbf{ Deserialize\+Data$<$ glm\+::mat4 $>$} (const nlohmann\+::json \&json)
+\item 
+template$<$$>$ \textbf{ PERSISTENCE\+::\+Binary\+Block} \textbf{ Binary\+Serialize\+Data$<$ glm\+::mat4 $>$} (const glm\+::mat4 \&data)
+\item 
+template$<$$>$ glm\+::mat4 \textbf{ Binary\+Deserialize\+Data$<$ glm\+::mat4 $>$} (\textbf{ Binary\+Block\+Reader} $\ast$data)
+\item 
+{\footnotesize template$<$typename TVec$>$ }\\nlohmann\+::json \textbf{ Serialize\+Vector2} (const TVec \&vec)
+\item 
+{\footnotesize template$<$typename TVec$>$ }\\nlohmann\+::json \textbf{ Serialize\+Vector3} (const TVec \&vec)
+\item 
+{\footnotesize template$<$typename TVec$>$ }\\nlohmann\+::json \textbf{ Serialize\+Vector4} (const TVec \&vec)
+\item 
+{\footnotesize template$<$typename TVec$>$ }\\TVec \textbf{ Deserialize\+Vector2} (const nlohmann\+::json \&vec)
+\item 
+{\footnotesize template$<$typename TVec$>$ }\\TVec \textbf{ Deserialize\+Vector3} (const nlohmann\+::json \&vec)
+\item 
+{\footnotesize template$<$typename TVec$>$ }\\TVec \textbf{ Deserialize\+Vector4} (const nlohmann\+::json \&vec)
+\item 
+{\footnotesize template$<$typename TVec$>$ }\\\textbf{ PERSISTENCE\+::\+Binary\+Block} \textbf{ Serialize\+Binary\+Vector2} (const TVec \&vec)
+\item 
+{\footnotesize template$<$typename TVec$>$ }\\\textbf{ PERSISTENCE\+::\+Binary\+Block} \textbf{ Serialize\+Binary\+Vector3} (const TVec \&vec)
+\item 
+{\footnotesize template$<$typename TVec$>$ }\\\textbf{ PERSISTENCE\+::\+Binary\+Block} \textbf{ Serialize\+Binary\+Vector4} (const TVec \&vec)
+\item 
+{\footnotesize template$<$typename TVec, typename TNumber\+Type$>$ }\\TVec \textbf{ Deserialize\+Binary\+Vector2} (\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$vec)
+\item 
+{\footnotesize template$<$typename TVec, typename TNumber\+Type$>$ }\\TVec \textbf{ Deserialize\+Binary\+Vector3} (\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$vec)
+\item 
+{\footnotesize template$<$typename TVec, typename TNumber\+Type$>$ }\\TVec \textbf{ Deserialize\+Binary\+Vector4} (\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$vec)
+\item 
+template$<$$>$ nlohmann\+::json \textbf{ Serialize\+Data$<$ Quaternion $>$} (const \textbf{ Quaternion} \&data)
+\item 
+template$<$$>$ \textbf{ Quaternion} \textbf{ Deserialize\+Data$<$ Quaternion $>$} (const nlohmann\+::json \&json)
+\item 
+template$<$$>$ \textbf{ PERSISTENCE\+::\+Binary\+Block} \textbf{ Binary\+Serialize\+Data$<$ Quaternion $>$} (const \textbf{ Quaternion} \&data)
+\item 
+template$<$$>$ \textbf{ Quaternion} \textbf{ Binary\+Deserialize\+Data$<$ Quaternion $>$} (\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$reader)
+\item 
+{\footnotesize template$<$typename T$>$ }\\nlohmann\+::json \textbf{ Serialize\+Data} (const T \&data)=delete
+\item 
+{\footnotesize template$<$typename T$>$ }\\T \textbf{ Deserialize\+Data} (const nlohmann\+::json \&data)=delete
+\item 
+{\footnotesize template$<$typename T$>$ }\\\textbf{ Binary\+Block} \textbf{ Binary\+Serialize\+Data} (const T \&data)=delete
+\item 
+{\footnotesize template$<$typename T$>$ }\\T \textbf{ Binary\+Deserialize\+Data} (\textbf{ Binary\+Block\+Reader} $\ast$reader)=delete
+\item 
+{\footnotesize template$<$typename T$>$ }\\nlohmann\+::json \textbf{ Serialize\+Component} (const T \&data)=delete
+\item 
+{\footnotesize template$<$typename T$>$ }\\T \textbf{ Deserialize\+Component} (const nlohmann\+::json \&data, const \textbf{ ECS\+::\+Saved\+Game\+Object\+Translator} \&game\+Object\+Translator)=delete
+\item 
+{\footnotesize template$<$typename T$>$ }\\\textbf{ Binary\+Block} \textbf{ Binary\+Serialize\+Component} (const T \&data)=delete
+\item 
+{\footnotesize template$<$typename T$>$ }\\T \textbf{ Binary\+Deserialize\+Component} (\textbf{ Binary\+Block\+Reader} $\ast$reader, const \textbf{ ECS\+::\+Saved\+Game\+Object\+Translator} \&game\+Object\+Translator)=delete
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones}
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!BinaryDeserializeComponent@{BinaryDeserializeComponent}}
+\index{BinaryDeserializeComponent@{BinaryDeserializeComponent}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{BinaryDeserializeComponent()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a6f4500fd079ca05af5ea9acfcd90853d} 
+template$<$typename T$>$ \\
+T OSK\+::\+PERSISTENCE\+::\+Binary\+Deserialize\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+Block\+Reader} $\ast$}]{reader}{, }\item[{const \textbf{ ECS\+::\+Saved\+Game\+Object\+Translator} \&}]{game\+Object\+Translator}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!BinaryDeserializeData@{BinaryDeserializeData}}
+\index{BinaryDeserializeData@{BinaryDeserializeData}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{BinaryDeserializeData()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a16509b965daf6c4e9b06d5aa3ce1ea84} 
+template$<$typename T$>$ \\
+T OSK\+::\+PERSISTENCE\+::\+Binary\+Deserialize\+Data (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+Block\+Reader} $\ast$}]{reader}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Construye un dato a partir del bloque binario que lo describe. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Dato. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Dato reconstruido.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe estar definido para el tipo {\ttfamily T}. 
+
+Debe haber sido serializado mediante {\ttfamily Binary\+Serialize\+Data(const T\& data)}. 
+\end{DoxyPrecond}
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!BinaryDeserializeData$<$ glm::mat3 $>$@{BinaryDeserializeData$<$ glm::mat3 $>$}}
+\index{BinaryDeserializeData$<$ glm::mat3 $>$@{BinaryDeserializeData$<$ glm::mat3 $>$}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{BinaryDeserializeData$<$ glm::mat3 $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_ad812985dce7718045a8d90e3b77d360e} 
+template$<$$>$ \\
+glm\+::mat3 \textbf{ OSK\+::\+PERSISTENCE\+::\+Binary\+Deserialize\+Data}$<$ glm\+::mat3 $>$ (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+Block\+Reader} $\ast$}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!BinaryDeserializeData$<$ glm::mat4 $>$@{BinaryDeserializeData$<$ glm::mat4 $>$}}
+\index{BinaryDeserializeData$<$ glm::mat4 $>$@{BinaryDeserializeData$<$ glm::mat4 $>$}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{BinaryDeserializeData$<$ glm::mat4 $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_acd04ce84d26aaaadb1385c50c75ddc96} 
+template$<$$>$ \\
+glm\+::mat4 \textbf{ OSK\+::\+PERSISTENCE\+::\+Binary\+Deserialize\+Data}$<$ glm\+::mat4 $>$ (\begin{DoxyParamCaption}\item[{\textbf{ Binary\+Block\+Reader} $\ast$}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!BinaryDeserializeData$<$ Quaternion $>$@{BinaryDeserializeData$<$ Quaternion $>$}}
+\index{BinaryDeserializeData$<$ Quaternion $>$@{BinaryDeserializeData$<$ Quaternion $>$}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{BinaryDeserializeData$<$ Quaternion $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_aedd4ed92c45d8fa1c4b55db019059cc0} 
+template$<$$>$ \\
+\textbf{ Quaternion} \textbf{ OSK\+::\+PERSISTENCE\+::\+Binary\+Deserialize\+Data}$<$ \textbf{ Quaternion} $>$ (\begin{DoxyParamCaption}\item[{\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$}]{reader}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!BinarySerializeComponent@{BinarySerializeComponent}}
+\index{BinarySerializeComponent@{BinarySerializeComponent}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{BinarySerializeComponent()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a3f8db8c5568569e7ea6fd621efa231b8} 
+template$<$typename T$>$ \\
+\textbf{ Binary\+Block} OSK\+::\+PERSISTENCE\+::\+Binary\+Serialize\+Component (\begin{DoxyParamCaption}\item[{const T \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!BinarySerializeData@{BinarySerializeData}}
+\index{BinarySerializeData@{BinarySerializeData}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{BinarySerializeData()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a084df8041095995229c6bfa6ff77ee0c} 
+template$<$typename T$>$ \\
+\textbf{ Binary\+Block} OSK\+::\+PERSISTENCE\+::\+Binary\+Serialize\+Data (\begin{DoxyParamCaption}\item[{const T \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Obtiene un bloque binario que describe un dato en particular. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Dato. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Dato serializado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe estar definido para el tipo {\ttfamily T}. 
+\end{DoxyPrecond}
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!BinarySerializeData$<$ glm::mat3 $>$@{BinarySerializeData$<$ glm::mat3 $>$}}
+\index{BinarySerializeData$<$ glm::mat3 $>$@{BinarySerializeData$<$ glm::mat3 $>$}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{BinarySerializeData$<$ glm::mat3 $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_ae6b43209b521365c3129cebc8809652e} 
+template$<$$>$ \\
+\textbf{ PERSISTENCE\+::\+Binary\+Block} \textbf{ OSK\+::\+PERSISTENCE\+::\+Binary\+Serialize\+Data}$<$ glm\+::mat3 $>$ (\begin{DoxyParamCaption}\item[{const glm\+::mat3 \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!BinarySerializeData$<$ glm::mat4 $>$@{BinarySerializeData$<$ glm::mat4 $>$}}
+\index{BinarySerializeData$<$ glm::mat4 $>$@{BinarySerializeData$<$ glm::mat4 $>$}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{BinarySerializeData$<$ glm::mat4 $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a57a4b477ea67317211855716b893739e} 
+template$<$$>$ \\
+\textbf{ PERSISTENCE\+::\+Binary\+Block} \textbf{ OSK\+::\+PERSISTENCE\+::\+Binary\+Serialize\+Data}$<$ glm\+::mat4 $>$ (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!BinarySerializeData$<$ Quaternion $>$@{BinarySerializeData$<$ Quaternion $>$}}
+\index{BinarySerializeData$<$ Quaternion $>$@{BinarySerializeData$<$ Quaternion $>$}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{BinarySerializeData$<$ Quaternion $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a79cac36159f7c10670916dd28d04108b} 
+template$<$$>$ \\
+\textbf{ PERSISTENCE\+::\+Binary\+Block} \textbf{ OSK\+::\+PERSISTENCE\+::\+Binary\+Serialize\+Data}$<$ \textbf{ Quaternion} $>$ (\begin{DoxyParamCaption}\item[{const \textbf{ Quaternion} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!DeserializeBinaryVector2@{DeserializeBinaryVector2}}
+\index{DeserializeBinaryVector2@{DeserializeBinaryVector2}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{DeserializeBinaryVector2()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a9b510b40cac93ea389fb2fe38d379dd8} 
+template$<$typename TVec, typename TNumber\+Type$>$ \\
+TVec OSK\+::\+PERSISTENCE\+::\+Deserialize\+Binary\+Vector2 (\begin{DoxyParamCaption}\item[{\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!DeserializeBinaryVector3@{DeserializeBinaryVector3}}
+\index{DeserializeBinaryVector3@{DeserializeBinaryVector3}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{DeserializeBinaryVector3()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_ad1050de025e4d8223c8d3e5a43bef90f} 
+template$<$typename TVec, typename TNumber\+Type$>$ \\
+TVec OSK\+::\+PERSISTENCE\+::\+Deserialize\+Binary\+Vector3 (\begin{DoxyParamCaption}\item[{\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!DeserializeBinaryVector4@{DeserializeBinaryVector4}}
+\index{DeserializeBinaryVector4@{DeserializeBinaryVector4}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{DeserializeBinaryVector4()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a8c1c1a5c4805bbe722457c7da9fc9eae} 
+template$<$typename TVec, typename TNumber\+Type$>$ \\
+TVec OSK\+::\+PERSISTENCE\+::\+Deserialize\+Binary\+Vector4 (\begin{DoxyParamCaption}\item[{\textbf{ PERSISTENCE\+::\+Binary\+Block\+Reader} $\ast$}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!DeserializeComponent@{DeserializeComponent}}
+\index{DeserializeComponent@{DeserializeComponent}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{DeserializeComponent()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a08dca25fa3b4ff3f0ba4d84b4503490e} 
+template$<$typename T$>$ \\
+T OSK\+::\+PERSISTENCE\+::\+Deserialize\+Component (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{data}{, }\item[{const \textbf{ ECS\+::\+Saved\+Game\+Object\+Translator} \&}]{game\+Object\+Translator}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Construye un dato a partir del JSON que lo describe. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Dato. \\
+\hline
+{\em game\+Object\+Translator} & Contiene la tabla para obtener los nuevos índices de los objetos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Dato reconstruido.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe estar definido para el tipo {\ttfamily T}. 
+
+Debe haber sido serializado mediante {\ttfamily template $<$typename T$>$ nlohmann\+::json Serialize\+Json(const T\& data)}. 
+\end{DoxyPrecond}
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!DeserializeData@{DeserializeData}}
+\index{DeserializeData@{DeserializeData}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{DeserializeData()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_aebfc652c736fc75efe4729f8560db65a} 
+template$<$typename T$>$ \\
+T OSK\+::\+PERSISTENCE\+::\+Deserialize\+Data (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Construye un dato a partir del JSON que lo describe. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Dato. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Dato reconstruido.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe estar definido para el tipo {\ttfamily T}. 
+
+Debe haber sido serializado mediante {\ttfamily template $<$typename T$>$ nlohmann\+::json Serialize\+Json(const T\& data)}. 
+\end{DoxyPrecond}
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!DeserializeData$<$ glm::mat3 $>$@{DeserializeData$<$ glm::mat3 $>$}}
+\index{DeserializeData$<$ glm::mat3 $>$@{DeserializeData$<$ glm::mat3 $>$}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{DeserializeData$<$ glm::mat3 $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a19f33b293b54932088e09a134df6b9b6} 
+template$<$$>$ \\
+glm\+::mat3 \textbf{ OSK\+::\+PERSISTENCE\+::\+Deserialize\+Data}$<$ glm\+::mat3 $>$ (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!DeserializeData$<$ glm::mat4 $>$@{DeserializeData$<$ glm::mat4 $>$}}
+\index{DeserializeData$<$ glm::mat4 $>$@{DeserializeData$<$ glm::mat4 $>$}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{DeserializeData$<$ glm::mat4 $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a5cc767c54ba89e06306c3ea635855bb9} 
+template$<$$>$ \\
+glm\+::mat4 \textbf{ OSK\+::\+PERSISTENCE\+::\+Deserialize\+Data}$<$ glm\+::mat4 $>$ (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!DeserializeData$<$ Quaternion $>$@{DeserializeData$<$ Quaternion $>$}}
+\index{DeserializeData$<$ Quaternion $>$@{DeserializeData$<$ Quaternion $>$}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{DeserializeData$<$ Quaternion $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a4fd04d9781dc73b8f93852f576dff35a} 
+template$<$$>$ \\
+\textbf{ Quaternion} \textbf{ OSK\+::\+PERSISTENCE\+::\+Deserialize\+Data}$<$ \textbf{ Quaternion} $>$ (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!DeserializeVector2@{DeserializeVector2}}
+\index{DeserializeVector2@{DeserializeVector2}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{DeserializeVector2()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a9f320dd8a6fdec60d061317e5b69c4e4} 
+template$<$typename TVec$>$ \\
+TVec OSK\+::\+PERSISTENCE\+::\+Deserialize\+Vector2 (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!DeserializeVector3@{DeserializeVector3}}
+\index{DeserializeVector3@{DeserializeVector3}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{DeserializeVector3()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_adb046f814bf2441dc6db6314f94c33b5} 
+template$<$typename TVec$>$ \\
+TVec OSK\+::\+PERSISTENCE\+::\+Deserialize\+Vector3 (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!DeserializeVector4@{DeserializeVector4}}
+\index{DeserializeVector4@{DeserializeVector4}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{DeserializeVector4()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a584eac6d70843de9b02b126e98615697} 
+template$<$typename TVec$>$ \\
+TVec OSK\+::\+PERSISTENCE\+::\+Deserialize\+Vector4 (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!SerializeBinaryVector2@{SerializeBinaryVector2}}
+\index{SerializeBinaryVector2@{SerializeBinaryVector2}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{SerializeBinaryVector2()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_abc839348b0b20ea230c9dd63980d8964} 
+template$<$typename TVec$>$ \\
+\textbf{ PERSISTENCE\+::\+Binary\+Block} OSK\+::\+PERSISTENCE\+::\+Serialize\+Binary\+Vector2 (\begin{DoxyParamCaption}\item[{const TVec \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!SerializeBinaryVector3@{SerializeBinaryVector3}}
+\index{SerializeBinaryVector3@{SerializeBinaryVector3}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{SerializeBinaryVector3()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a1f66e75d95f342609d1a7fc5fa9dce9b} 
+template$<$typename TVec$>$ \\
+\textbf{ PERSISTENCE\+::\+Binary\+Block} OSK\+::\+PERSISTENCE\+::\+Serialize\+Binary\+Vector3 (\begin{DoxyParamCaption}\item[{const TVec \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!SerializeBinaryVector4@{SerializeBinaryVector4}}
+\index{SerializeBinaryVector4@{SerializeBinaryVector4}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{SerializeBinaryVector4()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a75308c597b5b6bc204c09b26ff04d4f8} 
+template$<$typename TVec$>$ \\
+\textbf{ PERSISTENCE\+::\+Binary\+Block} OSK\+::\+PERSISTENCE\+::\+Serialize\+Binary\+Vector4 (\begin{DoxyParamCaption}\item[{const TVec \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!SerializeComponent@{SerializeComponent}}
+\index{SerializeComponent@{SerializeComponent}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{SerializeComponent()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a7e782ddd60bf57cd65ca5b0000c14311} 
+template$<$typename T$>$ \\
+nlohmann\+::json OSK\+::\+PERSISTENCE\+::\+Serialize\+Component (\begin{DoxyParamCaption}\item[{const T \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Obtiene un nodo JSON que describe un dato en particular. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Dato. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Dato serializado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe estar definido para el tipo {\ttfamily T}. 
+\end{DoxyPrecond}
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!SerializeData@{SerializeData}}
+\index{SerializeData@{SerializeData}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{SerializeData()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_af6b56bd855fdb582f4101c474195f764} 
+template$<$typename T$>$ \\
+nlohmann\+::json OSK\+::\+PERSISTENCE\+::\+Serialize\+Data (\begin{DoxyParamCaption}\item[{const T \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Obtiene un nodo JSON que describe un dato en particular. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo de dato. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Dato. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Dato serializado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe estar definido para el tipo {\ttfamily T}. 
+\end{DoxyPrecond}
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!SerializeData$<$ glm::mat3 $>$@{SerializeData$<$ glm::mat3 $>$}}
+\index{SerializeData$<$ glm::mat3 $>$@{SerializeData$<$ glm::mat3 $>$}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{SerializeData$<$ glm::mat3 $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a8ee2b57b0ccc8df9947dfe1f4321f22c} 
+template$<$$>$ \\
+nlohmann\+::json \textbf{ OSK\+::\+PERSISTENCE\+::\+Serialize\+Data}$<$ glm\+::mat3 $>$ (\begin{DoxyParamCaption}\item[{const glm\+::mat3 \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!SerializeData$<$ glm::mat4 $>$@{SerializeData$<$ glm::mat4 $>$}}
+\index{SerializeData$<$ glm::mat4 $>$@{SerializeData$<$ glm::mat4 $>$}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{SerializeData$<$ glm::mat4 $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_afa6373fcaf82005879e484333dd43024} 
+template$<$$>$ \\
+nlohmann\+::json \textbf{ OSK\+::\+PERSISTENCE\+::\+Serialize\+Data}$<$ glm\+::mat4 $>$ (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!SerializeData$<$ Quaternion $>$@{SerializeData$<$ Quaternion $>$}}
+\index{SerializeData$<$ Quaternion $>$@{SerializeData$<$ Quaternion $>$}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{SerializeData$<$ Quaternion $>$()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a13a3a661bbb859b6d34e865b17d33994} 
+template$<$$>$ \\
+nlohmann\+::json \textbf{ OSK\+::\+PERSISTENCE\+::\+Serialize\+Data}$<$ \textbf{ Quaternion} $>$ (\begin{DoxyParamCaption}\item[{const \textbf{ Quaternion} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!SerializeVector2@{SerializeVector2}}
+\index{SerializeVector2@{SerializeVector2}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{SerializeVector2()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a1507f5aeff9f7ff9f04a66baae146a70} 
+template$<$typename TVec$>$ \\
+nlohmann\+::json OSK\+::\+PERSISTENCE\+::\+Serialize\+Vector2 (\begin{DoxyParamCaption}\item[{const TVec \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!SerializeVector3@{SerializeVector3}}
+\index{SerializeVector3@{SerializeVector3}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{SerializeVector3()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a2af8efd6c57da98cd2f5863bbec48605} 
+template$<$typename TVec$>$ \\
+nlohmann\+::json OSK\+::\+PERSISTENCE\+::\+Serialize\+Vector3 (\begin{DoxyParamCaption}\item[{const TVec \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::PERSISTENCE@{OSK::PERSISTENCE}!SerializeVector4@{SerializeVector4}}
+\index{SerializeVector4@{SerializeVector4}!OSK::PERSISTENCE@{OSK::PERSISTENCE}}
+\doxysubsubsection{SerializeVector4()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_p_e_r_s_i_s_t_e_n_c_e_a69ae77015dd22c778d3f9d56822410bf} 
+template$<$typename TVec$>$ \\
+nlohmann\+::json OSK\+::\+PERSISTENCE\+::\+Serialize\+Vector4 (\begin{DoxyParamCaption}\item[{const TVec \&}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

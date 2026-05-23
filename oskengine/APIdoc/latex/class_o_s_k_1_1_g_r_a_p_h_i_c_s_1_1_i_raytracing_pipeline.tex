@@ -1,0 +1,100 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IRaytracing\+Pipeline}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_raytracing_pipeline}\index{OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}}
+
+
+{\ttfamily \#include $<$IRaytracing\+Pipeline.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IRaytracing\+Pipeline} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IRaytracing\+Pipeline})
+\item 
+const \textbf{ IPipeline\+Layout} $\ast$ \textbf{ Get\+Layout} () const
+\item 
+const \textbf{ IRt\+Shader\+Table} $\ast$ \textbf{ Get\+Shader\+Table} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IPipeline\+Layout} $>$ \textbf{ layout}
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ IRt\+Shader\+Table} $>$ \textbf{ shader\+Table}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Pipeline para el renderizado usando trazado de rayos. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber iniciado el renderizador con el ray tracing activado.
+\end{DoxyPrecond}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}!````~IRaytracingPipeline@{$\sim$IRaytracingPipeline}}
+\index{````~IRaytracingPipeline@{$\sim$IRaytracingPipeline}!OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}}
+\doxysubsubsection{$\sim$IRaytracingPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_raytracing_pipeline_a678d3d3a65fd9c4d19a81e631f9c8a13} 
+virtual OSK\+::\+GRAPHICS\+::\+IRaytracing\+Pipeline\+::$\sim$\+IRaytracing\+Pipeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}!GetLayout@{GetLayout}}
+\index{GetLayout@{GetLayout}!OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}}
+\doxysubsubsection{GetLayout()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_raytracing_pipeline_a85a6c69f4fe38c30348850a1e4ad4409} 
+const \textbf{ IPipeline\+Layout} $\ast$ IRaytracing\+Pipeline\+::\+Get\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el layout usado por este pipeline. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber creado correctamente el pipeline. 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si no se ha creado correctamente el pipeline, devolverá null. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}!GetShaderTable@{GetShaderTable}}
+\index{GetShaderTable@{GetShaderTable}!OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}}
+\doxysubsubsection{GetShaderTable()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_raytracing_pipeline_ae3f1671321638424e9b02718b5733e95} 
+const \textbf{ IRt\+Shader\+Table} $\ast$ IRaytracing\+Pipeline\+::\+Get\+Shader\+Table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la tabla de shaders que usará el trazado de rayos. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber creado correctamente el pipeline. 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si no se ha creado correctamente el pipeline, devolverá null. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_raytracing_pipeline_a9e2327991bc058da859da6bd3c045d0c} 
+OSK\+::\+GRAPHICS\+::\+IRaytracing\+Pipeline\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IRaytracing\+Pipeline}}]{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}!layout@{layout}}
+\index{layout@{layout}!OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}}
+\doxysubsubsection{layout}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_raytracing_pipeline_aa00da2dcee62288966aab0e6f9aa00d8} 
+\textbf{ Unique\+Ptr}$<$\textbf{ IPipeline\+Layout}$>$ OSK\+::\+GRAPHICS\+::\+IRaytracing\+Pipeline\+::layout\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}!shaderTable@{shaderTable}}
+\index{shaderTable@{shaderTable}!OSK::GRAPHICS::IRaytracingPipeline@{OSK::GRAPHICS::IRaytracingPipeline}}
+\doxysubsubsection{shaderTable}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_raytracing_pipeline_ad1e9fc1f71982cab7a6c2c4b6556402a} 
+\textbf{ Unique\+Ptr}$<$\textbf{ IRt\+Shader\+Table}$>$ OSK\+::\+GRAPHICS\+::\+IRaytracing\+Pipeline\+::shader\+Table\hspace{0.3cm}{\ttfamily [protected]}}
+

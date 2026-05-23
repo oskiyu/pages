@@ -1,0 +1,274 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Gpu\+Image\+Create\+Info}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info}\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+
+
+{\ttfamily \#include $<$Gpu\+Image\+Create\+Info.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Gpu\+Image\+Create\+Info} \textbf{ Create\+Default1D} (\textbf{ USize32} \textbf{ resolution}, \textbf{ Format} \textbf{ format}, \textbf{ Gpu\+Image\+Usage} \textbf{ usage})
+\item 
+static \textbf{ Gpu\+Image\+Create\+Info} \textbf{ Create\+Default2D} (const \textbf{ Vector2ui} \&\textbf{ resolution}, \textbf{ Format} \textbf{ format}, \textbf{ Gpu\+Image\+Usage} \textbf{ usage})
+\item 
+static \textbf{ Gpu\+Image\+Create\+Info} \textbf{ Create\+Default3D} (const \textbf{ Vector3ui} \&\textbf{ resolution}, \textbf{ Format} \textbf{ format}, \textbf{ Gpu\+Image\+Usage} \textbf{ usage})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vector3ui} \textbf{ resolution}
+\item 
+\textbf{ Format} \textbf{ format}
+\item 
+\textbf{ Gpu\+Image\+Usage} \textbf{ usage} = \textbf{ Gpu\+Image\+Usage\+::\+UNKNOWN}
+\item 
+\textbf{ Gpu\+Image\+Dimension} \textbf{ dimension}
+\item 
+\textbf{ USize32} \textbf{ num\+Layers} = 1
+\item 
+\textbf{ USize32} \textbf{ msaa\+Samples} = 1
+\item 
+\textbf{ Gpu\+Image\+Sampler\+Desc} \textbf{ sampler\+Desc} = \{\}
+\item 
+\textbf{ Gpu\+Shared\+Memory\+Type} \textbf{ memory\+Type} = \textbf{ Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}
+\item 
+\textbf{ Gpu\+Image\+Tiling} \textbf{ tiling\+Type} = \textbf{ Gpu\+Image\+Tiling\+::\+OPTIMAL}
+\item 
+\textbf{ Gpu\+Queue\+Type} \textbf{ queue\+Type} = \textbf{ Gpu\+Queue\+Type\+::\+MAIN}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que contiene la información necesaria para la creación de una imagen. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!CreateDefault1D@{CreateDefault1D}}
+\index{CreateDefault1D@{CreateDefault1D}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{CreateDefault1D()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_a404e46b66e77549793287d2fedc46b8f} 
+\textbf{ Gpu\+Image\+Create\+Info} Gpu\+Image\+Create\+Info\+::\+Create\+Default1D (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{resolution}{, }\item[{\textbf{ Format}}]{format}{, }\item[{\textbf{ Gpu\+Image\+Usage}}]{usage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Inicializa la estructura para imágenes de 1D. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Resolución de la imagen, en número de píxeles. \\
+\hline
+{\em format} & Formato de la imagen. \\
+\hline
+{\em usage} & Uso de la imagen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estructura con los campos correctamente inicializados para imágenes 1D.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+{\ttfamily num\+Layers} será 1. 
+
+{\ttfamily msaa\+Samples} será 1. 
+
+{\ttfamily sampler\+Desc} será el creado por defecto. 
+
+{\ttfamily memory\+Type} será {\ttfamily \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea95c8166e4f408834884bbe57fef928f6}}. 
+
+{\ttfamily tiling\+Type} será {\ttfamily \doxyref{Gpu\+Image\+Tiling\+::\+OPTIMAL}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad104d68df20e4df59f9a73783fda907caf00c8dbdd6e1f11bdae06be94277d293}}. 
+
+{\ttfamily dimension} será {\ttfamily \doxyref{Gpu\+Image\+Dimension\+::d1D}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ab91ccc08d13454cfeb3c4f78deb72d59a998ea20c9e08b9bebbb4557f046e73b0}}. 
+
+{\ttfamily resource\+Usage} será {\ttfamily Gpu\+Resource\+Usage\+::\+GRAPHICS\+\_\+\+AND\+\_\+\+COMPUTE}. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+{\ttfamily usage} será {\ttfamily \doxyref{Gpu\+Image\+Usage\+::\+UNKNOWN}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaa696b031073e74bf2cb98e5ef201d4aa3}}. 
+\end{DoxyWarning}
+\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!CreateDefault2D@{CreateDefault2D}}
+\index{CreateDefault2D@{CreateDefault2D}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{CreateDefault2D()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_a1f22c94fd0d7a99bf068b030816376b8} 
+\textbf{ Gpu\+Image\+Create\+Info} Gpu\+Image\+Create\+Info\+::\+Create\+Default2D (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{resolution}{, }\item[{\textbf{ Format}}]{format}{, }\item[{\textbf{ Gpu\+Image\+Usage}}]{usage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Inicializa la estructura para imágenes de 2D. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Resolución de la imagen, en número de píxeles. \\
+\hline
+{\em format} & Formato de la imagen. \\
+\hline
+{\em usage} & Uso de la imagen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estructura con los campos correctamente inicializados para imágenes 1D.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+{\ttfamily num\+Layers} será 1. 
+
+{\ttfamily msaa\+Samples} será 1. 
+
+{\ttfamily sampler\+Desc} será el creado por defecto. 
+
+{\ttfamily memory\+Type} será {\ttfamily \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea95c8166e4f408834884bbe57fef928f6}}. 
+
+{\ttfamily tiling\+Type} será {\ttfamily \doxyref{Gpu\+Image\+Tiling\+::\+OPTIMAL}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad104d68df20e4df59f9a73783fda907caf00c8dbdd6e1f11bdae06be94277d293}}. 
+
+{\ttfamily dimension} será {\ttfamily \doxyref{Gpu\+Image\+Dimension\+::d2D}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ab91ccc08d13454cfeb3c4f78deb72d59a096d0d67e4521bdc9ae95ad5ba97c596}}. 
+
+{\ttfamily resource\+Usage} será {\ttfamily Gpu\+Resource\+Usage\+::\+GRAPHICS\+\_\+\+AND\+\_\+\+COMPUTE}. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+{\ttfamily usage} será {\ttfamily \doxyref{Gpu\+Image\+Usage\+::\+UNKNOWN}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaa696b031073e74bf2cb98e5ef201d4aa3}}. 
+\end{DoxyWarning}
+\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!CreateDefault3D@{CreateDefault3D}}
+\index{CreateDefault3D@{CreateDefault3D}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{CreateDefault3D()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_a1efb990fa61d3913215557fbbb20a542} 
+\textbf{ Gpu\+Image\+Create\+Info} Gpu\+Image\+Create\+Info\+::\+Create\+Default3D (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3ui} \&}]{resolution}{, }\item[{\textbf{ Format}}]{format}{, }\item[{\textbf{ Gpu\+Image\+Usage}}]{usage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Inicializa la estructura para imágenes de 3D. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resolution} & Resolución de la imagen, en número de píxeles. \\
+\hline
+{\em format} & Formato de la imagen. \\
+\hline
+{\em usage} & Uso de la imagen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estructura con los campos correctamente inicializados para imágenes 1D.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+{\ttfamily num\+Layers} será 1. 
+
+{\ttfamily msaa\+Samples} será 1. 
+
+{\ttfamily sampler\+Desc} será el creado por defecto. 
+
+{\ttfamily memory\+Type} será {\ttfamily \doxyref{Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a85a830e82585f3a565d1f097491042cea95c8166e4f408834884bbe57fef928f6}}. 
+
+{\ttfamily tiling\+Type} será {\ttfamily \doxyref{Gpu\+Image\+Tiling\+::\+OPTIMAL}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ad104d68df20e4df59f9a73783fda907caf00c8dbdd6e1f11bdae06be94277d293}}. 
+
+{\ttfamily dimension} será {\ttfamily \doxyref{Gpu\+Image\+Dimension\+::d3D}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_ab91ccc08d13454cfeb3c4f78deb72d59acd3c2cd4dacbc96d56861a2a8946e5ba}}. 
+
+{\ttfamily resource\+Usage} será {\ttfamily Gpu\+Resource\+Usage\+::\+GRAPHICS\+\_\+\+AND\+\_\+\+COMPUTE}. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+{\ttfamily usage} será {\ttfamily \doxyref{Gpu\+Image\+Usage\+::\+UNKNOWN}{pág.}{namespace_o_s_k_1_1_g_r_a_p_h_i_c_s_a19a2f70fc994c00eb022e520608c5ffaa696b031073e74bf2cb98e5ef201d4aa3}}. 
+\end{DoxyWarning}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!dimension@{dimension}}
+\index{dimension@{dimension}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{dimension}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_a709fba8b34f1734d6a603a38ea6e33c4} 
+\textbf{ Gpu\+Image\+Dimension} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Create\+Info\+::dimension}
+
+
+
+Número de dimensiones de la imagen. 
+
+\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!format@{format}}
+\index{format@{format}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{format}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_a752fd3e26192ce973e993a015893b3f6} 
+\textbf{ Format} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Create\+Info\+::format}
+
+
+
+Formato de la imagen. 
+
+\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!memoryType@{memoryType}}
+\index{memoryType@{memoryType}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{memoryType}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_aaa96b9b3238b2eefb6f389e87a2a883f} 
+\textbf{ Gpu\+Shared\+Memory\+Type} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Create\+Info\+::memory\+Type = \textbf{ Gpu\+Shared\+Memory\+Type\+::\+GPU\+\_\+\+ONLY}}
+
+
+
+Tipo de memoria en la que se alojará la imagen. 
+
+\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!msaaSamples@{msaaSamples}}
+\index{msaaSamples@{msaaSamples}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{msaaSamples}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_a5c621426fc616512ebe815f4b6d9b841} 
+\textbf{ USize32} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Create\+Info\+::msaa\+Samples = 1}
+
+
+
+Número de muestreos. Para imágenes normales, 1. 
+
+\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!numLayers@{numLayers}}
+\index{numLayers@{numLayers}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{numLayers}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_afccbd72ee2387b4515b284735a9614f5} 
+\textbf{ USize32} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Create\+Info\+::num\+Layers = 1}
+
+
+
+Número de capas. Si se trata de una imagen sencilla, debe ser 1. Si se trata de un array de imágenes, debe ser $>$= 2. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe ser $>$ 0. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!queueType@{queueType}}
+\index{queueType@{queueType}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{queueType}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_a2e2901a01ee9e2d3412a111bde84a553} 
+\textbf{ Gpu\+Queue\+Type} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Create\+Info\+::queue\+Type = \textbf{ Gpu\+Queue\+Type\+::\+MAIN}}
+
+
+
+Tipo de cola sobre la que se alojará. 
+
+\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!resolution@{resolution}}
+\index{resolution@{resolution}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{resolution}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_a8092753c9ee6afb0d2d436bd67022090} 
+\textbf{ Vector3ui} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Create\+Info\+::resolution}
+
+
+
+Resolución de la imagen, en píxeles. 
+
+Para imágenes 2D, Z se ignora.
+
+Para imágenes 1D, Y y Z se ignoran. \index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!samplerDesc@{samplerDesc}}
+\index{samplerDesc@{samplerDesc}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{samplerDesc}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_a0773ddff9db45e3919ea70a643c02bd8} 
+\textbf{ Gpu\+Image\+Sampler\+Desc} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Create\+Info\+::sampler\+Desc = \{\}}
+
+
+
+Estructura con información sobre cómo se accederá a la imagen desde los shaders. 
+
+\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!tilingType@{tilingType}}
+\index{tilingType@{tilingType}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{tilingType}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_a28358b58e8e298d003f56d70ca9108bb} 
+\textbf{ Gpu\+Image\+Tiling} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Create\+Info\+::tiling\+Type = \textbf{ Gpu\+Image\+Tiling\+::\+OPTIMAL}}
+
+
+
+Estructura de almacenamiento de la imagen. 
+
+\index{OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}!usage@{usage}}
+\index{usage@{usage}!OSK::GRAPHICS::GpuImageCreateInfo@{OSK::GRAPHICS::GpuImageCreateInfo}}
+\doxysubsubsection{usage}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_image_create_info_abc4d61d7511c2970d2d562e4d5a5d1b0} 
+\textbf{ Gpu\+Image\+Usage} OSK\+::\+GRAPHICS\+::\+Gpu\+Image\+Create\+Info\+::usage = \textbf{ Gpu\+Image\+Usage\+::\+UNKNOWN}}
+
+
+
+Tareas para las que se usará la imagen. 
+

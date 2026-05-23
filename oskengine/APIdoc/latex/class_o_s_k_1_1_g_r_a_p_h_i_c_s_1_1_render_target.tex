@@ -1,0 +1,346 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Render\+Target}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target}\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+
+
+{\ttfamily \#include $<$Render\+Target.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Create} (const \textbf{ Vector2ui} \&target\+Size, \textbf{ Dynamic\+Array}$<$ \textbf{ Render\+Target\+Attachment\+Info} $>$ color\+Infos, \textbf{ Render\+Target\+Attachment\+Info} depth\+Info)
+\item 
+void \textbf{ Create\+As\+Final} (const \textbf{ Vector2ui} \&target\+Size, \textbf{ Render\+Target\+Attachment\+Info} color\+Info, \textbf{ Render\+Target\+Attachment\+Info} depth\+Info)
+\item 
+void \textbf{ Resize} (const \textbf{ Vector2ui} \&target\+Size)
+\item 
+\textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Color\+Image} (\textbf{ UIndex32} color\+Image\+Index)
+\item 
+const \textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Color\+Image} (\textbf{ UIndex32} color\+Image\+Index) const
+\item 
+\textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Main\+Color\+Image} ()
+\item 
+const \textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Main\+Color\+Image} () const
+\item 
+\textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Depth\+Image} ()
+\item 
+const \textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Depth\+Image} () const
+\item 
+\textbf{ USize32} \textbf{ Get\+Num\+Color\+Targets} () const
+\item 
+\textbf{ Vector2ui} \textbf{ Get\+Size} () const
+\item 
+\textbf{ Material\+Instance} $\ast$ \textbf{ Get\+Fullscreen\+Sprite\+Material\+Instance} ()
+\item 
+\textbf{ IMaterial\+Slot} $\ast$ \textbf{ Get\+Fullscreen\+Sprite\+Material\+Slot} ()
+\item 
+\textbf{ Renderpass\+Type} \textbf{ Get\+Render\+Target\+Type} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Render target para el renderizado de imágenes desde shaders de rasterizado. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!Create@{Create}}
+\index{Create@{Create}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a007f8e24640c79100c7df4414ba39380} 
+void Render\+Target\+::\+Create (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{target\+Size}{, }\item[{\textbf{ Dynamic\+Array}$<$ \textbf{ Render\+Target\+Attachment\+Info} $>$}]{color\+Infos}{, }\item[{\textbf{ Render\+Target\+Attachment\+Info}}]{depth\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Crea el render target con la información dada, para su uso como render target en shaders de fragmentos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em target\+Size} & Resolución, en píxeles. \\
+\hline
+{\em color\+Infos} & Información de las imágenes finales de color. \\
+\hline
+{\em depth\+Info} & Información de la imagen de profundidad.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe haber información para al menos una imagen de color.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El render target podrá usarse como renderpass para shaders de fragmentos.
+\end{DoxyPostcond}
+\begin{DoxyNote}{Nota}
+Pueden incluirse varias imágenes de color objetivo. 
+
+Cada imagen objetivo de color es independiente y puede tener formatos y usos distintos al resto de imágenes objetivo.
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & Si no se cumple la primera precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!CreateAsFinal@{CreateAsFinal}}
+\index{CreateAsFinal@{CreateAsFinal}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{CreateAsFinal()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a5035d069a723b632b751f07dbe0a5d64} 
+void Render\+Target\+::\+Create\+As\+Final (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{target\+Size}{, }\item[{\textbf{ Render\+Target\+Attachment\+Info}}]{color\+Info}{, }\item[{\textbf{ Render\+Target\+Attachment\+Info}}]{depth\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Crea el render target con la información dada, para su uso como imagen final de presentación. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em target\+Size} & Resolución, en píxeles \\
+\hline
+{\em color\+Info} & Información de la imagen de color. \\
+\hline
+{\em depth\+Info} & Información de la imagen de profundidad.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+El render target podrá usarse como renderpass para shaders de fragmentos.
+\end{DoxyPostcond}
+\begin{DoxyNote}{Nota}
+Para uso interno, no usar en producción. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!GetColorImage@{GetColorImage}}
+\index{GetColorImage@{GetColorImage}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{GetColorImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_ae42b139c205cd53dcda8d5747d99b186} 
+\textbf{ Gpu\+Image} $\ast$ Render\+Target\+::\+Get\+Color\+Image (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{color\+Image\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve la imagen de renderizado en los índices dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em color\+Image\+Index} & Índice de la imagen objetivo de color. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero no nulo a la imagen.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Este render target debe de haberse inicializado previamente con \doxyref{Render\+Target\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a007f8e24640c79100c7df4414ba39380} o \doxyref{Render\+Target\+::\+Create\+As\+Final}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a5035d069a723b632b751f07dbe0a5d64}. 
+
+color\+Image\+Index debe apuntar a un target existente (color\+Image\+Index $<$ \doxyref{Render\+Target\+::\+Get\+Num\+Color\+Targets}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a411f7b761650f862a4bd49da099674fa}).
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & si se incumple alguna precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!GetColorImage@{GetColorImage}}
+\index{GetColorImage@{GetColorImage}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{GetColorImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a166be7ddb77bb41d9605efa6da179ce2} 
+const \textbf{ Gpu\+Image} $\ast$ Render\+Target\+::\+Get\+Color\+Image (\begin{DoxyParamCaption}\item[{\textbf{ UIndex32}}]{color\+Image\+Index}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la imagen de renderizado en los índices dados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em color\+Image\+Index} & Índice de la imagen objetivo de color. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero no nulo a la imagen.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Este render target debe de haberse inicializado previamente con \doxyref{Render\+Target\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a007f8e24640c79100c7df4414ba39380} o \doxyref{Render\+Target\+::\+Create\+As\+Final}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a5035d069a723b632b751f07dbe0a5d64}. 
+
+color\+Image\+Index debe apuntar a un target existente (color\+Image\+Index $<$ \doxyref{Render\+Target\+::\+Get\+Num\+Color\+Targets}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a411f7b761650f862a4bd49da099674fa}).
+\end{DoxyPrecond}
+@briefthrows \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception} si se incumple alguna precondición. \index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!GetDepthImage@{GetDepthImage}}
+\index{GetDepthImage@{GetDepthImage}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{GetDepthImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a47e554fa934444c8dce821b826e43bc6} 
+\textbf{ Gpu\+Image} $\ast$ Render\+Target\+::\+Get\+Depth\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve la imagen de profundidad. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero no nulo a la imagen.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe de haberse inicializado con \doxyref{Render\+Target\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a007f8e24640c79100c7df4414ba39380} o \doxyref{Render\+Target\+::\+Create\+As\+Final}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a5035d069a723b632b751f07dbe0a5d64}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & Si se incumple alguna de las precondiciones. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!GetDepthImage@{GetDepthImage}}
+\index{GetDepthImage@{GetDepthImage}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{GetDepthImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a1f49dde19bcba8a4df486199dab09ed1} 
+const \textbf{ Gpu\+Image} $\ast$ Render\+Target\+::\+Get\+Depth\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la imagen de profundidad. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero no nulo a la imagen.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe de haberse inicializado con \doxyref{Render\+Target\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a007f8e24640c79100c7df4414ba39380} o \doxyref{Render\+Target\+::\+Create\+As\+Final}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a5035d069a723b632b751f07dbe0a5d64}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & Si se incumple alguna de las precondiciones. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!GetFullscreenSpriteMaterialInstance@{GetFullscreenSpriteMaterialInstance}}
+\index{GetFullscreenSpriteMaterialInstance@{GetFullscreenSpriteMaterialInstance}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{GetFullscreenSpriteMaterialInstance()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a9e4321e382c19600b02ba02e5b4633fd} 
+\textbf{ Material\+Instance} $\ast$ Render\+Target\+::\+Get\+Fullscreen\+Sprite\+Material\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve el material instance para el renderizado a pantalla completa usando el material \doxyref{IRenderer\+::\+Get\+Fullscreen\+Rendering\+Material()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_afae33f04095cf6d7d888845d4037c442}. 
+
+\begin{DoxyReturn}{Devuelve}
+Nullptr si no ha sido inicializado, no nulo en caso contrario. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!GetFullscreenSpriteMaterialSlot@{GetFullscreenSpriteMaterialSlot}}
+\index{GetFullscreenSpriteMaterialSlot@{GetFullscreenSpriteMaterialSlot}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{GetFullscreenSpriteMaterialSlot()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a18c6f2fd477ece41b8c78153babf61e4} 
+\textbf{ IMaterial\+Slot} $\ast$ Render\+Target\+::\+Get\+Fullscreen\+Sprite\+Material\+Slot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve el material slot requerido para el renderizado a pantalla completa usando el material \doxyref{IRenderer\+::\+Get\+Fullscreen\+Rendering\+Material()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_renderer_afae33f04095cf6d7d888845d4037c442}. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero no nulo.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haberse inicializado correctamente. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!GetMainColorImage@{GetMainColorImage}}
+\index{GetMainColorImage@{GetMainColorImage}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{GetMainColorImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_ab80b447b0432ad61a6a4c5cb014fd680} 
+\textbf{ Gpu\+Image} $\ast$ Render\+Target\+::\+Get\+Main\+Color\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve la imagen de renderizado principal (índice 0). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resource\+Index} & Índice del frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero no nulo a la imagen.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe de haberse inicializado con \doxyref{Render\+Target\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a007f8e24640c79100c7df4414ba39380} o \doxyref{Render\+Target\+::\+Create\+As\+Final}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a5035d069a723b632b751f07dbe0a5d64}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+error} & si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!GetMainColorImage@{GetMainColorImage}}
+\index{GetMainColorImage@{GetMainColorImage}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{GetMainColorImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_abe3a699e126fcf5f7df4a8ee4b38f775} 
+const \textbf{ Gpu\+Image} $\ast$ Render\+Target\+::\+Get\+Main\+Color\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la imagen de renderizado principal (índice 0). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em resource\+Index} & Índice del frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero no nulo a la imagen.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe de haberse inicializado con \doxyref{Render\+Target\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a007f8e24640c79100c7df4414ba39380} o \doxyref{Render\+Target\+::\+Create\+As\+Final}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a5035d069a723b632b751f07dbe0a5d64}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em std\+::runtime\+\_\+error} & si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!GetNumColorTargets@{GetNumColorTargets}}
+\index{GetNumColorTargets@{GetNumColorTargets}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{GetNumColorTargets()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a411f7b761650f862a4bd49da099674fa} 
+\textbf{ USize32} Render\+Target\+::\+Get\+Num\+Color\+Targets (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Número de targets de color. 
+
+\begin{DoxyReturn}{Devuelve}
+Número de imágenes objetivo de color.
+\end{DoxyReturn}
+\begin{DoxyRemark}{Comentarios}
+Será 0 si no se ha inicializado. 
+
+Será al menos 1 si se ha inicializado. 
+\end{DoxyRemark}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!GetRenderTargetType@{GetRenderTargetType}}
+\index{GetRenderTargetType@{GetRenderTargetType}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{GetRenderTargetType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a750d6e17c94bf48a22414b9d1fc4cce3} 
+\textbf{ Renderpass\+Type} Render\+Target\+::\+Get\+Render\+Target\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el tipo de render target (intermedio para ser usado con el sprite, o final para ser renderizado en la propia pantalla). 
+
+\begin{DoxyReturn}{Devuelve}
+Tipo de render target. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{GetSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a40976c088e2d4dbea427ccd4fbebcab1} 
+\textbf{ Vector2ui} Render\+Target\+::\+Get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la resolución de todas las imágenes, en píxeles. 
+
+\begin{DoxyReturn}{Devuelve}
+Resolución del render target.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haberse inicializado correctamente. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}!Resize@{Resize}}
+\index{Resize@{Resize}!OSK::GRAPHICS::RenderTarget@{OSK::GRAPHICS::RenderTarget}}
+\doxysubsubsection{Resize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_ac9f5d87b43a7e692631a8269f4c97f2d} 
+void Render\+Target\+::\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{target\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Cambia de tamaño las imágenes de renderizado, tanto las de color como las de profundidad. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em target\+Size} & Nueva resolución de las imágenes de renderizado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El render target debe haber sido correctamente creado mediante \doxyref{Render\+Target\+::\+Create}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a007f8e24640c79100c7df4414ba39380} o \doxyref{Render\+Target\+::\+Create\+As\+Final}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_render_target_a5035d069a723b632b751f07dbe0a5d64}.
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Atención}
+Esta función destruye las imágenes anteriores, por lo que si una instancia de material referenciaba estas imágenes, se deberá actualizar con las nuevas imágenes. 
+\end{DoxyWarning}

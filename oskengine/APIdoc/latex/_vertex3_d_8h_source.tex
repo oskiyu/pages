@@ -1,0 +1,62 @@
+\doxysection{Vertex3\+D.\+h}
+\label{_vertex3_d_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Vertex3D.h@{C:/Users/Oscar/source/repos/OSKengine/Source/Vertex3D.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Vector4.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Color.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}VertexInfo.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Vertex.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{struct\ }Vertex3D\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ OSK\_VERTEX\_TYPE\_REG(\textcolor{stringliteral}{"{}OSK::Vertex3D"{}});}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ Vector3f\ position;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ Vector3f\ normal;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Color\ color;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ Vector2f\ texCoords;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ Vector3f\ tangent;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{struct\ }VertexAnim3D\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ OSK\_VERTEX\_TYPE\_REG(\textcolor{stringliteral}{"{}OSK::VertexAnim3D"{}});}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Vector3f\ position;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ Vector3f\ normal;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ Color\ color;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ Vector2f\ texCoords;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ Vector3f\ tangent;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ Vector4f\ boneIndices;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ Vector4f\ boneWeights;}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{struct\ }VertexCollisionDebug3D\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ OSK\_VERTEX\_TYPE\_REG(\textcolor{stringliteral}{"{}OSK::VertexCollisionDebug3D"{}});}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ Vector3f\ position;}
+\DoxyCodeLine{00040\ \ \ \ \ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{struct\ }GdrVertex3D\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ OSK\_VERTEX\_TYPE\_REG(\textcolor{stringliteral}{"{}OSK::GdrVertex3D"{}});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ USize32\ gdrIndex\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{struct\ }PositionOnlyVertex3D\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ OSK\_VERTEX\_TYPE\_REG(\textcolor{stringliteral}{"{}OSK::PositionOnlyVertex3D"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ Vector3f\ position\ =\ Vector3f::Zero;}
+\DoxyCodeLine{00050\ \ \ \ \ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{struct\ }EmptyVertex\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ OSK\_VERTEX\_TYPE\_REG(\textcolor{stringliteral}{"{}OSK::EmptyVertex"{}});}
+\DoxyCodeLine{00054\ \ \ \ \ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}

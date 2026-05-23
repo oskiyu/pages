@@ -1,0 +1,60 @@
+\doxysection{Grass\+Render\+Pass.\+h}
+\label{_grass_render_pass_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GrassRenderPass.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GrassRenderPass.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}IShaderPass.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}MaterialInstance.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ GrassRenderPass\ :\ \textcolor{keyword}{public}\ IShaderPass\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ Name\ =\ \textcolor{stringliteral}{"{}GrassRenderPass"{}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ OSK\_RENDERPASS(GrassRenderPass,\ Name);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ GrassRenderPass()\ :\ IShaderPass(\textcolor{stringliteral}{"{}GrassRenderPass"{}})\ \{\}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetCameraBuffers(std::span<const\ GRAPHICS::GpuBuffer*,\ MAX\_RESOURCES\_IN\_FLIGHT>\ cameraBuffers)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (USize32\ i\ =\ 0;\ i\ <\ m\_cameraBuffers.size();\ i++)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_cameraBuffers[i]\ =\ cameraBuffers[i];}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Load()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(TDeltaTime\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RenderLoop(}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ ICommandList*\ commandList,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<ECS::GameObjectIndex>\&\ objectsToRender,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ GlobalMeshMapping*\ meshMapping,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ jitterIndex,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2ui\ resolution)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::array<const\ GRAPHICS::GpuBuffer*,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_cameraBuffers\{\};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ std::array<UniquePtr<MaterialInstance>,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_cameraInstances\{\};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }WindBuffer\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ Vector4f\ origin\{\};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Vector2f\ m\_windOffset\ =\ Vector2f::Zero;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ m\_time\ =\ 0.0f;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GpuBuffer>,\ MAX\_RESOURCES\_IN\_FLIGHT>\ m\_windBuffers\{\};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \}}
+
+\end{DoxyCode}

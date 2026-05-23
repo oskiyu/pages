@@ -1,0 +1,143 @@
+\doxysubsection{Archivo de descripción de material (revisión 1). }
+\label{_material_file_v1}\index{Archivo de descripción de material (revisión 1).@{Archivo de descripción de material (revisión 1).}}
+En esta versión de la especificación, la información de los shaders se obtiene automáticamente, por lo que no es necesario especificarla.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+\_\+type} & Tipo de archivo JSON. Dependiendo del tipo de material, será uno u otro. \doxysectref{Tipos de material.}{pág.}{_material_file_v0_materialtypeV0}{3} \\
+\hline
+{\em spec\+\_\+ver} & Versión de la especificación del material. \\
+\hline
+{\em name} & Nombre del material (único).\\
+\hline
+{\em rt\+\_\+raygen\+\_\+shader} & [{\itshape condicional}] Ruta del shader precompilado de generación de rayos. \\
+\hline
+{\em rt\+\_\+closesthit\+\_\+shader} & [{\itshape condicional}] Ruta del shader precompilado de choque de rayo. \\
+\hline
+{\em rt\+\_\+miss\+\_\+shader} & [{\itshape condicional}] Ruta del shader precompilado de fallo de rayo.\\
+\hline
+{\em vertex\+\_\+shader} & [{\itshape condicional}] Ruta del shader precompilado de vértices. \\
+\hline
+{\em fragment\+\_\+shader} & [{\itshape condicional}] Ruta del shader precompilado de fragmentos / píxeles. \\
+\hline
+{\em tesselation\+\_\+control\+\_\+shader} & [{\itshape opcional} / {\itshape condicional}] Ruta del shader precompilado de control del teselado. \\
+\hline
+{\em tesselation\+\_\+evaluation\+\_\+shader} & [{\itshape opcional} / {\itshape condicional}] Ruta del shader precompilado de evaluación del teselado.\\
+\hline
+{\em compute\+\_\+shader} & [{\itshape condicional}] Ruta del shader precompilado de computación.\\
+\hline
+{\em vertex\+\_\+type} & [{\itshape condicional}] Nombre del tipo de vértice que se va a usar en este material (para materiales gráficos). \\
+\hline
+{\em config} & [{\itshape opcional}] Estructura de datos con configuración adicional. \doxysectref{Configuración adicional}{pág.}{_material_file_v1_configv1}{3} \\
+\hline
+{\em polygon\+\_\+mode} & [{\itshape opcional}] Tipo de polígono usado, en caso de tratarse de un material gráfico. \doxysectref{Modo de renderizado de polígonos.}{pág.}{_material_file_v0_polygonmodeV0}{3}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Si {\ttfamily rt\+\_\+raygen\+\_\+shader}, {\ttfamily rt\+\_\+closesthit\+\_\+shader} o {\ttfamily rt\+\_\+miss\+\_\+shader} están presentes, entonces {\ttfamily file\+\_\+type} debe ser "{}\+MATERIAL\+\_\+\+RT"{}. 
+
+Si {\ttfamily vertex\+\_\+shader}, {\ttfamily fragment\+\_\+shader}, {\ttfamily tesselation\+\_\+control\+\_\+shader} o {\ttfamily tesselation\+\_\+evaluation\+\_\+shader} están presentes, entonces {\ttfamily file\+\_\+type} debe ser "{}\+MATERIAL"{}. 
+
+Si {\ttfamily compute\+\_\+shader} está presente, entonces {\ttfamily file\+\_\+type} debe ser "{}\+MATERIAL\+\_\+\+COMPUTE"{}.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+Si {\ttfamily file\+\_\+type} es "{}\+MATERIAL\+\_\+\+RT"{}, entonces {\ttfamily rt\+\_\+raygen\+\_\+shader}, {\ttfamily rt\+\_\+closesthit\+\_\+shader} y {\ttfamily rt\+\_\+miss\+\_\+shader} deben estar presentes. 
+
+Si {\ttfamily file\+\_\+type} es "{}\+MATERIAL"{}, entonces {\ttfamily vertex\+\_\+shader} y {\ttfamily fragment\+\_\+shader} deben estar presentes. 
+
+Si {\ttfamily file\+\_\+type} es "{}\+MATERIAL\+\_\+\+COMPUTE"{}, entonces {\ttfamily compute\+\_\+shader} debe estar presente.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+Si {\ttfamily tesselation\+\_\+control\+\_\+shader} está presente, entonces {\ttfamily tesselation\+\_\+evaluation\+\_\+shader} también debe estar presente. 
+
+Si {\ttfamily tesselation\+\_\+evaluation\+\_\+shader} está presente, entonces {\ttfamily tesselation\+\_\+control\+\_\+shader} también debe estar presente.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+{\ttfamily file\+\_\+type} debe coincidir con uno de los tipos presentados en \doxysectref{Tipos de material.}{pág.}{_material_file_v1_materialtypeV1}{3}. 
+
+{\ttfamily polygon\+\_\+mode} debe coincidir con uno de los tipos presentados en \doxysectref{Modo de renderizado de polígonos.}{pág.}{_material_file_v1_polygonmodeV1}{3}.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+{\ttfamily spec\+\_\+ver} debe ser 1 para que se aplique esta especificación. 
+
+{\ttfamily name} debe ser único entre todos los materiales cargados en el motor en un momento dado.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+Si {\ttfamily vertex\+\_\+type} está presente, entonces {\ttfamily file\+\_\+type} debe ser "{}\+MATERIAL"{}. 
+
+{\ttfamily vertex\+\_\+type} debe coincidir con el nombre del tipo de vértices en el código C++.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+Si {\ttfamily polygon\+\_\+mode} está presente, entonces {\ttfamily file\+\_\+type} debe ser "{}\+MATERIAL"{}.
+\end{DoxyPrecond}
+\doxysubsubsubsubsection{Configuración adicional}\label{_material_file_v1_configv1}
+
+\begin{DoxyParams}{Parámetros}
+{\em depth\+\_\+testing} & [{\itshape opcional}] Establece el tipo de depth stencil a usar. \doxysectref{Modo de depth testing.}{pág.}{_material_file_v1_depthtestingV1}{3} \\
+\hline
+{\em cull\+\_\+mode} & [{\itshape opcional}] Establece el tipo de culling aplicado. culling\+V01 \\
+\hline
+{\em disable\+\_\+alpha\+\_\+blending} & [{\itshape opcinonal}] Flag que, si está presente, desactiva el alpha blending. \\
+\hline
+{\em resource\+\_\+vararray\+\_\+max\+\_\+count} & [{\itshape condicional} / {\itshape opcional}] Para arrays de recursos de tamaño sin indicar (recurso[]), indica el número máximo de recursos que se pueden enlazar al array.\\
+\hline
+\end{DoxyParams}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+Si {\ttfamily depth\+\_\+testing} está presente, entonces el tipo de material debe ser "{}\+MATERIAL"{}. 
+
+Si {\ttfamily depth\+\_\+testing} está presente, debe coincidir con uno de los valores descritos en \doxysectref{Modo de depth testing.}{pág.}{_material_file_v1_depthtestingV1}{3}.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+Si {\ttfamily cull\+\_\+mode} está presente, entonces el tipo de material debe ser "{}\+MATERIAL"{}. 
+
+Si {\ttfamily cull\+\_\+mode} está presente, debe coincidir con uno de los valores descritos en \doxysectref{Modo de culling.}{pág.}{_material_file_v1_cullingV1}{3}.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+Si {\ttfamily disable\+\_\+alpha\+\_\+blending} está presente, entonces el tipo de material debe ser "{}\+MATERIAL"{}.
+\end{DoxyPrecond}
+~\newline
+ \begin{DoxyPrecond}{Precondición}
+Si alguno de los shaders del material tiene arrays de recursos con un tamaño sin especificar (recurso[]), {\ttfamily resource\+\_\+vararray\+\_\+max\+\_\+count} debe está presente. 
+
+{\ttfamily resource\+\_\+vararray\+\_\+max\+\_\+count} debe ser mayor que 0. 
+
+{\ttfamily resource\+\_\+vararray\+\_\+max\+\_\+count} debe ser menor que 4096.
+\end{DoxyPrecond}
+\doxysubsubsubsubsection{Tipos de material.}\label{_material_file_v1_materialtypeV1}
+Existen tres tipos de material, dependiendo del tipo de pipeline y shaders que aceptan\+:
+\begin{DoxyItemize}
+\item {\bfseries{Material de rasterizado}}, representado por "{}\+MATERIAL"{}.
+\item {\bfseries{Material de trazado de rayos}}, representado por "{}\+MATERIAL\+\_\+\+RT"{}.
+\item {\bfseries{Material de computación}}, representado por "{}\+MATERIAL\+\_\+\+COMPUTE"{}.
+\end{DoxyItemize}\doxysubsubsubsubsection{Modo de renderizado de polígonos.}\label{_material_file_v1_polygonmodeV1}
+Existen tres maneras de renderizar geometría\+:
+\begin{DoxyItemize}
+\item {\bfseries{Renderizado tradicional de triángulos}}, representado por "{}\+FILL"{}.
+\item {\bfseries{Renderizado de triángulos en wideframe}}, representado por "{}\+TRIANGLE\+\_\+\+WIDEFRAME"{}.
+\item {\bfseries{Renderizado de líneas (no triángulos)}}, representado por "{}\+LINE"{}.
+\end{DoxyItemize}\doxysubsubsubsubsection{Modo de depth testing.}\label{_material_file_v1_depthtestingV1}
+Existen tres maneras de configurar el depth testing\+:
+\begin{DoxyItemize}
+\item {\bfseries{Desactivado}}, representado por "{}none"{}.
+\item {\bfseries{Sólo lectura}}\+: se comprueba la geometría, pero no se sobreescribe la imagen de profundidad. Representado por "{}read"{}.
+\item {\bfseries{Comportamiento normal}}\+: se comprueba la geometría, y se sobreescribe la imagen de profundidad si es necesario. Representado por "{}read/write"{}.
+\end{DoxyItemize}
+
+Por defecto, está activado en modo read / write.\doxysubsubsubsubsection{Modo de culling.}\label{_material_file_v1_cullingV1}
+Existen tres maneras de configurar el depth testing\+:
+\begin{DoxyItemize}
+\item {\bfseries{Desactivado}}, representado por "{}none"{}.
+\item {\bfseries{Front-\/face culling}}, representado por "{}front"{}.
+\item {\bfseries{Back-\/face culling}}, representado por "{}back"{}.
+\end{DoxyItemize}
+
+Por defecto, está activado en modo back. 

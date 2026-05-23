@@ -1,0 +1,130 @@
+\doxysection{Gdr\+Deferred\+System.\+h}
+\label{_gdr_deferred_system_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GdrDeferredSystem.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GdrDeferredSystem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}DeferredRenderSystem.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Vertex.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}VertexAttributes.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}GpuModel3D.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}GpuMesh3D.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ResourcesInFlight.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }CameraComponent3D;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ GdrDeferredRenderSystem\ :\ \textcolor{keyword}{public}\ DeferredRenderSystem\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ OSK\_SYSTEM(\textcolor{stringliteral}{"{}OSK::GdrDeferredRenderSystem"{}});}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ GdrDeferredRenderSystem();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetMaxCounts(USize32\ maxVertexCount,\ USize32\ maxMeshCount);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Render(GRAPHICS::ICommandList*\ commandList,\ std::span<const\ ECS::GameObjectIndex>\ objects)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateUnifiedBuffers(USize32\ maxVertexCount,\ USize32\ maxMeshCount);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }GdrPerMeshInfo\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ positionsOffset\ =\ 0;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ attributesOffset\ =\ 0;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ animationAttributesOffset\ =\ 0;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ materialOffset\ =\ 0;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }GdrPerMeshInstanceInfo\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ glm::mat4\ modelMatrix\ =\ glm::mat4(1.0f);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ glm::mat4\ previousModelMatrix\ =\ glm::mat4(1.0f);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }GdrPerMaterialInfo\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2f\ metallicRoughness\ =\ Vector2f::Zero;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ emissiveColor\ =\ Color::White\ *\ 0.0f;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ albedoTextureIndex\ =\ 0;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ normalTextureIndex\ =\ 0;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }MeshDrawInfo\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ firstVertexIndex\ =\ 0;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ numIndices\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ nlohmann::json\ SaveConfiguration()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ PERSISTENCE::BinaryBlock\ SaveBinaryConfiguration()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyConfiguration(\textcolor{keyword}{const}\ nlohmann::json\&\ config,\ \textcolor{keyword}{const}\ SavedGameObjectTranslator\&\ translator)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyConfiguration(PERSISTENCE::BinaryBlockReader*\ reader,\ \textcolor{keyword}{const}\ SavedGameObjectTranslator\&\ translator)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ WriteMeshUnifiedVertexAndIndexBuffers(}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::GpuMesh3D\&\ mesh,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::GpuModel3D\&\ model,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ GRAPHICS::TIndexSize\ firstIndex,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ nextGdrIndex);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ WriteMeshVertexAttributes(}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::VerticesAttributesMaps\&\ attributesMap,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ GdrPerMeshInfo*\ previousOffsets);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ WriteMeshInfo(\textcolor{keyword}{const}\ GdrPerMeshInfo\&\ info);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ WriteMaterialInfo(}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::GpuModel3D\&\ model,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32\ meshIndexInsideModel,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ GdrPerMeshInfo*\ previousOffsets,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ UIndex32*\ nextImageIndex);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ USize32\ m\_maxVertices\ =\ 0;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_unifiedVertexBuffers\{\};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_unifiedIndexBuffers\{\};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ std::unordered\_map<GRAPHICS::GpuMeshUuid,\ MeshDrawInfo>\ m\_meshes\{\};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ std::unordered\_map<GRAPHICS::GpuMeshUuid,\ DynamicArray<GdrPerMeshInstanceInfo>>\ m\_draws\{\};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_perInstanceBuffers\{\};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/\ Vertex\ attributes\ -\/-\/\ //}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_vertexPositionsBuffers\{\};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_vertexAttributesBuffers\{\};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_vertexAnimAttributesBuffers\{\};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Textures\ \&\ descriptor\ sets}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ m\_gdrMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ UniquePtr<GRAPHICS::MaterialInstance>\ m\_gdrMaterialInstance\{\};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/\ Tables\ -\/-\/\ //}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_perMeshTable\{\};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_perMaterialTable\{\};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/\ Previous\ frames\ -\/-\/\ //}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ std::unordered\_map<GameObjectIndex,\ glm::mat4>\ m\_previousFrameMatrices\{\};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \}}
+
+\end{DoxyCode}

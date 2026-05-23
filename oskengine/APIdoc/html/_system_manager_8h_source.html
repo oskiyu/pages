@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSKengine: Fichero Fuente C:/Users/Oscar/source/repos/OSKengine/Source/SystemManager.h</title>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/SystemManager.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_system_manager_8h_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('_system_manager_8h_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,9 +78,16 @@ $(document).ready(function(){initNavTree('_system_manager_8h_source.html',''); i
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
@@ -106,42 +112,44 @@ $(document).ready(function(){initNavTree('_system_manager_8h_source.html',''); i
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a> {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">class </span>ICommandList;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">class </span><a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html">ICommandList</a>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_e_c_s.html">OSK::ECS</a> {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">class </span>EventManager;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">class </span><a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_event_manager.html">EventManager</a>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html">   33</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html">SystemManager</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html">   33</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a7f08d18419d8782f296027a7ca1c1790">SystemManager</a> {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a7f08d18419d8782f296027a7ca1c1790">   37</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a7f08d18419d8782f296027a7ca1c1790">SystemManager</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5e503e38a6f749c36c77c14ce48846de">   38</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5e503e38a6f749c36c77c14ce48846de">OSK_DISABLE_COPY</a>(<a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html">SystemManager</a>);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a66a0c00487f4f014f2d6efaf9f1bd0a6">   39</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a66a0c00487f4f014f2d6efaf9f1bd0a6">OSK_DEFAULT_MOVE_OPERATOR</a>(<a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html">SystemManager</a>);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">void</span> OnTick(<a class="code hl_typedef" href="namespace_o_s_k.html#ae6d305af5698a56db8c3ab3afc10fdd4">TDeltaTime</a> deltaTime, <span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_event_manager.html">EventManager</a>&amp; eventManager);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">void</span> OnRender(<a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html">GRAPHICS::ICommandList</a>* commandList);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5e503e38a6f749c36c77c14ce48846de">   38</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5e503e38a6f749c36c77c14ce48846de">OSK_DISABLE_COPY</a>(<a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a7f08d18419d8782f296027a7ca1c1790">SystemManager</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a66a0c00487f4f014f2d6efaf9f1bd0a6">   39</a></span>        <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a66a0c00487f4f014f2d6efaf9f1bd0a6">OSK_DEFAULT_MOVE_OPERATOR</a>(<a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a7f08d18419d8782f296027a7ca1c1790">SystemManager</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5ea92a92d97f6a286c9c0c652c45bb9e">OnTick</a>(<a class="code hl_typedef" href="namespace_o_s_k.html#adfc76cbcf35e5506ee24168edfe15bb0">TDeltaTime</a> deltaTime, <span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_event_manager.html">EventManager</a>&amp; eventManager);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5aeb33cf0b11ad975659c232a3a22b72">OnRender</a>(<a class="code hl_class" href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html">GRAPHICS::ICommandList</a>* commandList);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordtype">void</span> GameObjectDestroyed(<a class="code hl_class" href="class_o_s_k_1_1_base_uuid.html">GameObjectIndex</a> obj);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#adeba4513a1ca0154da78f72d2bb3c408">GameObjectDestroyed</a>(<a class="code hl_typedef" href="namespace_o_s_k_1_1_e_c_s.html#a5b92aeaa6be2ce0d96e7f571aa917042">GameObjectIndex</a> obj);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordtype">void</span> GameObjectSignatureChanged(<a class="code hl_class" href="class_o_s_k_1_1_base_uuid.html">GameObjectIndex</a> obj, <span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_constexpr_bit_set.html">Signature</a>&amp; signature);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a74ebffeb57090187fe5add293d79ca67">GameObjectSignatureChanged</a>(<a class="code hl_typedef" href="namespace_o_s_k_1_1_e_c_s.html#a5b92aeaa6be2ce0d96e7f571aa917042">GameObjectIndex</a> obj, <span class="keyword">const</span> <a class="code hl_typedef" href="namespace_o_s_k_1_1_e_c_s.html#a9c0e00962e3504ffd2435edb417d2d42">Signature</a>&amp; signature);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TSystem&gt; <span class="keyword">requires</span> <a class="code hl_concept" href="concept_o_s_k_1_1_e_c_s_1_1_is_ecs_system.html">IsEcsSystem&lt;TSystem&gt;</a></div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#aecab7fe0aeea50f027db32e42c79790e">   68</a></span>        TSystem* <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#aecab7fe0aeea50f027db32e42c79790e">RegisterSystem</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_o_s_k_1_1_e_c_s_1_1_system_dependencies.html">SystemDependencies</a>&amp; dependencies) {</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keyword">const</span> <span class="keyword">auto</span> key = (std::string)TSystem::GetSystemName();</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">if</span> (this-&gt;ContainsSystem&lt;TSystem&gt;())</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keywordflow">return</span> this-&gt;GetSystem&lt;TSystem&gt;();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5d4abd7705ce033e126e3c6772a5725b">ContainsSystem&lt;TSystem&gt;</a>())</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5331150695972d9d251fb760e8f6ee9e">GetSystem&lt;TSystem&gt;</a>();</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keyword">auto</span> sistema = MakeUnique&lt;TSystem&gt;();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keyword">auto</span> sistema = <a class="code hl_function" href="namespace_o_s_k.html#a9eb9f9297be2a8044dda7480321e6661">MakeUnique&lt;TSystem&gt;</a>();</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            sistema-&gt;_SetDependencies(dependencies);</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
@@ -155,53 +163,62 @@ $(document).ready(function(){initNavTree('_system_manager_8h_source.html',''); i
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TSystem*<span class="keyword">&gt;</span>(m_systems[key].system.GetPointer());</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TSystem&gt; <span class="keyword">requires</span> <a class="code hl_concept" href="concept_o_s_k_1_1_e_c_s_1_1_is_ecs_system.html">IsEcsSystem&lt;TSystem&gt;</a> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a3fb325594bcd65b490abec1254d2d3c9">   93</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a3fb325594bcd65b490abec1254d2d3c9">RemoveSystem</a>() {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keyword">const</span> <span class="keyword">auto</span>* system = GetSystem&lt;TSystem&gt;();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keyword">const</span> <span class="keyword">auto</span>* system = <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5331150695972d9d251fb760e8f6ee9e">GetSystem&lt;TSystem&gt;</a>();</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            m_executionGraph.RemoveSystem(system);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            m_systems.erase((std::string)TSystem::GetSystemName());</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TSystem&gt; <span class="keyword">requires</span> <a class="code hl_concept" href="concept_o_s_k_1_1_e_c_s_1_1_is_ecs_system.html">IsEcsSystem&lt;TSystem&gt;</a></div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5331150695972d9d251fb760e8f6ee9e">  104</a></span>        TSystem* <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5331150695972d9d251fb760e8f6ee9e">GetSystem</a>() {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordflow">if</span> (!ContainsSystem&lt;TSystem&gt;()) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5d4abd7705ce033e126e3c6772a5725b">ContainsSystem&lt;TSystem&gt;</a>()) {</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            }</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TSystem*<span class="keyword">&gt;</span>(m_systems.find(TSystem::GetSystemName())-&gt;second.system.GetPointer());</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">ISystem</a>* GetSystem(std::string_view systemName);</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">ISystem</a>* GetSystem(std::string_view systemName) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordtype">void</span> DeactivateAllSystems();</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TSystem&gt; <span class="keyword">requires</span> <a class="code hl_concept" href="concept_o_s_k_1_1_e_c_s_1_1_is_ecs_system.html">IsEcsSystem&lt;TSystem&gt;</a></div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="}">
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#ad64dc9529ce5a15a0d2269ce099f1bc6">  131</a></span>        <span class="keyword">const</span> TSystem* <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#ad64dc9529ce5a15a0d2269ce099f1bc6">GetSystem</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">if</span> (!ContainsSystem&lt;TSystem&gt;()) {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5d4abd7705ce033e126e3c6772a5725b">ContainsSystem&lt;TSystem&gt;</a>()) {</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            }</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>TSystem*<span class="keyword">&gt;</span>(m_systems.find(TSystem::GetSystemName())-&gt;second.system.GetPointer());</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        }</div>
+</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                </div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TSystem&gt; <span class="keyword">requires</span> <a class="code hl_concept" href="concept_o_s_k_1_1_e_c_s_1_1_is_ecs_system.html">IsEcsSystem&lt;TSystem&gt;</a> </div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5d4abd7705ce033e126e3c6772a5725b">  144</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5d4abd7705ce033e126e3c6772a5725b">ContainsSystem</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">return</span> m_systems.contains(TSystem::GetSystemName());</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
+</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span></div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_system_execution_graph.html">SystemExecutionGraph</a>&amp; GetExecutionGraph() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keywordtype">void</span> LaunchJobs(</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">ISystem</a>* system,</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            <a class="code hl_typedef" href="namespace_o_s_k.html#ae6d305af5698a56db8c3ab3afc10fdd4">TDeltaTime</a> deltaTime, </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            <a class="code hl_typedef" href="namespace_o_s_k.html#adfc76cbcf35e5506ee24168edfe15bb0">TDeltaTime</a> deltaTime, </div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <span class="keyword">const</span> <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_event_manager.html">EventManager</a>&amp; eventManager);</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keyword">struct </span>SystemEntry {</div>
@@ -209,45 +226,51 @@ $(document).ready(function(){initNavTree('_system_manager_8h_source.html',''); i
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            <a class="code hl_class" href="class_o_s_k_1_1_dynamic_array.html">DynamicArray&lt;GameObjectIndex&gt;</a> compatibleObjects;</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        };</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> AddObject(SystemEntry* entry, <a class="code hl_typedef" href="namespace_o_s_k_1_1_e_c_s.html#ab557f32daace675b85bad6deb7214129">GameObjectIndex</a> obj);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> RemoveObject(SystemEntry* entry, <a class="code hl_typedef" href="namespace_o_s_k_1_1_e_c_s.html#ab557f32daace675b85bad6deb7214129">GameObjectIndex</a> obj);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> AddObject(SystemEntry* entry, GameObjectIndex obj);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> RemoveObject(SystemEntry* entry, GameObjectIndex obj);</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        std::unordered_map&lt;std::string, SystemEntry, StringHasher, std::equal_to&lt;&gt;&gt; m_systems;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_typedef" href="namespace_o_s_k.html#ad5295fe48541d66a3096e05e198b36df">StringHashMap&lt;SystemEntry&gt;</a> m_systems;</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        SystemExecutionGraph m_executionGraph{};</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    };</div>
+</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
-<div class="ttc" id="aclass_o_s_k_1_1_base_uuid_html"><div class="ttname"><a href="class_o_s_k_1_1_base_uuid.html">OSK::BaseUuid&lt; class GameObjectIndexTag &gt;</a></div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_constexpr_bit_set_html"><div class="ttname"><a href="class_o_s_k_1_1_constexpr_bit_set.html">OSK::ConstexprBitSet&lt; MAX_COMPONENT_TYPES &gt;</a></div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_dynamic_array_html"><div class="ttname"><a href="class_o_s_k_1_1_dynamic_array.html">OSK::DynamicArray</a></div><div class="ttdoc">Dynamic array: array que puede cambiar de tamaño.</div><div class="ttdef"><b>Definition:</b> DynamicArray.hpp:66</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_event_manager_html"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_event_manager.html">OSK::ECS::EventManager</a></div><div class="ttdoc">Se encarga de gestionar las colas de eventos.</div><div class="ttdef"><b>Definition:</b> EventManager.h:19</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_i_system_html"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">OSK::ECS::ISystem</a></div><div class="ttdoc">Un sistema se encarga de ejecutar lógica.</div><div class="ttdef"><b>Definition:</b> ISystem.h:57</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_execution_graph_html"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_execution_graph.html">OSK::ECS::SystemExecutionGraph</a></div><div class="ttdoc">Grafo que contiene los sistemas ordenados de tal manera que se respeten sus dependencias.</div><div class="ttdef"><b>Definition:</b> SystemExecutionGraph.h:25</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html">OSK::ECS::SystemManager</a></div><div class="ttdoc">El SystemManager se encarga de almacenar y manejar los sistemas del juego. Es el encargado de llamar ...</div><div class="ttdef"><b>Definition:</b> SystemManager.h:33</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_a3fb325594bcd65b490abec1254d2d3c9"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a3fb325594bcd65b490abec1254d2d3c9">OSK::ECS::SystemManager::RemoveSystem</a></div><div class="ttdeci">void RemoveSystem()</div><div class="ttdoc">Elimina el sistema dado, para que no sea procesado a partir de ahora.</div><div class="ttdef"><b>Definition:</b> SystemManager.h:93</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_a5331150695972d9d251fb760e8f6ee9e"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5331150695972d9d251fb760e8f6ee9e">OSK::ECS::SystemManager::GetSystem</a></div><div class="ttdeci">TSystem * GetSystem()</div><div class="ttdef"><b>Definition:</b> SystemManager.h:104</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_a5d4abd7705ce033e126e3c6772a5725b"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5d4abd7705ce033e126e3c6772a5725b">OSK::ECS::SystemManager::ContainsSystem</a></div><div class="ttdeci">bool ContainsSystem() const</div><div class="ttdoc">Comprueba si un sistema dado está registrado, y por lo tanto, ejecutándose.</div><div class="ttdef"><b>Definition:</b> SystemManager.h:144</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_dynamic_array_html"><div class="ttname"><a href="class_o_s_k_1_1_dynamic_array.html">OSK::DynamicArray</a></div><div class="ttdoc">Dynamic array: array que puede cambiar de tamaño.</div><div class="ttdef"><b>Definition</b> DynamicArray.hpp:66</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_event_manager_html"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_event_manager.html">OSK::ECS::EventManager</a></div><div class="ttdoc">Se encarga de gestionar las colas de eventos.</div><div class="ttdef"><b>Definition</b> EventManager.h:19</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_i_system_html"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_i_system.html">OSK::ECS::ISystem</a></div><div class="ttdoc">Un sistema se encarga de ejecutar lógica.</div><div class="ttdef"><b>Definition</b> ISystem.h:57</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_execution_graph_html"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_execution_graph.html">OSK::ECS::SystemExecutionGraph</a></div><div class="ttdoc">Grafo que contiene los sistemas ordenados de tal manera que se respeten sus dependencias.</div><div class="ttdef"><b>Definition</b> SystemExecutionGraph.h:25</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_a3fb325594bcd65b490abec1254d2d3c9"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a3fb325594bcd65b490abec1254d2d3c9">OSK::ECS::SystemManager::RemoveSystem</a></div><div class="ttdeci">void RemoveSystem()</div><div class="ttdoc">Elimina el sistema dado, para que no sea procesado a partir de ahora.</div><div class="ttdef"><b>Definition</b> SystemManager.h:93</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_a5331150695972d9d251fb760e8f6ee9e"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5331150695972d9d251fb760e8f6ee9e">OSK::ECS::SystemManager::GetSystem</a></div><div class="ttdeci">TSystem * GetSystem()</div><div class="ttdef"><b>Definition</b> SystemManager.h:104</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_a5aeb33cf0b11ad975659c232a3a22b72"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5aeb33cf0b11ad975659c232a3a22b72">OSK::ECS::SystemManager::OnRender</a></div><div class="ttdeci">void OnRender(GRAPHICS::ICommandList *commandList)</div><div class="ttdoc">Ejecuta el renderizado de los sistemas de renderizado.</div><div class="ttdef"><b>Definition</b> SystemManager.cpp:191</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_a5d4abd7705ce033e126e3c6772a5725b"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5d4abd7705ce033e126e3c6772a5725b">OSK::ECS::SystemManager::ContainsSystem</a></div><div class="ttdeci">bool ContainsSystem() const</div><div class="ttdoc">Comprueba si un sistema dado está registrado, y por lo tanto, ejecutándose.</div><div class="ttdef"><b>Definition</b> SystemManager.h:144</div></div>
 <div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_a5e503e38a6f749c36c77c14ce48846de"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5e503e38a6f749c36c77c14ce48846de">OSK::ECS::SystemManager::OSK_DISABLE_COPY</a></div><div class="ttdeci">OSK_DISABLE_COPY(SystemManager)</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_a5ea92a92d97f6a286c9c0c652c45bb9e"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a5ea92a92d97f6a286c9c0c652c45bb9e">OSK::ECS::SystemManager::OnTick</a></div><div class="ttdeci">void OnTick(TDeltaTime deltaTime, const EventManager &amp;eventManager)</div><div class="ttdoc">Ejecuta la lógica OnTick de todos los sistemas.</div><div class="ttdef"><b>Definition</b> SystemManager.cpp:17</div></div>
 <div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_a66a0c00487f4f014f2d6efaf9f1bd0a6"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a66a0c00487f4f014f2d6efaf9f1bd0a6">OSK::ECS::SystemManager::OSK_DEFAULT_MOVE_OPERATOR</a></div><div class="ttdeci">OSK_DEFAULT_MOVE_OPERATOR(SystemManager)</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_a74ebffeb57090187fe5add293d79ca67"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a74ebffeb57090187fe5add293d79ca67">OSK::ECS::SystemManager::GameObjectSignatureChanged</a></div><div class="ttdeci">void GameObjectSignatureChanged(GameObjectIndex obj, const Signature &amp;signature)</div><div class="ttdoc">Añade o elimina el objeto de los sistemas, según sea conveniente dependiendo del nuevo signature.</div><div class="ttdef"><b>Definition</b> SystemManager.cpp:228</div></div>
 <div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_a7f08d18419d8782f296027a7ca1c1790"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#a7f08d18419d8782f296027a7ca1c1790">OSK::ECS::SystemManager::SystemManager</a></div><div class="ttdeci">SystemManager()=default</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_ad64dc9529ce5a15a0d2269ce099f1bc6"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#ad64dc9529ce5a15a0d2269ce099f1bc6">OSK::ECS::SystemManager::GetSystem</a></div><div class="ttdeci">const TSystem * GetSystem() const</div><div class="ttdef"><b>Definition:</b> SystemManager.h:131</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_aecab7fe0aeea50f027db32e42c79790e"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#aecab7fe0aeea50f027db32e42c79790e">OSK::ECS::SystemManager::RegisterSystem</a></div><div class="ttdeci">TSystem * RegisterSystem(const SystemDependencies &amp;dependencies)</div><div class="ttdoc">Registra un sistema, con lo que se ejecutará a partir de ahora. Si ya estaba registrado,...</div><div class="ttdef"><b>Definition:</b> SystemManager.h:68</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html">OSK::GRAPHICS::ICommandList</a></div><div class="ttdoc">Una lista de comandos contiene una serie de comandos que serán enviados a la GPU para su ejecución....</div><div class="ttdef"><b>Definition:</b> ICommandList.h:78</div></div>
-<div class="ttc" id="aclass_o_s_k_1_1_unique_ptr_html"><div class="ttname"><a href="class_o_s_k_1_1_unique_ptr.html">OSK::UniquePtr</a></div><div class="ttdoc">Estructura que es dueña de un objeto almacenado en heap. Al destruirse el UniquePtr,...</div><div class="ttdef"><b>Definition:</b> UniquePtr.hpp:26</div></div>
-<div class="ttc" id="aconcept_o_s_k_1_1_e_c_s_1_1_is_ecs_system_html"><div class="ttname"><a href="concept_o_s_k_1_1_e_c_s_1_1_is_ecs_system.html">OSK::ECS::IsEcsSystem</a></div><div class="ttdoc">Concepto que nos permite detectar si una clase cumple con las condiciones para ser un sistema.</div><div class="ttdef"><b>Definition:</b> ISystem.h:148</div></div>
-<div class="ttc" id="anamespace_o_s_k_1_1_e_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_e_c_s.html">OSK::ECS</a></div><div class="ttdef"><b>Definition:</b> CameraComponent2D.h:17</div></div>
-<div class="ttc" id="anamespace_o_s_k_1_1_e_c_s_html_ab557f32daace675b85bad6deb7214129"><div class="ttname"><a href="namespace_o_s_k_1_1_e_c_s.html#ab557f32daace675b85bad6deb7214129">OSK::ECS::GameObjectIndex</a></div><div class="ttdeci">BaseUuid&lt; class GameObjectIndexTag &gt; GameObjectIndex</div><div class="ttdoc">Identificador único para un Game Object.</div><div class="ttdef"><b>Definition:</b> GameObject.h:21</div></div>
-<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></div><div class="ttdef"><b>Definition:</b> AccelerationStructuresExceptions.h:5</div></div>
-<div class="ttc" id="anamespace_o_s_k_html_ae6d305af5698a56db8c3ab3afc10fdd4"><div class="ttname"><a href="namespace_o_s_k.html#ae6d305af5698a56db8c3ab3afc10fdd4">OSK::TDeltaTime</a></div><div class="ttdeci">float TDeltaTime</div><div class="ttdoc">Delta de tiempo, medido en segundos.</div><div class="ttdef"><b>Definition:</b> NumericTypes.h:31</div></div>
-<div class="ttc" id="astruct_o_s_k_1_1_e_c_s_1_1_system_dependencies_html"><div class="ttname"><a href="struct_o_s_k_1_1_e_c_s_1_1_system_dependencies.html">OSK::ECS::SystemDependencies</a></div><div class="ttdoc">Dependencias explícitas de un sistema.</div><div class="ttdef"><b>Definition:</b> ISystem.h:28</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_ad64dc9529ce5a15a0d2269ce099f1bc6"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#ad64dc9529ce5a15a0d2269ce099f1bc6">OSK::ECS::SystemManager::GetSystem</a></div><div class="ttdeci">const TSystem * GetSystem() const</div><div class="ttdef"><b>Definition</b> SystemManager.h:131</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_adeba4513a1ca0154da78f72d2bb3c408"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#adeba4513a1ca0154da78f72d2bb3c408">OSK::ECS::SystemManager::GameObjectDestroyed</a></div><div class="ttdeci">void GameObjectDestroyed(GameObjectIndex obj)</div><div class="ttdoc">Elimina el GameObject de todos los sistemas.</div><div class="ttdef"><b>Definition</b> SystemManager.cpp:222</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_system_manager_html_aecab7fe0aeea50f027db32e42c79790e"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_system_manager.html#aecab7fe0aeea50f027db32e42c79790e">OSK::ECS::SystemManager::RegisterSystem</a></div><div class="ttdeci">TSystem * RegisterSystem(const SystemDependencies &amp;dependencies)</div><div class="ttdoc">Registra un sistema, con lo que se ejecutará a partir de ahora. Si ya estaba registrado,...</div><div class="ttdef"><b>Definition</b> SystemManager.h:68</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list_html"><div class="ttname"><a href="class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_command_list.html">OSK::GRAPHICS::ICommandList</a></div><div class="ttdoc">Una lista de comandos contiene una serie de comandos que serán enviados a la GPU para su ejecución....</div><div class="ttdef"><b>Definition</b> ICommandList.h:78</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_unique_ptr_html"><div class="ttname"><a href="class_o_s_k_1_1_unique_ptr.html">OSK::UniquePtr</a></div><div class="ttdoc">Estructura que es dueña de un objeto almacenado en heap. Al destruirse el UniquePtr,...</div><div class="ttdef"><b>Definition</b> UniquePtr.hpp:26</div></div>
+<div class="ttc" id="aconcept_o_s_k_1_1_e_c_s_1_1_is_ecs_system_html"><div class="ttname"><a href="concept_o_s_k_1_1_e_c_s_1_1_is_ecs_system.html">OSK::ECS::IsEcsSystem</a></div><div class="ttdoc">Concepto que nos permite detectar si una clase cumple con las condiciones para ser un sistema.</div><div class="ttdef"><b>Definition</b> ISystem.h:148</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_e_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_e_c_s.html">OSK::ECS</a></div><div class="ttdef"><b>Definition</b> CameraComponent2D.h:17</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_e_c_s_html_a5b92aeaa6be2ce0d96e7f571aa917042"><div class="ttname"><a href="namespace_o_s_k_1_1_e_c_s.html#a5b92aeaa6be2ce0d96e7f571aa917042">OSK::ECS::GameObjectIndex</a></div><div class="ttdeci">BaseUuid&lt; class GameObjectIndexTag &gt; GameObjectIndex</div><div class="ttdoc">Identificador único para un Game Object.</div><div class="ttdef"><b>Definition</b> GameObject.h:21</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_e_c_s_html_a9c0e00962e3504ffd2435edb417d2d42"><div class="ttname"><a href="namespace_o_s_k_1_1_e_c_s.html#a9c0e00962e3504ffd2435edb417d2d42">OSK::ECS::Signature</a></div><div class="ttdeci">ConstexprBitSet&lt; MAX_COMPONENT_TYPES &gt; Signature</div><div class="ttdoc">Un signature permite saber qué componentes contiene un GameObject. Es un bitset, donde el bit en la p...</div><div class="ttdef"><b>Definition</b> Component.h:33</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_g_r_a_p_h_i_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_g_r_a_p_h_i_c_s.html">OSK::GRAPHICS</a></div><div class="ttdef"><b>Definition</b> AccelerationStructuresExceptions.h:5</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_a9eb9f9297be2a8044dda7480321e6661"><div class="ttname"><a href="namespace_o_s_k.html#a9eb9f9297be2a8044dda7480321e6661">OSK::MakeUnique</a></div><div class="ttdeci">UniquePtr&lt; T &gt; MakeUnique(TArgs &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> UniquePtr.hpp:182</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_ad5295fe48541d66a3096e05e198b36df"><div class="ttname"><a href="namespace_o_s_k.html#ad5295fe48541d66a3096e05e198b36df">OSK::StringHashMap</a></div><div class="ttdeci">std::unordered_map&lt; std::string, T, StringHasher, std::equal_to&lt;&gt; &gt; StringHashMap</div><div class="ttdef"><b>Definition</b> HashMap.hpp:480</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_adfc76cbcf35e5506ee24168edfe15bb0"><div class="ttname"><a href="namespace_o_s_k.html#adfc76cbcf35e5506ee24168edfe15bb0">OSK::TDeltaTime</a></div><div class="ttdeci">float TDeltaTime</div><div class="ttdoc">Delta de tiempo, medido en segundos.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:42</div></div>
+<div class="ttc" id="astruct_o_s_k_1_1_e_c_s_1_1_system_dependencies_html"><div class="ttname"><a href="struct_o_s_k_1_1_e_c_s_1_1_system_dependencies.html">OSK::ECS::SystemDependencies</a></div><div class="ttdoc">Dependencias explícitas de un sistema.</div><div class="ttdef"><b>Definition</b> ISystem.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>SystemManager.h</b></li>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:30 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>SystemManager.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

@@ -1,0 +1,82 @@
+\doxysection{Skybox\+Render\+System.\+h}
+\label{_skybox_render_system_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/SkyboxRenderSystem.h@{C:/Users/Oscar/source/repos/OSKengine/Source/SkyboxRenderSystem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}ISystem.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}IRenderSystem.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}MaterialInstance.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}ResourcesInFlight.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}CubemapTexture.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Model3D.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}AssetRef.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}SavedGameObjectTranslator.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}BinaryBlock.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <json.hpp>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{class\ }ICommandList;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{class\ }Material;}
+\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ SkyboxRenderSystem\ :\ \textcolor{keyword}{public}\ IRenderSystem,\ \textcolor{keyword}{public}\ ISerializableSystem\ \{}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ MaterialName\ =\ \textcolor{stringliteral}{"{}Resources/Materials/Skybox/material.json"{}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ OSK\_SYSTEM(\textcolor{stringliteral}{"{}OSK::SkyboxRenderSystem"{}});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ SkyboxRenderSystem();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateTargetImage(\textcolor{keyword}{const}\ Vector2ui\&\ size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetCamera(GameObjectIndex\ cameraObject);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetCubemap(ASSETS::AssetRef<ASSETS::CubemapTexture>\ texture);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Render(GRAPHICS::ICommandList*\ commandList,\ std::span<const\ ECS::GameObjectIndex>\ objects)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ nlohmann::json\ SaveConfiguration()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ PERSISTENCE::BinaryBlock\ SaveBinaryConfiguration()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyConfiguration(\textcolor{keyword}{const}\ nlohmann::json\&\ config,\ \textcolor{keyword}{const}\ SavedGameObjectTranslator\&\ translator)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyConfiguration(PERSISTENCE::BinaryBlockReader*\ reader,\ \textcolor{keyword}{const}\ SavedGameObjectTranslator\&\ translator)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ASSETS::CubemapTexture*\ GetCurrentTexture()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ GameObjectIndex\ GetCurrentCameraObject()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GRAPHICS::Material*\ GetCurrentMaterial()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ CubeModelPath\ =\ \textcolor{stringliteral}{"{}Resources/Assets/Models/cube.json"{}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ GRAPHICS::Material*\ m\_skyboxMaterial\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::MaterialInstance>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_skyboxMaterialInstances;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ std::array<UniquePtr<GRAPHICS::GpuBuffer>,\ GRAPHICS::MAX\_RESOURCES\_IN\_FLIGHT>\ m\_cameraUbos\{\};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ GameObjectIndex\ cameraObject\ =\ EMPTY\_GAME\_OBJECT;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::CubemapTexture>\ m\_skybox;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ ASSETS::AssetRef<ASSETS::Model3D>\ m\_cubemapModel;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \}}
+
+\end{DoxyCode}

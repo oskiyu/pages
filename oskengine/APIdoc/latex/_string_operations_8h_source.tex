@@ -1,0 +1,26 @@
+\doxysection{String\+Operations.\+h}
+\label{_string_operations_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/StringOperations.h@{C:/Users/Oscar/source/repos/OSKengine/Source/StringOperations.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifdef\ OSK\_WINDOWS}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <xstring>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }OSK\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \ \ \ \ DynamicArray<std::string>\ Tokenize(std::string\_view\ \textcolor{keywordtype}{string},\ \textcolor{keywordtype}{char}\ delimiter);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifdef\ OSK\_WINDOWS}}
+\DoxyCodeLine{00024\ \ \ \ \ std::wstring\ StringToWideString(std::string\_view\ \textcolor{keywordtype}{string});}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}

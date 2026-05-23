@@ -1,0 +1,313 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::IGpu\+Memory\+Subblock}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock}\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+
+
+{\ttfamily \#include $<$IGpu\+Memory\+Subblock.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IGpu\+Memory\+Subblock} ()
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IGpu\+Memory\+Subblock})
+\item 
+void \textbf{ Map\+Memory} ()
+\item 
+void \textbf{ Map\+Memory} (\textbf{ USize64} size, \textbf{ USize64} offset)
+\item 
+void \textbf{ Write} (const void $\ast$data, \textbf{ USize64} size)
+\item 
+void \textbf{ Write\+Offset} (const void $\ast$data, \textbf{ USize64} size, \textbf{ USize64} offset)
+\item 
+void \textbf{ Unmap} ()
+\item 
+void \textbf{ Set\+Cursor} (\textbf{ USize64} position)
+\item 
+void \textbf{ Reset\+Cursor} ()
+\item 
+\textbf{ UIndex64} \textbf{ Get\+Cursor} () const
+\item 
+\textbf{ IGpu\+Memory\+Block} $\ast$ \textbf{ Get\+Owner\+Block} ()
+\item 
+const \textbf{ IGpu\+Memory\+Block} $\ast$ \textbf{ Get\+Owner\+Block} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Allocated\+Size} () const
+\item 
+\textbf{ USize64} \textbf{ Get\+Offset\+From\+Block} () const
+\item 
+\textbf{ TByte} $\ast$ \textbf{ Get\+Mapped\+Data} ()
+\item 
+const \textbf{ TByte} $\ast$ \textbf{ Get\+Mapped\+Data} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ IGpu\+Memory\+Subblock} (\textbf{ IGpu\+Memory\+Block} $\ast$owner, \textbf{ USize64} size, \textbf{ USize64} offset)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ IGpu\+Memory\+Block} $\ast$ \textbf{ owner\+Block} = nullptr
+\item 
+\textbf{ USize64} \textbf{ reserved\+Size} = 0
+\item 
+\textbf{ USize64} \textbf{ total\+Offset\+From\+Block} = 0
+\item 
+\textbf{ USize64} \textbf{ cursor} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa una región de memoria dedicada a un único recurso. 
+
+Puede escribirse información sobre la GPU a través del subbloque. Para poder escribir, primero es necesario mapear la memoria necesaria, y desmapearla al terminar de escribir.
+
+Hay dos modos de escritura\+:
+\begin{DoxyItemize}
+\item Write\+: escribe la información, y hace avanzar un cursor interno, de tal manera que la siguiente vez que se llame a esta función, se escribirá con un offset, para no sobreescribir la información antes escrita.
+\item Write\+Offset\+: ignora el cursor interno. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!````~IGpuMemorySubblock@{$\sim$IGpuMemorySubblock}}
+\index{````~IGpuMemorySubblock@{$\sim$IGpuMemorySubblock}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{$\sim$IGpuMemorySubblock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a081f79b93dd50668b22d40ad6a9b5980} 
+IGpu\+Memory\+Subblock\+::$\sim$\+IGpu\+Memory\+Subblock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!IGpuMemorySubblock@{IGpuMemorySubblock}}
+\index{IGpuMemorySubblock@{IGpuMemorySubblock}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{IGpuMemorySubblock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_aa2d24910a11469a0e43552127ba3f079} 
+IGpu\+Memory\+Subblock\+::\+IGpu\+Memory\+Subblock (\begin{DoxyParamCaption}\item[{\textbf{ IGpu\+Memory\+Block} $\ast$}]{owner}{, }\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ USize64}}]{offset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!GetAllocatedSize@{GetAllocatedSize}}
+\index{GetAllocatedSize@{GetAllocatedSize}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{GetAllocatedSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a3e6f49a3c1faa34a849019cd10790396} 
+\textbf{ USize64} IGpu\+Memory\+Subblock\+::\+Get\+Allocated\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!GetCursor@{GetCursor}}
+\index{GetCursor@{GetCursor}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{GetCursor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a0e62a184470dc540152056c96f63a21c} 
+\textbf{ UIndex64} IGpu\+Memory\+Subblock\+::\+Get\+Cursor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Posición actual del cursor. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!GetMappedData@{GetMappedData}}
+\index{GetMappedData@{GetMappedData}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{GetMappedData()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a771dcb0a2e77421e6e3a6613149fd400} 
+\textbf{ TByte} $\ast$ IGpu\+Memory\+Subblock\+::\+Get\+Mapped\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!GetMappedData@{GetMappedData}}
+\index{GetMappedData@{GetMappedData}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{GetMappedData()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_ae2c32b2220918803c2b4cf3acd9f65ae} 
+const \textbf{ TByte} $\ast$ IGpu\+Memory\+Subblock\+::\+Get\+Mapped\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!GetOffsetFromBlock@{GetOffsetFromBlock}}
+\index{GetOffsetFromBlock@{GetOffsetFromBlock}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{GetOffsetFromBlock()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a26e6c25deddfc2380dafc71fc749e1bc} 
+\textbf{ USize64} IGpu\+Memory\+Subblock\+::\+Get\+Offset\+From\+Block (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!GetOwnerBlock@{GetOwnerBlock}}
+\index{GetOwnerBlock@{GetOwnerBlock}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{GetOwnerBlock()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_abbab42eace445479b891d493d0441f1b} 
+\textbf{ IGpu\+Memory\+Block} $\ast$ IGpu\+Memory\+Subblock\+::\+Get\+Owner\+Block (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!GetOwnerBlock@{GetOwnerBlock}}
+\index{GetOwnerBlock@{GetOwnerBlock}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{GetOwnerBlock()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a4ed996d0ceb3f3dffd0a5101f8fb7651} 
+const \textbf{ IGpu\+Memory\+Block} $\ast$ IGpu\+Memory\+Subblock\+::\+Get\+Owner\+Block (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!MapMemory@{MapMemory}}
+\index{MapMemory@{MapMemory}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{MapMemory()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_ad5ae101951c703cf692c306072c506c4} 
+void IGpu\+Memory\+Subblock\+::\+Map\+Memory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Mapea toda la memoria del subbloque, para poder escribirse. 
+
+\begin{DoxyPrecond}{Precondición}
+El tipo de memoria debe ser GPU\+\_\+\+AND\+\_\+\+CPU. 
+
+No debe haber ninguna región de memoria mapeada.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se podrá escribir en la zona mapeada. 
+
+El cursor tendrá el valor 0. 
+\end{DoxyPostcond}
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!MapMemory@{MapMemory}}
+\index{MapMemory@{MapMemory}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{MapMemory()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a1f28fd7df9275520d2b917d186d8d6ed} 
+void IGpu\+Memory\+Subblock\+::\+Map\+Memory (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ USize64}}]{offset}{}\end{DoxyParamCaption})}
+
+
+
+Mapea la zona dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño de la zona, en bytes. \\
+\hline
+{\em offset} & Offset respecto al inicio del subbloque, en bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El tipo de memoria debe ser GPU\+\_\+\+AND\+\_\+\+CPU. 
+
+La región indicada debe estar dentro de los límites de este subbloque. 
+
+No debe haber ninguna región de memoria mapeada.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se podrá escribir en la zona mapeada. 
+
+El cursor tendrá el valor {\ttfamily offset}. 
+\end{DoxyPostcond}
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a278b5f1e6372082695abc7c092e17d10} 
+OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Subblock\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IGpu\+Memory\+Subblock}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!ResetCursor@{ResetCursor}}
+\index{ResetCursor@{ResetCursor}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{ResetCursor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a2b8d413326c2a32941e244f447583e58} 
+void IGpu\+Memory\+Subblock\+::\+Reset\+Cursor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Establece el cursor a su posición inicial (al principio del subbloque). 
+
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!SetCursor@{SetCursor}}
+\index{SetCursor@{SetCursor}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{SetCursor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_ab820135e4f804bec5bd9d8c647c9d99f} 
+void IGpu\+Memory\+Subblock\+::\+Set\+Cursor (\begin{DoxyParamCaption}\item[{\textbf{ USize64}}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Establece el cursor interno en la posición dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Offset, en bytes, respecto al inicio del subbloque. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!Unmap@{Unmap}}
+\index{Unmap@{Unmap}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{Unmap()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_aa2452c762c402d7accf3b30f11068ead} 
+void IGpu\+Memory\+Subblock\+::\+Unmap (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Desmapea el subbloque. Debe llamarse al terminar de escribir. 
+
+\begin{DoxyPrecond}{Precondición}
+Debe haber alguna región de memoria mapeada. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Ya no se podrá escribir en la memoria al no ser que se vuelva a mapear. 
+\end{DoxyPostcond}
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!Write@{Write}}
+\index{Write@{Write}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{Write()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a65423dde87a0ea3f0ceb203e24d50fdf} 
+void IGpu\+Memory\+Subblock\+::\+Write (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data}{, }\item[{\textbf{ USize64}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Escribe información en la región de memoria. Usa el cursor interno, por lo que sucesivas llamdas a esta función no se sobreescribirán, sino que escribirán una después de otra. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Datos a escribir. \\
+\hline
+{\em size} & Tamaño de los datos, en bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La memoria debe haber sido mapeada antes. 
+
+Toda la información escrita debe escribirse sobre una zona de memoria completamente mapeada.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Gpu\+Memory\+Not\+Mapped\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_not_mapped_exception}} & Si la memoria no está mapeada. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!WriteOffset@{WriteOffset}}
+\index{WriteOffset@{WriteOffset}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{WriteOffset()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_af139266b0d22544133375549a3cee688} 
+void IGpu\+Memory\+Subblock\+::\+Write\+Offset (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data}{, }\item[{\textbf{ USize64}}]{size}{, }\item[{\textbf{ USize64}}]{offset}{}\end{DoxyParamCaption})}
+
+
+
+Escribe información en la región de memoria. No usa el cursor interno. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Datos a escribir. \\
+\hline
+{\em size} & Tamaño de los datos, en bytes. \\
+\hline
+{\em offset} & Offset a partir del que se comienza a escribir. Respecto al inicio del subbloque.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La memoria debe haber sido mapeada antes. 
+
+Toda la información escrita debe escribirse sobre una zona de memoria completamente mapeada.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Gpu\+Memory\+Not\+Mapped\+Exception}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_memory_not_mapped_exception}} & Si la memoria no está mapeada. \\
+\hline
+\end{DoxyExceptions}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!cursor@{cursor}}
+\index{cursor@{cursor}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{cursor}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a624549ea665882d0c016f4d590e63be5} 
+\textbf{ USize64} OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Subblock\+::cursor = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!ownerBlock@{ownerBlock}}
+\index{ownerBlock@{ownerBlock}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{ownerBlock}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a5dfa4be898e288b72aa02c6da89c9ce0} 
+\textbf{ IGpu\+Memory\+Block}$\ast$ OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Subblock\+::owner\+Block = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!reservedSize@{reservedSize}}
+\index{reservedSize@{reservedSize}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{reservedSize}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_a2bd0d864e0d5ced266f8860aab614b66} 
+\textbf{ USize64} OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Subblock\+::reserved\+Size = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\index{OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}!totalOffsetFromBlock@{totalOffsetFromBlock}}
+\index{totalOffsetFromBlock@{totalOffsetFromBlock}!OSK::GRAPHICS::IGpuMemorySubblock@{OSK::GRAPHICS::IGpuMemorySubblock}}
+\doxysubsubsection{totalOffsetFromBlock}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_gpu_memory_subblock_af9c1c909953a74d31c641ff31c78fe55} 
+\textbf{ USize64} OSK\+::\+GRAPHICS\+::\+IGpu\+Memory\+Subblock\+::total\+Offset\+From\+Block = 0\hspace{0.3cm}{\ttfamily [protected]}}
+

@@ -1,0 +1,217 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::INarrow\+Collider}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider}\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+
+
+{\ttfamily \#include $<$INarrow\+Collider.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ $\sim$\+INarrow\+Collider} () override=default
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ INarrow\+Collider})
+\item 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ INarrow\+Collider} $>$ \textbf{ Create\+Narrow\+Copy} () const =0
+\item 
+void \textbf{ \+\_\+\+Set\+Narrow\+Owner} (const \textbf{ Narrow\+Collider\+Holder} $\ast$owner)
+\item 
+virtual void \textbf{ On\+Transform} ()
+\item 
+virtual \textbf{ Gjk\+Support} \textbf{ Get\+Support} (const \textbf{ Vector3f} \&direction) const =0
+\item 
+virtual bool \textbf{ Contains\+Point} (const \textbf{ Vector3f} \&point) const
+\item 
+bool \textbf{ Is\+Behind\+Plane} (\textbf{ Plane} plane) const
+\item 
+bool \textbf{ Is\+Fully\+Behind\+Plane} (\textbf{ Plane} plane) const
+\item 
+bool \textbf{ Is\+Inside\+Frustum} (const \textbf{ Any\+Frustum} \&frustum) const
+\item 
+virtual \textbf{ Ray\+Cast\+Result} \textbf{ Cast\+Ray} (const \textbf{ Ray} \&ray) const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::optional$<$ const \textbf{ Narrow\+Collider\+Holder} $\ast$ $>$ \textbf{ Get\+Narrow\+Owner} () const
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}!````~INarrowCollider@{$\sim$INarrowCollider}}
+\index{````~INarrowCollider@{$\sim$INarrowCollider}!OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+\doxysubsubsection{$\sim$INarrowCollider()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider_ab7861162ec738389469464c9660c62fe} 
+OSK\+::\+COLLISION\+::\+INarrow\+Collider\+::$\sim$\+INarrow\+Collider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}!\_SetNarrowOwner@{\_SetNarrowOwner}}
+\index{\_SetNarrowOwner@{\_SetNarrowOwner}!OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+\doxysubsubsection{\_SetNarrowOwner()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider_af3029ccb30b0b24d161a94b1a623dd00} 
+void OSK\+::\+COLLISION\+::\+INarrow\+Collider\+::\+\_\+\+Set\+Narrow\+Owner (\begin{DoxyParamCaption}\item[{const \textbf{ Narrow\+Collider\+Holder} $\ast$}]{owner}{}\end{DoxyParamCaption})}
+
+
+
+Establece el holder que contiene a este collider. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em owner} & Holder.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Función interna. 
+\end{DoxyNote}
+\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}!CastRay@{CastRay}}
+\index{CastRay@{CastRay}!OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+\doxysubsubsection{CastRay()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_ray_collider_a78ad23fe3e49348e0cee661c23f9a0a4} 
+virtual \textbf{ Ray\+Cast\+Result} OSK\+::\+COLLISION\+::\+IRay\+Collider\+::\+Cast\+Ray (\begin{DoxyParamCaption}\item[{const \textbf{ Ray} \&}]{ray}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Calcula la intersección entre un rayo y el collider. @paramm ray Rayo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Posición de este collider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la intersección. 
+\end{DoxyReturn}
+
+
+Implementado en \textbf{ OSK\+::\+COLLISION\+::\+Axis\+Aligned\+Bounding\+Box} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_axis_aligned_bounding_box_a22be50db7c68c84f933aadb94228d670}, \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a62900bca74bd5c2d3e3110b30e92bc64} y \textbf{ OSK\+::\+COLLISION\+::\+Sphere\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_collider_a3b846414c3ea6c7cdb38b237d70ca31c}.
+
+\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}!ContainsPoint@{ContainsPoint}}
+\index{ContainsPoint@{ContainsPoint}!OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+\doxysubsubsection{ContainsPoint()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a24f9964fb50bfbac36c335a096239486} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Contains\+Point (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{point}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Comrpueba si un punto está dentro del collider. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em point} & Punto a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si el punto está dentro del collider. 
+\end{DoxyReturn}
+
+
+Reimplementado en \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a0367c0e40c455bd81fc6fc54243f3051}.
+
+\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}!CreateNarrowCopy@{CreateNarrowCopy}}
+\index{CreateNarrowCopy@{CreateNarrowCopy}!OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+\doxysubsubsection{CreateNarrowCopy()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider_a9c6842217af011118cfd72835c183c43} 
+virtual \textbf{ Unique\+Ptr}$<$ \textbf{ INarrow\+Collider} $>$ OSK\+::\+COLLISION\+::\+INarrow\+Collider\+::\+Create\+Narrow\+Copy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Devuelve}
+Copia del collider. 
+\end{DoxyReturn}
+
+
+Implementado en \textbf{ OSK\+::\+COLLISION\+::\+Axis\+Aligned\+Bounding\+Box} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_axis_aligned_bounding_box_afae2e577373e36325f632dae5a4e36ad}, \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a853a0eb79c7017a55aae0464180bf1a0} y \textbf{ OSK\+::\+COLLISION\+::\+Sphere\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_collider_aef3a6d0c0c96deb237cf4f2f1a1778cb}.
+
+\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}!GetNarrowOwner@{GetNarrowOwner}}
+\index{GetNarrowOwner@{GetNarrowOwner}!OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+\doxysubsubsection{GetNarrowOwner()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider_ace3adabc48252d8e923f75eb5a250734} 
+std\+::optional$<$ const \textbf{ OSK\+::\+COLLISION\+::\+Narrow\+Collider\+Holder} $\ast$ $>$ OSK\+::\+COLLISION\+::\+INarrow\+Collider\+::\+Get\+Narrow\+Owner (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyReturn}{Devuelve}
+Holder de alto nivel que contiene a este collider. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}!GetSupport@{GetSupport}}
+\index{GetSupport@{GetSupport}!OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+\doxysubsubsection{GetSupport()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a0db85d332a6ecdcc58f148c7041162b2} 
+virtual \textbf{ Gjk\+Support} OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Get\+Support (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{direction}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em direction} & Dirección en la que se busca el soporte. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Soporte (punto más alejado en la dirección {\ttfamily direction}). 
+\end{DoxyReturn}
+
+
+Implementado en \textbf{ \+\_\+\+Gjk\+Point\+Collider} \doxyref{}{pág.}{class___gjk_point_collider_a1e21961c4e8e4289cf8b8b41b4973810}, \textbf{ OSK\+::\+COLLISION\+::\+Axis\+Aligned\+Bounding\+Box} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_axis_aligned_bounding_box_aef86666ee6f8e6bde16e303a0b6b5de1}, \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a27717e8cb3cdc37f3c79e43d19922951} y \textbf{ OSK\+::\+COLLISION\+::\+Sphere\+Collider} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_sphere_collider_a81675d5fe607abace40e997368c47fe8}.
+
+\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}!IsBehindPlane@{IsBehindPlane}}
+\index{IsBehindPlane@{IsBehindPlane}!OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+\doxysubsubsection{IsBehindPlane()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a6fbec8faa65f464438b307f231a540f1} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Is\+Behind\+Plane (\begin{DoxyParamCaption}\item[{\textbf{ Plane}}]{plane}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Comprueba si parte del collider está por detrás del plano. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em plane} & Plano a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si está completamente por detrás. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}!IsFullyBehindPlane@{IsFullyBehindPlane}}
+\index{IsFullyBehindPlane@{IsFullyBehindPlane}!OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+\doxysubsubsection{IsFullyBehindPlane()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a02c47053df332f6ec975ce26239a9948} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Is\+Fully\+Behind\+Plane (\begin{DoxyParamCaption}\item[{\textbf{ Plane}}]{plane}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Comprueba si el collider está COMPLETMENTE por detrás del plano. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em plane} & Plano a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si está completamente por detrás. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}!IsInsideFrustum@{IsInsideFrustum}}
+\index{IsInsideFrustum@{IsInsideFrustum}!OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+\doxysubsubsection{IsInsideFrustum()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_gjk_collider_a64c599fc78bd0160a9d6e5a8f1a20f74} 
+bool OSK\+::\+COLLISION\+::\+IGjk\+Collider\+::\+Is\+Inside\+Frustum (\begin{DoxyParamCaption}\item[{const \textbf{ Any\+Frustum} \&}]{frustum}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+True si el collider está dentro del frustum indicado. 
+\end{DoxyReturn}
+\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}!OnTransform@{OnTransform}}
+\index{OnTransform@{OnTransform}!OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+\doxysubsubsection{OnTransform()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider_ab54bdee6159b9abd62a9568333d3c4a0} 
+virtual void OSK\+::\+COLLISION\+::\+INarrow\+Collider\+::\+On\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Función que se ejecuta cada vez que se transforma el collider. 
+
+
+
+Reimplementado en \textbf{ OSK\+::\+COLLISION\+::\+Convex\+Volume} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_convex_volume_a9596b617aa7187d8bb3a55d9e60061d1}.
+
+\index{OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::COLLISION::INarrowCollider@{OSK::COLLISION::INarrowCollider}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_narrow_collider_adb6d11616a686bcba139815baf2a5ef1} 
+OSK\+::\+COLLISION\+::\+INarrow\+Collider\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ INarrow\+Collider}}]{}{}\end{DoxyParamCaption})}
+

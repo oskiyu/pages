@@ -1,0 +1,312 @@
+\doxysection{Referencia de la clase OSK\+::ASSETS\+::Font}
+\label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font}\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+
+
+{\ttfamily \#include $<$Font.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+ASSET\+\_\+\+TYPE\+\_\+\+REG} ("{}OSK\+::\+Font"{})
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Font})
+\item 
+\textbf{ OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR} (\textbf{ Font})
+\item 
+\textbf{ Font} (const std\+::string \&asset\+File)
+\item 
+void \textbf{ \+\_\+\+Set\+Font\+File\+Path} (const std\+::string \&raw\+File)
+\item 
+void \textbf{ Load\+Sized\+Font} (\textbf{ USize32} size)
+\item 
+void \textbf{ Unload\+Sized\+Font} (\textbf{ USize32} size)
+\item 
+\textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ \textbf{ Get\+Gpu\+Image} (\textbf{ USize32} font\+Size)
+\item 
+const \textbf{ Font\+Character} \& \textbf{ Get\+Character\+Info} (\textbf{ USize32} size, char character)
+\item 
+\textbf{ Font\+Instance} \& \textbf{ Get\+Instance} (\textbf{ USize32} font\+Size)
+\item 
+const \textbf{ Font\+Instance} \& \textbf{ Get\+Existing\+Instance} (\textbf{ USize32} font\+Size) const
+\item 
+bool \textbf{ Contains\+Instance} (\textbf{ USize32} font\+Size) const
+\item 
+void \textbf{ Set\+Material} (\textbf{ GRAPHICS\+::\+Material} $\ast$material)
+\item 
+\textbf{ GRAPHICS\+::\+Material} $\ast$ \textbf{ Get\+Material} () const
+\item 
+void \textbf{ Set\+Name} (const std\+::string \&name)
+\item 
+std\+::string \textbf{ Get\+Name} () const
+\item 
+std\+::string \textbf{ Get\+Asset\+Filename} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa una fuente que nos permite renderizar texto. 
+
+\begin{DoxyNote}{Nota}
+Usa una estrategia de cración perezosa\+: debemos cargar una fuente de manera independiente por cada tamaño de letra que queramos usar.
+
+Considere precargar los tamaños de letra que se vayan a usar más adelante, para evitar pérdidas de rendimiento durante la ejecución.
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+Únicamente soporta caracteres ASCII. 
+\end{DoxyWarning}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!Font@{Font}}
+\index{Font@{Font}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{Font()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_a78c9042a19344790d5f54b1c498cdad8} 
+Font\+::\+Font (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!\_SetFontFilePath@{\_SetFontFilePath}}
+\index{\_SetFontFilePath@{\_SetFontFilePath}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{\_SetFontFilePath()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_a9fea40ef67c601641f513646dd79277d} 
+void Font\+::\+\_\+\+Set\+Font\+File\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{raw\+File}{}\end{DoxyParamCaption})}
+
+
+
+Establece la ruta de la fuente (.tff), para poder generar las fuentes. 
+
+\begin{DoxyWarning}{Atención}
+Función interna\+: no llamar.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parámetros}
+{\em raw\+File} & Ruta del archivo \textquotesingle{}.tff\textquotesingle{}. Está establecido en el archivo \textquotesingle{}.json\textquotesingle{} del asset. \\
+\hline
+\end{DoxyParams}
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!ContainsInstance@{ContainsInstance}}
+\index{ContainsInstance@{ContainsInstance}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{ContainsInstance()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_af50c18e964fa8acd1b36037ad7cbe090} 
+bool Font\+::\+Contains\+Instance (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{font\+Size}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em font\+Size} & Tamaño de la fuente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si se ha cargado previamente una instancia con el tamaño dado. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!GetAssetFilename@{GetAssetFilename}}
+\index{GetAssetFilename@{GetAssetFilename}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{GetAssetFilename()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_acf0bac3849facb6afb0499907186840b} 
+std\+::string IAsset\+::\+Get\+Asset\+Filename (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Obtiene la ruta del archivo JSON que describe esta instancia del asset. 
+
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!GetCharacterInfo@{GetCharacterInfo}}
+\index{GetCharacterInfo@{GetCharacterInfo}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{GetCharacterInfo()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_a8b9b95a7310a6b145a47fa829f059c64} 
+const \textbf{ Font\+Character} \& Font\+::\+Get\+Character\+Info (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{size}{, }\item[{char}]{character}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve la información de un carácter para un tamaño de fuente dado. 
+
+\begin{DoxyNote}{Nota}
+Si la fuente no está cargada, se cargará automáticamente.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño de la fuente, en píxeles.\\
+\hline
+{\em character} & Caracter.\\
+\hline
+\end{DoxyParams}
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!GetExistingInstance@{GetExistingInstance}}
+\index{GetExistingInstance@{GetExistingInstance}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{GetExistingInstance()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_a34db2bd044a49031f665b8bfe4a7302c} 
+const \textbf{ Font\+Instance} \& Font\+::\+Get\+Existing\+Instance (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{font\+Size}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la información de una instancia de la fuente con el tamaño dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em font\+Size} & Tamaño de la fuente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Instancia de la fuente.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Se debe haber cargado previamente una instancia con el tamaño dado. 
+\end{DoxyPrecond}
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!GetGpuImage@{GetGpuImage}}
+\index{GetGpuImage@{GetGpuImage}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{GetGpuImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_a00f929c82c3ba4e4df44f0ef2ba7a042} 
+\textbf{ Gpu\+Image} $\ast$ Font\+::\+Get\+Gpu\+Image (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{font\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve la imagen de GPU correspondiente a la fuente del tamaño dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em font\+Size} & Tamaño de la fuente, en píxeles.\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyNote}{Nota}
+Si la fuente no está cargada, se cargará automáticamente. 
+\end{DoxyNote}
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{GetInstance()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_afca51103a330e026a4247de769a5f05f} 
+\textbf{ Font\+Instance} \& Font\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{font\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve la información de una instancia de la fuente con el tamaño dado. 
+
+\begin{DoxyNote}{Nota}
+Si la fuente no está cargada, se cargará automáticamente.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parámetros}
+{\em font\+Size} & Tamaño de la fuente.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Font\+Library\+Initialization\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_library_initialization_exception}} & Si ocurre un error al cargar la librería de generación de fuentes. \\
+\hline
+{\em \doxyref{Font\+Lodaing\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_lodaing_exception}} & Si ocurre un error al cargar la fuente. \\
+\hline
+{\em \doxyref{Font\+Character\+Lodaing\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_character_lodaing_exception}} & Si ocurre un error al cargar un carácter en concreto. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!GetMaterial@{GetMaterial}}
+\index{GetMaterial@{GetMaterial}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{GetMaterial()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_a8565f67b994cd67a316b5c2f0689dc74} 
+\textbf{ Material} $\ast$ Font\+::\+Get\+Material (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el material del que se crean las instancias. 
+
+\begin{DoxyNote}{Nota}
+Puede devolver null. 
+\end{DoxyNote}
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_aa0e593888f6bcd143de4f9eb5a912f44} 
+std\+::string IAsset\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Nombre de la instancia del asset. 
+
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!LoadSizedFont@{LoadSizedFont}}
+\index{LoadSizedFont@{LoadSizedFont}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{LoadSizedFont()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_a1cf42d4146288a6e3d77a40cfde5efc1} 
+void Font\+::\+Load\+Sized\+Font (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Genera la imagen de la fuente para el tamaño de letra dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño de letra, en píxeles. Si ya existe una instancia cargada con el tamaño dado, no ocurre nada.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Font\+Library\+Initialization\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_library_initialization_exception}} & Si ocurre un error al cargar la librería de generación de fuentes. \\
+\hline
+{\em \doxyref{Font\+Lodaing\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_lodaing_exception}} & Si ocurre un error al cargar la fuente. \\
+\hline
+{\em \doxyref{Font\+Character\+Lodaing\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_character_lodaing_exception}} & Si ocurre un error al cargar un carácter en concreto. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!OSK\_ASSET\_TYPE\_REG@{OSK\_ASSET\_TYPE\_REG}}
+\index{OSK\_ASSET\_TYPE\_REG@{OSK\_ASSET\_TYPE\_REG}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{OSK\_ASSET\_TYPE\_REG()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_a88a0f189a9f7f70938881e22912e8b98} 
+OSK\+::\+ASSETS\+::\+Font\+::\+OSK\+\_\+\+ASSET\+\_\+\+TYPE\+\_\+\+REG (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Font"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}}
+\index{OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{OSK\_DEFAULT\_MOVE\_OPERATOR()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_a4b52c7cead8a06b4dac350c63127f58f} 
+OSK\+::\+ASSETS\+::\+Font\+::\+OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR (\begin{DoxyParamCaption}\item[{\textbf{ Font}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_ac78f8e085ab6a77c243f52b7104f3762} 
+OSK\+::\+ASSETS\+::\+Font\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Font}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!SetMaterial@{SetMaterial}}
+\index{SetMaterial@{SetMaterial}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{SetMaterial()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_afbb366bcd7f3133da2f5d8a0f52ffe20} 
+void Font\+::\+Set\+Material (\begin{DoxyParamCaption}\item[{\textbf{ GRAPHICS\+::\+Material} $\ast$}]{material}{}\end{DoxyParamCaption})}
+
+
+
+Establece el material a partir del que se van a crear las instancias de materiales para las instancias de fuentes. 
+
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!SetName@{SetName}}
+\index{SetName@{SetName}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{SetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_af0bbd1c59b2cd81667b63cb6d015c11c} 
+void IAsset\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Establece el nombre de la instancia de este asset. 
+
+\begin{DoxyWarning}{Atención}
+Es un identificador único. 
+\end{DoxyWarning}
+\index{OSK::ASSETS::Font@{OSK::ASSETS::Font}!UnloadSizedFont@{UnloadSizedFont}}
+\index{UnloadSizedFont@{UnloadSizedFont}!OSK::ASSETS::Font@{OSK::ASSETS::Font}}
+\doxysubsubsection{UnloadSizedFont()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_font_a2dddbba3d0d83097f8302eedcbbcaeb4} 
+void Font\+::\+Unload\+Sized\+Font (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Descarga la instancia de la funente con el tamaño dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño de letra, en píxeles.\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyNote}{Nota}
+Si la instancia no existe, no ocurre nada. 
+\end{DoxyNote}

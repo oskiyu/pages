@@ -1,0 +1,66 @@
+\doxysection{Graphics\+Pipeline\+Dx12.\+h}
+\label{_graphics_pipeline_dx12_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GraphicsPipelineDx12.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GraphicsPipelineDx12.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_DIRECTX12\_BACKEND}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}IGraphicsPipeline.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}PipelineCreateInfo.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}VertexInfo.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}IPipelineDx12.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <d3d12.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <wrl.h>}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ }Microsoft::WRL::ComPtr;}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <dxcapi.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{struct\ }PipelineCreateInfo;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ GraphicsPipelineDx12\ :\ \textcolor{keyword}{public}\ IGraphicsPipeline,\ \textcolor{keyword}{public}\ IPipelineDx12\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(\textcolor{keyword}{const}\ MaterialLayout*\ layout,\ IGpu*\ device,\ \textcolor{keyword}{const}\ PipelineCreateInfo\&\ info,\ \textcolor{keyword}{const}\ VertexInfo\&\ vertexInfo)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetDebugName(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ D3D\_PRIMITIVE\_TOPOLOGY\ GetTopologyType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ D3D12\_RASTERIZER\_DESC\ GetRasterizerDesc(\textcolor{keyword}{const}\ PipelineCreateInfo\&\ info)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ D3D12\_DEPTH\_STENCIL\_DESC\ GetDepthStencilDesc(\textcolor{keyword}{const}\ PipelineCreateInfo\&\ info)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ D3D12\_BLEND\_DESC\ GetBlendDesc(\textcolor{keyword}{const}\ PipelineCreateInfo\&\ info)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ DXGI\_FORMAT\ GetVertexAttribFormatDx12(\textcolor{keyword}{const}\ VertexInfo::Entry\&\ entry)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ DynamicArray<D3D12\_INPUT\_ELEMENT\_DESC>\ GetInputLayoutDescDx12(\textcolor{keyword}{const}\ VertexInfo\&\ info)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ D3D12\_CULL\_MODE\ GetCullMode(PolygonCullMode\ mode)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ D3D12\_FILL\_MODE\ GetFillMode(PolygonMode\ mode)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Patch\ para\ teselado,\ triángulos\ en\ el\ }}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ resto\ de\ casos.}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ D3D\_PRIMITIVE\_TOPOLOGY\ topologyType\ =\ D3D\_PRIMITIVE\_TOPOLOGY\_TRIANGLELIST;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Los\ shaders\ precompilados\ se\ cargan\ en\ un\ ID3DBlob,}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mientras\ que\ los\ compilados\ a\ partir\ de\ SPIR-\/V\ se\ cargan}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ en\ IDxcBlob.}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ ShaderStageDx12\ vertexShader\{\};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ ShaderStageDx12\ fragmentShader\{\};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ ShaderStageDx12\ tesselationControlShader\{\};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ ShaderStageDx12\ tesselationEvaluationShader\{\};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

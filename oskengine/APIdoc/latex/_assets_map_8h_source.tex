@@ -1,0 +1,77 @@
+\doxysection{Assets\+Map.\+h}
+\label{_assets_map_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/AssetsMap.h@{C:/Users/Oscar/source/repos/OSKengine/Source/AssetsMap.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}AssetRef.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}AssetOwningRef.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}IAsset.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <shared\_mutex>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }OSK::ASSETS\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TAssetType>}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{requires}\ std::is\_base\_of\_v<IAsset,\ TAssetType>}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }AssetsMap\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Register(\textcolor{keyword}{const}\ std::string\&\ assetFilePath)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_lock\ lock(m\_mutex);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ m\_map[\textcolor{keyword}{static\_cast<}std::string\textcolor{keyword}{>}(assetFilePath)]\ =\ AssetOwningRef<TAssetType>(\textcolor{keyword}{static\_cast<}std::string\textcolor{keyword}{>}(assetFilePath));}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ AssetRef<TAssetType>\ GetExistingReference(std::string\_view\ assetFilePath)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_lock\ lock(m\_mutex);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_map.find(assetFilePath)-\/>second.CreateRef();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ AssetRef<TAssetType>\ GetReference\_OrRegister(std::string\_view\ assetFilePath)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_lock\ lock(m\_mutex);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_map.contains(assetFilePath))\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_map.find(assetFilePath)-\/>second.CreateRef();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_lock\ lock(m\_mutex);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ m\_map[\textcolor{keyword}{static\_cast<}std::string\textcolor{keyword}{>}(assetFilePath)]\ =\ AssetOwningRef<TAssetType>(\textcolor{keyword}{static\_cast<}std::string\textcolor{keyword}{>}(assetFilePath));}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_map.find(assetFilePath)-\/>second.CreateRef();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ TAssetType*\ GetAsset(std::string\_view\ assetFilePath)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_lock\ lock(m\_mutex);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_map.find(assetFilePath)-\/>second.GetAsset();}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ HasAsset(std::string\_view\ assetFilePath)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_lock\ lock(m\_mutex);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_map.contains(assetFilePath);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetAsLoaded(std::string\_view\ assetFilePath)\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_lock\ lock(m\_mutex);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ m\_map.find(assetFilePath)-\/>second.\_SetAsLoaded();}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ AssetOwningRef<TAssetType>,\ StringHasher,\ std::equal\_to<>>\ m\_map;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ std::shared\_mutex\ m\_mutex;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \}}
+
+\end{DoxyCode}

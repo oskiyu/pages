@@ -1,0 +1,112 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Rg\+Buffer\+Dependency}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency}\index{OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}}
+
+
+{\ttfamily \#include $<$Rg\+Buffer\+Dependency.\+h$>$}
+
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Gdr\+Buffer\+Uuid} \textbf{ buffer\+Ref\+Id}
+\item 
+\textbf{ Rg\+Buffer\+Usage} \textbf{ usage} \{\}
+\item 
+\textbf{ Rg\+Dependency\+Type} \textbf{ type} = \textbf{ Rg\+Dependency\+Type\+::\+READ\+\_\+\+WRITE}
+\item 
+\textbf{ Gpu\+Command\+Stage} \textbf{ stage} = \textbf{ Gpu\+Command\+Stage\+::\+NONE}
+\item 
+\textbf{ Gpu\+Buffer\+Range} \textbf{ range} \{\}
+\item 
+\textbf{ Rg\+Dependency\+Shader\+Binding} \textbf{ shader\+Binding} \{\}
+\item 
+\textbf{ UIndex32} \textbf{ array\+Index} = 0
+\item 
+std\+::optional$<$ \textbf{ UIndex16} $>$ \textbf{ frame\+In\+Flight}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Dependencia de un buffer dentro de un render-\/pass\+: Indica un buffer que se va a usar dentro de un render-\/pass (y cómo se va a usar). 
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}!arrayIndex@{arrayIndex}}
+\index{arrayIndex@{arrayIndex}!OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}}
+\doxysubsubsection{arrayIndex}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_a57488498e534b3f5b6402c13926cd120} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Dependency\+::array\+Index = 0}
+
+
+
+Índice dentro del array. 
+
+\index{OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}!bufferRefId@{bufferRefId}}
+\index{bufferRefId@{bufferRefId}!OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}}
+\doxysubsubsection{bufferRefId}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_a794f12eb60e3019f25e6878a45d7c698} 
+\textbf{ Gdr\+Buffer\+Uuid} OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Dependency\+::buffer\+Ref\+Id}
+
+
+
+ID único del buffer. 
+
+\index{OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}!frameInFlight@{frameInFlight}}
+\index{frameInFlight@{frameInFlight}!OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}}
+\doxysubsubsection{frameInFlight}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_a5f09223aee1695924de7c0afb650f257} 
+std\+::optional$<$\textbf{ UIndex16}$>$ OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Dependency\+::frame\+In\+Flight}
+
+
+
+Si está presente, indica en qué frame in flight se usará. 
+
+\index{OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}!range@{range}}
+\index{range@{range}!OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}}
+\doxysubsubsection{range}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_a013fe90e6e01f6221e6ab676ea9aae4b} 
+\textbf{ Gpu\+Buffer\+Range} OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Dependency\+::range \{\}}
+
+
+
+Rango usado. 
+
+\index{OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}!shaderBinding@{shaderBinding}}
+\index{shaderBinding@{shaderBinding}!OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}}
+\doxysubsubsection{shaderBinding}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_ab8b9b86ec88cdfd85bf88da5f31ae1fd} 
+\textbf{ Rg\+Dependency\+Shader\+Binding} OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Dependency\+::shader\+Binding \{\}}
+
+
+
+Slot y binding en el que se usará. 
+
+\index{OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}!stage@{stage}}
+\index{stage@{stage}!OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}}
+\doxysubsubsection{stage}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_aca00a0099b3fe6a31e30f1b14da03d7f} 
+\textbf{ Gpu\+Command\+Stage} OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Dependency\+::stage = \textbf{ Gpu\+Command\+Stage\+::\+NONE}}
+
+
+
+Stage en el que se usará. 
+
+\index{OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}!type@{type}}
+\index{type@{type}!OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}}
+\doxysubsubsection{type}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_a50326f2e27636a31e40cbdb0244d7f63} 
+\textbf{ Rg\+Dependency\+Type} OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Dependency\+::type = \textbf{ Rg\+Dependency\+Type\+::\+READ\+\_\+\+WRITE}}
+
+
+
+Tipo de dependencia. 
+
+\index{OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}!usage@{usage}}
+\index{usage@{usage}!OSK::GRAPHICS::RgBufferDependency@{OSK::GRAPHICS::RgBufferDependency}}
+\doxysubsubsection{usage}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_buffer_dependency_a9a5a56d820ca97c5a0982c539c1e9d72} 
+\textbf{ Rg\+Buffer\+Usage} OSK\+::\+GRAPHICS\+::\+Rg\+Buffer\+Dependency\+::usage \{\}}
+
+
+
+Uso que se le va a dar. 
+

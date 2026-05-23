@@ -1,0 +1,443 @@
+\doxysection{Referencia de la clase OSK\+::Engine}
+\label{class_o_s_k_1_1_engine}\index{OSK::Engine@{OSK::Engine}}
+
+
+{\ttfamily \#include $<$OSKengine.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Engine} ()=delete
+\item 
+\textbf{ Engine} (const \textbf{ Engine} \&)=delete
+\item 
+\textbf{ Engine} (\textbf{ Engine} \&\&)=delete
+\item 
+\textbf{ Engine} \& \textbf{ operator=} (const \textbf{ Engine} \&e)=delete
+\item 
+\textbf{ Engine} \& \textbf{ operator=} (\textbf{ Engine} \&\&e)=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ Create} (\textbf{ GRAPHICS\+::\+Render\+Api\+Type} type)
+\item 
+static void \textbf{ Close} ()
+\item 
+static float \textbf{ Get\+Current\+Time} ()
+\item 
+static \textbf{ IO\+::\+ILogger} $\ast$ \textbf{ Get\+Logger} ()
+\item 
+static \textbf{ IO\+::\+IDisplay} $\ast$ \textbf{ Get\+Display} ()
+\item 
+static \textbf{ GRAPHICS\+::\+IRenderer} $\ast$ \textbf{ Get\+Renderer} ()
+\item 
+static \textbf{ ASSETS\+::\+Asset\+Manager} $\ast$ \textbf{ Get\+Asset\+Manager} ()
+\item 
+static \textbf{ ECS\+::\+Entity\+Component\+System} $\ast$ \textbf{ Get\+Ecs} ()
+\item 
+static \textbf{ IO\+::\+IUser\+Input} $\ast$ \textbf{ Get\+Input} ()
+\item 
+static \textbf{ IO\+::\+Input\+Manager} $\ast$ \textbf{ Get\+Input\+Manager} ()
+\item 
+static \textbf{ AUDIO\+::\+IAudio\+Api} $\ast$ \textbf{ Get\+Audio\+Api} ()
+\item 
+static \textbf{ Job\+System} $\ast$ \textbf{ Get\+Job\+System} ()
+\item 
+static \textbf{ Uuid\+Provider} $\ast$ \textbf{ Get\+Uuid\+Provider} ()
+\item 
+static \textbf{ Console\+Command\+Executor} $\ast$ \textbf{ Get\+Command\+Executor} ()
+\item 
+static \textbf{ Version} \textbf{ Get\+Version} ()
+\item 
+static std\+::string\+\_\+view \textbf{ Get\+Build} ()
+\item 
+static void \textbf{ Register\+Builtin\+Assets} (\textbf{ GAME\+::\+Default\+Content\+Profile} profile)
+\item 
+static void \textbf{ Register\+Builtin\+Components} (\textbf{ GAME\+::\+Default\+Content\+Profile} profile)
+\item 
+static void \textbf{ Register\+Builtin\+Systems} (\textbf{ GAME\+::\+Default\+Content\+Profile} profile)
+\item 
+static void \textbf{ Register\+Builtin\+Events} ()
+\item 
+static void \textbf{ Register\+Builtin\+Vertices} ()
+\item 
+static void \textbf{ Register\+Builtin\+Jobs} ()
+\item 
+static void \textbf{ Register\+Builtin\+Shader\+Passes} (\textbf{ GAME\+::\+Default\+Content\+Profile} profile)
+\item 
+static void \textbf{ Register\+Builtin\+Console\+Commands} ()
+\item 
+static \textbf{ UIndex64} \textbf{ Get\+Current\+Game\+Frame\+Index} ()
+\item 
+static void \textbf{ Update} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase principal de OSKengine. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::Engine@{OSK::Engine}!Engine@{Engine}}
+\index{Engine@{Engine}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{Engine()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a4cebbff4288a89796d09f5060dea8c27} 
+OSK\+::\+Engine\+::\+Engine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\index{OSK::Engine@{OSK::Engine}!Engine@{Engine}}
+\index{Engine@{Engine}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{Engine()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a14fa3ec009597e470a2c301108d57879} 
+OSK\+::\+Engine\+::\+Engine (\begin{DoxyParamCaption}\item[{const \textbf{ Engine} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\index{OSK::Engine@{OSK::Engine}!Engine@{Engine}}
+\index{Engine@{Engine}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{Engine()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a523836b34f219549596cb5d402b560b8} 
+OSK\+::\+Engine\+::\+Engine (\begin{DoxyParamCaption}\item[{\textbf{ Engine} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::Engine@{OSK::Engine}!Close@{Close}}
+\index{Close@{Close}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{Close()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_ac7dc8c00262aee2a11183e4080fa5faf} 
+void Engine\+::\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Cierra la instancia del motor. 
+
+\begin{DoxyPrecond}{Precondición}
+El motor debe haber sido previamente inicializado con Create. 
+\end{DoxyPrecond}
+\index{OSK::Engine@{OSK::Engine}!Create@{Create}}
+\index{Create@{Create}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a88150153e8f935f46f0eb728740cb9b5} 
+void Engine\+::\+Create (\begin{DoxyParamCaption}\item[{\textbf{ GRAPHICS\+::\+Render\+Api\+Type}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Inicializa la instancia global del motor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em type} & Tipo de API de renderizado a usar durante esta ejecución. No podrá cambiarse más adelante. \\
+\hline
+\end{DoxyParams}
+\index{OSK::Engine@{OSK::Engine}!GetAssetManager@{GetAssetManager}}
+\index{GetAssetManager@{GetAssetManager}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetAssetManager()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_ab092fdb69a9c816c93f177192477d97c} 
+\textbf{ ASSETS\+::\+Asset\+Manager} $\ast$ Engine\+::\+Get\+Asset\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve un puntero al sistema de assets del motor. 
+
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El motor debe haber sido previamente inicializado con Create. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+La llamada a esta función es thread-\/safe, pero llamadas a funciones de la instancia devuelta pueden no serlo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetAudioApi@{GetAudioApi}}
+\index{GetAudioApi@{GetAudioApi}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetAudioApi()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a6bb693c9bcd8779b838541fe89ece2a1} 
+\textbf{ AUDIO\+::\+IAudio\+Api} $\ast$ Engine\+::\+Get\+Audio\+Api (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve un puntero al sistema de input del motor. 
+
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El motor debe haber sido previamente inicializado con Create. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+La llamada a esta función es thread-\/safe, pero llamadas a funciones de la instancia devuelta pueden no serlo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetBuild@{GetBuild}}
+\index{GetBuild@{GetBuild}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetBuild()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a69ab5a1c949be339208364f30d600697} 
+std\+::string\+\_\+view Engine\+::\+Get\+Build (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve la build del motor, en formato aaaa.\+mm.\+dd.\+n 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetCommandExecutor@{GetCommandExecutor}}
+\index{GetCommandExecutor@{GetCommandExecutor}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetCommandExecutor()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_afd8334294ca89391187dcab642752f9b} 
+\textbf{ Console\+Command\+Executor} $\ast$ Engine\+::\+Get\+Command\+Executor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::Engine@{OSK::Engine}!GetCurrentGameFrameIndex@{GetCurrentGameFrameIndex}}
+\index{GetCurrentGameFrameIndex@{GetCurrentGameFrameIndex}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetCurrentGameFrameIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a8298cbab77cc3ea3abe5a46ea52b82fa} 
+\textbf{ UIndex64} Engine\+::\+Get\+Current\+Game\+Frame\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Devuelve}
+Índice del fotograma actual del juego, medido desde que se inició el juego en esta sesión. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetCurrentTime@{GetCurrentTime}}
+\index{GetCurrentTime@{GetCurrentTime}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetCurrentTime()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a23b66a6d56164e64d289902ad16b625a} 
+float Engine\+::\+Get\+Current\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Devuelve}
+Número de segundos transcurridos desde el incio de ejecución. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetDisplay@{GetDisplay}}
+\index{GetDisplay@{GetDisplay}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetDisplay()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a81e2e2c3d9ab78f3ff07281bd2b6aef8} 
+\textbf{ IO\+::\+IDisplay} $\ast$ Engine\+::\+Get\+Display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve un puntero al display del juego. 
+
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El motor debe haber sido previamente inicializado con Create. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+La llamada a esta función es thread-\/safe, pero llamadas a funciones de la instancia devuelta pueden no serlo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetEcs@{GetEcs}}
+\index{GetEcs@{GetEcs}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetEcs()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a2e36571452395c924ab2211ad380298f} 
+\textbf{ ECS\+::\+Entity\+Component\+System} $\ast$ Engine\+::\+Get\+Ecs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve un puntero al \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s} del motor. 
+
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El motor debe haber sido previamente inicializado con Create. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+La llamada a esta función es thread-\/safe, pero llamadas a funciones de la instancia devuelta pueden no serlo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetInput@{GetInput}}
+\index{GetInput@{GetInput}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_aee49ec521f32013bec544e37f9720410} 
+\textbf{ IO\+::\+IUser\+Input} $\ast$ Engine\+::\+Get\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve un puntero a los estados del input del motor. 
+
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El motor debe haber sido previamente inicializado con Create. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+La llamada a esta función es thread-\/safe, pero llamadas a funciones de la instancia devuelta pueden no serlo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetInputManager@{GetInputManager}}
+\index{GetInputManager@{GetInputManager}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetInputManager()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a5893cf5817c0ab30ae0c0d9761ce71f2} 
+\textbf{ IO\+::\+Input\+Manager} $\ast$ Engine\+::\+Get\+Input\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve un puntero al sistema de input del motor. 
+
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El motor debe haber sido previamente inicializado con Create. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+La llamada a esta función es thread-\/safe, pero llamadas a funciones de la instancia devuelta pueden no serlo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetJobSystem@{GetJobSystem}}
+\index{GetJobSystem@{GetJobSystem}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetJobSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a1e9c44d6c25c676ec8f41d5fbe83ed35} 
+\textbf{ Job\+System} $\ast$ Engine\+::\+Get\+Job\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve un puntero al sistema de trabajos multihilo. 
+
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El motor debe haber sido previamente inicializado con Create. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetLogger@{GetLogger}}
+\index{GetLogger@{GetLogger}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetLogger()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a3be85a8bfef6ad22512f144788c33680} 
+\textbf{ IO\+::\+ILogger} $\ast$ Engine\+::\+Get\+Logger (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Devuelve}
+Puntero al logger del motor. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El motor debe haber sido previamente inicializado con Create. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+La llamada a esta función es thread-\/safe, pero llamadas a funciones de la instancia devuelta pueden no serlo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetRenderer@{GetRenderer}}
+\index{GetRenderer@{GetRenderer}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetRenderer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a019c5397d042224c134b7fd22c739d00} 
+\textbf{ GRAPHICS\+::\+IRenderer} $\ast$ Engine\+::\+Get\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve un puntero al renderizador del motor. 
+
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El motor debe haber sido previamente inicializado con Create. 
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Atención}
+El renderizador no será usable hasta que no se llame a IRenderer\+::\+Initialize. 
+\end{DoxyWarning}
+\begin{DoxyParagraph}{Multihilo}
+La llamada a esta función es thread-\/safe, pero llamadas a funciones de la instancia devuelta pueden no serlo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetUuidProvider@{GetUuidProvider}}
+\index{GetUuidProvider@{GetUuidProvider}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetUuidProvider()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_ae51793e3f69c3a3af9f06935a83a74c6} 
+\textbf{ Uuid\+Provider} $\ast$ Engine\+::\+Get\+Uuid\+Provider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve un puntero al sistema de asignación de UUIDs. 
+
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondición}
+El motor debe haber sido previamente inicializado con Create. 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!GetVersion@{GetVersion}}
+\index{GetVersion@{GetVersion}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{GetVersion()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a223c2864123f7dba6e84ac0107aa61f0} 
+\textbf{ Version} Engine\+::\+Get\+Version (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve la versión del motor. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Thread-\/safe}
+Compatible con ejecución multihilo. 
+\end{DoxyParagraph}
+\index{OSK::Engine@{OSK::Engine}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a07a9fcf411c42f80ea0b7df1e065e5f6} 
+\textbf{ Engine} \& OSK\+::\+Engine\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Engine} \&}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\index{OSK::Engine@{OSK::Engine}!operator=@{operator=}}
+\index{operator=@{operator=}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a0a72830e83c0f58c00b0c5f32b52abfe} 
+\textbf{ Engine} \& OSK\+::\+Engine\+::operator= (\begin{DoxyParamCaption}\item[{\textbf{ Engine} \&\&}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\index{OSK::Engine@{OSK::Engine}!RegisterBuiltinAssets@{RegisterBuiltinAssets}}
+\index{RegisterBuiltinAssets@{RegisterBuiltinAssets}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{RegisterBuiltinAssets()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a901ece0b54632d182701de2e37d5476d} 
+void Engine\+::\+Register\+Builtin\+Assets (\begin{DoxyParamCaption}\item[{\textbf{ GAME\+::\+Default\+Content\+Profile}}]{profile}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::Engine@{OSK::Engine}!RegisterBuiltinComponents@{RegisterBuiltinComponents}}
+\index{RegisterBuiltinComponents@{RegisterBuiltinComponents}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{RegisterBuiltinComponents()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_afb9e596f36e6a9f88cc3ea19d3169506} 
+void Engine\+::\+Register\+Builtin\+Components (\begin{DoxyParamCaption}\item[{\textbf{ GAME\+::\+Default\+Content\+Profile}}]{profile}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::Engine@{OSK::Engine}!RegisterBuiltinConsoleCommands@{RegisterBuiltinConsoleCommands}}
+\index{RegisterBuiltinConsoleCommands@{RegisterBuiltinConsoleCommands}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{RegisterBuiltinConsoleCommands()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_aa97e0f82fdff284897952ac8d56ea814} 
+void Engine\+::\+Register\+Builtin\+Console\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::Engine@{OSK::Engine}!RegisterBuiltinEvents@{RegisterBuiltinEvents}}
+\index{RegisterBuiltinEvents@{RegisterBuiltinEvents}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{RegisterBuiltinEvents()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a0f56cbc8b9a749c16a3000ce5eb6ff78} 
+void Engine\+::\+Register\+Builtin\+Events (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::Engine@{OSK::Engine}!RegisterBuiltinJobs@{RegisterBuiltinJobs}}
+\index{RegisterBuiltinJobs@{RegisterBuiltinJobs}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{RegisterBuiltinJobs()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a894b834555f737c9d3a6566a6091bb22} 
+void Engine\+::\+Register\+Builtin\+Jobs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::Engine@{OSK::Engine}!RegisterBuiltinShaderPasses@{RegisterBuiltinShaderPasses}}
+\index{RegisterBuiltinShaderPasses@{RegisterBuiltinShaderPasses}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{RegisterBuiltinShaderPasses()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a6e18d8650c67d352a14e39fd56247724} 
+void Engine\+::\+Register\+Builtin\+Shader\+Passes (\begin{DoxyParamCaption}\item[{\textbf{ GAME\+::\+Default\+Content\+Profile}}]{profile}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::Engine@{OSK::Engine}!RegisterBuiltinSystems@{RegisterBuiltinSystems}}
+\index{RegisterBuiltinSystems@{RegisterBuiltinSystems}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{RegisterBuiltinSystems()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a99a0747647a8669054273c14b2ffa3da} 
+void Engine\+::\+Register\+Builtin\+Systems (\begin{DoxyParamCaption}\item[{\textbf{ GAME\+::\+Default\+Content\+Profile}}]{profile}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::Engine@{OSK::Engine}!RegisterBuiltinVertices@{RegisterBuiltinVertices}}
+\index{RegisterBuiltinVertices@{RegisterBuiltinVertices}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{RegisterBuiltinVertices()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_a68d1b1d787f29b6a6ba0a617f1919e67} 
+void Engine\+::\+Register\+Builtin\+Vertices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\index{OSK::Engine@{OSK::Engine}!Update@{Update}}
+\index{Update@{Update}!OSK::Engine@{OSK::Engine}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_engine_ac84eefe06226f430a2448306e6fd2579} 
+void Engine\+::\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+

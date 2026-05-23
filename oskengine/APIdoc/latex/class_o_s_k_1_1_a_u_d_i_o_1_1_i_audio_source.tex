@@ -1,0 +1,350 @@
+\doxysection{Referencia de la clase OSK\+::AUDIO\+::IAudio\+Source}
+\label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source}\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+
+
+{\ttfamily \#include $<$IAudio\+Source.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IAudio\+Source} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ IAudio\+Source})
+\item 
+virtual void \textbf{ Initialize} ()
+\item 
+virtual void \textbf{ Set\+Position} (const \textbf{ Vector3f} \&position)=0
+\item 
+virtual void \textbf{ Set\+Velocity} (const \textbf{ Vector3f} \&velocity)=0
+\item 
+void \textbf{ Set\+Pitch} (float pitch)
+\item 
+void \textbf{ Set\+Gain} (float gain)
+\item 
+void \textbf{ Set\+Looping} (bool looping)
+\item 
+void \textbf{ Set\+Current\+State} (\textbf{ Audio\+State} state)
+\item 
+\textbf{ Audio\+State} \textbf{ Get\+Current\+State} () const
+\item 
+void \textbf{ Play} ()
+\item 
+void \textbf{ Pause} ()
+\item 
+void \textbf{ Stop} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Play\+\_\+\+Implementation} ()=0
+\item 
+virtual void \textbf{ Pause\+\_\+\+Implementation} ()=0
+\item 
+virtual void \textbf{ Stop\+\_\+\+Implementation} ()=0
+\item 
+virtual void \textbf{ Set\+Pitch\+\_\+\+Implementation} (float pitch)=0
+\item 
+virtual void \textbf{ Set\+Gain\+\_\+\+Implementation} (float gain)=0
+\item 
+virtual void \textbf{ Set\+Looping\+\_\+\+Implementation} (bool looping)=0
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!````~IAudioSource@{$\sim$IAudioSource}}
+\index{````~IAudioSource@{$\sim$IAudioSource}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{$\sim$IAudioSource()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a3ddbd503a947104d5b328e154f009515} 
+virtual OSK\+::\+AUDIO\+::\+IAudio\+Source\+::$\sim$\+IAudio\+Source (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!GetCurrentState@{GetCurrentState}}
+\index{GetCurrentState@{GetCurrentState}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{GetCurrentState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a4898271ba997f16aea73dfd02924e7e7} 
+\textbf{ Audio\+State} IAudio\+Source\+::\+Get\+Current\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Estado actual el source. 
+\end{DoxyReturn}
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{Initialize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a6de2f513d2e0e4c63bf21b80386321b3} 
+void IAudio\+Source\+::\+Initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplementado en \textbf{ OSK\+::\+AUDIO\+::\+Audio\+Source\+Al} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_source_al_a3101db7ef63af309351ec7aa7fc931d2}.
+
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a53ba3ee99fcd6dc9254842358d34b5b0} 
+OSK\+::\+AUDIO\+::\+IAudio\+Source\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ IAudio\+Source}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!Pause@{Pause}}
+\index{Pause@{Pause}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{Pause()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a03a8791ca0c9bc590d4526eee8bb6438} 
+void IAudio\+Source\+::\+Pause (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pausa el audio del source. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber establecido un buffer con Set\+Buffer. 
+\end{DoxyPrecond}
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!Pause\_Implementation@{Pause\_Implementation}}
+\index{Pause\_Implementation@{Pause\_Implementation}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{Pause\_Implementation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a9dd31d1cfca85dd90a0e0f37be9e064e} 
+virtual void OSK\+::\+AUDIO\+::\+IAudio\+Source\+::\+Pause\+\_\+\+Implementation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Pausa el audio del source. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber establecido un buffer con Set\+Buffer. 
+\end{DoxyPrecond}
+
+
+Implementado en \textbf{ OSK\+::\+AUDIO\+::\+Audio\+Source\+Al} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_source_al_aa4b94879176d9fad2408f2f6c95eb66d}.
+
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!Play@{Play}}
+\index{Play@{Play}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{Play()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_ac970b0e885b227f389304344f0af12e8} 
+void IAudio\+Source\+::\+Play (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reproduce el audio del source. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber establecido un buffer con Set\+Buffer. 
+\end{DoxyPrecond}
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!Play\_Implementation@{Play\_Implementation}}
+\index{Play\_Implementation@{Play\_Implementation}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{Play\_Implementation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a1ad628e5a6b534627cb87b1d71ae875f} 
+virtual void OSK\+::\+AUDIO\+::\+IAudio\+Source\+::\+Play\+\_\+\+Implementation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Reproduce el audio del source. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber establecido un buffer con Set\+Buffer. 
+\end{DoxyPrecond}
+
+
+Implementado en \textbf{ OSK\+::\+AUDIO\+::\+Audio\+Source\+Al} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_source_al_a91c2f45d438dd11ea3d52e93c905343a}.
+
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!SetCurrentState@{SetCurrentState}}
+\index{SetCurrentState@{SetCurrentState}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{SetCurrentState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a0e794107429818809383160e2d9a01f1} 
+void IAudio\+Source\+::\+Set\+Current\+State (\begin{DoxyParamCaption}\item[{\textbf{ Audio\+State}}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Establece el estado del source, reproduciendo, pausando o parando el audio. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state} & Nuevo estado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Se debe haber establecido un buffer con Set\+Buffer.
+\end{DoxyPrecond}
+\begin{DoxySeeAlso}{Ver también}
+\doxyref{Play()}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_ac970b0e885b227f389304344f0af12e8}. 
+
+\doxyref{Pause()}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a03a8791ca0c9bc590d4526eee8bb6438}. 
+
+\doxyref{Stop()}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a5a6df711cb4d670a0b0b9eb42def68dd}. 
+\end{DoxySeeAlso}
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!SetGain@{SetGain}}
+\index{SetGain@{SetGain}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{SetGain()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_aa5510a68e5b18981d416ca967544758f} 
+void IAudio\+Source\+::\+Set\+Gain (\begin{DoxyParamCaption}\item[{float}]{gain}{}\end{DoxyParamCaption})}
+
+
+
+Establece el gain (\textquotesingle{}volumen\textquotesingle{}) del source. Por defecto 1.\+0. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pitch} & Nuevo gain. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily gain} $>$ 0.\+0. 
+\end{DoxyPrecond}
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!SetGain\_Implementation@{SetGain\_Implementation}}
+\index{SetGain\_Implementation@{SetGain\_Implementation}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{SetGain\_Implementation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a59953ddb234adc407e134939311c54b5} 
+virtual void OSK\+::\+AUDIO\+::\+IAudio\+Source\+::\+Set\+Gain\+\_\+\+Implementation (\begin{DoxyParamCaption}\item[{float}]{gain}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Establece el gain (\textquotesingle{}volumen\textquotesingle{}) del source. Por defecto 1.\+0. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pitch} & Nuevo gain. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily gain} $>$ 0.\+0. 
+\end{DoxyPrecond}
+
+
+Implementado en \textbf{ OSK\+::\+AUDIO\+::\+Audio\+Source\+Al} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_source_al_a75d19b86e35acd2fc215fccf001950fd}.
+
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!SetLooping@{SetLooping}}
+\index{SetLooping@{SetLooping}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{SetLooping()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_aab534e9d1fd79d3fe2c88af2d4b8e275} 
+void IAudio\+Source\+::\+Set\+Looping (\begin{DoxyParamCaption}\item[{bool}]{looping}{}\end{DoxyParamCaption})}
+
+
+
+Establece si el audio se reproducirá en bucle. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em looping} & True si estaará en bucle. False en caso contrario. \\
+\hline
+\end{DoxyParams}
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!SetLooping\_Implementation@{SetLooping\_Implementation}}
+\index{SetLooping\_Implementation@{SetLooping\_Implementation}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{SetLooping\_Implementation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_ace83f4faa0233abb01375f6e6db0e37c} 
+virtual void OSK\+::\+AUDIO\+::\+IAudio\+Source\+::\+Set\+Looping\+\_\+\+Implementation (\begin{DoxyParamCaption}\item[{bool}]{looping}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Establece si el audio se reproducirá en bucle. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em looping} & True si estaará en bucle. False en caso contrario. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \textbf{ OSK\+::\+AUDIO\+::\+Audio\+Source\+Al} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_source_al_a68aa3216f6fe7c50a9ed0a1f5c434af6}.
+
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!SetPitch@{SetPitch}}
+\index{SetPitch@{SetPitch}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{SetPitch()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a574092ca2c428d1fe49dc5f576f70529} 
+void IAudio\+Source\+::\+Set\+Pitch (\begin{DoxyParamCaption}\item[{float}]{pitch}{}\end{DoxyParamCaption})}
+
+
+
+Establece el pitch del source. Por defecto 1.\+0. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pitch} & Nuevo pitch. \\
+\hline
+\end{DoxyParams}
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!SetPitch\_Implementation@{SetPitch\_Implementation}}
+\index{SetPitch\_Implementation@{SetPitch\_Implementation}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{SetPitch\_Implementation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a618361835e41572db1a3daf8ed0156c5} 
+virtual void OSK\+::\+AUDIO\+::\+IAudio\+Source\+::\+Set\+Pitch\+\_\+\+Implementation (\begin{DoxyParamCaption}\item[{float}]{pitch}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Establece el pitch del source. Por defecto 1.\+0. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pitch} & Nuevo pitch. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \textbf{ OSK\+::\+AUDIO\+::\+Audio\+Source\+Al} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_source_al_af78b8a96dca43b091466a09c8acd9fce}.
+
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{SetPosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_ad1b9dd9938b22d1600a0e00c38ff0407} 
+virtual void OSK\+::\+AUDIO\+::\+IAudio\+Source\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece la posición del source. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Posición en el mundo 3D. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \textbf{ OSK\+::\+AUDIO\+::\+Audio\+Source\+Al} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_source_al_a7952b784fdd86280fed78f19c9ecbea7}.
+
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!SetVelocity@{SetVelocity}}
+\index{SetVelocity@{SetVelocity}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{SetVelocity()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_ae896a769431429e57eb2845d77011d17} 
+virtual void OSK\+::\+AUDIO\+::\+IAudio\+Source\+::\+Set\+Velocity (\begin{DoxyParamCaption}\item[{const \textbf{ Vector3f} \&}]{velocity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece la velocidad del source. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em position} & Velocidad en el mundo 3D. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \textbf{ OSK\+::\+AUDIO\+::\+Audio\+Source\+Al} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_source_al_a4a918e78a2e73da1cba82271168538a8}.
+
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!Stop@{Stop}}
+\index{Stop@{Stop}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{Stop()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a5a6df711cb4d670a0b0b9eb42def68dd} 
+void IAudio\+Source\+::\+Stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Detiene el audio del source, devolviéndolo al estado inicial. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber establecido un buffer con Set\+Buffer. 
+\end{DoxyPrecond}
+\index{OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}!Stop\_Implementation@{Stop\_Implementation}}
+\index{Stop\_Implementation@{Stop\_Implementation}!OSK::AUDIO::IAudioSource@{OSK::AUDIO::IAudioSource}}
+\doxysubsubsection{Stop\_Implementation()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_u_d_i_o_1_1_i_audio_source_a74a3c4fe1aa168e0f693c603d182789d} 
+virtual void OSK\+::\+AUDIO\+::\+IAudio\+Source\+::\+Stop\+\_\+\+Implementation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Detiene el audio del source, devolviéndolo al estado inicial. 
+
+\begin{DoxyPrecond}{Precondición}
+Se debe haber establecido un buffer con Set\+Buffer. 
+\end{DoxyPrecond}
+
+
+Implementado en \textbf{ OSK\+::\+AUDIO\+::\+Audio\+Source\+Al} \doxyref{}{pág.}{class_o_s_k_1_1_a_u_d_i_o_1_1_audio_source_al_a94838b7f245982411e309a5f32d756b2}.
+

@@ -1,0 +1,60 @@
+\doxysection{Material\+Layout.\+h}
+\label{_material_layout_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/MaterialLayout.h@{C:/Users/Oscar/source/repos/OSKengine/Source/MaterialLayout.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}MaterialLayoutSlot.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}MaterialLayoutPushConstant.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ MaterialLayout\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }PushConstantsContainer\ =\ std::unordered\_map<std::string,\ MaterialLayoutPushConstant,\ StringHasher,\ std::equal\_to<>>;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }PushConstantsIterable\ =\ PushConstantsContainer;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }MaterialSlotsContainer\ =\ std::unordered\_map<std::string,\ MaterialLayoutSlot,\ StringHasher,\ std::equal\_to<>>;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }MaterialSlotsIterable\ =\ MaterialSlotsContainer;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ MaterialLayout(\textcolor{keyword}{const}\ std::string\&\ materialName);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddSlot(\textcolor{keyword}{const}\ MaterialLayoutSlot\&\ slot);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddPushConstant(MaterialLayoutPushConstant\ pushConstant);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ MaterialLayoutSlot\&\ GetSlot(std::string\_view\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ MaterialLayoutSlot\&\ GetSlot(std::string\_view\ name);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ MaterialLayoutPushConstant\&\ GetPushConstant(std::string\_view\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ MaterialLayoutPushConstant\&\ GetPushConstant(std::string\_view\ name);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ MaterialSlotsIterable\&\ GetAllSlots()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ PushConstantsIterable\&\ GetAllPushConstants()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ MaterialSlotsIterable\&\ GetAllSlots();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ PushConstantsIterable\&\ GetAllPushConstants();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ std::string\_view\ GetMaterialName()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ std::string\ m\_name;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ MaterialLayoutSlot,\ StringHasher,\ std::equal\_to<>>\ m\_slots;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ MaterialLayoutPushConstant,\ StringHasher,\ std::equal\_to<>>\ m\_pushConstants;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ USize32\ m\_accumulatedPushConstOffset\ =\ 0;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{template}\ <>\ std::string\ OSK::ToString<OSK::GRAPHICS::MaterialLayout>(\textcolor{keyword}{const}\ OSK::GRAPHICS::MaterialLayout\&\ layout);}
+
+\end{DoxyCode}

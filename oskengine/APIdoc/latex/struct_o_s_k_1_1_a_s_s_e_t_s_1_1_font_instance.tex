@@ -1,0 +1,125 @@
+\doxysection{Referencia de la estructura OSK\+::ASSETS\+::Font\+Instance}
+\label{struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_instance}\index{OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}}
+
+
+{\ttfamily \#include $<$Font\+Instance.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Font\+Instance} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Font\+Instance})
+\item 
+\textbf{ OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR} (\textbf{ Font\+Instance})
+\item 
+\textbf{ Vector2f} \textbf{ Get\+Text\+Size} (std\+::string\+\_\+view string) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Image} $>$ \textbf{ image}
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+Sprite} $>$ \textbf{ sprite}
+\item 
+std\+::unordered\+\_\+map$<$ char, \textbf{ Font\+Character} $>$ \textbf{ characters}
+\item 
+\textbf{ USize32} \textbf{ font\+Size} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa una fuente que ha sido generada con un tamaño específico. Cada tamaño de fuente tendrá su propia imagen cargada. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}!FontInstance@{FontInstance}}
+\index{FontInstance@{FontInstance}!OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}}
+\doxysubsubsection{FontInstance()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_instance_aad8ce0634f56653ffe02b372dd8379c0} 
+OSK\+::\+ASSETS\+::\+Font\+Instance\+::\+Font\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}!GetTextSize@{GetTextSize}}
+\index{GetTextSize@{GetTextSize}!OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}}
+\doxysubsubsection{GetTextSize()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_instance_a33da67eb5b7b0a81ba1398df725b3e52} 
+\textbf{ Vector2f} Font\+Instance\+::\+Get\+Text\+Size (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{string}{}\end{DoxyParamCaption}) const}
+
+
+
+Calcula el tamaño que tendrá este texto si es renderizado con esta instancia de la fuente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em string} & Texto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Tamaño, en píxeles. 
+\end{DoxyReturn}
+\index{OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}!OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}}
+\index{OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}!OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}}
+\doxysubsubsection{OSK\_DEFAULT\_MOVE\_OPERATOR()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_instance_a9ebd50560728562c4e3da040c6f0cbb1} 
+OSK\+::\+ASSETS\+::\+Font\+Instance\+::\+OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR (\begin{DoxyParamCaption}\item[{\textbf{ Font\+Instance}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_instance_ae7178c2f5c1dea220654d43423aa479d} 
+OSK\+::\+ASSETS\+::\+Font\+Instance\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Font\+Instance}}]{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}!characters@{characters}}
+\index{characters@{characters}!OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}}
+\doxysubsubsection{characters}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_instance_a2a6dde25a2509bf53d11a876d6ea9338} 
+std\+::unordered\+\_\+map$<$char, \textbf{ Font\+Character}$>$ OSK\+::\+ASSETS\+::\+Font\+Instance\+::characters}
+
+
+
+Información de los sprites del carácter. 
+
+\index{OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}!fontSize@{fontSize}}
+\index{fontSize@{fontSize}!OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}}
+\doxysubsubsection{fontSize}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_instance_aec4428c171fd1ac107bb5bc103da2343} 
+\textbf{ USize32} OSK\+::\+ASSETS\+::\+Font\+Instance\+::font\+Size = 0}
+
+
+
+Tamaño de fuente de esta instancia. 
+
+\begin{DoxyNote}{Nota}
+En píxeles. 
+\end{DoxyNote}
+\index{OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}!image@{image}}
+\index{image@{image}!OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}}
+\doxysubsubsection{image}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_instance_a5bc616e3014ce0290c984a4810f19448} 
+\textbf{ Unique\+Ptr}$<$\textbf{ GRAPHICS\+::\+Gpu\+Image}$>$ OSK\+::\+ASSETS\+::\+Font\+Instance\+::image}
+
+
+
+Imagen en la GPU. 
+
+\begin{DoxyNote}{Nota}
+Nunca será null. 
+\end{DoxyNote}
+\index{OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}!sprite@{sprite}}
+\index{sprite@{sprite}!OSK::ASSETS::FontInstance@{OSK::ASSETS::FontInstance}}
+\doxysubsubsection{sprite}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_a_s_s_e_t_s_1_1_font_instance_ad006fe151e2ee7bbbbadf4003aab748d} 
+\textbf{ Unique\+Ptr}$<$\textbf{ GRAPHICS\+::\+Sprite}$>$ OSK\+::\+ASSETS\+::\+Font\+Instance\+::sprite}
+
+
+
+Sprite para el renderizado 2D. 
+

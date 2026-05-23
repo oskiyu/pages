@@ -1,0 +1,108 @@
+\doxysection{Referencia de la clase OSK\+::Editor\+::Controllers\+::Render\+Bounds\+Render\+System\+Controller}
+\label{class_o_s_k_1_1_editor_1_1_controllers_1_1_render_bounds_render_system_controller}\index{OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}}
+
+
+{\ttfamily \#include $<$Render\+Bounds\+Render\+System\+Controller.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+LINK\+\_\+\+SYSTEM\+\_\+\+EDITOR\+\_\+\+CONTROLLER} (\textbf{ ECS\+::\+Render\+Bounds\+Renderer})
+\item 
+\textbf{ Render\+Bounds\+Render\+System\+Controller} (\textbf{ ECS\+::\+ISystem} $\ast$system, \textbf{ Views\+::\+ISystem\+View} $\ast$view)
+\item 
+void \textbf{ Poll} () override
+\item 
+virtual std\+::string\+\_\+view \textbf{ \+\_\+\+Get\+System\+Name} () const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ ECS\+::\+Render\+Bounds\+Renderer} $\ast$ \textbf{ Get\+System} ()
+\item 
+const \textbf{ ECS\+::\+Render\+Bounds\+Renderer} $\ast$ \textbf{ Get\+Component} () const
+\item 
+\textbf{ Views\+::\+ISystem\+View} $\ast$ \textbf{ Get\+View} ()
+\item 
+const \textbf{ Views\+::\+ISystem\+View} $\ast$ \textbf{ Get\+View} () const
+\item 
+\textbf{ ECS\+::\+ISystem} $\ast$ \textbf{ Get\+System\+Data} ()
+\item 
+const \textbf{ ECS\+::\+ISystem} $\ast$ \textbf{ Get\+System\+Data} () const
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}!RenderBoundsRenderSystemController@{RenderBoundsRenderSystemController}}
+\index{RenderBoundsRenderSystemController@{RenderBoundsRenderSystemController}!OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}}
+\doxysubsubsection{RenderBoundsRenderSystemController()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_render_bounds_render_system_controller_a8c0e1763adc4d1fdfbbbf57cbbc9cb29} 
+OSK\+::\+Editor\+::\+Controllers\+::\+Render\+Bounds\+Render\+System\+Controller\+::\+Render\+Bounds\+Render\+System\+Controller (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+ISystem} $\ast$}]{system}{, }\item[{\textbf{ Views\+::\+ISystem\+View} $\ast$}]{view}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}!\_GetSystemName@{\_GetSystemName}}
+\index{\_GetSystemName@{\_GetSystemName}!OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}}
+\doxysubsubsection{\_GetSystemName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_abd285aab6a699a57017f738825e00df1} 
+virtual std\+::string\+\_\+view OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::\+\_\+\+Get\+System\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+\index{OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}}
+\doxysubsubsection{GetComponent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_t_system_controller_a069dbec42da1df20aa9457040526d41b} 
+const \textbf{ ECS\+::\+Render\+Bounds\+Renderer} $\ast$ \textbf{ OSK\+::\+Editor\+::\+Controllers\+::\+TSystem\+Controller}$<$ \textbf{ ECS\+::\+Render\+Bounds\+Renderer} $>$\+::\+Get\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}!GetSystem@{GetSystem}}
+\index{GetSystem@{GetSystem}!OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}}
+\doxysubsubsection{GetSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_t_system_controller_ae8940a55c2e74ca0c7b361f39f4c5bd7} 
+\textbf{ ECS\+::\+Render\+Bounds\+Renderer} $\ast$ \textbf{ OSK\+::\+Editor\+::\+Controllers\+::\+TSystem\+Controller}$<$ \textbf{ ECS\+::\+Render\+Bounds\+Renderer} $>$\+::\+Get\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}!GetSystemData@{GetSystemData}}
+\index{GetSystemData@{GetSystemData}!OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}}
+\doxysubsubsection{GetSystemData()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_affc3bd28624b9836e11123ccfbe24774} 
+\textbf{ OSK\+::\+ECS\+::\+ISystem} $\ast$ OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::\+Get\+System\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}!GetSystemData@{GetSystemData}}
+\index{GetSystemData@{GetSystemData}!OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}}
+\doxysubsubsection{GetSystemData()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_acaac3a5bbe5e4ec2048aa1170a035150} 
+const \textbf{ OSK\+::\+ECS\+::\+ISystem} $\ast$ OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::\+Get\+System\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}!GetView@{GetView}}
+\index{GetView@{GetView}!OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}}
+\doxysubsubsection{GetView()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_a224eb9e7213dc1f06255beba10978b1c} 
+\textbf{ OSK\+::\+Editor\+::\+Views\+::\+ISystem\+View} $\ast$ OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::\+Get\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}!GetView@{GetView}}
+\index{GetView@{GetView}!OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}}
+\doxysubsubsection{GetView()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_ad4f6949c9f6f31b7601c5491de3552ed} 
+const \textbf{ OSK\+::\+Editor\+::\+Views\+::\+ISystem\+View} $\ast$ OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller\+::\+Get\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\index{OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}!OSK\_LINK\_SYSTEM\_EDITOR\_CONTROLLER@{OSK\_LINK\_SYSTEM\_EDITOR\_CONTROLLER}}
+\index{OSK\_LINK\_SYSTEM\_EDITOR\_CONTROLLER@{OSK\_LINK\_SYSTEM\_EDITOR\_CONTROLLER}!OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}}
+\doxysubsubsection{OSK\_LINK\_SYSTEM\_EDITOR\_CONTROLLER()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_render_bounds_render_system_controller_a47df7e8d706f4373147f3f3f06490998} 
+OSK\+::\+Editor\+::\+Controllers\+::\+Render\+Bounds\+Render\+System\+Controller\+::\+OSK\+\_\+\+LINK\+\_\+\+SYSTEM\+\_\+\+EDITOR\+\_\+\+CONTROLLER (\begin{DoxyParamCaption}\item[{\textbf{ ECS\+::\+Render\+Bounds\+Renderer}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}!Poll@{Poll}}
+\index{Poll@{Poll}!OSK::Editor::Controllers::RenderBoundsRenderSystemController@{OSK::Editor::Controllers::RenderBoundsRenderSystemController}}
+\doxysubsubsection{Poll()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_editor_1_1_controllers_1_1_render_bounds_render_system_controller_a89b348c90235f1d78531bb8aed523e6d} 
+void OSK\+::\+Editor\+::\+Controllers\+::\+Render\+Bounds\+Render\+System\+Controller\+::\+Poll (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza la interfaz de usuario a partir de los datos del sistema. 
+
+
+
+Implementa \textbf{ OSK\+::\+Editor\+::\+Controllers\+::\+ISystem\+Controller} \doxyref{}{pág.}{class_o_s_k_1_1_editor_1_1_controllers_1_1_i_system_controller_a022070a299d539c8d0f7a8c38f038862}.
+

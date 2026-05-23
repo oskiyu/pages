@@ -1,0 +1,176 @@
+\doxysection{Referencia de la clase OSK\+::ASSETS\+::IAsset\+Loader}
+\label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader}\index{OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}}
+
+
+{\ttfamily \#include $<$IAsset\+Loader.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IAsset\+Loader} ()=default
+\item 
+virtual void \textbf{ Load} (const std\+::string \&asset\+File\+Path)=0
+\item 
+virtual void \textbf{ Fully\+Load} (const std\+::string \&asset\+File\+Path, void $\ast$asset\+Ref)=0
+\item 
+virtual void \textbf{ Register\+Without\+Loading} (const std\+::string \&asset\+File\+Path, void $\ast$asset\+Ref)=0
+\item 
+virtual void \textbf{ Set\+As\+Loaded} (std\+::string\+\_\+view asset\+File\+Path)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+nlohmann\+::json \textbf{ Validate\+Description\+File} (std\+::string\+\_\+view file\+Path) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que se encarga de cargar un asset de un tipo en concreto. 
+
+\begin{DoxyNote}{Nota}
+Cada tipo de asset debe tener su loader específico. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Atención}
+Cada asset loader tiene que ser registrado manualmente en el \doxyref{Asset\+Manager}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_manager} de OSKengine.
+
+Al igual que con Asset, debe especificarse a qué tipo de Asset corresponde, usando el macro OSK\+\_\+\+ASSET\+\_\+\+TYPE\+\_\+\+REG. El string debe ser el mismo que el especificado en el Asset. 
+\end{DoxyWarning}
+
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}!````~IAssetLoader@{$\sim$IAssetLoader}}
+\index{````~IAssetLoader@{$\sim$IAssetLoader}!OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}}
+\doxysubsubsection{$\sim$IAssetLoader()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_ac5c0d4e581da3c41b856364bf1bdba0c} 
+virtual OSK\+::\+ASSETS\+::\+IAsset\+Loader\+::$\sim$\+IAsset\+Loader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}!FullyLoad@{FullyLoad}}
+\index{FullyLoad@{FullyLoad}!OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}}
+\doxysubsubsection{FullyLoad()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_aaa7cca8f691333ae0d86b1ea430f2540} 
+virtual void OSK\+::\+ASSETS\+::\+IAsset\+Loader\+::\+Fully\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File\+Path}{, }\item[{void $\ast$}]{asset\+Ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Realiza el proceso completo de registro de asset y carga del asset. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción que describe el asset. \\
+\hline
+{\em asset\+Ref} & Puntero a la referencia del asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily $\ast$asset\+Ref} debe apuntar a una referencia ya creada.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Asset\+Description\+File\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_description_file_not_found_exception}} & Si el archivo de descripción \textquotesingle{}.json\textquotesingle{} no existe. \\
+\hline
+{\em \doxyref{Invalid\+Description\+File\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_invalid_description_file_exception}} & Si el archivo de descripción es inválido. \\
+\hline
+{\em \doxyref{Raw\+Asset\+File\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_raw_asset_file_not_found_exception}} & Si el archivo del asset original no se encuentra. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}!Load@{Load}}
+\index{Load@{Load}!OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}}
+\doxysubsubsection{Load()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_af8f5c778c23ddc0259cf1c224d2762ab} 
+virtual void OSK\+::\+ASSETS\+::\+IAsset\+Loader\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Realiza el proceso de carga el asset. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción que describe el asset. \\
+\hline
+{\em asset} & Puntero al asset a cargar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El asset debe haber sido previamente registrado mediante \doxyref{Register\+Without\+Loading()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_a6feda54f90416be58ae8dcd4a469b726}. 
+
+El asset no debe haber sido previamente cargado, ya sea mediante \doxyref{Load()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_af8f5c778c23ddc0259cf1c224d2762ab} o mediante \doxyref{Fully\+Load()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_aaa7cca8f691333ae0d86b1ea430f2540}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Asset\+Description\+File\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_description_file_not_found_exception}} & Si el archivo de descripción \textquotesingle{}.json\textquotesingle{} no existe. \\
+\hline
+{\em \doxyref{Invalid\+Description\+File\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_invalid_description_file_exception}} & Si el archivo de descripción es inválido. \\
+\hline
+{\em \doxyref{Raw\+Asset\+File\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_raw_asset_file_not_found_exception}} & Si el archivo del asset original no se encuentra. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}!RegisterWithoutLoading@{RegisterWithoutLoading}}
+\index{RegisterWithoutLoading@{RegisterWithoutLoading}!OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}}
+\doxysubsubsection{RegisterWithoutLoading()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_a6feda54f90416be58ae8dcd4a469b726} 
+virtual void OSK\+::\+ASSETS\+::\+IAsset\+Loader\+::\+Register\+Without\+Loading (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File\+Path}{, }\item[{void $\ast$}]{asset\+Ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Registra el asset en la tabla de assets, creando la \doxyref{Asset\+Owning\+Ref}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_owning_ref}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción que describe el asset. \\
+\hline
+{\em asset\+Ref} & Puntero a la referencia del asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily $\ast$asset\+Ref} debe apuntar a una referencia ya creada. 
+\end{DoxyPrecond}
+\index{OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}!SetAsLoaded@{SetAsLoaded}}
+\index{SetAsLoaded@{SetAsLoaded}!OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}}
+\doxysubsubsection{SetAsLoaded()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_a8a343e713e71b03372d2a7d6f8ba7850} 
+virtual void OSK\+::\+ASSETS\+::\+IAsset\+Loader\+::\+Set\+As\+Loaded (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{asset\+File\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece el flag indicando que el asset ha sido comletamente cargado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asset\+File\+Path} & Ruta del archivo de descripción que describe el asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+El asset debe haber sido previamente registrado (ya sea mediante \doxyref{Fully\+Load()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_aaa7cca8f691333ae0d86b1ea430f2540} o mediante \doxyref{Register\+Without\+Loading()}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_a6feda54f90416be58ae8dcd4a469b726}). 
+\end{DoxyPrecond}
+\index{OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}!ValidateDescriptionFile@{ValidateDescriptionFile}}
+\index{ValidateDescriptionFile@{ValidateDescriptionFile}!OSK::ASSETS::IAssetLoader@{OSK::ASSETS::IAssetLoader}}
+\doxysubsubsection{ValidateDescriptionFile()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_loader_a502866f35d2aaa0f412021ab855b8cbe} 
+nlohmann\+::json OSK\+::\+ASSETS\+::\+IAsset\+Loader\+::\+Validate\+Description\+File (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Valida el contenido del archivo de descripción. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+Path} & Ruta al archivo completo de descripción. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Archivo de desscripción, si fue validado.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Asset\+Description\+File\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_asset_description_file_not_found_exception}} & Si el archivo de descripción \textquotesingle{}.json\textquotesingle{} no existe. \\
+\hline
+{\em \doxyref{Invalid\+Description\+File\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_invalid_description_file_exception}} & Si el archivo de descripción es inválido. \\
+\hline
+{\em \doxyref{Raw\+Asset\+File\+Not\+Found\+Exception}{pág.}{class_o_s_k_1_1_a_s_s_e_t_s_1_1_raw_asset_file_not_found_exception}} & Si el archivo del asset original no se encuentra. \\
+\hline
+\end{DoxyExceptions}

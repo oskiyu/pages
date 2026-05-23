@@ -1,0 +1,61 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Global\+Index\+Buffer\+Manager}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager}\index{OSK::GRAPHICS::GlobalIndexBufferManager@{OSK::GRAPHICS::GlobalIndexBufferManager}}
+
+
+{\ttfamily \#include $<$Global\+Index\+Buffer.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ UIndex32} \textbf{ Get\+Next\+Indexes\+Start} (\textbf{ USize32} num\+Indexes) const
+\item 
+\textbf{ Global\+Index\+Buffer\+Range} \textbf{ Register\+Geometry} (\textbf{ USize32} num\+Indices)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Maneja los rangos del buffer global de índices. 
+
+\begin{DoxyNote}{Nota}
+No contiene el propio buffer de GPU. 
+\end{DoxyNote}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::GlobalIndexBufferManager@{OSK::GRAPHICS::GlobalIndexBufferManager}!GetNextIndexesStart@{GetNextIndexesStart}}
+\index{GetNextIndexesStart@{GetNextIndexesStart}!OSK::GRAPHICS::GlobalIndexBufferManager@{OSK::GRAPHICS::GlobalIndexBufferManager}}
+\doxysubsubsection{GetNextIndexesStart()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager_a30d8d193fdae145b9535f09eb608d507} 
+\textbf{ UIndex32} Global\+Index\+Buffer\+Manager\+::\+Get\+Next\+Indexes\+Start (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{num\+Indexes}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la posición a partir de la que se puede obtener un rango del buffer con espacio suficiente para almacenar el número de índices indicado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em num\+Indexes} & Número de índices a almacenar en una región contínua de memoria. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Posición a partir de la que se puede construir el rango. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GlobalIndexBufferManager@{OSK::GRAPHICS::GlobalIndexBufferManager}!RegisterGeometry@{RegisterGeometry}}
+\index{RegisterGeometry@{RegisterGeometry}!OSK::GRAPHICS::GlobalIndexBufferManager@{OSK::GRAPHICS::GlobalIndexBufferManager}}
+\doxysubsubsection{RegisterGeometry()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_global_index_buffer_manager_a8538fa7961a10572cd09133666526cc2} 
+\textbf{ Global\+Index\+Buffer\+Range} Global\+Index\+Buffer\+Manager\+::\+Register\+Geometry (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{num\+Indices}{}\end{DoxyParamCaption})}
+
+
+
+Reserva un rango del buffer para almacenar el número de índices indicado, y devuelve la información del rango. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em num\+Indices} & Número de índices a almacenar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Información sobre la posición y tamaño del rango reservado. 
+\end{DoxyReturn}

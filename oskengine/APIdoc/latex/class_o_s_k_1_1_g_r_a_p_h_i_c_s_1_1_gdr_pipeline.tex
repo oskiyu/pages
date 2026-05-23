@@ -1,0 +1,150 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Gdr\+Pipeline}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline}\index{OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}}
+
+
+{\ttfamily \#include $<$Gdr\+Pipeline.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Gdr\+Pipeline} (\textbf{ Render\+Graph} $\ast$render\+Graph)
+\item 
+void \textbf{ Final\+Register\+Deferred\+Pass} ()
+\item 
+void \textbf{ Register\+GBuffer} ()
+\item 
+void \textbf{ Register\+Cameras3D} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Render\+Graph} $\ast$ \textbf{ m\+\_\+render\+Graph} = nullptr
+\item 
+\textbf{ Render\+Pass\+Uuid} \textbf{ m\+\_\+deferred\+Pass} = \textbf{ Render\+Pass\+Uuid\+::\+Create\+Empty}()
+\item 
+std\+::array$<$ \textbf{ Gdr\+Image\+Uuid}, 5 $>$ \textbf{ m\+\_\+g\+Buffer\+Uuids}
+\item 
+\textbf{ Gdr\+Image\+Uuid} \textbf{ m\+\_\+depth\+Image\+Uuid} = \textbf{ Gdr\+Image\+Uuid\+::\+Create\+Empty}()
+\item 
+std\+::array$<$ \textbf{ Gdr\+Buffer\+Uuid}, MAX\+\_\+\+RESOURCES\+\_\+\+IN\+\_\+\+FLIGHT $>$ \textbf{ m\+\_\+camera\+Buffer}
+\item 
+std\+::array$<$ \textbf{ Gdr\+Buffer\+Uuid}, MAX\+\_\+\+RESOURCES\+\_\+\+IN\+\_\+\+FLIGHT $>$ \textbf{ m\+\_\+previous\+Camera\+Buffer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase de utilidad para manejar que encapsula la configuraciÃ³n por defecto del rendergraph. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}!GdrPipeline@{GdrPipeline}}
+\index{GdrPipeline@{GdrPipeline}!OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}}
+\doxysubsubsection{GdrPipeline()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_a862196df51b424f2b7fd73a467cee671} 
+Gdr\+Pipeline\+::\+Gdr\+Pipeline (\begin{DoxyParamCaption}\item[{\textbf{ Render\+Graph} $\ast$}]{render\+Graph}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}!FinalRegisterDeferredPass@{FinalRegisterDeferredPass}}
+\index{FinalRegisterDeferredPass@{FinalRegisterDeferredPass}!OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}}
+\doxysubsubsection{FinalRegisterDeferredPass()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_a1041b89fa930a9cf1a22e1440b5d9be4} 
+void Gdr\+Pipeline\+::\+Final\+Register\+Deferred\+Pass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza los contenidos de los buffers de cÃ¡maras. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em frame\+Index} & Ãndice del recurso a escribir. \\
+\hline
+{\em camera\+Info} & InformaciÃ³n de la cÃ¡mara en este frame. \\
+\hline
+{\em previous\+Camera\+Info} & InformaciÃ³n de la cÃ¡mara en el frame anterior.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+See debe haber registrado los buffers mediante {\ttfamily Register\+All}\`{}. void Update\+Camera\+Buffers(             UIndex16 frame\+Index,             const Gdr\+Deferred\+Pass\+::\+Camera\+Info\& camera\+Info,             const Gdr\+Deferred\+Pass\+::\+Previous\+Camera\+Info\& previous\+Camera\+Info);
+\end{DoxyPrecond}
+/ Registro parcial de lo siguiente\+: / -\/ ImÃ¡genes de color y profundidad del \doxyref{GBuffer}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_g_buffer}. / -\/ Buffers de cÃ¡mara. / -\/ Buffers de cÃ¡mara de frame anterior. / -\/ Pase de renderizado diferido. void Register\+All();
+
+/ Registro completo de lo siguiente\+: / -\/ Pase de renderizado diferido. / / \begin{DoxyPrecond}{Precondición}
+Se debe haber hecho el registro previo / mediante {\ttfamily Register\+All()}. void Final\+Register\+All();
+\end{DoxyPrecond}
+private\+:
+
+/ Registra parcialmente el pase diferido. / \begin{DoxyPrecond}{Precondición}
+Se debe haber registrado previamente el / \doxyref{GBuffer}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_g_buffer} mediante {\ttfamily Register\+GBuffer}. / 
+
+Se deben haber registrado previamente / los buffers de cÃ¡maras actual y previa / mediante {\ttfamily Register\+Cameras3D}. void Register\+Deferred\+Pass();
+\end{DoxyPrecond}
+/ Registro final del pase diferido. / \begin{DoxyPrecond}{Precondición}
+Se debe haber registrado parcialmente / el pase mediante {\ttfamily Register\+Deferred\+Pass}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}!RegisterCameras3D@{RegisterCameras3D}}
+\index{RegisterCameras3D@{RegisterCameras3D}!OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}}
+\doxysubsubsection{RegisterCameras3D()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_ad291e89b3d78e288fa864c0a449e6886} 
+void Gdr\+Pipeline\+::\+Register\+Cameras3D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Registra los buffers de la cÃ¡mara y de la cÃ¡mara del frame anterior. 
+
+HabrÃ¡ {\ttfamily MAX\+\_\+\+RESOURCES\+\_\+\+IN\+\_\+\+FLIGHT} buffers. \index{OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}!RegisterGBuffer@{RegisterGBuffer}}
+\index{RegisterGBuffer@{RegisterGBuffer}!OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}}
+\doxysubsubsection{RegisterGBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_a7a08666cb4558437403d6bf1c25f35e8} 
+void Gdr\+Pipeline\+::\+Register\+GBuffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Registra todas las imÃ¡genes del \doxyref{GBuffer}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_g_buffer}, tanto las de color como las de profundidad. 
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}!m\_cameraBuffer@{m\_cameraBuffer}}
+\index{m\_cameraBuffer@{m\_cameraBuffer}!OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}}
+\doxysubsubsection{m\_cameraBuffer}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_a94f8f0ab25ef934af12a0d66d5135977} 
+std\+::array$<$\textbf{ Gdr\+Buffer\+Uuid}, MAX\+\_\+\+RESOURCES\+\_\+\+IN\+\_\+\+FLIGHT$>$ OSK\+::\+GRAPHICS\+::\+Gdr\+Pipeline\+::m\+\_\+camera\+Buffer}
+
+\index{OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}!m\_deferredPass@{m\_deferredPass}}
+\index{m\_deferredPass@{m\_deferredPass}!OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}}
+\doxysubsubsection{m\_deferredPass}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_a863429ff05a0f0cecaf3bae86a49a425} 
+\textbf{ Render\+Pass\+Uuid} OSK\+::\+GRAPHICS\+::\+Gdr\+Pipeline\+::m\+\_\+deferred\+Pass = \textbf{ Render\+Pass\+Uuid\+::\+Create\+Empty}()}
+
+\index{OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}!m\_depthImageUuid@{m\_depthImageUuid}}
+\index{m\_depthImageUuid@{m\_depthImageUuid}!OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}}
+\doxysubsubsection{m\_depthImageUuid}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_a2528270f81a1d7c617c98926cdcb6358} 
+\textbf{ Gdr\+Image\+Uuid} OSK\+::\+GRAPHICS\+::\+Gdr\+Pipeline\+::m\+\_\+depth\+Image\+Uuid = \textbf{ Gdr\+Image\+Uuid\+::\+Create\+Empty}()}
+
+\index{OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}!m\_gBufferUuids@{m\_gBufferUuids}}
+\index{m\_gBufferUuids@{m\_gBufferUuids}!OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}}
+\doxysubsubsection{m\_gBufferUuids}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_ad946d77a7c2c69eba113b571991c3ec5} 
+std\+::array$<$\textbf{ Gdr\+Image\+Uuid}, 5$>$ OSK\+::\+GRAPHICS\+::\+Gdr\+Pipeline\+::m\+\_\+g\+Buffer\+Uuids}
+
+
+
+ImÃ¡genes de renderizado del \doxyref{GBuffer}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_g_buffer} (sin contar profundidad). 
+
+\index{OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}!m\_previousCameraBuffer@{m\_previousCameraBuffer}}
+\index{m\_previousCameraBuffer@{m\_previousCameraBuffer}!OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}}
+\doxysubsubsection{m\_previousCameraBuffer}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_a34b1cff335c5b236382e54e4d109bb29} 
+std\+::array$<$\textbf{ Gdr\+Buffer\+Uuid}, MAX\+\_\+\+RESOURCES\+\_\+\+IN\+\_\+\+FLIGHT$>$ OSK\+::\+GRAPHICS\+::\+Gdr\+Pipeline\+::m\+\_\+previous\+Camera\+Buffer}
+
+\index{OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}!m\_renderGraph@{m\_renderGraph}}
+\index{m\_renderGraph@{m\_renderGraph}!OSK::GRAPHICS::GdrPipeline@{OSK::GRAPHICS::GdrPipeline}}
+\doxysubsubsection{m\_renderGraph}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gdr_pipeline_a2b50618c55df96aecf9821f84d9d8d95} 
+\textbf{ Render\+Graph}$\ast$ OSK\+::\+GRAPHICS\+::\+Gdr\+Pipeline\+::m\+\_\+render\+Graph = nullptr}
+

@@ -1,0 +1,22 @@
+\doxysection{Event.\+h}
+\label{_event_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Event.h@{C:/Users/Oscar/source/repos/OSKengine/Source/Event.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ OSK\_EVENT}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ OSK\_EVENT(className)\ static\ inline\ std::string\_view\ GetEventName()\ \{\ return\ className;\ \}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }OSK::ECS\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TEvent>}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{concept\ }IsEcsEvent\ =\ \textcolor{keyword}{requires}\ (TEvent)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \{\ TEvent::GetEventName()\ \};}
+\DoxyCodeLine{00016\ \ \ \ \ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}

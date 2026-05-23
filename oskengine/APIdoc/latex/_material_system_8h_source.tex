@@ -1,0 +1,68 @@
+\doxysection{Material\+System.\+h}
+\label{_material_system_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/MaterialSystem.h@{C:/Users/Oscar/source/repos/OSKengine/Source/MaterialSystem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}VertexInfo.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <json.hpp>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }Material;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }IRenderpass;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }VertexInfo;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }MaterialLayout;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{struct\ }PipelineCreateInfo;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{enum\ class}\ MaterialType;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ MaterialSystem\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ MaterialSystem()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \string~MaterialSystem();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ OSK\_DISABLE\_COPY(MaterialSystem);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ Material*\ LoadMaterial(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ Material*\ GetMaterialByName(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ RegisterVertexType()\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ VertexInfo\ info\ =\ T::GetVertexInfo();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{keyword}{static\_cast<}std::string\textcolor{keyword}{>}(T::GetVertexTypeName());}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ vertexTypesTable[name]\ =\ std::move(info);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ReloadMaterialByPath(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ReloadMaterialByName(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ReloadAllMaterials();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ LoadMaterialV0(MaterialLayout*\ layout,\ \textcolor{keyword}{const}\ nlohmann::json\&\ materialInfo,\ PipelineCreateInfo*\ info);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ DynamicArray<UniquePtr<Material>>\ materials;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ Material*,\ StringHasher,\ std::equal\_to<>>\ materialsPathTable;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ Material*,\ StringHasher,\ std::equal\_to<>>\ materialsNameTable;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ VertexInfo,\ StringHasher,\ std::equal\_to<>>\ vertexTypesTable;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ DynamicArray<const\ IRenderpass*>\ registeredRenderpasses;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \}}
+
+\end{DoxyCode}

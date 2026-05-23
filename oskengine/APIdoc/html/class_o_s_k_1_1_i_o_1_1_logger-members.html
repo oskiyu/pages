@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>OSKengine: Lista de los miembros</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -36,21 +37,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.9.4 -->
+<!-- Generado por Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -65,10 +65,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_o_s_k_1_1_i_o_1_1_logger.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('class_o_s_k_1_1_i_o_1_1_logger.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -79,9 +78,16 @@ $(document).ready(function(){initNavTree('class_o_s_k_1_1_i_o_1_1_logger.html','
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
@@ -91,22 +97,24 @@ $(document).ready(function(){initNavTree('class_o_s_k_1_1_i_o_1_1_logger.html','
 
 <p>Lista completa de los miembros de <a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a>, incluyendo todos los heredados:</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#a1191038d1044a1121e03cc267e9c681c">Clear</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#ab13114d60ca5f1f69f2ba0f2f1a5bd19">Close</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#ae076171ead67368c6c7d97b476fb3f79">DebugLog</a>(const std::string &amp;msg)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#a3d2a88ffa05f6a74f9d669f1182bacca">InfoLog</a>(const std::string &amp;msg)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#ac2af30faaa120261990f4deb1b566e7b">Log</a>(LogLevel level, const std::string &amp;msg)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#ab493233540e62404d594ea32de744fc3">Save</a>()</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#a4013888493d3db392241cf61c882a982">Save</a>(const std::string &amp;path)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#aee759fea9bc4d73c1e5783312157f7b8">Start</a>(const std::string &amp;path)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_i_logger.html#a7aec183847b53c582c1e42019867ed58">~ILogger</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_i_logger.html">OSK::IO::ILogger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#afee741267f0de25da55208a6424eb84f">~Logger</a>() override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#a1ed1d0f971eb85f3f43843e8e91e4937">_Log</a>(LogLevel level, const std::string &amp;msg) override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#a156424fd3b6afe7e3a75b6a5c630cad2">Clear</a>() override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#ab9dc2748087a7452049b69cf1eb5aefe">Close</a>() override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#a35237e0c340d8499bb6b87439716394b">DebugLog</a>(const std::string &amp;msg) override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#af8346d68bed9f2a14c203e34115fbf10">InfoLog</a>(const std::string &amp;msg) override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_i_logger.html#a1dfd0c97446c03d33dd19aa822e54269">Log</a>(LogLevel level, T... args)</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_i_logger.html">OSK::IO::ILogger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#aedf79797353d9b12855e2a614b675ff8">Save</a>() override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#af699906e6125d14341f78f22ebcde6ba">Save</a>(const std::string &amp;path) override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#ac4a5fd32197b2301f4747863b4a94851">Start</a>(const std::string &amp;path) override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_i_logger.html#a7aec183847b53c582c1e42019867ed58">~ILogger</a>()=default</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_i_logger.html">OSK::IO::ILogger</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html#afee741267f0de25da55208a6424eb84f">~Logger</a>() override</td><td class="entry"><a class="el" href="class_o_s_k_1_1_i_o_1_1_logger.html">OSK::IO::Logger</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generado el Martes, 6 de Mayo de 2025 18:47:31 para OSKengine por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
 </body>

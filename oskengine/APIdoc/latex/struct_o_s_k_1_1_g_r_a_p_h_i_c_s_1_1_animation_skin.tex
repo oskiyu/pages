@@ -1,0 +1,79 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Animation\+Skin}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_skin}\index{OSK::GRAPHICS::AnimationSkin@{OSK::GRAPHICS::AnimationSkin}}
+
+
+{\ttfamily \#include $<$Animation\+Skin.\+h$>$}
+
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ name}
+\item 
+\textbf{ UIndex32} \textbf{ this\+Index} = std\+::numeric\+\_\+limits$<$\textbf{ UIndex32}$>$\+::max()
+\item 
+\textbf{ UIndex32} \textbf{ root\+Index} = std\+::numeric\+\_\+limits$<$\textbf{ UIndex32}$>$\+::max()
+\item 
+\textbf{ Dynamic\+Array}$<$ glm\+::mat4 $>$ \textbf{ inverse\+Matrices}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ UIndex32} $>$ \textbf{ bones\+Ids}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Indica cómo aplicar una animación a un modelo animado. 
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::AnimationSkin@{OSK::GRAPHICS::AnimationSkin}!bonesIds@{bonesIds}}
+\index{bonesIds@{bonesIds}!OSK::GRAPHICS::AnimationSkin@{OSK::GRAPHICS::AnimationSkin}}
+\doxysubsubsection{bonesIds}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_skin_a58055174c7f93a2707a286da67a27a9a} 
+\textbf{ Dynamic\+Array}$<$\textbf{ UIndex32}$>$ OSK\+::\+GRAPHICS\+::\+Animation\+Skin\+::bones\+Ids}
+
+
+
+Huesos a los que se aplica la Skin. También funciona como un mapa bone\+ID -\/$>$ node\+ID. 
+
+\index{OSK::GRAPHICS::AnimationSkin@{OSK::GRAPHICS::AnimationSkin}!inverseMatrices@{inverseMatrices}}
+\index{inverseMatrices@{inverseMatrices}!OSK::GRAPHICS::AnimationSkin@{OSK::GRAPHICS::AnimationSkin}}
+\doxysubsubsection{inverseMatrices}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_skin_a6c539224d3e1c6fc691243d1766de6f9} 
+\textbf{ Dynamic\+Array}$<$glm\+::mat4$>$ OSK\+::\+GRAPHICS\+::\+Animation\+Skin\+::inverse\+Matrices}
+
+
+
+Matrices inversas de la transformación global de los huesos en el estado inicial. 
+
+\index{OSK::GRAPHICS::AnimationSkin@{OSK::GRAPHICS::AnimationSkin}!name@{name}}
+\index{name@{name}!OSK::GRAPHICS::AnimationSkin@{OSK::GRAPHICS::AnimationSkin}}
+\doxysubsubsection{name}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_skin_a92fac1b4585e4cd9508dd127cbdafb6e} 
+std\+::string OSK\+::\+GRAPHICS\+::\+Animation\+Skin\+::name}
+
+
+
+Nombre original de la animación. 
+
+\index{OSK::GRAPHICS::AnimationSkin@{OSK::GRAPHICS::AnimationSkin}!rootIndex@{rootIndex}}
+\index{rootIndex@{rootIndex}!OSK::GRAPHICS::AnimationSkin@{OSK::GRAPHICS::AnimationSkin}}
+\doxysubsubsection{rootIndex}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_skin_a8682c1373a8f8a4ba1e9d634c8fd28c9} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Animation\+Skin\+::root\+Index = std\+::numeric\+\_\+limits$<$\textbf{ UIndex32}$>$\+::max()}
+
+
+
+Índice del nodo root de la skin. 
+
+\begin{DoxyNote}{Nota}
+opcional. 
+\end{DoxyNote}
+\index{OSK::GRAPHICS::AnimationSkin@{OSK::GRAPHICS::AnimationSkin}!thisIndex@{thisIndex}}
+\index{thisIndex@{thisIndex}!OSK::GRAPHICS::AnimationSkin@{OSK::GRAPHICS::AnimationSkin}}
+\doxysubsubsection{thisIndex}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_skin_af07ba25880c121b3c8cf9a6da349c156} 
+\textbf{ UIndex32} OSK\+::\+GRAPHICS\+::\+Animation\+Skin\+::this\+Index = std\+::numeric\+\_\+limits$<$\textbf{ UIndex32}$>$\+::max()}
+
+
+
+Índice de este nodo. 
+

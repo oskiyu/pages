@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OSKengine: Archivo de código fuente C:/Users/Oscar/source/repos/OSKengine/Source/IConstraint.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="card.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OSKengine<span id="projectnumber">&#160;Indev</span>
+   </div>
+   <div id="projectbrief">Motor de videojuegos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_i_constraint_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">IConstraint.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;ApiCall.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Para TDeltaTime.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;NumericTypes.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;GameObject.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_e_c_s.html">OSK::ECS</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">class </span><a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_physics_component.html">PhysicsComponent</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">class </span><a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_transform_component3_d.html">TransformComponent3D</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_o_s_k_1_1_p_h_y_s_i_c_s.html">OSK::PHYSICS</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html">   17</a></span>    <span class="keyword">class </span>OSKAPI_CALL <a class="code hl_class" href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html">IConstraint</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html#aedfbe7d93e90a66da33d52915575ae5e">   21</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html#aedfbe7d93e90a66da33d52915575ae5e">~IConstraint</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html#aa32e88e5286c57533d37289d59bf94ae">   23</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html#aa32e88e5286c57533d37289d59bf94ae">Execute</a>(</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_physics_component.html">ECS::PhysicsComponent</a>* first,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_transform_component3_d.html">ECS::TransformComponent3D</a>* firstTransform,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_physics_component.html">ECS::PhysicsComponent</a>* second,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <a class="code hl_class" href="class_o_s_k_1_1_e_c_s_1_1_transform_component3_d.html">ECS::TransformComponent3D</a>* secondTransform,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <a class="code hl_typedef" href="namespace_o_s_k.html#adfc76cbcf35e5506ee24168edfe15bb0">TDeltaTime</a> deltaTime) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html#ac15c1ab5913a7fa259eaf561118407c9">   30</a></span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_e_c_s.html#a5b92aeaa6be2ce0d96e7f571aa917042">ECS::GameObjectIndex</a> <a class="code hl_variable" href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html#ac15c1ab5913a7fa259eaf561118407c9">m_first</a>  = <a class="code hl_function" href="class_o_s_k_1_1_base_uuid.html#a53756a73f42ce2fa498419505069d6a1">ECS::GameObjectIndex::CreateEmpty</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html#aa8449d8268ce3f2263773fd13a086576">   31</a></span>        <a class="code hl_typedef" href="namespace_o_s_k_1_1_e_c_s.html#a5b92aeaa6be2ce0d96e7f571aa917042">ECS::GameObjectIndex</a> <a class="code hl_variable" href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html#aa8449d8268ce3f2263773fd13a086576">m_second</a> = <a class="code hl_function" href="class_o_s_k_1_1_base_uuid.html#a53756a73f42ce2fa498419505069d6a1">ECS::GameObjectIndex::CreateEmpty</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    };</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="ttc" id="aclass_o_s_k_1_1_base_uuid_html_a53756a73f42ce2fa498419505069d6a1"><div class="ttname"><a href="class_o_s_k_1_1_base_uuid.html#a53756a73f42ce2fa498419505069d6a1">OSK::BaseUuid&lt; class GameObjectIndexTag &gt;::CreateEmpty</a></div><div class="ttdeci">static constexpr BaseUuid CreateEmpty()</div><div class="ttdef"><b>Definition</b> Uuid.h:38</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_physics_component_html"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_physics_component.html">OSK::ECS::PhysicsComponent</a></div><div class="ttdoc">Componente que permite simular las físicas de la entidad.</div><div class="ttdef"><b>Definition</b> PhysicsComponent.h:16</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_e_c_s_1_1_transform_component3_d_html"><div class="ttname"><a href="class_o_s_k_1_1_e_c_s_1_1_transform_component3_d.html">OSK::ECS::TransformComponent3D</a></div><div class="ttdoc">Componente que contiene un transform 3D. Permite construir una jerarquía de transforms.</div><div class="ttdef"><b>Definition</b> TransformComponent3D.h:19</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint_html"><div class="ttname"><a href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html">OSK::PHYSICS::IConstraint</a></div><div class="ttdef"><b>Definition</b> IConstraint.h:17</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint_html_aa32e88e5286c57533d37289d59bf94ae"><div class="ttname"><a href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html#aa32e88e5286c57533d37289d59bf94ae">OSK::PHYSICS::IConstraint::Execute</a></div><div class="ttdeci">virtual void Execute(ECS::PhysicsComponent *first, ECS::TransformComponent3D *firstTransform, ECS::PhysicsComponent *second, ECS::TransformComponent3D *secondTransform, TDeltaTime deltaTime) const =0</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint_html_aa8449d8268ce3f2263773fd13a086576"><div class="ttname"><a href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html#aa8449d8268ce3f2263773fd13a086576">OSK::PHYSICS::IConstraint::m_second</a></div><div class="ttdeci">ECS::GameObjectIndex m_second</div><div class="ttdef"><b>Definition</b> IConstraint.h:31</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint_html_ac15c1ab5913a7fa259eaf561118407c9"><div class="ttname"><a href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html#ac15c1ab5913a7fa259eaf561118407c9">OSK::PHYSICS::IConstraint::m_first</a></div><div class="ttdeci">ECS::GameObjectIndex m_first</div><div class="ttdef"><b>Definition</b> IConstraint.h:30</div></div>
+<div class="ttc" id="aclass_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint_html_aedfbe7d93e90a66da33d52915575ae5e"><div class="ttname"><a href="class_o_s_k_1_1_p_h_y_s_i_c_s_1_1_i_constraint.html#aedfbe7d93e90a66da33d52915575ae5e">OSK::PHYSICS::IConstraint::~IConstraint</a></div><div class="ttdeci">virtual ~IConstraint()=default</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_e_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_e_c_s.html">OSK::ECS</a></div><div class="ttdef"><b>Definition</b> CameraComponent2D.h:17</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_e_c_s_html_a5b92aeaa6be2ce0d96e7f571aa917042"><div class="ttname"><a href="namespace_o_s_k_1_1_e_c_s.html#a5b92aeaa6be2ce0d96e7f571aa917042">OSK::ECS::GameObjectIndex</a></div><div class="ttdeci">BaseUuid&lt; class GameObjectIndexTag &gt; GameObjectIndex</div><div class="ttdoc">Identificador único para un Game Object.</div><div class="ttdef"><b>Definition</b> GameObject.h:21</div></div>
+<div class="ttc" id="anamespace_o_s_k_1_1_p_h_y_s_i_c_s_html"><div class="ttname"><a href="namespace_o_s_k_1_1_p_h_y_s_i_c_s.html">OSK::PHYSICS</a></div><div class="ttdef"><b>Definition</b> DistanceConstraint.h:12</div></div>
+<div class="ttc" id="anamespace_o_s_k_html_adfc76cbcf35e5506ee24168edfe15bb0"><div class="ttname"><a href="namespace_o_s_k.html#adfc76cbcf35e5506ee24168edfe15bb0">OSK::TDeltaTime</a></div><div class="ttdeci">float TDeltaTime</div><div class="ttdoc">Delta de tiempo, medido en segundos.</div><div class="ttdef"><b>Definition</b> NumericTypes.h:42</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><b>IConstraint.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

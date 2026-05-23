@@ -1,0 +1,205 @@
+\doxysection{Referencia del espacio de nombres OSK\+::COLLISION}
+\label{namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n}\index{OSK::COLLISION@{OSK::COLLISION}}
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Aabb\+Aabb\+Collision\+Detector}
+\item 
+class \textbf{ Axis\+Aligned\+Bounding\+Box}
+\item 
+class \textbf{ Broad\+Collider\+Holder}
+\item 
+class \textbf{ Broad\+Collision\+Detector\+Dispatcher}
+\item 
+class \textbf{ Broad\+Gjk\+Collision\+Detector}
+\item 
+class \textbf{ Collider}
+\item 
+class \textbf{ Collision\+Info}
+\item 
+class \textbf{ Convex\+Volume}
+\item 
+class \textbf{ Detailed\+Collision\+Detector\+Dispatcher}
+\item 
+class \textbf{ Detailed\+Collision\+Info}
+\item 
+class \textbf{ Detailed\+Sphere\+Sphere\+Detector}
+\item 
+class \textbf{ Epa\+Minkowski\+Hull}
+\item 
+class \textbf{ Face\+Projection}
+\item 
+class \textbf{ Full\+Minkowski\+Hull}
+\item 
+class \textbf{ Gjk\+Clipping\+Detector}
+\item 
+class \textbf{ Gjk\+Epa\+Detector}
+\item 
+struct \textbf{ Gjk\+Support}
+\item 
+class \textbf{ IBroad\+Collider}
+\item 
+class \textbf{ IBroad\+Collision\+Detector}
+\item 
+class \textbf{ IDetailed\+Collision\+Detector}
+\item 
+class \textbf{ IGjk\+Collider}
+\item 
+class \textbf{ INarrow\+Collider}
+\item 
+class \textbf{ IRay\+Collider}
+\item 
+class \textbf{ ISat\+Collider}
+\item 
+struct \textbf{ Minkowski\+Support}
+\item 
+class \textbf{ Narrow\+Collider\+Holder}
+\item 
+struct \textbf{ Ray}
+\item 
+class \textbf{ Ray\+Cast\+Result}
+\item 
+struct \textbf{ Sat\+Info}
+\item 
+class \textbf{ Simplex}
+\item 
+class \textbf{ Sphere\+Aabb\+Collision\+Detector}
+\item 
+class \textbf{ Sphere\+Collider}
+\item 
+class \textbf{ Sphere\+Sphere\+Broad\+Collision\+Detector}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ Aabb\+Collider} = \textbf{ Axis\+Aligned\+Bounding\+Box}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ \newline
+requires std\+::is\+\_\+base\+\_\+of\+\_\+v$<$\textbf{ IBroad\+Collider}, T$>$}\\\textbf{ Unique\+Ptr}$<$ \textbf{ Broad\+Collider\+Holder} $>$ \textbf{ As\+Broad} (\textbf{ Unique\+Ptr}$<$ T $>$ \&\&collider)
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \textbf{ Clip\+Faces} (const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \&reference\+Face, const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \&secondary\+Face, const \textbf{ Vector3f} \&first\+Face\+Normal, const \textbf{ Vector3f} \&second\+Face\+Normal)
+\item 
+\textbf{ Minkowski\+Support} \textbf{ Get\+Minkowski\+Support} (const \textbf{ IGjk\+Collider} \&first, const \textbf{ IGjk\+Collider} \&second, const \textbf{ Vector3f} \&direction)
+\item 
+{\footnotesize template$<$typename T$>$ \newline
+requires std\+::is\+\_\+base\+\_\+of\+\_\+v$<$\textbf{ INarrow\+Collider}, T$>$}\\\textbf{ Unique\+Ptr}$<$ \textbf{ Narrow\+Collider\+Holder} $>$ \textbf{ As\+Narrow} (\textbf{ Unique\+Ptr}$<$ T $>$ \&\&collider)
+\item 
+\textbf{ Sat\+Info} \textbf{ Sat\+Collision} (const \textbf{ ISat\+Collider} \&first, const \textbf{ ISat\+Collider} \&second)
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\doxysubsection{Documentación de «typedef»}
+\index{OSK::COLLISION@{OSK::COLLISION}!AabbCollider@{AabbCollider}}
+\index{AabbCollider@{AabbCollider}!OSK::COLLISION@{OSK::COLLISION}}
+\doxysubsubsection{AabbCollider}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n_a73d354945cd1ab66119c75c91c5358fa} 
+using \textbf{ OSK\+::\+COLLISION\+::\+Aabb\+Collider} = \textbf{ Axis\+Aligned\+Bounding\+Box}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones}
+\index{OSK::COLLISION@{OSK::COLLISION}!AsBroad@{AsBroad}}
+\index{AsBroad@{AsBroad}!OSK::COLLISION@{OSK::COLLISION}}
+\doxysubsubsection{AsBroad()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n_a8feea8db58a02f3e79f9cb4bc410b869} 
+template$<$typename T$>$ \newline
+requires std\+::is\+\_\+base\+\_\+of\+\_\+v$<$\textbf{ IBroad\+Collider}, T$>$\\
+\textbf{ Unique\+Ptr}$<$ \textbf{ Broad\+Collider\+Holder} $>$ OSK\+::\+COLLISION\+::\+As\+Broad (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ T $>$ \&\&}]{collider}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo del collider de alto nivel. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em collider} & \doxyref{Collider}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider} de alto nivel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Collider}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider} como alto nivel. 
+\end{DoxyReturn}
+\index{OSK::COLLISION@{OSK::COLLISION}!AsNarrow@{AsNarrow}}
+\index{AsNarrow@{AsNarrow}!OSK::COLLISION@{OSK::COLLISION}}
+\doxysubsubsection{AsNarrow()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n_a59c10836ccf6521a3ac04db42b8e9e9a} 
+template$<$typename T$>$ \newline
+requires std\+::is\+\_\+base\+\_\+of\+\_\+v$<$\textbf{ INarrow\+Collider}, T$>$\\
+\textbf{ Unique\+Ptr}$<$ \textbf{ Narrow\+Collider\+Holder} $>$ OSK\+::\+COLLISION\+::\+As\+Narrow (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ T $>$ \&\&}]{collider}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo del collider de alto nivel. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em collider} & \doxyref{Collider}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider} de alto nivel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Collider}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_collider} como alto nivel. 
+\end{DoxyReturn}
+\index{OSK::COLLISION@{OSK::COLLISION}!ClipFaces@{ClipFaces}}
+\index{ClipFaces@{ClipFaces}!OSK::COLLISION@{OSK::COLLISION}}
+\doxysubsubsection{ClipFaces()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n_ab804c9bf0dacdd2fda35f70a4126a4ce} 
+\textbf{ OSK\+::\+Dynamic\+Array}$<$ \textbf{ OSK\+::\+Vector3f} $>$ OSK\+::\+COLLISION\+::\+Clip\+Faces (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \&}]{reference\+Face}{, }\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Vector3f} $>$ \&}]{secondary\+Face}{, }\item[{const \textbf{ Vector3f} \&}]{first\+Face\+Normal}{, }\item[{const \textbf{ Vector3f} \&}]{second\+Face\+Normal}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em reference\+Face} & Cara de referencia. \\
+\hline
+{\em secondary\+Face} & Cara que será clipped. \\
+\hline
+{\em first\+Face\+Normal} & Vector normal de la primera cara. \\
+\hline
+{\em second\+Face\+Normal} & Vector normal de la segunda cara. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Parche de contacto entre ambas caras. 
+\end{DoxyReturn}
+\index{OSK::COLLISION@{OSK::COLLISION}!GetMinkowskiSupport@{GetMinkowskiSupport}}
+\index{GetMinkowskiSupport@{GetMinkowskiSupport}!OSK::COLLISION@{OSK::COLLISION}}
+\doxysubsubsection{GetMinkowskiSupport()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n_acedd627cbfcc7a24dbc9c150d894ad2a} 
+\textbf{ OSK\+::\+COLLISION\+::\+Minkowski\+Support} OSK\+::\+COLLISION\+::\+Get\+Minkowski\+Support (\begin{DoxyParamCaption}\item[{const \textbf{ IGjk\+Collider} \&}]{first}{, }\item[{const \textbf{ IGjk\+Collider} \&}]{second}{, }\item[{const \textbf{ Vector3f} \&}]{direction}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first} & Primer volúmen 3D. \\
+\hline
+{\em second} & Segundo volúmen 3D. \\
+\hline
+{\em direction} & Dirección. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Soporte (punto más alejado) en el hull de la diferencia de Minkowski. 
+\end{DoxyReturn}
+\index{OSK::COLLISION@{OSK::COLLISION}!SatCollision@{SatCollision}}
+\index{SatCollision@{SatCollision}!OSK::COLLISION@{OSK::COLLISION}}
+\doxysubsubsection{SatCollision()}
+{\footnotesize\ttfamily \label{namespace_o_s_k_1_1_c_o_l_l_i_s_i_o_n_a9b7d7ca9e6fd0419d8635112786e067c} 
+\textbf{ OSK\+::\+COLLISION\+::\+Sat\+Info} OSK\+::\+COLLISION\+::\+Sat\+Collision (\begin{DoxyParamCaption}\item[{const \textbf{ ISat\+Collider} \&}]{first}{, }\item[{const \textbf{ ISat\+Collider} \&}]{second}{}\end{DoxyParamCaption})}
+
+
+
+Comprueba si hay una colisión entre ambos colliders. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first} & Primer collider. \\
+\hline
+{\em second} & Segundo collider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Información de la comprobación. 
+\end{DoxyReturn}

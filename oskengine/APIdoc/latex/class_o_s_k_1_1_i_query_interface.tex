@@ -1,0 +1,82 @@
+\doxysection{Referencia de la clase OSK\+::IQuery\+Interface}
+\label{class_o_s_k_1_1_i_query_interface}\index{OSK::IQueryInterface@{OSK::IQueryInterface}}
+
+
+{\ttfamily \#include $<$IQuery\+Interface.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+IQuery\+Interface} ()=default
+\item 
+virtual void \textbf{ Query\+Interface} (\textbf{ TInterface\+Uuid} interface\+Uuid, void $\ast$$\ast$ptr) const =0
+\item 
+void \textbf{ Query\+Interface} (\textbf{ IUUID} uuid, void $\ast$$\ast$ptr) const
+\item 
+virtual void \textbf{ Query\+Const\+Interface} (\textbf{ TInterface\+Uuid} uuid, const void $\ast$$\ast$ptr) const =0
+\item 
+void \textbf{ Query\+Const\+Interface} (\textbf{ IUUID} uuid, const void $\ast$$\ast$ptr) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Esta interfaz permite obtener acceso a los métodos de una interfaz en concreto del objeto. Se usa cuando una clase implementa varias interfaces. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IQueryInterface@{OSK::IQueryInterface}!````~IQueryInterface@{$\sim$IQueryInterface}}
+\index{````~IQueryInterface@{$\sim$IQueryInterface}!OSK::IQueryInterface@{OSK::IQueryInterface}}
+\doxysubsubsection{$\sim$IQueryInterface()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_ab65b0cdf6fafc2a6779a0ae2f5d20605} 
+virtual OSK\+::\+IQuery\+Interface\+::$\sim$\+IQuery\+Interface (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IQueryInterface@{OSK::IQueryInterface}!QueryConstInterface@{QueryConstInterface}}
+\index{QueryConstInterface@{QueryConstInterface}!OSK::IQueryInterface@{OSK::IQueryInterface}}
+\doxysubsubsection{QueryConstInterface()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a04792bb58288a5a2e890c506a8ad1a8c} 
+void OSK\+::\+IQuery\+Interface\+::\+Query\+Const\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ IUUID}}]{uuid}{, }\item[{const void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::IQueryInterface@{OSK::IQueryInterface}!QueryConstInterface@{QueryConstInterface}}
+\index{QueryConstInterface@{QueryConstInterface}!OSK::IQueryInterface@{OSK::IQueryInterface}}
+\doxysubsubsection{QueryConstInterface()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a589dec31a1efd4e4f69b9513a7086825} 
+virtual void OSK\+::\+IQuery\+Interface\+::\+Query\+Const\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ TInterface\+Uuid}}]{uuid}{, }\item[{const void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\index{OSK::IQueryInterface@{OSK::IQueryInterface}!QueryInterface@{QueryInterface}}
+\index{QueryInterface@{QueryInterface}!OSK::IQueryInterface@{OSK::IQueryInterface}}
+\doxysubsubsection{QueryInterface()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_a96e28be0f3cec3a83c161d417162288f} 
+void OSK\+::\+IQuery\+Interface\+::\+Query\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ IUUID}}]{uuid}{, }\item[{void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Permite obtener un puntero para la interfaz dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & UUID de la interfaz. \\
+\hline
+{\em ptr} & Puntero a sobreescribir. Será nullptr si la clase no implementa la interfad indicada. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IQueryInterface@{OSK::IQueryInterface}!QueryInterface@{QueryInterface}}
+\index{QueryInterface@{QueryInterface}!OSK::IQueryInterface@{OSK::IQueryInterface}}
+\doxysubsubsection{QueryInterface()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_query_interface_abf1b865ec9b11ced8c2d35660aab9346} 
+virtual void OSK\+::\+IQuery\+Interface\+::\+Query\+Interface (\begin{DoxyParamCaption}\item[{\textbf{ TInterface\+Uuid}}]{interface\+Uuid}{, }\item[{void $\ast$$\ast$}]{ptr}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Permite obtener un puntero para la interfaz dada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em interface\+Uuid} & UUID de la interfaz. \\
+\hline
+{\em ptr} & Puntero a sobreescribir. Será nullptr si la clase no implementa la interfad indicada. \\
+\hline
+\end{DoxyParams}

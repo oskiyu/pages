@@ -1,0 +1,80 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Saved\+Game\+Object\+Translator}
+\label{class_o_s_k_1_1_e_c_s_1_1_saved_game_object_translator}\index{OSK::ECS::SavedGameObjectTranslator@{OSK::ECS::SavedGameObjectTranslator}}
+
+
+{\ttfamily \#include $<$Saved\+Game\+Object\+Translator.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Add\+Object} (\textbf{ Game\+Object\+Index} saved\+Index, \textbf{ Game\+Object\+Index} current\+Index)
+\item 
+\textbf{ Game\+Object\+Index} \textbf{ Get\+Current\+Index} (\textbf{ Game\+Object\+Index} saved\+Index) const
+\item 
+bool \textbf{ Has\+Saved\+Index} (\textbf{ Game\+Object\+Index} saved\+Index) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Tabla que permite obtener el índice actual de una entidad que ha sido guardada en disco. 
+
+Al spawnear la entidad, es posible que su nuevo ID no coincida con el ID previamente guardado. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::SavedGameObjectTranslator@{OSK::ECS::SavedGameObjectTranslator}!AddObject@{AddObject}}
+\index{AddObject@{AddObject}!OSK::ECS::SavedGameObjectTranslator@{OSK::ECS::SavedGameObjectTranslator}}
+\doxysubsubsection{AddObject()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_saved_game_object_translator_ad8e37dcc64c664e4cf6bd0b5a9333f4f} 
+void Saved\+Game\+Object\+Translator\+::\+Add\+Object (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{saved\+Index}{, }\item[{\textbf{ Game\+Object\+Index}}]{current\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Añade una entrada a la tabla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em saved\+Index} & Índice guardado. \\
+\hline
+{\em current\+Index} & Nuevo índice.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily saved\+Index} no debe estar vacío. 
+
+{\ttfamily current\+Index} no debe estar vacío.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+Si el índicce {\ttfamily saved\+Index} ya estaba presente, su valor se sobreescribe. 
+\end{DoxyNote}
+\index{OSK::ECS::SavedGameObjectTranslator@{OSK::ECS::SavedGameObjectTranslator}!GetCurrentIndex@{GetCurrentIndex}}
+\index{GetCurrentIndex@{GetCurrentIndex}!OSK::ECS::SavedGameObjectTranslator@{OSK::ECS::SavedGameObjectTranslator}}
+\doxysubsubsection{GetCurrentIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_saved_game_object_translator_ad3c872e43980a058de3148aebbc6fd13} 
+\textbf{ Game\+Object\+Index} Saved\+Game\+Object\+Translator\+::\+Get\+Current\+Index (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{saved\+Index}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em saved\+Index} & Índice guardado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Índice actual para el objeto guardado.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Si {\ttfamily saved\+Index} está vacío, devuelve un identificador vacío. 
+\end{DoxyNote}
+\index{OSK::ECS::SavedGameObjectTranslator@{OSK::ECS::SavedGameObjectTranslator}!HasSavedIndex@{HasSavedIndex}}
+\index{HasSavedIndex@{HasSavedIndex}!OSK::ECS::SavedGameObjectTranslator@{OSK::ECS::SavedGameObjectTranslator}}
+\doxysubsubsection{HasSavedIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_saved_game_object_translator_a22cfa7b6a5c82c27bd45cf3a552b7a5e} 
+bool Saved\+Game\+Object\+Translator\+::\+Has\+Saved\+Index (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{saved\+Index}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em saved\+Index} & Índice guardado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si tiene una entrada con el índice {\ttfamily saved\+Index}. 
+\end{DoxyReturn}

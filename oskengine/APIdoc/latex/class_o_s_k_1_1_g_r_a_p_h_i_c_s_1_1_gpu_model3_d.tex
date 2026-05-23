@@ -1,0 +1,424 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Gpu\+Model3D}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d}\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+
+
+{\ttfamily \#include $<$Gpu\+Model3\+D.\+h$>$}
+
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Lod}
+\item 
+struct \textbf{ Material}
+\item 
+class \textbf{ Texture\+Table}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Set\+Uuid} (\textbf{ Gpu\+Model\+Uuid} uuid)
+\item 
+\textbf{ Gpu\+Model\+Uuid} \textbf{ Get\+Uuid} () const
+\item 
+void \textbf{ Set\+Cpu\+Model3D} (const \textbf{ Cpu\+Model3D} \&model)
+\item 
+\textbf{ Cpu\+Model3D} \& \textbf{ Get\+Cpu\+Model} ()
+\item 
+const \textbf{ Cpu\+Model3D} \& \textbf{ Get\+Cpu\+Model} () const
+\item 
+void \textbf{ Set\+Vertex\+Buffer} (\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \&\&vertex\+Buffer)
+\item 
+void \textbf{ Set\+Index\+Buffer} (\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \&\&index\+Buffer)
+\item 
+void \textbf{ Set\+Index\+Count} (\textbf{ USize32} index\+Count)
+\item 
+void \textbf{ Add\+Mesh} (\textbf{ Gpu\+Mesh3D} \&\&mesh)
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Gpu\+Mesh3D} $>$ \& \textbf{ Get\+Meshes} ()
+\item 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Gpu\+Mesh3D} $>$ \& \textbf{ Get\+Meshes} () const
+\item 
+void \textbf{ Set\+Materials} (const \textbf{ Dynamic\+Array}$<$ \textbf{ Material} $>$ \&materials)
+\item 
+\textbf{ Material} \& \textbf{ Get\+Material} (\textbf{ UIndex64} material\+Index)
+\item 
+const \textbf{ Material} \& \textbf{ Get\+Material} (\textbf{ UIndex64} material\+Index) const
+\item 
+const \textbf{ Gpu\+Buffer} \& \textbf{ Get\+Vertex\+Buffer} () const
+\item 
+const \textbf{ Gpu\+Buffer} \& \textbf{ Get\+Index\+Buffer} () const
+\item 
+void \textbf{ Establis\+Single\+Lod} ()
+\item 
+void \textbf{ Add\+Lod} (const \textbf{ Lod} \&lod)
+\item 
+const \textbf{ Lod} \& \textbf{ Get\+Lod} (\textbf{ UIndex64} lod) const
+\item 
+const \textbf{ Lod} \& \textbf{ Get\+Lod\+Or\+Min} (\textbf{ UIndex64} lod) const
+\item 
+\textbf{ USize32} \textbf{ Get\+Total\+Index\+Count} () const
+\item 
+\textbf{ Texture\+Table} \& \textbf{ Get\+Texture\+Table} ()
+\item 
+const \textbf{ Texture\+Table} \& \textbf{ Get\+Texture\+Table} () const
+\item 
+\textbf{ Vertices\+Attributes\+Maps} \& \textbf{ Get\+Vertex\+Attributes\+Map} ()
+\item 
+const \textbf{ Vertices\+Attributes\+Maps} \& \textbf{ Get\+Vertex\+Attributes\+Map} () const
+\item 
+bool \textbf{ Has\+Animator} () const
+\item 
+\textbf{ Animator} \& \textbf{ Get\+Animator} ()
+\item 
+const \textbf{ Animator} \& \textbf{ Get\+Animator} () const
+\item 
+void \textbf{ Set\+Animator} (\textbf{ Animator} \&\&animator)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Modelo para renderizado 3D. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!AddLod@{AddLod}}
+\index{AddLod@{AddLod}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{AddLod()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a8298446b7b77261510911be3f593d9e3} 
+void Gpu\+Model3\+D\+::\+Add\+Lod (\begin{DoxyParamCaption}\item[{const \textbf{ Lod} \&}]{lod}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuevo LOD. Será de un nivel de detalle inferior al último nivel registrado. En caso de registrarse por primera vez, representa el nivel de detalle más alto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em lod} & LOD a registrar. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!AddMesh@{AddMesh}}
+\index{AddMesh@{AddMesh}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{AddMesh()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_afaf219fb41ae9a4d64ce13c99b453a23} 
+void Gpu\+Model3\+D\+::\+Add\+Mesh (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Mesh3D} \&\&}]{mesh}{}\end{DoxyParamCaption})}
+
+
+
+Añade una malla al modelo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mesh} & Malla. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!EstablisSingleLod@{EstablisSingleLod}}
+\index{EstablisSingleLod@{EstablisSingleLod}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{EstablisSingleLod()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a5a04239a9e7037a883e0835259bdd928} 
+void Gpu\+Model3\+D\+::\+Establis\+Single\+Lod (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Configura el modelo para que use un único LOD. 
+
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetAnimator@{GetAnimator}}
+\index{GetAnimator@{GetAnimator}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetAnimator()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a9c04ba95a0c4722837987412939be9d0} 
+\textbf{ Animator} \& Gpu\+Model3\+D\+::\+Get\+Animator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily \doxyref{Has\+Animator()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a152af385698d10ca710191354a5a36f6}} debe devolver {\ttfamily true}. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Devuelve}
+Animador. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetAnimator@{GetAnimator}}
+\index{GetAnimator@{GetAnimator}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetAnimator()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a3b64f668f5603278c20e1224e003ebdc} 
+const \textbf{ Animator} \& Gpu\+Model3\+D\+::\+Get\+Animator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetCpuModel@{GetCpuModel}}
+\index{GetCpuModel@{GetCpuModel}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetCpuModel()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a9918fe8bd27807100a9ced5afeef1c14} 
+\textbf{ Cpu\+Model3D} \& Gpu\+Model3\+D\+::\+Get\+Cpu\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Modelo almacenado en CPU. Si no se ha establecido mediante Set\+Cpu\+Model3D, devuelve un modelo vacío. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetCpuModel@{GetCpuModel}}
+\index{GetCpuModel@{GetCpuModel}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetCpuModel()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a35524dfcf6820eb57eb1ca1e7a412d4c} 
+const \textbf{ Cpu\+Model3D} \& Gpu\+Model3\+D\+::\+Get\+Cpu\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Modelo almacenado en CPU. Si no se ha establecido mediante Set\+Cpu\+Model3D, devuelve un modelo vacío. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetIndexBuffer@{GetIndexBuffer}}
+\index{GetIndexBuffer@{GetIndexBuffer}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetIndexBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a6f2efdacbb5bf1677731c2541d891e33} 
+const \textbf{ Gpu\+Buffer} \& Gpu\+Model3\+D\+::\+Get\+Index\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Buffer con los índices en GPU. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haber sido establecido con Set\+Index\+Buffer. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetLod@{GetLod}}
+\index{GetLod@{GetLod}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetLod()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_ade0c99fd53fd505460315df43de84a5a} 
+const \textbf{ Gpu\+Model3\+D\+::\+Lod} \& Gpu\+Model3\+D\+::\+Get\+Lod (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{lod}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em lod} & Índice de nivel (más alto = menos detalle). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+LOD. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily lod} $<$ número de niveles. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetLodOrMin@{GetLodOrMin}}
+\index{GetLodOrMin@{GetLodOrMin}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetLodOrMin()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_adaafadeed8c4053b3229c15bb6c6d6e0} 
+const \textbf{ Gpu\+Model3\+D\+::\+Lod} \& Gpu\+Model3\+D\+::\+Get\+Lod\+Or\+Min (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{lod}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em lod} & Índice de nivel (más alto = menos detalle). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+LOD. En caso de que {\ttfamily lod} $>$ número de niveles, devuelve el nivel ~\newline
+ más alto (menor detalle). 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetMaterial@{GetMaterial}}
+\index{GetMaterial@{GetMaterial}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetMaterial()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_ac1e600a2f9f2650d45dff5a41b557906} 
+\textbf{ Gpu\+Model3\+D\+::\+Material} \& Gpu\+Model3\+D\+::\+Get\+Material (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{material\+Index}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em material\+Index} & Índice del material. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Material}{pág.}{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_material} con el índice dado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haberse establecido un \doxyref{Cpu\+Model3D}{pág.}{class_o_s_k_1_1_cpu_model3_d} mediante Set\+Cpu\+Model3D. 
+
+Debe existir un material con el índice indicado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetMaterial@{GetMaterial}}
+\index{GetMaterial@{GetMaterial}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetMaterial()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a2d348dca53da1a617c61577ccafb1351} 
+const \textbf{ Gpu\+Model3\+D\+::\+Material} \& Gpu\+Model3\+D\+::\+Get\+Material (\begin{DoxyParamCaption}\item[{\textbf{ UIndex64}}]{material\+Index}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em material\+Index} & Índice del material. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Material}{pág.}{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_1_1_material} con el índice dado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haberse establecido un \doxyref{Cpu\+Model3D}{pág.}{class_o_s_k_1_1_cpu_model3_d} mediante Set\+Cpu\+Model3D. 
+
+Debe existir un material con el índice indicado. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetMeshes@{GetMeshes}}
+\index{GetMeshes@{GetMeshes}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetMeshes()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a7f40cff6ad596de25aac244ffb766463} 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Gpu\+Mesh3D} $>$ \& Gpu\+Model3\+D\+::\+Get\+Meshes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Mallas del modelo. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetMeshes@{GetMeshes}}
+\index{GetMeshes@{GetMeshes}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetMeshes()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a36d32742f94d1ac29bda2ad4dadcf20e} 
+const \textbf{ Dynamic\+Array}$<$ \textbf{ Gpu\+Mesh3D} $>$ \& Gpu\+Model3\+D\+::\+Get\+Meshes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Mallas del modelo. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetTextureTable@{GetTextureTable}}
+\index{GetTextureTable@{GetTextureTable}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetTextureTable()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a4bb0f0d7284382b6b77e45ad8216a691} 
+\textbf{ Gpu\+Model3\+D\+::\+Texture\+Table} \& Gpu\+Model3\+D\+::\+Get\+Texture\+Table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Tabla con las texturas usadas por los materiales. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetTextureTable@{GetTextureTable}}
+\index{GetTextureTable@{GetTextureTable}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetTextureTable()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a9ca812ba30b94ab6b3987715e8814aee} 
+const \textbf{ Gpu\+Model3\+D\+::\+Texture\+Table} \& Gpu\+Model3\+D\+::\+Get\+Texture\+Table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetTotalIndexCount@{GetTotalIndexCount}}
+\index{GetTotalIndexCount@{GetTotalIndexCount}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetTotalIndexCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_aedc0665541e29668e71b457df1b00ef1} 
+\textbf{ USize32} Gpu\+Model3\+D\+::\+Get\+Total\+Index\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Número total de índices del modelo. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetUuid@{GetUuid}}
+\index{GetUuid@{GetUuid}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetUuid()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a31a09724d28cc3867f1972c1b2974452} 
+\textbf{ Gpu\+Model\+Uuid} Gpu\+Model3\+D\+::\+Get\+Uuid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Identificador único de este modelo. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetVertexAttributesMap@{GetVertexAttributesMap}}
+\index{GetVertexAttributesMap@{GetVertexAttributesMap}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetVertexAttributesMap()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a151a2dbb19efd3b5c9703d6b5a5bb7ba} 
+\textbf{ Vertices\+Attributes\+Maps} \& Gpu\+Model3\+D\+::\+Get\+Vertex\+Attributes\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Mapa con los atributos de los vértices, almacenados en memoria RAM. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetVertexAttributesMap@{GetVertexAttributesMap}}
+\index{GetVertexAttributesMap@{GetVertexAttributesMap}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetVertexAttributesMap()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a4fbb86663810c3104b722f4e524a15e4} 
+const \textbf{ Vertices\+Attributes\+Maps} \& Gpu\+Model3\+D\+::\+Get\+Vertex\+Attributes\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!GetVertexBuffer@{GetVertexBuffer}}
+\index{GetVertexBuffer@{GetVertexBuffer}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{GetVertexBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_ab1fa76c4b19380a8b36e021700d4b607} 
+const \textbf{ Gpu\+Buffer} \& Gpu\+Model3\+D\+::\+Get\+Vertex\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Buffer con los vértices en GPU. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Debe haber sido establecido con Set\+Vertex\+Buffer. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!HasAnimator@{HasAnimator}}
+\index{HasAnimator@{HasAnimator}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{HasAnimator()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a152af385698d10ca710191354a5a36f6} 
+bool Gpu\+Model3\+D\+::\+Has\+Animator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si tiene un animador 3D. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!SetAnimator@{SetAnimator}}
+\index{SetAnimator@{SetAnimator}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{SetAnimator()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a67c38515ed8d1811f6c7af8b83a9f186} 
+void Gpu\+Model3\+D\+::\+Set\+Animator (\begin{DoxyParamCaption}\item[{\textbf{ Animator} \&\&}]{animator}{}\end{DoxyParamCaption})}
+
+
+
+Establece el animador del modelo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em animator} & Animador del modelo. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!SetCpuModel3D@{SetCpuModel3D}}
+\index{SetCpuModel3D@{SetCpuModel3D}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{SetCpuModel3D()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a70d42033633b4fc15b131fd33cf61af1} 
+void Gpu\+Model3\+D\+::\+Set\+Cpu\+Model3D (\begin{DoxyParamCaption}\item[{const \textbf{ Cpu\+Model3D} \&}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Establece el \doxyref{Cpu\+Model3D}{pág.}{class_o_s_k_1_1_cpu_model3_d} a partir del cual se ha generado el modelo 3D. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em model} & modelo original. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!SetIndexBuffer@{SetIndexBuffer}}
+\index{SetIndexBuffer@{SetIndexBuffer}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{SetIndexBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_ac100d9c7aaa10556da6916a96fe8b233} 
+void Gpu\+Model3\+D\+::\+Set\+Index\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \&\&}]{index\+Buffer}{}\end{DoxyParamCaption})}
+
+
+
+Establece el buffer con los índices del modelo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vertex\+Buffer} & Buffer con los índices del modelo. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!SetIndexCount@{SetIndexCount}}
+\index{SetIndexCount@{SetIndexCount}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{SetIndexCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_aa34e42450139b56829083f999d587430} 
+void Gpu\+Model3\+D\+::\+Set\+Index\+Count (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{index\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Establece el número de índices total del modelo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em index\+Count} & Número de índices. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!SetMaterials@{SetMaterials}}
+\index{SetMaterials@{SetMaterials}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{SetMaterials()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_abca2827c39794d4b8e400957e27c8ec3} 
+void Gpu\+Model3\+D\+::\+Set\+Materials (\begin{DoxyParamCaption}\item[{const \textbf{ Dynamic\+Array}$<$ \textbf{ Material} $>$ \&}]{materials}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!SetUuid@{SetUuid}}
+\index{SetUuid@{SetUuid}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{SetUuid()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a531bc29a755776fc7bb808f562c7c372} 
+void Gpu\+Model3\+D\+::\+Set\+Uuid (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Model\+Uuid}}]{uuid}{}\end{DoxyParamCaption})}
+
+
+
+Establece el identificador único del modelo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uuid} & Indentificador único. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}!SetVertexBuffer@{SetVertexBuffer}}
+\index{SetVertexBuffer@{SetVertexBuffer}!OSK::GRAPHICS::GpuModel3D@{OSK::GRAPHICS::GpuModel3D}}
+\doxysubsubsection{SetVertexBuffer()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_gpu_model3_d_a3c66b1cea426393aac51fbf6ebe10493} 
+void Gpu\+Model3\+D\+::\+Set\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Buffer} $>$ \&\&}]{vertex\+Buffer}{}\end{DoxyParamCaption})}
+
+
+
+Establece el buffer con los vértices del modelo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vertex\+Buffer} & Buffer con los vértices del modelo. \\
+\hline
+\end{DoxyParams}

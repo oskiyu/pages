@@ -1,0 +1,362 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Component\+Manager}
+\label{class_o_s_k_1_1_e_c_s_1_1_component_manager}\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+
+
+{\ttfamily \#include $<$Component\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Component\+Manager} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Component\+Manager})
+\item 
+\textbf{ OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR} (\textbf{ Component\+Manager})
+\item 
+{\footnotesize template$<$typename TComponent$>$ }\\void \textbf{ Register\+Component} ()
+\item 
+{\footnotesize template$<$typename TComponent$>$ }\\\textbf{ Component\+Type} \textbf{ Get\+Component\+Type} () const
+\item 
+{\footnotesize template$<$typename TComponent$>$ }\\TComponent \& \textbf{ Add\+Component} (\textbf{ Game\+Object\+Index} obj, const TComponent \&component)
+\item 
+{\footnotesize template$<$typename TComponent$>$ }\\TComponent \& \textbf{ Add\+Component\+Move} (\textbf{ Game\+Object\+Index} obj, TComponent \&\&component)
+\item 
+{\footnotesize template$<$typename TComponent$>$ }\\void \textbf{ Remove\+Component} (\textbf{ Game\+Object\+Index} obj)
+\item 
+{\footnotesize template$<$typename TComponent$>$ }\\TComponent \& \textbf{ Get\+Component} (\textbf{ Game\+Object\+Index} obj)
+\item 
+{\footnotesize template$<$typename TComponent$>$ }\\const TComponent \& \textbf{ Get\+Component} (\textbf{ Game\+Object\+Index} obj) const
+\item 
+void $\ast$ \textbf{ Get\+Component\+Address} (\textbf{ Game\+Object\+Index} obj, \textbf{ Component\+Type} type)
+\item 
+const void $\ast$ \textbf{ Get\+Component\+Address} (\textbf{ Game\+Object\+Index} obj, \textbf{ Component\+Type} type) const
+\item 
+void \textbf{ Game\+Object\+Destroyed} (\textbf{ Game\+Object\+Index} obj)
+\item 
+{\footnotesize template$<$typename TComponent$>$ }\\bool \textbf{ Component\+Has\+Been\+Registered} () const
+\item 
+{\footnotesize template$<$typename TComponent$>$ }\\bool \textbf{ Object\+Has\+Component} (\textbf{ Game\+Object\+Index} obj) const
+\item 
+const std\+::unordered\+\_\+map$<$ std\+::string, \textbf{ Unique\+Ptr}$<$ \textbf{ IComponent\+Container} $>$, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$ $>$ \& \textbf{ Get\+All\+Containers} () const
+\item 
+\textbf{ IComponent\+Container} $\ast$ \textbf{ Get\+Container} (std\+::string\+\_\+view component\+Type\+Name)
+\item 
+const \textbf{ IComponent\+Container} $\ast$ \textbf{ Get\+Container} (std\+::string\+\_\+view component\+Type\+Name) const
+\item 
+std\+::string \textbf{ Get\+Component\+Type\+Name} (\textbf{ Component\+Type} type) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Se encarga de manejar la creación y eliminación de componentes. Guarda un \doxyref{Component\+Container}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_container} por cada tipo de componente registrado. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!ComponentManager@{ComponentManager}}
+\index{ComponentManager@{ComponentManager}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{ComponentManager()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_ad4ebf2f60d06f78223fe0834647052f6} 
+OSK\+::\+ECS\+::\+Component\+Manager\+::\+Component\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{AddComponent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a6c9e6a845554c44ca445ba48598f371d} 
+template$<$typename TComponent$>$ \\
+TComponent \& OSK\+::\+ECS\+::\+Component\+Manager\+::\+Add\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{const TComponent \&}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Añade el componente dado al Game\+Object dado. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo de componente. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Identificador del objeto. \\
+\hline
+{\em component} & Componente a añadir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia al componente. 
+\end{DoxyReturn}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!AddComponentMove@{AddComponentMove}}
+\index{AddComponentMove@{AddComponentMove}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{AddComponentMove()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_aaced8a78336ebe61db86f04f928f7ddb} 
+template$<$typename TComponent$>$ \\
+TComponent \& OSK\+::\+ECS\+::\+Component\+Manager\+::\+Add\+Component\+Move (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{TComponent \&\&}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Añade el componente dado al Game\+Object dado. 
+
+\begin{DoxyReturn}{Devuelve}
+El componente recién añadido.
+\end{DoxyReturn}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!ComponentHasBeenRegistered@{ComponentHasBeenRegistered}}
+\index{ComponentHasBeenRegistered@{ComponentHasBeenRegistered}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{ComponentHasBeenRegistered()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a083ca33598156793dd64af188a176d00} 
+template$<$typename TComponent$>$ \\
+bool OSK\+::\+ECS\+::\+Component\+Manager\+::\+Component\+Has\+Been\+Registered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!GameObjectDestroyed@{GameObjectDestroyed}}
+\index{GameObjectDestroyed@{GameObjectDestroyed}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{GameObjectDestroyed()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a16a5d5a2b1f3601de2f1794c6cafa6b1} 
+void Component\+Manager\+::\+Game\+Object\+Destroyed (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Se llama cuando un objeto es destruido. Se encarga de eliminar todos los componentes del objeto. 
+
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!GetAllContainers@{GetAllContainers}}
+\index{GetAllContainers@{GetAllContainers}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{GetAllContainers()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a79fb8bfe46f9ebd06c167bb038b62386} 
+const std\+::unordered\+\_\+map$<$ std\+::string, \textbf{ Unique\+Ptr}$<$ \textbf{ IComponent\+Container} $>$, \textbf{ String\+Hasher}, std\+::equal\+\_\+to$<$$>$ $>$ \& OSK\+::\+ECS\+::\+Component\+Manager\+::\+Get\+All\+Containers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Todos los contenedores registrados. 
+\end{DoxyReturn}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{GetComponent()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a203d56a00c4e9182050f57ef945fc025} 
+template$<$typename TComponent$>$ \\
+TComponent \& OSK\+::\+ECS\+::\+Component\+Manager\+::\+Get\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el componente del tipo dado, que es poseído por el objeto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo del componente.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Dueño del componente.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia al componente.
+\end{DoxyReturn}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{GetComponent()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_aa738603b4ddbb7c98fe2b7e7ff553c69} 
+template$<$typename TComponent$>$ \\
+const TComponent \& OSK\+::\+ECS\+::\+Component\+Manager\+::\+Get\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el componente del tipo dado, que es poseído por el objeto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo del componente.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Dueño del componente.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia al componente.
+\end{DoxyReturn}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!GetComponentAddress@{GetComponentAddress}}
+\index{GetComponentAddress@{GetComponentAddress}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{GetComponentAddress()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a7aed7937bc7a17a14a5377b642b6ba79} 
+void $\ast$ OSK\+::\+ECS\+::\+Component\+Manager\+::\+Get\+Component\+Address (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{\textbf{ Component\+Type}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto que contiene el componente buscado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero al componente. Si el objeto no tiene el componente, devuelve nullptr. 
+\end{DoxyReturn}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!GetComponentAddress@{GetComponentAddress}}
+\index{GetComponentAddress@{GetComponentAddress}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{GetComponentAddress()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a7e0ccb420f690bc624339cabf23c5905} 
+const void $\ast$ OSK\+::\+ECS\+::\+Component\+Manager\+::\+Get\+Component\+Address (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{, }\item[{\textbf{ Component\+Type}}]{type}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!GetComponentType@{GetComponentType}}
+\index{GetComponentType@{GetComponentType}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{GetComponentType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a2b248c62c48465489f1f7b3eeb76aa87} 
+template$<$typename TComponent$>$ \\
+\textbf{ Component\+Type} OSK\+::\+ECS\+::\+Component\+Manager\+::\+Get\+Component\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo de componente. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el identificador del tipo de componente. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily TComponent} debe haber sido previamente registrado. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Component\+Not\+Registered\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_not_registered_exception}} & si el componente no había sido registrado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!GetComponentTypeName@{GetComponentTypeName}}
+\index{GetComponentTypeName@{GetComponentTypeName}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{GetComponentTypeName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a2c5abda0814ac5109727e1cc3c263b01} 
+std\+::string Component\+Manager\+::\+Get\+Component\+Type\+Name (\begin{DoxyParamCaption}\item[{\textbf{ Component\+Type}}]{type}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em type} & Tipo de componente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nombre del tipo de componente. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily type} debe identificar un tipo de componente que haya sido previamente registrado. 
+\end{DoxyPrecond}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!GetContainer@{GetContainer}}
+\index{GetContainer@{GetContainer}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{GetContainer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a11eafacf9605ffde7f05bc0f07c2ed36} 
+\textbf{ IComponent\+Container} $\ast$ OSK\+::\+ECS\+::\+Component\+Manager\+::\+Get\+Container (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{component\+Type\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em component\+Type\+Name} & Nombre del tipo de componente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Contenedor del tipo indicado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El tipo de componente {\ttfamily component\+Type\+Name} debe haber sido previamente registrado. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & Si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!GetContainer@{GetContainer}}
+\index{GetContainer@{GetContainer}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{GetContainer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a7d7f76b7e48971ad01de89d9901a85f7} 
+const \textbf{ IComponent\+Container} $\ast$ OSK\+::\+ECS\+::\+Component\+Manager\+::\+Get\+Container (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{component\+Type\+Name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em component\+Type\+Name} & Nombre del tipo de componente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Contenedor del tipo indicado. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El tipo de componente {\ttfamily component\+Type\+Name} debe haber sido previamente registrado. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Invalid\+Argument\+Exception}{pág.}{class_o_s_k_1_1_invalid_argument_exception}} & Si se incumple la precondición. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!ObjectHasComponent@{ObjectHasComponent}}
+\index{ObjectHasComponent@{ObjectHasComponent}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{ObjectHasComponent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a1c5a364ae7bb71ad68216ec6240936c8} 
+template$<$typename TComponent$>$ \\
+bool OSK\+::\+ECS\+::\+Component\+Manager\+::\+Object\+Has\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo de componente. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto a comprobar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+True si el objeto tiene el componente indicado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+El componente {\ttfamily TComponent} debe haber sido previamente registrado. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Component\+Not\+Registered\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_not_registered_exception}} & si {\ttfamily TComponent} no ha sido previamente registradao. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}}
+\index{OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{OSK\_DEFAULT\_MOVE\_OPERATOR()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_ab6c3bd5c82cd15b99ee151467f2b5795} 
+OSK\+::\+ECS\+::\+Component\+Manager\+::\+OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR (\begin{DoxyParamCaption}\item[{\textbf{ Component\+Manager}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_ae8336e3b3016df34704473850c7ad38c} 
+OSK\+::\+ECS\+::\+Component\+Manager\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Component\+Manager}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!RegisterComponent@{RegisterComponent}}
+\index{RegisterComponent@{RegisterComponent}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{RegisterComponent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_adc6f673558c9c9d2df9868199a8f0f76} 
+template$<$typename TComponent$>$ \\
+void OSK\+::\+ECS\+::\+Component\+Manager\+::\+Register\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un componente, de tal manera que podrá ser usado en el \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s}. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo del componente. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily TComponent} no debe haber sido previamente registrado. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Component\+Already\+Registered\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_component_already_registered_exception}} & si el componente ya había sido registrado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}!RemoveComponent@{RemoveComponent}}
+\index{RemoveComponent@{RemoveComponent}!OSK::ECS::ComponentManager@{OSK::ECS::ComponentManager}}
+\doxysubsubsection{RemoveComponent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_component_manager_a7b891ed0cf0b4360d315bd276bdb1784} 
+template$<$typename TComponent$>$ \\
+void OSK\+::\+ECS\+::\+Component\+Manager\+::\+Remove\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object\+Index}}]{obj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina el componente del objeto. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TComponent} & Tipo del componente.\\
+\hline
+\end{DoxyTemplParams}

@@ -1,0 +1,33 @@
+\doxysection{Skybox\+Render\+System\+Controller.\+h}
+\label{_skybox_render_system_controller_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/SkyboxRenderSystemController.h@{C:/Users/Oscar/source/repos/OSKengine/Source/SkyboxRenderSystemController.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ISystemController.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}SkyboxRenderSystem.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }OSK::Editor::Controllers\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ SkyboxRenderSystemController\ :\ \textcolor{keyword}{public}\ TSystemController<ECS::SkyboxRenderSystem>\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ OSK\_LINK\_SYSTEM\_EDITOR\_CONTROLLER(ECS::SkyboxRenderSystem);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ SkyboxRenderSystemController(ECS::ISystem*\ system,\ Views::ISystemView*\ view);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Poll()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::string\ m\_previousTextureName\{\};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::string\ m\_previousMaterialName\{\};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ ECS::GameObjectIndex\ m\_previousCameraObject\ =\ ECS::GameObjectIndex::CreateEmpty();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}

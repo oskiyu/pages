@@ -1,0 +1,48 @@
+\doxysection{Gpu\+Memory\+Allocator\+Vk.\+h}
+\label{_gpu_memory_allocator_vk_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GpuMemoryAllocatorVk.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GpuMemoryAllocatorVk.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Platforms.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ OSK\_USE\_VULKAN\_BACKEND}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}IGpuMemoryAllocator.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vulkan/vulkan.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuImageUsage;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ GpuMemoryAllocatorVk\ final\ :\ \textcolor{keyword}{public}\ IGpuMemoryAllocator\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ GpuMemoryAllocatorVk(IGpu*\ device);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ UniquePtr<GpuImage>\ CreateImage(\textcolor{keyword}{const}\ GpuImageCreateInfo\&\ info)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ UniquePtr<IGpuMemoryBlock>\ CreateNewBufferBlock(}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ USize64\ size,\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBufferUsage\ usage,\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ GpuSharedMemoryType\ sharedType)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ UniquePtr<IGpuMemoryBlock>\ CreateNewImageBlock(}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImage*\ image,\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageUsage\ usage,\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ GpuSharedMemoryType\ sharedType)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ UniquePtr<IBottomLevelAccelerationStructure>\ \_CreateBottomAccelerationStructure()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ UniquePtr<ITopLevelAccelerationStructure>\ \_CreateTopAccelerationStructure()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

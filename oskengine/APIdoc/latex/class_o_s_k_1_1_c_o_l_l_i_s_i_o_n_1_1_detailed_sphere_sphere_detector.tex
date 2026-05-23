@@ -1,0 +1,38 @@
+\doxysection{Referencia de la clase OSK\+::COLLISION\+::Detailed\+Sphere\+Sphere\+Detector}
+\label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_detailed_sphere_sphere_detector}\index{OSK::COLLISION::DetailedSphereSphereDetector@{OSK::COLLISION::DetailedSphereSphereDetector}}
+
+
+{\ttfamily \#include $<$Detailed\+Sphere\+Sphere\+Detector.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::optional$<$ \textbf{ Detailed\+Collision\+Info} $>$ \textbf{ Get\+Collision} (const \textbf{ Narrow\+Collider\+Holder} \&first, const \textbf{ Narrow\+Collider\+Holder} \&second) const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Detector para el caso especial de dos esferas, debido a ofrecer una solución muy rápida. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::COLLISION::DetailedSphereSphereDetector@{OSK::COLLISION::DetailedSphereSphereDetector}!GetCollision@{GetCollision}}
+\index{GetCollision@{GetCollision}!OSK::COLLISION::DetailedSphereSphereDetector@{OSK::COLLISION::DetailedSphereSphereDetector}}
+\doxysubsubsection{GetCollision()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_detailed_sphere_sphere_detector_aba923b9e5be778cd29045ce016f6f16f} 
+std\+::optional$<$ \textbf{ OSK\+::\+COLLISION\+::\+Detailed\+Collision\+Info} $>$ OSK\+::\+COLLISION\+::\+Detailed\+Sphere\+Sphere\+Detector\+::\+Get\+Collision (\begin{DoxyParamCaption}\item[{const \textbf{ Narrow\+Collider\+Holder} \&}]{first}{, }\item[{const \textbf{ Narrow\+Collider\+Holder} \&}]{second}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em first} & Primer collider. \\
+\hline
+{\em second} & Segundo collider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la detección de colisión.
+\end{DoxyReturn}
+Si este detector no puede detectar la colisión para los tipos de los colliders, devuelve vacío. 
+
+Implementa \textbf{ OSK\+::\+COLLISION\+::\+IDetailed\+Collision\+Detector} \doxyref{}{pág.}{class_o_s_k_1_1_c_o_l_l_i_s_i_o_n_1_1_i_detailed_collision_detector_a5a7ca51fa1afc00f15f780fb63ff751e}.
+

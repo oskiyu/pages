@@ -1,0 +1,260 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::ISwapchain}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain}\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+
+
+{\ttfamily \#include $<$ISwapchain.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+AS} (\textbf{ ISwapchain})
+\item 
+virtual \textbf{ $\sim$\+ISwapchain} ()=default
+\item 
+void \textbf{ Take\+Screenshot} (std\+::string\+\_\+view path)
+\item 
+\textbf{ USize32} \textbf{ Get\+Image\+Count} () const
+\item 
+unsigned int \textbf{ Get\+Current\+Frame\+Index} () const
+\item 
+virtual void \textbf{ Present} ()=0
+\item 
+void \textbf{ Set\+Present\+Mode} (const \textbf{ IGpu} \&gpu, \textbf{ Present\+Mode} mode)
+\item 
+\textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Image} (unsigned int index)
+\item 
+const \textbf{ Gpu\+Image} $\ast$ \textbf{ Get\+Image} (unsigned int index) const
+\item 
+virtual void \textbf{ Resize} (const \textbf{ IGpu} \&gpu, \textbf{ Vector2ui} new\+Resolution)=0
+\item 
+\textbf{ Present\+Mode} \textbf{ Get\+Current\+Present\+Mode} () const
+\item 
+\textbf{ Format} \textbf{ Get\+Color\+Format} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ ISwapchain} (\textbf{ Present\+Mode} mode, \textbf{ Format} format)
+\item 
+void \textbf{ Set\+Num\+Images\+In\+Flight} (\textbf{ USize32} image\+Count)
+\item 
+void \textbf{ Set\+Image} (\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Image} $>$ \&\&image, \textbf{ UIndex32} index)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Un swapchain es una estructura encargada de manejar el cambio de imagenes que son representadas en el monitor. 
+
+La GPU trabaja en una sola imagen a la vez. El swapchain se encarga entonces de transmitir la imagen al monitor. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!````~ISwapchain@{$\sim$ISwapchain}}
+\index{````~ISwapchain@{$\sim$ISwapchain}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{$\sim$ISwapchain()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_a14cdd2412f5dfd2287535ae3c50a40b6} 
+virtual OSK\+::\+GRAPHICS\+::\+ISwapchain\+::$\sim$\+ISwapchain (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!ISwapchain@{ISwapchain}}
+\index{ISwapchain@{ISwapchain}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{ISwapchain()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_a6fcf60b8db561e2d4e4b4ecd6c99b812} 
+ISwapchain\+::\+ISwapchain (\begin{DoxyParamCaption}\item[{\textbf{ Present\+Mode}}]{mode}{, }\item[{\textbf{ Format}}]{format}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Inicializa las variables de la clase. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mode} & Modo de presentación. \\
+\hline
+{\em format} & Formato de las imágenes del swapchain. \\
+\hline
+{\em queue\+Indices} & Índices de las colas de comandos que accederán a las imágenes del swapchain.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily queue\+Indices} debe tener al menos una entrada. 
+
+{\ttfamily queue\+Indices} debe referenciar, al menos, la cola que se vaya a usar para operaciones de presentación. 
+
+{\ttfamily queue\+Indices} debe referenciar, al menos, la cola que se vaya a usar para operaciones renderizar sobre el swapchain. 
+\end{DoxyPrecond}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!GetColorFormat@{GetColorFormat}}
+\index{GetColorFormat@{GetColorFormat}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{GetColorFormat()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_ac1ece865145e2eeafa9300bb88fb9eb3} 
+\textbf{ Format} ISwapchain\+::\+Get\+Color\+Format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Formato de las imágenes del swapchain. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!GetCurrentFrameIndex@{GetCurrentFrameIndex}}
+\index{GetCurrentFrameIndex@{GetCurrentFrameIndex}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{GetCurrentFrameIndex()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_abbf1668873549c12b0bc43afd19304a3} 
+unsigned int ISwapchain\+::\+Get\+Current\+Frame\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Índice de la imagen renderizada en un momento dado. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!GetCurrentPresentMode@{GetCurrentPresentMode}}
+\index{GetCurrentPresentMode@{GetCurrentPresentMode}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{GetCurrentPresentMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_ac9b32cc5c676785be45a965fdfacb4de} 
+\textbf{ Present\+Mode} ISwapchain\+::\+Get\+Current\+Present\+Mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Modo de presentación actual. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!GetImage@{GetImage}}
+\index{GetImage@{GetImage}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{GetImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_a8727dce2fec91c252dd54167d3879136} 
+\textbf{ Gpu\+Image} $\ast$ OSK\+::\+GRAPHICS\+::\+ISwapchain\+::\+Get\+Image (\begin{DoxyParamCaption}\item[{unsigned int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em index} & Índice de la imagen dentro del swapchain. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Imagen con el índice dado.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily index} $<$ {\ttfamily \doxyref{Get\+Image\+Count()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_a052206c1de590606bfdef279f326d16c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!GetImage@{GetImage}}
+\index{GetImage@{GetImage}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{GetImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_afe33304883e093ed0a9ec72fadc605d2} 
+const \textbf{ Gpu\+Image} $\ast$ OSK\+::\+GRAPHICS\+::\+ISwapchain\+::\+Get\+Image (\begin{DoxyParamCaption}\item[{unsigned int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!GetImageCount@{GetImageCount}}
+\index{GetImageCount@{GetImageCount}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{GetImageCount()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_a052206c1de590606bfdef279f326d16c} 
+unsigned int ISwapchain\+::\+Get\+Image\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el número de imágenes del swapchain.
+\end{DoxyReturn}
+Será mayor que 0.
+
+Será menor que {\ttfamily NUM\+\_\+\+RESOURCES\+\_\+\+IN\+\_\+\+FLIGHT}. \index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}}
+\index{OSK\_DEFINE\_AS@{OSK\_DEFINE\_AS}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{OSK\_DEFINE\_AS()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_a42d404105397016f4590ca3d5b8d705e} 
+OSK\+::\+GRAPHICS\+::\+ISwapchain\+::\+OSK\+\_\+\+DEFINE\+\_\+\+AS (\begin{DoxyParamCaption}\item[{\textbf{ ISwapchain}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!Present@{Present}}
+\index{Present@{Present}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{Present()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_ab42ef18df4fc72d0a6b17829b2aa8b7f} 
+virtual void OSK\+::\+GRAPHICS\+::\+ISwapchain\+::\+Present (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Envía la imagen renderizada al monitor. 
+
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!Resize@{Resize}}
+\index{Resize@{Resize}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{Resize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_a5b4c0bc44337dd686bed40e65af5bb12} 
+virtual void OSK\+::\+GRAPHICS\+::\+ISwapchain\+::\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ IGpu} \&}]{gpu}{, }\item[{\textbf{ Vector2ui}}]{new\+Resolution}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Actualiza el swapchain para reflejar un cambio de resolución de pantalla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em gpu} & GPU dueña del swapchain. \\
+\hline
+{\em new\+Resolution} & Nueva resolución.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily new\+Resolution} != {\ttfamily \doxyref{Vector2ui\+::\+Zero}{pág.}{class_o_s_k_1_1_vector2__t_a5a6119fdac1a258faeade0da8ac6108a}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!SetImage@{SetImage}}
+\index{SetImage@{SetImage}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{SetImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_a3542c24a74cc2145b3171c7d0c9efc5a} 
+void ISwapchain\+::\+Set\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ Gpu\+Image} $>$ \&\&}]{image}{, }\item[{\textbf{ UIndex32}}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Establece la imagen del swapchain en el índice dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image} & Imagen a establecer. \\
+\hline
+{\em index} & Índice de la imagen dentro del swapchain.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily index} $<$ {\ttfamily \doxyref{Get\+Image\+Count()}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_a052206c1de590606bfdef279f326d16c}}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!SetNumImagesInFlight@{SetNumImagesInFlight}}
+\index{SetNumImagesInFlight@{SetNumImagesInFlight}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{SetNumImagesInFlight()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_a49b58e5f6f4de94acc3e54350bc1a257} 
+void ISwapchain\+::\+Set\+Num\+Images\+In\+Flight (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{image\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Actualiza la variable de la clase. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image\+Count} & Número de imágenes del swapchain.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+No ejecuta ninguna lógica de adquisición de imágenes.
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily image\+Count} $>$ 0. 
+
+{\ttfamily image\+Count} $<$ {\ttfamily NUM\+\_\+\+RESOURCES\+\_\+\+IN\+\_\+\+FLIGHT}. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!SetPresentMode@{SetPresentMode}}
+\index{SetPresentMode@{SetPresentMode}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{SetPresentMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_a35f43d59259b1439d03eb73c2e23a7b4} 
+void ISwapchain\+::\+Set\+Present\+Mode (\begin{DoxyParamCaption}\item[{const \textbf{ IGpu} \&}]{gpu}{, }\item[{\textbf{ Present\+Mode}}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+Cambia el modo de presentación del renderizador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mode} & Modo de sincronización vertical. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}!TakeScreenshot@{TakeScreenshot}}
+\index{TakeScreenshot@{TakeScreenshot}!OSK::GRAPHICS::ISwapchain@{OSK::GRAPHICS::ISwapchain}}
+\doxysubsubsection{TakeScreenshot()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_swapchain_ade42c48de233c97ce745413780ccc75c} 
+void ISwapchain\+::\+Take\+Screenshot (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene una captura de pantalla del juego y la guarda en disco. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta + nombre de la imagen.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+La imagen se guardara con el nombre "{}path\+\_\+$<$año$>$\+\_\+$<$mes$>$\+\_\+$<$dia$>$\+\_\+$<$hora$>$$<$minuto$>$$<$segundo$>$.\+png"{}
+\end{DoxyPostcond}

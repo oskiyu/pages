@@ -1,0 +1,170 @@
+\doxysection{Referencia de la clase OSK\+::IO\+::IMouse\+Input}
+\label{class_o_s_k_1_1_i_o_1_1_i_mouse_input}\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+
+
+{\ttfamily \#include $<$IMouse\+Input.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ OSK\+\_\+\+DEFINE\+\_\+\+IUUID} ((\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+IMouse\+Input})
+\item 
+virtual \textbf{ $\sim$\+IMouse\+Input} ()=default
+\item 
+void \textbf{ Update\+Mouse\+Input} ()
+\item 
+const \textbf{ Mouse\+State} \& \textbf{ Get\+Mouse\+State} () const
+\item 
+const \textbf{ Mouse\+State} \& \textbf{ Get\+Previous\+Mouse\+State} () const
+\item 
+\textbf{ Mouse\+Motion\+Mode} \textbf{ Get\+Motion\+Mode} () const
+\item 
+\textbf{ Mouse\+Return\+Mode} \textbf{ Get\+Return\+Mode} () const
+\item 
+void \textbf{ Set\+Motion\+Mode} (\textbf{ Mouse\+Motion\+Mode} mode)
+\item 
+void \textbf{ Set\+Return\+Mode} (\textbf{ Mouse\+Return\+Mode} mode)
+\item 
+virtual void \textbf{ Set\+Mouse\+Position} (const \textbf{ Vector2ui} \&pos)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Setup\+Motion\+Mode} ()=0
+\item 
+virtual void \textbf{ Setup\+Return\+Mode} ()=0
+\item 
+virtual void \textbf{ Update\+Mouse\+State} (\textbf{ Mouse\+State} $\ast$current\+State)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para leer la entrada del usuario a través del ratón. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!````~IMouseInput@{$\sim$IMouseInput}}
+\index{````~IMouseInput@{$\sim$IMouseInput}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{$\sim$IMouseInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_a4cfd9b76cb752da569326deb340d90b5} 
+virtual OSK\+::\+IO\+::\+IMouse\+Input\+::$\sim$\+IMouse\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!GetMotionMode@{GetMotionMode}}
+\index{GetMotionMode@{GetMotionMode}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{GetMotionMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_adbc5f19a0feeb152d89a87f27393737d} 
+\textbf{ Mouse\+Motion\+Mode} OSK\+::\+IO\+::\+IMouse\+Input\+::\+Get\+Motion\+Mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estado actual de \doxyref{Mouse\+Motion\+Mode}{pág.}{namespace_o_s_k_1_1_i_o_a5ba6ec63fc3ebf3e796c86246821b317}. 
+\end{DoxyReturn}
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!GetMouseState@{GetMouseState}}
+\index{GetMouseState@{GetMouseState}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{GetMouseState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_a7318a7b5af6b510996ea511cf82099ef} 
+const \textbf{ Mouse\+State} \& IMouse\+Input\+::\+Get\+Mouse\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Estado del ratón en el frame actual. 
+\end{DoxyReturn}
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!GetPreviousMouseState@{GetPreviousMouseState}}
+\index{GetPreviousMouseState@{GetPreviousMouseState}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{GetPreviousMouseState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_a7b7bf657bc628b0315e7a716592b3759} 
+const \textbf{ Mouse\+State} \& IMouse\+Input\+::\+Get\+Previous\+Mouse\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Estado del ratón en el frame anterior. 
+\end{DoxyReturn}
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!GetReturnMode@{GetReturnMode}}
+\index{GetReturnMode@{GetReturnMode}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{GetReturnMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_ab5c2bc0a8af9a1336066ac2310f90486} 
+\textbf{ Mouse\+Return\+Mode} OSK\+::\+IO\+::\+IMouse\+Input\+::\+Get\+Return\+Mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Devuelve}
+Estado actual de \doxyref{Mouse\+Return\+Mode}{pág.}{namespace_o_s_k_1_1_i_o_a2f854259da792bdb856dedf2a07ee49d}. 
+\end{DoxyReturn}
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}}
+\index{OSK\_DEFINE\_IUUID@{OSK\_DEFINE\_IUUID}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{OSK\_DEFINE\_IUUID()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_a8a9711f524a4014b2dd4af12183e8e7f} 
+OSK\+::\+IO\+::\+IMouse\+Input\+::\+OSK\+\_\+\+DEFINE\+\_\+\+IUUID (\begin{DoxyParamCaption}\item[{(\textbf{ TInterface\+Uuid}) \textbf{ IUUID\+::\+IMouse\+Input}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!SetMotionMode@{SetMotionMode}}
+\index{SetMotionMode@{SetMotionMode}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{SetMotionMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_a0d4d2b0ab6e1f34b42dc8f3a6eef843a} 
+void OSK\+::\+IO\+::\+IMouse\+Input\+::\+Set\+Motion\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ Mouse\+Motion\+Mode}}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Actualiza el \doxyref{Mouse\+Motion\+Mode}{pág.}{namespace_o_s_k_1_1_i_o_a5ba6ec63fc3ebf3e796c86246821b317}. 
+
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!SetMousePosition@{SetMousePosition}}
+\index{SetMousePosition@{SetMousePosition}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{SetMousePosition()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_addfff570041ae37366285f44ee4c7c6c} 
+virtual void OSK\+::\+IO\+::\+IMouse\+Input\+::\+Set\+Mouse\+Position (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Establece la posición del ratón, desde la esquina superior izquierda. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em posX} & Posición, en pixeles, en el eje horizontal. \\
+\hline
+{\em posY} & Posición, en pixeles, en el eje vertical. \\
+\hline
+\end{DoxyParams}
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!SetReturnMode@{SetReturnMode}}
+\index{SetReturnMode@{SetReturnMode}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{SetReturnMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_aeb8e1c1d58ecab6d32c6263037c68977} 
+void OSK\+::\+IO\+::\+IMouse\+Input\+::\+Set\+Return\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ Mouse\+Return\+Mode}}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Actualiza el \doxyref{Mouse\+Return\+Mode}{pág.}{namespace_o_s_k_1_1_i_o_a2f854259da792bdb856dedf2a07ee49d}. 
+
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!SetupMotionMode@{SetupMotionMode}}
+\index{SetupMotionMode@{SetupMotionMode}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{SetupMotionMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_accdbfff0dd2800518046d14630256225} 
+virtual void OSK\+::\+IO\+::\+IMouse\+Input\+::\+Setup\+Motion\+Mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+La implementación debe actualizar de manera el motion mode obtenido a través de Get\+Motion\+Mode. 
+
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!SetupReturnMode@{SetupReturnMode}}
+\index{SetupReturnMode@{SetupReturnMode}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{SetupReturnMode()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_abb81a81e15f8be49ae7ea454e159fc3f} 
+virtual void OSK\+::\+IO\+::\+IMouse\+Input\+::\+Setup\+Return\+Mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+La implementación debe actualizar de manera el return mode obtenido a través de Get\+Return\+Mode. 
+
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!UpdateMouseInput@{UpdateMouseInput}}
+\index{UpdateMouseInput@{UpdateMouseInput}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{UpdateMouseInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_a86a3e1a8b3bc18bc48a270f38fbe2976} 
+void IMouse\+Input\+::\+Update\+Mouse\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza los estados internos del ratón. 
+
+\index{OSK::IO::IMouseInput@{OSK::IO::IMouseInput}!UpdateMouseState@{UpdateMouseState}}
+\index{UpdateMouseState@{UpdateMouseState}!OSK::IO::IMouseInput@{OSK::IO::IMouseInput}}
+\doxysubsubsection{UpdateMouseState()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_i_o_1_1_i_mouse_input_a94971e6ebba6a80b4b22ace7ee5e61a8} 
+virtual void OSK\+::\+IO\+::\+IMouse\+Input\+::\+Update\+Mouse\+State (\begin{DoxyParamCaption}\item[{\textbf{ Mouse\+State} $\ast$}]{current\+State}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+

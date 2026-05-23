@@ -1,0 +1,80 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Animation\+Sampler}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_sampler}\index{OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}}
+
+
+{\ttfamily \#include $<$Animation\+Sampler.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum class \textbf{ Interpolation\+Type} \{ \textbf{ LINEAR}
+, \textbf{ STEP}
+, \textbf{ CUBICSPLINE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Interpolation\+Type} \textbf{ interpolation\+Type} = \textbf{ Interpolation\+Type\+::\+LINEAR}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ TDelta\+Time} $>$ \textbf{ timestamps}
+\item 
+\textbf{ Dynamic\+Array}$<$ \textbf{ Vector4f} $>$ \textbf{ outputs}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Incluye los valores de transform y timestamps de la animación de un hueso, y cómo interpolarlos. 
+
+\label{doc-enum-members}
+\doxysubsection{Documentación de las enumeraciones miembro de la clase}
+\index{OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}!InterpolationType@{InterpolationType}}
+\index{InterpolationType@{InterpolationType}!OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}}
+\doxysubsubsection{InterpolationType}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_sampler_a983eff4f6a588ac5e94af54c40f73245} 
+enum class \textbf{ OSK\+::\+GRAPHICS\+::\+Animation\+Sampler\+::\+Interpolation\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LINEAR@{LINEAR}!OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}}\index{OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}!LINEAR@{LINEAR}}}\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_sampler_a983eff4f6a588ac5e94af54c40f73245aaac544aacc3615aada24897a215f5046} 
+LINEAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STEP@{STEP}!OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}}\index{OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}!STEP@{STEP}}}\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_sampler_a983eff4f6a588ac5e94af54c40f73245a522f694f92e679d874a1cc2b2616c3d7} 
+STEP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CUBICSPLINE@{CUBICSPLINE}!OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}}\index{OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}!CUBICSPLINE@{CUBICSPLINE}}}\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_sampler_a983eff4f6a588ac5e94af54c40f73245adbec938b5d93ee323a15ef285cab513a} 
+CUBICSPLINE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}!interpolationType@{interpolationType}}
+\index{interpolationType@{interpolationType}!OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}}
+\doxysubsubsection{interpolationType}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_sampler_a58edc2b35e56e021e5ad10486163d588} 
+\textbf{ Interpolation\+Type} OSK\+::\+GRAPHICS\+::\+Animation\+Sampler\+::interpolation\+Type = \textbf{ Interpolation\+Type\+::\+LINEAR}}
+
+\index{OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}!outputs@{outputs}}
+\index{outputs@{outputs}!OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}}
+\doxysubsubsection{outputs}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_sampler_a3adfbec52fec632c3a191478d0130f90} 
+\textbf{ Dynamic\+Array}$<$\textbf{ Vector4f}$>$ OSK\+::\+GRAPHICS\+::\+Animation\+Sampler\+::outputs}
+
+
+
+Valor final de la posición / rotación / escala de un bone en un timestamp. 
+
+\index{OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}!timestamps@{timestamps}}
+\index{timestamps@{timestamps}!OSK::GRAPHICS::AnimationSampler@{OSK::GRAPHICS::AnimationSampler}}
+\doxysubsubsection{timestamps}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_animation_sampler_af25c279b1c224125d922bfab868d4b32} 
+\textbf{ Dynamic\+Array}$<$\textbf{ TDelta\+Time}$>$ OSK\+::\+GRAPHICS\+::\+Animation\+Sampler\+::timestamps}
+
+
+
+Timestamps en los que se realiza alguna transformación en la animación. 
+

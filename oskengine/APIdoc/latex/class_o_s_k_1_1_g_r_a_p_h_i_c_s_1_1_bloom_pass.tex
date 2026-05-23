@@ -1,0 +1,160 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Bloom\+Pass}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass}\index{OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}}
+
+
+{\ttfamily \#include $<$Bloom\+Pass.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Set\+Input} (\textbf{ Gpu\+Image} $\ast$input\+Image)
+\item 
+void \textbf{ Create} (const \textbf{ Vector2ui} \&size) override
+\item 
+void \textbf{ Resize} (const \textbf{ Vector2ui} \&size) override
+\item 
+void \textbf{ Execute} (\textbf{ ICommand\+List} $\ast$compute\+Cmd\+List) override
+\item 
+\textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Output} ()
+\item 
+const \textbf{ Compute\+Render\+Target} \& \textbf{ Get\+Output} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \textbf{ Downscale\+Material} = "{}Resources/Materials/Post\+Process/Bloom/downscale.\+json"{}
+\item 
+static constexpr auto \textbf{ Upscale\+Material} = "{}Resources/Materials/Post\+Process/Bloom/upscale.\+json"{}
+\item 
+static constexpr auto \textbf{ Resolve\+Material} = "{}Resources/Materials/Post\+Process/Bloom/final.\+json"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase auxiliar que permite una capa de bloom / resplandor. 
+
+Partiendo de una imagen de entrada (preferiblemente con un formato HDR) genera una nueva imagen con un resplandor alrededor de las zonas más brillantes de la imagen de entrada.
+
+La imagen final contiene la imagen original + resplandor.
+
+Usa shaders de computación para ejecutar un algoritmo basado en\+: {\texttt{http\+://www.\+iryoku.\+com/next-\/generation-\/post-\/processing-\/in-\/call-\/of-\/duty-\/advanced-\/warfare}} 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}!Create@{Create}}
+\index{Create@{Create}!OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}}
+\doxysubsubsection{Create()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass_ab781f1bb2f373dc907b406a4182b9768} 
+void Bloom\+Pass\+::\+Create (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Crea el render target de salida. Se puede sobreescribir por efectos de post-\/procesado específicos para crear recursos intermedios. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Resolución (tanto de entrada como de salida). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a92aa17faa014d558ac7cc79eb982c03c}.
+
+\index{OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}!Execute@{Execute}}
+\index{Execute@{Execute}!OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}}
+\doxysubsubsection{Execute()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass_a2391f9f93653168b0bfc3a84cdcff0a2} 
+void Bloom\+Pass\+::\+Execute (\begin{DoxyParamCaption}\item[{\textbf{ ICommand\+List} $\ast$}]{compute\+Cmd\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Genera la imagen final. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em compute\+Cmd\+List} & Lista de comandos sobre la que se ejecutará.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Se deben haber establecido las imágenes de entrada con {\ttfamily IPost\+Process\+Pass\+::\+Set\+Input}. 
+
+Las imágenes de entrada establecidas con {\ttfamily IPost\+Process\+Pass\+::\+Set\+Input} deben estar en un estado válido. 
+
+{\ttfamily compute\+Cmd\+List} debe soportar, al menos .
+
+Se deben haber establecido las entradas necesarias para el pase. 
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Post\+Process\+Input\+Not\+Set\+Exception}{pág.}{class_o_s_k_1_1_post_process_input_not_set_exception}} & si no se han establecido las entradas necesarias. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a05388cf0f2e8bc5e1b94cdc76cd58c8e}.
+
+\index{OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}}
+\doxysubsubsection{GetOutput()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_ae65dc5bc46fb7657d6f18b148e7ea5cd} 
+\textbf{ Compute\+Render\+Target} \& IPost\+Process\+Pass\+::\+Get\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Render target con la imagen final en las imágenes de color. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}}
+\doxysubsubsection{GetOutput()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a4b49581bc321be779142519f48d7b263} 
+const \textbf{ Compute\+Render\+Target} \& IPost\+Process\+Pass\+::\+Get\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\begin{DoxyReturn}{Devuelve}
+Render target con la imagen final en las imágenes de color. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}!Resize@{Resize}}
+\index{Resize@{Resize}!OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}}
+\doxysubsubsection{Resize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass_a5545a4f6b434519d5fb2873ed72b2b25} 
+void Bloom\+Pass\+::\+Resize (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui} \&}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Cambia de tamaño el render target de salida. Se puede sobreescribir para crear recursos intermedios. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño de la imagen final. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ OSK\+::\+GRAPHICS\+::\+IPost\+Process\+Pass} \doxyref{}{pág.}{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_i_post_process_pass_a5755b9283180f003c9d77fbebebfb322}.
+
+\index{OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}!SetInput@{SetInput}}
+\index{SetInput@{SetInput}!OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}}
+\doxysubsubsection{SetInput()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass_a8accc8455d274734966a27e93d063b74} 
+void Bloom\+Pass\+::\+Set\+Input (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Image} $\ast$}]{input\+Image}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}!DownscaleMaterial@{DownscaleMaterial}}
+\index{DownscaleMaterial@{DownscaleMaterial}!OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}}
+\doxysubsubsection{DownscaleMaterial}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass_ada01f91f792febde597a2d23ca599548} 
+auto OSK\+::\+GRAPHICS\+::\+Bloom\+Pass\+::\+Downscale\+Material = "{}Resources/Materials/Post\+Process/Bloom/downscale.\+json"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\index{OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}!ResolveMaterial@{ResolveMaterial}}
+\index{ResolveMaterial@{ResolveMaterial}!OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}}
+\doxysubsubsection{ResolveMaterial}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass_ace898758abf719368639db45cb679715} 
+auto OSK\+::\+GRAPHICS\+::\+Bloom\+Pass\+::\+Resolve\+Material = "{}Resources/Materials/Post\+Process/Bloom/final.\+json"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\index{OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}!UpscaleMaterial@{UpscaleMaterial}}
+\index{UpscaleMaterial@{UpscaleMaterial}!OSK::GRAPHICS::BloomPass@{OSK::GRAPHICS::BloomPass}}
+\doxysubsubsection{UpscaleMaterial}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_bloom_pass_a11e44565abd8a9baa60507e2fc470c38} 
+auto OSK\+::\+GRAPHICS\+::\+Bloom\+Pass\+::\+Upscale\+Material = "{}Resources/Materials/Post\+Process/Bloom/upscale.\+json"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+

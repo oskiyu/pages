@@ -1,0 +1,37 @@
+\doxysection{Touch\+Input.\+h}
+\label{_touch_input_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/TouchInput.h@{C:/Users/Oscar/source/repos/OSKengine/Source/TouchInput.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}NumericTypes.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Uuid.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }OSK::IO\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{using\ }TouchInputUuid\ =\ BaseUuid<class\ TouchInputUuidTag>;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{enum\ class}\ TouchInputType\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ START,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ END,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ CONTINUING}
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{struct\ }TouchInput\ \{}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ Vector2f\ position\ =\ Vector2f::Zero;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ TouchInputType\ type\ =\ TouchInputType::START;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ TDeltaTime\ timeSinceInputStart\ =\ 0.0f;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ TouchInputUuid\ inputId\ =\ TouchInputUuid::CreateEmpty();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}

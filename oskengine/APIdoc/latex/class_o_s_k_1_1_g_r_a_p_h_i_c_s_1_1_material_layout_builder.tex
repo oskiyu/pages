@@ -1,0 +1,70 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Material\+Layout\+Builder}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_builder}\index{OSK::GRAPHICS::MaterialLayoutBuilder@{OSK::GRAPHICS::MaterialLayoutBuilder}}
+
+
+{\ttfamily \#include $<$Material\+Layout\+Builder.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Material\+Layout\+Builder} (const std\+::unordered\+\_\+map$<$ \textbf{ UIndex32}, std\+::string $>$ \&slot\+Names, const std\+::string \&material\+Name)
+\item 
+void \textbf{ Apply} (const \textbf{ Spirv\+Reflection\+Data} \&shader\+Data)
+\item 
+\textbf{ Unique\+Ptr}$<$ \textbf{ Material\+Layout} $>$ \textbf{ Build} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase auxiliar para la construcción de layouts de material. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::MaterialLayoutBuilder@{OSK::GRAPHICS::MaterialLayoutBuilder}!MaterialLayoutBuilder@{MaterialLayoutBuilder}}
+\index{MaterialLayoutBuilder@{MaterialLayoutBuilder}!OSK::GRAPHICS::MaterialLayoutBuilder@{OSK::GRAPHICS::MaterialLayoutBuilder}}
+\doxysubsubsection{MaterialLayoutBuilder()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_builder_a9a41189c98211663d26bc69820c5b13f} 
+OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Builder\+::\+Material\+Layout\+Builder (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ \textbf{ UIndex32}, std\+::string $>$ \&}]{slot\+Names}{, }\item[{const std\+::string \&}]{material\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Inicializa el builder. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em slot\+Names} & Nombres de los slots. \\
+\hline
+{\em material\+Name} & Nombre del material. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::MaterialLayoutBuilder@{OSK::GRAPHICS::MaterialLayoutBuilder}!Apply@{Apply}}
+\index{Apply@{Apply}!OSK::GRAPHICS::MaterialLayoutBuilder@{OSK::GRAPHICS::MaterialLayoutBuilder}}
+\doxysubsubsection{Apply()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_builder_a708713caa6aaaf15ca3e7a735bf48966} 
+void OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Builder\+::\+Apply (\begin{DoxyParamCaption}\item[{const \textbf{ Spirv\+Reflection\+Data} \&}]{shader\+Data}{}\end{DoxyParamCaption})}
+
+
+
+Añade los datos de un shader del material. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em shader\+Data} & Datos del shader. \\
+\hline
+\end{DoxyParams}
+\index{OSK::GRAPHICS::MaterialLayoutBuilder@{OSK::GRAPHICS::MaterialLayoutBuilder}!Build@{Build}}
+\index{Build@{Build}!OSK::GRAPHICS::MaterialLayoutBuilder@{OSK::GRAPHICS::MaterialLayoutBuilder}}
+\doxysubsubsection{Build()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_material_layout_builder_a7c5b70ffc6ff2e1eae4857a268cac5b9} 
+\textbf{ OSK\+::\+Unique\+Ptr}$<$ \textbf{ OSK\+::\+GRAPHICS\+::\+Material\+Layout} $>$ OSK\+::\+GRAPHICS\+::\+Material\+Layout\+Builder\+::\+Build (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+\begin{DoxyReturn}{Devuelve}
+Instancia construida. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondición}
+El builder estará vacío. 
+\end{DoxyPostcond}

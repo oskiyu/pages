@@ -1,0 +1,67 @@
+\doxysection{Referencia de la estructura OSK\+::GRAPHICS\+::Rg\+Image\+Register\+Info}
+\label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info}\index{OSK::GRAPHICS::RgImageRegisterInfo@{OSK::GRAPHICS::RgImageRegisterInfo}}
+
+
+{\ttfamily \#include $<$Render\+Graph\+Args.\+h$>$}
+
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Format} \textbf{ format} = \textbf{ Format\+::\+UNKNOWN}
+\item 
+\textbf{ Gpu\+Image\+Dimension} \textbf{ dimension} = \textbf{ Gpu\+Image\+Dimension\+::d2D}
+\item 
+\textbf{ USize32} \textbf{ num\+Layers} = 1
+\item 
+std\+::optional$<$ std\+::string $>$ \textbf{ name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Información sobre una imagen. 
+
+\label{doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\index{OSK::GRAPHICS::RgImageRegisterInfo@{OSK::GRAPHICS::RgImageRegisterInfo}!dimension@{dimension}}
+\index{dimension@{dimension}!OSK::GRAPHICS::RgImageRegisterInfo@{OSK::GRAPHICS::RgImageRegisterInfo}}
+\doxysubsubsection{dimension}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info_acab2c4693a2a52e2fab99e8f8b8f1be3} 
+\textbf{ Gpu\+Image\+Dimension} OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Register\+Info\+::dimension = \textbf{ Gpu\+Image\+Dimension\+::d2D}}
+
+
+
+Dimensionalidad de la imagen. 
+
+\index{OSK::GRAPHICS::RgImageRegisterInfo@{OSK::GRAPHICS::RgImageRegisterInfo}!format@{format}}
+\index{format@{format}!OSK::GRAPHICS::RgImageRegisterInfo@{OSK::GRAPHICS::RgImageRegisterInfo}}
+\doxysubsubsection{format}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info_aa2d2131d0396bc9217fd5bec2cef6de6} 
+\textbf{ Format} OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Register\+Info\+::format = \textbf{ Format\+::\+UNKNOWN}}
+
+
+
+Formato de la imagen. 
+
+\index{OSK::GRAPHICS::RgImageRegisterInfo@{OSK::GRAPHICS::RgImageRegisterInfo}!name@{name}}
+\index{name@{name}!OSK::GRAPHICS::RgImageRegisterInfo@{OSK::GRAPHICS::RgImageRegisterInfo}}
+\doxysubsubsection{name}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info_a8bb1b725d6064aab92867752cdb89bda} 
+std\+::optional$<$std\+::string$>$ OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Register\+Info\+::name}
+
+
+
+Nombre debug. 
+
+\index{OSK::GRAPHICS::RgImageRegisterInfo@{OSK::GRAPHICS::RgImageRegisterInfo}!numLayers@{numLayers}}
+\index{numLayers@{numLayers}!OSK::GRAPHICS::RgImageRegisterInfo@{OSK::GRAPHICS::RgImageRegisterInfo}}
+\doxysubsubsection{numLayers}
+{\footnotesize\ttfamily \label{struct_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_rg_image_register_info_a91b70b5beb4722c4c06c480a2b356849} 
+\textbf{ USize32} OSK\+::\+GRAPHICS\+::\+Rg\+Image\+Register\+Info\+::num\+Layers = 1}
+
+
+
+Número de capas de la imagen. 
+
+\begin{DoxyPrecond}{Precondición}
+{\ttfamily num\+Layers} $>$ 0. 
+\end{DoxyPrecond}

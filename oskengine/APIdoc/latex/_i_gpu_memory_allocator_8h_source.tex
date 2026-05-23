@@ -1,0 +1,228 @@
+\doxysection{IGpu\+Memory\+Allocator.\+h}
+\label{_i_gpu_memory_allocator_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/IGpuMemoryAllocator.h@{C:/Users/Oscar/source/repos/OSKengine/Source/IGpuMemoryAllocator.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ Recursos}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}IGpuImage.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}IGpuMemoryBlock.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}IGpuMemorySubblock.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ Ray-\/tracing}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}ITopLevelAccelerationStructure.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}IBottomLevelAccelerationStructure.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ Para\ \`{}TIndexSize`}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Vertex.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ Sincronización.}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}MutexHolder.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ Otros.}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}GpuMemoryUsageInfo.h"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Enumeraciones.}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuBufferUsage;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GpuQueueType;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Recursos.}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }GpuBuffer;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{class\ }GpuImage;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{struct\ }GpuImageCreateInfo;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Vértices.}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{struct\ }Vertex3D;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{class\ }VertexInfo;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{struct\ }VertexBufferView;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{struct\ }IndexBufferView;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Interfaces.}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{class\ }IGpu;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{struct\ }OSKAPI\_CALL\ GpuBufferMemoryBlockInfo\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ USize64\ size;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ GpuBufferUsage\ usage;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ GpuSharedMemoryType\ sharedType;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ GpuBufferMemoryBlockInfo\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ \ \ \ \ \};}
+\DoxyCodeLine{00058\ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ USize32\ GPU\_MEMORY\_NO\_ALIGNMENT\ =\ 1;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ IGpuMemoryAllocator\ \{}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ IGpuMemoryAllocator(IGpu*\ device);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IGpuMemoryAllocator();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ USize64\ SizeOfMemoryBlockInMb;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ OSK\_DEFINE\_AS(IGpuMemoryAllocator);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ OSK\_DISABLE\_COPY(IGpuMemoryAllocator);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ GpuMemoryUsageInfo\ GetMemoryUsageInfo()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ UniquePtr<GpuImage>\ CreateImage(\textcolor{keyword}{const}\ GpuImageCreateInfo\&\ info)\ =\ 0;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ UniquePtr<GpuImage>\ CreateCubemapImage(}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vector2ui\&\ faceSize,\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ Format\ format,\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageUsage\ usage,\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ GpuSharedMemoryType\ sharedType,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ queueType,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ GpuImageSamplerDesc\ samplerDesc\ =\ \{\});}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#pragma\ region\ Vertex\ buffers}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ CreateVertexBuffer(}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ vertexSize,}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ numVertices,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VertexInfo\&\ vertexInfo,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ queueType,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBufferUsage\ usage\ =\ GpuBufferUsage::VERTEX\_BUFFER);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ CreateVertexBuffer(}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ vertexSize,}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ numVertices,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VertexInfo\&\ vertexInfo,}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ transferQueue,}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ finalQueue,}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBufferUsage\ usage\ =\ GpuBufferUsage::VERTEX\_BUFFER);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ UniquePtr<GpuBuffer>\ CreateVertexBuffer(}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<T>\&\ vertices,}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VertexInfo\&\ vertexInfo,}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ queueType,}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBufferUsage\ usage\ =\ GpuBufferUsage::VERTEX\_BUFFER)\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>CreateVertexBuffer(vertices.GetData(),\ \textcolor{keyword}{sizeof}(T),\ vertices.GetSize(),\ vertexInfo,\ queueType,\ usage);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ UniquePtr<GpuBuffer>\ CreateVertexBuffer(}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<T>\&\ vertices,}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VertexInfo\&\ vertexInfo,}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ transferQueue,}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ finalQueue,}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBufferUsage\ usage\ =\ GpuBufferUsage::VERTEX\_BUFFER)\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>CreateVertexBuffer(vertices.GetData(),\ \textcolor{keyword}{sizeof}(T),\ vertices.GetSize(),\ vertexInfo,\ transferQueue,\ finalQueue,\ usage);}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#pragma\ region\ Index\ buffers}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ CreateIndexBuffer(}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<TIndexSize>\&\ indices,}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ queueType,}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBufferUsage\ usage\ =\ GpuBufferUsage::INDEX\_BUFFER);}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ CreateIndexBuffer(}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DynamicArray<TIndexSize>\&\ indices,}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ transferQueue,}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ queueType,}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBufferUsage\ usage\ =\ GpuBufferUsage::INDEX\_BUFFER);}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ CreateUniformBuffer(}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ USize64\ size,}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ queueType\ =\ GpuQueueType::MAIN,}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBufferUsage\ usage\ =\ GpuBufferUsage::UNIFORM\_BUFFER);}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ CreateStorageBuffer(}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ USize64\ size,}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ queueType,}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBufferUsage\ usage\ =\ GpuBufferUsage::STORAGE\_BUFFER);}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ CreateStagingBuffer(}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ USize64\ size,}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ queueType,}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBufferUsage\ usage\ =\ GpuBufferUsage::UPLOAD\_ONLY);}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ UniquePtr<GpuBuffer>\ CreateBuffer(}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ USize64\ size,}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ USize64\ alignment,}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ GpuBufferUsage\ usage,\ }
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ GpuSharedMemoryType\ memoryType,}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ GpuQueueType\ queueType);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ UniquePtr<IBottomLevelAccelerationStructure>\ CreateBottomAccelerationStructure(}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ vertexBuffer,}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ indexBuffer);}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ UniquePtr<IBottomLevelAccelerationStructure>\ CreateBottomAccelerationStructure(}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ vertexBuffer,}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VertexBufferView\&\ vertexView,}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ indexBuffer,}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IndexBufferView\&\ indexView);}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ UniquePtr<ITopLevelAccelerationStructure>\ CreateTopAccelerationStructure(}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ DynamicArray<IBottomLevelAccelerationStructure*>\ bottomStructures);}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveMemoryBlock(IGpuMemoryBlock*\ block);}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ FreeStagingMemory();}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImage*\ GetDefaultNormalTexture()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ USize64\ GetAlignment(USize64\ originalAlignment,\ GpuBufferUsage\ usage)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ LoadDefaultNormalTexture();}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ UniquePtr<IBottomLevelAccelerationStructure>\ \_CreateBottomAccelerationStructure()\ =\ 0;}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ UniquePtr<ITopLevelAccelerationStructure>\ \_CreateTopAccelerationStructure()\ =\ 0;}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ UniquePtr<IGpuMemoryBlock>\ CreateNewBufferBlock(USize64\ size,\ GpuBufferUsage\ usage,\ GpuSharedMemoryType\ sharedType)\ =\ 0;}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ UniquePtr<IGpuMemoryBlock>\ CreateNewImageBlock(GpuImage*\ image,\ GpuImageUsage\ usage,\ GpuSharedMemoryType\ sharedType)\ =\ 0;}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ IGpuMemoryBlock*\ GetNextBufferMemoryBlock(USize64\ size,\ GpuBufferUsage\ usage,\ GpuSharedMemoryType\ sharedType);}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ UniquePtr<IGpuMemorySubblock>\ GetNextBufferMemorySubblock(USize64\ size,\ GpuBufferUsage\ usage,\ GpuSharedMemoryType\ sharedType);}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ DynamicArray<GpuBufferMemoryBlockInfo>\ bufferMemoryBlocksInfo;}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ DynamicArray<DynamicArray<UniquePtr<IGpuMemoryBlock>>>\ bufferMemoryBlocks;}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ almacenan\ en\ las\ propias\ imágenes.}}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ DynamicArray<IGpuMemoryBlock*>\ imageMemoryBlocks;}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ UniquePtr<GpuImage>\ m\_defaultNormalTexture;}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ IGpu*\ device\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mutex\ para\ las\ alojaciones\ de\ memoria.}}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Para\ la\ búsqueda\ de\ bloques.}}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ MutexHolder\ m\_memoryAllocationMutex;}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ \ \};}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \}}
+
+\end{DoxyCode}

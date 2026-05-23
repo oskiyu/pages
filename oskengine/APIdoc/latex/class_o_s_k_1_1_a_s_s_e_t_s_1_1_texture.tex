@@ -1,0 +1,213 @@
+\doxysection{Referencia de la clase OSK\+::ASSETS\+::Texture}
+\label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture}\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+
+
+{\ttfamily \#include $<$Texture.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Texture} (const std\+::string \&asset\+File)
+\item 
+\textbf{ OSK\+\_\+\+ASSET\+\_\+\+TYPE\+\_\+\+REG} ("{}OSK\+::\+Texture"{})
+\item 
+\textbf{ Vector2ui} \textbf{ Get\+Size} () const
+\item 
+\textbf{ USize32} \textbf{ Get\+Number\+Of\+Channels} () const
+\item 
+\textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ \textbf{ Get\+Gpu\+Image} ()
+\item 
+const \textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ \textbf{ Get\+Gpu\+Image} () const
+\item 
+const \textbf{ GRAPHICS\+::\+IGpu\+Image\+View} \& \textbf{ Get\+Texture\+View2D} () const
+\item 
+const \textbf{ GRAPHICS\+::\+IGpu\+Image\+View} \& \textbf{ Get\+Texture\+View} () const
+\item 
+void \textbf{ \+\_\+\+Set\+Size} (const \textbf{ Vector2ui} size)
+\item 
+void \textbf{ \+\_\+\+Set\+Number\+Of\+Channels} (\textbf{ USize32} num\+Channels)
+\item 
+void \textbf{ \+\_\+\+Set\+Image} (\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Image} $>$ \&\&image)
+\item 
+void \textbf{ Set\+Name} (const std\+::string \&name)
+\item 
+std\+::string \textbf{ Get\+Name} () const
+\item 
+std\+::string \textbf{ Get\+Asset\+Filename} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Una textura que será usada en renderizado 2D / 3D. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{Texture()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture_a73989d7926a60a99f29dff7726127638} 
+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{asset\+File}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!\_SetImage@{\_SetImage}}
+\index{\_SetImage@{\_SetImage}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{\_SetImage()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture_a3be7af3a67564309a0662be6ae5fa48e} 
+void Texture\+::\+\_\+\+Set\+Image (\begin{DoxyParamCaption}\item[{\textbf{ Unique\+Ptr}$<$ \textbf{ GRAPHICS\+::\+Gpu\+Image} $>$ \&\&}]{image}{}\end{DoxyParamCaption})}
+
+
+
+Establece la imagen GPU de la textura. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em image} & Imagen en la GPU. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Atención}
+Función interna\+: no llamar. 
+\end{DoxyWarning}
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!\_SetNumberOfChannels@{\_SetNumberOfChannels}}
+\index{\_SetNumberOfChannels@{\_SetNumberOfChannels}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{\_SetNumberOfChannels()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture_a148f1b65ca3432e57129a09e2ac063d8} 
+void Texture\+::\+\_\+\+Set\+Number\+Of\+Channels (\begin{DoxyParamCaption}\item[{\textbf{ USize32}}]{num\+Channels}{}\end{DoxyParamCaption})}
+
+
+
+Establece el número de canales (red green blue, etc...). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em num\+Channels} & Número de canales. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Atención}
+Función interna\+: no llamar. 
+\end{DoxyWarning}
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!\_SetSize@{\_SetSize}}
+\index{\_SetSize@{\_SetSize}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{\_SetSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture_a5b8b6744153b2fb25dfef0b8e20ba970} 
+void Texture\+::\+\_\+\+Set\+Size (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2ui}}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Establece el tamaño de la textura. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em size} & Tamaño, en píxeles. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Atención}
+Función interna\+: no llamar. 
+\end{DoxyWarning}
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!GetAssetFilename@{GetAssetFilename}}
+\index{GetAssetFilename@{GetAssetFilename}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{GetAssetFilename()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_acf0bac3849facb6afb0499907186840b} 
+std\+::string IAsset\+::\+Get\+Asset\+Filename (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Obtiene la ruta del archivo JSON que describe esta instancia del asset. 
+
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!GetGpuImage@{GetGpuImage}}
+\index{GetGpuImage@{GetGpuImage}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{GetGpuImage()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture_a8c39c8e57a7537de33eb8af57d86438b} 
+\textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ Texture\+::\+Get\+Gpu\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Imagen guardada en la GPU. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+No puede ser null. 
+\end{DoxyNote}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!GetGpuImage@{GetGpuImage}}
+\index{GetGpuImage@{GetGpuImage}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{GetGpuImage()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture_a09962997da51c44f0b58ebdc8902ef63} 
+const \textbf{ GRAPHICS\+::\+Gpu\+Image} $\ast$ Texture\+::\+Get\+Gpu\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!GetName@{GetName}}
+\index{GetName@{GetName}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{GetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_aa0e593888f6bcd143de4f9eb5a912f44} 
+std\+::string IAsset\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Nombre de la instancia del asset. 
+
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!GetNumberOfChannels@{GetNumberOfChannels}}
+\index{GetNumberOfChannels@{GetNumberOfChannels}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{GetNumberOfChannels()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture_ae7d873004f0fbd089f26c3575b115bc3} 
+\textbf{ USize32} Texture\+::\+Get\+Number\+Of\+Channels (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Número de canales (red green blue, etc...). 
+\end{DoxyReturn}
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{GetSize()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture_a2624c642f8e05c628cf903e8faf8088f} 
+\textbf{ Vector2ui} Texture\+::\+Get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Tamaño de la textura. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+En píxeles. 
+\end{DoxyNote}
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!GetTextureView@{GetTextureView}}
+\index{GetTextureView@{GetTextureView}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{GetTextureView()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture_a2e66f19c20b6cdb3caa6edda39821f73} 
+const \textbf{ IGpu\+Image\+View} \& Texture\+::\+Get\+Texture\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Image view para renderizado 3D, con varios niveles de mip. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!GetTextureView2D@{GetTextureView2D}}
+\index{GetTextureView2D@{GetTextureView2D}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{GetTextureView2D()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture_aa65f95ab8135d86bef9199fefc8f781d} 
+const \textbf{ IGpu\+Image\+View} \& Texture\+::\+Get\+Texture\+View2D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Image view para renderizado 2D, con un único nivel de mip. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Puntero estable}
+Este puntero apunta a un elemento que no cambiará de localización de memoria. 
+\end{DoxyParagraph}
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!OSK\_ASSET\_TYPE\_REG@{OSK\_ASSET\_TYPE\_REG}}
+\index{OSK\_ASSET\_TYPE\_REG@{OSK\_ASSET\_TYPE\_REG}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{OSK\_ASSET\_TYPE\_REG()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_texture_a823d551190aa912e281f7ac41be05c3f} 
+OSK\+::\+ASSETS\+::\+Texture\+::\+OSK\+\_\+\+ASSET\+\_\+\+TYPE\+\_\+\+REG (\begin{DoxyParamCaption}\item[{"{}OSK\+::\+Texture"{}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ASSETS::Texture@{OSK::ASSETS::Texture}!SetName@{SetName}}
+\index{SetName@{SetName}!OSK::ASSETS::Texture@{OSK::ASSETS::Texture}}
+\doxysubsubsection{SetName()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_a_s_s_e_t_s_1_1_i_asset_af0bbd1c59b2cd81667b63cb6d015c11c} 
+void IAsset\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Establece el nombre de la instancia de este asset. 
+
+\begin{DoxyWarning}{Atención}
+Es un identificador único. 
+\end{DoxyWarning}

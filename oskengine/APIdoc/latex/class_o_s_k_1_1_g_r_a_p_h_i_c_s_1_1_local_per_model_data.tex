@@ -1,0 +1,119 @@
+\doxysection{Referencia de la clase OSK\+::GRAPHICS\+::Local\+Per\+Model\+Data}
+\label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_model_data}\index{OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}}
+
+
+{\ttfamily \#include $<$Mesh\+Mapping.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Local\+Per\+Model\+Data} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Local\+Per\+Model\+Data})
+\item 
+void \textbf{ Register\+Mesh} (\textbf{ Gpu\+Mesh\+Uuid} mesh\+Id)
+\item 
+void \textbf{ Unregister\+Mesh} (\textbf{ Gpu\+Mesh\+Uuid} mesh\+Id)
+\item 
+\textbf{ Local\+Per\+Mesh\+Data} \& \textbf{ Get\+Mesh\+Data} (\textbf{ Gpu\+Mesh\+Uuid} mesh\+Id)
+\item 
+const \textbf{ Local\+Per\+Mesh\+Data} \& \textbf{ Get\+Mesh\+Data} (\textbf{ Gpu\+Mesh\+Uuid} mesh\+Id) const
+\item 
+bool \textbf{ Has\+Mesh} (\textbf{ Gpu\+Mesh\+Uuid} mesh\+Id) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Información por cada modelo 3D. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}!LocalPerModelData@{LocalPerModelData}}
+\index{LocalPerModelData@{LocalPerModelData}!OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}}
+\doxysubsubsection{LocalPerModelData()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_model_data_ab6405a0a15b60cd4bc96bfc9415cf860} 
+OSK\+::\+GRAPHICS\+::\+Local\+Per\+Model\+Data\+::\+Local\+Per\+Model\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}!GetMeshData@{GetMeshData}}
+\index{GetMeshData@{GetMeshData}!OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}}
+\doxysubsubsection{GetMeshData()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_model_data_add0fcbd94af910cc87159fec86fa065f} 
+\textbf{ Local\+Per\+Mesh\+Data} \& Local\+Per\+Model\+Data\+::\+Get\+Mesh\+Data (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Mesh\+Uuid}}]{mesh\+Id}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mesh\+Id} & ID de la malla. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Información de la malla. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}!GetMeshData@{GetMeshData}}
+\index{GetMeshData@{GetMeshData}!OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}}
+\doxysubsubsection{GetMeshData()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_model_data_a9b260c002f2655ecf8a92f266c83b636} 
+const \textbf{ Local\+Per\+Mesh\+Data} \& Local\+Per\+Model\+Data\+::\+Get\+Mesh\+Data (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Mesh\+Uuid}}]{mesh\+Id}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mesh\+Id} & ID de la malla. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Información de la malla. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}!HasMesh@{HasMesh}}
+\index{HasMesh@{HasMesh}!OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}}
+\doxysubsubsection{HasMesh()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_model_data_a8923be8bca0fc4aa7408000b90d7274e} 
+bool Local\+Per\+Model\+Data\+::\+Has\+Mesh (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Mesh\+Uuid}}]{mesh\+Id}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+True si ha sido registrada una malla con identificador {\ttfamily mesh\+Id}. 
+\end{DoxyReturn}
+\index{OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_model_data_a18514f8853c033c79230a59d7ecb4c36} 
+OSK\+::\+GRAPHICS\+::\+Local\+Per\+Model\+Data\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Local\+Per\+Model\+Data}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}!RegisterMesh@{RegisterMesh}}
+\index{RegisterMesh@{RegisterMesh}!OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}}
+\doxysubsubsection{RegisterMesh()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_model_data_ac4ab8be2f8eb5bb46ec935265ec5787c} 
+void Local\+Per\+Model\+Data\+::\+Register\+Mesh (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Mesh\+Uuid}}]{mesh\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Registra una nueva malla, añadiendo una entrada para ella. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mesh\+Id} & Identificador único de la malla.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+No debe existir una malla con identificador {\ttfamily mesh\+Id} registrada. 
+\end{DoxyPrecond}
+\index{OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}!UnregisterMesh@{UnregisterMesh}}
+\index{UnregisterMesh@{UnregisterMesh}!OSK::GRAPHICS::LocalPerModelData@{OSK::GRAPHICS::LocalPerModelData}}
+\doxysubsubsection{UnregisterMesh()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_g_r_a_p_h_i_c_s_1_1_local_per_model_data_a6257f4cbbfcc6a0ffed78ca36c4f3fba} 
+void Local\+Per\+Model\+Data\+::\+Unregister\+Mesh (\begin{DoxyParamCaption}\item[{\textbf{ Gpu\+Mesh\+Uuid}}]{mesh\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Elimina una malla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mesh\+Id} & Identificador único de la malla.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Debe existir una malla con identificador {\ttfamily model\+Id} registrada. 
+\end{DoxyPrecond}

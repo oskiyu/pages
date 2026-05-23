@@ -1,0 +1,84 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::System\+Execution\+Graph}
+\label{class_o_s_k_1_1_e_c_s_1_1_system_execution_graph}\index{OSK::ECS::SystemExecutionGraph@{OSK::ECS::SystemExecutionGraph}}
+
+
+{\ttfamily \#include $<$System\+Execution\+Graph.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Add\+System} (\textbf{ ISystem} $\ast$system, const \textbf{ System\+Dependencies} \&dependencies)
+\item 
+void \textbf{ Remove\+System} (const \textbf{ ISystem} $\ast$system)
+\item 
+std\+::span$<$ \textbf{ System\+Execution\+Set} $>$ \textbf{ Get\+Execution\+Graph} ()
+\item 
+std\+::span$<$ const \textbf{ System\+Execution\+Set} $>$ \textbf{ Get\+Execution\+Graph} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Grafo que contiene los sistemas ordenados de tal manera que se respeten sus dependencias. 
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::SystemExecutionGraph@{OSK::ECS::SystemExecutionGraph}!AddSystem@{AddSystem}}
+\index{AddSystem@{AddSystem}!OSK::ECS::SystemExecutionGraph@{OSK::ECS::SystemExecutionGraph}}
+\doxysubsubsection{AddSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_execution_graph_a4c08e2e5a25c5cb54f465f822dd32f56} 
+void System\+Execution\+Graph\+::\+Add\+System (\begin{DoxyParamCaption}\item[{\textbf{ ISystem} $\ast$}]{system}{, }\item[{const \textbf{ System\+Dependencies} \&}]{dependencies}{}\end{DoxyParamCaption})}
+
+
+
+Añade el sistema al grafo de ejecución. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em system} & Sistema a añadir. \\
+\hline
+{\em dependencies} & Dependencias del sistema.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+No debe haber un sistema del tipo de {\ttfamily system} previamente registrado. 
+
+No debe haber ninguna dependencia cíclica al incluir el sistema {\ttfamily system}.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em System\+Cyclic\+Dependency} & si hay una dependencia cíclica. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::SystemExecutionGraph@{OSK::ECS::SystemExecutionGraph}!GetExecutionGraph@{GetExecutionGraph}}
+\index{GetExecutionGraph@{GetExecutionGraph}!OSK::ECS::SystemExecutionGraph@{OSK::ECS::SystemExecutionGraph}}
+\doxysubsubsection{GetExecutionGraph()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_execution_graph_a95bf8cba67a43c233ff24c3e61840b6b} 
+std\+::span$<$ \textbf{ System\+Execution\+Set} $>$ System\+Execution\+Graph\+::\+Get\+Execution\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Devuelve}
+Sets de ejecución, ordenados. 
+\end{DoxyReturn}
+\index{OSK::ECS::SystemExecutionGraph@{OSK::ECS::SystemExecutionGraph}!GetExecutionGraph@{GetExecutionGraph}}
+\index{GetExecutionGraph@{GetExecutionGraph}!OSK::ECS::SystemExecutionGraph@{OSK::ECS::SystemExecutionGraph}}
+\doxysubsubsection{GetExecutionGraph()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_execution_graph_a74ef13e21ce5cc31c0a28253e4d40143} 
+std\+::span$<$ const \textbf{ System\+Execution\+Set} $>$ System\+Execution\+Graph\+::\+Get\+Execution\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Devuelve}
+Sets de ejecución, ordenados. 
+\end{DoxyReturn}
+\index{OSK::ECS::SystemExecutionGraph@{OSK::ECS::SystemExecutionGraph}!RemoveSystem@{RemoveSystem}}
+\index{RemoveSystem@{RemoveSystem}!OSK::ECS::SystemExecutionGraph@{OSK::ECS::SystemExecutionGraph}}
+\doxysubsubsection{RemoveSystem()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_system_execution_graph_aab0c668fc0003eb0379b2f8ea17c18e0} 
+void System\+Execution\+Graph\+::\+Remove\+System (\begin{DoxyParamCaption}\item[{const \textbf{ ISystem} $\ast$}]{system}{}\end{DoxyParamCaption})}
+
+
+
+Quita un sistema del grafo de ejecución. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em system} & Sistema a eliminar. \\
+\hline
+\end{DoxyParams}

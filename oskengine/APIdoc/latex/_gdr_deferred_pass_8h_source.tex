@@ -1,0 +1,109 @@
+\doxysection{Gdr\+Deferred\+Pass.\+h}
+\label{_gdr_deferred_pass_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/GdrDeferredPass.h@{C:/Users/Oscar/source/repos/OSKengine/Source/GdrDeferredPass.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}RenderPass.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}RenderGraphArgs.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}GlobalIndexBuffer.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}EntityComponentSystem.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }RenderGraph;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{struct\ }VertexAttributeEntry;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{struct\ }GdrDrawCall\_Model\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ glm::mat4\ matrix;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ glm::mat4\ prviousMatrix;}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{struct\ }GdrDrawCall\_MaterialInfo\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ Vector2f\ metallicRoughness\ =\ Vector2f::Zero;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ Color\ emissive\ =\ Color::Empty;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ UIndex32\ albedoImageIdx\ =\ 0;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ UIndex32\ normalImageIdx\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{struct\ }VertexAttribBufferRef\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ RgBufferRef\ bufferRef;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::string\ bindingName\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ DynamicArray<VertexAttribBufferRef>\ VertexAttribBufferRefToList(std::span<const\ VertexAttributeEntry>\ entries,\ \textcolor{keyword}{const}\ RenderGraph\&\ rg);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ GdrDeferredPass\ :\ \textcolor{keyword}{public}\ IRenderPass\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ GdrDeferredPass(}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ RenderGraph*\ rg,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ std::span<const\ GdrBufferUuid>\ attributes,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ GdrBufferUuid\ indexes,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ GdrBufferUuid\ attribsIndexes,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ std::span<const\ GdrImageUuid>\ colorTargets,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ GdrImageUuid\ depthTarget,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ std::span<const\ GdrBufferUuid>\ cameraBuffer,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ std::span<const\ GdrBufferUuid>\ previousCameraBuffer);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterFullDependencies(}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ std::span<const\ VertexAttribBufferRef>\ attributes,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ RgBufferRef\&\ indexes,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ RgBufferRef\&\ attribsIndexes,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ std::span<const\ RgBufferRef>\ cameraBuffer,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ std::span<const\ RgBufferRef>\ previousCameraBuffer);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Execute(ICommandList*\ cmdList)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ std::string\_view\ GetName()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}OSK::GdrDeferredPass"{}};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }CameraInfo\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ projectionMatrix;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ viewMatrix;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ projectionViewMatrix;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ Vector4f\ position;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ Vector2f\ nearFarPlanes;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }PreviousCameraInfo\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ projectionMatrix;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ viewMatrix;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{alignas}(16)\ glm::mat4\ projectionViewMatrix;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ ECS::ExternalEcsListUuid\ m\_objectListUuid\ =\ ECS::ExternalEcsListUuid::CreateEmpty();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ RenderGraph*\ m\_renderGraph;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ GdrBufferUuid\ m\_indexBuffer;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ GdrBufferUuid\ m\_instancesBuffer;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ GdrBufferUuid\ m\_materialsBuffer;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ std::unordered\_map<GdrImageUuid,\ USize32>\ m\_imageIndexes;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ DynamicArray<GdrDrawCall\_MaterialInfo>\ m\_drawCalls\_Materials;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ DynamicArray<GdrDrawCall\_Model>\ \ \ \ \ \ \ \ \ m\_drawCalls\_Models;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ DynamicArray<GlobalIndexBufferRange>\ \ \ m\_drawCallsIndexes;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \}}
+
+\end{DoxyCode}

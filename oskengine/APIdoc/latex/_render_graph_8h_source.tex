@@ -1,0 +1,137 @@
+\doxysection{Render\+Graph.\+h}
+\label{_render_graph_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/RenderGraph.h@{C:/Users/Oscar/source/repos/OSKengine/Source/RenderGraph.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ApiCall.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}DynamicArray.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}UniquePtr.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}HashMap.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}GpuBuffer.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}GpuBufferRange.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}IGpuImage.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}GpuImageRange.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}RenderPass.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}RenderTarget.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}RenderPassDependencies.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}OSKengine.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}VertexAttributes.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}GlobalVertexBuffer.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}GlobalIndexBuffer.h"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}GpuGeometryDesc.h"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}RenderGraphArgs.h"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}ImageUuid.h"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}RgBufferManager.h"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}RgImageManager.h"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}RgEntry.h"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}RgGeometryManager.h"{}}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }OSK::GRAPHICS\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{class\ }ICommandList;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{class\ }IRenderer;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{class\ }GpuModel3D;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{class\ }OSKAPI\_CALL\ RenderGraph\ \{}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ RenderGraph(IRenderer*\ renderer);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ GdrBufferUuid\ RegisterBuffer(\textcolor{keyword}{const}\ RgBufferRegisterInfo\&\ info);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ GdrImageUuid\ RegisterImage(}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ RgImageRegisterInfo\&\ info,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ RgRelativeSizeImageRegisterArgs\ size);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ GdrImageUuid\ RegisterImage(}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ RgImageRegisterInfo\&\ info,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ RgAbsoluteSizeImageRegisterArgs\ size);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ GdrImageUuid\ RegisterExternalImage(GpuImage*\ image);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RebindExternalImage(GdrImageUuid\ uuid,\ GpuImage*\ newImage);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ RenderPassUuid\ RegisterRenderpass(}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ UniquePtr<IRenderPass>\&\&\ pass,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ RenderPassDependencies\&\ passDependencies);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Compile();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Execute(ICommandList*\ cmdList);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterVertexAttribute(}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ VertexAttribUuid\ uuid,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ name,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ USize32\ attributeSize);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ GpuBuffer\&\ GetBuffer(GdrBufferUuid\ uuid);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuBuffer\&\ GetBuffer(GdrBufferUuid\ uuid)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ GpuImage\&\ GetImage(GdrImageUuid\ uuid);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ GpuImage\&\ GetImage(GdrImageUuid\ uuid)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ GpuGeometryEntry\ RegisterGeometry(\textcolor{keyword}{const}\ GpuGeometryDesc\&\ geometry);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ std::span<const\ VertexAttributeEntry>\ GetRegisteredAttributes()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ std::span<const\ GdrBufferUuid>\ GetRegisteredAttributesBufferUuids()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ RgBufferRef\ GetAttribsIndexes()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ RgBufferRef\ GetIndexesBuffer()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateGeometryBuffers();}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetFramebufferResolution(USize32\ \ \ res);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetFramebufferResolution(Vector2ui\ res);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetFramebufferResolution(Vector3ui\ res);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RecreateRelativeImages();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ IRenderPass*\ GetRenderPass(RenderPassUuid\ uuid);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IRenderPass*\ GetRenderPass(RenderPassUuid\ uuid)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RegisterUnifiedGeometryBuffers();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ExecuteNext(}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ ICommandList*\ cmdList,}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ IRenderPass*\ renderPass);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Flatten();}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ UniquePtr<RgBufferManager>\ m\_bufferManager;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ UniquePtr<RgImageManager>\ m\_imageManager;}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ RgGeometryManager\ m\_geometryManager;}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ std::unordered\_map<RenderPassUuid,\ IRenderPass*>\ m\_renderPassesMap;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ DynamicArray<RenderPassEntry>\ m\_renderPassesEntries\{\};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ DynamicArray<IRenderPass*>\ m\_flatRenderPass\{\};}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ IRenderer*\ m\_renderer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \}}
+
+\end{DoxyCode}

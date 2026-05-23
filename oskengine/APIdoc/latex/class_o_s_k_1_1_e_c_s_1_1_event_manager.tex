@@ -1,0 +1,180 @@
+\doxysection{Referencia de la clase OSK\+::ECS\+::Event\+Manager}
+\label{class_o_s_k_1_1_e_c_s_1_1_event_manager}\index{OSK::ECS::EventManager@{OSK::ECS::EventManager}}
+
+
+{\ttfamily \#include $<$Event\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Event\+Manager} ()=default
+\item 
+\textbf{ OSK\+\_\+\+DISABLE\+\_\+\+COPY} (\textbf{ Event\+Manager})
+\item 
+\textbf{ OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR} (\textbf{ Event\+Manager})
+\item 
+{\footnotesize template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$}\\void \textbf{ Register\+Event\+Type} ()
+\item 
+{\footnotesize template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$}\\void \textbf{ Publish\+Event} (const TEvent \&event)
+\item 
+{\footnotesize template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$}\\const \textbf{ Dynamic\+Array}$<$ TEvent $>$ \& \textbf{ Get\+Event\+Queue} () const
+\item 
+void \textbf{ \+\_\+\+Clear\+Queues} ()
+\item 
+{\footnotesize template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$}\\bool \textbf{ Event\+Has\+Been\+Registered} () const
+\item 
+\textbf{ Event\+Queue\+Span} \textbf{ Get\+Event\+Queue\+Span} (std\+::string\+\_\+view event\+Name) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Se encarga de gestionar las colas de eventos. 
+
+\label{doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\index{OSK::ECS::EventManager@{OSK::ECS::EventManager}!EventManager@{EventManager}}
+\index{EventManager@{EventManager}!OSK::ECS::EventManager@{OSK::ECS::EventManager}}
+\doxysubsubsection{EventManager()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_manager_ab4f115b4d17dbd31a970b54edd32ae89} 
+OSK\+::\+ECS\+::\+Event\+Manager\+::\+Event\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\index{OSK::ECS::EventManager@{OSK::ECS::EventManager}!\_ClearQueues@{\_ClearQueues}}
+\index{\_ClearQueues@{\_ClearQueues}!OSK::ECS::EventManager@{OSK::ECS::EventManager}}
+\doxysubsubsection{\_ClearQueues()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_manager_a58a19bbc22678a91f5286fde3a83c754} 
+void OSK\+::\+ECS\+::\+Event\+Manager\+::\+\_\+\+Clear\+Queues (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina los contenidos de todas las colas. Debe llamarse al final de cada frame. 
+
+\index{OSK::ECS::EventManager@{OSK::ECS::EventManager}!EventHasBeenRegistered@{EventHasBeenRegistered}}
+\index{EventHasBeenRegistered@{EventHasBeenRegistered}!OSK::ECS::EventManager@{OSK::ECS::EventManager}}
+\doxysubsubsection{EventHasBeenRegistered()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_manager_af3f190d386954ee8123d7b7fc82e23c1} 
+template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$\\
+bool OSK\+::\+ECS\+::\+Event\+Manager\+::\+Event\+Has\+Been\+Registered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TEvent} & Tipo del evento. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+True si el evento fue registrado. 
+\end{DoxyReturn}
+\index{OSK::ECS::EventManager@{OSK::ECS::EventManager}!GetEventQueue@{GetEventQueue}}
+\index{GetEventQueue@{GetEventQueue}!OSK::ECS::EventManager@{OSK::ECS::EventManager}}
+\doxysubsubsection{GetEventQueue()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_manager_ab7826d8c82bd220b5e150cf483ccca62} 
+template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$\\
+const \textbf{ Dynamic\+Array}$<$ TEvent $>$ \& OSK\+::\+ECS\+::\+Event\+Manager\+::\+Get\+Event\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la cola con todos los eventos de un tipo que se han producido en un frame. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TEvent} & Tipo de evento. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+Cola con todos los eventos. Puede ser una cola vacía si no se ha producido ningún evento en el frame.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+TEvent debe cumplir Is\+Ecs\+Event$<$\+TEvent$>$. 
+
+TEvent debe haber sido registrado con Register\+Event\+Type.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Event\+Not\+Registered\+Exception}{pág.}{class_o_s_k_1_1_e_c_s_1_1_event_not_registered_exception}} & Si se trata de obtener una cola a un tipo de evento que no ha sido previamente registrado. \\
+\hline
+\end{DoxyExceptions}
+\index{OSK::ECS::EventManager@{OSK::ECS::EventManager}!GetEventQueueSpan@{GetEventQueueSpan}}
+\index{GetEventQueueSpan@{GetEventQueueSpan}!OSK::ECS::EventManager@{OSK::ECS::EventManager}}
+\doxysubsubsection{GetEventQueueSpan()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_manager_aea86fc0f60a5a0ef8b59f1dce585787e} 
+\textbf{ Event\+Queue\+Span} OSK\+::\+ECS\+::\+Event\+Manager\+::\+Get\+Event\+Queue\+Span (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{event\+Name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em event\+Name} & Nombre del tipo de evento. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxyref{Event\+Queue\+Span}{pág.}{struct_o_s_k_1_1_e_c_s_1_1_event_queue_span} con todos los eventos almacenados del tipo indicado. 
+\end{DoxyReturn}
+\index{OSK::ECS::EventManager@{OSK::ECS::EventManager}!OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}}
+\index{OSK\_DEFAULT\_MOVE\_OPERATOR@{OSK\_DEFAULT\_MOVE\_OPERATOR}!OSK::ECS::EventManager@{OSK::ECS::EventManager}}
+\doxysubsubsection{OSK\_DEFAULT\_MOVE\_OPERATOR()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_manager_ab4a48f0d3dc9d3c213a2e62a944b09b9} 
+OSK\+::\+ECS\+::\+Event\+Manager\+::\+OSK\+\_\+\+DEFAULT\+\_\+\+MOVE\+\_\+\+OPERATOR (\begin{DoxyParamCaption}\item[{\textbf{ Event\+Manager}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::EventManager@{OSK::ECS::EventManager}!OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}}
+\index{OSK\_DISABLE\_COPY@{OSK\_DISABLE\_COPY}!OSK::ECS::EventManager@{OSK::ECS::EventManager}}
+\doxysubsubsection{OSK\_DISABLE\_COPY()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_manager_a41bfd4fc51a722514a37375d15cd50e9} 
+OSK\+::\+ECS\+::\+Event\+Manager\+::\+OSK\+\_\+\+DISABLE\+\_\+\+COPY (\begin{DoxyParamCaption}\item[{\textbf{ Event\+Manager}}]{}{}\end{DoxyParamCaption})}
+
+\index{OSK::ECS::EventManager@{OSK::ECS::EventManager}!PublishEvent@{PublishEvent}}
+\index{PublishEvent@{PublishEvent}!OSK::ECS::EventManager@{OSK::ECS::EventManager}}
+\doxysubsubsection{PublishEvent()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_manager_a1cb7dac97607c534eb84c41a88fc29b0} 
+template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$\\
+void OSK\+::\+ECS\+::\+Event\+Manager\+::\+Publish\+Event (\begin{DoxyParamCaption}\item[{const TEvent \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Publica un evento, de tal manera que puede ser procesado por los sistemas consumidores. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TEvent} & Tipo de evento. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em event} & Evento.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+TEvent debe cumplir Is\+Ecs\+Event$<$\+TEvent$>$. 
+
+TEvent debe haber sido registrado con Register\+Event\+Type.
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{Multihilo}
+Es thread-\/safe siempre y cuando no haya ningún otro hilo obteniendo la cola. 
+\end{DoxyParagraph}
+\index{OSK::ECS::EventManager@{OSK::ECS::EventManager}!RegisterEventType@{RegisterEventType}}
+\index{RegisterEventType@{RegisterEventType}!OSK::ECS::EventManager@{OSK::ECS::EventManager}}
+\doxysubsubsection{RegisterEventType()}
+{\footnotesize\ttfamily \label{class_o_s_k_1_1_e_c_s_1_1_event_manager_acdc10b4cd4dc81f7dfae53fe68d2d762} 
+template$<$typename TEvent$>$ \newline
+requires Is\+Ecs\+Event$<$TEvent$>$\\
+void OSK\+::\+ECS\+::\+Event\+Manager\+::\+Register\+Event\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un tipo de evento. Los venetos deben registrarse así para poder ser manejados por \doxyref{ECS}{pág.}{namespace_o_s_k_1_1_e_c_s}. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em TEvent} & Tipo de evento.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyPrecond}{Precondición}
+TEvent debe cumplir Is\+Ecs\+Event$<$\+TEvent$>$. 
+\end{DoxyPrecond}

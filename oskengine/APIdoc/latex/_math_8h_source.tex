@@ -1,0 +1,350 @@
+\doxysection{Math.\+h}
+\label{_math_8h_source}\index{C:/Users/Oscar/source/repos/OSKengine/Source/Math.h@{C:/Users/Oscar/source/repos/OSKengine/Source/Math.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <glm/gtx/quaternion.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Serializer.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Vector2.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Vector3.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Vector4.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Quaternion.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }OSK::MATH\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{concept\ }IsNumeric\ =\ std::is\_floating\_point\_v<T>\ \&\&\ std::is\_integral\_v<T>;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{concept\ }IsInteger\ =\ std::is\_integral\_v<T>;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{inline}\ T\ PrimerMultiploSuperior(T\ numero,\ T\ multiplo)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ T\ resto\ =\ numero\ \%\ multiplo;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numero\ \%\ multiplo\ ==\ 0)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ numero;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (numero\ /\ multiplo\ +\ 1)\ *\ multiplo;}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ T\ PrimerMultiploInferior(T\ numero,\ T\ multiplo)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ T\ resto\ =\ numero\ \%\ multiplo;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numero\ \%\ multiplo\ ==\ 0)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ numero;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (numero\ /\ multiplo\ -\/\ 1)\ *\ multiplo;}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{inline}\ T\ LinearInterpolation\_Fast(\textcolor{keyword}{const}\ T\&\ a,\ \textcolor{keyword}{const}\ T\&\ b,\ \textcolor{keywordtype}{float}\ factor)\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (a\ *\ (1.0f\ -\/\ factor))\ +\ (b\ *\ factor);}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{inline}\ T\ LinearInterpolation(\textcolor{keyword}{const}\ T\&\ a,\ \textcolor{keyword}{const}\ T\&\ b,\ \textcolor{keywordtype}{float}\ factor)\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (factor\ >=\ 1.0f)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (factor\ <=\ 0.0f)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (a\ *\ (1.0f\ -\/\ factor))\ +\ (b\ *\ factor);}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{inline}\ T\ Clamp(\textcolor{keyword}{const}\ T\&\ value,\ \textcolor{keyword}{const}\ T\&\ min,\ \textcolor{keyword}{const}\ T\&\ max)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ >\ max)}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ max;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ <\ min)}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ min;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ glm::mat4\ GetMatrixOffset(\textcolor{keyword}{const}\ glm::mat4\&\ first,\ \textcolor{keyword}{const}\ glm::mat4\&\ second)\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::inverse(first)\ -\/\ second;}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ T\ Sign(T\ value)\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\ >=\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0)\ ?\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ :\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(-\/1);}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{namespace\ }OSK::PERSISTENCE\ \{}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00142\ \ \ \ \ nlohmann::json\ \textcolor{keyword}{inline}\ SerializeData<glm::mat3>(\textcolor{keyword}{const}\ glm::mat3\&\ data)\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ nlohmann::json\ output\{\};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output[std::to\_string(i)\ +\ std::to\_string(j)]\ =\ data[i][j];}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00155\ \ \ \ \ glm::mat3\ \textcolor{keyword}{inline}\ DeserializeData<glm::mat3>(\textcolor{keyword}{const}\ nlohmann::json\&\ json)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ glm::mat3\ output\{\};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output[i][j]\ =\ json[std::to\_string(i)\ +\ std::to\_string(j)];}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00165\ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00168\ \ \ \ \ PERSISTENCE::BinaryBlock\ \textcolor{keyword}{inline}\ BinarySerializeData<glm::mat3>(\textcolor{keyword}{const}\ glm::mat3\&\ data)\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ output\ =\ BinaryBlock::Empty();}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output.Write(data[i][j]);}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00181\ \ \ \ \ glm::mat3\ \textcolor{keyword}{inline}\ BinaryDeserializeData<glm::mat3>(BinaryBlockReader*\ data)\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ glm::mat3\ output\{\};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output[i][j]\ =\ data-\/>Read<\textcolor{keywordtype}{float}>();}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00195\ \ \ \ \ nlohmann::json\ \textcolor{keyword}{inline}\ SerializeData<glm::mat4>(\textcolor{keyword}{const}\ glm::mat4\&\ data)\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ nlohmann::json\ output\{\};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 4;\ j++)\ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output[std::to\_string(i)\ +\ std::to\_string(j)]\ =\ data[i][j];}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00208\ \ \ \ \ glm::mat4\ \textcolor{keyword}{inline}\ DeserializeData<glm::mat4>(\textcolor{keyword}{const}\ nlohmann::json\&\ json)\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ glm::mat4\ output\{\};}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 4;\ j++)\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output[i][j]\ =\ json[std::to\_string(i)\ +\ std::to\_string(j)];}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00218\ \ \ \ \ \}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00221\ \ \ \ \ PERSISTENCE::BinaryBlock\ \textcolor{keyword}{inline}\ BinarySerializeData<glm::mat4>(\textcolor{keyword}{const}\ glm::mat4\&\ data)\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ output\ =\ BinaryBlock::Empty();}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 4;\ j++)\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output.Write(data[i][j]);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00231\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00234\ \ \ \ \ glm::mat4\ \textcolor{keyword}{inline}\ BinaryDeserializeData<glm::mat4>(BinaryBlockReader*\ data)\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ glm::mat4\ output\{\};}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 4;\ j++)\ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output[i][j]\ =\ data-\/>Read<\textcolor{keywordtype}{float}>();}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00244\ \ \ \ \ \}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#pragma\ region\ Vectors}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TVec>}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keyword}{inline}\ nlohmann::json\ SerializeVector2(\textcolor{keyword}{const}\ TVec\&\ vec)\ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ nlohmann::json\ output\{\};}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ output[\textcolor{stringliteral}{"{}x"{}}]\ =\ vec.x;}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ output[\textcolor{stringliteral}{"{}y"{}}]\ =\ vec.y;}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00256\ \ \ \ \ \}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TVec>}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keyword}{inline}\ nlohmann::json\ SerializeVector3(\textcolor{keyword}{const}\ TVec\&\ vec)\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ nlohmann::json\ output\{\};}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ output[\textcolor{stringliteral}{"{}x"{}}]\ =\ vec.x;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ output[\textcolor{stringliteral}{"{}y"{}}]\ =\ vec.y;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ output[\textcolor{stringliteral}{"{}z"{}}]\ =\ vec.z;}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00267\ \ \ \ \ \}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TVec>}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keyword}{inline}\ nlohmann::json\ SerializeVector4(\textcolor{keyword}{const}\ TVec\&\ vec)\ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ nlohmann::json\ output\{\};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ output[\textcolor{stringliteral}{"{}x"{}}]\ =\ vec.x;}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ output[\textcolor{stringliteral}{"{}y"{}}]\ =\ vec.y;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ output[\textcolor{stringliteral}{"{}z"{}}]\ =\ vec.z;}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ output[\textcolor{stringliteral}{"{}W"{}}]\ =\ vec.W;}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00279\ \ \ \ \ \}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TVec>}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keyword}{inline}\ TVec\ DeserializeVector2(\textcolor{keyword}{const}\ nlohmann::json\&\ vec)\ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ TVec\ output\{\};}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ output.x\ =\ vec[\textcolor{stringliteral}{"{}x"{}}];}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ output.y\ =\ vec[\textcolor{stringliteral}{"{}y"{}}];}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00290\ \ \ \ \ \}}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TVec>}
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keyword}{inline}\ TVec\ DeserializeVector3(\textcolor{keyword}{const}\ nlohmann::json\&\ vec)\ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ TVec\ output\{\};}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ output.x\ =\ vec[\textcolor{stringliteral}{"{}x"{}}];}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ output.y\ =\ vec[\textcolor{stringliteral}{"{}y"{}}];}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ output.z\ =\ vec[\textcolor{stringliteral}{"{}z"{}}];}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00301\ \ \ \ \ \}}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TVec>}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keyword}{inline}\ TVec\ DeserializeVector4(\textcolor{keyword}{const}\ nlohmann::json\&\ vec)\ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ TVec\ output\{\};}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ output.x\ =\ vec[\textcolor{stringliteral}{"{}x"{}}];}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ output.y\ =\ vec[\textcolor{stringliteral}{"{}y"{}}];}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ output.z\ =\ vec[\textcolor{stringliteral}{"{}z"{}}];}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ output.W\ =\ vec[\textcolor{stringliteral}{"{}W"{}}];}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00313\ \ \ \ \ \}}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TVec>}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keyword}{inline}\ PERSISTENCE::BinaryBlock\ SerializeBinaryVector2(\textcolor{keyword}{const}\ TVec\&\ vec)\ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ PERSISTENCE::BinaryBlock\ output\{\};}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ output.Write(vec.x);}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ output.Write(vec.y);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00324\ \ \ \ \ \}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TVec>}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keyword}{inline}\ PERSISTENCE::BinaryBlock\ SerializeBinaryVector3(\textcolor{keyword}{const}\ TVec\&\ vec)\ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ PERSISTENCE::BinaryBlock\ output\{\};}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ output.Write(vec.x);}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ output.Write(vec.y);}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ output.Write(vec.z);}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00335\ \ \ \ \ \}}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TVec>}
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keyword}{inline}\ PERSISTENCE::BinaryBlock\ SerializeBinaryVector4(\textcolor{keyword}{const}\ TVec\&\ vec)\ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ PERSISTENCE::BinaryBlock\ output\{\};}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ output.Write(vec.x);}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ output.Write(vec.y);}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ output.Write(vec.z);}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ output.Write(vec.w);}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00347\ \ \ \ \ \}}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TVec,\ \textcolor{keyword}{typename}\ TNumberType>}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keyword}{inline}\ TVec\ DeserializeBinaryVector2(PERSISTENCE::BinaryBlockReader*\ vec)\ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ TVec\ output\{\};}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ output.x\ =\ vec-\/>Read<TNumberType>();}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ output.y\ =\ vec-\/>Read<TNumberType>();}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00357\ \ \ \ \ \}}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TVec,\ \textcolor{keyword}{typename}\ TNumberType>}
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keyword}{inline}\ TVec\ DeserializeBinaryVector3(PERSISTENCE::BinaryBlockReader*\ vec)\ \{}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ TVec\ output\{\};}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ output.x\ =\ vec-\/>Read<TNumberType>();}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ output.y\ =\ vec-\/>Read<TNumberType>();}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ output.z\ =\ vec-\/>Read<TNumberType>();}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00368\ \ \ \ \ \}}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TVec,\ \textcolor{keyword}{typename}\ TNumberType>}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keyword}{inline}\ TVec\ DeserializeBinaryVector4(PERSISTENCE::BinaryBlockReader*\ vec)\ \{}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ TVec\ output\{\};}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ output.x\ =\ vec-\/>Read<TNumberType>();}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ output.y\ =\ vec-\/>Read<TNumberType>();}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ output.z\ =\ vec-\/>Read<TNumberType>();}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ output.W\ =\ vec-\/>Read<TNumberType>();}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00380\ \ \ \ \ \}}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00386\ \ \ \ \ nlohmann::json\ \textcolor{keyword}{inline}\ SerializeData<Quaternion>(\textcolor{keyword}{const}\ Quaternion\&\ data)\ \{}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SerializeData<glm::mat4>(data.ToMat4());}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ \ \ \}}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00392\ \ \ \ \ Quaternion\ \textcolor{keyword}{inline}\ DeserializeData<Quaternion>(\textcolor{keyword}{const}\ nlohmann::json\&\ json)\ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Quaternion\{\};}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ matrix\ =\ DeserializeData<glm::mat4>(json);}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Quaternion::FromGlm(glm::normalize(glm::toQuat(matrix)));}
+\DoxyCodeLine{00396\ \ \ \ \ \}}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00400\ \ \ \ \ PERSISTENCE::BinaryBlock\ \textcolor{keyword}{inline}\ BinarySerializeData<Quaternion>(\textcolor{keyword}{const}\ Quaternion\&\ data)\ \{}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BinarySerializeData<glm::mat4>(data.ToMat4());}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \ \ \}}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00406\ \ \ \ \ Quaternion\ \textcolor{keyword}{inline}\ BinaryDeserializeData<Quaternion>(PERSISTENCE::BinaryBlockReader*\ reader)\ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ return\ Quaternion\{\};}}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ matrix\ =\ BinaryDeserializeData<glm::mat4>(reader);}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Quaternion::FromGlm(glm::normalize(glm::toQuat(matrix)));}
+\DoxyCodeLine{00410\ \ \ \ \ \}}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ \}}
+
+\end{DoxyCode}
