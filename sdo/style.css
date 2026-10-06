@@ -1,0 +1,121 @@
+body {
+    background-color: rgb(39, 40, 53);
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url("/assets/background.png");
+}
+
+
+h1 {
+    color: aliceblue;
+    font-size: 0.4in;
+    font-family: 'Consolas';
+    margin-top: 0.1in;
+    margin-bottom: 0.1in;
+}
+
+h2 {
+    color: rgb(119, 119, 119);
+    margin-top: 0.1in;
+    margin-bottom: 0.3in;
+    font-size: 0.2in;
+    font-family: 'Consolas';
+}
+
+h3 {
+    color: rgb(178, 206, 231);
+    font-size: 0.33in;
+    margin-top: 0.3in;
+    margin-bottom: 0.1in;
+}
+
+p {
+    color: rgb(197, 199, 202);
+    font-size: 0.23in;
+    font-family: 'Consolas';
+    margin-top: 0.1in;
+    margin-bottom: 0.1in;
+}
+
+ul {
+    color: rgb(197, 199, 202);
+    font-size: 0.23in;
+    font-family: 'Consolas';
+    margin-top: 0.1in;
+    margin-bottom: 0.1in;
+}
+
+.blogEntry {
+    background-color: rgb(46, 54, 68, 0.8);
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+
+    border: 3px solid rgba(41, 55, 245, 0.336);
+    border-radius: 4px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.downloadButton {
+    border: 3px solid rgb(0, 218, 65);
+    color: rgba(114, 114, 114);
+    background-color: rgb(31, 36, 49, 0.6);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    vertical-align: top;
+    border-radius: 1in;
+    width: auto;
+}
+
+.downloadButton:hover {
+    background-color: rgba(0, 218, 65, 0.6);
+}
+
+.wikiButton {
+    border: 3px solid rgb(31, 50, 224);
+    color: rgba(114, 114, 114);
+    background-color: rgb(31, 36, 49, 0.6);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    vertical-align: top;
+    border-radius: 1in;
+    width: auto;
+}
+
+.wikiButton:hover {
+    background-color: rgba(31, 50, 224, 0.6);
+}
+
+.blogTitle {
+    color: aliceblue;
+    font-size: 0.5in;
+    font-family: 'Consolas';
+    margin-top: 0.1in;
+    margin-bottom: 0.1in;
+}
+
+.pageTitle {
+    color: aliceblue;
+    font-size: 0.7in;
+    font-family: 'Consolas';
+    margin-top: 0.1in;
+    margin-bottom: 0.1in;
+}
+
+.pageSubtitle {
+    margin-top: 0.1in;
+    margin-bottom: 0.3in;
+    color: rgb(168, 170, 172);
+    font-size: 0.25in;
+    font-family: 'Consolas';
+}
