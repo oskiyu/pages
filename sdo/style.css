@@ -2,7 +2,7 @@ body {
     background-color: rgb(39, 40, 53);
     background-attachment: fixed;
     background-size: cover;
-    background-image: url("/assets/background.png");
+    background-image: url("../assets/background.png");
 }
 
 
