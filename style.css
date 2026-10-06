@@ -105,6 +105,16 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.cnav-project-desc {
+  font-size: 0.7rem;
+}
+
+.cnav-project-tags {
+  font-size: 0.7rem; 
+  color: darkgray;
+  font-style: italic;
+}
+
 .central_image {
   width: 10%;
   height: auto;
