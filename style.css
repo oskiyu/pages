@@ -26,6 +26,12 @@
   height: auto;
 }
 
+@media (max-width: 1200px) {
+  :root {
+    font-size: 2.0em;
+  }
+}
+
 .cnav ul {
   list-style-type: none;
   margin: 0;

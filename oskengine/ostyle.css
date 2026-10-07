@@ -1,8 +1,13 @@
 
+@media (max-width: 1200px) {
+  body {
+    font-size: 0.5em;
+  }
+}
+
 /* IMG */
 .me {
     background-image: linear-gradient(45deg, var(--color-light), var(--color-white));
-    height: 13rem;
     width: 85%;
     /*transform: skewY(-3deg);*/
     text-align: center;
@@ -38,9 +43,9 @@
 .me__content {
     margin-left: auto;
     margin-right: auto;
-    width: 45em;
+    width: 80%;
+    max-width: 45em;
 	margin: 0 auto;
-    transform: translateY(-23%);
 }
 
 .background {
